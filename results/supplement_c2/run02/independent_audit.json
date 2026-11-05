@@ -1,0 +1,20 @@
+{
+  "finite_tables": 4,
+  "finite_random_checks": 20,
+  "max_vector_scalar_error": 8.881784197001252e-15,
+  "max_independent_integrator_error": 2.2947306277387725e-09,
+  "solver_runs": 128,
+  "failed_solver_runs": 0,
+  "multistart_groups": 32,
+  "max_multistart_control_spread": 8.947342323523122e-05,
+  "multistart_failed_groups": 0,
+  "optimizer_calls": 2404,
+  "failed_optimizer_calls": 0,
+  "evaluated_local_candidates": 40,
+  "failed_final_local_candidates": 0,
+  "max_optimizer_violation": 7.049916206369744e-14,
+  "new_reintegrated": 160,
+  "max_reintegration_error": 7.105427357601002e-15,
+  "continuous_global_certificate": false,
+  "integration_error_bound": "empirical_only_not_rigorous"
+}

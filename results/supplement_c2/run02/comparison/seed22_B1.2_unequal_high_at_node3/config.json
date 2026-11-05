@@ -1,0 +1,51 @@
+{
+  "seed": 22,
+  "n": 6,
+  "T": 10.0,
+  "K": 6,
+  "rk4_substeps_per_slot": 12,
+  "network": "modular",
+  "scenario": "separated",
+  "attack_entry_indices": [
+    0,
+    1
+  ],
+  "alpha_entry": 0.25,
+  "beta_nonzero_range": [
+    0.04,
+    0.12
+  ],
+  "delta": 0.1,
+  "gamma": 0.3,
+  "epsilon": 1.0,
+  "x0": [
+    0.1,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "q_normal": 1.0,
+  "q_high": 4.0,
+  "h_normal": 0.05,
+  "h_high": 0.5,
+  "g": 1.0,
+  "c_a": 1.0,
+  "c_s": 1.0,
+  "c_r": 1.0,
+  "omega": 0.0,
+  "nu": 0.0,
+  "b_s": 1.0,
+  "b_r": 1.0,
+  "d_a": 1.0,
+  "B": 1.2,
+  "A": 0.8,
+  "solver": {
+    "method": "SLSQP",
+    "max_br_rounds": 40,
+    "damping": 0.35,
+    "br_restarts": 3,
+    "exploratory_relative_gap_target": 0.01
+  }
+}

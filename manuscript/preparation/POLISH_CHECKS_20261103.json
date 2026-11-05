@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-03",
+  "scope": "document arithmetic and text checks; no optimization rerun",
+  "paired_rows_checked": 140,
+  "max_paired_arithmetic_error": 0.0,
+  "adaptive_nine_case_summary": {
+    "Uniform": {
+      "min": 7.693229159596624,
+      "max": 11.480108743074346,
+      "over_1pct": 9
+    },
+    "Value-only": {
+      "min": 8.222780643560391,
+      "max": 17.542138461058556,
+      "over_1pct": 9
+    },
+    "Spread-only": {
+      "min": 5.578299174089531,
+      "max": 14.053103571877935,
+      "over_1pct": 9
+    },
+    "Isolation-only": {
+      "min": 5.665009455616983,
+      "max": 10.999604745545824,
+      "over_1pct": 9
+    },
+    "Recovery-only": {
+      "min": 0.8874238916500716,
+      "max": 4.796221901565139,
+      "over_1pct": 7
+    },
+    "Joint-static": {
+      "min": 0.6610348576135888,
+      "max": 2.190132684052441,
+      "over_1pct": 6
+    },
+    "Fixed-trained": {
+      "min": 0.028961562862602718,
+      "max": 0.28608115090697034,
+      "over_1pct": 0
+    }
+  },
+  "mechanism_ranges": {
+    "B0.6_r2": [
+      -0.0073561257615653,
+      -0.0060174036416248
+    ],
+    "B0.6_r3": [
+      -0.0060304931416017,
+      -0.0047607499988637
+    ],
+    "B1.8_s2": [
+      0.0017447888360409,
+      0.0017982989537584
+    ],
+    "B1.8_r3": [
+      0.0014567146656601,
+      0.001480121985403
+    ]
+  },
+  "finite_pairs": 386397,
+  "counts": {
+    "03_model_zh.md": {
+      "before_nonspace_characters": 3061,
+      "after_nonspace_characters": 3766,
+      "sections": {
+        "3.1": {
+          "before": 669,
+          "after": 839
+        },
+        "3.2": {
+          "before": 545,
+          "after": 722
+        },
+        "3.3": {
+          "before": 530,
+          "after": 573
+        },
+        "3.4": {
+          "before": 692,
+          "after": 913
+        },
+        "3.5": {
+          "before": 544,
+          "after": 641
+        }
+      },
+      "sha256": "7abc5b3aecfca755e3dced04a429ff66e2b4af73aa6853ba099c73db731185e6"
+    },
+    "05_results_zh.md": {
+      "before_nonspace_characters": 2915,
+      "after_nonspace_characters": 3891,
+      "sections": {
+        "5.1": {
+          "before": 646,
+          "after": 994
+        },
+        "5.2": {
+          "before": 581,
+          "after": 789
+        },
+        "5.3": {
+          "before": 706,
+          "after": 771
+        },
+        "5.4": {
+          "before": 419,
+          "after": 591
+        },
+        "5.5": {
+          "before": 463,
+          "after": 655
+        }
+      },
+      "sha256": "b3ac98489d4d56ac35146772c5b4d70650ab18d8dcceca1fe10771c3b9223a35"
+    }
+  }
+}

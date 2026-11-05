@@ -1,0 +1,10 @@
+# Actual P0/P2 environment, 2026-10-24, Python 3.11.7.
+# pytest 7.4 differs from the initial requirements >=8; this file is evidence,
+# not an assertion that a fresh isolated install was tested.
+numpy==1.26.4
+scipy==1.11.4
+pandas==2.1.4
+PyYAML==6.0.1
+matplotlib==3.8.0
+networkx==3.1
+pytest==7.4.0

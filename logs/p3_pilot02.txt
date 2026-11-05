@@ -1,0 +1,2 @@
+seed11_separated_B1.2 Joint-dynamic round=0 gap=0.0189813
+seed11_separated_B1.2 Joint-dynamic round=1 gap=0.00793669

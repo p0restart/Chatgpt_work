@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Jin\Documents\00Graduate_student\ChatGPT_Work__v2\src\summarize_p3.py", line 59, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Jin\Documents\00Graduate_student\ChatGPT_Work__v2\src\summarize_p3.py", line 32, in main
+    m=json.loads((case/'model.json').read_text()); beta=np.array(m['beta'])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\anaconda3\Lib\pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'results\\p3\\fair01\\seed_statistics.csv\\model.json'

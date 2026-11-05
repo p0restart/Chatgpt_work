@@ -1,0 +1,105 @@
+{
+  "cases": 4,
+  "comparisons": 16,
+  "all_controls_exact_match": true,
+  "max_control_difference": 0.0,
+  "scope": "Independent pilot reoptimization only; main batch not independently rerun",
+  "rows": [
+    {
+      "case": "seed11_B1.2_equal_high_at_node2",
+      "initialization": "uniform",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_equal_high_at_node2",
+      "initialization": "zero",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_equal_high_at_node2",
+      "initialization": "random",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_equal_high_at_node2",
+      "initialization": "fine",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_equal_high_at_node3",
+      "initialization": "uniform",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_equal_high_at_node3",
+      "initialization": "zero",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_equal_high_at_node3",
+      "initialization": "random",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_equal_high_at_node3",
+      "initialization": "fine",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node2",
+      "initialization": "uniform",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node2",
+      "initialization": "zero",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node2",
+      "initialization": "random",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node2",
+      "initialization": "fine",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node3",
+      "initialization": "uniform",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node3",
+      "initialization": "zero",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node3",
+      "initialization": "random",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    },
+    {
+      "case": "seed11_B1.2_unequal_high_at_node3",
+      "initialization": "fine",
+      "max_control_difference": 0.0,
+      "exact_match": true
+    }
+  ]
+}

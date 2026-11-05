@@ -1,0 +1,161 @@
+{
+  "same_graph_within_seed": true,
+  "reductions": [
+    {
+      "evaluation": "adaptive_attack",
+      "baseline": "Uniform",
+      "count": 27,
+      "mean_pct": 11.99534266933772,
+      "sd_pct": 3.4731888556023787,
+      "min_pct": 6.562263512350602,
+      "max_pct": 17.39605342221217,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "adaptive_attack",
+      "baseline": "Value-only",
+      "count": 27,
+      "mean_pct": 13.038983634093578,
+      "sd_pct": 4.7685861210845255,
+      "min_pct": 5.311172430250863,
+      "max_pct": 21.930929288791987,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "adaptive_attack",
+      "baseline": "Spread-only",
+      "count": 27,
+      "mean_pct": 10.182241430527316,
+      "sd_pct": 3.044454104153625,
+      "min_pct": 5.8944033783278424,
+      "max_pct": 17.25871449523061,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "adaptive_attack",
+      "baseline": "Isolation-only",
+      "count": 27,
+      "mean_pct": 11.357879483987926,
+      "sd_pct": 4.500023262240465,
+      "min_pct": 3.947231285141901,
+      "max_pct": 19.862957594790576,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "adaptive_attack",
+      "baseline": "Recovery-only",
+      "count": 27,
+      "mean_pct": 2.3974538414242073,
+      "sd_pct": 2.2381779549893697,
+      "min_pct": -0.010877658736729254,
+      "max_pct": 8.459954993929264,
+      "positive_count": 26,
+      "negative_count": 1
+    },
+    {
+      "evaluation": "adaptive_attack",
+      "baseline": "best",
+      "count": 27,
+      "mean_pct": 2.3874254122552196,
+      "sd_pct": 2.2302997819694186,
+      "min_pct": -0.010877658736729254,
+      "max_pct": 8.459954993929264,
+      "positive_count": 26,
+      "negative_count": 1
+    },
+    {
+      "evaluation": "fixed_attack",
+      "baseline": "Uniform",
+      "count": 27,
+      "mean_pct": 11.184184270045533,
+      "sd_pct": 2.558634447087703,
+      "min_pct": 6.897912458526877,
+      "max_pct": 15.076820150078266,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "fixed_attack",
+      "baseline": "Value-only",
+      "count": 27,
+      "mean_pct": 12.89406285033261,
+      "sd_pct": 4.615654047381782,
+      "min_pct": 6.9111270340914635,
+      "max_pct": 21.81722533433068,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "fixed_attack",
+      "baseline": "Spread-only",
+      "count": 27,
+      "mean_pct": 9.859902439508838,
+      "sd_pct": 2.791901186077727,
+      "min_pct": 6.051396957435941,
+      "max_pct": 17.451598529877508,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "fixed_attack",
+      "baseline": "Isolation-only",
+      "count": 27,
+      "mean_pct": 10.988081466985163,
+      "sd_pct": 3.932343353612051,
+      "min_pct": 3.893895034067685,
+      "max_pct": 18.102483866748667,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "fixed_attack",
+      "baseline": "Recovery-only",
+      "count": 27,
+      "mean_pct": 2.2074940166646506,
+      "sd_pct": 2.1319656931531648,
+      "min_pct": 0.016176579968379134,
+      "max_pct": 7.859892931733969,
+      "positive_count": 27,
+      "negative_count": 0
+    },
+    {
+      "evaluation": "fixed_attack",
+      "baseline": "best",
+      "count": 27,
+      "mean_pct": 2.2074940166646506,
+      "sd_pct": 2.1319656931531648,
+      "min_pct": 0.016176579968379134,
+      "max_pct": 7.859892931733969,
+      "positive_count": 27,
+      "negative_count": 0
+    }
+  ],
+  "joint_binding_by_B": [
+    {
+      "B": 0.6,
+      "min": 4,
+      "max": 5,
+      "mean": 4.888888888888889
+    },
+    {
+      "B": 1.2,
+      "min": 2,
+      "max": 4,
+      "mean": 3.2222222222222223
+    },
+    {
+      "B": 1.8,
+      "min": 0,
+      "max": 1,
+      "mean": 0.2222222222222222
+    }
+  ],
+  "business_change_min": -0.4083608510258703,
+  "business_change_max": -2.765147157786548e-20,
+  "business_decreased_count": 8,
+  "exploratory_priority_switch_count": 6
+}

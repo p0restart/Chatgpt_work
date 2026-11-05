@@ -1,0 +1,5 @@
+.figure-deps/
+.pytest_cache/
+tmp/
+__pycache__/
+*.py[cod]

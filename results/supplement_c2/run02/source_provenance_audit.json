@@ -1,0 +1,82 @@
+[
+  {
+    "case": "seed11_B0.6_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed11_B0.6_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed11_B0.6_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "a4468011f2134538fd84594752f7b0f9b3c9645cb10a9187e5d6a8d55a8f824a",
+    "model_sha256": "14d83e4482f5709e0cccb7f8f5f02903b3a0bd3c6544088b9e8a9c626ee64620",
+    "frozen_defense_max_difference": 8.326672684688674e-17
+  },
+  {
+    "case": "seed11_B1.2_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed11_B1.2_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed11_B1.2_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "f4e16cad84c2aa5677432d4f16b1c371c4570052b809feac1217ee20c1b6275c",
+    "model_sha256": "edfa7b86fc2df3541300473257a709963b6baccb43be67b466c86df58b71afef",
+    "frozen_defense_max_difference": 9.627715291671279e-17
+  },
+  {
+    "case": "seed11_B1.8_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed11_B1.8_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed11_B1.8_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "187ead8a2ebda7cceada3b8a1de21639048b11c87c1f0a9d0231c76d7aa089fe",
+    "model_sha256": "cb1aa3aded5b11ea3f640edd9f719e6e28cdbf869e0068636c83326a0feceb86",
+    "frozen_defense_max_difference": 9.020562075079397e-17
+  },
+  {
+    "case": "seed22_B0.6_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed22_B0.6_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed22_B0.6_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "42a83dc67041e69543ee99ffb58544e218a224123a9812843ec6a56a433c89f0",
+    "model_sha256": "0a8502d381a585454f951b02e78f0e56172103cf59379418ef3bd5b48706bc1c",
+    "frozen_defense_max_difference": 9.80118763926896e-17
+  },
+  {
+    "case": "seed22_B1.2_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed22_B1.2_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed22_B1.2_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "48d2be69a288ca096dc8e63be82054ef314fb7d12a6dac74d77ff9c90d3cdda2",
+    "model_sha256": "39b79031dd1e1f8e9666abe6c1efe43170ae91f557cbb3850910ae209e259655",
+    "frozen_defense_max_difference": 9.71445146547012e-17
+  },
+  {
+    "case": "seed22_B1.8_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed22_B1.8_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed22_B1.8_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "2fce1928b8e6f38fee0aa824d513f2ffd6dda06c96f69653be5c80919113027c",
+    "model_sha256": "61b7c6ba16f94f59000585fa66d14ed5e56295245fbd88cd77cda813f62b8b5b",
+    "frozen_defense_max_difference": 9.627715291671279e-17
+  },
+  {
+    "case": "seed33_B0.6_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed33_B0.6_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed33_B0.6_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "6c1c8e71f229fb8ed095ee45273b6f060432fd5a40287074bb8e93e3d570a82d",
+    "model_sha256": "0d5c121967931d52d72c32e9df50c62ff7f25235a041178e998737b965f7fbfe",
+    "frozen_defense_max_difference": 9.71445146547012e-17
+  },
+  {
+    "case": "seed33_B1.2_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed33_B1.2_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed33_B1.2_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "302b11f1ecb5a2dfc7b45adb2de34619b776b1c91f40dd0cca777aeae30848b9",
+    "model_sha256": "788d7b9a4aaabd771f85052cc7773c8aba0462792634af7c212a189ccc46ef42",
+    "frozen_defense_max_difference": 8.326672684688674e-17
+  },
+  {
+    "case": "seed33_B1.8_unequal_high_at_node3",
+    "model_source": "results\\matched_mechanism\\run01\\seed33_B1.8_unequal_high_at_node3\\model.json",
+    "control_source": "results\\matched_mechanism\\run01\\seed33_B1.8_unequal_high_at_node3\\fine\\controls.json",
+    "control_sha256": "6faf7b950c42893361cbac5fe47f8868e373c30e3fafa0cbad1a021856175449",
+    "model_sha256": "b4986dc9aa5a791aef0d96a2b05856b027766d482fa3e1f6dc297ad21cdbd5b5",
+    "frozen_defense_max_difference": 8.673617379884035e-17
+  },
+  {
+    "case": "seed33_business_cost_B0.6",
+    "model_source": "results\\p3\\fair01\\seed33_business_cost_B0.6\\model.json",
+    "control_source": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\warm\\controls.json",
+    "control_sha256": "35410b672b2e7d8dd2e84bf4c2587cc37ceb61e261c6d4c63d4be156621e342f",
+    "model_sha256": "f2eea5453fa0a258b6bd11de92d43edc743149dd940e323eb1e1200b3ffd00d7",
+    "frozen_defense_max_difference": 9.020562075079397e-17
+  }
+]

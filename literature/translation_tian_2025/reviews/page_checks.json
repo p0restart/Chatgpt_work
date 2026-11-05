@@ -1,0 +1,17 @@
+{
+  "source_sha256": "414d3b0683bb3d41c0e59f7c7931ccc4b4b1c8000c57956ce9dac7eec923f474",
+  "checks": [
+    {"page": 1, "status": "pass", "observations": ["题名、摘要、关键词及两栏引言位置保留；页底 DOI 与收稿日期可读。"]},
+    {"page": 2, "status": "pass", "observations": ["两栏文献综述及三项贡献完整可见，引用编号顺序保留。"]},
+    {"page": 3, "status": "pass", "observations": ["表 1 五列结构与四类对比行保留；参数定义延续到右栏页底。"]},
+    {"page": 4, "status": "unknown", "observations": ["节点状态图和式 (1)–(4) 均保留；密集上下标无法凭整页视觉检查逐字确认，关键公式须对照原文。"]},
+    {"page": 5, "status": "unknown", "observations": ["式 (5)–(17) 编号与双栏顺序保留；成本函数中的上下标及积分式需按原文核验。"]},
+    {"page": 6, "status": "unknown", "observations": ["定理 1、式 (18)–(22) 和伴随方程均可见；长公式符号及上下标未完成逐字符确认。"]},
+    {"page": 7, "status": "unknown", "observations": ["式 (23)–(31)、算法 1 步骤及停止条件保留；算法条件与长公式应以原文为准。"]},
+    {"page": 8, "status": "pass", "observations": ["表 2 的三个网络节点和边数、表 3 参数列及算法 2/3 均可见。"]},
+    {"page": 9, "status": "pass", "observations": ["图 2–5 的四组图、图号、纵轴与关键刻度保留。"]},
+    {"page": 10, "status": "pass", "observations": ["图 6–7 的两组图、图号与比较文字均可读。"]},
+    {"page": 11, "status": "pass", "observations": ["图 8、表 4–6、结论及参考文献起始条目保留；表中主要数值与原页一致。"]},
+    {"page": 12, "status": "unknown", "observations": ["参考文献编号 [8]–[44] 和双栏顺序保留；译名与细小书目信息未逐项核验，应以原文为准。"]}
+  ]
+}

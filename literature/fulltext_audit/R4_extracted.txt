@@ -1,0 +1,1053 @@
+
+--- PDF PAGE 1 ---
+ViewOnline
+ExportCitation
+RESEARCH ARTICLE |  DECEMBER 19 2025
+To protect, or to recover? The effect of defense resource
+allocation on network robustness
+Wei Chen 
+  ; Jingrui Wang 
+  ; Yongxiang Xia 
+  ; Zhen Wang 
+Chaos 35, 123136 (2025)
+https://doi.org/10.1063/5.0267934
+Articles You May Be Interested In
+Target recovery of the economic system based on the target reinforcement path method
+Chaos (September 2022)
+An attack–defense game model in infrastructure networks under link hiding
+Chaos (November 2022)
+Modeling and resilience analysis of multi-group supply chain network
+Chaos (May 2025)
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 2 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+To protect, or to recover? The effect of defense
+resource allocation on network robustness
+Cite as: Chaos 35, 123136 (2025 ); doi: 10.1063/5.0267934
+Submitted: 26 February 2025 · Accepted: 3 December 2025 ·
+Published Online: 19 December 2025 View Online 
+ Export Citation 
+ CrossMark 
+Wei Chen,1,2
+ Jingrui Wang,2
+ Yongxiang Xia,3,a)
+ and Zhen Wang 2,4,a)
+AFFILIATIONS
+1Zhuoyue Honors College, Hangzhou Dianzi University, Hangzhou 310 018, China
+2School of Cyberspace, Hangzhou Dianzi University, Hangzhou 3100 18, China
+3School of Communication Engineering, Hangzhou Dianzi University, Hangzhou 310018, China
+4Experimental Center of Data Science and Intelligent Decision-Making , Hangzhou Dianzi University, Hangzhou 310018, China
+a)Authors to whom correspondence should be addressed: xiayx@hdu.edu.cn and wangzhen@hdu.edu.cn
+ABSTRACT
+This paper investigates the optimal allocation of resources between protection and recovery measures to maximize network robustness when
+both are available to the defender. Our study finds that as resources increase, a wise defender will quickly shift their focus from recovery to
+protection, then gradually back to recovery. We have elaborately detailed this nonlinear phenomenon. In addition, our results show that as
+the cost of defending (including protecting and recovering) critical nodes rises, or the load capacity of network redundancy improves, the
+defender will allocate a growing share of resources to recovery. The priority assigned to different node classes, i.e., the order of node protection
+or recovery, also shapes overall resource allocation.
+Published under an exclusive license by AIP Publishing.
+https://doi.org/10.1063/5.0267934
+In the real world, infrastructure networks often face failures
+and attacks, leading to task disruptions and functional losses.
+Network robustness, a key measure of a network’s adaptabil-
+ity under failures or attacks, has become a research hotspot in
+complex networks. Research on improving network robustness
+has mainly focused on two key aspects: protection measures for
+nodes to resist attacks and recovery measures to repair failed
+nodes after attacks. However, in practical scenarios where pro-
+tection and recovery measures coexist, defenders face the chal-
+lenge of sharing limited resources between these two priorities.
+While existing research has advanced in terms of individual
+strategies, optimal synergistic resource allocation still requiresin-
+depth exploration. Therefore, this paper proposes an innovative
+resource allocation method specifically designed for a network
+with cascading failure dynamics. It aims to help defenders allo-
+cate limited resources rationally when adopting both protection
+and recovery measures. This paper delves deeply into the laws
+behind the data from the perspective of statistical analysis, pro-
+viding scientific and efficient resource allocation suggestions f or
+defenders.
+I. INTRODUCTION
+The infrastructure of complex systems, such as transport
+networks,
+1 power grids, 2 and communication networks, 3 plays an
+important role in our society. Some researchers have identified
+similar statistical characteristics among these networks and have
+proposed corresponding network structures.
+4–6 This has laid the
+foundation for a better analysis of network science. Recent progress
+in network science, a cross-disciplinary field that explores the qual-
+itative and quantitative laws of complex networks, has opened up
+new avenues for investigating the robustness of these complex net-
+works. With the help of network science, we can better analyze
+complex systems in the real world. Examples include the analy-
+sis of container shipping network topology and routing strategies,
+7
+the simulation of virus propagation, 8 and the analysis of corporate
+clusters in logistics parks. 9
+Networks may encounter operational anomalies due to random
+failures or intentional attacks, leading to severe consequences like
+power outages,
+10 transportation disruptions, 11 and communication
+interruptions.12 To enhance performance and mitigate unforeseen
+damage, studying the robustness of these infrastructure networks is
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-1
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 3 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+crucial.13–20 Albert et al. pioneered the approach of removing a cer-
+tain number of nodes and then measuring the performance of the
+remaining network based on the relative scale of the largest con-
+nected component.
+13 For the case in which each node has a certain
+load, Wang et al. proposed a cascading failure model based on the
+method of load local redistribution. 14 For the case in which each
+edge has a certain load, Motter et al. proposed a cascading fail-
+ure model with global load redistribution. 15 This method has been
+widely adopted by scholars because it conforms to the characteris-
+tic that load transportation often occurs along the shortest path in
+reality.
+21–23
+With the recent boom in robustness research, awareness of the
+importance of network protection has increased. The question of
+how to optimize this protection is of great significance, particularly
+for determining how a defender should distribute resources for a
+more effective defense strategy. Numerous researchers have inves-
+tigated this question.
+24–30 In the early stages, in order to enhance
+the robustness of a network, Motter et al. proposed a method for
+protecting a network without considering cost. 31 Later scholars con-
+sidered how nodes can be protected with particle swarm optimiza-
+tion algorithms to achieve better gains when considering costs.
+24
+In addition, a local protection strategy has been proposed that can
+significantly improve the robustness of a network during cascading
+failures.
+25
+Important networks are generally recovered after network fail-
+ures. Therefore, some scholars have studied strategies for more
+efficient network recovery.
+32–35 Shang developed a theoretical frame-
+work to compare the effects of random recovery and local recovery
+in complex networks, which provides a guide for choosing appro-
+priate recovery strategies.
+32 A new tool called the sequential recov-
+ery graph has also been introduced to identify critical nodes and
+their recovery sequences for optimal recovery.
+33 In addition, Sun
+and Zeng introduced a local betweenness recovery method, which
+performs better than traditional methods.
+34
+To the best of our knowledge, most past research on network
+robustness has focused on either protective strategies or recov-
+ery strategies. However, in reality, both protection and recovery
+measures are indispensable for the defender. Focusing solely on pro-
+tection measures may lead to business interruption and significant
+losses once the defensive line is breached. Conversely, emphasizing
+recovery measures alone may lead to frequent attacks and sub-
+stantial recovery costs. For instance, for the U.S. electricity grid,
+adopting protection measures such as undergrounding transmission
+lines is essential to mitigate outages, and the ability of govern-
+ments and agencies to swiftly recover the grid following outages is
+equally important.
+36 There is a research gap that creates a disconnect
+between theory and practice and requires further investigation.
+It is particularly important to consider how a defender should
+balance the allocation of resources between protection and recovery
+measures in different situations. In this paper, we adopt the per-
+spective of the defender and consider how to allocate their limited
+resources for optimal network robustness when both protection and
+recovery measures are available. We first study the effect of differ-
+ent defense strategies and the cost parameter on the optimal defense
+resource allocation ratio and network robustness. Subsequently, we
+conduct a detailed analysis of how the optimal allocation ratio varies
+with changes in total resources. Our study finds that as defense
+resources grow, a wise defender will rapidly redirect their resource
+allocation from recovery-oriented efforts to protection-oriented ini-
+tiatives before gradually reverting to recovery-oriented allocation.
+We explain this phenomenon accordingly. Finally, we perform a
+sensitivity analysis on the redundancy parameter and extend the
+conclusions to networks with different structures.
+The paper is organized as follows. In Sec.
+II, we provide a
+detailed description of our cascading failure model and defense
+model. In Sec.
+III, the results and analysis of the simulations are
+presented. Finally, we conclude in Sec. IV.
+II. MODELS
+In this section, we elaborate on the network structure,
+attack/defense deployment, cascading failures, and robustness
+index. Specifically, the attack/defense deployment involves attack/
+defense resources and attack/defense strategies.
+A. Network structure
+In this paper, we take the Barabási and Albert (BA) scale-free
+network
+6 and Erd˝os–Rényi random (ER) network37 as representative
+examples to study how a defender should coordinate their alloca-
+tion strategy to maximize the benefit of the defense. On the one
+hand, the degree distribution of nodes in a BA network follows
+a power-law distribution, so the importance of different nodes in
+BA networks varies significantly. Thus, the BA network is a typi-
+cal heterogeneous network.
+38 On the other hand, the edges of the
+ER network are randomly generated, and all nodes have approxi-
+mately equal importance, so it is a typical homogeneous network.
+38
+Since many networks are often heterogeneous in reality, 39 our main
+conclusions focus on BA network analysis. Moreover, given the
+existence of homogeneous networks in reality, we also conduct cor-
+responding analyses on an ER network to illustrate the universality
+of our conclusions.
+B. Attack and defense deployment
+1. Attack and defense resources
+In a network, different nodes vary remarkably in importance.
+Consequently, the resources for attacking different nodes also tend
+to diverge significantly. It is generally believed that the magnitude of
+a node’s degree provides a measure of its importance,
+40 so we define
+the attack cost Ai of node i as a power function of degree, 41
+Ai = kτ
+i , (1)
+where ki denotes the degree of node i and τ is the cost parame-
+ter. When τ = 0, the resources required to attack any node are the
+same. When τ > 0, nodes with higher degrees require more
+resources. When τ < 0, nodes with higher degrees require fewer
+resources. Attacking more important nodes tends to cost more, so
+this work considers the case where τ ≥ 0. Similarly, the cost for the
+defender to defend a node can be defined as a power function of
+degree,
+Di = kτ
+i , (2)
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-2
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 4 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+where Di is the cost of defending node i. In this paper, the costs of
+protection measures and recovery measures are the same, and both
+are calculated using Eq.
+(2).
+From the above definitions, we see that the resources needed
+for the attacker/defender to attack/defend all nodes are ∑n
+i=1 kτ
+i .
+Realistically, the resources of the attacker and the defender are often
+limited. Therefore, we define the total resource ratio λL,
+Rtotal = λ
+n∑
+i=1
+kτ
+i , (3)
+where Rtotal is the total resources. For convenience, following previ-
+ous papers, we assume that the total resources of both the attacker
+and the defender are Rtotal.
+26,42 We can use the total resource ratio
+λ to represent the extent of ownership of the resources. Thus,
+λ ∈ [0, 1].
+For the defender, resources are invested in two measures. The
+resources are, thus, split into two parts. The first is protection
+resources Rp, which serve to protect a node from an attack. Node
+i is successfully attacked if and only if it is attacked and is not yet
+protected. A successful attack on node i means that it fails, and the
+node should be removed along with its edges. It should be noted that
+protected nodes can also fail due to overload. The other part is recov-
+ery resources Rr, which enable a failed node to be recovered and
+reconnected to the initially linked and still operational nodes. How-
+ever, some nodes may fail due to overload after recovery, triggering
+another round of cascading failures. Assuming the proportion of
+resources allocated to protection measures is θp, the remaining pro-
+portion 1 − θp is allocated to recovery measures, which gives the
+following relation:
+Rtotalθp = θpRtotal + (1 − θp)Rtotal = Rp + Rr. (4)
+2. Attack and defense strategy
+There exist two principal types of attack and defense strate-
+gies: random and deliberate. 13,15,41 In a random strategy, the nodes
+to be attacked or defended are selected randomly. In contrast, the
+deliberate strategy selects nodes based on specific indicators. This
+study aims to explore, in realistic load-failure scenarios, how to allo-
+cate defense resources between protection and recovery measures
+to achieve better network robustness. This section clarifies the sce-
+nario considered in this paper, i.e., the specific strategies adopted
+by the attacker/defender. In real life, it is much more common for
+attackers to have no knowledge of the network architecture and to
+only be able to perform random attacks.
+43 Previous research 44 has
+extensively examined the influence of strategic interplay between
+attackers and defenders on network robustness from the game the-
+ory perspective. It is noteworthy that when considering deliberate
+attacks and deliberate defenses with equal resources, the attack strat-
+egy proves to be completely ineffective.
+44 This result is intuitive and
+easy to understand. Consequently, the practical implications wor-
+thy of discussion in this context are quite limited. Therefore, this
+paper focuses on the scenario in which the attacker employs random
+attacks. Furthermore, to achieve optimal defense outcomes, defend-
+ers often adopt deliberate defense rather than random defense. For
+example, modern power grid defense requires a purposeful, planned,
+and organized approach to addressing various threats.
+45,46 There-
+fore, this paper focuses on the scenario in which the defender adopts
+deliberate defense.
+This paper focuses on two types of defense strategies: pro-
+tection and recovery. Two possible strategies are also considered
+for allocating protection resources. One is high degree protection
+(HDP). This works by first sorting the nodes by descending degree,
+then protecting them sequentially in that order. The other is Low-
+Degree Protection (LDP), which works by sorting the nodes by
+ascending degree, then protecting the nodes one by one in the sorted
+sequence. When τ > 0, HDP can better protect large-degree nodes
+so that the network’s topology is not damaged by the large nodes,
+while LDP can be used to protect more nodes.
+This paper also considers two types of recovery strategies.
+To recover important nodes among the failed ones, the defender
+employs the High-Degree Recovery (HDR) strategy. Similar to
+HDP, HDR first arranges the failed nodes by descending degree,
+then recovers them in sequence. Conversely, Low-Degree Recovery
+(LDR) first targets nodes with lower degrees. It arranges the failed
+nodes according to an ascending degree sequence and recovers them
+successively.
+Ultimately, there are four different defense strategies: HHS
+(HDP and HDR strategy), HLS (HDP and LDR strategy), LHS (LDP
+and HDR strategy), and LLS (LDP and LDR strategy).
+C. Cascading failures
+To embody a certain impact that a failed node has on other
+nodes, the cascading failure model proposed by Mottor and Lai is
+adopted.
+15 In the model, Li denotes the initial load of node i, which
+is defined as
+Li =
+∑
+m,n∈V,m̸=n̸=i
+P(m, n|i)
+P(m, n) , (5)
+where V is the set of all nodes in the network, P(m, n) is the number
+of shortest paths from node m to node n, and P(m, n|i) is the number
+of shortest paths from node m to node n through node i.
+Each node has an upper load limit, called its capacity Ci,
+defined as
+Ci = (1 + α) Li, (6)
+where α is a redundancy factor, which indicates the extent of redun-
+dancy load that the network can withstand. In our model, all nodes
+are functional at the initial moment. Therefore, this requires that the
+capacity of each node is larger than the initial load, i.e., α > 0. Our
+model proceeds as follows:
+• Step 1: The attacker randomly picks the set of nodes to attack,
+and the defender picks the set of nodes to protect according to
+the protection strategy. Nodes that the attacker attacks that are
+not protected fail, so the topology of the network is affected at
+this point. Then, the first round of cascading failures is triggered
+by the attack.
+• Step 2: The load of the remaining nodes in the network is recal-
+culated. If the load of a node is larger than its capacity, that node
+will fail.
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-3
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 5 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+FIG. 1. A ﬂow chart of the cascading failure model in this study .
+• Step 3: The failure of these nodes results in the load of the
+other nodes being altered. Step 2 is repeated until the load on
+all operational nodes is less than their capacity.
+• Step 4: The defender picks the set of nodes to recover the
+remaining network according to the recovery strategy. The
+topology of the network is affected at this point. Thus, the
+second round of cascading failures is triggered by the recovery.
+• Step 5: The load of the remaining nodes in the network is recal-
+culated at this point. If the load of a node is larger than its
+capacity, that node will fail.
+• Step 6: The failure of these nodes results in the load of the
+other nodes being altered. Step 5 is repeated until the load on
+all operational nodes is less than their capacity (
+Fig. 1).
+D. Robustness index
+We can use the relative size G of the largest connected compo-
+nent to measure the performance of the network. 15,47,48 The relative
+scale of the largest connected component is defined as
+G = N′
+N , (7)
+where N is the number of nodes in the largest connected component
+of the initial network and N
+′
+is the number of nodes in the largest
+connected component in the stable state to which the model finally
+evolves.
+III. RESULTS
+This paper focuses on the BA network with a number of
+nodes N = 1000 and an average degree < k >≈ 4, with a redun-
+dancy parameter α = 0.3. Unless otherwise specified, these are the
+parameters of the results presented. First, we discuss the impact of
+defense strategies and the cost parameter τ on network robustness.
+Then, we elaborate in detail on the nonlinear process undergone by
+the optimal allocation ratio θ ∗
+p with changes in the total resource
+ratio λ. Finally, we conduct a sensitivity analysis of the redundancy
+parameter α and extend the conclusions to homogeneous networks
+represented by the ER network.
+To reduce the impact of randomness on the conclusions, each
+result is simulated at least 200 times, and an average is taken.
+A. The inﬂuence of the defense strategy and cost
+parameter τ on network robustness
+When adopting various defense resource allocation ratios θp,
+the benefits accrued to the defender differ. We define the allocation
+ratio θp that maximizes the relative scale of the largest connected
+component G under a given λ as the optimal allocation ratio θ ∗
+p ,
+and the G obtained by taking the allocation ratio θ ∗
+p is denoted as
+G∗. This implies that when the defender owns λ percent of the total
+resources, the allocation ratio that provides the highest efficiency
+is θ ∗
+p , and the best achievable robustness is G∗. As defenders, we
+would like to maximize our gain by adjusting the resource alloca-
+tion ratio.
+Figure 2 shows the optimal allocation ratio θ ∗
+p and the
+corresponding G∗ as functions of different total resource ratios λ for
+different defense strategies in BA networks. From Fig. 2(a), we can
+observe that the interval allocated to protection under the optimal
+allocation ratios in HHS and LHS is significantly wider than that in
+HLS and LLS. Specifically, when protection strategies are all HDP,
+HDR as the recovery strategy widens the protection-dominated allo-
+cated interval more significantly than LDR under the optimal ratio.
+Similarly, with both protection strategies being LDP, a recovery
+strategy of HDR leads to a greater widening of the protection-
+dominated allocated interval than LDR under the optimal allocation
+ratio. However, after the recovery strategy is determined, changes in
+the protection strategy have a relatively small impact on the opti-
+mal allocation ratio. In conclusion, the recovery strategies have a
+more significant impact on the nonlinear evolution process of θ ∗
+p
+with resources. Among the different strategies, HDR can signifi-
+cantly suppress the increase in θ ∗
+p with increasing resources. This
+implies that when the HDR strategy is adopted, the allocation of
+resources is largely biased toward recovery measures.
+In
+Fig. 2(b) , we can observe that the value of G∗ initially
+decreases and then increases as λ increases. This trend is easy to
+understand. At the beginning, as the total resource ratio increases,
+the attacker can better attack the network, while the defense is look-
+ing for a needle in a haystack. This inevitably makes it difficult for
+the defender to obtain satisfactory results. However, as resources
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-4
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 6 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+FIG. 2. (a) The optimal allocation ratio θ ∗
+p and (b) the corresponding relative
+scale of the largest connected component G∗ as functions of different total
+resource ratios λ for different defense strategies: (high-degree protectio n and
+high-degree recovery), HLS (high-degree protection and lo w-degree recovery),
+LHS (low-degree protection and high-degree recovery), and LLS (low-degree
+protection and low-degree recovery), with τ = 1.
+increase to a certain level, the defender has more resources that can
+be effectively deployed to fend off attacks, thereby reducing their
+impact. Specifically, if the total resource ratio λ = 100%, regard-
+less of whether the defender allocates all resources to protection or
+recovery measures, it can achieve G = 1.
+Meanwhile, as shown in
+Fig. 2(a), for both the HHS and LHS,
+the optimal allocation ratios are 0 in numerous cases, and their
+recovery strategies are both HDR. As a result, their G∗ values in
+Fig. 2(b) are almost identical. Interestingly, the G∗ trough values
+for HLS and LLS occur significantly later than those for HHS and
+LLS. HLS and LLS tend to allocate resources to protection when
+the resources are at a moderate level. Such an allocation increases
+the network’s resistance to attacks, meaning attackers need more
+resources to cause maximum damage. As resources increase within
+a certain limit, defenders are likely to struggle to provide sufficient
+resources, and attackers will cause greater damage to the network,
+FIG. 3. (a) The optimal allocation ratio θ ∗
+p and (b) the corresponding G∗ as
+functions of the total resource ratio λ for different τ in BA networks.
+resulting in a lower G∗. It is worth noting that, because the LLS strat-
+egy cannot effectively protect or recover high-degree nodes in the
+network, the value of G∗ is lower than that for other strategies.
+The simulation results indicate that the defender achieves the
+highest benefit when adopting HHS, consistent with our intuition.
+Furthermore, defenders are typically inclined to prioritize protecting
+critical nodes in practical scenarios. Consequently, we mainly focus
+on HHS in the following.
+Figure 3 shows the optimal allocation ratio θ ∗
+p and the corre-
+sponding G∗ as functions of the total resource ratio λ for different
+τ in BA networks. From this figure, we can see how the optimal
+allocation ratio θ ∗
+p changes with the total resource ratio λ. Take
+τ = 0, for example; as λ rises, θ ∗
+p rapidly shifts from 0 (allocating all
+resources to recovery measures) to 1 (allocating all resources to pro-
+tection measures) and then gradually evolves from 1 to 0. Moreover,
+when total resources are low, θ ∗
+p is more sensitive to the change in
+the total resource ratio. As defenders, we are most concerned about
+the optimal resource allocation ratio θ ∗
+p . Consequently, the situation
+in which it changes with the total resources is of vital importance.
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-5
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 7 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+A deeper understanding of the internal mechanism driving these
+change processes is needed. Given the similarity of the conclusions
+obtained at various values of τ , it may be worthwhile to adopt τ = 0
+for subsequent analysis, as the results at this point are more straight-
+forward to interpret. Thus, we conduct a more specific elaboration
+on this nonlinear phenomenon in Sec.
+III B.
+We can see from Fig. 3(a) that as τ increases, the interval
+in which the defender allocates resources to protection becomes
+shorter. Moreover, the starting point of the optimal allocation ratio
+θ ∗
+p > 0 is delayed as τ increases, and the end point of θ ∗
+p > 0 is
+advanced as τ increases. This is because, as τ increases, the resources
+required to protect the large-degree nodes increase, and a random
+attack only has a small probability of attacking these large-degree
+nodes. Therefore, the defender spends a lot of resources protecting
+high-degree nodes. At this point, a good defender will accelerate the
+allocation of resources to recovery measures. In other words, the
+larger τ is, the shorter the interval in which the optimal allocation
+ratio θ ∗
+p > 0.
+On top of that, as shown in
+Fig. 3(b), the larger τ is, the smaller
+G∗ is in general. Figure 4 shows the variation in the number of
+nodes that can be attacked/defended as functions of τ . As depicted
+in the figure, with the increment of τ , the number of attacked nodes
+increases while the number of defended nodes decreases. Conse-
+quently, a lower level of network robustness is achieved. At the same
+time, τ has little effect on where the low peak of G∗ occurs, which is
+almost always near λ = 20%.
+B. The interpretation of θ ∗
+p during the nonlinear
+process with respect to λ
+The defender generally needs to allocate limited resources to
+protection and recovery measures to achieve better network robust-
+ness. Therefore, we next explain in detail the previously mentioned
+nonlinear trend of θ ∗
+p with λ. As stated in Sec.
+III A, based on the
+ownership status of resources, we divide this nonlinear process into
+four stages for interpretation: (1) When resources are scarce (e.g.,
+λ = 0.1%), the defender allocates all resources to recovery measures
+for the highest return, (2) when resources are relatively scarce (e.g.,
+λ = 1%), the defender allocates all resources to protection measures
+for the highest return, (3) when resources are relatively sufficient
+(e.g., λ = 20%), the defender allocates resources to both protec-
+tion and recovery measures for the highest return, and (4) when
+resources are sufficient (e.g., λ = 90%), the defender allocates all
+resources to recovery measures for the highest return. To intuitively
+illustrate how the relative scale of the largest connected component
+(G) varies with the defense resource allocation ratio θp under dif-
+ferent total resource ratios λ, a 3D plot is presented in
+Fig. 5. This
+plot depicts G as a function of both λ and θp, directly reflecting the
+aforementioned multi-variable relationship.
+In stage 1, when resources are scarce (e.g., λ = 0.1%), the
+optimal strategy is to allocate all resources to recovery measures.
+Figure 5(a) shows the changing trend of G with θp in the low- λ
+regime during the current analysis stage. The curves in this figure
+decrease as θp increases, at which point a good defender will allocate
+more resources to recovery measures. To account for this phe-
+nomenon, we draw on the concept of expectation. The expected
+protection gain, Eθp=1, refers to the change in the size of the largest
+FIG. 4. The variation in the number of nodes: (a) Na, the number of nodes
+attacked by the attacker , and (b) Nd, the number of nodes defended by the
+defender , as functions ofλ.
+connected component due to protection measures relative to no
+intervention. In a similar way, the expected recovery gain Eθp=0 is
+the change in the size of the largest connected component due to
+recovery measures relative to no intervention. Although the sub-
+sequent calculation formulas of Eθp=1 and Eθp=0 are different, their
+practical significance levels are consistent. At this stage, our analy-
+sis indicates that the expected return from protection measures is
+lower compared to that from recovery initiatives. To be specific, we
+take λ = 0.1% as an example for elaboration. At this point, the total
+resources are only enough to attack or defend one node (N = 1000).
+If the defender adopts the allocation ratio of θp = 1, it means pro-
+tecting the one node with the highest degree. In this case, when the
+attacker hits this node with a probability of 1
+1000 , the defender can
+gain from protection measures by preventing the destruction of this
+single node and the subsequent cascading failures. We define a suc-
+cessful attack on the node with the highest degree as one that triggers
+cascading failures, reducing the number of nodes in the final largest
+connected component by x1. For λ = 0.1%, the expected gain from
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-6
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 8 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+FIG. 5. The impact of total resource ratios λ and defense resource allocation ratios θp on the relative scale of the largest connected component G under different ranges of
+λ: (a) 0.001 ≤ λ ≤ 0.009, (b) 0.01 ≤ λ ≤ 0.09, and (c) 0.1 ≤ λ ≤ 0.9.
+allocating all resources to protection measures is
+Eλ=0.1%
+θp=1 = x1
+1000 . (8)
+We conducted 200 simulations on the value of x1 and obtained an
+average value of 560 for x1. From Eq. (8), we can see that Eλ=0.1%
+θp=1
+≈ 0.56. Conversely, suppose the defender adopts θp = 0. We define
+p1 as the probability that the recovered node ultimately survives in
+the largest connected component. Meanwhile, it is noteworthy that
+the recovered node may also be able to connect nodes that are not in
+the largest connected component or it may cause other nodes within
+the largest connected component to fail due to overloading. Here,
+we define the variation in the largest connected component due to
+the recovered node as a1. Thus, the expected gain from adopting
+θp = 0 is
+Eλ=0.1%
+θp=0 = 1 × p1 + a1. (9)
+Through 200 simulations, we found that the average value of p1
+was 0.86, and the average value of a1 was 0.44, from which we cal-
+culated that Eλ=0.1%
+θp=0 ≈ 1.30. Both Eλ=0.1%
+θp=0 and Eλ=0.1%
+θp=1 refer to the
+number of additional nodes that the largest connected component
+achieved through defense measures (either protection measures or
+recovery measures) relative to no measures. Therefore, a compari-
+son reveals that Eλ=0.1%
+θp=0 > Eλ=0.1%
+θp=1 . Thus, a steady recovery can lead
+to a higher gain when the proportion of total resources is extremely
+small. Specifically, the probability of the attacker attacking the pro-
+tected nodes is relatively low when resources are scarce. At this time,
+the recovery is usually successful and may also connect some isolated
+nodes to the network. Since the destructive power of the attack on
+the network is low, recovery measures are more effective than pro-
+tection measures, which can only succeed with very low probability.
+Thus, the optimal allocation ratio is θ ∗
+p = 0.
+In stage 2, when resources are relatively scarce (e.g., λ = 1%),
+the optimal strategy is to allocate all resources to protection mea-
+sures. For example,
+Fig. 5(b) shows that when λ = 10%, θp = 1 is the
+optimal allocation ratio. We continue to use the concept of expecta-
+tion to explain this phenomenon. Allocating all resources to pro-
+tection measures enables the protection of ten higher-degree nodes.
+Similarly, we calculate the protection gain using the expectation and
+the complementary probability method. When the defender takes
+no measures, the loss caused by a successful attack on the originally
+protected nodes is considered the protection gain. The number of
+ways the attacker can select 10 nodes from 1000 is C10
+1000. Since the
+defender protects 10 nodes, there are 990 unprotected nodes. The
+number of ways the attacker can select 10 nodes from these 990
+unprotected nodes is C10
+990. The probability that the attacker selects
+no protected nodes is
+C10
+990
+C10
+1000
+. Then, the probability P that the attacker
+selects at least one of the protected nodes is
+P = 1 − C10
+990
+C10
+1000
+= 0.096. (10)
+For convenience, we define x2 as the expected number of nodes
+added to the largest connected component when the protection
+measures take effect. Specifically, x2 is the expected increase in the
+number of nodes within the largest connected component for the
+protection measures that successfully protect at least one of the
+nodes targeted by the attacker. In addition, x
+′
+2 is defined as the cor-
+responding increase when the protection is effective for only one of
+the targeted nodes. Then, it can be obtained that
+x2 = x
+′
+2 + ε. (11)
+Obviously, x2 > x
+′
+2, and, therefore, ε > 0. ε represents the additional
+benefit to the defender when the attacker attacks more than one pro-
+tected node. Then, the expected gain from allocating all resources to
+protection measures is
+Eλ=1%
+θp=1 = 0.096 × (x2 + ε). (12)
+Through 200 simulations, we found that the average value of x2
+is 192. Then, it can be obtained that Eλ=1%
+θp=1 ≈ 18.432 + 0.096ε.
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-7
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 9 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+Conversely, we contrast and emphasize the difference in effective-
+ness between recovery measures and protection measures by taking
+θp = 0 as an example. If the defender adopts θp = 0, the expected
+gain from allocating all resources to recovery is
+Eλ=1%
+θp=0 = 10 × p2 + a2, (13)
+where p2 denotes the probability that the recovered nodes can suc-
+cessfully survive in the final largest connected component. Through
+200 simulations, we get that the average value of p2 is 0.692. a2
+represents the additional increase in the size of the largest con-
+nected component after recovery. Through 200 simulations, we get
+that the average value of a2 is 1.223. At this time, Eλ=1%
+θp=0 = 8.143.
+By comparing the expectations of the two measures, we find that
+Eλ=1%
+θp=0 < Eλ=1%
+θp=1 . If all defense resources are allocated to protec-
+tion measures, the probability of successfully protecting important
+nodes will increase significantly, thereby reducing the likelihood of
+broader cascading failures. Meanwhile, as the damage from network
+attacks intensifies, if all defense resources are used for recovery mea-
+sures, the effectiveness of recovery will be very limited. Under this
+condition, the optimal allocation ratio is determined to be θ ∗
+p = 1.
+In stage 3, when resources are relatively sufficient [e.g.,
+λ = 20% in
+Fig. 5(c) ], the optimal strategy is to allocate resources
+to both protection measures and recovery measures. To better illus-
+trate this phenomenon, we define the gain from protection measures
+at this stage as /Pi1p. Here, /Pi1p represents the increase in the size of the
+largest connected component after the first round of cascading fail-
+ures triggered by attacked nodes, relative to the no-protection case.
+We also define the gain from recovery measures as /Pi1r. /Pi1r repre-
+sents the increase in the size of the largest connected component
+after the second round of cascading failures triggered by recovered
+nodes, compared with the no-recovery cases. Then, the total gain of
+the defender is
+/Pi1sum = /Pi1p + /Pi1r. (14)
+Figure 6 clearly shows the trend of /Pi1p, /Pi1r, and /Pi1sum as 1 − θp
+changes. Specifically, when θp is large, as its value decreases, the
+decrease rate of /Pi1p is slower than the increase rate of /Pi1r, which
+causes the value of /Pi1sum to grow. However, when θp decreases to
+a certain value, even a tiny decrease leads to a sharp decline in
+/Pi1p, and the decrease rate is faster than the increase rate of /Pi1r. So
+in this case, as θp decreases, the value of /Pi1sum decreases signifi-
+cantly. Moreover, as λ increases, the value of θp corresponding to
+the peak of /Pi1sum becomes larger, even reaching 0. This is because
+the number of critical nodes in the network is relatively stable. The
+resources for protecting critical nodes are almost fixed. As long as
+these important nodes are effectively protected, severe cascading
+failures can be avoided. Therefore, as total resources increase, the
+proportion allocated to protection measures will decrease accord-
+ingly. In a word, the optimal strategy at this point is to take both
+FIG. 6. The number N/Pi1 of nodes that increase the largest connected component thro ugh two defense measures as a function of 1 − θp. In this ﬁgure, /Pi1p represents the
+gain from protection measures, /Pi1r represents the gain from recovery measures, and /Pi1sum represents the total gain of the defender .
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-8
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 10 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+FIG. 7. The number No of overloaded nodes failing in the ﬁrst round of cascade
+failures as a function of the total resource ratio λ when the defender allocates all
+resources to recovery measures.
+protection and recovery measures. Furthermore, as λ increases, the
+proportion allocated to recovery measures will also increase.
+In stage 4, when resources are sufficient, the optimal strategy is
+to allocate all resources to recovery measures. This scenario corre-
+sponds to the right region of
+Fig. 5(c) , and a typical case is when
+λ = 0.9%. When the defender allocates all resources to recovery
+measures, Fig. 7 shows the number of overloaded nodes failing in
+the first round of cascading failures as a function of the total resource
+ratio λ. As illustrated in this figure, the number of nodes failing due
+to overload decreases as λ increases, approaching 0 by the time λ
+reaches 0.8. This means that when there are enough total resources,
+few nodes fail in the first round of cascade failures since the network
+is already largely falling apart. At this time, if the defender allocates
+all resources to recovery measures, it can recover most failed nodes
+in the network, bringing it back to close to its initial state. Therefore,
+the recovered network is minimally affected by the second round
+of cascading failures. To sum up, when λ is large enough, the opti-
+mal strategy for the defender is allocating all resources to recovery
+measures.
+C. Sensitivity analysis of the redundancy parameter α
+To gain a more comprehensive understanding of the network
+defense resource allocation theory, we analyzed the impact of the
+redundancy parameter α on the optimal allocation ratio θ ∗
+p and net-
+work robustness.
+Figure 8(a) shows G as a function of the resource
+allocation ratio θp for different redundancy parameters α. As shown
+in Fig. 8(b) , an increase in the redundancy parameter α leads to a
+decrease in the optimal allocation ratio θ ∗
+p . This implies that as α
+increases, a good defender will tend to devote more resources to
+recovery measures. This is because an increase in α increases the
+load capacity of the nodes and the network’s ability to withstand
+cascading failures. The severity of the first round of cascading fail-
+ures triggered by the attack is correspondingly reduced. Specifically,
+fewer nodes experience failures due to overload, diminishing the sig-
+nificance of protection. Moreover, the second round of cascading
+failures after recovery is also weakened, which further bolsters the
+effectiveness of the recovery measures. In summary, as α increases,
+a good defender speeds up the process of tilting resources toward
+recovery measures.
+Figure 8(c) shows G∗ as a function of α. As α increases, G∗
+increases, and the increase in G∗ becomes smaller and smaller.
+This is because as α increases, the extra load capacity of each node
+increases, and the network becomes more robust to damage. At the
+same time, as α increases, more and more capacity is wasted, which
+results in the subsequent increase in the redundancy factor playing
+a smaller role in the increase of G.
+D. Extension of conclusions to ER networks
+All the above discussion concerned heterogeneous networks
+represented by BA networks. However, there are some homoge-
+neous networks in real life. Therefore, we use ER networks as an
+example to investigate whether the above conclusions can be gen-
+eralized to homogeneous networks. In general, the conclusions that
+hold in BA networks also hold in ER networks.
+Figure 9 shows the optimal allocation ratio θ ∗
+p and the cor-
+responding G∗ as functions of different λ for different defense
+strategies in ER networks. As can be seen from Figs. 2(a) and 9(a),
+the impact of different defense strategies on defenders in ER net-
+works is similar to that in BA networks. But, θ ∗
+p in ER networks is
+less affected by defense strategies. This is because an ER network
+is homogeneous, so there is little difference among various nodes.
+Consequently, the impact of starting protection or recovery from
+FIG. 8. (a) G as a function of the resource allocation ratio θp for different redundancy parameters α when λ = 10% in BA networks. (b) The optimal allocation ratio θ ∗
+p and
+(c) the corresponding G∗ as functions of α.
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-9
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 11 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+FIG. 9. (a) The optimal allocation ratio θ ∗
+p and (b) the corresponding G∗ as func-
+tions of different total resource ratios λ for different defense strategies in ER
+networks when τ = 1.
+high-degree nodes or low-degree nodes is relatively unimportant.
+As shown in
+Figs. 2(b) and 9(b), the network robustness obtained by
+LHS is relatively high in the BA network. Nevertheless, when LHS
+is employed in the ER network, the resulting G∗ is remarkably low.
+As seen in
+Fig. 9(a), unlike with other strategies, the LHS allocates
+all resources to recovery measures. At this time, since the network
+is unprotected, a large number of nodes fail due to overload after
+an attack. The ER network is homogeneous, so a large number of
+nodes with similar transport status will be overloaded simultane-
+ously, leading to serious cascading failures. Therefore, the value of
+G∗ obtained at this time is significantly lower than that obtained
+from the BA network.
+Figure 10 shows the optimal allocation ratio θ ∗
+p and the corre-
+sponding G∗ as functions of the total resource ratio λ for different
+τ in ER networks. As observed in Figs. 3(a) and 10(a), the impact
+of τ variations on θ ∗
+p in ER networks is relatively small compared
+to that in BA networks. We can explain this phenomenon through
+FIG. 10. (a) θ ∗
+p and (b) the corresponding G∗ as functions of λ for different τ in
+ER networks.
+the differences in the attack/defense resource costs of the nodes.
+The cost of attacking/defending a node scales as a power law with
+respect to the node’s degree. Due to the relatively small difference
+in the base values, the difference brought about by the change in
+the cost parameter τ is also small in the ER networks. That is, the
+cost difference between attacking/defending high-degree nodes and
+low-degree nodes in ER networks does not change significantly.
+Therefore, the optimal allocation ratio in ER networks is more
+robust to changes in τ . As can be seen in
+Fig. 10(b) , the effect of
+changes in τ on G∗ is similar to that of the BA networks: a larger τ
+tends to lead to lower G∗.
+Figure 11(a) shows G as a function of the resource allocation
+ratio θp for different redundancy parameters α. We can observe this
+more intuitively in Figs. 11(b) and 11(c). As shown in Figs. 8(c)
+and 11(c), when α is small, G∗ is extremely low compared to G∗
+in BA networks. This is because nodes are of comparable impor-
+tance in ER networks, so they play essentially the same role in the
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-10
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 12 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+FIG. 11. When λ = 10% in ER networks, (a) G as a function of θp for different α. (b) The optimal allocation ratio θ ∗
+p and (c) the corresponding G∗ as functions of α.
+transportation. After a portion of the nodes are destroyed, the load
+on the transportation of the remaining nodes rises significantly.
+When α is small, many nodes with comparable transportation status
+are overloaded, leading to a larger cascading failure.
+IV. CONCLUSION
+In this paper, we have investigated how a defender should
+adjust the proportion of resources allocated to protection and recov-
+ery measures to achieve better defense gains. We have found that in
+both Barabási and Albert scale-free (BA) networks and Erd˝os–Rényi
+random (ER) networks, when resources are scarce (i.e., λ = 0.1%),
+a good defender allocates all the resources to recovery measures.
+As the total resources increase, a wise defender will quickly shift
+their focus from recovery measures to protection measures and then
+gradually back to recovery measures. Specifically, as total resources
+increase, the optimal allocation ratio θ ∗
+p first increases to a peak,
+then decreases. We have analyzed this nonlinear process in detail.
+In addition, different defense strategies significantly affect how the
+defender allocates the ratio. Overall, the recovery strategy has a
+greater impact on the optimal allocation ratio. When the recovery
+strategy is Low-Degree Recovery (LDR), the trough ofG∗ will appear
+later. Similarly, parameters such as τ and α also affect the optimal
+allocation ratio and network robustness. As τ continues to increase,
+a wise defender tends to allocate resources to recovery measures.
+Furthermore, as τ increases, the optimal network robustness that
+can ultimately be achieved typically shows a downward trend. As
+the redundancy factor α increases, a good defender will be more
+inclined to allocate more resources to recovery measures. We also
+analyzed the corresponding results in an ER network. When α is
+small, G∗ of the ER network is extremely small. Compared with the
+optimal allocation ratio in BA networks, that in ER networks is less
+affected by changes in the cost parameters τ and defense strategies.
+This work can provide insights to help defenders better allocate
+resources from a statistical analysis perspective. In addition, there is
+still some work worth further research, such as developing a game
+model of defenders with protection and recovery measures vs attack-
+ers. This involves simulating how attackers dynamically adjust their
+attack strategies in response to the allocation of defense resources.
+This helps defenders better allocate resources when facing complex,
+evolving attacks in the real world.
+ACKNOWLEDGMENTS
+This work was partially supported by the National Natural
+Science Foundation of China under Grant No. 62176080.
+AUTHOR DECLARATIONS
+Conﬂict of Interest
+The authors have no conflicts to disclose.
+Author Contributions
+Wei Chen: Conceptualization (equal); Data curation (equal);
+Formal analysis (equal); Funding acquisition (equal); Investiga-
+tion (equal); Methodology (equal); Project administration (equal);
+Resources (equal); Software (equal); Supervision (equal); Vali-
+dation (equal); Visualization (equal); Writing – original draft
+(equal); Writing – review & editing (equal). Jingrui Wang: Soft-
+ware (equal); Supervision (equal); Validation (equal); Visualization
+(equal); Writing – original draft (equal); Writing – review & edit-
+ing (equal). Yongxiang Xia: Conceptualization (equal); Data cura-
+tion (equal); Formal analysis (equal); Funding acquisition (equal).
+Zhen Wang: Investigation (equal); Methodology (equal); Project
+administration (equal); Resources (equal).
+DATA AVAILABILITY
+Data sharing is not applicable to this article as no new data were
+created or analyzed in this study.
+REFERENCES
+1B. Li, S. Gao, Y. Liang, Y. Kang, T. Prestby, Y. Gao, and R. Xiao,
+Sci. Rep. 10(1),
+2647 (2020).
+2H. Tu, Y. Xia, H. H.-C. Iu, and X. Chen, IEEE Trans. Circuits Syst II Express
+Briefs 66(1), 126–130 (2018).
+3S. Bi, Y. Zeng, and R. Zhang, IEEE Wireless Commun. 23(2), 10–18 (2016).
+4P. Erd˝os and A. Rényi, Publ. Math. Debrecen 6, 290–297 (1959).
+5D. J. Watts and S. H. Strogatz, Nature 393(6684), 440–442 (1998).
+6A.-L. Barabási and R. Albert, Science 286(5439), 509–512 (1999).
+7L. Jiang, Y. Jia, C. Zhang, W. Wang, and X. Feng, Sustainable Comput. Inf. Syst.
+21, 72–79 (2019).
+8M. Rafiq, A. R. Nizami, D. Baleanu, and N. Ahmad, Alexandria Eng. J. 62, 75–83
+(2023).
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-11
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13
+
+
+--- PDF PAGE 13 ---
+Chaos ARTICLE pubs.aip.org/aip/cha
+9J. Liu, Y. Li, C. Li et al., in 2011 International Conference on E-Business and E-
+Government (ICEE) (IEEE, 2011), pp. 1–4.
+10D. Burpee et al., “US-Canada power system outage task force: Final report on
+the implementation of task force recommendations,” U.S.-Canada Power Syst em
+Outage Task Force, CA0601754, 2006, see https://www.osti.gov/etdeweb/biblio/
+20800522 (accessed 15 September 2006).
+11M. Mazzocchi, F. Hansstein, and M. Ragona, CESifo Forum 11(2), 92–100
+(2010).
+12A. Kwasinski, Technical Report PR-AK-0112-2012 (The University of Texa s at
+Austin, 2012).
+13R. Albert, H. Jeong, and A.-L. Barabási,
+Nature 406(6794), 378–382 (2000).
+14J. Wang, L. Rong, L. Zhang, and Z. Zhang, Physica A 387(26), 6671–6678
+(2008).
+15A. E. Mottor and Y.-C. Lai,
+Phys. Rev. E 66, 065102 (2002).
+16W. Zhang, Y. Xia, B. Ouyang, and L. Jiang, Physica A 435, 80–88 (2015).
+17T. Liu, G. Bai, J. Tao, Y.-A. Zhang, Y. Fang, and B. Xu, Reliab. Eng. Syst. Saf.
+226, 108663 (2022).
+18S. Xu, H. Tu, and Y. Xia, Reliab. Eng. Syst. Saf. 229, 108830 (2023).
+19V. Carchiolo, M. Grassia, A. Longheu, M. Malgeri, and G. Mangioni, Comput.
+Social Netw. 6, 1–16 (2019).
+20Z. Wu, J. Yang, Y. Fan, J. Zhou, and C. Yu, Chaos 34(12), 123149 (2024).
+21Z. Shi, Y. Wang, H. Li, G. Feng, and C. Fu, Sci. Rep. 14(1), 10547 (2024).
+22J. Guo, H. Liu, T. Liu, G. Song, and B. Guo, Mathematics 12(17), 2615
+(2024).
+23Y.-C. Lai, A. E. Motter, and T. Nishikawa, in Complex Networks (Springer,
+2004), pp. 299–310.
+24X. Zhang, G. Xu, and Y. Xia,
+Physica A 492, 2198–2204 (2018).
+25J. Wang, Saf. Sci. 53, 219–225 (2013).
+26Y.-P. Li, Y. Xiao, Y. Li, and J. Wu, IEEE Access 6, 56214–56221 (2018).
+27M. Dziubi´nski and S. Goyal, Theor. Econ. 12(1), 331–376 (2017).
+28D. Velusamy and G. K. Pugalendhi, Inf. Sci. 479, 542–566 (2019).
+29G. Chen, Z. Y. Dong, D. J. Hill, and Y. S. Xue, IEEE Trans. Power Syst. 26(3),
+1000–1009 (2011).
+30Y.-P. Li, Y. Deng, Y. Xiao, and J. Wu,
+J. Syst. Sci. Complexity 32(6), 1630–1640
+(2019).
+31A. E. Motter,
+Phys. Rev. Lett. 93(9), 098701 (2004).
+32Y. Shang, Sci. Rep. 6(1), 30521 (2016).
+33J. Wu, Z. Chen, Y. Zhang, Y. Xia, and X. Chen, IEEE Trans. Netw. Sci. Eng. 7(4),
+2997–3007 (2020).
+34W. Sun and A. Zeng,
+Eur. Phys. J. B 90(1), 10 (2017).
+35H. Peng, Z. Kuang, D. Zhao, B. Zhang, C. Qian, M. Zhong, J. Han, and W.
+Wang, Chaos 34(7), 073113 (2024).
+36R. J. Campbell, see https://everycrsreport.com/reports/R42696.html for “CRS
+Report R42696 [Online]” (accessed 28 Augest 2012).
+37P. Erd˝os and A. Rényi, Publ. Math. Inst. Hung. Acad. Sci. 5(1), 17–60 (1960).
+38X.-F. Wang and G. Chen,
+IEEE Circuits Syst. Mag. 3(1), 6–20 (2003).
+39C. Shi, Y. Li, J. Zhang, Y. Sun, and P. S. Yu, IEEE Trans. Knowl. Data Eng. 29(1),
+17–37 (2017).
+40L. C. Freeman, in Social Network: Critical Concepts in Sociology (Routledge,
+2002), Vol. 1, pp. 238–263.
+41C. Wang and Y. Xia,
+IEEE Access 8, 172398–172404 (2020).
+42R. H. Gaffan, I. M. Diop, N. K. Aidara, C. Diallo, and H. Cherifi, in French
+Regional Conference on Complex Systems (Springer, 2024).
+43Z. Jin, J. Zhang, Z. Zhu, and H. Chen, in Proceedings of the Network and
+Distributed System Security Symposium (IEEE, 2024), pp. 1–16.
+44Y.-P. Li, S.-Y. Tan, Y. Deng, and J. Wu, Chaos 28(5), 051102 (2018).
+45H. Mo and G. Sansavini, IEEE Trans. Reliab. 66(4), 1253–1265 (2017).
+46L. Wei, A. I. Sarwat, W. Saad, and S. Biswas, IEEE Trans. Smart Grid 9(2),
+684–694 (2018).
+47Z.-Y. Jiang, Y. Zeng, Z.-H. Liu, and J.-F. Ma,
+Physica A 514, 121–132 (2019).
+48C. Hong, N.-Y. Yin, N. He, O. L. González, and J. M. Sallán Leyes, Int.
+J. Comput. Intell. Syst. 10(1), 1330–1336 (2017).
+Chaos 35, 123136 (2025); doi: 10.1063/5.0267934 35, 123136-12
+Published under an exclusive license by AIP Publishing
+ 24 October 2026 17:02:13

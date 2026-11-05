@@ -1,0 +1,1885 @@
+
+--- PDF PAGE 1 ---
+ 
+Contents lists available at ScienceDirect
+Computer Communications
+journal homepage: www.elsevier.com/locate/comcom  
+Analysis of attack-defense game for advanced malware propagation control 
+in cloud
+Liang Tian a, Chenquan Gan a,b
+ ,∗, Jiabin Lin b, Fengjun Shang a, Qingyi Zhu b
+a School of Computer Science and Technology, Chongqing University of Posts and Telecommunications, Chongqing 400065, China
+b School of Cyber Security and Information Law, Chongqing University of Posts and Telecommunications, Chongqing 400065, China
+A R T I C L E  I N F O
+Keywords:
+Cloud
+Advanced malware
+Propagation control
+Attack-defense game
+Nash equilibrium
+Algorithm
+ A B S T R A C T
+In modern society, cloud computing has emerged as an indispensable infrastructure. Nevertheless, as the cloud 
+ecosystem grows increasingly vast and complex, a series of novel security challenges have surfaced, among 
+which artificial intelligence (AI)-empowered advanced malware has provided network attackers with even 
+more stealthy and potent weapons. While existing malware detection technologies can still maintain a certain 
+level of defense against traditional security threats, the instant detection and response to these sophisticated 
+AI-crafted threats become exceedingly difficult, consuming substantial remediation time and security resources. 
+To address the balance between control costs and effectiveness, recognizing the intricately intertwined and 
+dynamically interactive nature of the offensive and defensive parties, this paper introduces the framework 
+of differential game theory, delving into the strategies for controlling the propagation of advanced malware 
+in cloud environments. Firstly, we construct an advanced malware propagation control model targeting each 
+virtual machine. On this basis, we define the specific categories of strategy selection for both the offensive 
+and defensive sides, as well as their respective cost-benefit relationships, and formulate an attack-defense 
+game problem. Subsequently, we rigorously demonstrate, from a mathematical theoretical perspective, that 
+the optimal solution (i.e., Nash equilibrium) to the attack-defense game problem is indeed attainable, and 
+we devise a dedicated accelerated algorithm for its solution. Finally, we conduct comparative experiments on 
+three real-world datasets using three distinct strategies, and the analysis results show the effectiveness of our 
+proposed method.
+1. Introduction
+With the gradual advancement of digital transformation, cloud com-
+puting and its applications have become information technology (IT) 
+infrastructure. Indeed, this transformation has brought users unprece-
+dented advantages such as scalability and flexibility, but the increasing 
+complexity of cloud environments has also posed new security chal-
+lenges [1]. For example, virtualization technology, as one of the core 
+driving forces in cloud computing, has profound significance in com-
+pletely overturning time and space limitations of traditional computing 
+resources [2]. Through virtual machines (VMs), flexible and efficient 
+solutions are tailored for diverse application scenarios, accurately con-
+necting and meeting the diverse needs of users [3,4]. However, while 
+enjoying unprecedented convenience and flexibility, there are also a 
+series of potential security risks that cannot be ignored, which pose a 
+serious challenge to the stability and secure operation of cloud environ-
+ments [5]. According to a research report by Check Point, cloud-based 
+∗ Corresponding author at: School of Cyber Security and Information Law, Chongqing University of Posts and Telecommunications, Chongqing 400065, China.
+E-mail addresses: besttianliang@gmail.com (L. Tian), gcq2010cqu@163.com (C. Gan), s210101083@stu.cqupt.edu.cn (J. Lin), shangfj@cqupt.edu.cn 
+(F. Shang), zhuqy@cqupt.edu.cn (Q. Zhu).
+network attacks surged by 48% year-on-year in 2022, with 61% of 
+organizations reporting experiencing vulnerability attacks in 2023. This 
+trend highlights the escalating risk situation in cloud environments.
+In recent years, the swift progress of artificial intelligence (AI) 
+technology has significantly transformed the landscape of network se-
+curity. This transformation has ushered in revolutionary changes, albeit 
+being concomitant with emerging challenges, notably the increased 
+prevalence of advanced malware. [6]. AI, as a double-edged sword in 
+network security, can significantly improve the efficiency of discover-
+ing and detecting network threats with its powerful data processing 
+and pattern recognition capabilities, and build a solid protective wall 
+for users [7,8]. However, on the other hand, the abuse of intelligent 
+technology has also opened up new battlefields for attackers, who use 
+AI to build more complex and varied attack methods, doubling the 
+difficulty of monitoring and defending against network attacks [9]. 
+With astonishing concealment and precision, these carefully designed 
+https://doi.org/10.1016/j.comcom.2025.108148
+Received 31 August 2024; Received in revised form 20 January 2025; Accepted 15 March 2025
+Computer Communications 237 (2025) 108148 
+Available online 26 March 2025 
+0140-3664/© 2025 Elsevier B.V. All rights are reserved, including those for text and data mining, AI training, and similar technologies. 
+
+--- PDF PAGE 2 ---
+L. Tian et al.
+threats cleverly bypass traditional security measures and infiltrate ev-
+ery corner of networks and systems [10]. Therefore, the competition 
+in network security has quietly moved from simple human-to-machine 
+confrontation to a new stage of attack and defense game based on 
+highly intelligent technology. In the face of this continuously upgrading 
+security situation, it is not only necessary to have a deep understanding 
+of the evolution laws and core characteristics of advanced malware, but 
+also to be brave enough to innovate and develop prevention strategies 
+that go beyond traditional frameworks [11].
+Undoubtedly, malware detection technology has demonstrated sig-
+nificant effectiveness in the current security landscape, continuously 
+attracting profound attention from academia [12]. Nevertheless, in the 
+face of increasingly sophisticated and diversified advanced malware 
+empowered by AI, particularly the emergence of novel threats such as 
+zero-day attacks, existing detection methods struggle to contain their 
+spread across networks [13], let alone accurately quantify the propaga-
+tion patterns, control costs, and actual effects of advanced malware in 
+cyberspace [14]. In response to this challenge, numerous scholars have 
+innovatively drawn upon strategies for controlling biological infectious 
+diseases, turning to the powerful tool of mathematical modeling to 
+delve into the control mechanisms of malware propagation [15]. This 
+interdisciplinary research perspective aims to uncover the dynamic 
+behavioral patterns of malware within the network ecosystem by con-
+structing precise mathematical models [16]. However, it is noteworthy 
+that most current research tends to be confined to a single perspective 
+either emphasizing the optimization of defensive strategies or focusing 
+on analyzing the behavioral patterns of attackers, rarely placing both 
+within the same framework to comprehensively consider their mutual 
+interactions and influences. This limitation in perspective may hinder 
+the comprehensiveness and practicality of research outcomes, as in 
+real-world cyber offensive-defensive confrontations, attack and defense 
+are intricately interconnected and dynamically shaped by each other.
+Concerning the above discussions, this paper focuses on employing 
+mathematical modeling techniques to deeply explore effective control 
+strategies for the propagation of advanced malware in cloud envi-
+ronments. Specifically, given the complex and dynamic interactions 
+between attackers and defenders, especially when attackers leverage 
+AI technologies to enhance their capabilities, we adopt an attack-
+defense game framework to describe the evolution of attack-defense 
+confrontations. By constructing a detailed game model, we not only 
+consider the diversity of strategic choices for both parties but also delve 
+into the profound impact of AI-empowered attack strategies on the 
+formulation of defense strategies. Subsequently, mathematical proofs 
+and solution algorithms are applied to conduct a meticulous analysis 
+of this attack-defense game, aiming to theoretically reveal an optimal 
+combination of attack and defense strategies.
+The essential contributions of this paper are succinctly outlined 
+below.
+(1) We propose an advanced malware propagation control model 
+for each virtual machine (VM) that can accurately portray the 
+dynamic interplay between attacks launched by AI-empowered 
+advanced malware and defense mechanisms within a cloud en-
+vironment.
+(2) We meticulously articulate the precise scopes of strategic choices 
+undertaken by both the attacking and defending parties, along 
+with their respective cost-benefit relationships, thereby formu-
+lating a comprehensive attack-defense game problem frame-
+work.
+(3) We conclusively prove the achievability of the optimal solution 
+in the attack-defense game problem and develop a tailored algo-
+rithm that can efficiently accelerate the process of discovering 
+this optimal solution.
+The remainder of this paper is structured as follows: Section 2 
+provides an overview of the relevant literature. Section 3 presents the 
+advanced malware propagation control model. Sections 4 and 5 outline 
+the problem of the attack-defense game and its solutions, respectively. 
+Section 6 describes experimental procedures. Finally, Section 7 gives 
+the conclusions.
+2. Related work
+With the rapid advancements in digital technology, malware has 
+quietly established itself as a significant challenge within cloud com-
+puting. To effectively counter this threat, malware detection technology 
+continues to ignite profound interest and in-depth research within the 
+academic community. Rao and Jain [17] conducted a detailed malware 
+analysis in cloud environments. Patil et al. [18] developed a hybrid 
+architecture for securing VMs of the cloud. Nissim et al. [19] proposed a 
+dedicated method specifically designed for trusted and secure detection 
+of emerging and unidentified malware instances on VMs in private 
+cloud infrastructure. Due to the rapid development and widespread 
+application of AI technology, Patel et al. [20] suggested adopting 
+machine learning methods to prevent cloud malware attacks. In con-
+trast, Gao et al. [21] adopted the semi-supervised transfer learning 
+method. Additionally, the work [22–26] also applied deep learning 
+techniques for malware detection to improve the accuracy of malware 
+identification.
+However, the field of malware is experiencing an unprecedented 
+wave of evolution over time [27], particularly the rise of advanced 
+malware empowered by AI. This new type of threat greatly exacer-
+bates the difficulty of defense, forcing organizations to invest huge 
+repair time and security budgets to respond [9]. With its intricately 
+designed complexity and innovation, advanced malware employs diver-
+sified infiltration strategies and technical means to penetrate systems 
+silently [6]. They cleverly evade detection by traditional security de-
+fenses. They can even penetrate sandbox environments specifically 
+constructed for dynamic malware analysis, demonstrating remarkable 
+stealth and adaptability that pose unprecedented challenges to network 
+security protection [11].
+In light of this, to address the shortcomings of malware detection 
+technology, scholars have studied the propagation behavior of mal-
+ware in cloud environments. Against this backdrop, Abazari et al. [2] 
+demonstrated remarkable ingenuity by pioneering the introduction of 
+the concept of epidemic modeling from biological epidemiology into 
+the realm of cloud computing. They creatively proposed a malware 
+dynamical model tailored for cloud environments, thereby opening 
+up a new avenue for deepening our understanding of and effectively 
+containing the proliferation of malware in the cloud. On this basis, 
+Gan et al. [16] extended the malware dynamical model to an infected 
+cloud environment. Later, Del Rey et al. [28] used the mathematical 
+modeling method to study the spread of advanced malware over ran-
+dom complex networks, Dong et al. [29] developed a SIRS malware 
+propagation model tailored for a controlled fractional network, offering 
+an improved understanding of how malicious entities attack wireless 
+sensor networks. However, these studies do not consider the cost and 
+effectiveness of controlling the spread of malware. To this end, Tian 
+et al. [14] proposed an optimal control model for malware propagation 
+in the cloud, but only from a defensive perspective, ignoring the 
+influence of the attacking side. Also, the work [30–32] investigated the 
+optimal control of malware propagation but not in cloud environments. 
+Considering the mutual influence between the offensive and defensive 
+sides, the work [33–37] attempted to simulate malware propagation 
+control using game theory. Unfortunately, they do not take into account 
+cloud environments. Additionally, Gill et al. [38] examined current 
+research and investigated how game theory models can be applied 
+to tackle security challenges in cloud environments. Gill et al. [39] 
+presented a non-cooperative game theory model designed to aid In-
+trusion Detection Systems (IDS) in a cloud environment, analyzing the 
+strategies employed by both attackers and defenders. Consequently, 
+game theory models offer potential solutions for malware control in 
+cloud environments.
+Computer Communications 237 (2025) 108148 
+2 
+
+--- PDF PAGE 3 ---
+L. Tian et al.
+Table 1
+Comparison of related work.
+ References Scenarios Methods Advances Drawbacks  
+ [19–26] Malware attacks in cloud 
+environments.
+Malware detection 
+using machine learning 
+and deep learning.
+Greater accuracy and adaptability in cybersecurity are 
+achieved through automatic feature extraction, deep 
+learning applications, dataset construction, adversarial 
+protection, real-time detection, and enhanced 
+interpretability.
+Malware upgrades make it 
+stealthy and adaptable to 
+evade detection by such 
+security defenses.
+ 
+ [2,16,28,29] Malware spread control in 
+complex networks and 
+cloud environments.
+Malware propagation 
+modeling using 
+propagation dynamics.
+It describes the spread of malware in complex 
+networks and deepens our understanding of the 
+spread of malware in cloud environments.
+The cost and effectiveness 
+of controlling the spread of 
+malware are not 
+considered.
+ 
+ [14,30–32] Malware control in 
+complex networks and 
+cloud environments.
+Malware propagation 
+control using optimal 
+control theory.
+To control the spread of malicious software from the 
+defenders’ perspective, the optimal control conditions 
+are proposed to contain the spread of malware.
+From a defensive point of 
+view, ignore the influence 
+of the offensive side.
+ 
+ [33–37] Spread control of malware 
+in complex networks with 
+both sides present.
+Malware propagation 
+control using game 
+theory.
+The evolution of attack and defense strategies has 
+transitioned from a single approach to a more 
+comprehensive and complex one. Strategy functions 
+and evolutionary models now capture real network 
+factors. The accuracy of transmission control is 
+improved.
+The cloud environment is 
+not considered.
+ 
+Table  1 lists the comparison of related work. Inspired by the above-
+mentioned work, to consider advanced malware propagation control 
+in cloud environments, this paper adopts a differential game method 
+to simulate the dynamic interaction and evolution process of advanced 
+malware between the attacking and defending sides. This move aims 
+to provide a solid theoretical foundation and practical guidance for un-
+derstanding, predicting, and effectively containing such threats through 
+the rigor of mathematical models.
+3. Advanced malware propagation control model
+This section will provide a detailed introduction to the advanced 
+malware propagation control model, including background and moti-
+vation, parameter symbol definition, and model description.
+3.1. Background and motivation
+With the swift advancements in information technology, cloud 
+computing has played a pivotal role in the daily lives of individ-
+uals by leveraging virtual technology to provide users with an all-
+encompassing, flexible, and convenient service platform. However, 
+concurrently, attacks targeting cloud environments have become in-
+creasingly rampant, posing a security challenge that cannot be ignored. 
+Although existing malware detection technologies can effectively resist 
+traditional threats to some extent, they are inadequate when facing 
+advanced malware empowered by AI. Such advanced malware is not 
+only difficult to detect promptly but also capable of stealthily prop-
+agating within the cloud, with its complex behavioral patterns and 
+dynamics making it a significant challenge to balance control costs and 
+effectiveness.
+In light of this, this paper takes an innovative approach by introduc-
+ing the methodology of epidemic spread modeling, aiming to deeply 
+analyze and effectively control the spread of cloud-advanced malware 
+through this interdisciplinary perspective. Furthermore, it ingeniously 
+integrates game theory principles, considering the strategic interactions 
+between security defenders and attackers, to construct a more realistic 
+and dynamically evolving prevention and control model. This endeavor 
+not only helps uncover the underlying propagation mechanisms of 
+advanced malware in cloud environments but also more precisely 
+delineates the delicate relationship between cost control and protection 
+effectiveness, offering novel insights and solutions for research and 
+practice in cloud security.
+3.2. Parameter symbol definition
+At time 𝑡, the definition of parameter symbols is as follows, which 
+will be used in the subsequent introduction.
+𝐺 = (𝑉 , 𝐸): A graph depicting advanced malware propagation net-
+work structure in the cloud.
+𝑉 = { 𝑣1, 𝑣2, … , 𝑣𝑁 }: The node set of 𝐺 = (𝑉 , 𝐸) corresponding to 
+VMs in the cloud.
+𝐸: The edge set of 𝐺 = (𝑉 , 𝐸) denoting information interaction 
+relationships between VMs in the cloud.
+𝐀 = ( 𝑎𝑖𝑗 )𝑁×𝑁 : The adjacency matrix of 𝐺 = (𝑉 , 𝐸), if (𝑣𝑖, 𝑣𝑗 ) ∈ 𝐸, 
+then 𝑎𝑖𝑗 = 1, otherwise 𝑎𝑖𝑗 = 0.
+𝛼𝐶𝐷 (𝑡): The probability of a conscious node transitioning into an 
+infected state due to the direct influence of the attacker.
+𝛽𝐶𝐷 (𝑡): The probability of a conscious node becoming an infected 
+state as a result of interactions with already infected nodes.
+𝛼𝑈 𝐷(𝑡): The probability of an unconscious node becoming an in-
+fected state because of the direct influence of the attacker.
+𝛽𝑈 𝐷(𝑡): The probability of an unconscious node transitioning into an 
+infected state due to interactions with infected nodes.
+𝜃𝐷𝐶 (𝑡): The probability of an infected node becoming a conscious 
+state due to the efforts of the defender.
+𝛾𝐷𝐶 (𝑡): The probability of an infected node transitioning into a 
+conscious state through interactions with conscious nodes.
+𝜃𝑈 𝐶(𝑡): The probability of an unconscious node becoming conscious 
+due to the efforts of the defender.
+𝛾𝑈 𝐶(𝑡): The probability of an unconscious node transitioning into a 
+conscious state as a result of interactions with conscious nodes.
+3.3. Model description
+Cloud services rely extensively on virtualization technology as their 
+solid foundation, with the core of this technology centered on the 
+construction and flexible deployment of VMs. However, while this fea-
+ture provides users with the convenience of installing diverse software 
+applications and uploading a plethora of content such as documents, 
+images, and videos, it also inadvertently creates potential avenues 
+for the concealment and dissemination of malware within the cloud 
+environment.
+Similar to the research scopes of Refs. [2,16], we also focus on 
+the propagation mechanisms of malware within VM environments. 
+However, our research approach adopts a more refined path. Specif-
+ically, rather than analyzing VMs as a generalized category, we delve 
+into each VM as an independent unit of study. This strategy enables 
+us to capture and characterize, with unprecedented granularity, the 
+specific state changes of each VM at different time points, thereby 
+Computer Communications 237 (2025) 108148 
+3 
+
+--- PDF PAGE 4 ---
+L. Tian et al.
+Fig. 1. The node state transition diagram.
+achieving a more precise and comprehensive understanding of malware 
+propagation behaviors.
+Under normal circumstances, upon the successful detection of an 
+advanced malware attack launched by an attacker utilizing AI tech-
+nology at time 𝑡 = 0 , the defender will promptly initiate and execute 
+a series of countermeasures within the subsequent period of [0, 𝑇 ]. 
+For ease of description, each VM is considered as a node, and its 
+state is categorized into three major types at time 𝑡: firstly, being 
+in an infected state (i.e., infected); secondly, possessing a state of 
+preventive awareness (i.e., conscious); and thirdly, lacking a state of 
+preventive awareness (i.e., unconscious). Furthermore, let 𝑋𝑖(𝑡) and 
+𝐗(𝑡) = ( 𝑋1(𝑡), 𝑋2(𝑡), … , 𝑋𝑁 (𝑡)) respectively represent the state of node 
+𝑣𝑖 and 𝐺 = (𝑉 , 𝐸), and let 𝑋𝑖(𝑡) = 0 , or 1, or 2 represent that 𝑣𝑖 is 
+in the state of unconscious, or conscious, or infected with probability 
+𝑈𝑖(𝑡), 𝐶𝑖(𝑡), and 𝐼𝑖(𝑡), respectively. Then, one can get 
+𝑈𝑖(𝑡) + 𝐶𝑖(𝑡) + 𝐼𝑖(𝑡) = 1 , (1)
+𝑈𝑖(𝑡) = Pr { 𝑋𝑖(𝑡) = 0 } , 𝐶𝑖(𝑡) = Pr { 𝑋𝑖(𝑡) = 1 } , 𝐼𝑖(𝑡) = Pr { 𝑋𝑖(𝑡) = 2 } . (2)
+Firstly, the impact of attack and defense behaviors on the state 
+of virtual machines is considered. The attacker aims to infect secure 
+virtual machines with malware. This influence is reflected in the tran-
+sitions of the unconscious state 𝑈𝑖(𝑡) and the conscious state 𝐶𝑖(𝑡), which 
+are converted into the infected state with probabilities 𝛼𝑈 𝐷(𝑡) and 
+𝛼𝐶𝐷 (𝑡), respectively. Conversely, the defender aims to repair infected 
+virtual machines and enhance defense awareness. This is achieved 
+by transitioning the infected state 𝐼𝑖(𝑡) to the conscious state with 
+probability 𝜃𝐷𝐶 (𝑡), and converting the unconscious state 𝑈𝑖(𝑡) to the 
+conscious state with probability 𝜃𝑈 𝐶(𝑡). 
+Secondly, the impact of interactions between devices on the state of 
+virtual machines is analyzed. The information interaction relationship 
+between virtual machines is denoted by 𝛼𝑖𝑗 ∈ {0, 1}, where 𝛼𝑖𝑗 = 1
+indicates that device 𝑖 can interact with device 𝑗 can interact, and 
+𝛼𝑖𝑗 = 0 indicates that no interaction occurs. The interactions between 
+devices affect state transitions, and it is assumed that this effect is 
+linearly additive. Specifically, at any given time 𝑡 ∈ [0, 𝑇 ], the uncon-
+scious state 𝑈𝑖(𝑡) and the conscious 𝐶𝑖(𝑡) transition to the infected state 
+due to interactions with infected devices, with average probabilities 
+𝛽𝑈 𝐷(𝑡) ∑𝑁
+𝑗=1 𝑎𝑖𝑗 𝐼𝑗 (𝑡) and 𝛽𝐶𝐷 (𝑡) ∑𝑁
+𝑗=1 𝑎𝑖𝑗 𝐼𝑗 (𝑡), respectively. Similarly, due 
+to interactions with conscious states, the unconscious state 𝑈𝑖(𝑡) and 
+the infected state 𝐼𝑖(𝑡) transition to the conscious state with average 
+probabilities 𝛾𝑈 𝐶(𝑡) ∑𝑁
+𝑗=1 𝑎𝑖𝑗 𝐶𝑗 (𝑡) and 𝛾𝐷𝐶 (𝑡) ∑𝑁
+𝑗=1 𝑎𝑖𝑗 𝐶𝑗 (𝑡), respectively.
+Considering the combined effects of attack and defense behav-
+iors and device interactions, the states of nodes dynamically evolve, 
+as illustrated in Fig.  1. Based on the node-level modeling approach 
+with complete network structural characteristics, the evolution of node 
+states over time follows a continuous-time Markov chain. According to 
+the state transition diagram and the Kolmogorov forward equation of 
+the Markov chain [40], the expected state evolution of the network 
+adheres to the following differential dynamical system (3), which can 
+be regarded as a node-based malware propagation model. 
+⎧
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎨
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪⎩
+𝑑𝐼𝑖(𝑡)
+𝑑𝑡 =
+[
+𝛼𝑈 𝐷(𝑡) + 𝛽𝑈 𝐷(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝑈𝑖 (𝑡) +
+[
+𝛼𝐶𝐷 (𝑡) + 𝛽𝐶𝐷 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝐶𝑖 (𝑡)
+−
+[
+𝜃𝐷𝐶 (𝑡) + 𝛾𝐷𝐶 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝐼𝑖(𝑡),
+𝑑𝐶𝑖 (𝑡)
+𝑑𝑡 =
+[
+𝜃𝑈 𝐶(𝑡) (𝑡) + 𝛾𝑈 𝐶(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝑈𝑖 (𝑡) +
+[
+𝜃𝐷𝐶 (𝑡) + 𝛾𝐷𝐶 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝐼𝑖(𝑡)
+−
+[
+𝛼𝐶𝐷 (𝑡) + 𝛽𝐶𝐷 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝐶𝑖 (𝑡) ,
+𝑑𝑈𝑖 (𝑡)
+𝑑𝑡 = −
+[
+𝛼𝑈 𝐷(𝑡) + 𝛽𝑈 𝐷(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝑈𝑖 (𝑡) −
+[
+𝜃𝑈 𝐶(𝑡) (𝑡) + 𝛾𝑈 𝐶(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝑈𝑖 (𝑡) ,
+(3)
+with 𝑖 ∈ [1, 𝑁], 𝑡 ∈ [0, 𝑇 ], and 𝑈𝑖(0), 𝐶𝑖(0), 𝐼𝑖(0) ∈ [0 , 1].
+Note that 𝑈𝑖(𝑡) + 𝐶𝑖(𝑡) + 𝐼𝑖(𝑡) = 1 . Hence, the system defined in (3) 
+can be simplified as outlined below. 
+⎧
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎨
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪⎩
+𝑑𝐼𝑖(𝑡)
+𝑑𝑡 =
+[
+𝛼𝑈 𝐷(𝑡) + 𝛽𝑈 𝐷(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+[1 − 𝐶𝑖 (𝑡) − 𝐼𝑖(𝑡)]
++
+[
+𝛼𝐶𝐷 (𝑡) + 𝛽𝐶𝐷 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝐶𝑖 (𝑡) −
+[
+𝜃𝐷𝐶 (𝑡) + 𝛾𝐷𝐶 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝐼𝑖(𝑡),
+𝑑𝐶𝑖 (𝑡)
+𝑑𝑡 =
+[
+𝜃𝑈 𝐶(𝑡) (𝑡) + 𝛾𝑈 𝐶(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+[1 − 𝐶𝑖 (𝑡) − 𝐼𝑖(𝑡)]
++
+[
+𝜃𝐷𝐶 (𝑡) + 𝛾𝐷𝐶 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝐼𝑖(𝑡) −
+[
+𝛼𝐶𝐷 (𝑡) + 𝛽𝐶𝐷 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝐶𝑖 (𝑡)
+(4)
+with 𝑖 ∈ [1, 𝑁], 𝑡 ∈ [0, 𝑇 ], and 𝐶𝑖(0), 𝐼𝑖(0) ∈ [0 , 1].
+4. Attack-defense game problem
+Given that both attackers and defenders pursue the minimization 
+of costs and maximization of benefits, this dynamic process precisely 
+aligns with the core principles of game theory. To cope with this 
+offensive and defensive process, we need to understand various attack 
+and defense strategies, as well as the consequences they may bring. 
+Therefore, based on the established advanced malware propagation 
+control model, we will systematically and thoroughly analyze this 
+offensive and defensive process.
+4.1. Definition of attack and defense strategies
+Attack strategy encapsulates the multifaceted actions employed by 
+an attacker to breach the defenses of a system. It spans a spectrum, 
+commencing with rudimentary probing maneuvers and escalating to 
+intricate malware assaults. Conversely, defense strategy outlines the 
+proactive objectives pursued by the defender, centered on identifying 
+and mitigating potential threats before they can inflict harm. This 
+necessitates the deployment of a robust security arsenal, encompassing 
+firewalls to erect barriers, antivirus software to neutralize malicious 
+content, and monitoring systems to maintain vigilance. The ultimate 
+aim of the defender’s strategy is to swiftly detect and thwart attacks, 
+swiftly recover from any breaches that occur, and minimize the overall 
+impact and potential losses incurred.
+By examining systems defined in (3) and (4), it is evident that 
+parameters 𝛼𝑈 𝐷(𝑡), 𝛼𝐶𝐷 (𝑡), 𝛽𝑈 𝐷(𝑡), 𝛽𝐶𝐷 (𝑡) confer advantages to the at-
+tacker, while 𝜃𝑈 𝐶(𝑡), 𝜃𝐷𝐶 (𝑡), 𝛾𝑈 𝐶(𝑡), 𝛾𝐷𝐶 (𝑡) are beneficial to the defender. 
+Let 𝛼 = ( 𝛼𝑈 𝐷, 𝛼𝐶𝐷 ), 𝛽 = ( 𝛽𝑈 𝐷, 𝛽𝐶𝐷 ), 𝜃 = ( 𝜃𝑈 𝐶, 𝜃𝐷𝐶 ), 𝛾 = ( 𝛾𝑈 𝐶, 𝛾𝐷𝐶 ). 
+For any 𝑡 within the interval [0, 𝑇 ], define functions 𝐴(𝑡) and 𝐷(𝑡)
+respectively as attack and defense strategies. These strategies can be 
+Computer Communications 237 (2025) 108148 
+4 
+
+--- PDF PAGE 5 ---
+L. Tian et al.
+mathematically formulated as outlined below. 
+𝐴(𝑡) = ( 𝛼1(𝑡), … , 𝛼𝑁 (𝑡), 𝛽1(𝑡), … , 𝛽𝑁 (𝑡)) , (5)
+𝐷(𝑡) = ( 𝜃1(𝑡), … , 𝜃𝑁 (𝑡), 𝛾1(𝑡), … , 𝛾𝑁 (𝑡)) . (6)
+Moreover, let 𝛼𝑖, 𝛽𝑖, 𝜃𝑖, and 𝛾𝑖 signify the respective upper limits of 
+the functions 𝛼𝑖(𝑡), 𝛽𝑖(𝑡), 𝜃𝑖(𝑡), and 𝛾𝑖(𝑡). Analogously, assume that the 
+respective upper limits of 𝐴(𝑡) and 𝐷(𝑡) are 𝐴 and 𝐷. Here, 𝐴 =(
+𝛼1, … , 𝛼𝑁 , 𝛽1, … , 𝛽𝑁
+)
+ and 𝐷 =
+(
+𝜃1, … , 𝜃𝑁 , 𝛾1, … , 𝛾𝑁
+)
+. The following 
+feasible domains can subsequently be characterized as: 
+ =
+{
+𝐴| 𝐴(𝑡) ≤ 𝐴, 𝑡 ∈ [0, 𝑇 ]
+}
+, (7)
+ =
+{
+𝐷| 𝐷(𝑡) ≤ 𝐷, 𝑡 ∈ [0, 𝑇 ]
+}
+. (8)
+Subsequently, let us embark on a detailed exploration to identify the 
+optimal strategy pair within the confines of the sets  and , one that 
+harmoniously aligns with the shared aspiration of both the offensive 
+and defensive sides.
+4.2. Definition of attack and defense payoffs
+Now, let us further refine the quantitative analysis of attack and 
+defense payoffs. Attack payoffs, serving as the quantitative indicator of 
+attack effectiveness, measure the degree and efficiency of attackers in 
+achieving their predetermined goals. Specifically, attack payoffs refer 
+to the total revenue generated by attack actions, net of the costs re-
+quired to implement such actions. In contrast, defense payoffs focus on 
+evaluating the effectiveness of the defender in the face of potential or 
+actual attacks. Here, defense payoffs do not directly refer to the positive 
+income generated by defensive actions but rather to the total amount of 
+losses reduced or avoided through effective defense strategies. In other 
+words, defense payoffs represent the potential losses that the defender 
+avoids due to successfully withstanding attacks. This value, combined 
+with the costs invested in implementing defense measures, constitutes 
+the overall economic consideration of defensive actions.
+Let 𝜔𝐴
+𝑖 (𝑡) and 𝜔𝐷
+𝑖 (𝑡) respectively, the total gain accumulated by 
+attackers and total loss incurred by defenders at time 𝑡. Their respective 
+upper bounds are represented by 𝜔𝐴
+𝑖  and 𝜔𝐷
+𝑖 . Now, considering an 
+infinitely small time interval [𝑡, 𝑡 + 𝑑𝑡), if the attack on node 𝑣𝑖 is 
+successful, as indicated by 𝑋𝑖(𝑡) = 2 , the instantaneous attack benefit 
+is given by 𝜔𝐴
+𝑖 (𝑡)𝐼𝑖(𝑡)𝑑𝑡. Conversely, this benefit is zero if the attack on 
+node 𝑣𝑖 fails. Consequently, over the entire period [0, 𝑇 ], 𝑅𝐴(𝐴, 𝐷) (total 
+gain) and 𝐿𝐴(𝐴, 𝐷) (total loss) can be described as: 
+𝑅𝐴(𝐴, 𝐷) = ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜔𝐴
+𝑖 (𝑡)𝐼𝑖(𝑡)𝑑𝑡, (9)
+𝐿𝐴(𝐴, 𝐷) = ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜔𝐷
+𝑖 (𝑡)𝐼𝑖(𝑡)𝑑𝑡. (10)
+Let 𝜙, 𝜑, 𝜓, 𝜎 control the parameters 𝛼, 𝛽, 𝜃, 𝛾 , which indicate the 
+costs associated with different actions. Let 𝜙𝑖(𝛼𝑖(𝑡)) and 𝜑𝑖(𝛽𝑖(𝑡)) repre-
+sent the cost of an attacker directly targeting nodes and manipulating 
+infected nodes to conduct attacks, while let 𝜓𝑖(𝜃𝑖(𝑡)) and 𝜎𝑖(𝛾𝑖(𝑡)) rep-
+resent the costs incurred by a defender in direct defense of nodes and 
+manipulation of aware nodes to defend at time 𝑡. The upper bounds 
+of these parameters are denoted by 𝜙𝑖, 𝜑𝑖, 𝜓𝑖, 𝜎𝑖. During [𝑡, 𝑡 + 𝑑𝑡), 
+the cost for an attacker to target node 𝑣𝑖 for infection is given by 
+𝜙𝑈
+𝑖 (𝛼𝑈 𝐷(𝑡))𝑈𝑖(𝑡)𝑑𝑡 + 𝜙𝐶
+𝑖
+( 𝛼𝐶𝐷 (𝑡)) 𝐶𝑖 (𝑡) 𝑑𝑡. Additionally, the cost for an 
+attacker manipulating an infected node 𝑣𝑗 to attack node 𝑣𝑖 is expressed 
+as 𝑎𝑖𝑗 𝜑𝑈
+𝑖
+( 𝛽𝑈 𝐷(𝑡)) 𝑈𝑖𝐼𝑗 (𝑡)𝑑𝑡 + 𝑎𝑖𝑗 𝜑𝐶
+𝑖
+( 𝛽𝐶𝐷 (𝑡)) 𝐶𝑖𝐼𝑗 (𝑡)𝑑𝑡. These costs can be 
+further analyzed over the time interval [0, 𝑇 ] for the direct attacks 
+𝑃𝐶 (𝐴, 𝐷) and manipulation of infected nodes into attacking other nodes 
+𝑃𝑈 (𝐴, 𝐷) as shown in the following equations. 
+𝑃𝐶 (𝐴, 𝐷) = ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜙𝑈
+𝑖 (𝛼𝑈 𝐷(𝑡))𝑈𝑖(𝑡)𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜙𝐶
+𝑖
+( 𝛼𝐶𝐷 (𝑡)) 𝐶𝑖 (𝑡) 𝑑𝑡, (11)
+𝑃𝑈 (𝐴, 𝐷) = ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝜑𝑈
+𝑖
+( 𝛽𝑈 𝐷(𝑡)) 𝑈𝑖𝐼𝑗 (𝑡)𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝜑𝐶
+𝑖
+× ( 𝛽𝐶𝐷 (𝑡)) 𝐶𝑖𝐼𝑗 (𝑡)𝑑𝑡.
+(12)
+Similarly, within [𝑡, 𝑡+𝑑𝑡), the cost for defender recovering node 𝑣𝑖 to 
+maintain conscious is 𝜓 𝑈
+𝑖
+( 𝜃𝑈 𝐶(𝑡)) 𝑈𝑖 (𝑡) 𝑑𝑡 + 𝜓 𝐷
+𝑖
+( 𝜃𝐷𝐶 (𝑡)) 𝐼𝑖(𝑡)𝑑𝑡 and the 
+expense of defender manipulating conscious node 𝑣𝑗 to recover node 
+𝑣𝑖 is 𝑎𝑖𝑗 𝜎𝑈
+𝑖
+( 𝛾𝑈 𝐶(𝑡)) 𝑈𝑖𝐶𝑗 (𝑡) 𝑑𝑡 + 𝑎𝑖𝑗 𝜎𝐷
+𝑖
+( 𝛾𝐷𝐶 (𝑡)) 𝐷𝑖𝐶𝑗 (𝑡) 𝑑𝑡. Then, during 
+the period [0, 𝑇 ], the maintenance cost of the defender is described as 
+follows. 
+𝐸𝐶 (𝐴, 𝐷) = ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜓 𝑈
+𝑖
+( 𝜃𝑈 𝐶(𝑡)) 𝑈𝑖 (𝑡) 𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜓 𝐷
+𝑖
+( 𝜃𝐷𝐶 (𝑡)) 𝐼𝑖(𝑡)𝑑𝑡,
+(13)
+𝐸𝑈 (𝐴, 𝐷) = ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝑈
+𝑖
+( 𝛾𝑈 𝐶(𝑡)) 𝑈𝑖𝐶𝑗 (𝑡) 𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝐷
+𝑖
+× ( 𝛾𝐷𝐶 (𝑡)) 𝐷𝑖𝐶𝑗 (𝑡) 𝑑𝑡.
+(14)
+Therefore, during the period [0, 𝑇 ], 𝐺𝐴(𝐴, 𝐷) (attack gain) and 
+𝐿𝐷(𝐴, 𝐷) (defense loss) are expressed as: 
+𝐺𝐴(𝐴, 𝐷) =𝑅𝐴(𝐴, 𝐷) − 𝑃𝐶 (𝐴, 𝐷) − 𝑃𝑈 (𝐴, 𝐷)
+= ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜔𝐴𝐼𝑖(𝑡)𝑑𝑡 − ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜙𝑈
+𝑖
+( 𝛼𝑈 𝐷(𝑡)) 𝑈𝑖 (𝑡) 𝑑𝑡
+− ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜙𝐶
+𝑖
+( 𝛼𝐶𝐷 (𝑡)) 𝐶𝑖 (𝑡) 𝑑𝑡
+− ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜑𝑈
+𝑖
+( 𝛽𝑈 𝐷(𝑡)) 𝑈𝑖𝐼𝑗 (𝑡)𝑑𝑡
+− ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜑𝐶
+𝑖
+( 𝛽𝐶𝐷 (𝑡)) 𝐶𝑖𝐼𝑗 (𝑡)𝑑𝑡,
+(15)
+𝐿𝐷(𝐴, 𝐷) =𝐿𝐴(𝐴, 𝐷) + 𝐸𝐶 (𝐴, 𝐷) + 𝐸𝑈 (𝐴, 𝐷)
+= ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜔𝐷𝐼𝑖(𝑡)𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜓 𝑈
+𝑖
+( 𝜃𝑈 𝐶(𝑡)) 𝑈𝑖 (𝑡) 𝑑𝑡
++ ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜓 𝐷
+𝑖
+( 𝜃𝐷𝐶 (𝑡)) 𝐼𝑖(𝑡)𝑑𝑡
++ ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝑈
+𝑖
+( 𝛾𝑈 𝐶(𝑡)) 𝑈𝑖𝐶𝑗 (𝑡) 𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝐷
+𝑖
+× ( 𝛾𝐷𝐶 (𝑡)) 𝐷𝑖𝐶𝑗 (𝑡) 𝑑𝑡.
+(16)
+4.3. Formulation of attack-defense game problem
+In light of the attack strategy and benefits, as well as the defense 
+strategy and losses, it is clear that attackers strive to maximize profits, 
+while defenders are committed to minimizing losses. In the end, both 
+sides are committed to achieving maximum returns with minimal ef-
+fort, which constitutes a typical offensive and defensive game scenario. 
+Next, we will perform mathematical quantification representation.
+The mathematical formula for the attack-defense game problem in 
+system (4) can be concisely expressed as: 
+Maxmize
+(𝐴,𝐷)∈(,)
+𝐺𝐴(𝐴, 𝐷),
+Minimize
+(𝐴,𝐷)∈(,)
+𝐿𝐷(𝐴, 𝐷),
+s.t. 𝐼𝑖(0), 𝐶𝑖(0) ∈ [0 , 1], 𝑡 ∈ [0, 𝑇 ].
+(17)
+With the overarching objective of harmonizing the goals of both the 
+attacker and the defender, the essence lies in identifying an optimal 
+(𝐴∗, 𝐷∗) ∈ ( , ) such that conditions in (17) are satisfied. Adhering to 
+the definition of open-loop Nash equilibrium as outlined in [41], this 
+Computer Communications 237 (2025) 108148 
+5 
+
+--- PDF PAGE 6 ---
+L. Tian et al.
+(𝐴∗, 𝐷∗) is a Nash equilibrium for (17). Moreover, it becomes evident 
+that this attack-defense game problem encapsulated within (17), can be 
+comprehensively characterized by the following 13-tuple. 
+𝐴𝑃 𝑇 =
+(
+𝐀, 𝛼, 𝛽, 𝜃, 𝛾, 𝜔𝐴, 𝜔𝐷, 𝜙, 𝜑, 𝜓, 𝜎, 𝑇 , 𝐄
+)
+, (18)
+where 𝐄 = ( 𝐼1(0), … , 𝐼𝑁 (0), 𝐶1(0), … , 𝐶𝑁 (0)), 𝛼 = ( 𝛼1, … , 𝛼𝑁 ), 𝛽 =
+(𝛽1, … , 𝛽𝑁 ), 𝜃 = ( 𝜃1, … , 𝜃𝑁 ), 𝛾 = ( 𝛾1, … , 𝛾𝑁 ), 𝜔𝐴 = ( 𝜔𝐴
+1 , … , 𝜔𝐴
+𝑁 ), 𝜔𝐷 =
+(𝜔𝐷
+1 , … , 𝜔𝐷
+𝑁 ), 𝜙 = ( 𝜙𝑈
+1 , … , 𝜙𝑈
+𝑁 , 𝜙𝐷
+1 , … , 𝜙𝐷
+𝑁 ), 𝜑 = ( 𝜑𝑈
+1 , … , 𝜑𝑈
+𝑁 , 𝜑𝐶
+1 , … ,
+𝜑𝐶
+𝑁 ), 𝜓 = (𝜓 𝑈
+1 , … , 𝜓𝑈
+𝑁 , 𝜓𝐶
+1 , … , 𝜓𝐶
+𝑁 ), 𝜎 = (𝜎𝑈
+1 , … , 𝜎𝑈
+𝑁 , 𝜎𝐷
+1 , … , 𝜎𝐷
+𝑁 ).
+Only when both the offensive and defensive sides reach the ideal 
+state of Nash equilibrium, can their investments and profits be opti-
+mized. Next, we will delve into and solve for this equilibrium state.
+5. Solution of attack-defense game problem
+To achieve the goal of Nash equilibrium, we first construct a funda-
+mental necessity system framework. Subsequently, we carefully design 
+a numerical optimization algorithm to accelerate this search process 
+more efficiently.
+5.1. Necessity system
+To systematically derive the optimal solution to the game problem, 
+it is necessary to establish and satisfy a series of conditions necessary 
+for Nash equilibrium.
+Following differential game theory [42], the Hamiltonian functions 
+about advanced malware attackers and their respective defenders can 
+be elegantly formulated as: 
+𝐻𝐴 (𝑡, 𝐂, 𝐈, 𝐴, 𝐷, 𝜆, 𝜒) = ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜔𝐴𝐼𝑖(𝑡)𝑑𝑡 − ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜙𝑈
+𝑖
+( 𝛼𝑈 𝐷(𝑡)) 𝑈𝑖 (𝑡) 𝑑𝑡
+− ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜙𝐶
+𝑖
+( 𝛼𝐶𝐷 (𝑡)) 𝐶𝑖 (𝑡) 𝑑𝑡
+− ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜑𝑈
+𝑖
+( 𝛽𝑈 𝐷(𝑡)) 𝑈𝑖𝐼𝑗 (𝑡)𝑑𝑡
+− ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜑𝐶
+𝑖
+( 𝛽𝐶𝐷 (𝑡)) 𝐶𝑖𝐼𝑗 (𝑡)𝑑𝑡 +
+𝑁∑
+𝑖=1
+𝜆𝑖(𝑡) 𝑑𝐼𝑖(𝑡)
+𝑑𝑡
++
+𝑁∑
+𝑖=1
+𝜒𝑖(𝑡) 𝑑𝐶𝑖 (𝑡)
+𝑑𝑡 ,
+(19)
+and 
+𝐻𝐵 (𝑡, 𝐂, 𝐈, 𝐴, 𝐷, 𝜇, 𝜈) = ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜔𝐷𝐼𝑖(𝑡)𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜓 𝑈
+𝑖
+( 𝜃𝑈 𝐶(𝑡)) 𝑈𝑖 (𝑡) 𝑑𝑡
++ ∫
+𝑇
+0
+𝑁∑
+𝑖=1
+𝜓 𝐷
+𝑖
+( 𝜃𝐷𝐶 (𝑡)) 𝐼𝑖(𝑡)𝑑𝑡 + ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝑈
+𝑖
+× ( 𝛾𝑈 𝐶(𝑡)) 𝑈𝑖𝐶𝑗 (𝑡) 𝑑𝑡
++ ∫
+𝑇
+0
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝐷
+𝑖
+( 𝛾𝐷𝐶 (𝑡)) 𝐷𝑖𝐶𝑗 (𝑡) 𝑑𝑡 +
+𝑁∑
+𝑖=1
+𝜇𝑖(𝑡) 𝑑𝐼𝑖(𝑡)
+𝑑𝑡
++
+𝑁∑
+𝑖=1
+𝜈𝑖(𝑡) 𝑑𝐶𝑖 (𝑡)
+𝑑𝑡 ,
+(20)
+where 𝐂(𝑡) = ( 𝐶1(𝑡), … , 𝐶𝑁 (𝑡)), 𝐈(𝑡) = ( 𝐼1(𝑡), … , 𝐼𝑁 (𝑡)), 𝜆 = (𝜆𝑖(𝑡), … , 𝜆𝑁 ), 
+𝜒 = (𝜒1, … , 𝜒𝑁 ), 𝜇 = (𝜇𝑖(𝑡), … , 𝜇𝑁 ) and 𝜈 = (𝜈1, … , 𝜈𝑁 ) are their adjoint 
+vectors, respectively.
+Theorem 1.  Assuming that (𝐴, 𝐷) constitutes a Nash equilibrium to 
+the attack-defense game problem, and given that 𝐶𝑖 and 𝐼𝑖 represent the 
+solutions to the system (4), the following assertions are valid and hold.
+(1) There exist values for 𝜆, 𝜒, 𝜇 and 𝜈 such that system (21) is satisfied, 
+with the additional condition that at the terminal time 𝑇 , these 
+parameters vanish, i.e., 𝜆(𝑇 ) = 𝜒(𝑇 ) = 𝜇(𝑇 ) = 𝜈(𝑇 ) = 0 . 
+⎧
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎨
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪
+⎪⎩
+𝑑𝜆𝑖(𝑡)
+𝑑𝑡 = −𝜔𝐴
+𝑖 (𝑡) +
+[
+𝛼𝑈 𝐷(𝑡) + 𝜃𝐷𝐶 (𝑡) + 𝛽𝑈 𝐷(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡) + 𝛾𝐷𝐶 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝜆𝑖(𝑡)
+−
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗
+{ 𝛽𝑈 𝐷(𝑡) [1 − 𝐼𝑗 (𝑡) − 𝐶𝑗 (𝑡)
+]+ 𝛽𝐶𝐷 (𝑡)𝐼𝑗 (𝑡)} 𝜆𝑗 (𝑡) +
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝛽𝐶𝐷 (𝑡)𝐶𝑗 (𝑡) 𝜒𝑗 (𝑡)
++
+[
+𝜃𝑈 𝐶(𝑡) − 𝜃𝐷𝐶 (𝑡) + ( 𝛾𝑈 𝐶(𝑡) − 𝛾𝐷𝐶 (𝑡)) 𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝜒𝑖(𝑡) − 𝜙𝑈
+𝑖
+( 𝛼𝑈 𝐷(𝑡))
+−
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝜑𝑈
+𝑖
+( 𝛽𝑈 𝐷(𝑡))
+𝑑𝜒𝑖(𝑡)
+𝑑𝑡 =
+[
+𝛼𝑈 𝐷(𝑡) − 𝛼𝐶𝐷 (𝑡) + ( 𝛽𝑈 𝐷(𝑡) − 𝛽𝐶𝐷 (𝑡)) 𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝜆𝑖(𝑡)
++
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝛾𝐷𝐶 (𝑡)𝐼𝑗 (𝑡)𝜒𝑗 (𝑡)
++
+[
+𝜃𝑈 𝐶(𝑡) + 𝛼𝐶𝐷 (𝑡) + 𝛾𝑈 𝐶(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡) + 𝛽𝐶𝐷 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝜒𝑖(𝑡)
+−
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗
+{ 𝛾𝑈 𝐶(𝑡) [1 − 𝐼𝑗 (𝑡) − 𝐶𝑗 (𝑡)
+]+ 𝛾𝐷𝐶 (𝑡)𝐼𝑗 (𝑡)} 𝜒𝑗 (𝑡)
++ 𝜙𝐶
+𝑖
+( 𝛼𝐶𝐷 (𝑡)) +
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝜑𝐶
+𝑖
+( 𝛽𝐶𝐷 (𝑡)) − 𝜙𝑈
+𝑖
+( 𝛼𝑈 𝐷(𝑡)) −
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝜑𝑈
+𝑖
+( 𝛽𝑈 𝐷(𝑡)) ,
+𝑑𝜇𝑖(𝑡)
+𝑑𝑡 = −𝜔𝐷
+𝑖 (𝑡) +
+[
+𝛼𝑈 𝐷(𝑡) + 𝜃𝐷𝐶 (𝑡) + 𝛽𝑈 𝐷(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡) + 𝛾𝐷𝐶 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝜇𝑖(𝑡)
+−
+𝑁∑
+𝑗=1
+𝛼𝑖𝑗
+{ 𝛽𝐶𝐷 (𝑡) [1 − 𝐼𝑗 (𝑡) − 𝐶𝑗 (𝑡)
+]+ 𝛽𝐶𝐷 (𝑡)𝐼𝑗 (𝑡)} 𝜈𝑗 (𝑡) +
+𝑁∑
+𝑗=1
+𝛼𝑖𝑗 𝛽𝐶𝐷 (𝑡)𝐶𝑗 (𝑡) 𝜈𝑗 (𝑡)
++
+[
+𝜃𝑈 𝐶(𝑡) − 𝜃𝐷𝐶 (𝑡) + ( 𝛾𝑈 𝐶(𝑡) − 𝛾𝐷𝐶 (𝑡)) 𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡)
+]
+𝜈𝑖(𝑡)
++ 𝜓 𝑈
+𝑖
+( 𝜃𝑈 𝐶(𝑡)) − 𝜓 𝐷
+𝑖
+( 𝜃𝐷𝐶 (𝑡)) +
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗
+[𝜎𝑈
+𝑖
+( 𝛾𝑈 𝐶(𝑡)) − 𝜎𝐷
+𝑖
+( 𝛾𝐷𝐶 (𝑡))] ,
+𝑑𝜈𝑖(𝑡)
+𝑑𝑡 =
+[
+𝛼𝑈 𝐷(𝑡) − 𝛼𝐶𝐷 (𝑡) + ( 𝛽𝑈 𝐷(𝑡) − 𝛽𝐶𝐷 (𝑡)) 𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝜇𝑖(𝑡)
++
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝛾𝐷𝐶 (𝑡)𝐼𝑗 (𝑡)𝜈𝑗 (𝑡)
++
+[
+𝜃𝑈 𝐶(𝑡) + 𝛼𝐶𝐷 (𝑡) + 𝛾𝑈 𝐶(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡) + 𝛽𝐶𝐷 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡)
+]
+𝜈𝑖(𝑡)
+−
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗
+{ 𝛾𝑈 𝐶(𝑡) [1 − 𝐼𝑗 (𝑡) − 𝐶𝑗 (𝑡)
+]+ 𝛾𝐷𝐶 (𝑡)𝐼𝑗 (𝑡)} 𝜈𝑗 (𝑡) + 𝜓𝑗1
+( 𝜃𝑈 𝐶(𝑡))
++
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝜎𝑈
+𝑖
+( 𝛾𝑈 𝐶(𝑡)) .
+(21)
+(2) Given 1 ≤ 𝑖 ≤ 𝑁 and 0 ≤ 𝑡 ≤ 𝑇 , the following equations are 
+obtained. 
+𝐹 ( 𝛼𝑈 𝐷(𝑡)) = −
+𝑁∑
+𝑖=1
+𝜙𝑈
+𝑖 (𝛼𝑈 𝐷(𝑡)) [1 − 𝐶𝑖 (𝑡) − 𝐼𝑖(𝑡)]+ 𝜆𝑖(𝑡) [1 − 𝐶𝑖 (𝑡) − 𝐼𝑖(𝑡)]
+× 𝛼𝑈 𝐷(𝑡),
+𝐹 ( 𝛼𝐶𝐷 (𝑡)) = −
+𝑁∑
+𝑖=1
+𝜙𝐶
+𝑖
+( 𝛼𝐶𝐷 (𝑡)) 𝐶𝑖 (𝑡) + [𝜆𝑖(𝑡) − 𝜒𝑖(𝑡)]𝐶𝑖 (𝑡) 𝛼𝐶𝐷 (𝑡),
+(22)
+Computer Communications 237 (2025) 108148 
+6 
+
+--- PDF PAGE 7 ---
+L. Tian et al.
+then there are 
+𝛼𝑈 𝐷(𝑡) ∈ 𝑎𝑟𝑔 max [𝐹 ( 𝛼𝑈 𝐷(𝑡))] ,
+𝛼𝐶𝐷 (𝑡) ∈ 𝑎𝑟𝑔 max [𝐹 ( 𝛼𝐶𝐷 (𝑡))] .
+(23)
+(3) Given 1 ≤ 𝑖 ≤ 𝑁 and 0 ≤ 𝑡 ≤ 𝑇 , the following equations hold. 
+𝐹 ( 𝛽𝑈 𝐷(𝑡)) = −
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜑𝑈
+𝑖
+( 𝛽𝑈 𝐷(𝑡)) 𝑈𝑖 (𝑡) + 𝜆𝑖(𝑡) [1 − 𝐶𝑖 (𝑡) − 𝐼𝑖(𝑡)]𝛽𝑈 𝐷(𝑡)
+×
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡),
+𝐹 ( 𝛽𝐶𝐷 (𝑡)) = −
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜑𝐶
+𝑖
+( 𝛽𝐶𝐷 (𝑡)) 𝐶𝑖 (𝑡) + [𝜆𝑖(𝑡) − 𝜒𝑖(𝑡)]𝐶𝑖 (𝑡)
+× 𝛽𝐶𝐷 (𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐼𝑗 (𝑡),
+(24)
+then there are 
+𝛽𝑈 𝐷(𝑡) ∈ arg max [𝐹 ( 𝛽𝑈 𝐷(𝑡))] ,
+𝛽𝐶𝐷 (𝑡) ∈ arg max [𝐹 ( 𝛽𝐶𝐷 (𝑡))] .
+(25)
+(4) Given 1 ≤ 𝑖 ≤ 𝑁 and 0 ≤ 𝑡 ≤ 𝑇 , the following equations hold. 
+𝐹 ( 𝜃𝑈 𝐶(𝑡)) =
+𝑁∑
+𝑖=1
+𝜓 𝑈
+𝑖
+( 𝜃𝑈 𝐶(𝑡)) 𝑈𝑖 (𝑡) + 𝜈𝑖(𝑡) [1 − 𝐶𝑖 (𝑡) − 𝐼𝑖(𝑡)]𝜃𝑈 𝐶(𝑡),
+𝐹 ( 𝜃𝐷𝐶 (𝑡)) =
+𝑁∑
+𝑖=1
+𝜓 𝐷
+𝑖
+( 𝜃𝐷𝐶 (𝑡)) 𝐼𝑖(𝑡) + [𝜈𝑖(𝑡) − 𝜇𝑖(𝑡)]𝐼𝑖(𝑡)𝜃𝐷𝐶 (𝑡),
+(26)
+then there are 
+𝜃𝑈 𝐶(𝑡) ∈ 𝑎𝑟𝑔 min [𝐹 ( 𝜃𝑈 𝐶(𝑡))] ,
+𝜃𝐷𝐶 (𝑡) ∈ 𝑎𝑟𝑔 min [𝐹 ( 𝜃𝐷𝐶 (𝑡))] .
+(27)
+(5) Given 1 ≤ 𝑖 ≤ 𝑁 and 0 ≤ 𝑡 ≤ 𝑇 , the following equations hold. 
+𝐹 ( 𝛾𝑈 𝐶(𝑡)) =
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝑈
+𝑖
+( 𝛾𝑈 𝐶(𝑡)) 𝑈𝑖 (𝑡) + 𝜈𝑖(𝑡) [1 − 𝐶𝑖 (𝑡) − 𝐼𝑖(𝑡)]
+× 𝛾𝑈 𝐶(𝑡)
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡) ,
+𝐹 ( 𝛾𝐷𝐶 (𝑡)) =
+𝑁∑
+𝑖,𝑗=1
+𝑎𝑖𝑗 𝜎𝐷
+𝑖
+( 𝛾𝐷𝐶 (𝑡)) 𝐼𝑖(𝑡) + [𝜈𝑖(𝑡) − 𝜇𝑖(𝑡)]𝐼𝑖(𝑡)𝛾𝐷𝐶 (𝑡)
+×
+𝑁∑
+𝑗=1
+𝑎𝑖𝑗 𝐶𝑗 (𝑡) ,
+(28)
+then there are 
+𝛾𝑈 𝐶(𝑡) ∈ 𝑎𝑟𝑔 min [𝐹 ( 𝛾𝑈 𝐶(𝑡))] ,
+𝛾𝐷𝐶 (𝑡) ∈ 𝑎𝑟𝑔 min [𝐹 ( 𝛾𝐷𝐶 (𝑡))] .
+(29)
+Proof.  Utilizing the Pontryagin’s maximum/minimum principle, as 
+outlined in [42], for 𝑖 ∈ [1, 𝑁] and 𝑡 ∈ [0, 𝑇 ], there exist variables 𝜆, 𝜒, 
+𝜇 and 𝜈 that satisfy the subsequent equations as stated in (30). 
+⎧
+⎪
+⎪
+⎪
+⎨
+⎪
+⎪
+⎪⎩
+𝑑𝜆𝑖(𝑡)
+𝑑𝑡 = − 𝜕𝐻𝐴(𝑡,𝐂,𝐈,𝐴,𝐷,𝜆,𝜒 )
+𝜕𝐼𝑖
+,
+𝑑𝜒𝑖(𝑡)
+𝑑𝑡 = − 𝜕𝐻𝐴(𝑡,𝐂,𝐈,𝐴,𝐷,𝜆,𝜒 )
+𝜕𝐶𝑖
+,
+𝑑𝜇𝑖(𝑡)
+𝑑𝑡 = − 𝜕𝐻𝐷(𝑡,𝐂,𝐈,𝐴,𝐷,𝜇,𝜈)
+𝜕𝐼𝑖
+,
+𝑑𝜈𝑖(𝑡)
+𝑑𝑡 = − 𝜕𝐻𝐷(𝑡,𝐂,𝐈,𝐴,𝐷,𝜇,𝜈)
+𝜕𝐶𝑖
+.
+(30)
+The system (21) can be derived through a straightforward computa-
+tional process. Since the terminal cost is unspecified and the final state 
+is unrestricted, it logically implies that 𝜆(𝑇 ) = 𝜒(𝑇 ) = 𝜇(𝑇 ) = 𝜈(𝑇 ) =
+0. The following Eq. (31) can be derived by applying Pontryagin’s 
+Maximum/Minimum Principle. 
+𝐴 ∈ arg max ̃𝐴∈ 𝐻𝐴
+( 𝑡, 𝐂, 𝐈, ̃𝐴, 𝐷, 𝜆, 𝜒) ,
+𝐷 ∈ arg min ̃𝐷∈ 𝐻𝐷
+( 𝑡, 𝐂, 𝐈, 𝐴, ̃𝐷, 𝜇, 𝜈) . (31)
+Systems (23), (25), (27), and (29) have been successfully derived, 
+thereby concluding the proof. □
+Drawing upon the principles of game theory, comprising (4), (21), 
+(23), (25), (27), and (29), along with the initial conditions 𝐶𝑖(0), 𝐼𝑖(0), 
+𝜆(𝑇 ) = 𝜒(𝑇 ) = 𝜇(𝑇 ) = 𝜈(𝑇 ) = 0 , they form a necessary framework 
+(called necessity system) to address the game problem stated in (18).
+ Algorithm 1: Nash equilibrium solving.  
+ Input: 𝐴𝑃 𝑇 =
+(
+A, 𝛼, 𝛽, 𝜃, 𝛾, 𝜔𝐴, 𝜔𝐷, 𝜙, 𝜑, 𝜓, 𝜎, 𝑇 ,E
+)
+, error 𝜉, maximum number of 
+iterations 𝐾, uniform interval ℎ.
+ 
+ Output: Nash equilibrium (𝐴∗, 𝐷∗).  
+ 1: 𝐴(0) = 1; 𝐷(0) = 1; 𝑘 = 0; ℎ = 0.1;  
+ 2: while || 𝐴(𝑘) − 𝐴(𝑘 − 1)|| < 𝜉  and || 𝐷(𝑘) − 𝐷(𝑘 − 1)|| < 𝜉 or 𝑘 > 𝐾 do  
+ 3: 𝑘 = 𝑘 + 1;  
+ 4:  take advantage of the system (4) with 𝐴 = 𝐴(𝑘 − 1), 𝐷 = 𝐷(𝑘 − 1), calculate C, I;  
+ 5: C(𝑘) ∶= C, I(𝑘) ∶= I;  
+ 6:  take advantage of the system (21) with C(𝑘) = C, I(𝑘) = I, 𝐴 = 𝐴(𝑘 − 1), 
+𝐷 = 𝐷(𝑘 − 1),
+ 
+  calculate 𝜆, 𝜒, 𝜇, 𝜈;  
+ 7: 𝜆(𝑘) ∶= 𝜆, 𝜒(𝑘) ∶= 𝜒, 𝜇(𝑘) ∶= 𝜇, 𝜈(𝑘) ∶= 𝜈;  
+ 8:  take advantage of the system (23), (25), (27) and (29) with C(𝑘) = C, I(𝑘) = I, 
+𝜆(𝑘) = 𝜆,
+ 
+ 𝜒(𝑘) = 𝜒, 𝜇(𝑘) = 𝜇, 𝜈(𝑘) = 𝜈, calculate 𝐴, 𝐷;  
+ 9: 𝐴(𝑘) ∶= 𝐴, 𝐷(𝑘) ∶= 𝐷;  
+ 10: 𝐴∗ ∶= 𝐴(𝑘), 𝐷∗ ∶= 𝐷(𝑘);  
+ 11. Return (𝐴∗, 𝐷∗).  
+5.2. Nash equilibrium solving algorithm
+Although Nash equilibrium can be solved from the above necessity 
+system under certain conditions, the actual solving process may be 
+time-consuming. To quickly find the Nash equilibrium, we specifically 
+design a Nash equilibrium solving algorithm (see Algorithm 1) using 
+Forward–Backward Euler methods [43].
+Algorithm 1 fundamentally embodies an iterative framework.
+Within each iteration cycle, we initially leverage the system dynamics 
+described in (4) to prospectively simulate the evolution of equipment 
+states. Subsequently, we employ the system (21) in a backward pass 
+to derive updated adjoint functions. Finally, we integrate the systems 
+(23), (25), (27), and (29) to compute a novel strategy combination. 
+The iterative process concludes when either two consecutive strategy 
+combinations converge significantly or the iteration count attains a 
+predetermined threshold, signifying sufficient exploration.
+The proposed Nash equilibrium solving Algorithm 1 is essentially an 
+iterative process. In the algorithm’s execution, the initial step involves 
+discretizing the period [0, 𝑇 ] with a uniform interval ℎ. The time 
+complexity of this discretization step is 𝑂(𝑇 ∕ℎ). During each iteration, 
+the algorithm requires traversing the network adjacency matrix. Since 
+the adjacency matrix is a two-dimensional matrix of size 𝑁 × 𝑁, where 
+𝑁 denotes the number of network nodes, the time complexity for this 
+traversal is 𝑁 2. The iteration process continues until convergence or the 
+predefined maximum number of iterations 𝐾 is reached. Consequently, 
+the time complexity of this algorithm is 𝑂(𝐾𝑇 𝑁 2∕ℎ).
+6. Experimental analysis
+This section aims to thoroughly demonstrate the effectiveness and 
+superiority of the previously elaborated attack-defense game method-
+ology through experimental validation and in-depth analysis. Specif-
+ically, we meticulously select three distinct datasets (i.e., YouTube, 
+Computer Communications 237 (2025) 108148 
+7 
+
+--- PDF PAGE 8 ---
+L. Tian et al.
+Table 2
+The specific configurations of the network structures.
+ Dataset Expression Adjacency matrix Node Edge Source  
+ YouTube 𝐺𝑌 A𝑌 1 134 890 2 987 624 Stanford large network 
+dataset collection [44]
+ 
+ Facebook 𝐺𝐹 A𝐹 4039 88 234  
+ Twitter 𝐺𝑇 A𝑇 81 306 1 768 149  
+Table 3
+The parameter settings.
+ Parameter Under YouTube Under Facebook Under Twitter  
+ 𝜔𝐴 0.1 0.1 0.1  
+ 𝜔𝐷 0.1 0.1 0.1  
+ 𝑇 10 10 10  
+ 𝛼 1 1 1  
+ 𝛽 1 1 1  
+ 𝜃 1 1 1  
+ 𝛾 1 1 1  
+ 𝜉 10−6 10−6 10−6  
+ 𝐾 103 103 103  
+ A 𝐀𝑌 𝐀𝐹 𝐀𝑇  
+ 𝜙𝑖
+( 𝛼𝑖
+) 0.3 ∗ √𝛼𝑖 0.3 ∗ 𝛼𝑖 0.3 ∗ 𝛼𝑖∕ ( 1 + 𝛼𝑖
+)  
+ 𝜑𝑖
+( 𝛽𝑖
+) 0.2 ∗
+√
+𝛽𝑖 0.2 ∗ 𝛽𝑖 0.2 ∗ 𝛽𝑖∕ ( 1 + 𝛽𝑖
+)  
+ 𝜓𝑖
+( 𝜃𝑖
+) 0.3 ∗
+√
+𝜃𝑖 0.3 ∗ 𝜃𝑖 0.3 ∗ 𝜃𝑖∕ ( 1 + 𝜃𝑖
+)  
+ 𝜎𝑖
+( 𝛾𝑖
+) 0.2 ∗ √𝛾𝑖 0.2 ∗ 𝛾𝑖 0.2 ∗ 𝛾𝑖∕ ( 1 + 𝛾𝑖
+)  
+Facebook, and Twitter) to simulate the behavioral patterns of advanced 
+malware within various propagation networks. Based on this founda-
+tion, we conduct a comprehensive and meticulous comparative analysis 
+of our proposed attack-defense game strategy against three different 
+control strategies (i.e., random, uniform, and uncertainty attack strate-
+gies), aiming to verify the practical application value and performance 
+advantages of our method from multiple dimensions and perspectives.
+6.1. Experimental settings
+All of our experiments are implemented using MATLAB software 
+(the specific version is MATLAB 2020b). The specific configurations 
+of the network structures and the parameter settings are detailed in 
+Tables  2 and 3, respectively. Due to the unique characteristics of each 
+network, we customize different parameter configurations specifically 
+for each one, represented by YouTube, Facebook, and Twitter, to ensure 
+the accuracy and relevance of our experiments.
+6.2. Comparison methods
+To further underscore the effectiveness of our approach, we pit 
+it against a random strategy, a uniform strategy, and an uncertainty 
+attack strategy. Now, let us introduce these three different strategies.
+(1) Random strategy: It refers to a system where the allocation 
+of cost resources for both attack and defense is determined 
+randomly at each control time step. This implies that both 
+the attacker and the defender have the liberty to choose their 
+strategies in an arbitrary, non-deterministic manner.
+(2) Uniform strategy: It embodies a systematic approach that en-
+sures the equitable and balanced distribution of constant control 
+resources among all nodes within each time unit. This implies 
+that both the attacker and the defender must maintain a long-
+term stable and consistent strategic posture, without making any 
+adjustments or changes to their strategies during this period.
+(3) Uncertainty attack strategy: It refers to situations where, due 
+to a lack of information and limited intelligence, malware attack-
+ers may be unable to accurately estimate their gain functions. In 
+such circumstances, malware attackers may be unable to identify 
+the Nash equilibrium strategy combination and may instead opt 
+for random or uniform attack strategies.
+To effectively implement these strategies, we meticulously design 
+corresponding algorithms, with detailed specifications outlined in Al-
+gorithms 2 and 3, which are designed for generating random strategy 
+pairs and unified strategy pairs. It is straightforward to observe that 
+their time complexity is 𝑂(𝑛𝑚). It is noteworthy that during the ex-
+perimental process, we set the parameters 𝑢 = 0 .1, 𝑛 = 𝑚 = 100 . 
+When confronted with uncertain strategies, adopting random or uni-
+fied strategies as coping strategies can be achieved by simply calling 
+Algorithms 2 and 3, so there is no need to design additional specialized 
+algorithms to handle such situations.
+ Algorithm 2: Random strategy.  
+ Input: 𝐴𝑃 𝑇 =
+(
+A, 𝛼, 𝛽, 𝜃, 𝛾, 𝜔𝐴, 𝜔𝐷, 𝜙, 𝜑, 𝜓, 𝜎, 𝑇 ,E
+)
+.  
+ Output: a strategy pair (𝐴∗, 𝐷∗).  
+ 1: Select 𝑛 − 1 points within [0, 𝑇 ] by uniform interval ℎ, denoted as 𝑡𝑘,  
+ 𝑘 = 1, ⋯ , 𝑛 − 1, where 0 = 𝑡0 < 𝑡 1 < ⋯ < 𝑡 𝑛−1 < 𝑡 𝑛 = 𝑇 ;  
+ 2: for 𝑘 ∶= 0 to 𝑛 − 1 do  
+ 3:  randomize 𝜂1 ∈ [0, 𝛼𝑖], randomize 𝜂2 ∈ [0, 𝛽𝑖], randomize 𝜂3 ∈ [0, 𝜃𝑖],  
+  randomize 𝜂4 ∈ [0, 𝛾𝑖];  
+ 4:  for 𝑙 := 0 to 𝑚 − 1 do  
+ 5: 𝑡𝑙
+𝑘 = 𝑡𝑘 + 𝑙
+𝑚 𝑢;  
+ 6: 𝛼𝑖 := 𝜂1, 𝛽𝑖 := 𝜂2, 𝜃𝑖 := 𝜂3, 𝛾𝑖 := 𝜂4;  
+ 7:  end for  
+ 8: end for  
+ 9: 𝐴(𝑡𝑛) := 𝐴(𝑡𝑛−1), 𝐷(𝑡𝑛) := 𝐷(𝑡𝑛−1);  
+ 10: return (𝐴∗, 𝐷∗).  
+ Algorithm 3: Uniform strategy.  
+ Input: 𝐴𝑃 𝑇 =
+(
+A, 𝛼, 𝛽, 𝜃, 𝛾, 𝜔𝐴, 𝜔𝐷, 𝜙, 𝜑, 𝜓, 𝜎, 𝑇 ,E
+)
+.  
+ Output: a strategy pair (𝐴∗, 𝐷∗).  
+ 1: Select 𝑛 − 1 points within [0, 𝑇 ] by uniform interval ℎ, denoted as 𝑡𝑘,  
+ 𝑘 = 1, ⋯ , 𝑛 − 1, where 0 = 𝑡0 < 𝑡 1 < ⋯ < 𝑡 𝑛−1 < 𝑡 𝑛 = 𝑇 ;  
+ 2: randomize 𝜂1 ∈ [0, 𝛼𝑖], randomize 𝜂2 ∈ [0, 𝛽𝑖], randomize 𝜂3 ∈ [0, 𝜃𝑖],  
+  randomize 𝜂4 ∈ [0, 𝛾𝑖];  
+ 3: for 𝑘 ∶= 0 to 𝑛 − 1 do  
+ 4:  for 𝑙 := 0 to 𝑚 − 1 do  
+ 5: 𝑡𝑙
+𝑘 = 𝑡𝑘 + 𝑙
+𝑚 𝑢;  
+ 6: 𝛼𝑖 := 𝜂1, 𝛽𝑖 := 𝜂2, 𝜃𝑖 := 𝜂3, 𝛾𝑖 := 𝜂4;  
+ 7:  end for  
+ 8: end for  
+ 9: 𝐴(𝑡𝑛) := 𝐴(𝑡𝑛−1), 𝐷(𝑡𝑛) := 𝐷(𝑡𝑛−1);  
+ 10: return (𝐴∗, 𝐷∗).  
+6.3. Results and discussions
+Here, the experimental comparison results will be analyzed and 
+discussed (all codes see Github1).
+(1) Comparative analysis with random strategy. Perform 100 
+iterations of Algorithm 2 to produce a comprehensive set of 100 
+attack strategies, expressed as 𝑍𝐴 = { 𝐴1, … , 𝐴100}, alongside 
+a corresponding set of 100 defense strategies, represented as 
+𝑍𝐷 = {𝐷1, … , 𝐷100}.
+In Figs.  2(a), 3(a), and 4(a), we present plots of 𝐺𝐴(𝐴, 𝐷∗) for 
+YouTube, Facebook, and Twitter, respectively. These plots depict 
+the performance of the optimal attack strategy 𝐴∗ and the set 
+of 100 generated attack strategies 𝑍𝐴 = { 𝐴1, … , 𝐴100} against 
+the optimal defense strategy 𝐷∗. It is evident from these figures 
+1 https://github.com/siyu-625/Analysis-of-attack-defense-game-for-
+advanced-malware-propagation-control-in-cloud.
+Computer Communications 237 (2025) 108148 
+8 
+
+--- PDF PAGE 9 ---
+L. Tian et al.
+Fig. 2. Comparison results with random strategy under YouTube.
+Fig. 3. Comparison results with random strategy under Facebook.
+Fig. 4. Comparison results with random strategy under Twitter.
+Fig. 5. Comparison results with uniform strategy under YouTube.
+Computer Communications 237 (2025) 108148 
+9 
+
+--- PDF PAGE 10 ---
+L. Tian et al.
+Fig. 6. Comparison results with uniform strategy under Facebook.
+Fig. 7. Comparison results with uniform strategy under Twitter.
+that the optimal attack strategy 𝐴∗ achieves the highest gain 
+𝐺𝐴(𝐴∗, 𝐷∗) compared to any other attack strategy 𝐴 ∈ 𝑍𝐴, thus 
+confirming that 𝐺𝐴(𝐴∗, 𝐷∗) ≥ 𝐺𝐴(𝐴, 𝐷∗), 𝐴 ∈ {𝐴∗} ⋃ 𝑍𝐴.
+Figs.  2(b), 3(b), and 4(b) show the plots of 𝐿𝐷(𝐴∗, 𝐷) for 
+YouTube, Facebook, and Twitter, respectively. These plots show 
+the loss incurred by the defense system when facing the optimal 
+attack strategy 𝐴∗ across the optimal defense strategy 𝐷∗ and the 
+set of 100 generated defense strategies 𝑍𝐷 = { 𝐷1, … , 𝐷100}. It 
+is observed that the optimal defense strategy 𝐷∗ minimizes the 
+loss 𝐿𝐷(𝐴∗, 𝐷∗) when compared to any other defense strategy 
+𝐷 ∈ 𝑍𝐷, leading to the conclusion that 𝐿𝐷(𝐴∗, 𝐷∗) ≤ 𝐿𝐷(𝐴∗, 𝐷), 
+𝐷 ∈ {𝐷∗} ⋃ 𝑍𝐷.
+To facilitate a more comprehensive analysis, we have compiled 
+the pivotal values in Table  4. This table offers a straightforward 
+visualization, revealing that in all three case studies (YouTube, 
+Facebook, and Twitter), the adoption of the Nash equilibrium 
+strategy results in the attacker achieving the highest gain while 
+simultaneously minimizing the defender’s loss.
+(2) Comparative analysis with uniform strategy. By executing 
+Algorithm 3 a total of 100 times, we derive a diverse set of 100 
+attack strategies, collectively denoted as 𝑈𝐴 = { 𝐴1, … , 𝐴100}, 
+and an equally diverse set of 100 defense strategies, represented 
+by 𝑈𝐷 = {𝐷1, … , 𝐷100}.
+Figs.  5(a), 6(a), and 7(a) depict the 𝐺𝐴(𝐴, 𝐷∗) graphs for
+YouTube, Facebook, and Twitter, respectively. These plots depict 
+the performance of the optimal attack strategy 𝐴∗ and the set 
+of 100 generated attack strategies 𝑈𝐴 = { 𝐴1, … , 𝐴100} against 
+the optimal defense strategy 𝐷∗. From these plots, it can be 
+conclusively stated that 𝐺𝐴(𝐴∗, 𝐷∗) ≥ 𝐺𝐴(𝐴, 𝐷∗), 𝐴 ∈ {𝐴∗} ⋃ 𝑈𝐴, 
+indicating that the optimal attack strategy 𝐴∗ yields the highest 
+attacker gain when faced with the optimal defense strategy 𝐷∗.
+In Figs.  5(b), 6(b), and 7(b), we present 𝐿𝐷(𝐴∗, 𝐷) plots for 
+YouTube, Facebook, and Twitter, respectively. These plots dis-
+play the loss incurred by the defense system when facing the 
+optimal attack strategy 𝐴∗ across the optimal defense strat-
+egy 𝐷∗ and the set of 100 generated defense strategies 𝑈𝐷 =
+{𝐷1, … , 𝐷100}. It is evident from these plots that the optimal de-
+fense strategy 𝐷∗ minimizes the defender’s loss when confronted 
+with the optimal attack strategy 𝐴∗, satisfying the conclusion 
+that 𝐿𝐷(𝐴∗, 𝐷∗) ≤ 𝐿𝐷(𝐴∗, 𝐷), 𝐷 ∈ {𝐷∗} ⋃ 𝑈𝐷.
+To facilitate a more comprehensive analysis, we have summa-
+rized the key values in Table  5. This table provides a clear 
+and intuitive comparison, revealing that in all three examples 
+(YouTube, Facebook, and Twitter), adopting the Nash equilib-
+rium strategy results in a higher attacker gain and a lower de-
+fender loss compared to employing a uniform strategy. This un-
+derscores the significance and benefits of the Nash equilibrium 
+in game-theoretic security analysis.
+(3) Comparative analysis with uncertainty attack strategy. Here, 
+for the sake of simplicity, we only opt for a random strategy as 
+the uncertainty attack strategy. Figs.  8(a), (b), and (c) illustrate 
+the computation of 𝐿𝐷(𝐴, 𝐷∗), 𝐴 ∈ { 𝐴∗} ⋃ 𝑍𝐴 for YouTube, 
+Facebook, and Twitter, respectively. These plots demonstrate the 
+loss incurred by the defense system when facing the uncertainty 
+attack strategy. Notably, it is evident from the figures that 
+𝐻𝐷(𝐴, 𝐷∗) < 𝐿 𝐷(𝐴∗, 𝐷∗), 𝐴 ∈ {𝐴∗} ⋃ 𝑍𝐴.
+To facilitate a deeper analysis, we have compiled the pivotal 
+values in Table  6. This table provides a clear visual representa-
+tion that, in all three scenarios examined, when confronted with 
+uncertain attack strategies, the losses incurred by defenders are 
+significantly lower than the expected losses when both parties 
+strictly adhere to the Nash equilibrium strategy. This finding 
+strongly supports the notion that when the defender adopts the 
+carefully designed Nash equilibrium strategy 𝐷∗, regardless of 
+Computer Communications 237 (2025) 108148 
+10 
+
+--- PDF PAGE 11 ---
+L. Tian et al.
+Fig. 8. Comparison results with uncertainty of attack strategy.
+Table 4
+Specific values compared to random strategy.
+ Numerical value Under YouTube Under Facebook Under Twitter 
+ 𝐺𝐴(𝐴∗, 𝐷∗) 100.78 126.89 125.13  
+ Maximum value of 𝐺𝐴(𝐴, 𝐷∗) 41.97 99.99 88.92  
+ 𝐿𝐷(𝐴∗, 𝐷∗) 56.18 47.48 43.79  
+ Minimum value of 𝐿𝐷(𝐴∗, 𝐷) 65.20 48.95 51.66  
+Table 5
+Specific values compared to uniform strategy.
+ Numerical value Under YouTube Under Facebook Under Twitter 
+ 𝐺𝐴(𝐴∗, 𝐷∗) 100.78 126.89 125.13  
+ Maximum value of 𝐺𝐴(𝐴, 𝐷∗) 83.24 102.10 103.28  
+ 𝐿𝐷(𝐴∗, 𝐷∗) 56.18 47.48 43.79  
+ Minimum value of 𝐿𝐷(𝐴∗, 𝐷) 64.57 54.04 52.71  
+Table 6
+Specific values compared to uncertainty of attack strategy.
+ Numerical value Under YouTube Under Facebook Under Twitter 
+ 𝐿𝐷(𝐴∗, 𝐷∗) 56.18 47.48 43.79  
+ Maximum value of 𝐿𝐷(𝐴, 𝐷∗) 15.25 32.32 37.10  
+how the attacker adjusts its offensive tactics, the overall losses 
+of defenders can be stably maintained at a relatively low level, 
+namely 𝐿𝐷(𝐴∗, 𝐷∗). Consequently, we have compelling reasons 
+to believe that adhering to the Nash equilibrium strategy 𝐷∗
+provides an effective and robust defensive framework for the 
+defender in uncertain environments.
+7. Conclusions
+In this paper, we have constructed an attack defense game model 
+aimed at exploring the complex dynamics of advanced malware prop-
+agation control in cloud computing environments. We not only rigor-
+ously demonstrated theoretically how both the offensive and defensive 
+sides can achieve the possibility of Nash equilibrium while pursu-
+ing the goals of minimizing costs and maximizing benefits, but also 
+innovatively designed an efficient algorithm to achieve a fast and 
+accurate solution to the Nash equilibrium. To show the effectiveness 
+of our approach, we carefully planned a series of experiments, selected 
+three representative real-world datasets, and adopted three differentia-
+tion strategies as comparison benchmarks. The experimental outcomes 
+conclusively demonstrate that our proposed method surpasses other 
+strategies, not only effectively curbing the spread of advanced malware, 
+but also achieving an ideal balance between cost control and protection 
+effectiveness.
+Although a detailed overview of our method has been provided 
+earlier, there is still much work to be explored in future research. On 
+the one hand, we need to continuously improve the practicality of the 
+model to ensure that it can effectively guide practical applications and 
+achieve a close integration of theory and practice. On the other hand, 
+considering that the real transmission data of malware is not limited to 
+network structure information, it is particularly important to explore 
+and obtain real transmission data of malware, which has immeasurable 
+value for deepening our research.
+CRediT authorship contribution statement
+Liang Tian: Writing – original draft, Formal analysis. Chenquan 
+Gan: Writing – review & editing, Writing – original draft, Methodol-
+ogy, Investigation. Jiabin Lin: Writing – original draft, Visualization. 
+Fengjun Shang: Supervision, Formal analysis. Qingyi Zhu: Supervi-
+sion, Conceptualization.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to 
+influence the work reported in this paper.
+Acknowledgments
+The authors are grateful to the anonymous reviewers and the editor 
+for their valuable comments and suggestions. This work was sup-
+ported by the Guangxi Science and Technology Project, China (No. 
+AB24010317).
+Data availability
+Data will be made available on request.
+References
+[1] W. Yan, CAS: A framework of online detecting advance malware fami-
+lies for cloud-based security, in: 2012 1st IEEE International Conference on 
+Communications in China, ICCC, 2012, pp. 220–225.
+[2] F. Abazari, M. Analoui, H. Takabi, Effect of anti-malware software on infectious 
+nodes in cloud environment, Comput. Secur. 58 (2016) 139–148.
+[3] D. Saxena, I. Gupta, R. Gupta, A.K. Singh, X. Wen, An AI-driven VM threat 
+prediction model for multi-risks analysis-based cloud cybersecurity, IEEE Trans. 
+Syst. Man Cybern.: Syst. 53 (11) (2023) 6815–6827.
+[4] S.K. Medaram, L. Maglaras, Malware mitigation in cloud computing architecture, 
+in: Cyber Malware: Offensive and Defensive Systems, Springer International 
+Publishing, Cham, 2024, pp. 235–278.
+[5] M. Bhatt, A. Gaur, S. Badoni, P. Mishra, Advanced malware and their impact 
+on virtualization: A case study on hybrid feature extraction using deep memory 
+introspection, in: Proceedings of the 2022 Fourteenth International Conference on 
+Contemporary Computing, in: IC3-2022, Association for Computing Machinery, 
+New York, NY, USA, 2022, pp. 74–80.
+[6] Ş. Bahtiyar, Anatomy of targeted attacks with smart malware, Secur. Commun. 
+Netw. 9 (18) (2016) 6215–6226.
+[7] C. Rathnayaka, A. Jamdagni, An efficient approach for advanced malware analy-
+sis using memory forensic technique, in: 2017 IEEE Trustcom/BigDataSE/ICESS, 
+2017, pp. 1145–1150.
+Computer Communications 237 (2025) 108148 
+11 
+
+--- PDF PAGE 12 ---
+L. Tian et al.
+[8] M.G. Gaber, M. Ahmed, H. Janicke, Malware detection with artificial intelligence: 
+A systematic literature review, ACM Comput. Surv. 56 (6) (2024) 1–33.
+[9] L. Fritsch, A. Jaber, A. Yazidi, An overview of artificial intelligence used in 
+malware, in: E. Zouganeli, A. Yazidi, G. Mello, P. Lind (Eds.), Nordic Artificial 
+Intelligence Research and Development, Springer International Publishing, Cham, 
+2022, pp. 41–51.
+[10] D. Srinivasan, A. Muthuvel, M. Prakash Kumar, R. Dinesh, V.G. Prasannakumar, 
+Advanced malware analysis and prevention, in: 2023 Third International Confer-
+ence on Smart Technologies, Communication and Robotics, STCR, vol. 1, 2023, 
+pp. 1–6.
+[11] Ş. Bahtiyar, M.B. Yaman, C.Y. Altıniğne, A multi-dimensional machine learning 
+approach to predict advanced malware, Comput. Netw. 160 (2019) 118–129.
+[12] Ö.A. Aslan, R. Samet, A comprehensive review on malware detection approaches, 
+IEEE Access 8 (2020) 6249–6271.
+[13] S. Sharma, C. Rama Krishna, S.K. Sahay, Detection of advanced malware by 
+machine learning techniques, in: K. Ray, T.K. Sharma, S. Rawat, R.K. Saini, 
+A. Bandyopadhyay (Eds.), Soft Computing: Theories and Applications, Springer 
+Singapore, Singapore, 2019, pp. 333–342.
+[14] L. Tian, F. Shang, C. Gan, Optimal control analysis of malware propagation in 
+cloud environments, Math. Biosci. Eng. 20 (8) (2023) 14502–14517.
+[15] J.H. Guillen, A.M. Del Rey, R. Casado-Vara, Security countermeasures of 
+a SCIRAS model for advanced malware propagation, IEEE Access 7 (2019) 
+135472–135478.
+[16] C. Gan, Q. Feng, X. Zhang, Z. Zhang, Q. Zhu, Dynamical propagation model of 
+malware for cloud computing security, IEEE Access 8 (2020) 20325–20333.
+[17] S.M. Rao, A. Jain, Advances in malware analysis and detection in cloud 
+computing environments: A review, Int. J. Saf. Secur. Eng. 14 (1) (2024).
+[18] R. Patil, H. Dudeja, C. Modi, Designing in-VM-assisted lightweight agent-based 
+malware detection framework for securing virtual machines in cloud computing, 
+Int. J. Inf. Secur. 19 (2) (2020) 147–162.
+[19] N. Nissim, O. Lahav, A. Cohen, Y. Elovici, L. Rokach, Volatile memory analysis 
+using the MinHash method for efficient and secured detection of malware in 
+private cloud, Comput. Secur. 87 (2019) 101590.
+[20] V. Patel, S. Choe, T. Halabi, Predicting future malware attacks on cloud systems 
+using machine learning, in: 2020 IEEE 6th Intl Conference on Big Data Security 
+on Cloud (BigDataSecurity), IEEE Intl Conference on High Performance and 
+Smart Computing, (HPSC) and IEEE Intl Conference on Intelligent Data and 
+Security, IDS, 2020, pp. 151–156.
+[21] X. Gao, C. Hu, C. Shan, B. Liu, Z. Niu, H. Xie, Malware classification for the cloud 
+via semi-supervised transfer learning, J. Inf. Secur. Appl. 55 (2020) 102661.
+[22] D. Tian, Q. Ying, X. Jia, R. Ma, C. Hu, W. Liu, MDCHD: A novel malware 
+detection method in cloud using hardware trace and deep learning, Comput. 
+Netw. 198 (2021) 108394.
+[23] D. Tian, R. Zhao, R. Ma, X. Jia, Q. Shen, C. Hu, W. Liu, MDCD: A malware 
+detection approach in cloud using deep learning, Trans. Emerg. Telecommun. 
+Technol. 33 (11) (2022) e4584.
+[24] Z. Chen, J. Zhang, Multi-feature fusion malware detection method based on 
+attention and gating mechanisms, Chin. J. Netw. Inf. Secur. 10 (1) (2024) 
+123–135.
+[25] H. Sun, B.C. Zhang, J.X. Geng, et al., Adversarial method for malicious ELF file 
+detection based on deep reinforcement learning, Chin. J. Netw. Inf. Secur. 10 
+(5) (2024) 152–162.
+[26] T. Landman, N. Nissim, Deep-hook: A trusted deep learning-based framework 
+for unknown malware detection and classification in linux cloud environments, 
+Neural Netw. 144 (2021) 648–685.
+[27] S.K. Sahay, A. Sharma, H. Rathore, Evolution of malware and its detection tech-
+niques, in: M. Tuba, S. Akashe, A. Joshi (Eds.), Information and Communication 
+Technology for Sustainable Development, Springer Singapore, Singapore, 2020, 
+pp. 139–150.
+[28] A.M. Del Rey, G. Hernández, A.B. Tabernero, A.Q. Dios, Advanced mal-
+ware propagation on random complex networks, Neurocomputing 423 (2021) 
+689–696.
+[29] N.P. Dong, N.L. Giang, H.V. Long, Interconnected takagi-sugeno system and 
+fractional SIRS malware propagation model for stabilization of wireless sensor 
+networks, Inform. Sci. 670 (2024) 120620.
+[30] Y. Yang, G. Liu, Z. Liang, H. Chen, L. Zhu, X. Zhong, Hybrid control for 
+malware propagation in rechargeable WUSN and WASN: From knowledge-driven 
+to data-driven, Chaos Solitons Fractals 173 (2023) 113703.
+[31] G. Liu, J. Zhang, X. Zhong, X. Hu, Z. Liang, Hybrid optimal control for 
+malware propagation in UAV-WSN system: A stacking ensemble learning control 
+algorithm, IEEE Internet Things J. (2024) 1–1.
+[32] G. Liu, Z. Tan, Z. Liang, H. Chen, X. Zhong, Fractional optimal control for 
+malware propagation in internet of underwater things, IEEE Internet Things J. 
+11 (7) (2024) 11632–11651.
+[33] H. Zhou, S. Shen, J. Liu, Malware propagation model in wireless sensor networks 
+under attack–defense confrontation, Comput. Commun. 162 (2020) 51–58.
+[34] Y. Shen, C. Shepherd, C.M. Ahmed, S. Yu, T. Li, Comparative DQN-improved 
+algorithms for stochastic games-based automated edge intelligence-enabled IoT 
+malware spread-suppression strategies, IEEE Internet Things J. 11 (12) (2024) 
+22550–22561.
+[35] H. Miura, T. Kimura, H. Aman, K. Hirata, Game-theoretic approach to epi-
+demic modeling of countermeasures against future malware evolution, Comput. 
+Commun. 206 (2023) 160–171.
+[36] J. Bi, F. Luo, S. He, G. Liang, W. Meng, M. Sun, False data injection- and 
+propagation-aware game theoretical approach for microgrids, IEEE Trans. Smart 
+Grid 13 (5) (2022) 3342–3353.
+[37] J. Bi, S. He, F. Luo, W. Meng, L. Ji, D.-W. Huang, Defense of advanced persistent 
+threat on industrial internet of things with lateral movement modeling, IEEE 
+Trans. Ind. Inform. 19 (9) (2023) 9619–9630.
+[38] K. Gill, A. Sharma, S. Saxena, A systematic review on game-theoretic models 
+and different types of security requirements in cloud environment: Challenges 
+and opportunities, Arch. Comput. Methods Eng. 31 (2024).
+[39] K.S. Gill, S. Saxena, A. Sharma, NCGTM: A noncooperative game-theoretic model 
+to assist IDS in cloud environment, IEEE Trans. Ind. Inform. 20 (3) (2024) 
+3124–3132.
+[40] W.J. Stewart, Probability, Markov Chains, Queues, and Simulation: The Math-
+ematical Basis of Performance Modeling, Princeton University Press, Princeton, 
+NJ, USA, 2009.
+[41] T. Basar, G. Olsder, Dynamic Noncooperative Game Theory, in: Series in Classics 
+in Applied Mathematics, vol. 160, SIAM, Philadelphia, PA, USA, 1999, pp. 
+125–144.
+[42] T.L. Friesz, Dynamic Optimization and Differential Games, vol. 135, Springer, 
+2010.
+[43] K. Atkinson, W. Han, D.E. Stewart, Numerical Solution of Ordinary Differential 
+Equations, John Wiley & Sons, 2011.
+[44] J. Leskovec, A. Krevl, SNAP Datasets: Stanford large network dataset collection, 
+2014, http://snap.stanford.edu/data.
+Computer Communications 237 (2025) 108148 
+12 

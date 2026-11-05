@@ -1,0 +1,156 @@
+base:
+  seed: 33
+  n: 6
+  T: 10.0
+  K: 6
+  rk4_substeps_per_slot: 12
+  network: modular
+  scenario: separated
+  attack_entry_indices:
+  - 0
+  - 1
+  alpha_entry: 0.25
+  beta_nonzero_range:
+  - 0.04
+  - 0.12
+  delta: 0.1
+  gamma: 0.3
+  epsilon: 1.0
+  x0:
+  - 0.1
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  - 0.0
+  q_normal: 1.0
+  q_high: 4.0
+  h_normal: 0.05
+  h_high: 0.5
+  g: 1.0
+  c_a: 1.0
+  c_s: 1.0
+  c_r: 1.0
+  omega: 0.0
+  nu: 0.0
+  b_s: 1.0
+  b_r: 1.0
+  d_a: 1.0
+  B: 1.8
+  A: 0.8
+  solver:
+    method: SLSQP
+    max_br_rounds: 40
+    damping: 0.35
+    br_restarts: 3
+    exploratory_relative_gap_target: 0.01
+design:
+  status: APPROVED_2026_10_27
+  gate: G1-C1
+  base_config: configs/base.yaml
+  seeds:
+  - 11
+  - 22
+  - 33
+  B_values:
+  - 0.6
+  - 1.2
+  - 1.8
+  n: 6
+  K: 6
+  T: 10.0
+  entry_nodes:
+  - 0
+  - 1
+  matched_source_nodes:
+  - 2
+  - 3
+  downstream_nodes:
+  - 4
+  - 5
+  x0:
+  - 0.1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  network:
+    description: Matched incoming exposure and path length for nodes 2 and 3; fixed
+      within each game.
+    incoming:
+    - source: 0
+      targets:
+      - 2
+      - 3
+      same_weight_per_target: true
+      seed_weight_range:
+      - 0.04
+      - 0.12
+    - source: 1
+      targets:
+      - 2
+      - 3
+      same_weight_per_target: true
+      seed_weight_range:
+      - 0.04
+      - 0.12
+    outgoing_conditions:
+      equal:
+        node2_to_each_downstream: 0.08
+        node3_to_each_downstream: 0.08
+      unequal:
+        node2_to_each_downstream: 0.12
+        node3_to_each_downstream: 0.04
+    other_edges: none
+  value_conditions:
+    high_at_node2:
+      q:
+      - 1
+      - 1
+      - 4
+      - 1
+      - 1
+      - 1
+    high_at_node3:
+      q:
+      - 1
+      - 1
+      - 1
+      - 4
+      - 1
+      - 1
+  h:
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  - 0.05
+  unchanged:
+  - dynamics
+  - objectives
+  - action_dimensions
+  - capacities_per_slot
+  - zero_terminal_weights
+  - all_other_base_parameters
+  primary_outcomes:
+  - integrated_isolation_at_node2_and_node3
+  - integrated_recovery_at_node2_and_node3
+  - slotwise_marginal_resource_transfer
+  - defense_objective_at_fixed_and_strict_local_response_attacks
+  comparison: difference_of_value_assignment_effect_between_equal_and_unequal_outgoing_strength
+  time_window_reporting:
+  - all_6_slots
+  - first_4_slots
+  - final_2_slots
+  numerical_requirements:
+    relative_observed_improvement: 1.0e-07
+    incumbent_projected_residual: 0.0001
+    control_stability_across_initializations: 0.001
+    global_nash_certificate: not_claimed
+  minimum_allocation_effect:
+    average_control_difference: 0.001
+    interpretation: engineering_resolution_not_statistical_significance
+outgoing: equal
+value: high_at_node2

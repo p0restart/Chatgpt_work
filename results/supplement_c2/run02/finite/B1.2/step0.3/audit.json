@@ -1,0 +1,16 @@
+{
+  "B": 1.2,
+  "step": 0.3,
+  "defense_plans": 41616,
+  "attack_plans": 9,
+  "pairs": 374544,
+  "pure_equilibria": 1,
+  "minimum_max_regret": 0.0,
+  "candidate_gap_D": 0.0,
+  "candidate_gap_A": 0.0,
+  "candidate_J_D": 5.677142911263569,
+  "candidate_J_A": 3.0316909574366075,
+  "max_table_refinement": 3.951275120428477e-06,
+  "independent_error": 1.6514984935156463e-09,
+  "continuous_certificate": false
+}

@@ -1,0 +1,238 @@
+{
+  "version": 2,
+  "task_id": "4b2dbffd-a6c8-4124-9919-c2e1e9f4b86e",
+  "created_at": "2026-10-25T15:39:22.977138+00:00",
+  "source": {
+    "path": "C:\\Users\\Jin\\Desktop\\Analysis of attack-defense game for advanced malware propagation control in cloud.pdf",
+    "sha256": "414d3b0683bb3d41c0e59f7c7931ccc4b4b1c8000c57956ce9dac7eec923f474",
+    "page_count": 12
+  },
+  "dpi": 240,
+  "selected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "pages": {
+    "1": {
+      "attempts": 1,
+      "attempt_records": [
+        {
+          "attempt_id": "e6fb3f09-d083-454e-aa0e-a11cffbe6743",
+          "attempt_number": 1,
+          "purpose": "initial",
+          "state": "reserved",
+          "reserved_at": "2026-10-25T15:41:44.402232+00:00",
+          "prompt": "prompts/e6fb3f09-d083-454e-aa0e-a11cffbe6743.md",
+          "prompt_sha256": "858343e37f141239a2b0cd7b618dd62f6564755cb3c3db0f136f56a23933eb58",
+          "prompt_source": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\literature\\translation_tian_2025\\generation-prompt.md",
+          "output": "output/page-0001-attempt-1.png"
+        }
+      ],
+      "input": "input/page-0001.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "bd269499704a201a78f01cdf28ed0bf35f90287a189b93fa9d3184541ec5b4f2",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "2": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0002.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "ec3f7936e340803bd8818fff427e59b2e6233c26eddd7d2588d5c09f3f089309",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "3": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0003.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "44de891c5827ee0ceb624c255281ed8cfd7945f39971f5d971ed568c094f2317",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "4": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0004.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "6f71fbe540a4a64d38238ccae68c91ee2519f89fb91906f5cfe719e6d4a7968f",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "5": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0005.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "20de29eef246283b02629ff70283a5bf621d9eb708a3915745b9f5ebbc75199e",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "6": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0006.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "adf419dba0b3fb7cbc73c626a7e5676eea44bb4a102fd6c8c39e9131ed6c62c4",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "7": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0007.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "d2ac558a11b4950e0c4d18b292eac1e5902d6c94c9d35912bb809ccef544b104",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "8": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0008.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "73771e130c3e3850c39e67700271182c03c864e6eadd5bff8d71b4778ac52ee5",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "9": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0009.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "3b368dd0f1efb654049c7d759262b9676b407ae0ddda202fe5a17b33a88db568",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "10": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0010.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "d99f9ed831fb1eaf8950a7e5670469442a2f9729e1ec2fac61d39efc2c9ed21b",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "11": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0011.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "f92c3ec170a2543951710b78c4572f9f51587062b11533e294b60f11c36fbcda",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    },
+    "12": {
+      "attempts": 0,
+      "attempt_records": [],
+      "input": "input/page-0012.png",
+      "selected_attempt_id": null,
+      "selection_confirmed": true,
+      "source_page_size": [
+        595.2760009765625,
+        793.7009887695312
+      ],
+      "input_sha256": "2c0db5bd967834a069097ecd0158babc0dfda088510e05484d457df7d94ccdfe",
+      "input_dimensions": [
+        1985,
+        2646
+      ]
+    }
+  },
+  "assemblies": [],
+  "policy": {
+    "max_in_flight": 10,
+    "max_attempts_per_page": 1
+  },
+  "legacy_review_exempt": false,
+  "updated_at": "2026-10-25T15:41:44.402232+00:00"
+}

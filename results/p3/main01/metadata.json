@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-10-26T15:19:12.810899+00:00",
+  "command": [
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\src\\experiments.py",
+    "--config",
+    "configs/base.yaml",
+    "--output",
+    "results/p3/main01"
+  ],
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "pandas": "2.1.4",
+  "yaml": "6.0.1",
+  "status": "COMPLETED",
+  "scope": "Synthetic K-slot local alternating responses; unknown global gaps",
+  "source_hashes": {
+    "src\\core.py": "b13423698fd1dc9aaf9f76eb03fe8fc1ffe36da56798e07eee2ad5187e378c53",
+    "src\\game_solver.py": "7d869352f4eea842b9c04809bcbe017d58f2ab27b9439e62d1b31e94d2c0243c",
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\src\\experiments.py": "2679f8a838ad76e2cb13c08e689fa4eca7541424dc623c8e86dccc39ce9f02f9",
+    "configs\\base.yaml": "e1fa73fd08a4ddce6c76dc2e8e6da6d1cbb36ec289367051391d6904417d1fee",
+    "reports\\P3_preregistration.md": "8622ef111ac445cdab90c4e845c233e072087c93dc2276b9649f74dcb99c33c0"
+  },
+  "seconds": 1031.8657818000065
+}

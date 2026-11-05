@@ -1,0 +1,15 @@
+{
+  "compared": [
+    "run01",
+    "run03"
+  ],
+  "data_equal": {
+    "summary": true,
+    "controls": true,
+    "trajectories": true,
+    "rk4_refinement": true,
+    "gradient_check": true,
+    "slot_budgets": true
+  },
+  "note": "core finite input validation hardened between runs; numerical data unchanged"
+}

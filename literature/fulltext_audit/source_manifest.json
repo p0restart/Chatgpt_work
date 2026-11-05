@@ -1,0 +1,32 @@
+[
+  {
+    "id": "R1",
+    "path": "C:\\Users\\Jin\\Desktop\\Analysis of attack-defense game for advanced malware propagation control in cloud.pdf",
+    "sha256": "414d3b0683bb3d41c0e59f7c7931ccc4b4b1c8000c57956ce9dac7eec923f474",
+    "pages": 12
+  },
+  {
+    "id": "R2",
+    "path": "C:\\Users\\Jin\\Desktop\\A differential game approach for real-time security defense decision in scale-free networks.pdf",
+    "sha256": "8616c0516e4d7b1f313c9cc96802020d4ab620e8f35e7e039213b6727a7de19a",
+    "pages": 11
+  },
+  {
+    "id": "R3",
+    "path": "C:\\Users\\Jin\\Desktop\\Preventive-Reactive_Defense_Tradeoffs_in_Resource_Allocation_Contests.pdf",
+    "sha256": "f09da54531e9ff071b09ce0f7545b73eef75e81ceec4bee48470d77b63fa0038",
+    "pages": 6
+  },
+  {
+    "id": "R4",
+    "path": "C:\\Users\\Jin\\Desktop\\To protect, or to recover The effect of defense resource allocation on network robustness.pdf",
+    "sha256": "1414287af11fca508e025fd047bb19a24bae86dc060f9078ad404e62e8e937a4",
+    "pages": 13
+  },
+  {
+    "id": "R5",
+    "path": "C:\\Users\\Jin\\Desktop\\Security defense decision method based on potential differential game for complex networks.pdf",
+    "sha256": "6155742a2b11357626ba32f26b9c21ca1d937e9fd0807ec54346e0b5bdb6b377",
+    "pages": 11
+  }
+]

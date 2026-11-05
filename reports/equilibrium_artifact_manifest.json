@@ -1,0 +1,393 @@
+{
+  "model_and_base_config_unchanged": true,
+  "files": [
+    {
+      "path": "results\\equilibrium_audit\\counterexample01\\comparison.json",
+      "sha256": "19114510d3da94cb0460a6b9210b0d6019cb741297dcf28cfdb7c3f36ba4973c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\counterexample01\\controls.json",
+      "sha256": "ba08d3d57e0c6420f9cdc088e886c76d1ab2ac87aaf9d4bc69676d7979399f5a"
+    },
+    {
+      "path": "results\\equilibrium_audit\\counterexample01\\cross_evaluation.csv",
+      "sha256": "aae5b69a4f8c14be64d4964ea95157c42bdb78737a850aeded4b19c6c40892eb"
+    },
+    {
+      "path": "results\\equilibrium_audit\\counterexample01\\recovery_start_joint_response.json",
+      "sha256": "7c9eba18013507ba7bb00a3301de129be0a6391b6dac27f56227b047b3028d2f"
+    },
+    {
+      "path": "results\\equilibrium_audit\\counterexample01\\strong_fine_audit.json",
+      "sha256": "0ad8074840dfb965351bf45f7648ad137e68e3044520d99bd357ed65ac8921ec"
+    },
+    {
+      "path": "results\\equilibrium_audit\\counterexample01\\trace.jsonl",
+      "sha256": "daf0f8b59f567701572a3cd76cba988e24dafadf78b952c3e432d60cdb5afeb7"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\case_summary.csv",
+      "sha256": "6a89c1e980469129b8a2d1d4a9329984d77b640aecf24cf0ce13f533357c0584"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\metadata.json",
+      "sha256": "3a2bfaf5b76153ea43d8f4e6cf66cceb6575b2e3b2fb0aebff966bf3e4570900"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\slot_mechanism_audit.csv",
+      "sha256": "e152501d4eaf49d98c0ea581608fd69462269bdc06c5bb9fd15caf22dc8428d8"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\summary.csv",
+      "sha256": "f1f076432003cf6365ca109b0416422b06bf879022a53aab0b2a36e07660c4fa"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\verification.json",
+      "sha256": "0ec091b2ce69b024a9c7eea64e2767fb2019f168961bde1d14620d789f29451a"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\case_audit.json",
+      "sha256": "d34a867f10249fb517b2d71dd63f39871d894d69fecd11a1837444a27f56fa3e"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\config.yaml",
+      "sha256": "e70d6992bce1ce170e043e9163d477c93158a22567114f4383e8208a3655d883"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\fine_audit.json",
+      "sha256": "1ada56dacb310605b41dd5b6b7b4563588b105c669ce128e53ca648ce2c227ba"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\marginals.csv",
+      "sha256": "3769b5f76f4a4593a0523e887b8575a1da2af1f3f063a23b6ecb83856761423c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\new_strong_audit.json",
+      "sha256": "8194f565591622ed3f57a7364df033191f652711f1bdc70b0a223f811acb8d9f"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\old_strong_audit.json",
+      "sha256": "54a0fe70feff254b24a11079174bd89fd69de7eb4b127b24bc44762821dd474e"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\transfers.csv",
+      "sha256": "0baf9af4258e2aaf5c6d66049b6d296c3c388f695a9e56cd64201d6b759f026c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\random\\controls.json",
+      "sha256": "e25bd7693c0a18c78977e672d89e3a8a930e0f310a64f90938e479771681bbe8"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\random\\trace.json",
+      "sha256": "3b86445ba9d47bd67d02859b6656490306a87fd4bc48669114ab555da3de6f7b"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\random\\trace.jsonl",
+      "sha256": "acffa58d58e6d54523a9257ff6740e7db485a586032e466920dd48279d580bcb"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\warm\\controls.json",
+      "sha256": "8537303877c691b37fb1f0e2476b9094bc5da7f2f33217b5b160475a8b68ee7c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\warm\\trace.json",
+      "sha256": "fd976af4be02691272173086bea2a11d48c48ac4b4786c84ccdb9cd75b2e0a23"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\warm\\trace.jsonl",
+      "sha256": "91438dadaac4d57cee48db26ec4e8738697ab1a064f665a52b5c802032fd29bb"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\zero\\controls.json",
+      "sha256": "d2e6c99e1d2a49711982a75bd53b87b919c1756fa7ec98652ba3f0a609816a92"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\zero\\trace.json",
+      "sha256": "574b6c0d4ba8965abcff253c0e0e94d1e8e003dae9a713d356611a3faafa3a6e"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed11_separated_B1.2\\zero\\trace.jsonl",
+      "sha256": "c643dced9be318f66f85ed99e8f374dff70499dd9ea0534a9ddbb791ee188c2f"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\case_audit.json",
+      "sha256": "07d7aaba28f67a929705691a3aa0afaf09c3abbded2ed4e24fed9520ed1284b1"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\config.yaml",
+      "sha256": "4856f8362b84e15cca577825ed5f59684ab561b0faa0e289c84ed4180f5c8d77"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\fine_audit.json",
+      "sha256": "c108daae5e001a6a03c0baafa1d31a0ab9854dcd333c10310317120b1874cc4e"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\marginals.csv",
+      "sha256": "b5130c41611ab5054e4d3fb948cd6e6957dcb07aef9bbc7472ee0c1f7ff6f4cc"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\new_strong_audit.json",
+      "sha256": "a279f37e2664043d64a611e484386e6f95fb22ede335a5607a2790ab0b7a7835"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\old_strong_audit.json",
+      "sha256": "4b8213a0dc1a19761e7e03c2d0f678c1b1367b8c6407ac48303e10e913ad6d77"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\transfers.csv",
+      "sha256": "977f0f06bb09c7d353772586e572b08b6e0395ea3b86a5cdce8e02e0eb3d5409"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\random\\controls.json",
+      "sha256": "4ebc7077a4df413ce56eda73d9d3b1b2bbd0f9fc2d6b929bc6f60de76ccd7768"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\random\\trace.json",
+      "sha256": "153925bde9b6804e281f4b05f1caf303066544239ee84d6e57c4a456687b3ae4"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\random\\trace.jsonl",
+      "sha256": "b018c11731fa8286f1bed246e54164307a22847db30a20d0e32662fa215b5704"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\warm\\controls.json",
+      "sha256": "24393a273257b43761a7bd703e0cea96c2fe243060bd70cea5ee8e64ec03d05c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\warm\\trace.json",
+      "sha256": "e074b4ad0abf574627cd2e74ca3757cec8da8d02bb1ec64ce1cc6b1e716de642"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\warm\\trace.jsonl",
+      "sha256": "8fa2191888bb037301189b9b43f4ad808f2ef7df8f61c838b7f6d7d8b94e3cdc"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\zero\\controls.json",
+      "sha256": "cc7eb6654213e6512888345816c3b8707a15ff38792371b6b03424455818213c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\zero\\trace.json",
+      "sha256": "47099788cd9eaf0ebaad76920edd6933dd566780a88d1bb420b080db50644bd5"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed22_separated_B1.2\\zero\\trace.jsonl",
+      "sha256": "eab08f50ada0f2b091997a55019e23f86d96811389e0dd44d0189d3dc664faef"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\case_audit.json",
+      "sha256": "1b59673e548496173d4a66c187e57594a72eb719322ae3572d83eaced93deca2"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\config.yaml",
+      "sha256": "8390ec07b9073fb65d3f78e677289f19ed36c954ca7307d462aac44bb269f446"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\fine_audit.json",
+      "sha256": "99206e478c7c11e8bd8cc360c719560794f919865c488099d0bda9875a35ec19"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\marginals.csv",
+      "sha256": "0867c937698a1940e675aace10796d6795f92fb384e5f725b3d4480811af0798"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\new_strong_audit.json",
+      "sha256": "c7c64148c54457773a5facc095513d2095b281a8775087b5be0fd1941923d1e8"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\old_strong_audit.json",
+      "sha256": "a0d2e36e77ac254fcb49b9b911d73a8ef5c865ddd79411ea4ad4aea1c00a2360"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\transfers.csv",
+      "sha256": "83a69298002c1cea06c8db3aa3c62436ee4c8306fd4dd40f43cd162308acb002"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\random\\controls.json",
+      "sha256": "f1fe9bf4e8d48f14798635fb8d7ee7f9cc4109c59742c4a0c3275a7ec9fd1367"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\random\\trace.json",
+      "sha256": "cfcd12dc60723c0fd57f886b019a35967cb541d2e4cdfdc40aaa75d200b83ce8"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\random\\trace.jsonl",
+      "sha256": "beb330f47f1fa722a282385248564d7efcc9c01b4cf01cfe193a461f328f7281"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\warm\\controls.json",
+      "sha256": "35410b672b2e7d8dd2e84bf4c2587cc37ceb61e261c6d4c63d4be156621e342f"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\warm\\trace.json",
+      "sha256": "5e1499b3c2b5f46983e23df273f450340ff216396e1848d464edafd465664cd2"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\warm\\trace.jsonl",
+      "sha256": "afe071d267b6631f6fd7bba0b207d116b5220f0941d6591a00fe60084356a152"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\zero\\controls.json",
+      "sha256": "d42b07d8ae5663b7f8c251f6bd18e737ffc750e4cf896ece20f0c52ab4592521"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\zero\\trace.json",
+      "sha256": "82c9c509b9f79b853940275767dabd1ec816a8db778298a0ceb087339c1b6428"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_business_cost_B0.6\\zero\\trace.jsonl",
+      "sha256": "b6cb6de6147b94220a12569a603ee8f4911ea27330cd061e0ed28d03b6ef6440"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\case_audit.json",
+      "sha256": "31f5580850383fb354a9cbca15ea7ca73b6aeebbbbf90ad797c967d2ad075b29"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\config.yaml",
+      "sha256": "97aaafa194066cce177cc3ae6d7294bad99530a87a2e57386148cefb993bbffe"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\fine_audit.json",
+      "sha256": "5a7aaa10b5cd9ff0d528b30369502fa99d1b09eae233bdb90478940f31abfabe"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\marginals.csv",
+      "sha256": "03c8c091ef19ea65fd885ea6c8567d149477fbb4bfd9590598f967099ead022c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\new_strong_audit.json",
+      "sha256": "b5dc357dbd912d471ee383797d145dbf1aad2ba866b71df7d553d6ffb123e0fd"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\old_strong_audit.json",
+      "sha256": "19f7a03b7dc1c9aa301ad101e26af61f58f201bbdeea1862d6433db4703899d5"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\transfers.csv",
+      "sha256": "9d75cc08822410eb7513a220946bae8f9a39c9e7bce4943c932a9fdc768801b0"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\random\\controls.json",
+      "sha256": "8df375ae7433c92248e50981dc37780ccca240974343e57c69cc1623bd9dd845"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\random\\trace.json",
+      "sha256": "cf77f79dbc08d1291a23cc652099de3402d4ad5427989a07944888dfe84340cd"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\random\\trace.jsonl",
+      "sha256": "8a4246be8fafe51ba5f633b62209b07be631243fab1959429a9af12a9fe371dc"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\warm\\controls.json",
+      "sha256": "4fc8b4a4d18a9ce0847475e915ddde6331c23cfb180c8e63228284bdb9587529"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\warm\\trace.json",
+      "sha256": "b7f9f07cde8c4fe23d084dc84aae507a09011ac0109e8cdffd778908d3edf55e"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\warm\\trace.jsonl",
+      "sha256": "d405fad718d222518b808bae687b0d55f772d2d409a9d32ab1d80f4a8c7fa01d"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\zero\\controls.json",
+      "sha256": "47ed69b6d8e1589e6bd1fb6a7fcdaa40c27f98aff93862ee59a52516c82a6370"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\zero\\trace.json",
+      "sha256": "5b8481a45b81b00447ed9441617c0155978ec225320cfa9f983e0487f87c2040"
+    },
+    {
+      "path": "results\\equilibrium_audit\\run01\\seed33_separated_B1.2\\zero\\trace.jsonl",
+      "sha256": "c123686c76c606426905fabfcbe012db4228c62e9a1e1528696f73259eb36bdc"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\MECHANISM_EQUILIBRIUM_FINDINGS.md",
+      "sha256": "2f49c4d64f812c2694900057394bf57a5cc4195a727f9f028e18e55dd0d2704d"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\MECHANISM_EQUILIBRIUM_PROTOCOL.md",
+      "sha256": "fe06199062af2b751a211b0576ac312a683bcb05b1722f21b38d3f32780bd047"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\RESEARCH_EXPLANATION.md",
+      "sha256": "9e155f5441f2e1f6b23561fea0359e43354ee6e0852d58a38588edae93b61645"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\configs\\base.yaml",
+      "sha256": "e1fa73fd08a4ddce6c76dc2e8e6da6d1cbb36ec289367051391d6904417d1fee"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\configs\\figure_backend.json",
+      "sha256": "dad100bf58fece91f6d9ce9ef861408b330aea06bb703ea8229bf8d464754a8b"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\configs\\p2.yaml",
+      "sha256": "6d1c17f81ac6b6943b4d1ed9b45a87e128440332b8a3cd9ef9c940979e2d185b"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\configs\\proposed_mechanism_identification.yaml",
+      "sha256": "33fff67496691fe7b1f5cda005e7ee0cfe1556edc1a5cb31038f7f81bea7260b"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\audit_p3.py",
+      "sha256": "e112de062a427c450d855a1fd49df6ef168da17cf568fea0a0752d977aa9888d"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\core.py",
+      "sha256": "b13423698fd1dc9aaf9f76eb03fe8fc1ffe36da56798e07eee2ad5187e378c53"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\diagnose_counterexample.py",
+      "sha256": "02a8d2ef6aac2d749fbf35fcb11f77e22396d4544015d1fa17841a0b0da5f76c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\diagnose_equilibrium.py",
+      "sha256": "ec3c40145e21af50bea7c48289cb7eca90ff9b349c33907dfccc9dcc6fe51415"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\experiments.py",
+      "sha256": "2679f8a838ad76e2cb13c08e689fa4eca7541424dc623c8e86dccc39ce9f02f9"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\explain_counterexample.py",
+      "sha256": "f9c3c386ec59dbaba39bf38abac30997a11a956c22b4508a677f4160c8990581"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\fair_evaluation.py",
+      "sha256": "15dadc3efd2caf5406ef042b5876ea279ba3cb67be57cb62064a595b8e63ac01"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\game_solver.py",
+      "sha256": "7d869352f4eea842b9c04809bcbe017d58f2ab27b9439e62d1b31e94d2c0243c"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\p2_validate.py",
+      "sha256": "cfe3168c8749c54351bdecaf962a4a29a195beea1876374d5552a67d2ac524f7"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\plot_p3.py",
+      "sha256": "a3476eb3bf886cf854d3824f67df504a5e48c4149f1e49547309539115995962"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\report_p3.py",
+      "sha256": "582b7f9ce1497722f47c43122b2e419b2b800f1100a5fb65b128eddef2d15ef8"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\smoke.py",
+      "sha256": "e5c7bee72cb26240782594efe2232d0f329a322b47eb5b6ee79e0338ec0a2eee"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\summarize_equilibrium.py",
+      "sha256": "415688c84589101cdf537aedbd804459f3b27f11674fb509458e5a2a560c5af7"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\summarize_p3.py",
+      "sha256": "2380753cbfa09f69d20e60071a75cddc7f7c602a7115e33200aa917912298e13"
+    },
+    {
+      "path": "results\\equilibrium_audit\\source_snapshot_20261027\\src\\__init__.py",
+      "sha256": "446de6ef409056492eb2e7c7ca01d0498b7ea795d05dbca383e9ba1fef1e4407"
+    }
+  ]
+}

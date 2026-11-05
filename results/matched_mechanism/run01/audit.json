@@ -1,0 +1,30 @@
+{
+  "cases": 36,
+  "numerical_pass_count": 36,
+  "all_numerical_pass": true,
+  "source_hashes_match": true,
+  "reintegrations": 144,
+  "reintegration_max_error": 0.0,
+  "integration_max_error": 9.453302141082531e-09,
+  "budget_max_violation": 8.104628079763643e-15,
+  "states_in_domain": true,
+  "optimizer_runs": 4209,
+  "all_optimizer_success": true,
+  "all_optimizer_residual_max": 1.6563802148705786e-05,
+  "feasible_transfers": 1098,
+  "transfer_max_error": 1.875185424553283e-05,
+  "minimum_feasible_transfer_derivative": -7.71796513820977e-06,
+  "relative_improvement_max": 1.5402190537378863e-09,
+  "incumbent_residual_max": 9.970995971197992e-05,
+  "initialization_control_difference_max": 8.876040275196395e-05,
+  "integration_control_difference_max": 0.0,
+  "interaction_uncertainty_max": 1.874518543999856e-06,
+  "saved_contrast_recalculation_max_error": 9.952975943416931e-17,
+  "global_certificate": false,
+  "analysis_source_hashes": {
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\src\\audit_matched.py": "6e769321b2a4b5dd25cd76fb3e727c8c335269145837f639e99665d2ba71bd6c",
+    "src\\report_matched.py": "65ff70f3dd694435d3cf177f7b5be127a13f4facea8c1a68a816746d13ac29cb",
+    "src\\compare_matched.py": "a3733784b086a253ad8e33435efe62e295df82e621839b59ec65d9114c6af3b0",
+    "src\\resume_matched.py": "dfcd0b13180805e84b8a0ae7240b7291b992b4e4ed6d284124986443788f20c6"
+  }
+}

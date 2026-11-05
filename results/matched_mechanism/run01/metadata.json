@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETED",
+  "command": [
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\src\\matched_mechanism.py",
+    "--output",
+    "results/matched_mechanism/run01"
+  ],
+  "started_at": "2026-10-27T09:55:03.207508+00:00",
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "pandas": "2.1.4",
+  "yaml": "6.0.1",
+  "global_certificate": false,
+  "source_hashes": {
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\src\\matched_mechanism.py": "ccf509a0abb0c42422f5ccb4a090e30a359f87ecba6a38cab53b7a98c5ffffa0",
+    "src\\core.py": "b13423698fd1dc9aaf9f76eb03fe8fc1ffe36da56798e07eee2ad5187e378c53",
+    "src\\game_solver.py": "7d869352f4eea842b9c04809bcbe017d58f2ab27b9439e62d1b31e94d2c0243c",
+    "src\\experiments.py": "2679f8a838ad76e2cb13c08e689fa4eca7541424dc623c8e86dccc39ce9f02f9",
+    "src\\diagnose_equilibrium.py": "ec3c40145e21af50bea7c48289cb7eca90ff9b349c33907dfccc9dcc6fe51415",
+    "configs\\proposed_mechanism_identification.yaml": "2aa2a899a938a5569710eaa01e8bf5f766d8ef63f72d4d1da5b08b88a019a445",
+    "configs\\base.yaml": "e1fa73fd08a4ddce6c76dc2e8e6da6d1cbb36ec289367051391d6904417d1fee",
+    "reports\\MATCHED_MECHANISM_PROTOCOL.md": "16407cf6dd25783f757009fbc6764ff69f2f53de3ce8fafd618f25a36204a20b"
+  },
+  "completed_cases": 36,
+  "seconds": 2371.9558453999925,
+  "segments": [
+    {
+      "resumed_at": "2026-10-27T10:27:01.132803+00:00",
+      "cases_at_start": 28,
+      "launcher_hash": "dfcd0b13180805e84b8a0ae7240b7291b992b4e4ed6d284124986443788f20c6"
+    }
+  ]
+}

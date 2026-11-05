@@ -1,0 +1,19 @@
+{
+  "case": "seed33_B0.6_equal_high_at_node2",
+  "seed": 33,
+  "B": 0.6,
+  "outgoing": "equal",
+  "value": "high_at_node2",
+  "numerical_pass": true,
+  "relative_max": 6.771221432880937e-10,
+  "incumbent_residual_max": 7.616842212462838e-05,
+  "initialization_control_difference": 5.227216127341727e-05,
+  "integration_control_difference": 0.0,
+  "strong_starts_success": true,
+  "strong_start_residual_max": 7.904004208136861e-06,
+  "fixed_attack_J_D": 11.988319525968233,
+  "strict_response_attack_J_D": 11.867195899315206,
+  "J_D": 11.867195840113915,
+  "J_A": 6.93959877056655,
+  "global_certificate": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETED",
+  "cases": [
+    "seed11_separated_B1.2",
+    "seed22_separated_B1.2",
+    "seed33_separated_B1.2",
+    "seed33_business_cost_B0.6"
+  ],
+  "seconds": 277.9429283000063,
+  "relative_target": 1e-07,
+  "model_change": false,
+  "global_certificate": false
+}

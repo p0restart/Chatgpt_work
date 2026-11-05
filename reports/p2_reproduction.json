@@ -1,0 +1,8 @@
+{
+  "summary": true,
+  "controls": true,
+  "trajectories": true,
+  "rk4_refinement": true,
+  "gradient_check": true,
+  "slot_budgets": true
+}

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETED",
+  "part": "all",
+  "started_utc": "2026-11-02T08:34:57.286963+00:00",
+  "python": "3.11.7",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "pandas": "2.1.4",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "seed": 11,
+  "continuous_certificate": false,
+  "seconds": 1828.1154972999357
+}

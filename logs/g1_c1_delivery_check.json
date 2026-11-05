@@ -1,0 +1,11 @@
+{
+  "review_date": "2026-10-28 Asia/Shanghai",
+  "cases": 36,
+  "exact_design_reconstruction": true,
+  "input_and_analysis_hashes_match": true,
+  "evaluation_artifacts_checked": 720,
+  "numerical_audit_pass": true,
+  "pilot_reproduction_exact": true,
+  "G2": "PENDING",
+  "global_certificate": false
+}

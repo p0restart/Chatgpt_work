@@ -1,0 +1,5 @@
+ defense   attack       J_D      J_A
+   Joint    Joint 12.437518 7.512462
+   Joint Recovery 12.434801 7.512440
+Recovery    Joint 12.439491 7.508074
+Recovery Recovery 12.436854 7.508096

@@ -1,0 +1,19 @@
+{
+  "evaluations": 324,
+  "configurations": 27,
+  "reintegration_max_error": 9.769962616701378e-15,
+  "integration_max_error": 2.4301314738295332e-08,
+  "decomposition_max_error": 0.0,
+  "violation_max": 1.454392162258955e-14,
+  "domain_pass": true,
+  "all_optimizers_success": true,
+  "selected_response_max_residual": 7.5835591139292256e-06,
+  "all_start_max_residual": 1.433070748918519e-05,
+  "multistart_max_objective_spread": 1.2857981346314773e-10,
+  "ranking_changes": 0,
+  "game_count": 81,
+  "game_targets_pass": 81,
+  "game_quality_pass": 81,
+  "relative_gap_min": 1.0641220278212714e-05,
+  "relative_gap_max": 0.0022200172387945
+}

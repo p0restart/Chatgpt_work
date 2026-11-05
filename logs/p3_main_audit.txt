@@ -1,0 +1,20 @@
+{
+  "evaluations": 324,
+  "configurations": 27,
+  "reintegration_max_error": 8.881784197001252e-15,
+  "integration_max_error": 2.4301314738295332e-08,
+  "decomposition_max_error": 0.0,
+  "violation_max": 8.215650382226158e-15,
+  "domain_pass": true,
+  "all_optimizers_success": true,
+  "selected_response_max_residual": 7.5588764480716275e-06,
+  "all_start_max_residual": 1.8730970796188018e-05,
+  "multistart_max_objective_spread": 1.3884360328120238e-10,
+  "ranking_changes": 0,
+  "game_count": 81,
+  "game_targets_pass": 81,
+  "game_quality_pass": 81,
+  "relative_gap_min": 0.0042465466449157,
+  "relative_gap_max": 0.0093435203612282
+}
+{'max_abs_difference': 0.0, 'pass_tolerance': 1e-10, 'passed': True, 'scope': 'Both pilot modes, complete controls and numeric summaries excluding timing'}

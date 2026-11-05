@@ -1,0 +1,28 @@
+{
+  "command": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\src\\p2_validate.py --config configs/p2.yaml --output results/p2/run01",
+  "timestamp": "2026-10-24T23:40:02.587910+08:00",
+  "seconds": 9.720653399941511,
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "seed": 11,
+  "checks": {
+    "all_starts_success": true,
+    "feasible": true,
+    "nonworsening": true,
+    "residual": true,
+    "multistart": true,
+    "derivatives": true,
+    "refinement": true
+  },
+  "full_gap_computed": false,
+  "global_optimum_certified": false,
+  "source_hashes": {
+    "src\\__init__.py": "446de6ef409056492eb2e7c7ca01d0498b7ea795d05dbca383e9ba1fef1e4407",
+    "src\\core.py": "9d86e2977aab2355ec582c59be73e1b084430804b21283f479e928ac82249d5b",
+    "src\\game_solver.py": "a5fcdb5e0e42adf195433c022d8d2300465d5dae91d37ce188de47fb166c42c8",
+    "src\\p2_validate.py": "cfe3168c8749c54351bdecaf962a4a29a195beea1876374d5552a67d2ac524f7",
+    "src\\smoke.py": "e5c7bee72cb26240782594efe2232d0f329a322b47eb5b6ee79e0338ec0a2eee"
+  }
+}

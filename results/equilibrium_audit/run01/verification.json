@@ -1,0 +1,13 @@
+{
+  "cases": 4,
+  "trials": 12,
+  "trials_passed": 12,
+  "strong_local_starts": 304,
+  "all_strong_starts_success": true,
+  "max_violation": 1.0325074129013956e-14,
+  "max_initialization_control_difference": 6.222944797901198e-05,
+  "max_new_observed_relative_improvement": 2.2387735960994819e-10,
+  "max_transfer_derivative_error": 1.7220761153874387e-05,
+  "max_active_marginal_spread": 8.120639557929188e-05,
+  "global_certificate": false
+}

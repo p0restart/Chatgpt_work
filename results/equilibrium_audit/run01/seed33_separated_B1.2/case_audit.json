@@ -1,0 +1,10 @@
+{
+  "control_difference_across_initializations": 6.222944797901198e-05,
+  "old_relative_max": 0.001329646348513004,
+  "new_relative_max": 2.2387735960994819e-10,
+  "fine_relative_max": 2.2374182796503582e-10,
+  "highspread": 0,
+  "highvalue": 5,
+  "transfer_count": 12,
+  "max_direction_error": 1.6689031221984486e-05
+}

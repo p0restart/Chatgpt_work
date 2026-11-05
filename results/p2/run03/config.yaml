@@ -1,0 +1,58 @@
+seed: 11
+n: 4
+T: 10.0
+K: 4
+rk4_substeps_per_slot: 12
+network: modular
+scenario: separated
+attack_entry_indices:
+- 0
+- 1
+alpha_entry: 0.25
+beta_nonzero_range:
+- 0.04
+- 0.12
+delta: 0.1
+gamma: 0.3
+epsilon: 1.0
+x0:
+- 0.1
+- 0.0
+- 0.0
+- 0.0
+q_normal: 1.0
+q_high: 4.0
+h_normal: 0.05
+h_high: 0.5
+g: 1.0
+c_a: 1.0
+c_s: 1.0
+c_r: 1.0
+omega: 0.0
+nu: 0.0
+b_s: 1.0
+b_r: 1.0
+d_a: 1.0
+B: 1.2
+A: 0.8
+p2:
+  starts: 3
+  maxiter: 300
+  ftol: 1.0e-10
+  fixed_attack_each_entry: 0.2
+  fixed_isolation_each_node: 0.1
+  fixed_recovery_each_node: 0.1
+  gradient_steps:
+  - 0.0001
+  - 1.0e-05
+  - 1.0e-06
+  refinement_substeps:
+  - 6
+  - 12
+  - 24
+  - 48
+  derivative_tolerance: 1.0e-06
+  feasibility_tolerance: 1.0e-10
+  projected_residual_tolerance: 0.0001
+  multistart_objective_spread_tolerance: 1.0e-05
+  refinement_objective_tolerance: 1.0e-06

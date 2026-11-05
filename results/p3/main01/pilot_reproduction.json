@@ -1,0 +1,6 @@
+{
+  "max_abs_difference": 0.0,
+  "pass_tolerance": 1e-10,
+  "passed": true,
+  "scope": "Both pilot modes, complete controls and numeric summaries excluding timing"
+}

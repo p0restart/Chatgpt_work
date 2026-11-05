@@ -1,0 +1,10 @@
+{
+  "case": "seed33_business_cost_B0.6",
+  "recovery_iterations": 3,
+  "recovery_J_D": 12.436854043461201,
+  "joint_J_D": 12.437518228196426,
+  "joint_reduction_pct": -0.00534045613869767,
+  "recovery_max_relative_improvement": 1.3255993733668647e-11,
+  "recovery_incumbent_residual": 1.2343330091812987e-05,
+  "label": "Matched precision local candidates; no global certificate"
+}
