@@ -1,0 +1,21 @@
+{
+  "path": "uniform",
+  "passed": true,
+  "J_D": 11.194939998518239,
+  "J_A": 6.053800121110216,
+  "gap_D": 1.5667174224631708e-08,
+  "gap_A": 3.718536589758514e-11,
+  "relative_D": 1.2847274547095243e-09,
+  "relative_A": 5.2716784228544966e-12,
+  "residual_D": 5.169352668898952e-05,
+  "residual_A": 3.096495042487213e-06,
+  "errors": {
+    "objective": 3.233857626128156e-11,
+    "parts": 3.234035261812096e-11,
+    "state": 9.544837142883011e-12
+  },
+  "violation": 1.1102230246251565e-15,
+  "refine_distance": 0.0,
+  "optimizer_calls": 63,
+  "optimizer_failures": 0
+}

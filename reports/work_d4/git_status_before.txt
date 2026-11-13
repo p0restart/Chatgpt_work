@@ -1,0 +1,22 @@
+ M DECISIONS.md
+ M logs/STATUS.md
+ M paper/evidence_map.md
+ M reports/blocker.md
+ M reviews/APPROVAL_LOG.md
+ M src/core.py
+ M src/game_solver.py
+?? handoffs/
+?? paper/work_d1/
+?? paper/work_d2.zip
+?? paper/work_d2/
+?? paper/work_d3/
+?? paper/work_d4/
+?? reports/WORK_C2_ROBUSTNESS_PROTOCOL.md
+?? reports/work_d4/
+?? reports/work_d4_p0_1/
+?? results/work_c2_robustness/
+?? reviews/G1_WORK_C2_submission.md
+?? reviews/G2_WORK_C2_submission.md
+?? reviews/G_D2_decision.md
+?? tests/test_b_fixes.py
+

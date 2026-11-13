@@ -1,0 +1,21 @@
+{
+  "path": "warm",
+  "passed": true,
+  "J_D": 11.19492809906503,
+  "J_A": 6.053793233917125,
+  "gap_D": 1.2762829015855459e-08,
+  "gap_A": 0.0,
+  "relative_D": 1.0465686154257827e-09,
+  "relative_A": 0.0,
+  "residual_D": 4.394904013821366e-05,
+  "residual_A": 2.681350256827919e-07,
+  "errors": {
+    "objective": 3.234568168863916e-11,
+    "parts": 3.235101075915736e-11,
+    "state": 9.543810186585233e-12
+  },
+  "violation": 2.7755575615628914e-15,
+  "refine_distance": 0.0,
+  "optimizer_calls": 51,
+  "optimizer_failures": 0
+}

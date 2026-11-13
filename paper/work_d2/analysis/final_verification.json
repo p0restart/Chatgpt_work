@@ -1,0 +1,17 @@
+{
+  "status": "READY_FOR_G_D2_REVIEW",
+  "protected_files_checked": 1356,
+  "protected_files_changed": [],
+  "additional_control_sources": 8,
+  "missing_links": [],
+  "nan_tables": [],
+  "equations": [
+    "17",
+    "18",
+    "19",
+    "20"
+  ],
+  "missing_figure_files": [],
+  "experiments_run": false,
+  "approval_log_modified": false
+}

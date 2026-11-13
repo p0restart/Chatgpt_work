@@ -1,0 +1,230 @@
+{
+  "date": "2026-11-12 Asia/Shanghai",
+  "status": "WAITING_USER_G_D4_DIRECTION / WAITING_USER_G1_D4",
+  "passed": true,
+  "check_count": 50,
+  "checks": [
+    {
+      "name": "6014_existing_files_unchanged",
+      "passed": true,
+      "changed": []
+    },
+    {
+      "name": "saved_evidence_checks_pass",
+      "passed": true,
+      "count": 387
+    },
+    {
+      "name": "no_new_optimization_integration_or_research_tests",
+      "passed": true
+    },
+    {
+      "name": "01_section_revision_map.md_exists_and_has_content",
+      "passed": true
+    },
+    {
+      "name": "02_contributions_evidence_risk.md_exists_and_has_content",
+      "passed": true
+    },
+    {
+      "name": "03_minimal_experiment_protocol.md_exists_and_has_content",
+      "passed": true
+    },
+    {
+      "name": "04_abstract_and_structure.md_exists_and_has_content",
+      "passed": true
+    },
+    {
+      "name": "01_section_revision_map.md_balanced_fences",
+      "passed": true
+    },
+    {
+      "name": "01_section_revision_map.md_no_replacement_character",
+      "passed": true
+    },
+    {
+      "name": "01_section_revision_map.md_link_完整配置例",
+      "passed": true,
+      "target": "evidence/saved_allocation_seed11_B1.2_D.csv"
+    },
+    {
+      "name": "02_contributions_evidence_risk.md_balanced_fences",
+      "passed": true
+    },
+    {
+      "name": "02_contributions_evidence_risk.md_no_replacement_character",
+      "passed": true
+    },
+    {
+      "name": "02_contributions_evidence_risk.md_link_本轮核对记录",
+      "passed": true,
+      "target": "../../../reports/work_d4/decision_reorientation_20261112/saved_evidence_audit.json"
+    },
+    {
+      "name": "02_contributions_evidence_risk.md_link_18项配对",
+      "passed": true,
+      "target": "evidence/saved_fixed_trained_comparisons.csv"
+    },
+    {
+      "name": "02_contributions_evidence_risk.md_link_九D格双评价",
+      "passed": true,
+      "target": "evidence/saved_budget_loss_D9_H192.csv"
+    },
+    {
+      "name": "03_minimal_experiment_protocol.md_balanced_fences",
+      "passed": true
+    },
+    {
+      "name": "03_minimal_experiment_protocol.md_no_replacement_character",
+      "passed": true
+    },
+    {
+      "name": "03_minimal_experiment_protocol.md_link_边表",
+      "passed": true,
+      "target": "evidence/proposed_experiment_edges_from_saved_model.csv"
+    },
+    {
+      "name": "04_abstract_and_structure.md_balanced_fences",
+      "passed": true
+    },
+    {
+      "name": "04_abstract_and_structure.md_no_replacement_character",
+      "passed": true
+    },
+    {
+      "name": "README.md_balanced_fences",
+      "passed": true
+    },
+    {
+      "name": "README.md_no_replacement_character",
+      "passed": true
+    },
+    {
+      "name": "README.md_link_1 合稿逐节修改表",
+      "passed": true,
+      "target": "01_section_revision_map.md"
+    },
+    {
+      "name": "README.md_link_2 两项贡献、证据与创新风险",
+      "passed": true,
+      "target": "02_contributions_evidence_risk.md"
+    },
+    {
+      "name": "README.md_link_3 最小新增实验协议",
+      "passed": true,
+      "target": "03_minimal_experiment_protocol.md"
+    },
+    {
+      "name": "README.md_link_4 可编辑摘要与结构",
+      "passed": true,
+      "target": "04_abstract_and_structure.md"
+    },
+    {
+      "name": "README.md_link_来源与状态说明",
+      "passed": true,
+      "target": "../../../reports/work_d4/decision_reorientation_20261112/readiness_and_scope.md"
+    },
+    {
+      "name": "README.md_link_核对记录",
+      "passed": true,
+      "target": "../../../reports/work_d4/decision_reorientation_20261112/saved_evidence_audit.json"
+    },
+    {
+      "name": "README.md_link_本轮审阅单",
+      "passed": true,
+      "target": "../../../reviews/G_D4_direction_20261112_submission.md"
+    },
+    {
+      "name": "readiness_and_scope.md_balanced_fences",
+      "passed": true
+    },
+    {
+      "name": "readiness_and_scope.md_no_replacement_character",
+      "passed": true
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_balanced_fences",
+      "passed": true
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_no_replacement_character",
+      "passed": true
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_link_Work D4四材料",
+      "passed": true,
+      "target": "../paper/work_d4/decision_reorientation_20261112/README.md"
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_link_合稿逐节修改表",
+      "passed": true,
+      "target": "../paper/work_d4/decision_reorientation_20261112/01_section_revision_map.md"
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_link_两项贡献、证据与创新风险",
+      "passed": true,
+      "target": "../paper/work_d4/decision_reorientation_20261112/02_contributions_evidence_risk.md"
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_link_最小新增实验参数/输出/验收协议",
+      "passed": true,
+      "target": "../paper/work_d4/decision_reorientation_20261112/03_minimal_experiment_protocol.md"
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_link_新版摘要与论文结构",
+      "passed": true,
+      "target": "../paper/work_d4/decision_reorientation_20261112/04_abstract_and_structure.md"
+    },
+    {
+      "name": "G_D4_direction_20261112_submission.md_link_原P0-1审核单",
+      "passed": true,
+      "target": "G_D4_P0_1_submission.md"
+    },
+    {
+      "name": "protocol_contains_PLAN_ONLY",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_0.50",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_WAITING_USER_G1_D4",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_E0",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_E1",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_18条",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_逐分量相同",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_不能称作原始t=0开环均衡",
+      "passed": true
+    },
+    {
+      "name": "protocol_contains_a(t−)",
+      "passed": true
+    },
+    {
+      "name": "abstract_reports_negative_and_local_boundaries",
+      "passed": true
+    },
+    {
+      "name": "abstract_does_not_claim_replanning_result",
+      "passed": true
+    }
+  ],
+  "note": "Document/file checks only. No user approval, new research experiment, or independent review.",
+  "protected_files": 6014
+}

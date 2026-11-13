@@ -1,0 +1,7 @@
+ seed   B       I6      I12         delta  relative_change  sign6  sign12  allocation_reversals  effects_below_resolution_after_refinement  effects_above_resolution_after_refinement  numerical_pass  stable
+   11 0.6 0.018274 0.018273 -3.718787e-07        -0.000020      1       1                     0                                          1                                          0            True    True
+   33 1.2 0.029192 0.029110 -8.234355e-05        -0.002821      1       1                     0                                          0                                          2            True    True
+        improvement  relative
+player                       
+A          0.012773  0.001767
+D          0.026180  0.002141

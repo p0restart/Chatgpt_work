@@ -1,0 +1,11 @@
+{
+  "expected": {
+    "src/core.py": "ef2c675252d5fc8e00bc7103dd542a40bbf9c7714412207dd4e0b20966859419",
+    "src/game_solver.py": "8a5469467d5028077f6b83f7c9bb2dde5be6e0ff46790c07d252f0d70dbd1d87"
+  },
+  "actual": {
+    "src/core.py": "ef2c675252d5fc8e00bc7103dd542a40bbf9c7714412207dd4e0b20966859419",
+    "src/game_solver.py": "8a5469467d5028077f6b83f7c9bb2dde5be6e0ff46790c07d252f0d70dbd1d87"
+  },
+  "match": true
+}

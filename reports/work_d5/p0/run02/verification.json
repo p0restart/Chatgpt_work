@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "analysis": "extraction_and_fixed_plan_replay_only",
+  "starts_per_saved_response": 3,
+  "new_optimizer_calls": 0,
+  "cases": 9,
+  "strategy_pairs": 54,
+  "original_C2_manifest_entries_checked": 199,
+  "original_C2_manifest_mismatches": [],
+  "protected_inputs": 267,
+  "protected_inputs_unchanged": true,
+  "defense_rows": 324,
+  "attack_rows": 972,
+  "budget_rows": 324,
+  "historical_optimizer_returns": 135,
+  "all_saved_optimizers_success": true,
+  "max_saved_response_residual": 1.271991363682723e-06,
+  "max_replay_error_48_192": 3.808864335042017e-11,
+  "max_original_core_difference": 0.0,
+  "max_saved_192_replay_difference": 0.0,
+  "continuous_global_certificate": false
+}

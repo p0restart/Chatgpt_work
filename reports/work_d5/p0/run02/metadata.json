@@ -1,0 +1,13 @@
+{
+  "started_utc": "2026-11-12T16:03:37.234861+00:00",
+  "finished_utc": "2026-11-12T16:03:58.577409+00:00",
+  "date_Asia_Shanghai": "2026-11-13",
+  "python": "3.11.7",
+  "numpy": "1.26.4",
+  "pandas": "2.1.4",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "source": "results\\supplement_c2\\run02",
+  "command": "python reports/work_d5/analysis/audit_decision_difference.py --output reports/work_d5/p0/run02",
+  "optimization": "not_run; historical seed and returns retained",
+  "G1_G2": "No model or strategy class change; no approval asserted; no downstream manuscript revision"
+}

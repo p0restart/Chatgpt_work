@@ -1,0 +1,34 @@
+{
+  "results/work_c2_robustness/k_refinement/run01/seed11_B0.6_A/warm/fine/controls.json": {
+    "sha256": "e0ba12d8e4f888460e0a5c67e0fd927df7b4a13c9df7f21162ae89c59c767598",
+    "bytes": 5187
+  },
+  "results/work_c2_robustness/k_refinement/run01/seed11_B0.6_B/warm/fine/controls.json": {
+    "sha256": "5f85071ae925fac5859d8f37f503bbc426bf13241560dcba6833618889d7fb06",
+    "bytes": 5285
+  },
+  "results/work_c2_robustness/k_refinement/run01/seed11_B0.6_C/warm/fine/controls.json": {
+    "sha256": "c238cf7672395c6ce37595be511e1b9ec62f0deeb58f7572f0b3075a011ea7da",
+    "bytes": 5096
+  },
+  "results/work_c2_robustness/k_refinement/run01/seed11_B0.6_D/warm/fine/controls.json": {
+    "sha256": "dfdb1e51ac2656f090bbbef2bf3bfa8c0e6ce215e7e817a5454f148c660da5c4",
+    "bytes": 5194
+  },
+  "results/work_c2_robustness/k_refinement/run01/seed33_B1.2_A/warm/fine/controls.json": {
+    "sha256": "d68bb51cb67494f21f6cd3be9010aefe94531778ab59da28b8c440bd190c1fb3",
+    "bytes": 5484
+  },
+  "results/work_c2_robustness/k_refinement/run01/seed33_B1.2_B/warm/fine/controls.json": {
+    "sha256": "40948aeb384970813a869097822372b174f4b239d15c52ec001364a5048bd022",
+    "bytes": 5228
+  },
+  "results/work_c2_robustness/k_refinement/run01/seed33_B1.2_C/warm/fine/controls.json": {
+    "sha256": "ae9c76957e7d5f1db9e4a54a17c17b2b6f7dad09f25e317acdb76fea0eaeead0",
+    "bytes": 5421
+  },
+  "results/work_c2_robustness/k_refinement/run01/seed33_B1.2_D/warm/fine/controls.json": {
+    "sha256": "2d3440a68629e148cf6bfb2419c54d96ea48acc529ed232a2507412ed141e15e",
+    "bytes": 5310
+  }
+}

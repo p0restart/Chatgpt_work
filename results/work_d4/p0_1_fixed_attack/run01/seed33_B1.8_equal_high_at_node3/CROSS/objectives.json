@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 11.227911922741884,
+    "J_A": 5.5171756471153195,
+    "parts": {
+      "security": 9.31931741184969,
+      "business": 0.22363255864923778,
+      "isolation": 0.610785578978851,
+      "recovery": 1.0741763732641059,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.117175647115318,
+      "attacker_effort": 1.599999999999999,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 11.227911920474998,
+    "J_A": 5.517175641179531,
+    "parts": {
+      "security": 9.3193174095828,
+      "business": 0.22363255864923842,
+      "isolation": 0.6107855789788541,
+      "recovery": 1.0741763732641045,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.117175641179528,
+      "attacker_effort": 1.5999999999999968,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 11.2279119203327,
+    "J_A": 5.517175640815449,
+    "parts": {
+      "security": 9.319317409440513,
+      "business": 0.2236325586492369,
+      "isolation": 0.6107855789788463,
+      "recovery": 1.074176373264102,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.117175640815445,
+      "attacker_effort": 1.5999999999999956,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 11.227911920323816,
+    "J_A": 5.5171756407929,
+    "parts": {
+      "security": 9.319317409431616,
+      "business": 0.2236325586492411,
+      "isolation": 0.610785578978855,
+      "recovery": 1.0741763732641048,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.117175640792895,
+      "attacker_effort": 1.599999999999995,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 11.227911920323248,
+    "J_A": 5.517175640791496,
+    "parts": {
+      "security": 9.31931740943105,
+      "business": 0.2236325586492394,
+      "isolation": 0.6107855789788553,
+      "recovery": 1.0741763732641019,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.117175640791491,
+      "attacker_effort": 1.5999999999999948,
+      "terminal_attacker": 0.0
+    }
+  }
+}

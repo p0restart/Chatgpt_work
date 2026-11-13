@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-11",
+  "python": "3.11.7",
+  "numpy": "1.26.4",
+  "pandas": "2.1.4",
+  "source_files": 1356,
+  "checks": 857,
+  "failed_checks": 0,
+  "hash_checks": 3310,
+  "blockers": [],
+  "counterexample": {
+    "case": "seed33_business_cost_B0.6",
+    "recovery_iterations": 3,
+    "recovery_J_D": 12.436854043461201,
+    "joint_J_D": 12.437518228196426,
+    "joint_reduction_pct": -0.00534045613869767,
+    "recovery_max_relative_improvement": 1.3255993733668647e-11,
+    "recovery_incumbent_residual": 1.2343330091812987e-05,
+    "label": "Matched precision local candidates; no global certificate"
+  },
+  "cross_environment": {
+    "interaction": {
+      "old": 0.021649934191652065,
+      "new": 0.021649934192669917,
+      "absolute_error": 1.0178524689763435e-12
+    },
+    "comparison_pass": true,
+    "numerical_pass": true,
+    "optimizer_calls": 460,
+    "optimizer_failures": 0,
+    "max_control_difference": 1.129879523276145e-11,
+    "max_state_difference": 4.078903881321594e-12,
+    "max_objective_difference": 1.9610979506978765e-12,
+    "max_relative_gap": 1.1080188576421028e-09,
+    "max_residual": 9.097175486516562e-05,
+    "max_violation": 1.1102230246251565e-15,
+    "max_integration_error": 2.9409363833110547e-11
+  }
+}
+ seed   B       J_A       J_B       J_C       J_D  equal_effect  unequal_effect  interaction
+   11 0.6 10.748962 10.748962 10.739528 10.757802 -7.389644e-13        0.018274     0.018274
+   11 1.2 10.283569 10.283569 10.272034 10.293684 -5.311307e-13        0.021650     0.021650
+   11 1.8 10.242429 10.242429 10.232449 10.251036 -5.222489e-13        0.018587     0.018587
+   22 0.6 10.628770 10.628770 10.618966 10.637880 -1.923794e-12        0.018914     0.018914
+   22 1.2 10.191760 10.191760 10.180580 10.201597 -3.124612e-12        0.021017     0.021017
+   22 1.8 10.158698 10.158698 10.148861 10.167227 -1.639577e-12        0.018366     0.018366
+   33 0.6 11.867196 11.867196 11.854254 11.879313  7.320367e-12        0.025059     0.025059
+   33 1.2 11.215489 11.215489 11.200145 11.229337 -3.844036e-12        0.029192     0.029192
+   33 1.8 11.105095 11.105095 11.092573 11.115371 -6.547651e-12        0.022798     0.022798
+         evaluation       baseline  count       min    median       max  positive_count
+    adaptive_attack  Fixed-trained      9  0.028962  0.146343  0.286081               9
+    adaptive_attack Isolation-only      9  5.665009 10.362181 10.999605               9
+    adaptive_attack   Joint-static      9  0.661035  1.543242  2.190133               9
+    adaptive_attack  Recovery-only      9  0.887424  3.512142  4.796222               9
+    adaptive_attack    Spread-only      9  5.578299  9.330618 14.053104               9
+    adaptive_attack        Uniform      9  7.693229 10.117373 11.480109               9
+    adaptive_attack     Value-only      9  8.222781 12.740923 17.542138               9
+common_fixed_attack  Fixed-trained      9 -0.094142 -0.055678 -0.016590               0
+common_fixed_attack Isolation-only      9  5.774954 10.417957 11.062296               9
+common_fixed_attack   Joint-static      9  0.734060  1.695124  2.389951               9
+common_fixed_attack  Recovery-only      9  0.770175  3.124615  4.633167               9
+common_fixed_attack    Spread-only      9  5.669358  9.360079 14.079888               9
+common_fixed_attack        Uniform      9  7.468445  9.902616 11.384967               9
+common_fixed_attack     Value-only      9  8.181519 12.700209 17.407914               9

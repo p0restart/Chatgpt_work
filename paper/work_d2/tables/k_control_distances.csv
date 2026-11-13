@@ -1,0 +1,9 @@
+seed,B,cell,D_u,D_a,source
+11,0.6,A,0.06407555109902356,0.06570657477991562,results\work_c2_robustness\k_refinement\run01\seed11_B0.6_A\warm\fine\controls.json
+11,0.6,B,0.06407555109997738,0.06570657477851621,results\work_c2_robustness\k_refinement\run01\seed11_B0.6_B\warm\fine\controls.json
+11,0.6,C,0.06492884625297189,0.06568525350297447,results\work_c2_robustness\k_refinement\run01\seed11_B0.6_C\warm\fine\controls.json
+11,0.6,D,0.06330451876583518,0.06575118636460775,results\work_c2_robustness\k_refinement\run01\seed11_B0.6_D\warm\fine\controls.json
+33,1.2,A,0.08333432455548664,0.068418205146482,results\work_c2_robustness\k_refinement\run01\seed33_B1.2_A\warm\fine\controls.json
+33,1.2,B,0.08333432455407493,0.06841820514553867,results\work_c2_robustness\k_refinement\run01\seed33_B1.2_B\warm\fine\controls.json
+33,1.2,C,0.0824464577676814,0.06841984346491298,results\work_c2_robustness\k_refinement\run01\seed33_B1.2_C\warm\fine\controls.json
+33,1.2,D,0.08409120428733209,0.0684180289182352,results\work_c2_robustness\k_refinement\run01\seed33_B1.2_D\warm\fine\controls.json

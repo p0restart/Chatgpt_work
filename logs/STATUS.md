@@ -119,3 +119,44 @@
 - 当前审批依据为2026-11-03用户明确批准G2，见reviews/APPROVAL_LOG.md及DECISIONS.md；上述2026-10-28 WAITING_USER_G2为历史状态。
 - 依用户“写第4章内容”及既定顺序，完成manuscript/04_method_zh.md，包含控制离散、实际SLSQP/RK4局部响应、同一策略对停止检查、算法框、有限菜单核验及精度表。
 - 配套依据和静态核对见manuscript/preparation/04_method_review.md。代码和已保存数据逐项对照；本轮未运行新实验或测试，未改冻结数学假设、原始数据及第3、5节。后续写作按计划进入第2节相关工作。
+
+## 2026-11-08 Work C2：PARTIAL / WAITING_USER_G1_WORK_C2
+- C1两份源码哈希与用户预期一致，文件检查点保存于results/work_c2_robustness/checkpoint/c1_20261107；未提交或改动核心代码。
+- 原环境及新隔离venv环境均53测试通过；seed11/B1.2 K=6四格真实独立重求完成，4/4数值门槛及登记比较容差通过，460次记录优化调用无失败。
+- 最大双方目标差1.96110e-12、控制差1.12988e-11、状态差4.07890e-12、交互差1.01785e-12；非逐位一致，非跨操作系统/跨算法验证。
+- K=12八配置及跨策略类偏离0/8，未执行，等待补充G1；原G1/G1-C1冻结K=6。具体协议reports/WORK_C2_ROBUSTNESS_PROTOCOL.md，申请reviews/G1_WORK_C2_submission.md。原2026-11-03 G2批准仍有效，不自动覆盖新实验结论。
+- 当前结论：部分通过，需要补充修正；未确认控制槽稳健性。交接handoffs/C2_robustness.md。历史结果与论文正文不变；未伪造批准。
+
+## 2026-11-10 Work C2：G1-Work-C2 APPROVED_SCOPE / RUNNING
+- 用户明确批准登记的K=12精化与跨策略类偏离测试；已记录于reviews/APPROVAL_LOG.md与DECISIONS.md。
+- C1哈希复核一致；使用已核验隔离venv执行 handoffs.C2_refine run01。原结果与核心求解源码不变，保持既有组间止损及G2边界。
+
+## 2026-11-10 Work C2：COMPLETED / WAITING_USER_G2_WORK_C2
+- 已完成批准的8格K=12精化和跨策略类偏离；32路径全部达标，四格目标交互在两组均保持正向。
+- 防御方/攻击方原六槽候选跨到十二槽后有最高约0.2141%/0.1767%的已发现归一化改善；不能外推六槽内的局部诊断。
+- 交接 handoffs/C2_robustness.md；新增结论审核 reviews/G2_WORK_C2_submission.md；论文正文及历史结果未改。
+
+## 2026-11-10 Work C2：G2-Work-C2 APPROVED
+- 用户明确批准新增稳健性证据及其写作边界，结束本轮等待审核状态。
+
+## 2026-11-11 / G-D2 APPROVED / Work D3执行中
+- 用户明确授权批准G-D2并启动D3，原文与边界见reviews/APPROVAL_LOG.md、reviews/G_D2_decision.md。
+- 现行D2最小修订为本次接受版本；既有D1/D2等待文字保留为历史记录，由本条及正式批准记录更新状态。
+- D3范围：摘要、结论、合稿、压缩、引用统一、通用投稿审查。冻结模型、源码、原始实验及D1/D2源稿保持原样。
+- 具体目标会议与模板未指定；可继续通用稿及引用核对，会议页数、匿名要求和最终PDF版式待确定。
+
+## 2026-11-11 / Work D3通用稿完成
+- 当前：G-D2 APPROVED；D3 READY_FOR_AUTHOR_REVIEW / TEMPLATE_PENDING。授权原文见reviews/G_D2_decision.md；不新增人工签字或最终投稿批准。
+- 交付：paper/work_d3/manuscript_zh.md、中英文摘要、结论、补充材料、五项统一引用、压缩审查和投稿格式待办。现有第1–5节由12,260至5,694汉字，减少53.6%；新增摘要/结论另计，不等同会议页数。
+- 85项文档与保存数据核验通过；20组公式原样保留，反向评价、反例、控制异质性和跨类偏离留主文。源码、模型、D1/D2源稿及实验记录未改；没有新优化、积分、研究测试或独立审稿。
+- 5个D1历史哈希差异为换行和Markdown表格格式，规范化内容相同，详见D3审查及版本比较记录。
+- 会议/模板/篇幅/作者信息待确定；可审阅通用稿，会议专用套版、最终PDF逐页检查及实际投稿尚未执行。入口paper/work_d3/D3_handoff.md。
+
+## 2026-11-11 / Work D4-P0-1：必读执行指令缺失
+- 用户明确授权固定攻击完整36格对照；该授权有效，不再次请求同范围运行许可。
+- 已完成接口审计、36模型/配置/四格来源核对、53项当前测试和预先协议草案；377个受保护文件指纹一致。见reports/work_d4_p0_1/interface_audit.md及protocol_draft.md。
+- 尚未找到用户要求首先读取的Work_D4_P0_修订执行指令.md，已询问其路径或内容。当前WAITING_REQUIRED_INSTRUCTION；正式固定攻击重新优化尚未启动，没有I_fixed/ΔI或新增科学结论。
+- 取得指令并冻结正式协议后再开始新运行；不修改D3、不覆盖历史、不启动P0-2/P0-3、不伪造G-D3/G-D4批准。
+
+## 2026-11-13 / Work D5：APPROVED_SCOPE / IMPLEMENTATION_PREFLIGHT
+- 开始限定实验实现与接口检查；先B1.2，数值通过才扩展。新输出 results/work_d5/replanning/run01，不覆盖旧数据；D3和旧待审事项不前进。

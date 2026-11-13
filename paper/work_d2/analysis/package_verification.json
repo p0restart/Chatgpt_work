@@ -1,0 +1,10 @@
+{
+  "archive": "paper/work_d2/review_package/Work_D2_GD2_review_light.zip",
+  "bytes": 1198148,
+  "sha256": "baab3dc1d7113761628898d9bf7426568e4f05caf15e31788b3dc0162df88727",
+  "files": 108,
+  "archive_integrity": "PASS",
+  "excluded_qa_packages": true,
+  "protected_source_changes": [],
+  "experiments_run": false
+}

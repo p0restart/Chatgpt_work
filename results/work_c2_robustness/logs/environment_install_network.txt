@@ -1,0 +1,101 @@
+Collecting numpy==1.26.4
+  Obtaining dependency information for numpy==1.26.4 from https://files.pythonhosted.org/packages/3f/6b/5610004206cf7f8e7ad91c5a85a8c71b2f2f8051a0c0c4d5916b76d6cbb2/numpy-1.26.4-cp311-cp311-win_amd64.whl.metadata
+  Downloading numpy-1.26.4-cp311-cp311-win_amd64.whl.metadata (61 kB)
+     -------------------------------------- 61.0/61.0 kB 540.4 kB/s eta 0:00:00
+Collecting scipy==1.11.4
+  Obtaining dependency information for scipy==1.11.4 from https://files.pythonhosted.org/packages/43/d0/f3cd75b62e1b90f48dbf091261b2fc7ceec14a700e308c50f6a69c83d337/scipy-1.11.4-cp311-cp311-win_amd64.whl.metadata
+  Downloading scipy-1.11.4-cp311-cp311-win_amd64.whl.metadata (60 kB)
+     ---------------------------------------- 60.4/60.4 kB 1.6 MB/s eta 0:00:00
+Collecting pandas==2.1.4
+  Obtaining dependency information for pandas==2.1.4 from https://files.pythonhosted.org/packages/11/17/fb1a34f3e73debbc2fd15a01ea17eaab3717943d08463ff4979a4f024b3f/pandas-2.1.4-cp311-cp311-win_amd64.whl.metadata
+  Downloading pandas-2.1.4-cp311-cp311-win_amd64.whl.metadata (18 kB)
+Collecting PyYAML==6.0.1
+  Obtaining dependency information for PyYAML==6.0.1 from https://files.pythonhosted.org/packages/b3/34/65bb4b2d7908044963ebf614fe0fdb080773fc7030d7e39c8d3eddcd4257/PyYAML-6.0.1-cp311-cp311-win_amd64.whl.metadata
+  Downloading PyYAML-6.0.1-cp311-cp311-win_amd64.whl.metadata (2.1 kB)
+Collecting matplotlib==3.8.2
+  Obtaining dependency information for matplotlib==3.8.2 from https://files.pythonhosted.org/packages/26/5a/27fd341e4510257789f19a4b4be8bb90d1113b8f176c3dab562b4f21466e/matplotlib-3.8.2-cp311-cp311-win_amd64.whl.metadata
+  Downloading matplotlib-3.8.2-cp311-cp311-win_amd64.whl.metadata (5.9 kB)
+Collecting networkx==3.2.1
+  Obtaining dependency information for networkx==3.2.1 from https://files.pythonhosted.org/packages/d5/f0/8fbc882ca80cf077f1b246c0e3c3465f7f415439bdea6b899f6b19f61f70/networkx-3.2.1-py3-none-any.whl.metadata
+  Downloading networkx-3.2.1-py3-none-any.whl.metadata (5.2 kB)
+Collecting pytest==8.3.5
+  Obtaining dependency information for pytest==8.3.5 from https://files.pythonhosted.org/packages/30/3d/64ad57c803f1fa1e963a7946b6e0fea4a70df53c1a7fed304586539c2bac/pytest-8.3.5-py3-none-any.whl.metadata
+  Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==2.1.4)
+  Obtaining dependency information for python-dateutil>=2.8.2 from https://files.pythonhosted.org/packages/2f/a9/52b89563d154433d79b51ed1eb4842bf7334cb2696891a7fe135618853d7/python_dateutil-4.0.0-py3-none-any.whl.metadata
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pytz>=2020.1 (from pandas==2.1.4)
+  Obtaining dependency information for pytz>=2020.1 from https://files.pythonhosted.org/packages/b6/25/564f3fc5b70c1398d706c51f2b1470d0ea0b1b2f96fee67877b6f5bdf3b6/pytz-2026.6-py2.py3-none-any.whl.metadata
+  Downloading pytz-2026.6-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.1 (from pandas==2.1.4)
+  Obtaining dependency information for tzdata>=2022.1 from https://files.pythonhosted.org/packages/0a/66/9a06c2227fedfd4919f0eaaa8b94377d9730882a7e4f95823c9a331ab5e1/tzdata-2026.6-py2.py3-none-any.whl.metadata
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting contourpy>=1.0.1 (from matplotlib==3.8.2)
+  Obtaining dependency information for contourpy>=1.0.1 from https://files.pythonhosted.org/packages/98/4b/9bd370b004b5c9d8045c6c33cf65bae018b27aca550a3f657cdc99acdbd8/contourpy-1.3.3-cp311-cp311-win_amd64.whl.metadata
+  Downloading contourpy-1.3.3-cp311-cp311-win_amd64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib==3.8.2)
+  Obtaining dependency information for cycler>=0.10 from https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl.metadata
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib==3.8.2)
+  Obtaining dependency information for fonttools>=4.22.0 from https://files.pythonhosted.org/packages/46/87/4ba592099172764aa56e66919b0c3ddaf944c775433e806e36e165062095/fonttools-4.68.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading fonttools-4.68.0-cp311-cp311-win_amd64.whl.metadata (142 kB)
+     -------------------------------------- 142.6/142.6 kB 1.4 MB/s eta 0:00:00
+Collecting kiwisolver>=1.3.1 (from matplotlib==3.8.2)
+  Obtaining dependency information for kiwisolver>=1.3.1 from https://files.pythonhosted.org/packages/bf/9f/6f9e489c188200e6fb3193935501894811e8c97577c8ffe9033589bf3521/kiwisolver-1.5.1-cp311-cp311-win_amd64.whl.metadata
+  Downloading kiwisolver-1.5.1-cp311-cp311-win_amd64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib==3.8.2)
+  Obtaining dependency information for packaging>=20.0 from https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl.metadata
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=8 (from matplotlib==3.8.2)
+  Obtaining dependency information for pillow>=8 from https://files.pythonhosted.org/packages/7d/f6/6e2d96413e4c9dbec12ea584d9e646d602877d4cce3ea669099f959deac6/pillow-13.0.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading pillow-13.0.0-cp311-cp311-win_amd64.whl.metadata (9.3 kB)
+Collecting pyparsing>=2.3.1 (from matplotlib==3.8.2)
+  Obtaining dependency information for pyparsing>=2.3.1 from https://files.pythonhosted.org/packages/38/bb/d215ee7c73b61497b28a5503f9f53523f294fcc936762b7caf90e0c1c2b5/pyparsing-3.3.3-py3-none-any.whl.metadata
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting colorama (from pytest==8.3.5)
+  Obtaining dependency information for colorama from https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl.metadata
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting iniconfig (from pytest==8.3.5)
+  Obtaining dependency information for iniconfig from https://files.pythonhosted.org/packages/56/43/4ca9e49d27a1fcf6bece6f6aec0ea46bb9112489b93d4b688fb415457bdb/iniconfig-2.3.1-py3-none-any.whl.metadata
+  Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting pluggy<2,>=1.5 (from pytest==8.3.5)
+  Obtaining dependency information for pluggy<2,>=1.5 from https://files.pythonhosted.org/packages/40/9e/2b38731e0fc536806f16490e1a12d7f0dc2a1235aa8cc07bcc75416a7daa/pluggy-1.7.0-py3-none-any.whl.metadata
+  Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+Downloading numpy-1.26.4-cp311-cp311-win_amd64.whl (15.8 MB)
+   ---------------------------------------- 15.8/15.8 MB 26.2 MB/s eta 0:00:00
+Downloading scipy-1.11.4-cp311-cp311-win_amd64.whl (44.1 MB)
+   ---------------------------------------- 44.1/44.1 MB 21.8 MB/s eta 0:00:00
+Downloading pandas-2.1.4-cp311-cp311-win_amd64.whl (10.6 MB)
+   ---------------------------------------- 10.6/10.6 MB 26.2 MB/s eta 0:00:00
+Downloading PyYAML-6.0.1-cp311-cp311-win_amd64.whl (144 kB)
+   ---------------------------------------- 144.7/144.7 kB ? eta 0:00:00
+Downloading matplotlib-3.8.2-cp311-cp311-win_amd64.whl (7.6 MB)
+   ---------------------------------------- 7.6/7.6 MB 15.8 MB/s eta 0:00:00
+Downloading networkx-3.2.1-py3-none-any.whl (1.6 MB)
+   ---------------------------------------- 1.6/1.6 MB 34.8 MB/s eta 0:00:00
+Downloading pytest-8.3.5-py3-none-any.whl (343 kB)
+   --------------------------------------- 343.6/343.6 kB 20.8 MB/s eta 0:00:00
+Downloading contourpy-1.3.3-cp311-cp311-win_amd64.whl (225 kB)
+   ---------------------------------------- 225.2/225.2 kB ? eta 0:00:00
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.68.0-cp311-cp311-win_amd64.whl (1.7 MB)
+   ---------------------------------------- 1.7/1.7 MB 35.6 MB/s eta 0:00:00
+Downloading kiwisolver-1.5.1-cp311-cp311-win_amd64.whl (70 kB)
+   ---------------------------------------- 70.7/70.7 kB ? eta 0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+   ---------------------------------------- 130.0/130.0 kB ? eta 0:00:00
+Downloading pillow-13.0.0-cp311-cp311-win_amd64.whl (7.3 MB)
+   ---------------------------------------- 7.3/7.3 MB 29.1 MB/s eta 0:00:00
+Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+   ---------------------------------------- 126.4/126.4 kB 7.3 MB/s eta 0:00:00
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+   ---------------------------------------- 92.9/92.9 kB 5.2 MB/s eta 0:00:00
+Downloading pytz-2026.6-py2.py3-none-any.whl (506 kB)
+   --------------------------------------- 506.3/506.3 kB 16.0 MB/s eta 0:00:00
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+   --------------------------------------- 348.2/348.2 kB 21.1 MB/s eta 0:00:00
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Installing collected packages: pytz, tzdata, PyYAML, pyparsing, pluggy, pillow, packaging, numpy, networkx, kiwisolver, iniconfig, fonttools, cycler, colorama, scipy, python-dateutil, pytest, contourpy, pandas, matplotlib
+Successfully installed PyYAML-6.0.1 colorama-0.4.6 contourpy-1.3.3 cycler-0.12.1 fonttools-4.68.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.8.2 networkx-3.2.1 numpy-1.26.4 packaging-26.3 pandas-2.1.4 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-8.3.5 python-dateutil-4.0.0 pytz-2026.6 scipy-1.11.4 tzdata-2026.6

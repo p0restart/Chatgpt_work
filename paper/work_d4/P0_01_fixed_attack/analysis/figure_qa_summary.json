@@ -1,0 +1,26 @@
+[
+  {
+    "check": "source",
+    "returncode": 0
+  },
+  {
+    "figure": "figure_interaction_comparison",
+    "font_returncode": 0,
+    "collision_returncode": 0
+  },
+  {
+    "figure": "figure_temporal_seed11_B0.6",
+    "font_returncode": 0,
+    "collision_returncode": 0
+  },
+  {
+    "figure": "figure_temporal_seed11_B1.2",
+    "font_returncode": 0,
+    "collision_returncode": 0
+  },
+  {
+    "figure": "figure_temporal_seed11_B1.8",
+    "font_returncode": 0,
+    "collision_returncode": 0
+  }
+]

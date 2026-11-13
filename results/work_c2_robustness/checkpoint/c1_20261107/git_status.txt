@@ -1,0 +1,7 @@
+ M src/core.py
+ M src/game_solver.py
+?? handoffs/
+?? reports/WORK_C2_ROBUSTNESS_PROTOCOL.md
+?? results/work_c2_robustness/
+?? reviews/G1_WORK_C2_submission.md
+?? tests/test_b_fixes.py

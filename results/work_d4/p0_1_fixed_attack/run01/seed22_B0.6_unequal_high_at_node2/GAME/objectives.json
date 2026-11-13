@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 10.61896649320156,
+    "J_A": 6.295625313519583,
+    "parts": {
+      "security": 10.090209458953318,
+      "business": 0.05486832922913514,
+      "isolation": 0.06155343422361933,
+      "recovery": 0.4123352707954878,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.620231510771724,
+      "attacker_effort": 1.324606197252141,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 10.618966489497174,
+    "J_A": 6.295625311005614,
+    "parts": {
+      "security": 10.090209455248932,
+      "business": 0.05486832922913506,
+      "isolation": 0.061553434223619176,
+      "recovery": 0.4123352707954878,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.620231508257757,
+      "attacker_effort": 1.3246061972521428,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 10.618966489267162,
+    "J_A": 6.2956253108513875,
+    "parts": {
+      "security": 10.090209455018918,
+      "business": 0.05486832922913541,
+      "isolation": 0.06155343422361985,
+      "recovery": 0.4123352707954879,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.620231508103525,
+      "attacker_effort": 1.3246061972521377,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 10.618966489252827,
+    "J_A": 6.295625310841831,
+    "parts": {
+      "security": 10.090209455004587,
+      "business": 0.054868329229135086,
+      "isolation": 0.061553434223619106,
+      "recovery": 0.41233527079548615,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.620231508093976,
+      "attacker_effort": 1.3246061972521455,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 10.618966489251935,
+    "J_A": 6.2956253108412294,
+    "parts": {
+      "security": 10.090209455003698,
+      "business": 0.054868329229135045,
+      "isolation": 0.06155343422361908,
+      "recovery": 0.41233527079548254,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.620231508093387,
+      "attacker_effort": 1.3246061972521583,
+      "terminal_attacker": 0.0
+    }
+  }
+}

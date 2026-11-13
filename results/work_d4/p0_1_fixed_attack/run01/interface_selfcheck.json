@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "gradient": [
+    {
+      "index": 0,
+      "analytic": 0.10002932280053269,
+      "finite_difference": 0.10002932082642246,
+      "error": 1.974110222513481e-09
+    },
+    {
+      "index": 6,
+      "analytic": 0.2319398923620392,
+      "finite_difference": 0.23193989751035815,
+      "error": 5.148318937830965e-09
+    },
+    {
+      "index": 13,
+      "analytic": 0.5696526722193003,
+      "finite_difference": 0.5696526690357473,
+      "error": 3.1835529767931803e-09
+    }
+  ],
+  "independent_error": 1.2811141036905838e-12,
+  "fixed_attack_in_all_starts": true
+}

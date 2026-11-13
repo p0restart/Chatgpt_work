@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 10.356100176764581,
+    "J_A": 5.2731889348804,
+    "parts": {
+      "security": 8.792205173026039,
+      "business": 0.18133277420124783,
+      "isolation": 0.42829041452092126,
+      "recovery": 0.9542718150163721,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873188934880399,
+      "attacker_effort": 1.599999999999999,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 10.356100173695326,
+    "J_A": 5.273188928432874,
+    "parts": {
+      "security": 8.792205169956791,
+      "business": 0.18133277420124735,
+      "isolation": 0.4282904145209207,
+      "recovery": 0.9542718150163684,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873188928432871,
+      "attacker_effort": 1.5999999999999968,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 10.35610017350437,
+    "J_A": 5.273188928037198,
+    "parts": {
+      "security": 8.792205169765827,
+      "business": 0.18133277420124722,
+      "isolation": 0.42829041452092137,
+      "recovery": 0.9542718150163749,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.8731889280371945,
+      "attacker_effort": 1.5999999999999956,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 10.356100173492473,
+    "J_A": 5.2731889280127,
+    "parts": {
+      "security": 8.792205169753931,
+      "business": 0.18133277420124802,
+      "isolation": 0.428290414520924,
+      "recovery": 0.9542718150163695,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873188928012695,
+      "attacker_effort": 1.599999999999995,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 10.35610017349172,
+    "J_A": 5.273188928011161,
+    "parts": {
+      "security": 8.792205169753185,
+      "business": 0.18133277420125185,
+      "isolation": 0.4282904145209188,
+      "recovery": 0.9542718150163647,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873188928011156,
+      "attacker_effort": 1.5999999999999948,
+      "terminal_attacker": 0.0
+    }
+  }
+}

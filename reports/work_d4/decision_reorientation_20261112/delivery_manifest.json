@@ -1,0 +1,92 @@
+[
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/01_section_revision_map.md",
+    "bytes": 11250,
+    "sha256": "691d188e0936d774922c212174b26abe9f656e6e2eea9c71e71b64cc7cc8c805"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/02_contributions_evidence_risk.md",
+    "bytes": 9393,
+    "sha256": "98e558bdf3f4ab81594cc53c439157cdf8485b286e9ce5b227aeb00e58248838"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/03_minimal_experiment_protocol.md",
+    "bytes": 16706,
+    "sha256": "3f75f6b42292246fbe800f1db05185ed7c8aebf32cae606d7ed3d22212c15e11"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/04_abstract_and_structure.md",
+    "bytes": 8584,
+    "sha256": "9e73ee9239de467e9f451ce4751f243a52b367fa4f6e8c820fc4a96a6aa714d4"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/analysis/audit_existing.py",
+    "bytes": 11500,
+    "sha256": "65f53c344038085ffc9a0496379a2fd31ad34d873813c7cffd7bd263ed29506a"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/analysis/verify_delivery.py",
+    "bytes": 4663,
+    "sha256": "38cc0748508057faf8eaa287fdbbf38330752a4cdb17329c7dfa669f3d67600d"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/evidence/proposed_experiment_edges_from_saved_model.csv",
+    "bytes": 161,
+    "sha256": "1db23bca54b5b76f105cf2bf25f4c50a257588880e117e5eb9c65ff6eef68c1e"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/evidence/saved_allocation_seed11_B1.2_D.csv",
+    "bytes": 7059,
+    "sha256": "3ed56930ede94928977382ca2639dc7fd361367d0d46e5a1f6a095f904ac36b2"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/evidence/saved_budget_loss_D9_H192.csv",
+    "bytes": 3065,
+    "sha256": "6abf68e7def6e482e49d9f3b474de1b7dd00587ff143711a3761c67868b64da8"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/evidence/saved_budget_use_all36.csv",
+    "bytes": 36505,
+    "sha256": "9943973a97efe8b0d5e9eae053d2d63b4373c2bc537fc005c7dbf8670d646bfc"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/evidence/saved_fixed_trained_comparisons.csv",
+    "bytes": 3048,
+    "sha256": "ac38eb12b96c2971fa1b91dedb0b4201aa5711b8fe8e01d01bf6cc68c73eaca9"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/evidence/saved_original_counterexample_cross.csv",
+    "bytes": 238,
+    "sha256": "a8296286d71988d87103d168314129b59ed09dd9b166cb77e030cb4f2503b487"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/evidence/saved_P0_1_pending_review.csv",
+    "bytes": 950,
+    "sha256": "20ae4560fb3074334604f8d8f91988fdc697e782f0f8decc486a5337a3e2ae37"
+  },
+  {
+    "path": "paper/work_d4/decision_reorientation_20261112/README.md",
+    "bytes": 3549,
+    "sha256": "90fff9e8ac0130c80c96bd645bf2ca6f25cd81fef62e09ee0df35876fbe8d252"
+  },
+  {
+    "path": "reports/work_d4/decision_reorientation_20261112/delivery_verification.json",
+    "bytes": 6779,
+    "sha256": "af4de54f948e66773d677321201b6b0a03f79acf51bd2b03a1f79521d3802204"
+  },
+  {
+    "path": "reports/work_d4/decision_reorientation_20261112/readiness_and_scope.md",
+    "bytes": 5229,
+    "sha256": "ab21a4fcee6888b2349ecc05a7cfc961b36d2ba55864825fd30ead777a2d24cc"
+  },
+  {
+    "path": "reports/work_d4/decision_reorientation_20261112/saved_evidence_audit.json",
+    "bytes": 42010,
+    "sha256": "b1af88107e17e26800f29bf035575e0f356f6d8602eca6ba371afe03f31ece14"
+  },
+  {
+    "path": "reviews/G_D4_direction_20261112_submission.md",
+    "bytes": 3694,
+    "sha256": "dbf7fd7481cb51f818e708f7365802279c9beb1a697cec22e65b7f784cff662d"
+  }
+]

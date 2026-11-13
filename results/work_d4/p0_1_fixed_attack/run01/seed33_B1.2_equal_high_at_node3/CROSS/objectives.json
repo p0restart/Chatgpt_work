@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 11.342118463484567,
+    "J_A": 5.929299664413374,
+    "parts": {
+      "security": 9.992652742141065,
+      "business": 0.1791524858537374,
+      "isolation": 0.3772718794464252,
+      "recovery": 0.7930413560433389,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299664413373,
+      "attacker_effort": 1.599999999999999,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 11.342118462331255,
+    "J_A": 5.929299659423443,
+    "parts": {
+      "security": 9.992652740987754,
+      "business": 0.17915248585373691,
+      "isolation": 0.37727187944642593,
+      "recovery": 0.793041356043339,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.52929965942344,
+      "attacker_effort": 1.5999999999999968,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 11.342118462257874,
+    "J_A": 5.929299659117676,
+    "parts": {
+      "security": 9.99265274091437,
+      "business": 0.17915248585373814,
+      "isolation": 0.37727187944642465,
+      "recovery": 0.7930413560433418,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299659117672,
+      "attacker_effort": 1.5999999999999956,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 11.342118462253259,
+    "J_A": 5.929299659098754,
+    "parts": {
+      "security": 9.99265274090975,
+      "business": 0.1791524858537368,
+      "isolation": 0.3772718794464293,
+      "recovery": 0.7930413560433441,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299659098749,
+      "attacker_effort": 1.599999999999995,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 11.342118462252952,
+    "J_A": 5.929299659097582,
+    "parts": {
+      "security": 9.992652740909454,
+      "business": 0.1791524858537386,
+      "isolation": 0.3772718794464257,
+      "recovery": 0.7930413560433338,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299659097577,
+      "attacker_effort": 1.5999999999999948,
+      "terminal_attacker": 0.0
+    }
+  }
+}

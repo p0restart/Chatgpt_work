@@ -1,0 +1,32 @@
+[
+  {
+    "file": "paper/work_d1/01_research_contributions.md",
+    "package_hash_valid": true,
+    "text_equal_after_newlines": true,
+    "whitespace_only": true
+  },
+  {
+    "file": "paper/work_d1/02_paper_outline.md",
+    "package_hash_valid": true,
+    "text_equal_after_newlines": false,
+    "whitespace_only": true
+  },
+  {
+    "file": "paper/work_d1/03_introduction_zh.md",
+    "package_hash_valid": true,
+    "text_equal_after_newlines": true,
+    "whitespace_only": true
+  },
+  {
+    "file": "paper/work_d1/04_system_model_zh.md",
+    "package_hash_valid": true,
+    "text_equal_after_newlines": true,
+    "whitespace_only": true
+  },
+  {
+    "file": "paper/work_d1/05_game_solution_zh.md",
+    "package_hash_valid": true,
+    "text_equal_after_newlines": true,
+    "whitespace_only": true
+  }
+]

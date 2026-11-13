@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 10.319197157009793,
+    "J_A": 5.27391550371147,
+    "parts": {
+      "security": 8.795157322025663,
+      "business": 0.17608421280740164,
+      "isolation": 0.3965993155223182,
+      "recovery": 0.9513563066544113,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873915503711469,
+      "attacker_effort": 1.599999999999999,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 10.319197155036628,
+    "J_A": 5.273915497962529,
+    "parts": {
+      "security": 8.7951573200525,
+      "business": 0.17608421280740214,
+      "isolation": 0.39659931552231775,
+      "recovery": 0.9513563066544085,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873915497962526,
+      "attacker_effort": 1.5999999999999968,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 10.319197154913395,
+    "J_A": 5.273915497609874,
+    "parts": {
+      "security": 8.795157319929263,
+      "business": 0.17608421280740216,
+      "isolation": 0.3965993155223188,
+      "recovery": 0.9513563066544102,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.87391549760987,
+      "attacker_effort": 1.5999999999999956,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 10.319197154905694,
+    "J_A": 5.273915497588038,
+    "parts": {
+      "security": 8.795157319921572,
+      "business": 0.1760842128074012,
+      "isolation": 0.3965993155223123,
+      "recovery": 0.95135630665441,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873915497588033,
+      "attacker_effort": 1.599999999999995,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 10.319197154905222,
+    "J_A": 5.273915497586671,
+    "parts": {
+      "security": 8.795157319921081,
+      "business": 0.17608421280739997,
+      "isolation": 0.39659931552233,
+      "recovery": 0.9513563066544112,
+      "terminal_defense": 0.0,
+      "attacker_value": 6.873915497586665,
+      "attacker_effort": 1.5999999999999948,
+      "terminal_attacker": 0.0
+    }
+  }
+}

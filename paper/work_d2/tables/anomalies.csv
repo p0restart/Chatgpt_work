@@ -1,0 +1,7 @@
+﻿severity,issue,detail
+INFO,D1 historical hash differs,05_game_solution_zh.md; explained by D1_model_rewrite_note.md; current version preserved
+INFO,G-D1-R1 report not found locally,User states PASS; not relabelled as local manual approval. Current instruction authorizes D2 only.
+INFO,D1 stale three-contribution wording,Use 01_research_contributions.md two-contribution R1; do not overwrite D1.
+INFO,Old supplement run01 FAILED,"Preserved; run02 is one successful batch, not two replications."
+INFO,Historical scenario field separated in matched exports,Namespace/cell reconstructed from case directory and actual model; not P3 separated.
+INFO,Historical approval hash resolved,Current log prefix of 4290 bytes exactly matches pre-G2 hash; only subsequent approved G2-Work-C2 append differs. No experimental data mismatch.

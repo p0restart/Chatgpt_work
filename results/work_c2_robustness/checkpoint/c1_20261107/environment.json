@@ -1,0 +1,10 @@
+{
+  "time_utc": "2026-11-07T15:59:21.723087+00:00",
+  "executable": "C:\\ProgramData\\anaconda3\\python.exe",
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "command": [
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\handoffs\\C2_prepare.py"
+  ],
+  "checkpoint_kind": "file snapshot; not a new Git commit"
+}

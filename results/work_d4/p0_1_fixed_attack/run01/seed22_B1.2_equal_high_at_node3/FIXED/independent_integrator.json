@@ -1,0 +1,20 @@
+{
+  "J_D": 10.346018439859208,
+  "J_A": 5.465040289471922,
+  "parts": {
+    "security": 9.08918357949276,
+    "business": 0.15376935812129294,
+    "isolation": 0.30652623352330133,
+    "recovery": 0.796539268721852,
+    "attacker_value": 7.0650402894719235,
+    "attacker_effort": 1.6000000000000016,
+    "terminal_defense": 0.0,
+    "terminal_attacker": 0.0
+  },
+  "objective_error": 6.572520305780927e-14,
+  "component_error": 7.283063041541027e-14,
+  "state_error": 7.216310882185439e-13,
+  "method": "DOP853 with separate scalar-index RHS and costs",
+  "rtol": 1e-11,
+  "atol": 1e-13
+}

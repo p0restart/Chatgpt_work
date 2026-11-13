@@ -1,0 +1,115 @@
+{
+  "date": "2026-11-05",
+  "python": "3.11.7",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "integration": [
+    {
+      "substeps": 3,
+      "error": 8.54373695124977e-07,
+      "state_min": 0.0,
+      "state_max": 0.1769433054980921
+    },
+    {
+      "substeps": 6,
+      "error": 5.1695698832787684e-08,
+      "state_min": 0.0,
+      "state_max": 0.17694335440352618
+    },
+    {
+      "substeps": 12,
+      "error": 3.1794642474380908e-09,
+      "state_min": 0.0,
+      "state_max": 0.17694335731455377
+    },
+    {
+      "substeps": 24,
+      "error": 1.976829810956815e-10,
+      "state_min": 0.0,
+      "state_max": 0.17694335749210616
+    }
+  ],
+  "weighted_projection_max_residual_difference": 1.1657341758564144e-14,
+  "nan_violation": 0.0,
+  "invalid_response_inputs": [
+    {
+      "T": "nan",
+      "steps": 6,
+      "accepted": true,
+      "stored_steps": 6,
+      "finite_value": false,
+      "finite_gradient": false
+    },
+    {
+      "T": "inf",
+      "steps": 6,
+      "accepted": true,
+      "stored_steps": 6,
+      "finite_value": false,
+      "finite_gradient": false
+    },
+    {
+      "T": "3.0",
+      "steps": 1.9,
+      "accepted": true,
+      "stored_steps": 1,
+      "finite_value": true,
+      "finite_gradient": true
+    }
+  ],
+  "zero_starts": {
+    "exception": "ValueError",
+    "message": "zero-size array to reduction operation maximum which has no identity"
+  },
+  "coarse_rk4_counterexample": {
+    "returned_without_exception": true,
+    "terminal_first": 29.1,
+    "exact_terminal_first": 4.539992976248485e-06,
+    "J_D": -2.8999999999999995
+  },
+  "accepted_nonzero_diagonal": 1e-09,
+  "accepted_zero_entry_alpha": true,
+  "saved_finite_tables": [
+    {
+      "path": "results\\supplement_c2\\run02\\finite\\B0.6\\step0.3",
+      "pairs": 7056,
+      "all_finite": true,
+      "pure_count_at_1e_8": 1,
+      "minimum_max_regret": 0.0
+    },
+    {
+      "path": "results\\supplement_c2\\run02\\finite\\B0.6\\step0.6",
+      "pairs": 441,
+      "all_finite": true,
+      "pure_count_at_1e_8": 1,
+      "minimum_max_regret": 0.0
+    },
+    {
+      "path": "results\\supplement_c2\\run02\\finite\\B1.2\\step0.3",
+      "pairs": 374544,
+      "all_finite": true,
+      "pure_count_at_1e_8": 1,
+      "minimum_max_regret": 0.0
+    },
+    {
+      "path": "results\\supplement_c2\\run02\\finite\\B1.2\\step0.6",
+      "pairs": 4356,
+      "all_finite": true,
+      "pure_count_at_1e_8": 1,
+      "minimum_max_regret": 0.0
+    }
+  ],
+  "source_sha256": {
+    "02_MODEL_SPEC.md": "9e85d14105d6f0a40b197ce1fe5f3b8621554e6936c604031f697e8f94190df4",
+    "DECISIONS.md": "7e531dfc57907c06aa3bb259bba65458df40eb02f3c90613efcf36d9763cebd7",
+    "src/core.py": "b13423698fd1dc9aaf9f76eb03fe8fc1ffe36da56798e07eee2ad5187e378c53",
+    "src/game_solver.py": "7d869352f4eea842b9c04809bcbe017d58f2ab27b9439e62d1b31e94d2c0243c",
+    "src/supplement_c2.py": "9705757f65d31e9285b4831bca17915c6792cffdf61a60da91bc6835613c9734",
+    "src/matched_mechanism.py": "ccf509a0abb0c42422f5ccb4a090e30a359f87ecba6a38cab53b7a98c5ffffa0",
+    "tests\\test_core.py": "8affaeb703937d5dd840252bc86f906c70f1a992d64ee720c1815b1485f15687",
+    "tests\\test_experiments.py": "618291ec10e62b562d98e47120d21a61d13745b4443c37f1cc3790861268f39c",
+    "tests\\test_matched_mechanism.py": "fbfd45bf53186980c1ed8b952b84be2d3e6b926945d8c6a5af65a3f7b940ec2e",
+    "tests\\test_solver.py": "e81416afd337ab80ca69d8eee1c9cbf0d49987ab8734367f1775120c1ca20b2c",
+    "tests\\test_supplement_c2.py": "c8efd00ff02433a2c8f329753b55590814aa5b1833f2faa0fc6b9a9a988566e9"
+  }
+}

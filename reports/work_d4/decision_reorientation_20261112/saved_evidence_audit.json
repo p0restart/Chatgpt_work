@@ -1,0 +1,1623 @@
+{
+  "date": "2026-11-12 Asia/Shanghai",
+  "mode": "saved_files_and_arithmetic_only",
+  "optimization_executed": false,
+  "integration_executed": false,
+  "research_tests_executed": false,
+  "passed": true,
+  "check_count": 387,
+  "failed": [],
+  "checks": [
+    {
+      "name": "protected_sources_unchanged",
+      "passed": true,
+      "count": 6014,
+      "changed": []
+    },
+    {
+      "name": "matched_case_count",
+      "passed": true,
+      "count": 36
+    },
+    {
+      "name": "seed11_B0.6_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B0.6_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.4432899320127035e-15
+    },
+    {
+      "name": "seed11_B0.6_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B0.6_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 3.774758283725532e-15
+    },
+    {
+      "name": "seed11_B0.6_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B0.6_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 5.88418203051333e-15
+    },
+    {
+      "name": "seed11_B0.6_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B0.6_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.6653345369377348e-15
+    },
+    {
+      "name": "seed11_B1.2_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.2_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 2.220446049250313e-16
+    },
+    {
+      "name": "seed11_B1.2_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.2_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 8.881784197001252e-16
+    },
+    {
+      "name": "seed11_B1.2_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.2_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 3.3306690738754696e-16
+    },
+    {
+      "name": "seed11_B1.2_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.2_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.887379141862766e-15
+    },
+    {
+      "name": "seed11_B1.8_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.8_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.5543122344752192e-15
+    },
+    {
+      "name": "seed11_B1.8_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.8_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 8.881784197001252e-16
+    },
+    {
+      "name": "seed11_B1.8_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.8_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 0.0
+    },
+    {
+      "name": "seed11_B1.8_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed11_B1.8_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 4.440892098500626e-16
+    },
+    {
+      "name": "seed22_B0.6_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B0.6_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 2.220446049250313e-15
+    },
+    {
+      "name": "seed22_B0.6_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B0.6_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.4432899320127035e-15
+    },
+    {
+      "name": "seed22_B0.6_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B0.6_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 5.218048215738236e-15
+    },
+    {
+      "name": "seed22_B0.6_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B0.6_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 3.6637359812630166e-15
+    },
+    {
+      "name": "seed22_B1.2_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.2_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 2.220446049250313e-16
+    },
+    {
+      "name": "seed22_B1.2_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.2_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.6653345369377348e-15
+    },
+    {
+      "name": "seed22_B1.2_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.2_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 6.661338147750939e-16
+    },
+    {
+      "name": "seed22_B1.2_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.2_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 4.440892098500626e-16
+    },
+    {
+      "name": "seed22_B1.8_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.8_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 0.0
+    },
+    {
+      "name": "seed22_B1.8_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.8_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 0.0
+    },
+    {
+      "name": "seed22_B1.8_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.8_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 2.220446049250313e-16
+    },
+    {
+      "name": "seed22_B1.8_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed22_B1.8_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.2212453270876722e-15
+    },
+    {
+      "name": "seed33_B0.6_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B0.6_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 3.6637359812630166e-15
+    },
+    {
+      "name": "seed33_B0.6_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B0.6_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.5543122344752192e-15
+    },
+    {
+      "name": "seed33_B0.6_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B0.6_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 5.551115123125783e-16
+    },
+    {
+      "name": "seed33_B0.6_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B0.6_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 5.440092820663267e-15
+    },
+    {
+      "name": "seed33_B1.2_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.2_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 6.661338147750939e-16
+    },
+    {
+      "name": "seed33_B1.2_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.2_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 0.0
+    },
+    {
+      "name": "seed33_B1.2_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.2_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 1.9984014443252818e-15
+    },
+    {
+      "name": "seed33_B1.2_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.2_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 8.881784197001252e-16
+    },
+    {
+      "name": "seed33_B1.8_equal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.8_equal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 4.440892098500626e-16
+    },
+    {
+      "name": "seed33_B1.8_equal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.8_equal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 0.0
+    },
+    {
+      "name": "seed33_B1.8_unequal_high_at_node2_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.8_unequal_high_at_node2_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 0.0
+    },
+    {
+      "name": "seed33_B1.8_unequal_high_at_node3_H48_saved_objective",
+      "passed": true
+    },
+    {
+      "name": "seed33_B1.8_unequal_high_at_node3_saved_plan_feasible",
+      "passed": true,
+      "max_violation": 0.0
+    },
+    {
+      "name": "binding_counts_60_40_1",
+      "passed": true,
+      "counts": {
+        "0.6": 60,
+        "1.2": 40,
+        "1.8": 1
+      }
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B0.6_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.2_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed11_B1.8_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B0.6_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.2_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed22_B1.8_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B0.6_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.2_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_B1.8_unequal_high_at_node3_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_adaptive_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_adaptive_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_adaptive_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_adaptive_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_adaptive_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_adaptive_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_adaptive_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_common_fixed_attack_Fixed-trained",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_common_fixed_attack_Isolation-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_common_fixed_attack_Joint-static",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_common_fixed_attack_Recovery-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_common_fixed_attack_Spread-only",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_common_fixed_attack_Uniform",
+      "passed": true
+    },
+    {
+      "name": "paired_seed33_business_cost_B0.6_common_fixed_attack_Value-only",
+      "passed": true
+    },
+    {
+      "name": "D2_pairs_match_raw_supplement_pairs",
+      "passed": true,
+      "count": 126,
+      "max_error": 2.919886554764162e-14
+    },
+    {
+      "name": "144_saved_objectives_match_raw_summary",
+      "passed": true,
+      "count": 144,
+      "max_error": 0.0
+    },
+    {
+      "name": "72_defenses_identical_between_evaluations",
+      "passed": true,
+      "count": 72,
+      "max_error": 0.0
+    },
+    {
+      "name": "P0_source_11_0.6_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_0.6_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_0.6_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_0.6_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_0.6_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_0.6_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_0.6_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_0.6_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_0.6_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_0.6_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_0.6_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_0.6_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_0.6_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_0.6_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_0.6_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_0.6_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_11_0.6_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_11_0.6_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.2_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.2_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.2_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.2_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.2_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.2_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.2_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.2_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.2_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_11_1.2_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_11_1.2_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.8_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.8_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.8_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.8_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.8_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.8_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_11_1.8_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_11_1.8_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_11_1.8_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_11_1.8_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_11_1.8_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_0.6_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_0.6_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_0.6_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_0.6_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_0.6_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_0.6_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_0.6_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_0.6_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_0.6_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_22_0.6_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_22_0.6_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.2_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.2_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.2_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.2_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.2_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.2_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.2_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.2_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.2_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_22_1.2_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_22_1.2_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.8_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.8_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.8_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.8_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.8_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.8_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_22_1.8_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_22_1.8_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_22_1.8_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_22_1.8_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_22_1.8_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_0.6_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_0.6_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_0.6_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_0.6_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_0.6_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_0.6_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_0.6_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_0.6_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_0.6_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_33_0.6_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_33_0.6_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.2_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.2_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.2_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.2_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.2_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.2_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.2_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.2_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.2_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_33_1.2_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_33_1.2_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_A_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_A_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.8_A",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.8_A",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_B_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_B_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.8_B",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.8_B",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_C_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_C_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.8_C",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.8_C",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_D_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_source_33_1.8_D_FIXED",
+      "passed": true
+    },
+    {
+      "name": "P0_fixed_raw_value_33_1.8_D",
+      "passed": true
+    },
+    {
+      "name": "P0_game_value_33_1.8_D",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_33_1.8_GAME",
+      "passed": true
+    },
+    {
+      "name": "P0_interaction_33_1.8_FIXED",
+      "passed": true
+    },
+    {
+      "name": "counterexample_cross_Joint_Joint",
+      "passed": true
+    },
+    {
+      "name": "counterexample_cross_Joint_Recovery",
+      "passed": true
+    },
+    {
+      "name": "counterexample_cross_Recovery_Joint",
+      "passed": true
+    },
+    {
+      "name": "counterexample_cross_Recovery_Recovery",
+      "passed": true
+    },
+    {
+      "name": "counterexample_negative_reduction",
+      "passed": true
+    },
+    {
+      "name": "K_two_groups_positive_11_0.6",
+      "passed": true
+    },
+    {
+      "name": "K_two_groups_positive_33_1.2",
+      "passed": true
+    }
+  ],
+  "independent_report_search": {
+    "G_D1_独立验收报告.md": [],
+    "G_D1_R1_验收报告.md": [],
+    "G_D3_independent_peer_review.md": []
+  },
+  "fixed_trained_adaptive_range": [
+    0.028961562862602718,
+    0.28608115090697034
+  ],
+  "fixed_trained_common_range": [
+    -0.09414168439932578,
+    -0.016590261179778226
+  ]
+}

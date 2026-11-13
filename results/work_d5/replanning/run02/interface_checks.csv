@@ -1,0 +1,14 @@
+check,passed,value,threshold
+D4_snapshot:core.py,True,,
+D4_snapshot:game_solver.py,True,,
+D4_snapshot:matched_mechanism.py,True,,
+D4_snapshot:supplement_c2.py,True,,
+original_inputs:B1.2,True,,
+original_inputs:B0.6,True,,
+original_inputs:B1.8,True,,
+K3:D:gradient_objective,True,3.535849599223262e-10,1e-06
+K3:A:gradient_objective,True,2.876036075960542e-10,1e-06
+K2:D:gradient_objective,True,6.651078091057805e-10,1e-06
+K2:A:gradient_objective,True,4.475694259653551e-10,1e-06
+K1:D:gradient_objective,True,4.8339943159447785e-11,1e-06
+K1:A:gradient_objective,True,2.2532531396279865e-11,1e-06

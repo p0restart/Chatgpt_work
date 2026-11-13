@@ -44,7 +44,7 @@ def validate_model(m: Model) -> None:
     n = m.n
     if n < 2 or m.beta.shape != (n, n):
         raise ValueError("Invalid beta matrix or n")
-    if not np.all(np.isfinite(m.beta)) or np.any(m.beta < 0) or not np.allclose(np.diag(m.beta), 0):
+    if not np.all(np.isfinite(m.beta)) or np.any(m.beta < 0) or np.any(np.diag(m.beta) != 0):
         raise ValueError("beta must be nonnegative, finite, and have a zero diagonal")
     for name in ("alpha", "epsilon", "delta", "gamma", "q", "h", "c_s", "c_r", "g", "c_a", "omega", "nu", "b_s", "b_r", "d_a", "x0"):
         x = getattr(m, name)
@@ -52,8 +52,8 @@ def validate_model(m: Model) -> None:
             raise ValueError(f"Invalid vector {name}")
     if m.entry.shape != (n,) or m.entry.dtype != np.dtype(bool):
         raise ValueError("entry must be a length-n boolean mask")
-    if np.any(m.alpha < 0) or np.any(m.alpha[~m.entry] != 0):
-        raise ValueError("alpha must be zero on non-entry assets")
+    if np.any(m.alpha[m.entry] <= 0) or np.any(m.alpha[~m.entry] != 0):
+        raise ValueError("alpha must be positive on entry assets and zero elsewhere")
     if np.any(m.epsilon <= 0) or np.any(m.epsilon > 1):
         raise ValueError("isolation effectiveness epsilon must lie in (0,1]")
     for name in ("delta", "gamma", "q", "h", "g", "omega", "nu"):
@@ -102,6 +102,31 @@ def cost_rates(m: Model, x: np.ndarray, a: np.ndarray, s: np.ndarray, r: np.ndar
     ], dtype=float)
 
 
+def positive_integer(value, name):
+    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value) or not np.isfinite(value) or value < 1 or int(value) != value:
+        raise ValueError(f"{name} must be a positive integer")
+    return int(value)
+
+
+def validate_plan(m, a, s, r, T, substeps):
+    if not np.isscalar(T) or not np.isfinite(T) or T <= 0:
+        raise ValueError("T must be finite and positive")
+    steps = positive_integer(substeps, 'substeps')
+    a, s, r = (np.asarray(u, dtype=float) for u in (a, s, r))
+    if a.ndim != 2 or a.shape[0] < 1:
+        raise ValueError("Expected nonempty 2D schedules")
+    check_controls(m, a, s, r)
+    return a, s, r, steps
+
+
+def check_integration(y, n, enforce_domain=True):
+    """Check completed RK4 steps, without clipping or changing the step size."""
+    if not np.all(np.isfinite(y)):
+        raise FloatingPointError("Non-finite RK4 state or accumulated objective")
+    if enforce_domain and (np.any(y[:n] < -1e-10) or np.any(y[:n] > 1 + 1e-10)):
+        raise FloatingPointError("RK4 state left [0,1]; refine integration explicitly")
+
+
 def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedule: np.ndarray,
              T: float, substeps_per_slot: int = 12) -> dict:
     """Run fixed-piecewise-constant open-loop schedules with augmented RK4 costs.
@@ -109,12 +134,8 @@ def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedul
     Note: these controls are GIVEN, not optimized. Does not imply best response/Nash.
     """
     validate_model(m)
-    a_schedule = np.asarray(a_schedule, dtype=float)
-    s_schedule = np.asarray(s_schedule, dtype=float)
-    r_schedule = np.asarray(r_schedule, dtype=float)
-    if a_schedule.ndim != 2 or not np.isfinite(T) or T <= 0 or int(substeps_per_slot) != substeps_per_slot or substeps_per_slot < 1:
-        raise ValueError("Expected 2D schedules, positive T and integer positive substeps")
-    check_controls(m, a_schedule, s_schedule, r_schedule)
+    a_schedule, s_schedule, r_schedule, substeps_per_slot = validate_plan(
+        m, a_schedule, s_schedule, r_schedule, T, substeps_per_slot)
     K = a_schedule.shape[0]
     if K < 1:
         raise ValueError("Expected at least one control slot")
@@ -135,6 +156,7 @@ def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedul
             k3 = augmented_rhs(y + (h / 2) * k2, a, s, r)
             k4 = augmented_rhs(y + h * k3, a, s, r)
             y = y + (h / 6) * (k1 + 2 * k2 + 2 * k3 + k4)
+            check_integration(y, m.n)
             times.append((k * substeps_per_slot + j + 1) * h)
             states.append(y[:m.n].copy())
 
@@ -153,6 +175,8 @@ def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedul
     }
     J_D = sum(parts[key] for key in ("security", "business", "isolation", "recovery", "terminal_defense"))
     J_A = parts["attacker_value"] - parts["attacker_effort"] + parts["terminal_attacker"]
+    if not np.all(np.isfinite([*parts.values(), J_D, J_A])):
+        raise FloatingPointError("Non-finite terminal objective")
     return {"times": np.asarray(times), "states": np.asarray(states), "parts": parts,
             "J_D": float(J_D), "J_A": float(J_A)}
 

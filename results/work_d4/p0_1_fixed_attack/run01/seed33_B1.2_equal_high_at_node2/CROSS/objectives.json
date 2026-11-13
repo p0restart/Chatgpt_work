@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 11.342118463484775,
+    "J_A": 5.929299664415699,
+    "parts": {
+      "security": 9.992652742145912,
+      "business": 0.17915248585343715,
+      "isolation": 0.3772718794443577,
+      "recovery": 0.7930413560410676,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.5292996644156975,
+      "attacker_effort": 1.599999999999999,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 11.342118462331463,
+    "J_A": 5.929299659425766,
+    "parts": {
+      "security": 9.992652740992598,
+      "business": 0.1791524858534368,
+      "isolation": 0.37727187944435864,
+      "recovery": 0.793041356041067,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299659425763,
+      "attacker_effort": 1.5999999999999968,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 11.342118462258076,
+    "J_A": 5.929299659120002,
+    "parts": {
+      "security": 9.992652740919212,
+      "business": 0.1791524858534379,
+      "isolation": 0.37727187944436,
+      "recovery": 0.793041356041067,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299659119998,
+      "attacker_effort": 1.5999999999999956,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 11.342118462253437,
+    "J_A": 5.92929965910108,
+    "parts": {
+      "security": 9.992652740914586,
+      "business": 0.17915248585343505,
+      "isolation": 0.3772718794443531,
+      "recovery": 0.7930413560410616,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299659101075,
+      "attacker_effort": 1.599999999999995,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 11.34211846225316,
+    "J_A": 5.929299659099911,
+    "parts": {
+      "security": 9.992652740914286,
+      "business": 0.17915248585343677,
+      "isolation": 0.3772718794443578,
+      "recovery": 0.7930413560410791,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.529299659099905,
+      "attacker_effort": 1.5999999999999948,
+      "terminal_attacker": 0.0
+    }
+  }
+}

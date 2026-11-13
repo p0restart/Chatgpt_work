@@ -1,0 +1,38 @@
+{
+  "registered_utc": "2026-11-11T14:27:59.819319+00:00",
+  "K": 6,
+  "T": 10,
+  "primary_evaluation_H": 48,
+  "refinement_H": [
+    12,
+    24,
+    48,
+    96,
+    192
+  ],
+  "coarse_optimization_H": 12,
+  "fine_optimization_H": 48,
+  "maxiter": 300,
+  "ftol": 1e-10,
+  "max_updates": 40,
+  "initializations": [
+    "uniform",
+    "zero",
+    "random"
+  ],
+  "primary_path": "uniform",
+  "relative_improvement": 1e-07,
+  "current_projected_residual": 0.0001,
+  "response_distance": 0.001,
+  "initialization_control_difference": 0.001,
+  "integration_control_difference": 0.001,
+  "violation": 1e-10,
+  "integration_error": 1e-06,
+  "independent_error": 1e-06,
+  "interaction_resolution": 4e-06,
+  "pilot": [
+    11,
+    1.2
+  ],
+  "scope": "P0-1 only; all 36 newly optimized; no reuse of fixed defense; stage ends WAITING_USER_G_D4_P0_1_REVIEW"
+}

@@ -1,0 +1,582 @@
+{
+  "date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "scope": "document consistency and saved-data arithmetic; no solver, integration, tests or figure regeneration",
+  "check_count": 85,
+  "failures": [],
+  "checks": [
+    {
+      "name": "protected_input_bytes_unchanged_except_authorized_logs",
+      "pass": true,
+      "detail": {
+        "matched": 112,
+        "authorized_log_changes": [],
+        "unexpected": []
+      }
+    },
+    {
+      "name": "historical_drift_explained_paper/work_d1/01_research_contributions.md",
+      "pass": true,
+      "detail": {
+        "file": "paper/work_d1/01_research_contributions.md",
+        "package_hash_valid": true,
+        "text_equal_after_newlines": true,
+        "whitespace_only": true
+      }
+    },
+    {
+      "name": "historical_drift_explained_paper/work_d1/02_paper_outline.md",
+      "pass": true,
+      "detail": {
+        "file": "paper/work_d1/02_paper_outline.md",
+        "package_hash_valid": true,
+        "text_equal_after_newlines": false,
+        "whitespace_only": true
+      }
+    },
+    {
+      "name": "historical_drift_explained_paper/work_d1/03_introduction_zh.md",
+      "pass": true,
+      "detail": {
+        "file": "paper/work_d1/03_introduction_zh.md",
+        "package_hash_valid": true,
+        "text_equal_after_newlines": true,
+        "whitespace_only": true
+      }
+    },
+    {
+      "name": "historical_drift_explained_paper/work_d1/04_system_model_zh.md",
+      "pass": true,
+      "detail": {
+        "file": "paper/work_d1/04_system_model_zh.md",
+        "package_hash_valid": true,
+        "text_equal_after_newlines": true,
+        "whitespace_only": true
+      }
+    },
+    {
+      "name": "historical_drift_explained_paper/work_d1/05_game_solution_zh.md",
+      "pass": true,
+      "detail": {
+        "file": "paper/work_d1/05_game_solution_zh.md",
+        "package_hash_valid": true,
+        "text_equal_after_newlines": true,
+        "whitespace_only": true
+      }
+    },
+    {
+      "name": "twenty_unique_equations_in_original_order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_1_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_2_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_3_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_4_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_5_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_6_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_7_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_8_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_9_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_10_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_11_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_12_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_13_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_14_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_15_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_16_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_17_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_18_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_19_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "equation_20_exact_text",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no_unfilled_build_tokens",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "balanced_display_math",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "balanced_inline_math",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "six_main_sections",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "three_main_figures",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "four_main_tables",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "supplement_figure_S1_present",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all_local_artifact_links_resolve",
+      "pass": true,
+      "detail": {
+        "count": 32,
+        "broken": []
+      }
+    },
+    {
+      "name": "five_references_without_orphans",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "citation_first_use_order",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "five_unique_bibtex_keys",
+      "pass": true,
+      "detail": [
+        "Preciado2014Protection",
+        "PaarpornXu2024",
+        "Tian2025",
+        "Botteghi2026v2",
+        "Chen2025"
+      ]
+    },
+    {
+      "name": "preprint_version_not_mixed_with_journal",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "no_invented_author_placeholders",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "nine_interactions_recomputed_from_36_objectives",
+      "pass": true,
+      "detail": {
+        "max_arithmetic_difference": 0.0,
+        "interaction_range": [
+          0.018273690732399928,
+          0.029191961614866813
+        ],
+        "C_normalized_percent_range": [
+          0.17015357699188402,
+          0.2606391493793473
+        ]
+      }
+    },
+    {
+      "name": "main_abstract_interaction_range_rounding",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "main_abstract_normalized_range_rounding",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "baseline_adaptive_attack_Recovery-only",
+      "pass": true,
+      "detail": {
+        "range_median": [
+          0.8874238916500881,
+          3.5121419089831507,
+          4.796221901565154
+        ],
+        "positive": 9,
+        "count": 9
+      }
+    },
+    {
+      "name": "table3_number_adaptive_attack_Recovery-only_0.887424",
+      "pass": true,
+      "detail": "0.887424"
+    },
+    {
+      "name": "table3_number_adaptive_attack_Recovery-only_3.512142",
+      "pass": true,
+      "detail": "3.512142"
+    },
+    {
+      "name": "table3_number_adaptive_attack_Recovery-only_4.796222",
+      "pass": true,
+      "detail": "4.796222"
+    },
+    {
+      "name": "baseline_adaptive_attack_Joint-static",
+      "pass": true,
+      "detail": {
+        "range_median": [
+          0.6610348576135888,
+          1.5432418768472993,
+          2.1901326840524566
+        ],
+        "positive": 9,
+        "count": 9
+      }
+    },
+    {
+      "name": "table3_number_adaptive_attack_Joint-static_0.661035",
+      "pass": true,
+      "detail": "0.661035"
+    },
+    {
+      "name": "table3_number_adaptive_attack_Joint-static_1.543242",
+      "pass": true,
+      "detail": "1.543242"
+    },
+    {
+      "name": "table3_number_adaptive_attack_Joint-static_2.190133",
+      "pass": true,
+      "detail": "2.190133"
+    },
+    {
+      "name": "baseline_adaptive_attack_Fixed-trained",
+      "pass": true,
+      "detail": {
+        "range_median": [
+          0.028961562862602718,
+          0.14634256146650718,
+          0.28608115090697034
+        ],
+        "positive": 9,
+        "count": 9
+      }
+    },
+    {
+      "name": "table3_number_adaptive_attack_Fixed-trained_0.028962",
+      "pass": true,
+      "detail": "0.028962"
+    },
+    {
+      "name": "table3_number_adaptive_attack_Fixed-trained_0.146343",
+      "pass": true,
+      "detail": "0.146343"
+    },
+    {
+      "name": "table3_number_adaptive_attack_Fixed-trained_0.286081",
+      "pass": true,
+      "detail": "0.286081"
+    },
+    {
+      "name": "baseline_common_fixed_attack_Recovery-only",
+      "pass": true,
+      "detail": {
+        "range_median": [
+          0.7701754703811676,
+          3.1246154637308026,
+          4.633166672534104
+        ],
+        "positive": 9,
+        "count": 9
+      }
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Recovery-only_0.770175",
+      "pass": true,
+      "detail": "0.770175"
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Recovery-only_3.124615",
+      "pass": true,
+      "detail": "3.124615"
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Recovery-only_4.633167",
+      "pass": true,
+      "detail": "4.633167"
+    },
+    {
+      "name": "baseline_common_fixed_attack_Joint-static",
+      "pass": true,
+      "detail": {
+        "range_median": [
+          0.7340597024914085,
+          1.6951240420995617,
+          2.3899508739318005
+        ],
+        "positive": 9,
+        "count": 9
+      }
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Joint-static_0.734060",
+      "pass": true,
+      "detail": "0.734060"
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Joint-static_1.695124",
+      "pass": true,
+      "detail": "1.695124"
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Joint-static_2.389951",
+      "pass": true,
+      "detail": "2.389951"
+    },
+    {
+      "name": "baseline_common_fixed_attack_Fixed-trained",
+      "pass": true,
+      "detail": {
+        "range_median": [
+          -0.09414168439932578,
+          -0.05567842307570542,
+          -0.016590261179778226
+        ],
+        "positive": 0,
+        "count": 9
+      }
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Fixed-trained_−0.094142",
+      "pass": true,
+      "detail": "−0.094142"
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Fixed-trained_−0.055678",
+      "pass": true,
+      "detail": "−0.055678"
+    },
+    {
+      "name": "table3_number_common_fixed_attack_Fixed-trained_−0.016590",
+      "pass": true,
+      "detail": "−0.016590"
+    },
+    {
+      "name": "original_negative_case_preserved",
+      "pass": true,
+      "detail": {
+        "recomputed_percent": -0.00534045613869767
+      }
+    },
+    {
+      "name": "two_group_refinement_11",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "two_group_refinement_33",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "cross_class_deviation_D",
+      "pass": true,
+      "detail": {
+        "percent_min": 0.12229126366931,
+        "percent_max": 0.21409763406458
+      }
+    },
+    {
+      "name": "cross_class_deviation_A",
+      "pass": true,
+      "detail": {
+        "percent_min": 0.17312728422582002,
+        "percent_max": 0.17668776753412002
+      }
+    },
+    {
+      "name": "conclusion_changing_evidence_公共固定攻击",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_九项均不占优",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_原网络",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_−0.005340456%",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_跨类偏离",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_0.063305—0.064929",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_0.082446—0.084091",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_同Windows主机",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_run01失败",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_局部",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_不证明连续开环Nash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "conclusion_changing_evidence_60/72、40/72、1/72",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "main_sections_1_to_5_compressed",
+      "pass": true,
+      "detail": {
+        "before_cjk": 12260,
+        "after_cjk": 5694,
+        "reduction_percent": 53.556280587275694
+      }
+    }
+  ],
+  "historical_formatting_differences": [
+    {
+      "file": "paper/work_d1/01_research_contributions.md",
+      "package_hash_valid": true,
+      "text_equal_after_newlines": true,
+      "whitespace_only": true
+    },
+    {
+      "file": "paper/work_d1/02_paper_outline.md",
+      "package_hash_valid": true,
+      "text_equal_after_newlines": false,
+      "whitespace_only": true
+    },
+    {
+      "file": "paper/work_d1/03_introduction_zh.md",
+      "package_hash_valid": true,
+      "text_equal_after_newlines": true,
+      "whitespace_only": true
+    },
+    {
+      "file": "paper/work_d1/04_system_model_zh.md",
+      "package_hash_valid": true,
+      "text_equal_after_newlines": true,
+      "whitespace_only": true
+    },
+    {
+      "file": "paper/work_d1/05_game_solution_zh.md",
+      "package_hash_valid": true,
+      "text_equal_after_newlines": true,
+      "whitespace_only": true
+    }
+  ],
+  "counts": {
+    "sections_1_to_5_before_cjk": 12260,
+    "sections_1_to_5_after_cjk": 5694,
+    "reduction_percent": 53.556280587275694,
+    "abstract_cjk": 364,
+    "conclusion_cjk": 386,
+    "english_abstract_space_words": 218
+  }
+}

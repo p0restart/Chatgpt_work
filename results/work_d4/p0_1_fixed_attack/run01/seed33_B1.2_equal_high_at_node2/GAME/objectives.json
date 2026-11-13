@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 11.215488954238863,
+    "J_A": 6.060449940553102,
+    "parts": {
+      "security": 9.8660232329,
+      "business": 0.17915248585343715,
+      "isolation": 0.3772718794443577,
+      "recovery": 0.7930413560410676,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.40651649185954,
+      "attacker_effort": 1.3460665513064376,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 11.21548894653412,
+    "J_A": 6.060449936179961,
+    "parts": {
+      "security": 9.866023225195255,
+      "business": 0.1791524858534368,
+      "isolation": 0.37727187944435864,
+      "recovery": 0.793041356041067,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.406516487486395,
+      "attacker_effort": 1.346066551306434,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 11.215488946057171,
+    "J_A": 6.060449935911456,
+    "parts": {
+      "security": 9.866023224718306,
+      "business": 0.1791524858534379,
+      "isolation": 0.37727187944436,
+      "recovery": 0.793041356041067,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.406516487217896,
+      "attacker_effort": 1.34606655130644,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 11.21548894602749,
+    "J_A": 6.060449935894807,
+    "parts": {
+      "security": 9.86602322468864,
+      "business": 0.17915248585343505,
+      "isolation": 0.3772718794443531,
+      "recovery": 0.7930413560410616,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.406516487201253,
+      "attacker_effort": 1.3460665513064465,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 11.215488946025664,
+    "J_A": 6.0604499358937804,
+    "parts": {
+      "security": 9.86602322468679,
+      "business": 0.17915248585343677,
+      "isolation": 0.3772718794443578,
+      "recovery": 0.7930413560410791,
+      "terminal_defense": 0.0,
+      "attacker_value": 7.406516487200216,
+      "attacker_effort": 1.3460665513064356,
+      "terminal_attacker": 0.0
+    }
+  }
+}

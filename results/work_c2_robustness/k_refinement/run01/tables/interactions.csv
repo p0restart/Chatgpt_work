@@ -1,0 +1,3 @@
+seed,B,I6,I12,delta,relative_change,sign6,sign12,allocation_reversals,effects_below_resolution_after_refinement,effects_above_resolution_after_refinement,numerical_pass,stable
+11,0.6,0.018273690732399928,0.018273318853745835,-3.7187865409293863e-07,-2.0350495121031248e-05,1,1,0,1,0,True,True
+33,1.2,0.029191961614866813,0.02910961806868606,-8.234354618075201e-05,-0.002820760977529386,1,1,0,0,2,True,True

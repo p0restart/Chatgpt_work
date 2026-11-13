@@ -1,0 +1,14 @@
+{
+  "status": "WAITING_USER_D1_R1_REVIEW",
+  "acceptance_report_found": false,
+  "protected_source_changes": [],
+  "equations_6_to_16_preserved": true,
+  "experiments_run": false,
+  "sha256": {
+    "01_research_contributions.md": "7790db06de720252cd8c768d98d35636e5536b464ba5f9496c3d5d5fd2fc404f",
+    "03_introduction_zh.md": "97929a8f04b32ee88c9fe42a87fe0e586352d86853093cb029d73d66971219d5",
+    "05_game_solution_zh.md": "63e475ea300d12969c2e104276f90965d93190d31c28a4d935af3e1c24090895",
+    "D1_R1_reproduction_notes.md": "ce5351fdcc1e670bb81201a0d562239729602a0dce27aa32788b5bd94cb24a70",
+    "D1_R1_changelog.md": "7f299381a4e533a37825d32ab691294e1890a81c86ee80d5319d7c08c5fd1f1b"
+  }
+}

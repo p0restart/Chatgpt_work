@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETED",
+  "started_utc": "2026-11-11T14:28:04.094412+00:00",
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "pandas": "2.1.4",
+  "yaml": "6.0.1",
+  "bindings": {
+    "paper/work_d4/P0_01_fixed_attack/analysis/run_fixed.py": "b88d9e5ac39a3d31dad023262d55173e7d06d63e77316ddc7661508bf1540f7b",
+    "paper/work_d4/P0_01_fixed_attack/protocol.md": "33b5701881beda79abcb7a7fa6b6689e25039adf61c5c48ca847051a33b1c4eb",
+    "paper/work_d4/P0_01_fixed_attack/run_config.json": "238589bfb94654f06c572c58ae0a1b1c9e6a3621a478cf1920d3b9e214b8d767",
+    "paper/work_d4/P0_01_fixed_attack/design_matrix.csv": "77d7e9a32308d8c6d85004a9f542744c18bcfd547d7b46181222c56f7f190b9b",
+    "paper/work_d4/P0_01_fixed_attack/instruction_source.md": "483986e488fe6de2d0d9573df36b716f29bc7145bff85c710a5be25932c40049"
+  },
+  "segments": [
+    {
+      "started_utc": "2026-11-11T14:28:04.114020+00:00",
+      "command": [
+        "paper/work_d4/P0_01_fixed_attack/analysis/run_fixed.py"
+      ],
+      "completed_at_start": 0,
+      "ended_utc": "2026-11-11T14:49:12.364001+00:00",
+      "seconds": 1268.2236584997736,
+      "status": "COMPLETED"
+    }
+  ],
+  "execution_scope": "P0-1 only",
+  "global_certificate": false,
+  "completed_cases": 36,
+  "protected_changes": []
+}

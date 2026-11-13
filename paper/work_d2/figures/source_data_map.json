@@ -1,0 +1,6 @@
+{
+  "fig01": "matched_edges.csv",
+  "fig02": "matched_four_cells.csv",
+  "fig03": "matched_controls_all_nodes.csv; matched_budgets.csv",
+  "figS01": "matched_controls_all_nodes.csv; matched_budgets.csv; matched_states_H12.csv"
+}

@@ -1,0 +1,72 @@
+{
+  "12": {
+    "J_D": 11.975610337287392,
+    "J_A": 6.790264046733049,
+    "parts": {
+      "security": 11.455906989075132,
+      "business": 0.06587457285076587,
+      "isolation": 0.059411999422283146,
+      "recovery": 0.39441677593921226,
+      "terminal_defense": 0.0,
+      "attacker_value": 8.390264046733048,
+      "attacker_effort": 1.599999999999999,
+      "terminal_attacker": 0.0
+    }
+  },
+  "24": {
+    "J_D": 11.975610336391265,
+    "J_A": 6.790264042453569,
+    "parts": {
+      "security": 11.455906988179004,
+      "business": 0.0658745728507656,
+      "isolation": 0.05941199942228304,
+      "recovery": 0.39441677593921226,
+      "terminal_defense": 0.0,
+      "attacker_value": 8.390264042453566,
+      "attacker_effort": 1.5999999999999968,
+      "terminal_attacker": 0.0
+    }
+  },
+  "48": {
+    "J_D": 11.97561033633372,
+    "J_A": 6.790264042191238,
+    "parts": {
+      "security": 11.455906988121459,
+      "business": 0.06587457285076576,
+      "isolation": 0.05941199942228308,
+      "recovery": 0.3944167759392126,
+      "terminal_defense": 0.0,
+      "attacker_value": 8.390264042191234,
+      "attacker_effort": 1.5999999999999956,
+      "terminal_attacker": 0.0
+    }
+  },
+  "96": {
+    "J_D": 11.975610336330094,
+    "J_A": 6.790264042175006,
+    "parts": {
+      "security": 11.455906988117832,
+      "business": 0.06587457285076642,
+      "isolation": 0.05941199942228346,
+      "recovery": 0.3944167759392132,
+      "terminal_defense": 0.0,
+      "attacker_value": 8.390264042175001,
+      "attacker_effort": 1.599999999999995,
+      "terminal_attacker": 0.0
+    }
+  },
+  "192": {
+    "J_D": 11.975610336329856,
+    "J_A": 6.790264042174005,
+    "parts": {
+      "security": 11.455906988117592,
+      "business": 0.06587457285076657,
+      "isolation": 0.05941199942228131,
+      "recovery": 0.39441677593921665,
+      "terminal_defense": 0.0,
+      "attacker_value": 8.390264042174,
+      "attacker_effort": 1.5999999999999948,
+      "terminal_attacker": 0.0
+    }
+  }
+}

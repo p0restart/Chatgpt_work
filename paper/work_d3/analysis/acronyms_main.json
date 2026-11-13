@@ -1,0 +1,129 @@
+{
+  "checker": "ars-acronym-check/1.0",
+  "input": "paper\\work_d3\\manuscript_zh.md",
+  "input_sha256": "f4f11f776b4597b74f135cefb0414b2818112b7f8d9cc1808af98fab55b2d739",
+  "status": "partial",
+  "allowlist": {
+    "default": 29,
+    "user": [
+      "IEEE",
+      "LCSYS",
+      "TCNS"
+    ]
+  },
+  "coverage": {
+    "body": "checked",
+    "abstract_en": "not_in_input",
+    "abstract_zh": "checked"
+  },
+  "scope_lines": {
+    "body": [
+      [
+        2,
+        2
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        26,
+        26
+      ],
+      [
+        28,
+        34
+      ],
+      [
+        36,
+        64
+      ],
+      [
+        66,
+        86
+      ],
+      [
+        88,
+        88
+      ],
+      [
+        90,
+        126
+      ],
+      [
+        128,
+        173
+      ],
+      [
+        175,
+        206
+      ],
+      [
+        208,
+        208
+      ],
+      [
+        210,
+        240
+      ],
+      [
+        242,
+        259
+      ],
+      [
+        261,
+        289
+      ],
+      [
+        291,
+        291
+      ],
+      [
+        293,
+        301
+      ],
+      [
+        303,
+        311
+      ],
+      [
+        313,
+        328
+      ],
+      [
+        330,
+        349
+      ],
+      [
+        351,
+        358
+      ],
+      [
+        360,
+        369
+      ]
+    ],
+    "abstract_zh": [
+      [
+        4,
+        8
+      ]
+    ]
+  },
+  "unread_sections": [],
+  "coverage_limits": [
+    {
+      "scope": "body",
+      "line": 176,
+      "acronym": "KH",
+      "reason": "unconfirmed_definition"
+    },
+    {
+      "scope": "body",
+      "line": 176,
+      "acronym": "SLSQP",
+      "reason": "unconfirmed_definition"
+    }
+  ],
+  "findings": []
+}

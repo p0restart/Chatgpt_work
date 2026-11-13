@@ -1,0 +1,42 @@
+{
+  "checker": "ars-acronym-check/1.0",
+  "input": "paper\\work_d3\\01_abstracts.md",
+  "input_sha256": "1c537a588f2b7562add8b457447c8e0ebe86da1f6a61808a9a7a37dd4ad794b1",
+  "status": "checked",
+  "allowlist": {
+    "default": 29,
+    "user": []
+  },
+  "coverage": {
+    "body": "checked",
+    "abstract_en": "checked",
+    "abstract_zh": "checked"
+  },
+  "scope_lines": {
+    "body": [
+      [
+        2,
+        2
+      ],
+      [
+        10,
+        12
+      ]
+    ],
+    "abstract_en": [
+      [
+        14,
+        17
+      ]
+    ],
+    "abstract_zh": [
+      [
+        4,
+        8
+      ]
+    ]
+  },
+  "unread_sections": [],
+  "coverage_limits": [],
+  "findings": []
+}

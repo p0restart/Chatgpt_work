@@ -1,0 +1,33 @@
+{
+  "status": "PASS_ALIGNMENT_WAITING_USER_G_D2",
+  "D1_hashes": {
+    "paper/work_d1/04_system_model_zh.md": "e41b7cb65072b1201e2397feadfc3be1a8c80e1df51441f1ad75d502894f49f3",
+    "paper/work_d1/05_game_solution_zh.md": "da2d3d235e6297fa490e8d983911a0d5809bdc6b0fd77f0477a3dc70c2f1bed6",
+    "paper/work_d1/D1_model_rewrite_note.md": "94b8c02994d760d5a05bee2b2920d610a73644be9babcb1720ce3bc05426dba7"
+  },
+  "numeric_and_figure_files_unchanged": 58,
+  "old_reference_misuse": false,
+  "equations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "experiments_run": false
+}

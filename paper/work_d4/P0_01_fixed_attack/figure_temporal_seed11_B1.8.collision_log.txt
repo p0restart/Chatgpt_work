@@ -1,0 +1,11 @@
+Nature Figure Rendered Collision Audit
+pdf: C:\Users\Jin\Documents\00Graduate_student\ChatGPT_Work__v2\paper\work_d4\P0_01_fixed_attack\figure_temporal_seed11_B1.8.pdf
+pages: 1
+visible text boxes: 73
+stroke paths: 120
+
+
+summary: 0 fail, 0 warn, 0 contained fill overlays, 0 contained image overlays
+verdict: PASS
+note: contained overlays can be intentional; WARN findings need final-size visual review
+

@@ -1,0 +1,6 @@
+{
+  "integration_pass": true,
+  "independent_pass": true,
+  "max_integration_error": 5.263147251355349e-09,
+  "independent_max_error": 6.935146901199118e-13
+}

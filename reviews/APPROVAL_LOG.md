@@ -40,3 +40,29 @@
 - 批复日期：2026-10-27（Asia/Shanghai），本会话用户消息；未提供消息精确时分。
 - 执行边界：先seed11/B1.2四格，通过预设数值门槛后扩展至36配置；保留失败，不改变冻结数学模型。
 - 原G1仍APPROVED；G2仍PENDING，本轮补充研究不进入最终论文。
+
+## G1-Work-C2 控制槽精化
+- 状态：APPROVED_SCOPE；2026-11-10（Asia/Shanghai）。
+- 用户明确原文：“批准 G1-Work-C2，按登记协议执行”
+- 授权：reports/WORK_C2_ROBUSTNESS_PROTOCOL.md 的八个 K=12 配置及跨策略类偏离测试；保留失败并执行组间止损。既有 G2 未扩大至新增结果。
+
+## G2-Work-C2 新增稳健性证据
+- 状态：APPROVED（2026-11-10，Asia/Shanghai）。
+- 用户明确批复原文：“批准G2”
+- 范围：reviews/G2_WORK_C2_submission.md 所列新增实验结果及写作边界。
+
+## G-D2 现行最小修订稿与 Work D3 启动
+- 状态：APPROVED（2026-11-11，Asia/Shanghai）。
+- 用户明确授权原文：“可以由你正式批准 G-D2，随后启动 Work D3，下一阶段应集中完成 摘要、结论、全文合稿、篇幅压缩、引用统一和投稿格式审查”
+- 批准依据：本会话用户明确授权批准 G-D2 并启动 D3；由 Work 执行登记。不是 Work 独立生成的人工签字，也不伪造第三方审查结论。
+- 材料：paper/work_d2/D2_handoff.md、06_D2_review.md、D1_D2_equation_alignment.md，及 analysis/minimal_revision_version_manifest.json 对应现行最小修订版本。
+- 范围：接受D2实验设计、结果解释、图表和既有证据边界，开放D3摘要、结论、全文整合、压缩、引用统一和投稿格式审查。具体登记见 reviews/G_D2_decision.md。
+- 不扩大模型或实验范围；不将本批复作为连续全局Nash认证或最终投稿授权。目标会议、模板、篇幅与最终投稿文件另行确定。
+
+
+## 2026-11-13 / Work D5 限定实验执行授权
+- 状态：APPROVED_SCOPE；授权来源为本会话用户提供的完整D5指令，原文保存 paper/work_d5/instruction_source.md。
+- 用户明确原文：“本指令授权执行以下限定范围内的实验，不代表此前其他待审事项全部获得批准。”、“现在开始执行，不要只输出实验计划。优先完成原有代码与模型接口审查，然后执行B=1.2的最小实验。”
+- 仅授权原seed11六资产D格、alpha0于t=5由0.25变0.50、P/G/R与E0/E1公共攻击评价、先B1.2通过数值关卡再B0.6/1.8，最多18条。对应D4材料3的实验范围在本次D5授权下执行；登记协议 paper/work_d5/experiment_protocol.md。
+- 不批准旧P0-1结果、P0-2/P0-3、D3正式合稿或D4论文定向文字；既有未收到人工批准的事项继续待审。既有G1/G2和G-D2已批准范围保持有效。
+- D5结果和允许论文结论另交 reviews/G_D5_experiment_submission.md；完成后 WAITING_USER_D5_REVIEW，合稿修改需后续人工审核。

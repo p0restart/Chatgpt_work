@@ -1,0 +1,30 @@
+{
+  "status": "STATIC_SCOPE_AND_ARITHMETIC_PASS",
+  "protected_files": 289,
+  "protected_changes": [],
+  "model_count": 36,
+  "numbered_equations": 26,
+  "unique_equation_tags": 26,
+  "complete_equation_sequence": true,
+  "balanced_display_math": true,
+  "balanced_inline_math": true,
+  "generic_illustration": {
+    "scope": "analytic model-family illustration, not a new experiment or frozen-parameter counterexample",
+    "F0": 22.706705664732254,
+    "Fhalf": 25.965177646857693,
+    "F1": 25.0,
+    "quasiconvex_inequality_violated": true
+  },
+  "bound_ranges": {
+    "D_K6": [
+      2324032.078257449,
+      2435445.326327193
+    ],
+    "A_K6": [
+      334857.6910986042,
+      341421.95775810257
+    ]
+  },
+  "no_new_optimization_or_ODE_integration": true,
+  "mathematical_verification": "manual derivation only; static checks do not certify proofs"
+}

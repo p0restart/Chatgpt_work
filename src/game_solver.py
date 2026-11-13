@@ -3,7 +3,7 @@ from __future__ import annotations
 import time
 import numpy as np
 from scipy.optimize import Bounds, LinearConstraint, minimize
-from .core import dynamics, check_controls, validate_model
+from .core import dynamics, validate_model, validate_plan, positive_integer, check_integration
 
 
 def state_jacobian(m, x, a, s, r):
@@ -21,9 +21,11 @@ class ResponseProblem:
     """
     def __init__(self, m, a, s, r, T, substeps, player, defense_mode='joint'):
         validate_model(m)
-        check_controls(m, a, s, r)
-        if player not in ('D', 'A') or T <= 0 or substeps < 1:
+        a, s, r, substeps = validate_plan(m, a, s, r, T, substeps)
+        if player not in ('D', 'A'):
             raise ValueError('Invalid response problem')
+        if player == 'A' and not np.any(m.entry):
+            raise ValueError('Attack response requires at least one entry asset')
         self.m, self.a, self.s, self.r = m, a.copy(), s.copy(), r.copy()
         self.T, self.substeps, self.player = T, int(substeps), player
         self.K = a.shape[0]
@@ -43,7 +45,14 @@ class ResponseProblem:
             if np.any(self.initial > self.upper + 1e-10):
                 raise ValueError('Initial control violates ablation')
 
+    def checked_vector(self, v):
+        v = np.asarray(v, dtype=float)
+        if v.shape != self.initial.shape or not np.all(np.isfinite(v)):
+            raise ValueError('Response vector must have the expected shape and finite values')
+        return v
+
     def schedules(self, v):
+        v = self.checked_vector(v)
         a, s, r = self.a.copy(), self.s.copy(), self.r.copy()
         u = np.asarray(v).reshape(self.K, self.width)
         if self.player == 'D':
@@ -53,6 +62,8 @@ class ResponseProblem:
         return a, s, r
 
     def value_gradient(self, v):
+        v = self.checked_vector(v)
+        feasible = self.violation(v) <= 1e-10
         m, n, d = self.m, self.m.n, len(v)
         a_all, s_all, r_all = self.schedules(v)
         y = np.r_[m.x0, 0.0]
@@ -86,15 +97,28 @@ class ResponseProblem:
                 f4, g4 = rhs(y+dt*f3, sens+dt*g3)
                 y += dt/6*(f1+2*f2+2*f3+f4)
                 sens += dt/6*(g1+2*g2+2*g3+g4)
+                check_integration(y, n, enforce_domain=feasible)
+                if not np.all(np.isfinite(sens)):
+                    raise FloatingPointError('Non-finite RK4 sensitivity')
         terminal = m.omega if self.player == 'D' else -m.nu
-        return float(y[n]+terminal @ y[:n]), sens[n]+terminal @ sens[:n]
+        value, grad = float(y[n]+terminal @ y[:n]), sens[n]+terminal @ sens[:n]
+        if not np.isfinite(value) or not np.all(np.isfinite(grad)):
+            raise FloatingPointError('Non-finite objective or gradient')
+        return value, grad
 
     def violation(self, v):
-        return float(max(0, np.max(-v), np.max(v-self.upper), np.max(self.C @ v-self.capacity)))
+        v = self.checked_vector(v)
+        excess = self.C @ v-self.capacity
+        if not np.all(np.isfinite(excess)):
+            raise FloatingPointError('Non-finite capacity usage')
+        return float(max(0, np.max(-v), np.max(v-self.upper), np.max(excess)))
 
     def projected_residual(self, v, grad):
         """Infinity norm of v-Proj_C(v-grad), unit-step first-order residual."""
+        v, grad = self.checked_vector(v), self.checked_vector(grad)
         z = (v-grad).reshape(self.K, self.width)
+        if not np.all(np.isfinite(z)):
+            raise FloatingPointError('Non-finite projection input')
         projected = []
         for row, upper in zip(z, self.upper.reshape(self.K, self.width)):
             lo, hi = 0.0, max(1.0, float(np.max(row/self.weights)))
@@ -109,6 +133,7 @@ class ResponseProblem:
 
 
 def local_best_response(problem, seed=11, starts=3, maxiter=300, ftol=1e-10):
+    starts = positive_integer(starts, 'starts')
     rng = np.random.default_rng(seed)
     initial = problem.initial.copy()
     candidates = [initial, np.zeros_like(initial)]
@@ -162,9 +187,16 @@ def observed_gaps(m, controls, T, steps, seed, starts=3, mode='joint'):
     current = simulate(m, *controls, T, steps)
     d, di = response(m, controls, T, steps, 'D', seed, starts, mode)
     a, ai = response(m, controls, T, steps, 'A', seed + 1, starts, mode)
-    gd = max(0., current['J_D'] - di['objective'])
-    ga = max(0., -ai['objective'] - current['J_A'])
+    values = [current['J_D'], current['J_A'], di['objective'], ai['objective']]
+    if not np.all(np.isfinite(values)):
+        raise FloatingPointError('Non-finite gap objective')
+    raw_d = current['J_D'] - di['objective']
+    raw_a = -ai['objective'] - current['J_A']
+    if not np.all(np.isfinite([raw_d, raw_a])):
+        raise FloatingPointError('Non-finite signed gap')
+    gd, ga = max(0., raw_d), max(0., raw_a)
     return dict(J_D=current['J_D'], J_A=current['J_A'], gap_D=gd, gap_A=ga,
+                signed_gap_D=raw_d, signed_gap_A=raw_a,
                 relative_D=gd/(1+abs(current['J_D'])),
                 relative_A=ga/(1+abs(current['J_A'])), D=di, A=ai), d, a
 

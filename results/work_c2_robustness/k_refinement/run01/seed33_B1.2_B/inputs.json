@@ -1,0 +1,257 @@
+{
+  "config": {
+    "seed": 33,
+    "n": 6,
+    "T": 10.0,
+    "K": 12,
+    "rk4_substeps_per_slot": 6,
+    "network": "modular",
+    "scenario": "separated",
+    "attack_entry_indices": [
+      0,
+      1
+    ],
+    "alpha_entry": 0.25,
+    "beta_nonzero_range": [
+      0.04,
+      0.12
+    ],
+    "delta": 0.1,
+    "gamma": 0.3,
+    "epsilon": 1.0,
+    "x0": [
+      0.1,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "q_normal": 1.0,
+    "q_high": 4.0,
+    "h_normal": 0.05,
+    "h_high": 0.5,
+    "g": 1.0,
+    "c_a": 1.0,
+    "c_s": 1.0,
+    "c_r": 1.0,
+    "omega": 0.0,
+    "nu": 0.0,
+    "b_s": 1.0,
+    "b_r": 1.0,
+    "d_a": 1.0,
+    "B": 1.2,
+    "A": 0.8,
+    "solver": {
+      "method": "SLSQP",
+      "max_br_rounds": 40,
+      "damping": 0.35,
+      "br_restarts": 3,
+      "exploratory_relative_gap_target": 0.01
+    }
+  },
+  "model": {
+    "beta": [
+      [
+        0.0,
+        0.0,
+        0.07549137895701337,
+        0.07549137895701337,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.08547929535396451,
+        0.08547929535396451,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08,
+        0.08
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.08,
+        0.08
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "alpha": [
+      0.25,
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "epsilon": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "delta": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "gamma": [
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "q": [
+      1.0,
+      1.0,
+      1.0,
+      4.0,
+      1.0,
+      1.0
+    ],
+    "h": [
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05
+    ],
+    "c_s": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "c_r": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "g": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "c_a": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "omega": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "nu": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "b_s": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "b_r": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "d_a": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "entry": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "x0": [
+      0.1,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "B": 1.2,
+    "A": 0.8
+  },
+  "cell": "B",
+  "outgoing": "equal",
+  "value": "high_at_node3",
+  "history": "results\\matched_mechanism\\run01\\seed33_B1.2_equal_high_at_node3",
+  "hashes": {
+    "results\\matched_mechanism\\run01\\seed33_B1.2_equal_high_at_node3\\model.json": "2f15807b9b1c00b97dd7bfafcda53dd0368a77f63d5ede2f06a85299c3e08f03",
+    "results\\matched_mechanism\\run01\\seed33_B1.2_equal_high_at_node3\\fine\\controls.json": "97b4c5d8602e1aa51eabd504d25cb79a1db486ebe2c43b6edf80444c33389d20",
+    "results\\matched_mechanism\\run01\\seed33_B1.2_equal_high_at_node3\\fine_audit.json": "028fb5c69cbba249532277171838e642b9832d65decddfed3db937b6e3f1ec24"
+  },
+  "H_main": 6,
+  "H_fine": 24,
+  "H_check": 48,
+  "solver_seed": 10033,
+  "random_seed": 20261060
+}

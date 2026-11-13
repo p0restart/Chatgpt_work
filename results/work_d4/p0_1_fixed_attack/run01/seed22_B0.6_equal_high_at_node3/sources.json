@@ -1,0 +1,17 @@
+{
+  "case": "seed22_B0.6_equal_high_at_node3",
+  "cell": "B",
+  "seed": 22,
+  "B": 0.6,
+  "n": 6,
+  "K": 6,
+  "T": 10.0,
+  "model_source": "results\\matched_mechanism\\run01\\seed22_B0.6_equal_high_at_node3\\model.json",
+  "game_source": "results\\matched_mechanism\\run01\\seed22_B0.6_equal_high_at_node3\\fine\\controls.json",
+  "model_sha256": "6664730dddffa1ce2cfb42f2772768f56b7bbc6a407cb99efb0b5d15938cec6c",
+  "game_controls_sha256": "e5a3a399b92ee6ecc34d728850bfb3643cf248f4b93a31b5f79abc26e8dcecc9",
+  "upstream_0": 0.069307753234566,
+  "upstream_1": 0.0559436303500066,
+  "fixed_a0": 0.4,
+  "fixed_a1": 0.4
+}

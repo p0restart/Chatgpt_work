@@ -1,0 +1,18 @@
+{
+  "exact_numerical_equality": {
+    "12": true,
+    "48": true
+  },
+  "before_hashes": {
+    "results\\matched_mechanism\\run01\\seed11_B1.2_unequal_high_at_node3\\model.json": "edfa7b86fc2df3541300473257a709963b6baccb43be67b466c86df58b71afef",
+    "results\\matched_mechanism\\run01\\seed11_B1.2_unequal_high_at_node3\\fine\\controls.json": "f4e16cad84c2aa5677432d4f16b1c371c4570052b809feac1217ee20c1b6275c",
+    "src\\core.py": "b13423698fd1dc9aaf9f76eb03fe8fc1ffe36da56798e07eee2ad5187e378c53",
+    "src\\game_solver.py": "7d869352f4eea842b9c04809bcbe017d58f2ab27b9439e62d1b31e94d2c0243c"
+  },
+  "after_hashes": {
+    "results\\matched_mechanism\\run01\\seed11_B1.2_unequal_high_at_node3\\model.json": "edfa7b86fc2df3541300473257a709963b6baccb43be67b466c86df58b71afef",
+    "results\\matched_mechanism\\run01\\seed11_B1.2_unequal_high_at_node3\\fine\\controls.json": "f4e16cad84c2aa5677432d4f16b1c371c4570052b809feac1217ee20c1b6275c",
+    "src\\core.py": "ef2c675252d5fc8e00bc7103dd542a40bbf9c7714412207dd4e0b20966859419",
+    "src\\game_solver.py": "8a5469467d5028077f6b83f7c9bb2dde5be6e0ff46790c07d252f0d70dbd1d87"
+  }
+}

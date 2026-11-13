@@ -1,0 +1,74 @@
+[
+  {
+    "case": "seed11_B0.6_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed11_B1.2_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed11_B1.8_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed22_B0.6_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed22_B1.2_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed22_B1.8_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed33_B0.6_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed33_B1.2_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  },
+  {
+    "case": "seed33_B1.8_unequal_high_at_node3",
+    "model_equal": true,
+    "defense_frozen": true,
+    "common_attack_equal": true,
+    "raw_response_reconstructed": true,
+    "source_defense_error": 0.0
+  }
+]

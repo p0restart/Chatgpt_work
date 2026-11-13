@@ -1,0 +1,311 @@
+diff --git a/DECISIONS.md b/DECISIONS.md
+index 76dae74..2aebeae 100644
+--- a/DECISIONS.md
++++ b/DECISIONS.md
+@@ -33,3 +33,9 @@
+ - **2026-10-27 / G1-C1 APPROVED / 补充冻结决定**：用户本会话原文“批准 G1-C1，按匹配网络方案验证核心机制”。批准reviews/G1_C1_mechanism_identification.md及对应YAML：匹配6节点网络，等/不等出强度×高价值位置，seed11/B1.2四格先行，通过数值门槛再扩至3种子×3预算×4格。数学假设、n/K/T、控制与零终端权重不变；原结果保留。G2仍PENDING。
+ - **2026-10-28 / G1-C1验证完成，非G2审批**：核对36配置完成并执行全量审计，36/36局部门槛通过；按批准的失败处理约定，仅保留条件性交互证据，不把数值通过升级为普适动态切换。中预算方向/时段不一致，高预算多数容量松弛，零效应与反向效应保留。依据results/matched_mechanism/run01及reports/MATCHED_MECHANISM_FINDINGS.md，提交reviews/G2_C1_submission.md，G2仍PENDING。没有关键数学假设变更或最终论文合稿。
+ - **2026-10-28 / 解释与证据范围澄清，非模型变更**：依用户对报告逻辑的批评，重写机制说明。依据G1-C1预登记比较及实际输出，四格差值直接检验价值位置效应是否依赖传播条件，不直接证明时间优先级切换；将笼统的“强主张不通过”澄清为切换命题尚未直接验证、已有异质性限制推广。实验事实和失败记录不变，原说明存history，G2未批准。
++
++- **2026-11-10 / G1-Work-C2 APPROVED_SCOPE**：用户明确批准登记协议；仅开放 seed11/B0.6、seed33/B1.2 两组八个 K=12 配置及跨策略类偏离测试，原模型和历史证据不变。批复见 reviews/APPROVAL_LOG.md；新结果需另行 G2 审核。
++
++- **2026-11-10 / G2-Work-C2 APPROVED**：用户明确批准新增稳健性证据及表述范围。可在论文中报告两组指定合成实例的四格目标交互方向保持、末段资源配置的变化、六槽候选在十二槽中的已发现偏离，以及指定K=6四格的隔离环境复现。结论限定于已测实例与策略类。依据 reviews/G2_WORK_C2_submission.md，批复原文见 reviews/APPROVAL_LOG.md。
++
++- **2026-11-11 / G-D2 APPROVED / Work D3启动**：用户明确授权原文“可以由你正式批准 G-D2，随后启动 Work D3，下一阶段应集中完成 摘要、结论、全文合稿、篇幅压缩、引用统一和投稿格式审查”。依现行D2最小修订材料及式号对齐PASS登记通过，进入摘要、结论、全文合稿、篇幅压缩、引用统一和投稿格式审查。授权来源为本会话用户，Work仅执行登记；不伪造人工签字或独立审查。保留两项贡献、合成数据、局部候选、负结果和有限精化范围，不修改冻结方程或重跑研究。具体会议与模板未指定，最终页数/套版验收未开放为已通过事实。见reviews/G_D2_decision.md。
+diff --git a/logs/STATUS.md b/logs/STATUS.md
+index c68e1b8..c997085 100644
+--- a/logs/STATUS.md
++++ b/logs/STATUS.md
+@@ -119,3 +119,41 @@
+ - 当前审批依据为2026-11-03用户明确批准G2，见reviews/APPROVAL_LOG.md及DECISIONS.md；上述2026-10-28 WAITING_USER_G2为历史状态。
+ - 依用户“写第4章内容”及既定顺序，完成manuscript/04_method_zh.md，包含控制离散、实际SLSQP/RK4局部响应、同一策略对停止检查、算法框、有限菜单核验及精度表。
+ - 配套依据和静态核对见manuscript/preparation/04_method_review.md。代码和已保存数据逐项对照；本轮未运行新实验或测试，未改冻结数学假设、原始数据及第3、5节。后续写作按计划进入第2节相关工作。
++
++## 2026-11-08 Work C2：PARTIAL / WAITING_USER_G1_WORK_C2
++- C1两份源码哈希与用户预期一致，文件检查点保存于results/work_c2_robustness/checkpoint/c1_20261107；未提交或改动核心代码。
++- 原环境及新隔离venv环境均53测试通过；seed11/B1.2 K=6四格真实独立重求完成，4/4数值门槛及登记比较容差通过，460次记录优化调用无失败。
++- 最大双方目标差1.96110e-12、控制差1.12988e-11、状态差4.07890e-12、交互差1.01785e-12；非逐位一致，非跨操作系统/跨算法验证。
++- K=12八配置及跨策略类偏离0/8，未执行，等待补充G1；原G1/G1-C1冻结K=6。具体协议reports/WORK_C2_ROBUSTNESS_PROTOCOL.md，申请reviews/G1_WORK_C2_submission.md。原2026-11-03 G2批准仍有效，不自动覆盖新实验结论。
++- 当前结论：部分通过，需要补充修正；未确认控制槽稳健性。交接handoffs/C2_robustness.md。历史结果与论文正文不变；未伪造批准。
++
++## 2026-11-10 Work C2：G1-Work-C2 APPROVED_SCOPE / RUNNING
++- 用户明确批准登记的K=12精化与跨策略类偏离测试；已记录于reviews/APPROVAL_LOG.md与DECISIONS.md。
++- C1哈希复核一致；使用已核验隔离venv执行 handoffs.C2_refine run01。原结果与核心求解源码不变，保持既有组间止损及G2边界。
++
++## 2026-11-10 Work C2：COMPLETED / WAITING_USER_G2_WORK_C2
++- 已完成批准的8格K=12精化和跨策略类偏离；32路径全部达标，四格目标交互在两组均保持正向。
++- 防御方/攻击方原六槽候选跨到十二槽后有最高约0.2141%/0.1767%的已发现归一化改善；不能外推六槽内的局部诊断。
++- 交接 handoffs/C2_robustness.md；新增结论审核 reviews/G2_WORK_C2_submission.md；论文正文及历史结果未改。
++
++## 2026-11-10 Work C2：G2-Work-C2 APPROVED
++- 用户明确批准新增稳健性证据及其写作边界，结束本轮等待审核状态。
++
++## 2026-11-11 / G-D2 APPROVED / Work D3执行中
++- 用户明确授权批准G-D2并启动D3，原文与边界见reviews/APPROVAL_LOG.md、reviews/G_D2_decision.md。
++- 现行D2最小修订为本次接受版本；既有D1/D2等待文字保留为历史记录，由本条及正式批准记录更新状态。
++- D3范围：摘要、结论、合稿、压缩、引用统一、通用投稿审查。冻结模型、源码、原始实验及D1/D2源稿保持原样。
++- 具体目标会议与模板未指定；可继续通用稿及引用核对，会议页数、匿名要求和最终PDF版式待确定。
++
++## 2026-11-11 / Work D3通用稿完成
++- 当前：G-D2 APPROVED；D3 READY_FOR_AUTHOR_REVIEW / TEMPLATE_PENDING。授权原文见reviews/G_D2_decision.md；不新增人工签字或最终投稿批准。
++- 交付：paper/work_d3/manuscript_zh.md、中英文摘要、结论、补充材料、五项统一引用、压缩审查和投稿格式待办。现有第1–5节由12,260至5,694汉字，减少53.6%；新增摘要/结论另计，不等同会议页数。
++- 85项文档与保存数据核验通过；20组公式原样保留，反向评价、反例、控制异质性和跨类偏离留主文。源码、模型、D1/D2源稿及实验记录未改；没有新优化、积分、研究测试或独立审稿。
++- 5个D1历史哈希差异为换行和Markdown表格格式，规范化内容相同，详见D3审查及版本比较记录。
++- 会议/模板/篇幅/作者信息待确定；可审阅通用稿，会议专用套版、最终PDF逐页检查及实际投稿尚未执行。入口paper/work_d3/D3_handoff.md。
++
++## 2026-11-11 / Work D4-P0-1：必读执行指令缺失
++- 用户明确授权固定攻击完整36格对照；该授权有效，不再次请求同范围运行许可。
++- 已完成接口审计、36模型/配置/四格来源核对、53项当前测试和预先协议草案；377个受保护文件指纹一致。见reports/work_d4_p0_1/interface_audit.md及protocol_draft.md。
++- 尚未找到用户要求首先读取的Work_D4_P0_修订执行指令.md，已询问其路径或内容。当前WAITING_REQUIRED_INSTRUCTION；正式固定攻击重新优化尚未启动，没有I_fixed/ΔI或新增科学结论。
++- 取得指令并冻结正式协议后再开始新运行；不修改D3、不覆盖历史、不启动P0-2/P0-3、不伪造G-D3/G-D4批准。
+diff --git a/reports/blocker.md b/reports/blocker.md
+index 7009c8b..d98aac3 100644
+--- a/reports/blocker.md
++++ b/reports/blocker.md
+@@ -25,3 +25,15 @@ P2的所有预算松弛负结果仍在原报告。后续n6出现容量绑定不
+ 
+ ## 2026-10-27 核心机制补充
+ 4个已批准配置的局部候选稳健性已加强，见MECHANISM_EQUILIBRIUM_FINDINGS.md；这不关闭全局均衡问题。原图不足以分离错位与位置因素，新增匹配网络识别方案G1-C1待批，未执行。不能将当前结果称为核心想法验证通过。
++
++## 2026-11-08 最新补充：Work C2控制槽验证等待范围审批
++原G2已于2026-11-03批准，上文更早的G2待审状态为历史。本轮C1版本核验、双环境53测试及新隔离venv的seed11/B1.2四格K=6重求已完成且通过；依赖安装问题已解决。当前唯一执行边界为K=12八配置和跨策略类偏离尚需补充G1范围批准，依据原G1/G1-C1对K=6的冻结与AGENTS.md关卡规则。具体申请reviews/G1_WORK_C2_submission.md，协议reports/WORK_C2_ROBUSTNESS_PROTOCOL.md，实测结果handoffs/C2_robustness.md。不得把此等待写成数值失败，也不得宣称K精化通过；本轮部分通过。
++
++## 2026-11-10 更新：K=12 已完成
++11月8日的G1等待状态已解除。八格和32条路径通过；新增结果待 G2-Work-C2 审核。完整交接见 handoffs/C2_robustness.md。
++
++## 2026-11-11 / Work D4-P0-1：必读执行指令缺失
++- 用户明确授权固定攻击完整36格对照；该授权有效，不再次请求同范围运行许可。
++- 已完成接口审计、36模型/配置/四格来源核对、53项当前测试和预先协议草案；377个受保护文件指纹一致。见reports/work_d4_p0_1/interface_audit.md及protocol_draft.md。
++- 尚未找到用户要求首先读取的Work_D4_P0_修订执行指令.md，已询问其路径或内容。当前WAITING_REQUIRED_INSTRUCTION；正式固定攻击重新优化尚未启动，没有I_fixed/ΔI或新增科学结论。
++- 取得指令并冻结正式协议后再开始新运行；不修改D3、不覆盖历史、不启动P0-2/P0-3、不伪造G-D3/G-D4批准。
+diff --git a/reviews/APPROVAL_LOG.md b/reviews/APPROVAL_LOG.md
+index e458bb7..062a8dd 100644
+--- a/reviews/APPROVAL_LOG.md
++++ b/reviews/APPROVAL_LOG.md
+@@ -40,3 +40,21 @@
+ - 批复日期：2026-10-27（Asia/Shanghai），本会话用户消息；未提供消息精确时分。
+ - 执行边界：先seed11/B1.2四格，通过预设数值门槛后扩展至36配置；保留失败，不改变冻结数学模型。
+ - 原G1仍APPROVED；G2仍PENDING，本轮补充研究不进入最终论文。
++
++## G1-Work-C2 控制槽精化
++- 状态：APPROVED_SCOPE；2026-11-10（Asia/Shanghai）。
++- 用户明确原文：“批准 G1-Work-C2，按登记协议执行”
++- 授权：reports/WORK_C2_ROBUSTNESS_PROTOCOL.md 的八个 K=12 配置及跨策略类偏离测试；保留失败并执行组间止损。既有 G2 未扩大至新增结果。
++
++## G2-Work-C2 新增稳健性证据
++- 状态：APPROVED（2026-11-10，Asia/Shanghai）。
++- 用户明确批复原文：“批准G2”
++- 范围：reviews/G2_WORK_C2_submission.md 所列新增实验结果及写作边界。
++
++## G-D2 现行最小修订稿与 Work D3 启动
++- 状态：APPROVED（2026-11-11，Asia/Shanghai）。
++- 用户明确授权原文：“可以由你正式批准 G-D2，随后启动 Work D3，下一阶段应集中完成 摘要、结论、全文合稿、篇幅压缩、引用统一和投稿格式审查”
++- 批准依据：本会话用户明确授权批准 G-D2 并启动 D3；由 Work 执行登记。不是 Work 独立生成的人工签字，也不伪造第三方审查结论。
++- 材料：paper/work_d2/D2_handoff.md、06_D2_review.md、D1_D2_equation_alignment.md，及 analysis/minimal_revision_version_manifest.json 对应现行最小修订版本。
++- 范围：接受D2实验设计、结果解释、图表和既有证据边界，开放D3摘要、结论、全文整合、压缩、引用统一和投稿格式审查。具体登记见 reviews/G_D2_decision.md。
++- 不扩大模型或实验范围；不将本批复作为连续全局Nash认证或最终投稿授权。目标会议、模板、篇幅与最终投稿文件另行确定。
+diff --git a/src/core.py b/src/core.py
+index 418f911..77ff0d2 100644
+--- a/src/core.py
++++ b/src/core.py
+@@ -44,7 +44,7 @@ def validate_model(m: Model) -> None:
+     n = m.n
+     if n < 2 or m.beta.shape != (n, n):
+         raise ValueError("Invalid beta matrix or n")
+-    if not np.all(np.isfinite(m.beta)) or np.any(m.beta < 0) or not np.allclose(np.diag(m.beta), 0):
++    if not np.all(np.isfinite(m.beta)) or np.any(m.beta < 0) or np.any(np.diag(m.beta) != 0):
+         raise ValueError("beta must be nonnegative, finite, and have a zero diagonal")
+     for name in ("alpha", "epsilon", "delta", "gamma", "q", "h", "c_s", "c_r", "g", "c_a", "omega", "nu", "b_s", "b_r", "d_a", "x0"):
+         x = getattr(m, name)
+@@ -52,8 +52,8 @@ def validate_model(m: Model) -> None:
+             raise ValueError(f"Invalid vector {name}")
+     if m.entry.shape != (n,) or m.entry.dtype != np.dtype(bool):
+         raise ValueError("entry must be a length-n boolean mask")
+-    if np.any(m.alpha < 0) or np.any(m.alpha[~m.entry] != 0):
+-        raise ValueError("alpha must be zero on non-entry assets")
++    if np.any(m.alpha[m.entry] <= 0) or np.any(m.alpha[~m.entry] != 0):
++        raise ValueError("alpha must be positive on entry assets and zero elsewhere")
+     if np.any(m.epsilon <= 0) or np.any(m.epsilon > 1):
+         raise ValueError("isolation effectiveness epsilon must lie in (0,1]")
+     for name in ("delta", "gamma", "q", "h", "g", "omega", "nu"):
+@@ -102,6 +102,31 @@ def cost_rates(m: Model, x: np.ndarray, a: np.ndarray, s: np.ndarray, r: np.ndar
+     ], dtype=float)
+ 
+ 
++def positive_integer(value, name):
++    if isinstance(value, (bool, np.bool_)) or not np.isscalar(value) or not np.isfinite(value) or value < 1 or int(value) != value:
++        raise ValueError(f"{name} must be a positive integer")
++    return int(value)
++
++
++def validate_plan(m, a, s, r, T, substeps):
++    if not np.isscalar(T) or not np.isfinite(T) or T <= 0:
++        raise ValueError("T must be finite and positive")
++    steps = positive_integer(substeps, 'substeps')
++    a, s, r = (np.asarray(u, dtype=float) for u in (a, s, r))
++    if a.ndim != 2 or a.shape[0] < 1:
++        raise ValueError("Expected nonempty 2D schedules")
++    check_controls(m, a, s, r)
++    return a, s, r, steps
++
++
++def check_integration(y, n, enforce_domain=True):
++    """Check completed RK4 steps, without clipping or changing the step size."""
++    if not np.all(np.isfinite(y)):
++        raise FloatingPointError("Non-finite RK4 state or accumulated objective")
++    if enforce_domain and (np.any(y[:n] < -1e-10) or np.any(y[:n] > 1 + 1e-10)):
++        raise FloatingPointError("RK4 state left [0,1]; refine integration explicitly")
++
++
+ def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedule: np.ndarray,
+              T: float, substeps_per_slot: int = 12) -> dict:
+     """Run fixed-piecewise-constant open-loop schedules with augmented RK4 costs.
+@@ -109,12 +134,8 @@ def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedul
+     Note: these controls are GIVEN, not optimized. Does not imply best response/Nash.
+     """
+     validate_model(m)
+-    a_schedule = np.asarray(a_schedule, dtype=float)
+-    s_schedule = np.asarray(s_schedule, dtype=float)
+-    r_schedule = np.asarray(r_schedule, dtype=float)
+-    if a_schedule.ndim != 2 or not np.isfinite(T) or T <= 0 or int(substeps_per_slot) != substeps_per_slot or substeps_per_slot < 1:
+-        raise ValueError("Expected 2D schedules, positive T and integer positive substeps")
+-    check_controls(m, a_schedule, s_schedule, r_schedule)
++    a_schedule, s_schedule, r_schedule, substeps_per_slot = validate_plan(
++        m, a_schedule, s_schedule, r_schedule, T, substeps_per_slot)
+     K = a_schedule.shape[0]
+     if K < 1:
+         raise ValueError("Expected at least one control slot")
+@@ -135,6 +156,7 @@ def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedul
+             k3 = augmented_rhs(y + (h / 2) * k2, a, s, r)
+             k4 = augmented_rhs(y + h * k3, a, s, r)
+             y = y + (h / 6) * (k1 + 2 * k2 + 2 * k3 + k4)
++            check_integration(y, m.n)
+             times.append((k * substeps_per_slot + j + 1) * h)
+             states.append(y[:m.n].copy())
+ 
+@@ -153,6 +175,8 @@ def simulate(m: Model, a_schedule: np.ndarray, s_schedule: np.ndarray, r_schedul
+     }
+     J_D = sum(parts[key] for key in ("security", "business", "isolation", "recovery", "terminal_defense"))
+     J_A = parts["attacker_value"] - parts["attacker_effort"] + parts["terminal_attacker"]
++    if not np.all(np.isfinite([*parts.values(), J_D, J_A])):
++        raise FloatingPointError("Non-finite terminal objective")
+     return {"times": np.asarray(times), "states": np.asarray(states), "parts": parts,
+             "J_D": float(J_D), "J_A": float(J_A)}
+ 
+diff --git a/src/game_solver.py b/src/game_solver.py
+index c5838ce..b3c00a6 100644
+--- a/src/game_solver.py
++++ b/src/game_solver.py
+@@ -3,7 +3,7 @@ from __future__ import annotations
+ import time
+ import numpy as np
+ from scipy.optimize import Bounds, LinearConstraint, minimize
+-from .core import dynamics, check_controls, validate_model
++from .core import dynamics, validate_model, validate_plan, positive_integer, check_integration
+ 
+ 
+ def state_jacobian(m, x, a, s, r):
+@@ -21,9 +21,11 @@ class ResponseProblem:
+     """
+     def __init__(self, m, a, s, r, T, substeps, player, defense_mode='joint'):
+         validate_model(m)
+-        check_controls(m, a, s, r)
+-        if player not in ('D', 'A') or T <= 0 or substeps < 1:
++        a, s, r, substeps = validate_plan(m, a, s, r, T, substeps)
++        if player not in ('D', 'A'):
+             raise ValueError('Invalid response problem')
++        if player == 'A' and not np.any(m.entry):
++            raise ValueError('Attack response requires at least one entry asset')
+         self.m, self.a, self.s, self.r = m, a.copy(), s.copy(), r.copy()
+         self.T, self.substeps, self.player = T, int(substeps), player
+         self.K = a.shape[0]
+@@ -43,7 +45,14 @@ class ResponseProblem:
+             if np.any(self.initial > self.upper + 1e-10):
+                 raise ValueError('Initial control violates ablation')
+ 
++    def checked_vector(self, v):
++        v = np.asarray(v, dtype=float)
++        if v.shape != self.initial.shape or not np.all(np.isfinite(v)):
++            raise ValueError('Response vector must have the expected shape and finite values')
++        return v
++
+     def schedules(self, v):
++        v = self.checked_vector(v)
+         a, s, r = self.a.copy(), self.s.copy(), self.r.copy()
+         u = np.asarray(v).reshape(self.K, self.width)
+         if self.player == 'D':
+@@ -53,6 +62,8 @@ class ResponseProblem:
+         return a, s, r
+ 
+     def value_gradient(self, v):
++        v = self.checked_vector(v)
++        feasible = self.violation(v) <= 1e-10
+         m, n, d = self.m, self.m.n, len(v)
+         a_all, s_all, r_all = self.schedules(v)
+         y = np.r_[m.x0, 0.0]
+@@ -86,15 +97,28 @@ class ResponseProblem:
+                 f4, g4 = rhs(y+dt*f3, sens+dt*g3)
+                 y += dt/6*(f1+2*f2+2*f3+f4)
+                 sens += dt/6*(g1+2*g2+2*g3+g4)
++                check_integration(y, n, enforce_domain=feasible)
++                if not np.all(np.isfinite(sens)):
++                    raise FloatingPointError('Non-finite RK4 sensitivity')
+         terminal = m.omega if self.player == 'D' else -m.nu
+-        return float(y[n]+terminal @ y[:n]), sens[n]+terminal @ sens[:n]
++        value, grad = float(y[n]+terminal @ y[:n]), sens[n]+terminal @ sens[:n]
++        if not np.isfinite(value) or not np.all(np.isfinite(grad)):
++            raise FloatingPointError('Non-finite objective or gradient')
++        return value, grad
+ 
+     def violation(self, v):
+-        return float(max(0, np.max(-v), np.max(v-self.upper), np.max(self.C @ v-self.capacity)))
++        v = self.checked_vector(v)
++        excess = self.C @ v-self.capacity
++        if not np.all(np.isfinite(excess)):
++            raise FloatingPointError('Non-finite capacity usage')
++        return float(max(0, np.max(-v), np.max(v-self.upper), np.max(excess)))
+ 
+     def projected_residual(self, v, grad):
+         """Infinity norm of v-Proj_C(v-grad), unit-step first-order residual."""
++        v, grad = self.checked_vector(v), self.checked_vector(grad)
+         z = (v-grad).reshape(self.K, self.width)
++        if not np.all(np.isfinite(z)):
++            raise FloatingPointError('Non-finite projection input')
+         projected = []
+         for row, upper in zip(z, self.upper.reshape(self.K, self.width)):
+             lo, hi = 0.0, max(1.0, float(np.max(row/self.weights)))
+@@ -109,6 +133,7 @@ class ResponseProblem:
+ 
+ 
+ def local_best_response(problem, seed=11, starts=3, maxiter=300, ftol=1e-10):
++    starts = positive_integer(starts, 'starts')
+     rng = np.random.default_rng(seed)
+     initial = problem.initial.copy()
+     candidates = [initial, np.zeros_like(initial)]
+@@ -162,9 +187,16 @@ def observed_gaps(m, controls, T, steps, seed, starts=3, mode='joint'):
+     current = simulate(m, *controls, T, steps)
+     d, di = response(m, controls, T, steps, 'D', seed, starts, mode)
+     a, ai = response(m, controls, T, steps, 'A', seed + 1, starts, mode)
+-    gd = max(0., current['J_D'] - di['objective'])
+-    ga = max(0., -ai['objective'] - current['J_A'])
++    values = [current['J_D'], current['J_A'], di['objective'], ai['objective']]
++    if not np.all(np.isfinite(values)):
++        raise FloatingPointError('Non-finite gap objective')
++    raw_d = current['J_D'] - di['objective']
++    raw_a = -ai['objective'] - current['J_A']
++    if not np.all(np.isfinite([raw_d, raw_a])):
++        raise FloatingPointError('Non-finite signed gap')
++    gd, ga = max(0., raw_d), max(0., raw_a)
+     return dict(J_D=current['J_D'], J_A=current['J_A'], gap_D=gd, gap_A=ga,
++                signed_gap_D=raw_d, signed_gap_A=raw_a,
+                 relative_D=gd/(1+abs(current['J_D'])),
+                 relative_A=ga/(1+abs(current['J_A'])), D=di, A=ai), d, a
+ 
+
+warning: in the working copy of 'DECISIONS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'logs/STATUS.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'paper/evidence_map.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'reports/blocker.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'reviews/APPROVAL_LOG.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/core.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/game_solver.py', LF will be replaced by CRLF the next time Git touches it

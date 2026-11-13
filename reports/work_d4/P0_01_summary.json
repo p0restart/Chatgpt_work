@@ -1,0 +1,65 @@
+{
+  "completed_cells": 36,
+  "passed_cells": 36,
+  "not_run_cells": 0,
+  "optimizer_calls": 1296,
+  "failed_optimizer_calls": 0,
+  "complete_groups": 9,
+  "all_quality_pass": true,
+  "protected_changes": [],
+  "stage_status": "WAITING_USER_G_D4_P0_1_REVIEW",
+  "table_rows": 9,
+  "independence": "separate integrator expression; same execution session",
+  "relative_improvement_max": 8.775852684721717e-12,
+  "current_residual_max": 9.24125983925439e-06,
+  "response_distance_max": 4.886472204534975e-06,
+  "initialization_difference_H12": 5.963566120037456e-06,
+  "initialization_difference_H48": 5.963566120037456e-06,
+  "integration_control_difference": 0.0,
+  "violation": 9.769962616701378e-15,
+  "GAME_baseline_replay_error": 0.0,
+  "max_integration_error": 9.489712127219718e-09,
+  "independent_max_error": 1.8492013476034685e-12,
+  "D_GAME_FIXED_control_difference": 0.041992400847698674,
+  "symmetry_max": {
+    "GAME": {
+      "objective_error": 7.320366535168432e-12,
+      "control_exchange_error": 7.749961783432013e-11,
+      "state_exchange_error": 3.018529870502107e-11
+    },
+    "FIXED": {
+      "objective_error": 8.881784197001252e-15,
+      "control_exchange_error": 2.157996004115148e-15,
+      "state_exchange_error": 3.608224830031759e-16
+    }
+  },
+  "I_game_range": [
+    0.018273690732399928,
+    0.029191961614866813
+  ],
+  "I_fixed_range": [
+    0.018119867552224278,
+    0.028589758446283753
+  ],
+  "delta_I_range": [
+    0.00010495674428767643,
+    0.000660307040943664
+  ],
+  "fixed_over_game_range": [
+    0.9712424522041384,
+    0.9942564014120265
+  ],
+  "delta_over_abs_game_percent_range": [
+    0.5743598587973487,
+    2.8757547795861638
+  ],
+  "GAME_I_over_C_percent_range": [
+    0.17015357699188402,
+    0.2606391493793473
+  ],
+  "FIXED_I_over_C_percent_range": [
+    0.16791125333025547,
+    0.2525400082878339
+  ],
+  "same_resolved_sign_count": 9
+}
