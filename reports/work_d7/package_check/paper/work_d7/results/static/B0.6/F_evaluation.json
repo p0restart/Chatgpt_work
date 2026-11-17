@@ -1,0 +1,19 @@
+{
+  "B": 0.6,
+  "method": "F",
+  "J_D": 9.759868415322265,
+  "J_A": 6.350420415138856,
+  "security": 9.20998543837536,
+  "business": 0.0683580980884696,
+  "isolation": 0.13138319001451826,
+  "recovery": 0.35014168884391744,
+  "terminal_defense": 0.0,
+  "attacker_value": 7.9504204151388524,
+  "attacker_effort": 1.5999999999999956,
+  "terminal_attacker": 0.0,
+  "integration_error": 1.9468870959826745e-11,
+  "state_min": 0.0,
+  "state_max": 0.38338954657594376,
+  "mean_resource": 0.5657915628021971,
+  "database_isolation": 2.941875755585419e-16
+}

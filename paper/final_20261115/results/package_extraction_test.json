@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "scripts": [
+    "reproduce.py",
+    "assemble.py",
+    "audit.py"
+  ],
+  "historical_d7_available": false,
+  "manuscript_sha256": "d07f71d28e924ddbeb9e926926e8d38d56b7dd9e669e2baf0907a716c73e2755",
+  "scope": "Final ZIP extracted on same machine; full frozen-control replay, assembly and raw-data manuscript audit. No reoptimization."
+}

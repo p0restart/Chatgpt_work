@@ -1,0 +1,13 @@
+numpy==1.26.4
+scipy==1.11.4
+pandas==2.1.4
+matplotlib==3.8.0
+PyYAML
+tabulate
+# For figure PDF audits / manuscript rendering:
+PyMuPDF
+Pillow
+# For optional Word export (requires Office MML2OMML.XSL on this Windows host):
+python-docx
+lxml
+latex2mathml==3.81.1

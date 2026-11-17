@@ -29,9 +29,22 @@ def main():
     plans=pd.read_csv(out/'planned_controls.csv')
     attempts=pd.read_csv(out/'optimizer_attempts.csv')
     audit=pd.read_csv(out/'solver_audit.csv');quality=pd.read_csv(out/'quality.csv')
+    spec=importlib.util.spec_from_file_location('d5_driver',ROOT/'paper/work_d5/analysis/run_replanning.py')
+    driver=importlib.util.module_from_spec(spec);spec.loader.exec_module(driver)
+    timings=[]
     check('all_recorded_optimizer_success',int((~attempts.success).sum()))
     check('all_final_local_diagnostics_pass',int((~audit.passed).sum()))
     check('all_registered_quality_checks_pass',int((~quality.passed).sum()))
+    for index,line in enumerate((out/'optimizer_calls.jsonl').read_text(encoding='utf-8').splitlines()):
+        call=json.loads(line);width=12 if call['player']=='D' else 2
+        capacity=call['B'] if call['player']=='D' else .8
+        for start,row in enumerate(call['raw']):
+            for kind in ('initial_control','control'):
+                v=np.array(row[kind]).reshape(call['K'],width)
+                violation=max(0,float((-v).max()),float((v-1).max()),float((v.sum(axis=1)-capacity).max()))
+                check(f'optimizer_vector:{index}:{start}:{kind}',violation,1e-10)
+            check(f'optimizer_finite_success:{index}:{start}',int(not (row['success'] and
+                np.isfinite(row['objective']) and np.isfinite(row['initial_objective']))))
     check('source_protection',len(json.loads((out/'protected_after.json').read_text())['changed']))
     check('complete_18_trajectories',abs(len(controls.groupby(['B','evaluation','method']))-18))
     for (B,e),group in controls.groupby(['B','evaluation']):
@@ -43,13 +56,22 @@ def main():
         for method,u in schedule.items():
             label=f'{B}:{e}:{method}';folder=out/f'B{B}'
             mpre=load_model(folder/'model_pre.json');mpost=load_model(folder/'model_post.json')
+            for H in (48,96,192):
+                tick=time.perf_counter();replay=driver.execute(mpre,mpost,u,H)
+                timings.append(dict(B=B,evaluation=e,method=method,update=-1,
+                    phase='independent_validation',item=f'saved_execution_replay_H{H}',H=H,
+                    seconds=time.perf_counter()-tick,
+                    note='additional timed fixed-control replay; H96/192 are numerical audits'))
+                saved=tr[(tr.B==B)&(tr.evaluation==e)&(tr.method==method)&(tr.H==H)]
+                check(f'saved_RK4_replay:{label}:H{H}',np.max(abs(replay['states']-
+                    saved[[f'x{i}' for i in range(6)]].to_numpy(float))),1e-12)
             check_controls(mpre,*u)
             source=load_model(ROOT/f'results/matched_mechanism/run01/seed11_B{B}_unequal_high_at_node3/model.json')
             for key,value in vars(source).items():
                 check(f'pre_model:{B}:{key}',np.max(abs(np.asarray(value,dtype=float)-np.asarray(getattr(mpre,key),dtype=float))))
                 expected=np.array([.5,.25,0,0,0,0]) if key=='alpha' else value
                 check(f'post_model:{B}:{key}',np.max(abs(np.asarray(expected,dtype=float)-np.asarray(getattr(mpost,key),dtype=float))))
-            y=np.r_[mpre.x0,np.zeros(12)];pre=None
+            y=np.r_[mpre.x0,np.zeros(12)];pre=None;tick=time.perf_counter()
             for k in range(6):
                 m=mpre if k<3 else mpost;a,s,r=(v[k] for v in u)
                 def rhs(t,z):
@@ -86,14 +108,33 @@ def main():
                         end_state=float((pre if period=='pre' else y)[node])))
             terminal=tr[(tr.B==B)&(tr.evaluation==e)&(tr.method==method)&(tr.H==192)].iloc[-1]
             check(f'DOP853_terminal_state:{label}',np.max(abs(y[:6]-terminal[[f'x{i}' for i in range(6)]].to_numpy(float))),1e-6)
+            timings.append(dict(B=B,evaluation=e,method=method,update=-1,
+                phase='independent_validation',item='DOP853_audit',seconds=time.perf_counter()-tick,
+                note='independent integration and related saved-file checks'))
     compare=pd.read_csv(out/'comparisons.csv')
     for _,row in compare.iterrows():
         vals=obj[(obj.B==row.B)&(obj.evaluation==row.evaluation)&(obj.period==row.period)&(obj.H==48)].set_index('method').J_D
         check(f'paired_P_G:{row.B}:{row.evaluation}:{row.period}',abs(row.delta_P_to_G-(vals.P-vals.G)),1e-12)
         check(f'paired_R_G:{row.B}:{row.evaluation}:{row.period}',abs(row.delta_R_to_G-(vals.R-vals.G)),1e-12)
+    # Previously saved decisions must be reproduced rather than selected by performance.
+    previous=out.parent/'run02'
+    for old in (previous/'B0.6').rglob('decision.json'):
+        new=out/old.relative_to(previous)
+        if not new.exists():continue
+        a=json.loads(old.read_text());b=json.loads(new.read_text())
+        if 'controls' in a and 'controls' in b:
+            error=max(np.max(abs(np.array(v)-np.array(w))) for v,w in zip(a['controls'],b['controls']))
+            check(f'recovery_same_decision:{old.relative_to(previous)}',error,1e-10)
+        else:
+            for path in ('warm','zero','random'):
+                a_path=old.parent/path/'controls.json';b_path=new.parent/path/'controls.json'
+                if a_path.exists() and b_path.exists():
+                    error=max(np.max(abs(v-w)) for v,w in zip(load_controls(a_path),load_controls(b_path)))
+                    check(f'recovery_same_path:{old.relative_to(previous)}:{path}',error,1e-10)
     pd.DataFrame(checks).to_csv(out/'independent_checks.csv',index=False)
     pd.DataFrame(nodes).to_csv(out/'node_state_summary.csv',index=False)
     pd.DataFrame(replays).to_csv(out/'independent_replay.csv',index=False)
+    pd.DataFrame(timings).to_csv(out/'verification_timing.csv',index=False)
     result=dict(passed=all(c['passed'] for c in checks),checks=len(checks),
         failures=[c for c in checks if not c['passed']],seconds=time.perf_counter()-started,
         method='separate DOP853 replay using frozen dynamics and cost rates; saved-file arithmetic and information checks',

@@ -1,0 +1,74 @@
+[
+  {
+    "figure": "fig1_topology.pdf",
+    "check": "text",
+    "returncode": 0,
+    "report": "figures\\qa\\fig1_topology_text.json"
+  },
+  {
+    "figure": "fig1_topology.pdf",
+    "check": "collisions",
+    "returncode": 0,
+    "report": "figures\\qa\\fig1_topology_collisions.json"
+  },
+  {
+    "figure": "fig2_execution_flow.pdf",
+    "check": "text",
+    "returncode": 0,
+    "report": "figures\\qa\\fig2_execution_flow_text.json"
+  },
+  {
+    "figure": "fig2_execution_flow.pdf",
+    "check": "collisions",
+    "returncode": 0,
+    "report": "figures\\qa\\fig2_execution_flow_collisions.json"
+  },
+  {
+    "figure": "fig3_defense_actions.pdf",
+    "check": "text",
+    "returncode": 0,
+    "report": "figures\\qa\\fig3_defense_actions_text.json"
+  },
+  {
+    "figure": "fig3_defense_actions.pdf",
+    "check": "collisions",
+    "returncode": 0,
+    "report": "figures\\qa\\fig3_defense_actions_collisions.json"
+  },
+  {
+    "figure": "fig4_cross_evaluation.pdf",
+    "check": "text",
+    "returncode": 0,
+    "report": "figures\\qa\\fig4_cross_evaluation_text.json"
+  },
+  {
+    "figure": "fig4_cross_evaluation.pdf",
+    "check": "collisions",
+    "returncode": 0,
+    "report": "figures\\qa\\fig4_cross_evaluation_collisions.json"
+  },
+  {
+    "figure": "fig5_rolling_execution.pdf",
+    "check": "text",
+    "returncode": 0,
+    "report": "figures\\qa\\fig5_rolling_execution_text.json"
+  },
+  {
+    "figure": "fig5_rolling_execution.pdf",
+    "check": "collisions",
+    "returncode": 0,
+    "report": "figures\\qa\\fig5_rolling_execution_collisions.json"
+  },
+  {
+    "figure": "figS1_states_resources.pdf",
+    "check": "text",
+    "returncode": 0,
+    "report": "figures\\qa\\figS1_states_resources_text.json"
+  },
+  {
+    "figure": "figS1_states_resources.pdf",
+    "check": "collisions",
+    "returncode": 0,
+    "report": "figures\\qa\\figS1_states_resources_collisions.json"
+  }
+]

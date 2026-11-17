@@ -1,0 +1,871 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "18 cross costs sum",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "18 attacker payoffs",
+      "passed": true,
+      "error": 8.881784197001252e-16
+    },
+    {
+      "check": "attack change B0.6",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "JA response to G B0.6",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "JA response to F B0.6",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "attack change B1.2",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "JA response to G B1.2",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "JA response to F B1.2",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "attack change B1.8",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "JA response to G B1.8",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "JA response to F B1.8",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "user B1.2 matrix rounded",
+      "passed": true,
+      "error": 4.874150612010908e-07
+    },
+    {
+      "check": "results/rolling_event_B0.6 cost sum",
+      "passed": true,
+      "error": 8.881784197001252e-16
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/P full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/G full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/R full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E0/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/P full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/G full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/R full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B0.6/E1/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2 cost sum",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/P full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/G full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/R full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E0/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/P full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/G full=pre+post",
+      "passed": true,
+      "error": 3.552713678800501e-15
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/R full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.2/E1/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8 cost sum",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/P full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/G full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/R full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E0/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/P full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/G full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/R full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_event_B1.8/E1/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2 cost sum",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/P full=pre+post",
+      "passed": true,
+      "error": 3.552713678800501e-15
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/G full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/R full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E0/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1 common actual attack",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1 common prefix s",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1 common prefix r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/P full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/P attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/G full=pre+post",
+      "passed": true,
+      "error": 1.7763568394002505e-15
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/G attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/R full=pre+post",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/R attack export",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/post comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/full comparison",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/G/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/G/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/G/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/R/0 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/R/1 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "results/rolling_control_B1.2/E1/R/2 six selected prediction rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "all action exports 1080 rows",
+      "passed": true,
+      "error": null
+    },
+    {
+      "check": "raw G controls and asset export B0.6 a",
+      "passed": true,
+      "error": 5.551115123125783e-17
+    },
+    {
+      "check": "raw G controls and asset export B0.6 s",
+      "passed": true,
+      "error": 7.979727989493313e-17
+    },
+    {
+      "check": "raw G controls and asset export B0.6 r",
+      "passed": true,
+      "error": 9.71445146547012e-17
+    },
+    {
+      "check": "static plan export B0.6 a",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "static plan export B0.6 s",
+      "passed": true,
+      "error": 2.465190328815662e-32
+    },
+    {
+      "check": "static plan export B0.6 r",
+      "passed": true,
+      "error": 1.5407439555097887e-33
+    },
+    {
+      "check": "raw G controls and asset export B1.2 a",
+      "passed": true,
+      "error": 5.551115123125783e-17
+    },
+    {
+      "check": "raw G controls and asset export B1.2 s",
+      "passed": true,
+      "error": 9.8879238130678e-17
+    },
+    {
+      "check": "raw G controls and asset export B1.2 r",
+      "passed": true,
+      "error": 9.71445146547012e-17
+    },
+    {
+      "check": "static plan export B1.2 a",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "static plan export B1.2 s",
+      "passed": true,
+      "error": 1.5407439555097887e-33
+    },
+    {
+      "check": "static plan export B1.2 r",
+      "passed": true,
+      "error": 3.851859888774472e-34
+    },
+    {
+      "check": "raw G controls and asset export B1.8 a",
+      "passed": true,
+      "error": 5.551115123125783e-17
+    },
+    {
+      "check": "raw G controls and asset export B1.8 s",
+      "passed": true,
+      "error": 8.673617379884035e-17
+    },
+    {
+      "check": "raw G controls and asset export B1.8 r",
+      "passed": true,
+      "error": 9.80118763926896e-17
+    },
+    {
+      "check": "static plan export B1.8 a",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "static plan export B1.8 s",
+      "passed": true,
+      "error": 6.162975822039155e-33
+    },
+    {
+      "check": "static plan export B1.8 r",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "source manifest keys unchanged",
+      "passed": true,
+      "error": 0.0
+    },
+    {
+      "check": "all D7 input hashes unchanged since first D8 audit",
+      "passed": true,
+      "error": null
+    }
+  ],
+  "scope": "Read-only arithmetic and saved-control audit. No optimization or new simulation."
+}

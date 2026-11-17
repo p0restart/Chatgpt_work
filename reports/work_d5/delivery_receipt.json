@@ -1,0 +1,9 @@
+{
+  "status": "WAITING_USER_D5_REVIEW",
+  "files": 464,
+  "zip_bytes": 4468093,
+  "zip_sha256": "31a9288de378c96d3b2d753f45aa9d3ef9d1bf689a30d92356209c35981eeaad",
+  "zip_crc_passed": true,
+  "package": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\reports\\work_d5\\Work_D5_review_package.zip",
+  "scope": "complete final run and source snapshots; prior interrupted-run metadata included; full old runs remain in project"
+}

@@ -1,0 +1,1371 @@
+{
+  "passed": true,
+  "checks": 341,
+  "scope": "Document, frozen-equation, numeric-table, narrative-value and saved-source checks; no new experiment.",
+  "results": [
+    {
+      "check": "paper_v3_zh.md present and substantive",
+      "passed": true
+    },
+    {
+      "check": "paper_v3_zh.md no unfilled placeholders",
+      "passed": true
+    },
+    {
+      "check": "paper_v3_zh.md no control bytes",
+      "passed": true
+    },
+    {
+      "check": "revision_log.md present and substantive",
+      "passed": true
+    },
+    {
+      "check": "revision_log.md no unfilled placeholders",
+      "passed": true
+    },
+    {
+      "check": "revision_log.md no control bytes",
+      "passed": true
+    },
+    {
+      "check": "claim_evidence_audit.md present and substantive",
+      "passed": true
+    },
+    {
+      "check": "claim_evidence_audit.md no unfilled placeholders",
+      "passed": true
+    },
+    {
+      "check": "claim_evidence_audit.md no control bytes",
+      "passed": true
+    },
+    {
+      "check": "algorithm_audit.md present and substantive",
+      "passed": true
+    },
+    {
+      "check": "algorithm_audit.md no unfilled placeholders",
+      "passed": true
+    },
+    {
+      "check": "algorithm_audit.md no control bytes",
+      "passed": true
+    },
+    {
+      "check": "figure_table_plan.md present and substantive",
+      "passed": true
+    },
+    {
+      "check": "figure_table_plan.md no unfilled placeholders",
+      "passed": true
+    },
+    {
+      "check": "figure_table_plan.md no control bytes",
+      "passed": true
+    },
+    {
+      "check": "remaining_issues.md present and substantive",
+      "passed": true
+    },
+    {
+      "check": "remaining_issues.md no unfilled placeholders",
+      "passed": true
+    },
+    {
+      "check": "remaining_issues.md no control bytes",
+      "passed": true
+    },
+    {
+      "check": "chapter 1",
+      "passed": true
+    },
+    {
+      "check": "chapter 2",
+      "passed": true
+    },
+    {
+      "check": "chapter 3",
+      "passed": true
+    },
+    {
+      "check": "chapter 4",
+      "passed": true
+    },
+    {
+      "check": "chapter 5",
+      "passed": true
+    },
+    {
+      "check": "terminology 槽",
+      "passed": true
+    },
+    {
+      "check": "terminology 四格",
+      "passed": true
+    },
+    {
+      "check": "terminology 运行日志显示",
+      "passed": true
+    },
+    {
+      "check": "terminology 实验跑出",
+      "passed": true
+    },
+    {
+      "check": "terminology 控制时段",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 1 unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 2 unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 3 unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 4 unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 5 unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 6 unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 7 unchanged",
+      "passed": true
+    },
+    {
+      "check": "frozen equation 8 unchanged",
+      "passed": true
+    },
+    {
+      "check": "event metric equation 9",
+      "passed": true
+    },
+    {
+      "check": "bibliography exactly retained",
+      "passed": true
+    },
+    {
+      "check": "15 references",
+      "passed": true
+    },
+    {
+      "check": "main table 1",
+      "passed": true
+    },
+    {
+      "check": "main table 2",
+      "passed": true
+    },
+    {
+      "check": "main table 3",
+      "passed": true
+    },
+    {
+      "check": "main table 4",
+      "passed": true
+    },
+    {
+      "check": "main table 5",
+      "passed": true
+    },
+    {
+      "check": "main table 6",
+      "passed": true
+    },
+    {
+      "check": "main table 7",
+      "passed": true
+    },
+    {
+      "check": "main table 8",
+      "passed": true
+    },
+    {
+      "check": "supplementary full table",
+      "passed": true
+    },
+    {
+      "check": "four nonduplicate figures",
+      "passed": true
+    },
+    {
+      "check": "image ../work_d7/figures/fig1_topology.png",
+      "passed": true
+    },
+    {
+      "check": "image ../work_d7/figures/fig2_execution_flow.png",
+      "passed": true
+    },
+    {
+      "check": "image ../work_d7/figures/fig3_defense_actions.png",
+      "passed": true
+    },
+    {
+      "check": "image ../work_d7/figures/fig5_rolling_execution.png",
+      "passed": true
+    },
+    {
+      "check": "two algorithms",
+      "passed": true
+    },
+    {
+      "check": "算法1：基于交替最佳响应的攻防策略求解算法 audit matches",
+      "passed": true
+    },
+    {
+      "check": "算法2：攻击参数扰动下的滚动防御行动重规划算法 audit matches",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.759868",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.620736",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.621622",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.760493",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.620103",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.620834",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.466796",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.327081",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.327376",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.467228",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.326647",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.326860",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.449058",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.311232",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.311360",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.449465",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.310823",
+      "passed": true
+    },
+    {
+      "check": "cross_matrix 9.310880",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.204042",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.069762",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.137850",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.348839",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.760493",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.209985",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.068358",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.131383",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.350142",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.759868",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 8.317571",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.145233",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.303665",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.700758",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.467228",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 8.329118",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.145134",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.296437",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.696106",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.466796",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 8.144971",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.168708",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.343921",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.791865",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.449465",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 8.161282",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.167859",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.335882",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 0.784034",
+      "passed": true
+    },
+    {
+      "check": "fixed_attack_costs 9.449058",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 7.450623",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 7.447613",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 7.447232",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.040393",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.045501",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post -0.000381",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post -0.005110",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 7.431210",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 7.422472",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 7.423012",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.117591",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.110316",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.000541",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.007284",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.925324",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.921314",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.920807",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.057912",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.065226",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post -0.000507",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post -0.007319",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.901625",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.890208",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.890813",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.165432",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.156664",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.000605",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.008782",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.825423",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.821366",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.820818",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.059432",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.067461",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post -0.000548",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post -0.008035",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.801935",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.790200",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 6.790840",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.172527",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.163117",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.000640",
+      "passed": true
+    },
+    {
+      "check": "rolling_event_post 0.009425",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.434503",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.431493",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.431113",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.028842",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.032489",
+      "passed": true
+    },
+    {
+      "check": "full loss -0.003648",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.415090",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.406352",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.406892",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.083902",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.078711",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.005195",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.135939",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.131928",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.131422",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.039568",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.044565",
+      "passed": true
+    },
+    {
+      "check": "full loss -0.005000",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.112240",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.100822",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.101428",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.112908",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.106923",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.005991",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.119840",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.115784",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.115236",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.040084",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.045500",
+      "passed": true
+    },
+    {
+      "check": "full loss -0.005418",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.096352",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.084617",
+      "passed": true
+    },
+    {
+      "check": "full loss 10.085257",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.116232",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.109893",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.006346",
+      "passed": true
+    },
+    {
+      "check": "full loss 9.472951",
+      "passed": true
+    },
+    {
+      "check": "full loss 9.472921",
+      "passed": true
+    },
+    {
+      "check": "full loss 9.472840",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.000319",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.001173",
+      "passed": true
+    },
+    {
+      "check": "full loss -0.000854",
+      "passed": true
+    },
+    {
+      "check": "full loss 9.326647",
+      "passed": true
+    },
+    {
+      "check": "full loss 9.326647",
+      "passed": true
+    },
+    {
+      "check": "full loss 9.326734",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.000000",
+      "passed": true
+    },
+    {
+      "check": "full loss -0.000931",
+      "passed": true
+    },
+    {
+      "check": "full loss 0.000931",
+      "passed": true
+    },
+    {
+      "check": "asset prose v1/0/s",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.323232",
+      "passed": true
+    },
+    {
+      "check": "asset prose v1/0/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.294892",
+      "passed": true
+    },
+    {
+      "check": "asset prose v1/1/s",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.345588",
+      "passed": true
+    },
+    {
+      "check": "asset prose v1/1/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.348708",
+      "passed": true
+    },
+    {
+      "check": "asset prose v1/1/x_start",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.194672",
+      "passed": true
+    },
+    {
+      "check": "asset prose v1/4/s",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.098344",
+      "passed": true
+    },
+    {
+      "check": "asset prose v4/1/x_start",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.014047",
+      "passed": true
+    },
+    {
+      "check": "asset prose v4/1/s",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.000951",
+      "passed": true
+    },
+    {
+      "check": "asset prose v4/4/x_start",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.073640",
+      "passed": true
+    },
+    {
+      "check": "asset prose v4/4/s",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.042531",
+      "passed": true
+    },
+    {
+      "check": "asset prose v4/4/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.083404",
+      "passed": true
+    },
+    {
+      "check": "asset prose v5/0/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.004480",
+      "passed": true
+    },
+    {
+      "check": "asset prose v5/4/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.139747",
+      "passed": true
+    },
+    {
+      "check": "asset prose v5/5/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.073475",
+      "passed": true
+    },
+    {
+      "check": "asset prose v3/5/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.057968",
+      "passed": true
+    },
+    {
+      "check": "asset prose v4/5/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.030317",
+      "passed": true
+    },
+    {
+      "check": "asset prose v3/4/s",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.085630",
+      "passed": true
+    },
+    {
+      "check": "asset prose v3/3/r",
+      "passed": true
+    },
+    {
+      "check": "asset numeric cited 0.156446",
+      "passed": true
+    },
+    {
+      "check": "asset resource ordering B0.6",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.339102",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.116986",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.056986",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.012188",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.037143",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.001960",
+      "passed": true
+    },
+    {
+      "check": "asset resource ordering B1.2",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.463738",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.225360",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.140469",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.076786",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.062960",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.005190",
+      "passed": true
+    },
+    {
+      "check": "asset resource ordering B1.8",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.480837",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.249486",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.162958",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.101903",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.073916",
+      "passed": true
+    },
+    {
+      "check": "asset budget table 0.011925",
+      "passed": true
+    },
+    {
+      "check": "asset share v10.6",
+      "passed": true
+    },
+    {
+      "check": "asset share v11.8",
+      "passed": true
+    },
+    {
+      "check": "asset share v40.6",
+      "passed": true
+    },
+    {
+      "check": "asset share v41.8",
+      "passed": true
+    },
+    {
+      "check": "asset share v30.6",
+      "passed": true
+    },
+    {
+      "check": "asset share v31.8",
+      "passed": true
+    },
+    {
+      "check": "E0G Linf",
+      "passed": true
+    },
+    {
+      "check": "E0G L1",
+      "passed": true
+    },
+    {
+      "check": "E0R Linf",
+      "passed": true
+    },
+    {
+      "check": "E0R L1",
+      "passed": true
+    },
+    {
+      "check": "E1G Linf",
+      "passed": true
+    },
+    {
+      "check": "E1G L1",
+      "passed": true
+    },
+    {
+      "check": "E1R Linf",
+      "passed": true
+    },
+    {
+      "check": "E1R L1",
+      "passed": true
+    },
+    {
+      "check": "E0 R matches better B0.6",
+      "passed": true
+    },
+    {
+      "check": "E1 G matches better B0.6",
+      "passed": true
+    },
+    {
+      "check": "E0 R matches better B1.2",
+      "passed": true
+    },
+    {
+      "check": "E1 G matches better B1.2",
+      "passed": true
+    },
+    {
+      "check": "E0 R matches better B1.8",
+      "passed": true
+    },
+    {
+      "check": "E1 G matches better B1.8",
+      "passed": true
+    },
+    {
+      "check": "time mean E0G",
+      "passed": true
+    },
+    {
+      "check": "time mean E0R",
+      "passed": true
+    },
+    {
+      "check": "time mean E1G",
+      "passed": true
+    },
+    {
+      "check": "time mean E1R",
+      "passed": true
+    },
+    {
+      "check": "execution Gs/0",
+      "passed": true
+    },
+    {
+      "check": "execution Gs/1",
+      "passed": true
+    },
+    {
+      "check": "execution Gs/2",
+      "passed": true
+    },
+    {
+      "check": "execution Gr/0",
+      "passed": true
+    },
+    {
+      "check": "execution Gr/1",
+      "passed": true
+    },
+    {
+      "check": "execution Gr/2",
+      "passed": true
+    },
+    {
+      "check": "execution Pr/0",
+      "passed": true
+    },
+    {
+      "check": "execution Pr/1",
+      "passed": true
+    },
+    {
+      "check": "execution Pr/2",
+      "passed": true
+    },
+    {
+      "check": "event E0 security improvement",
+      "passed": true
+    },
+    {
+      "check": "event E0 extra action costs",
+      "passed": true
+    },
+    {
+      "check": "all saved-data arithmetic checks passed",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B0.6/cross_evaluation.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.2/cross_evaluation.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.8/cross_evaluation.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B0.6/cross_attacks.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.2/cross_attacks.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.8/cross_attacks.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B0.6/comparisons.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B0.6/objectives.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B0.6/executed_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B0.6/planned_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B0.6/attack_scenarios.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.2/comparisons.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.2/objectives.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.2/executed_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.2/planned_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.2/attack_scenarios.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.8/comparisons.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.8/objectives.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.8/executed_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.8/planned_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_event_B1.8/attack_scenarios.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_control_B1.2/comparisons.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_control_B1.2/objectives.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_control_B1.2/executed_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_control_B1.2/planned_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/rolling_control_B1.2/attack_scenarios.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/derived/all_asset_decisions.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B0.6/model.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B0.6/G_controls.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/planned_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.2/model.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.2/G_controls.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.8/model.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/static/B1.8/G_controls.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/derived/numerical_quality_summary.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/results/verification.json",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/D7_experiment_protocol.md",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/paper_v2_zh.md",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/execution_report.md",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/config_new_topology.yaml",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/algorithm_code_map.md",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/claim_evidence_map.md",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/reference_claim_map.md",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/topology_assets.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/topology_edges.csv",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/source_snapshot/src/core.py",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/source_snapshot/src/game_solver.py",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/source_snapshot/src/matched_mechanism.py",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/source_snapshot/src/experiments.py",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/source_snapshot/paper/work_d5/analysis/run_replanning.py",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/analysis/run_d7.py",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/analysis/run_rolling.py",
+      "passed": true
+    },
+    {
+      "check": "source unchanged paper/work_d7/analysis/summarize_results.py",
+      "passed": true
+    },
+    {
+      "check": "no solver imports in D8 analysis",
+      "passed": true
+    }
+  ]
+}

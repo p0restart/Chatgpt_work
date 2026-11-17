@@ -1,0 +1,27 @@
+{
+  "scope": "Document integrity and saved-table arithmetic only; no new optimization/integration or proof certification.",
+  "checks": 2983,
+  "passed": true,
+  "failures": [],
+  "equations_unchanged": true,
+  "citation_lines": {
+    "1": [
+      15
+    ],
+    "2": [
+      15
+    ],
+    "3": [
+      17
+    ],
+    "4": [
+      17
+    ],
+    "5": [
+      17
+    ]
+  },
+  "copied_artifacts": 64,
+  "protected_input_files": 177,
+  "paper_sha256": "23fb1ed2c387a148e644378f63ea911c8fb3d8d98b445c8ca350aeed14762be1"
+}

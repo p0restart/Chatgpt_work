@@ -1,0 +1,8 @@
+{
+  "fig1": "results/defender_bounds.csv: all saved rows",
+  "fig2": "results/objective_bounds.csv: B, A",
+  "fig3": "results/objective_bounds.csv: B, D/A",
+  "uncertainty": "deterministic rigorous payoff enclosures, not statistical confidence intervals",
+  "backend": "python",
+  "single_panel_count": 3
+}

@@ -1,0 +1,19 @@
+﻿B,evaluation,method,update,phase,path,item,player,H,seconds,note,source
+1.2,E0,G,0,online_planning,warm_validation,replanning_total,,,28.123769199999515,includes 3 full paths and H48 final validation; nested responses included,D7_saved
+1.2,E0,G,1,online_planning,warm_validation,replanning_total,,,15.402130500006024,includes 3 full paths and H48 final validation; nested responses included,D7_saved
+1.2,E0,G,2,online_planning,warm_validation,replanning_total,,,4.301900500024203,includes 3 full paths and H48 final validation; nested responses included,D7_saved
+1.2,E0,R,0,online_planning,multistart,replanning_total,,,5.409456800000044,nested responses included,D7_saved
+1.2,E0,R,1,online_planning,multistart,replanning_total,,,3.3312925999925938,nested responses included,D7_saved
+1.2,E0,R,2,online_planning,multistart,replanning_total,,,0.9233412999892608,nested responses included,D7_saved
+1.2,E1,G,0,online_planning,warm_validation,replanning_total,,,28.62154849999933,includes 3 full paths and H48 final validation; nested responses included,D7_saved
+1.2,E1,G,1,online_planning,warm_validation,replanning_total,,,14.800394799996866,includes 3 full paths and H48 final validation; nested responses included,D7_saved
+1.2,E1,G,2,online_planning,warm_validation,replanning_total,,,3.939650200016331,includes 3 full paths and H48 final validation; nested responses included,D7_saved
+1.2,E1,R,0,online_planning,multistart,replanning_total,,,5.806113500002539,nested responses included,D7_saved
+1.2,E1,R,1,online_planning,multistart,replanning_total,,,3.79936189998989,nested responses included,D7_saved
+1.2,E1,R,2,online_planning,multistart,replanning_total,,,0.9731932999857236,nested responses included,D7_saved
+1.2,E0,R-LAG,0,online_planning,multistart,replanning_total,,,6.152705999993486,nested responses included,D8_2_current
+1.2,E0,R-LAG,1,online_planning,multistart,replanning_total,,,3.931686299998546,nested responses included,D8_2_current
+1.2,E0,R-LAG,2,online_planning,multistart,replanning_total,,,1.5781647999829147,nested responses included,D8_2_current
+1.2,E1,R-LAG,0,online_planning,multistart,replanning_total,,,6.328964000014821,nested responses included,D8_2_current
+1.2,E1,R-LAG,1,online_planning,multistart,replanning_total,,,4.023418099997798,nested responses included,D8_2_current
+1.2,E1,R-LAG,2,online_planning,multistart,replanning_total,,,1.3951016000064556,nested responses included,D8_2_current

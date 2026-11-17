@@ -1,0 +1,132 @@
+{
+  "files": [
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B0.6\\model.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B0.6/model.json",
+      "local": "raw_static/B0.6/model.json",
+      "bytes": 1902,
+      "sha256": "431361317ccc0753a9fae71da921ee54eec6cb624e66325b42151af47a645e7b"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B0.6\\G_controls.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B0.6/G_controls.json",
+      "local": "raw_static/B0.6/G_controls.json",
+      "bytes": 2597,
+      "sha256": "f5e07ea801d65094e23ddc6c63aa56ce517121f789f7fb4d023ce3d8e0d90580"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B0.6\\F_controls.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B0.6/F_controls.json",
+      "local": "raw_static/B0.6/F_controls.json",
+      "bytes": 2443,
+      "sha256": "47fdfcb008b2bc7b4fc5d5d7d5d8aaef0f339059f6215625542cf104490b56ca"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B0.6\\cross_attacks.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B0.6/cross_attacks.json",
+      "local": "raw_static/B0.6/cross_attacks.json",
+      "bytes": 2021,
+      "sha256": "8b11917468136547b4fda37fc3c887ed1d69e8c7f3eb29f764ea2ed94c54f2d2"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B0.6\\cross_evaluation.csv",
+      "source_relative_to_project": "paper/work_d7/results/static/B0.6/cross_evaluation.csv",
+      "local": "raw_static/B0.6/cross_evaluation.csv",
+      "bytes": 1137,
+      "sha256": "fdd56ceb2b4edf807c606e36ed1a370e9c6fb6e06b7dd92531810be78fa21616"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.2\\model.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.2/model.json",
+      "local": "raw_static/B1.2/model.json",
+      "bytes": 1902,
+      "sha256": "28042f480562edd2fa5e9d697bdf313c9e4ea0ab4ea6d7b50ca4f116e122a21c"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.2\\G_controls.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.2/G_controls.json",
+      "local": "raw_static/B1.2/G_controls.json",
+      "bytes": 2785,
+      "sha256": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.2\\F_controls.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.2/F_controls.json",
+      "local": "raw_static/B1.2/F_controls.json",
+      "bytes": 2637,
+      "sha256": "f27c61194fde3e64bae67e1d8ed53ebe329a6ab4f6013cb346d2260f33b4f780"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.2\\cross_attacks.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.2/cross_attacks.json",
+      "local": "raw_static/B1.2/cross_attacks.json",
+      "bytes": 2016,
+      "sha256": "d5b34ad5310c349436ad7deedd48569a9128deb406c67d4bd911d734cc272a30"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.2\\cross_evaluation.csv",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.2/cross_evaluation.csv",
+      "local": "raw_static/B1.2/cross_evaluation.csv",
+      "bytes": 1134,
+      "sha256": "923371dc94a713b84b38c27d0d42d1676c07cd4aea94e938f69f7995d162d9ea"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.8\\model.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.8/model.json",
+      "local": "raw_static/B1.8/model.json",
+      "bytes": 1902,
+      "sha256": "2df2d0aea2c74c26f036089d00aa82cd1267f11b9866b528596b450e0d5bd9c2"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.8\\G_controls.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.8/G_controls.json",
+      "local": "raw_static/B1.8/G_controls.json",
+      "bytes": 2777,
+      "sha256": "36f3ed1e10d9ab7a2e786b75778b24807e56ea59a017cb74a2300e6154777493"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.8\\F_controls.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.8/F_controls.json",
+      "local": "raw_static/B1.8/F_controls.json",
+      "bytes": 2638,
+      "sha256": "8df40a43a4a3bb22c96bc144b5c262a0cf8c4c1fbac1475bb73b91ec31988f09"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.8\\cross_attacks.json",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.8/cross_attacks.json",
+      "local": "raw_static/B1.8/cross_attacks.json",
+      "bytes": 2021,
+      "sha256": "13ae39e4133bcf6047920e34b0363fe69b8ef56c76a439f85e5c106075cc8753"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\B1.8\\cross_evaluation.csv",
+      "source_relative_to_project": "paper/work_d7/results/static/B1.8/cross_evaluation.csv",
+      "local": "raw_static/B1.8/cross_evaluation.csv",
+      "bytes": 1133,
+      "sha256": "6f0956ac325855ed2f1563add7c0837b910cc2ff2cbbf4c4644dbade9488f69b"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\solver_audit.csv",
+      "source_relative_to_project": "paper/work_d7/results/static/solver_audit.csv",
+      "local": "raw_static/solver_audit.csv",
+      "bytes": 8488,
+      "sha256": "7741f0fea28506d27d94347e168de83de32e41b7d52e1a5a34b65fd12f341eab"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\optimizer_attempts.csv",
+      "source_relative_to_project": "paper/work_d7/results/static/optimizer_attempts.csv",
+      "local": "raw_static/optimizer_attempts.csv",
+      "bytes": 62418,
+      "sha256": "87d34baa145d6f9eb0171785dc07809607ab2eee5e392a6579414e3a1dbbebaa"
+    },
+    {
+      "original": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\results\\static\\quality.csv",
+      "source_relative_to_project": "paper/work_d7/results/static/quality.csv",
+      "local": "raw_static/quality.csv",
+      "bytes": 1075,
+      "sha256": "eaaba09036afe1bb7de317758c7bd8a89c7fb3c6e7f0c70d69b17c16185c9d79"
+    }
+  ],
+  "file_count": 18,
+  "purpose": "Unmodified saved static inputs for fixed-control replay; no optimization"
+}

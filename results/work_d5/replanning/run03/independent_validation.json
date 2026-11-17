@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": 3909,
+  "failures": [],
+  "seconds": 7.738497599995753,
+  "method": "separate DOP853 replay using frozen dynamics and cost rates; saved-file arithmetic and information checks",
+  "scope": "author-side independent numerical audit, not independent peer review or global optimality"
+}

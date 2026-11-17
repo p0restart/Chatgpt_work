@@ -1,0 +1,12 @@
+{
+  "completed_at": "2026-11-15T00:46:38.385192+08:00",
+  "required_files": 22,
+  "cross_rows": 18,
+  "registered_sources": 182,
+  "numerical_diagnostics_passed": true,
+  "figure_checks": 11,
+  "figure_visual_review": true,
+  "paper_v3_unchanged": true,
+  "core_unchanged": true,
+  "status": "WAITING_USER_D8_2_REVIEW"
+}

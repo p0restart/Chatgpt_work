@@ -1,0 +1,28 @@
+{
+  "action_rows": 1080,
+  "optimization_attempts": 1544,
+  "audit_rows": 345,
+  "quality_rows": 165,
+  "max_relative_improvement": 1.429007924206736e-09,
+  "max_incumbent_residual": 9.442517299790289e-05,
+  "max_response_distance": 5.366251439059555e-05,
+  "max_path_spread": 4.319106954595031e-05,
+  "max_capacity_violation": 3.885780586188048e-15,
+  "max_database_isolation": 8.396874077126325e-16,
+  "max_state": 0.538722026540911,
+  "G_event_replanning_seconds": {
+    "n": 18,
+    "median": 14.37927320000017,
+    "min": 3.871524699992733,
+    "max": 28.62154849999933
+  },
+  "R_event_replanning_seconds": {
+    "n": 18,
+    "median": 3.1795868999906816,
+    "min": 0.8997171000228263,
+    "max": 5.806113500002539
+  },
+  "attack_change_B0.6": 0.0031630232764583988,
+  "attack_change_B1.2": 0.002321294389273809,
+  "attack_change_B1.8": 0.0021313509125223673
+}

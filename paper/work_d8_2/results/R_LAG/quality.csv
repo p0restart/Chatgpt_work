@@ -1,0 +1,17 @@
+B,evaluation,method,update,phase,path,check,value,threshold,passed
+1.2,E0,R-LAG,0.0,online_planning,multistart,three_start_control_spread,4.744354860031219e-06,0.001,True
+1.2,E0,R-LAG,1.0,online_planning,multistart,three_start_control_spread,2.671712885496391e-06,0.001,True
+1.2,E0,R-LAG,2.0,online_planning,multistart,three_start_control_spread,4.780793758041302e-06,0.001,True
+1.2,E0,R-LAG,,,,fixed_execution_integration,4.994671343183654e-11,1e-06,True
+1.2,E0,R-LAG,,,,state_domain,0.0,1e-10,True
+1.2,E0,R-LAG,,,,continuity,0.0,1e-12,True
+1.2,E0,R-LAG,,,,control_violation,2.220446049250313e-16,1e-10,True
+1.2,E0,R-LAG,,,,common_attack_and_prefix,0.0,0.0,True
+1.2,E1,R-LAG,0.0,online_planning,multistart,three_start_control_spread,5.1759369711044945e-06,0.001,True
+1.2,E1,R-LAG,1.0,online_planning,multistart,three_start_control_spread,2.3234310368158706e-06,0.001,True
+1.2,E1,R-LAG,2.0,online_planning,multistart,three_start_control_spread,5.652438367073631e-06,0.001,True
+1.2,E1,R-LAG,,,,fixed_execution_integration,5.769451583148566e-11,1e-06,True
+1.2,E1,R-LAG,,,,state_domain,0.0,1e-10,True
+1.2,E1,R-LAG,,,,continuity,0.0,1e-12,True
+1.2,E1,R-LAG,,,,control_violation,2.220446049250313e-16,1e-10,True
+1.2,E1,R-LAG,,,,common_attack_and_prefix,0.0,0.0,True

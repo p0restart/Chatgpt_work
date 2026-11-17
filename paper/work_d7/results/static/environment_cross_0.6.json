@@ -1,0 +1,12 @@
+{
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "argv": [
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\analysis\\run_d7.py",
+    "cross",
+    "--budget",
+    "0.6"
+  ]
+}

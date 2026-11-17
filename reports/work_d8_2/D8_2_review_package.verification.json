@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-15T00:46:39.706340+08:00",
+  "sha256": "d0fe6240d0ca8cbb78b85598974194e0364f2b1ad470ef9c834a2299797f11bb",
+  "bytes": 2042089,
+  "required_files": 22,
+  "cross_rows": 18,
+  "registered_sources": 182,
+  "numerical_diagnostics_passed": true,
+  "figure_checks": 11,
+  "figure_visual_review": true,
+  "paper_v3_unchanged": true,
+  "core_unchanged": true,
+  "status": "WAITING_USER_D8_2_REVIEW",
+  "hashes_verified": 212
+}

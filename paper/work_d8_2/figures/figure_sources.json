@@ -1,0 +1,40 @@
+{
+  "fig1_G_defense_controls": [
+    {
+      "path": "paper\\work_d7\\results\\static\\B1.2\\G_controls.json",
+      "sha256": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed"
+    },
+    {
+      "path": "paper\\work_d8_2\\K12_G_controls.json",
+      "sha256": "89da7dbde14c359669b356384edd1831b7dfdcc2349611321589d9302cb2387b"
+    }
+  ],
+  "fig2_G_attack_controls": [
+    {
+      "path": "paper\\work_d7\\results\\static\\B1.2\\G_controls.json",
+      "sha256": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed"
+    },
+    {
+      "path": "paper\\work_d8_2\\K12_G_controls.json",
+      "sha256": "89da7dbde14c359669b356384edd1831b7dfdcc2349611321589d9302cb2387b"
+    }
+  ],
+  "fig3_asset_mean_resource": [
+    {
+      "path": "paper\\work_d8_2\\results\\K12\\asset_rankings.csv",
+      "sha256": "a13f10835b039950556a17ab8458daf2ab5161f3bd9217c38a080affac69ce10"
+    }
+  ],
+  "fig4_R_LAG_loss_decomposition": [
+    {
+      "path": "paper\\work_d8_2\\results\\R_LAG\\four_method_objectives.csv",
+      "sha256": "7701e152869be8468482c7e70736826cfd1712111102cfe12fcc8f53a9fdf75e"
+    }
+  ],
+  "fig5_prediction_errors": [
+    {
+      "path": "paper\\work_d8_2\\results\\R_LAG\\all_method_prediction_errors.csv",
+      "sha256": "a01e1877e6d898feba2ae8021fb4cf3f270a295653e607eb8b54030db28c822f"
+    }
+  ]
+}

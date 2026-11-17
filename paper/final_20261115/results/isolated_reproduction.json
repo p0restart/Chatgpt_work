@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "numerical_max_difference": 0.0,
+  "isolated_directory": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\tmp\\final_package_portability_20261115\\bundle",
+  "historical_d7_folder_available_at_expected_root": false,
+  "scope": "Same-machine isolated-directory replay using package copies; no independent reoptimization or cross-machine claim.",
+  "script_exit_code": 0
+}

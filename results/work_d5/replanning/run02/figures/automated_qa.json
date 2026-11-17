@@ -1,0 +1,62 @@
+[
+  {
+    "figure": "resources_E0",
+    "audit": "audit_pdf_text.py",
+    "exit_code": 0
+  },
+  {
+    "figure": "resources_E0",
+    "audit": "audit_figure_collisions.py",
+    "exit_code": 2
+  },
+  {
+    "figure": "states_E0",
+    "audit": "audit_pdf_text.py",
+    "exit_code": 0
+  },
+  {
+    "figure": "states_E0",
+    "audit": "audit_figure_collisions.py",
+    "exit_code": 2
+  },
+  {
+    "figure": "resources_E1",
+    "audit": "audit_pdf_text.py",
+    "exit_code": 0
+  },
+  {
+    "figure": "resources_E1",
+    "audit": "audit_figure_collisions.py",
+    "exit_code": 2
+  },
+  {
+    "figure": "states_E1",
+    "audit": "audit_pdf_text.py",
+    "exit_code": 0
+  },
+  {
+    "figure": "states_E1",
+    "audit": "audit_figure_collisions.py",
+    "exit_code": 2
+  },
+  {
+    "figure": "paired_comparisons",
+    "audit": "audit_pdf_text.py",
+    "exit_code": 0
+  },
+  {
+    "figure": "paired_comparisons",
+    "audit": "audit_figure_collisions.py",
+    "exit_code": 2
+  },
+  {
+    "figure": "resource_use",
+    "audit": "audit_pdf_text.py",
+    "exit_code": 0
+  },
+  {
+    "figure": "resource_use",
+    "audit": "audit_figure_collisions.py",
+    "exit_code": 2
+  }
+]

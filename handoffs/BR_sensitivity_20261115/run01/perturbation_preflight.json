@@ -1,0 +1,20 @@
+{
+  "equal_recovery_capacity": true,
+  "checks": [
+    {
+      "delta": 0.05,
+      "scenario": "positive",
+      "violation": 4.440892098500626e-16,
+      "feasible": true,
+      "capacity_change": 0.0
+    },
+    {
+      "delta": 0.05,
+      "scenario": "negative",
+      "violation": 4.440892098500626e-16,
+      "feasible": true,
+      "capacity_change": 0.0
+    }
+  ],
+  "selected_delta": 0.05
+}

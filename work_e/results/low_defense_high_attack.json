@@ -1,0 +1,89 @@
+{
+  "metrics": {
+    "point": "low_defense_high_attack",
+    "H_steps": 48,
+    "fd_step": 0.0001,
+    "J_D": 10.95887875860781,
+    "J_A": 7.762770007213455,
+    "lambda_D": 1.246784384467523,
+    "lambda_A": 1.6879604543680318,
+    "lambda_H": 1.244303935549733,
+    "cross_norm": 0.3039360055140895,
+    "D_asymmetry": 4.801714581503802e-11,
+    "A_asymmetry": 8.992806499463768e-11,
+    "gradient_max_error": 6.817464481834179e-09,
+    "gradient_seconds": 0.29366580001078546,
+    "hessian_seconds": 56.10784070001682,
+    "eigen_seconds": 0.0019313000375404954
+  },
+  "feasibility": {
+    "defense_usage": [
+      0.012,
+      0.012,
+      0.012,
+      0.012,
+      0.012,
+      0.012
+    ],
+    "attack_usage": [
+      0.79,
+      0.79,
+      0.79,
+      0.79,
+      0.79,
+      0.79
+    ],
+    "box_min": 0.001,
+    "box_max": 0.395
+  },
+  "gradient_checks": [
+    {
+      "player": 0,
+      "step": 0.0005501642980751452,
+      "analytic": 0.19384286599525696,
+      "finite_difference": 0.19384286648503327,
+      "error": 4.897763028477442e-10,
+      "feasible_radius": 0.002750821490375726
+    },
+    {
+      "player": 0,
+      "step": 0.0001,
+      "analytic": 0.19384286599525696,
+      "finite_difference": 0.19384286609636092,
+      "error": 1.0110395853857312e-10,
+      "feasible_radius": 0.002750821490375726
+    },
+    {
+      "player": 0,
+      "step": 1e-05,
+      "analytic": 0.19384286599525696,
+      "finite_difference": 0.19384286567003525,
+      "error": 3.252217106730626e-10,
+      "feasible_radius": 0.002750821490375726
+    },
+    {
+      "player": 1,
+      "step": 0.001,
+      "analytic": 0.6773752320683156,
+      "finite_difference": 0.6773752388857801,
+      "error": 6.817464481834179e-09,
+      "feasible_radius": 0.014430044851506441
+    },
+    {
+      "player": 1,
+      "step": 0.0001,
+      "analytic": 0.6773752320683156,
+      "finite_difference": 0.6773752321542759,
+      "error": 8.596023892692983e-11,
+      "feasible_radius": 0.014430044851506441
+    },
+    {
+      "player": 1,
+      "step": 1e-05,
+      "analytic": 0.6773752320683156,
+      "finite_difference": 0.6773752320388127,
+      "error": 2.950295563408645e-11,
+      "feasible_radius": 0.014430044851506441
+    }
+  ]
+}

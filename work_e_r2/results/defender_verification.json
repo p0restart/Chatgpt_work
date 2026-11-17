@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "full_interval_reintegration": true,
+  "source_convex_relaxation_checked": true,
+  "generated_regions": 1999,
+  "valid_regions": 1999,
+  "infeasible": 0,
+  "bound_pruned": 0,
+  "retained_frontier": 1000,
+  "every_branch_pair_covers_parent": true,
+  "global_BR_lower": "484521856698488090081354013506709906733837920345385562809994757947488851976314421/79597894537428906461764628693671108582379987050329913221834354080297779200000000",
+  "global_BR_upper": "25104416602846996939030030681217811159973/2691686691464454642630209297067697766400",
+  "candidate_unchanged": true,
+  "protected_files": 1223,
+  "changed_files": 0,
+  "one_percent_pass": false
+}

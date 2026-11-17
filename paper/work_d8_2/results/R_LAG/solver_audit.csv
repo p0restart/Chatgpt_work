@@ -1,0 +1,13 @@
+B,evaluation,method,update,phase,path,audit,player,H,signed_improvement,discovered_improvement,relative_improvement,incumbent_residual,response_residual,violation,response_distance,all_starts_success,passed
+1.2,E0,R-LAG,0,online_planning,multistart,H48_fixed_opponent,D,48,0.0,0.0,0.0,1.6631753212426048e-06,1.6631753212426048e-06,0.0,0.0,True,True
+1.2,E0,R-LAG,0,extra_audit,multistart,H96_fixed_candidate,D,96,0.0,0.0,0.0,1.6631845685677327e-06,1.6631845685677327e-06,0.0,0.0,True,True
+1.2,E0,R-LAG,1,online_planning,multistart,H48_fixed_opponent,D,48,0.0,0.0,0.0,2.123023363831411e-06,2.123023363831411e-06,0.0,0.0,True,True
+1.2,E0,R-LAG,1,extra_audit,multistart,H96_fixed_candidate,D,96,0.0,0.0,0.0,2.1230129490512617e-06,2.1230129490512617e-06,0.0,0.0,True,True
+1.2,E0,R-LAG,2,online_planning,multistart,H48_fixed_opponent,D,48,0.0,0.0,0.0,4.778389135207117e-07,4.778389135207117e-07,0.0,0.0,True,True
+1.2,E0,R-LAG,2,extra_audit,multistart,H96_fixed_candidate,D,96,0.0,0.0,0.0,4.778518327974712e-07,4.778518327974712e-07,0.0,0.0,True,True
+1.2,E1,R-LAG,0,online_planning,multistart,H48_fixed_opponent,D,48,3.7125857943465235e-12,3.7125857943465235e-12,4.791779483921231e-13,3.842632714246008e-06,3.0434562191261616e-06,0.0,2.4994457918925406e-06,True,True
+1.2,E1,R-LAG,0,extra_audit,multistart,H96_fixed_candidate,D,96,3.711697615926823e-12,3.711697615926823e-12,4.790633125186976e-13,3.84263763891779e-06,3.0434562202918958e-06,0.0,2.499439518563462e-06,True,True
+1.2,E1,R-LAG,1,online_planning,multistart,H48_fixed_opponent,D,48,0.0,0.0,0.0,9.900994967330934e-07,9.900994967330934e-07,0.0,0.0,True,True
+1.2,E1,R-LAG,1,extra_audit,multistart,H96_fixed_candidate,D,96,0.0,0.0,0.0,9.90095715297859e-07,9.90095715297859e-07,0.0,0.0,True,True
+1.2,E1,R-LAG,2,online_planning,multistart,H48_fixed_opponent,D,48,0.0,0.0,0.0,1.6890808343522634e-06,1.6890808343522634e-06,0.0,0.0,True,True
+1.2,E1,R-LAG,2,extra_audit,multistart,H96_fixed_candidate,D,96,0.0,0.0,0.0,1.6890397203789265e-06,1.6890397203789265e-06,0.0,0.0,True,True

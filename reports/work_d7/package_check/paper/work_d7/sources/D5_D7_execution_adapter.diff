@@ -1,0 +1,41 @@
+--- D5.run_budget
++++ D7.run_budget
+@@ -1,8 +1,8 @@
+ def run_budget(run, B, b):
+     start=time.perf_counter(); out=run.out/f'B{B}';out.mkdir()
+-    source=Path(f'results/matched_mechanism/run01/seed11_B{B}_unequal_high_at_node3')
+-    mpre=load_model(source/'model.json'); old=load_controls(source/'fine/controls.json')
+-    mpost=replace(mpre,alpha=np.array([.5,.25,0,0,0,0]))
++    source=BASE/f'results/static/B{B}'
++    mpre=load_model(source/'model.json'); old=load_controls(source/'G_controls.json')
++    mpost=replace(mpre,alpha=np.array([EVENT_ALPHA,.25,0,0,0,0]))
+     dump_model(out/'model_pre.json',mpre);dump_model(out/'model_post.json',mpost)
+     prefix=simulate(mpre,*(v[:3] for v in old),5,48)
+     xevent=prefix['states'][-1].copy();sub=replace(mpost,x0=xevent)
+@@ -11,7 +11,7 @@
+     run.context=dict(B=B,evaluation='E1',method='E1_generator',update=0)
+     tail=tuple(v[3:].copy() for v in old)
+     e1folder=out/'E1_generation';e1folder.mkdir()
+-    e1,attackpass=run.unilateral(sub,tail,'A',20261112+1000*b+100,e1folder,strong=True)
++    e1,attackpass=run.unilateral(sub,tail,'A',20261114+1000*b+100,e1folder,strong=True)
+     evaluations={'E0':np.tile([.4,.4,0,0,0,0],(3,1)), 'E1':e1[0].copy()}
+     write_json(out/'frozen_attacks.json',{k:v.tolist() for k,v in evaluations.items()})
+     passed=attackpass
+@@ -31,7 +31,7 @@
+                 run.context=dict(B=B,evaluation=ename,method=method,update=j)
+                 folder=out/f'{ename}_{method}'/f'update{j}';folder.mkdir(parents=True)
+                 model=replace(mpost,x0=x.copy());dump_model(folder/'model_restart.json',model)
+-                seed=20261112+1000*b+100*e+10*j
++                seed=20261114+1000*b+100*e+10*j
+                 if method=='G':
+                     plan,taskpass=run.game(model,warm,seed,folder,j)
+                 else:
+@@ -76,7 +76,7 @@
+                 for node in range(6):
+                     run.executed.append(dict(B=B,evaluation=ename,method=method,slot=k,node=node,
+                         t_start=k*DT,t_end=(k+1)*DT,a_actual=u[0][k,node],s=u[1][k,node],r=u[2][k,node],
+-                        resource_use=use,budget_slack=B-use,alpha0=.25 if k<3 else .5))
++                        resource_use=use,budget_slack=B-use,alpha0=.25 if k<3 else EVENT_ALPHA))
+             for H,sim in sims.items():
+                 for t,state in zip(sim['times'],sim['states']):
+                     run.trajectories.append(dict(B=B,evaluation=ename,method=method,H=H,t=t,

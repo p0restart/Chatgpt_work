@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "check_count": 86,
+  "diagnostics": {
+    "scope": "D7 static three capacities, all recorded paths and static validation calls",
+    "audit_rows": 45,
+    "optimizer_calls": 285,
+    "all_optimizer_success": true,
+    "max_relative_improvement": 1.2417558085046781e-09,
+    "max_incumbent_residual": 9.442517299790289e-05,
+    "max_violation": 5.773159728050814e-15,
+    "max_response_distance": 5.366251439059555e-05,
+    "max_three_path_spread": 4.01151318299986e-05,
+    "fixed_control_replay_max_difference": 6.724953927061961e-11
+  },
+  "missing_table2_recovery": 0.0671627443661971,
+  "scope": "Saved-control replay and arithmetic only, no best-response reoptimization or new experiment"
+}

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "arithmetic": "exact rational comparisons; no numerical eigenvalues used by checker",
+  "checks": [
+    {
+      "mode": "declared_decimal",
+      "all_exact_inequalities_passed": true,
+      "m_D_lower": -65,
+      "m_A_lower": "5/3",
+      "cross_norm_squared_upper": "6325/36"
+    },
+    {
+      "mode": "binary64_as_exact_reals",
+      "all_exact_inequalities_passed": true,
+      "m_D_lower": -65,
+      "m_A_lower": "5/3",
+      "cross_norm_squared_upper": "6325/36"
+    },
+    {
+      "rational_RK4_bound_verified": true,
+      "uniform_objective_bounds_valid_for_exact_arithmetic": true,
+      "floating_implementation_certificate": false
+    }
+  ],
+  "protected_files": 1185,
+  "changed_files": [],
+  "formal_proof_assistant_verification": false,
+  "random_samples": 0,
+  "optimizer_runs": 0
+}

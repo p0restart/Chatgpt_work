@@ -1,0 +1,496 @@
+{
+  "passed": true,
+  "checks": 122,
+  "unchanged_historical_source_files": 24,
+  "failed": [],
+  "items": [
+    {
+      "check": "frozen_parameters:results\\static\\B0.6\\model.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\static\\B1.2\\model.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\static\\B1.8\\model.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_control_B1.2\\B1.2\\model_pre.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_event_B0.6\\B0.6\\model_pre.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_event_B1.2\\B1.2\\model_pre.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_event_B1.8\\B1.8\\model_pre.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_control_B1.2\\B1.2\\model_post.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_event_B0.6\\B0.6\\model_post.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_event_B1.2\\B1.2\\model_post.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_parameters:results\\rolling_event_B1.8\\B1.8\\model_post.json",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:02_MODEL_SPEC.md",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/audit_matched.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/audit_p3.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/compare_matched.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/core.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/diagnose_counterexample.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/diagnose_equilibrium.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/experiments.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/explain_counterexample.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/fair_evaluation.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/game_solver.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/matched_mechanism.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/p2_validate.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/plot_p3.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/report_c2.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/report_matched.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/report_p3.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/resume_matched.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/smoke.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/summarize_equilibrium.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/summarize_p3.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/supplement_c2.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:src/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "historical_source_unchanged:paper/work_d5/analysis/run_replanning.py",
+      "passed": true
+    },
+    {
+      "check": "verification.json",
+      "passed": true
+    },
+    {
+      "check": "derived/asset_export_check.json",
+      "passed": true
+    },
+    {
+      "check": "results\\rolling_control_B1.2\\B1.2\\budget_gate.json",
+      "passed": true
+    },
+    {
+      "check": "results\\rolling_event_B0.6\\B0.6\\budget_gate.json",
+      "passed": true
+    },
+    {
+      "check": "results\\rolling_event_B1.2\\B1.2\\budget_gate.json",
+      "passed": true
+    },
+    {
+      "check": "results\\rolling_event_B1.8\\B1.8\\budget_gate.json",
+      "passed": true
+    },
+    {
+      "check": "results\\static\\B0.6\\static_gate.json",
+      "passed": true
+    },
+    {
+      "check": "results\\static\\B1.2\\static_gate.json",
+      "passed": true
+    },
+    {
+      "check": "results\\static\\B1.8\\static_gate.json",
+      "passed": true
+    },
+    {
+      "check": "1080_asset_interval_rows",
+      "passed": true
+    },
+    {
+      "check": "30_distinct_control_trajectories",
+      "passed": true
+    },
+    {
+      "check": "asset_period_uniqueness",
+      "passed": true
+    },
+    {
+      "check": "figure:fig1_topology.pdf:text",
+      "passed": true
+    },
+    {
+      "check": "figure:fig1_topology.pdf:collisions",
+      "passed": true
+    },
+    {
+      "check": "figure:fig2_execution_flow.pdf:text",
+      "passed": true
+    },
+    {
+      "check": "figure:fig2_execution_flow.pdf:collisions",
+      "passed": true
+    },
+    {
+      "check": "figure:fig3_defense_actions.pdf:text",
+      "passed": true
+    },
+    {
+      "check": "figure:fig3_defense_actions.pdf:collisions",
+      "passed": true
+    },
+    {
+      "check": "figure:fig4_cross_evaluation.pdf:text",
+      "passed": true
+    },
+    {
+      "check": "figure:fig4_cross_evaluation.pdf:collisions",
+      "passed": true
+    },
+    {
+      "check": "figure:fig5_rolling_execution.pdf:text",
+      "passed": true
+    },
+    {
+      "check": "figure:fig5_rolling_execution.pdf:collisions",
+      "passed": true
+    },
+    {
+      "check": "figure:figS1_states_resources.pdf:text",
+      "passed": true
+    },
+    {
+      "check": "figure:figS1_states_resources.pdf:collisions",
+      "passed": true
+    },
+    {
+      "check": "alignment:fig3_defense_actions_alignment.json",
+      "passed": true
+    },
+    {
+      "check": "alignment:fig4_cross_evaluation_alignment.json",
+      "passed": true
+    },
+    {
+      "check": "alignment:fig5_rolling_execution_alignment.json",
+      "passed": true
+    },
+    {
+      "check": "alignment:figS1_states_resources_alignment.json",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig1_topology:topology_edges.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig1_topology:topology_assets.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig2_execution_flow:analysis\\model_method.md",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig2_execution_flow:analysis\\run_rolling.py",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig3_defense_actions:results\\static\\B1.2\\G_decisions.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig4_cross_evaluation:results\\static\\B0.6\\cross_evaluation.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig4_cross_evaluation:results\\static\\B1.2\\cross_evaluation.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig4_cross_evaluation:results\\static\\B1.8\\cross_evaluation.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig5_rolling_execution:results\\rolling_event_B1.2\\trajectories.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:fig5_rolling_execution:results\\rolling_event_B1.2\\executed_controls.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:figS1_states_resources:results\\static\\B1.2\\G_states.csv",
+      "passed": true
+    },
+    {
+      "check": "figure_source_sha:figS1_states_resources:results\\static\\B1.2\\G_decisions.csv",
+      "passed": true
+    },
+    {
+      "check": "five_chapters",
+      "passed": true
+    },
+    {
+      "check": "four_main_tables",
+      "passed": true
+    },
+    {
+      "check": "five_main_figures",
+      "passed": true
+    },
+    {
+      "check": "fifteen_reference_entries",
+      "passed": true
+    },
+    {
+      "check": "fifteen_bib_entries",
+      "passed": true
+    },
+    {
+      "check": "no_unfilled_template",
+      "passed": true
+    },
+    {
+      "check": "pending_review_visible",
+      "passed": true
+    },
+    {
+      "check": "local_link:paper_v2_zh.md:figures/fig1_topology.png",
+      "passed": true
+    },
+    {
+      "check": "local_link:paper_v2_zh.md:figures/fig2_execution_flow.png",
+      "passed": true
+    },
+    {
+      "check": "local_link:paper_v2_zh.md:figures/fig3_defense_actions.png",
+      "passed": true
+    },
+    {
+      "check": "local_link:paper_v2_zh.md:figures/fig4_cross_evaluation.png",
+      "passed": true
+    },
+    {
+      "check": "local_link:paper_v2_zh.md:figures/fig5_rolling_execution.png",
+      "passed": true
+    },
+    {
+      "check": "local_link:supplement_zh.md:results/derived/all_asset_decisions.csv",
+      "passed": true
+    },
+    {
+      "check": "local_link:supplement_zh.md:figures/figS1_states_resources.png",
+      "passed": true
+    },
+    {
+      "check": "local_link:supplement_zh.md:REPRODUCE.md",
+      "passed": true
+    },
+    {
+      "check": "required:01_decisions_and_provenance.md",
+      "passed": true
+    },
+    {
+      "check": "required:02_topology_spec.md",
+      "passed": true
+    },
+    {
+      "check": "required:03_experiment_protocol.md",
+      "passed": true
+    },
+    {
+      "check": "required:topology_assets.csv",
+      "passed": true
+    },
+    {
+      "check": "required:topology_edges.csv",
+      "passed": true
+    },
+    {
+      "check": "required:topology_assets_edges.csv",
+      "passed": true
+    },
+    {
+      "check": "required:config_new_topology.yaml",
+      "passed": true
+    },
+    {
+      "check": "required:references.bib",
+      "passed": true
+    },
+    {
+      "check": "required:reference_claim_map.md",
+      "passed": true
+    },
+    {
+      "check": "required:algorithm_code_map.md",
+      "passed": true
+    },
+    {
+      "check": "required:claim_evidence_map.md",
+      "passed": true
+    },
+    {
+      "check": "required:D6_D7_change_log.md",
+      "passed": true
+    },
+    {
+      "check": "required:review_checklist.md",
+      "passed": true
+    },
+    {
+      "check": "required:remaining_risks.md",
+      "passed": true
+    },
+    {
+      "check": "required:REPRODUCE.md",
+      "passed": true
+    },
+    {
+      "check": "20_unique_review_items",
+      "passed": true
+    },
+    {
+      "check": "syntax:assemble_paper.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:check_figures.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:finalize_package.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:make_figures.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:prepare_rolling_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:reproduce.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:run_d7.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:run_remaining.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:run_rolling.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:summarize_results.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:verify_d7.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:verify_delivery.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:audit_figure_collisions.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:audit_panel_alignment.py",
+      "passed": true
+    },
+    {
+      "check": "syntax:audit_pdf_text.py",
+      "passed": true
+    },
+    {
+      "check": "isolated_workspace_preflight",
+      "passed": true
+    }
+  ]
+}

@@ -39,7 +39,17 @@ def sha(p):
 
 
 def csv(path, rows):
-    pd.DataFrame(rows).to_csv(path, index=False)
+    path=Path(path)
+    temporary=path.with_suffix('.csv.part')
+    pd.DataFrame(rows).to_csv(temporary,index=False)
+    for attempt in range(5):
+        try:
+            os.replace(temporary,path)
+            return
+        except OSError as exc:
+            if exc.errno not in (13,22) or attempt==4:
+                raise
+            time.sleep(.1*(attempt+1))
 
 
 def random_pair(m, K, seed):
@@ -62,6 +72,28 @@ class Run:
         self.attacks, self.quality, self.tasks = [], [], []
         self.original_br = gs.local_best_response
         gs.local_best_response = self.logged_br
+
+    def restore_completed_groups(self, source):
+        """Carry forward every completed, passed budget; rerun incomplete groups unchanged."""
+        completed=[]
+        for B in (1.2,.6,1.8):
+            gate=source/f'B{B}'/'budget_gate.json'
+            if gate.exists() and json.loads(gate.read_text())['passed']:
+                completed.append(B)
+                shutil.copytree(source/f'B{B}',self.out/f'B{B}')
+        names={'attempts':'optimizer_attempts','audit':'solver_audit','timing':'timing',
+            'plans':'planned_controls','executed':'executed_controls','trajectories':'trajectories',
+            'objectives':'objectives','comparisons':'comparisons','attacks':'attack_scenarios',
+            'quality':'quality','tasks':'tasks'}
+        for attr,name in names.items():
+            frame=pd.read_csv(source/f'{name}.csv')
+            setattr(self,attr,frame[frame.B.isin(completed)].to_dict('records'))
+        with (self.out/'optimizer_calls.jsonl').open('w',encoding='utf-8') as dest:
+            for line in (source/'optimizer_calls.jsonl').read_text(encoding='utf-8').splitlines():
+                if json.loads(line)['B'] in completed:
+                    dest.write(line+'\n')
+        self.save()
+        return completed
 
     def logged_br(self, problem, seed=11, starts=3, maxiter=300, ftol=1e-10):
         start = time.perf_counter()
@@ -406,7 +438,8 @@ def run_budget(run, B, b):
 
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--output',required=True);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--output',required=True)
+    ap.add_argument('--resume-from');args=ap.parse_args()
     os.chdir(ROOT);out=Path(args.output);out.mkdir(parents=True,exist_ok=False)
     started=time.perf_counter()
     sources=[*Path('src').glob('*.py'),*Path('paper/work_d5').rglob('*'),
@@ -434,7 +467,14 @@ def main():
     write_json(out/'metadata.json',meta)
     try:
         preflight(out);run=Run(out)
+        completed=run.restore_completed_groups(Path(args.resume_from)) if args.resume_from else []
+        if args.resume_from:
+            meta.update(resumed_from=args.resume_from,inherited_completed_budgets=completed,
+                continuation_rule='all passed complete budgets carried forward; incomplete budgets rerun with identical inputs/seeds/thresholds')
+            write_json(out/'metadata.json',meta)
         for b,B in enumerate((1.2,.6,1.8)):
+            if B in completed:
+                continue
             if not run_budget(run,B,b):
                 meta['status']='NUMERICAL_GATE_FAILED';break
         else:

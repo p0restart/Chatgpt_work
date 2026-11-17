@@ -1,0 +1,14 @@
+{
+  "J_D": 9.326646659611805,
+  "J_A": 5.819710223462214,
+  "parts": {
+    "security": 8.176988482813268,
+    "business": 0.1452333446492339,
+    "isolation": 0.30366637107530314,
+    "recovery": 0.7007584610739995,
+    "terminal_defense": 0.0,
+    "attacker_value": 7.1548081580905745,
+    "attacker_effort": 1.3350979346283607,
+    "terminal_attacker": 0.0
+  }
+}

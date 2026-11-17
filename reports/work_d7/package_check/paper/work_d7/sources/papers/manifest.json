@@ -1,0 +1,67 @@
+[
+  {
+    "id": 0,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\A differential game approach for real-time security defense decision in scale-free networks.pdf",
+    "sha256": "8616c0516e4d7b1f313c9cc96802020d4ab620e8f35e7e039213b6727a7de19a"
+  },
+  {
+    "id": 1,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\A Stochastic Game Model for Cloud Platform Security.pdf",
+    "sha256": "84ade9a941e4a526b0c78fd4c75bf31e2443cec3aef20ecf2f5cb129f7b16631"
+  },
+  {
+    "id": 2,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\Analysis of attack-defense game for advanced malware propagation control in cloud.pdf",
+    "sha256": "414d3b0683bb3d41c0e59f7c7931ccc4b4b1c8000c57956ce9dac7eec923f474"
+  },
+  {
+    "id": 3,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\Chen 等 - 2025 - To protect, or to recover The effect of defense resource allocation on network robustness.pdf",
+    "sha256": "1414287af11fca508e025fd047bb19a24bae86dc060f9078ad404e62e8e937a4"
+  },
+  {
+    "id": 4,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\MASAR Multi-stage Attack Surface Analysis and Reasoning Framework forTelecom Networks.pdf",
+    "sha256": "2ece632efbf985654ec4dfff68c49867bd1dd8eb7d84a9e522760a3d92dec4d5"
+  },
+  {
+    "id": 5,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\Preventive-Reactive_Defense_Tradeoffs_in_Resource_Allocation_Contests.pdf",
+    "sha256": "f09da54531e9ff071b09ce0f7545b73eef75e81ceec4bee48470d77b63fa0038"
+  },
+  {
+    "id": 6,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\Security defense decision method based on potential differential game for complex networks.pdf",
+    "sha256": "6155742a2b11357626ba32f26b9c21ca1d937e9fd0807ec54346e0b5bdb6b377"
+  },
+  {
+    "id": 7,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\基于多步攻防博弈的铁路电子客票网络安全防御策略研究.pdf",
+    "sha256": "a2da680cb439f485da99a714b76e7523a69f61db92f5ad3a40f1ed28908cda8b"
+  },
+  {
+    "id": 8,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\曹庆宏 - 2026 - 基于混合云环境主机智能风险评估技术的研究.pdf",
+    "sha256": "65ab0c9dd77655e93954dd952300d4f9abf30085a9894f13480a815aaa32eeb5"
+  },
+  {
+    "id": 9,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\王菁 - 2026 - 基于集成学习与CP-ABE结合的大模型云平台访问安全控制策略设计.pdf",
+    "sha256": "9e76aef1d742562e0de2c883c14e6b6f333a7468daeecee7a1e8fa36781c9e0c"
+  },
+  {
+    "id": 10,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\写作阶段\\面向综合性云平台的主动安全防御策略研究_徐震.pdf",
+    "sha256": "a624cba48f56de59e9c57d56b1a4b2ef7f4be20314e933c71d9810d0dfd132ee"
+  },
+  {
+    "id": 11,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\博弈论论文阶段\\孙鹏宇 等 - 2022 - 基于时间微分博弈的网络安全防御决策方法.pdf",
+    "sha256": "95dcd076da35ac913c751536fd4e2113028dedf3495dcc1d53d1ec72d4c9f026"
+  },
+  {
+    "id": 12,
+    "path": "C:\\Users\\Jin\\Documents\\zotero\\博弈论论文阶段\\Collaborative defense model for crowdsensing networks based on incomplete Information differential games.pdf",
+    "sha256": "577000359ff8b598b631c83cd78b67e0d124bfee5cd573727e0962bccf30b21f"
+  }
+]

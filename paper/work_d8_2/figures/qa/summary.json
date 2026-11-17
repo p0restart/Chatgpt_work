@@ -1,0 +1,67 @@
+[
+  {
+    "script": "validate_figure.py",
+    "exit_code": 1,
+    "log": "figures\\qa\\source_validation.json"
+  },
+  {
+    "figure": "fig1_G_defense_controls",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\fig1_G_defense_controls.text.json"
+  },
+  {
+    "figure": "fig1_G_defense_controls",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 2,
+    "log": "figures\\qa\\fig1_G_defense_controls.collisions.log"
+  },
+  {
+    "figure": "fig2_G_attack_controls",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\fig2_G_attack_controls.text.json"
+  },
+  {
+    "figure": "fig2_G_attack_controls",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 2,
+    "log": "figures\\qa\\fig2_G_attack_controls.collisions.log"
+  },
+  {
+    "figure": "fig3_asset_mean_resource",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\fig3_asset_mean_resource.text.json"
+  },
+  {
+    "figure": "fig3_asset_mean_resource",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 2,
+    "log": "figures\\qa\\fig3_asset_mean_resource.collisions.log"
+  },
+  {
+    "figure": "fig4_R_LAG_loss_decomposition",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\fig4_R_LAG_loss_decomposition.text.json"
+  },
+  {
+    "figure": "fig4_R_LAG_loss_decomposition",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 2,
+    "log": "figures\\qa\\fig4_R_LAG_loss_decomposition.collisions.log"
+  },
+  {
+    "figure": "fig5_prediction_errors",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\fig5_prediction_errors.text.json"
+  },
+  {
+    "figure": "fig5_prediction_errors",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 2,
+    "log": "figures\\qa\\fig5_prediction_errors.collisions.log"
+  }
+]

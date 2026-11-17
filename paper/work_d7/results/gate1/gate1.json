@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "K6_D_all_gradient_components",
+      "value": 3.878063155327016e-09,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K6_D_objective",
+      "value": 5.329070518200751e-15,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K6_A_all_gradient_components",
+      "value": 2.791490816278497e-09,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K6_A_objective",
+      "value": 1.7763568394002505e-15,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K6_state_jacobian",
+      "value": 8.826217534618763e-12,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K6_integration",
+      "value": 2.1701529462347935e-12,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K6_database_state_independent",
+      "value": 0.0,
+      "threshold": 1e-12,
+      "passed": true
+    },
+    {
+      "check": "K3_D_all_gradient_components",
+      "value": 2.231224469073645e-09,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K3_D_objective",
+      "value": 8.881784197001252e-16,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K3_A_all_gradient_components",
+      "value": 8.703127107878572e-10,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K3_A_objective",
+      "value": 1.3322676295501878e-15,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K3_state_jacobian",
+      "value": 8.982647958788448e-12,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K3_integration",
+      "value": 1.6917134360028285e-11,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K3_database_state_independent",
+      "value": 0.0,
+      "threshold": 1e-12,
+      "passed": true
+    },
+    {
+      "check": "K2_D_all_gradient_components",
+      "value": 8.609215285115823e-10,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K2_D_objective",
+      "value": 4.440892098500626e-16,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K2_A_all_gradient_components",
+      "value": 4.99763230799033e-10,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K2_A_objective",
+      "value": 4.440892098500626e-16,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K2_state_jacobian",
+      "value": 1.0405093453513814e-11,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K2_integration",
+      "value": 3.461098074808433e-11,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K2_database_state_independent",
+      "value": 0.0,
+      "threshold": 1e-12,
+      "passed": true
+    },
+    {
+      "check": "K1_D_all_gradient_components",
+      "value": 2.0033236181049574e-10,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K1_D_objective",
+      "value": 0.0,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K1_A_all_gradient_components",
+      "value": 1.325963228104854e-10,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K1_A_objective",
+      "value": 1.1102230246251565e-16,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K1_state_jacobian",
+      "value": 6.589562229208923e-12,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K1_integration",
+      "value": 2.6259439067644053e-11,
+      "threshold": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "K1_database_state_independent",
+      "value": 0.0,
+      "threshold": 1e-12,
+      "passed": true
+    }
+  ],
+  "multistart_status": "deferred_to_Gate2_same_solver"
+}

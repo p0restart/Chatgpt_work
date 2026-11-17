@@ -1,0 +1,205 @@
+{
+  "gate": 1,
+  "completed_at": "2026-11-15T00:26:13.623008+08:00",
+  "passed": true,
+  "checks": [
+    {
+      "check": "all_component_gradient",
+      "value": 4.177546447658997e-09,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 12,
+      "player": "D",
+      "component": 22
+    },
+    {
+      "check": "objective_match",
+      "value": 4.440892098500626e-15,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 12,
+      "player": "D"
+    },
+    {
+      "check": "all_component_gradient",
+      "value": 4.072568060564663e-09,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 12,
+      "player": "A",
+      "component": 11
+    },
+    {
+      "check": "objective_match",
+      "value": 1.7763568394002505e-15,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 12,
+      "player": "A"
+    },
+    {
+      "check": "K6_embedding_same_physical_step",
+      "value": 0.0,
+      "threshold": 1e-12,
+      "passed": true,
+      "K": 12
+    },
+    {
+      "check": "K6_embedding_objective",
+      "value": 0.0,
+      "threshold": 1e-12,
+      "passed": true,
+      "K": 12
+    },
+    {
+      "check": "all_component_gradient",
+      "value": 7.248006014815012e-10,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 3,
+      "player": "D",
+      "component": 31
+    },
+    {
+      "check": "objective_match",
+      "value": 2.220446049250313e-16,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 3,
+      "player": "D"
+    },
+    {
+      "check": "all_component_gradient",
+      "value": 3.620805877346811e-10,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 3,
+      "player": "A",
+      "component": 1
+    },
+    {
+      "check": "objective_match",
+      "value": 1.3322676295501878e-15,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 3,
+      "player": "A"
+    },
+    {
+      "check": "all_component_gradient",
+      "value": 2.9535271450775724e-10,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 2,
+      "player": "D",
+      "component": 19
+    },
+    {
+      "check": "objective_match",
+      "value": 0.0,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 2,
+      "player": "D"
+    },
+    {
+      "check": "all_component_gradient",
+      "value": 7.424873216255179e-11,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 2,
+      "player": "A",
+      "component": 3
+    },
+    {
+      "check": "objective_match",
+      "value": 6.661338147750939e-16,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 2,
+      "player": "A"
+    },
+    {
+      "check": "all_component_gradient",
+      "value": 9.835068870422958e-11,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 1,
+      "player": "D",
+      "component": 1
+    },
+    {
+      "check": "objective_match",
+      "value": 5.551115123125783e-17,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 1,
+      "player": "D"
+    },
+    {
+      "check": "all_component_gradient",
+      "value": 2.2032736746169235e-11,
+      "threshold": 1e-06,
+      "passed": true,
+      "K": 1,
+      "player": "A",
+      "component": 0
+    },
+    {
+      "check": "objective_match",
+      "value": 2.7755575615628914e-17,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 1,
+      "player": "A"
+    },
+    {
+      "check": "small_response_residual",
+      "value": 2.0897854472075317e-08,
+      "threshold": 0.0001,
+      "passed": true,
+      "K": 1,
+      "player": "D"
+    },
+    {
+      "check": "small_response_violation",
+      "value": 0.0,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 1,
+      "player": "D"
+    },
+    {
+      "check": "small_response_exit_failures",
+      "value": 0.0,
+      "threshold": 0,
+      "passed": true,
+      "K": 1,
+      "player": "D"
+    },
+    {
+      "check": "small_response_residual",
+      "value": 1.7339431448992748e-07,
+      "threshold": 0.0001,
+      "passed": true,
+      "K": 1,
+      "player": "A"
+    },
+    {
+      "check": "small_response_violation",
+      "value": 0.0,
+      "threshold": 1e-10,
+      "passed": true,
+      "K": 1,
+      "player": "A"
+    },
+    {
+      "check": "small_response_exit_failures",
+      "value": 0.0,
+      "threshold": 0,
+      "passed": true,
+      "K": 1,
+      "player": "A"
+    }
+  ]
+}

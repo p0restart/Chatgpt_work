@@ -1,0 +1,17 @@
+{
+  "inventory_finalized_at": "2026-11-15T00:46:37.975186+08:00",
+  "gate": 0,
+  "note": "Final hashes of retained gate outputs; original completion timestamp is in gate JSON, not this inventory",
+  "files": [
+    {
+      "path": "D8_2_experiment_preregistration.md",
+      "sha256": "5b7671f6984b9bb75fb9b750218b9885d2988c012a20eb5c7265a17c995fa662",
+      "bytes": 5771
+    },
+    {
+      "path": "source_and_config_manifest.json",
+      "sha256": "25f610240ba94542a22d2ed376c6f7f06c4d028e9c7bb08f8ee28c88cf95783f",
+      "bytes": 49767
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "online_seconds": 87.16957739999634,
+  "spread": 0.00011137424173013333,
+  "all_optimizer_calls_success": true,
+  "selected_path": "uniform",
+  "x0": [
+    0.1,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "K": 12,
+  "T": 10.0,
+  "H": 24,
+  "seed": 20261115
+}

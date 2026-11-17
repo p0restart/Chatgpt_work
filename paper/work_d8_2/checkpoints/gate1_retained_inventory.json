@@ -1,0 +1,22 @@
+{
+  "inventory_finalized_at": "2026-11-15T00:46:37.987808+08:00",
+  "gate": 1,
+  "note": "Final hashes of retained gate outputs; original completion timestamp is in gate JSON, not this inventory",
+  "files": [
+    {
+      "path": "checkpoints/gate1.json",
+      "sha256": "e760914e6c36eca174316add4db66ccf1bf0e454382d1cafea202d3aa8d2a2ec",
+      "bytes": 4475
+    },
+    {
+      "path": "checkpoints/gate1_checks.csv",
+      "sha256": "9d0074fca4fe1e6a31f069203a1c7fa54d8ab64d77dddaeb89dbd1f77375acb8",
+      "bytes": 1422
+    },
+    {
+      "path": "checkpoints/gate1_small_response_raw.json",
+      "sha256": "88e2131df5025f0afac5e9b31b002b14ac3433693160c6dddb9512d6e6218058",
+      "bytes": 6048
+    }
+  ]
+}

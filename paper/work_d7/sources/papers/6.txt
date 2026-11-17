@@ -1,0 +1,1288 @@
+Computers & Security 129 (2023) 103187 
+Contents lists available at ScienceDirect 
+Computers & Security 
+journal homepage: www.elsevier.com/locate/cose 
+Security defense decision method based on potential differential game 
+for complex networks 
+Hengwei Zhang a , b , Yan Mi a , b , Yumeng Fu a , b , Xiaohu Liu a , b , Yuchen Zhang a , b , 
+Jindong Wang a , b , Jinglei Tan a , b , ∗
+a State Key Laboratory of Mathematical Engineering and Advanced Computing, Zhengzhou 450 0 01, China 
+b Henan Key Laboratory of Information Security, Zhengzhou 450 0 01, China 
+a r t i c l e 
+i n f o 
+Article history: 
+Received 9 December 2022 
+Revised 7 February 2023 
+Accepted 16 March 2023 
+Available online 21 March 2023 
+Keywords: 
+Complex networks 
+Cybersecurity 
+Attack and defense 
+Cyber defense 
+Potential differential game 
+Global optimal defense strategy 
+a b s t r a c t 
+Most defense strategies in complex networks are developed from the defense perspective, overlooking 
+the key attack-defense characteristics in cybersecurity. A defense decision algorithm is ineffective when 
+dealing with dynamic attacking behaviors, and when based on attack-defense analysis, stochastic uni- 
+form network models are generally used to model the target network, while most networks are large 
+and complex. Thus, the algorithms and their results do not well suit small-world, scale-free, and high- 
+aggregation networks. In this study, considering the structural characteristics of complex networks and 
+the attack-defense characteristics of cybersecurity, potential differential game theory is integrated with 
+complex networks, and a global optimal defense decision algorithm is proposed according to the over- 
+all network defense objective. Based on the evolutionary analysis of network security states, a network 
+attack-defense potential differential game model is constructed. Adversarial analysis is carried out on the 
+overall attack-defense strategy, and a defense decision algorithm is designed based on a saddle point 
+equilibrium strategy. Simulation tests are carried out on small-world and scale-free networks to evaluate 
+the effectiveness of the proposed method by comparing its performance with that of random defense 
+strategies and classic decision algorithms. 
+© 2023 The Authors. Published by Elsevier Ltd. 
+This is an open access article under the CC BY-NC-ND license 
+( http://creativecommons.org/licenses/by-nc-nd/4.0/ ) 
+1. Introduction 
+With the development of information technology, numerous cy- 
+bersecurity issues have been reported ( Vaz, 2019 ; Payne and Mie- 
+nie, 2021 ). A safe network is essential, and its defense against cy- 
+berattacks is a top priority. The internet, World Wide Web, and 
+telecommunication networks have complex structures, with a large 
+number of heterogeneous nodes ( Barabási, 2013 ), most connected 
+only to the central node, which participates in most connections, 
+and thus has a strong inﬂuence in the network. Defense algo- 
+rithms must consider the structural characteristics of complex net- 
+works, using two types of strategies. Node immunization strategies 
+immunize nodes with certain characteristics, and adaptive strate- 
+gies change the network topology to reduce the maximum eigen- 
+value of the network matrix, thereby changing the infectious dis- 
+∗Corresponding author. 
+E-mail address: nxutjl@126.com (J. Tan) . 
+ease threshold and controlling the infection level ( Wang et al., 
+2003 ). Wang et al. (2000) proposed directed immunity to immu- 
+nize nodes with a high degree value, which effectively improved 
+network stability. Mahrouf et al. (2020) used the optimal control 
+method to solve the immunization strategy, controlling the num- 
+ber of infections and reducing defense costs. Costa and Ferreira 
+(2020) reported that moderate and weakly supervised immuniza- 
+tions could lead to ﬁnite epidemic thresholds of the susceptible- 
+infected-susceptible model on scale-free networks by changing the 
+nature of the transition from a speciﬁc motif to a collectively 
+driven process, thereby improving the effect of non-coercive im- 
+munization strategies. Rosenblatt et al. (2020) studied immuniza- 
+tion strategies in networks with missing data and modiﬁed ac- 
+quaintance immunization, which improved the network defense 
+ability. Gross et al. (2006) proposed an adaptive network, which 
+effectively im proved the inf ection threshold. Song et al. (2019) pro- 
+posed a susceptible-infected-susceptible model on a weighted 
+adaptive heterogeneous network, and designed rewiring strategies 
+to inhibit the spread of an epidemic. In the absence of global net- 
+https://doi.org/10.1016/j.cose.2023.103187 
+0167-4048/© 2023 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND license ( http://creativecommons.org/licenses/by-nc-nd/4.0/ ) 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+work structure information, Xue and Hirche (2018) adjusted the 
+network structure by means of distributed computation. Hu et al. 
+(2018) proposed an individual-based weight-adaptive strategy in 
+heterogeneous networks and integrated it with optimal control to 
+obtain the optimal weight from a global perspective. 
+The above strategies were developed from a defense perspective 
+and overlooked the proactive and dynamic features of attacks, and 
+thus they adapt with diﬃculty to highly adversarial cybersecurity 
+scenarios. In an attack-defense situation, the attacker will dynami- 
+cally adjust the strategy according to the target, its defense behav- 
+ior, and the situation. The interaction and dependence of attacking 
+and defensive behaviors leads to the strong correlation and cou- 
+pling of attack and defense strategies. However, the above defense 
+strategies have poor adversarial analysis capabilities, and hence 
+unpromising performance. 
+Game theory can be used to study decision-making problems in 
+a competitive, confrontational environment ( Maschler, 2020 ), and 
+can improve the effectiveness of decision-making and enhance the 
+applicability of selected strategies ( Miao et al., 2018 ; Liu et al., 
+2021 ; Amaral et al., 2021 ; Farhadi et al., 2019 ; Sasahara and 
+Sandberg, 2021 ). Pawlick et al. (2018) designed a signaling game 
+model with a deception detection mechanism, obtained pooling 
+and partially separating equilibria of the game, and designed a 
+defensive deception strategy. Sengupta et al. (2018) studied the 
+placement of intrusion detection systems (IDSs) in moving tar- 
+get defense systems based on the Stackelberg game and obtained 
+the optimal placement strategy by solving the game equilibrium. 
+Kandoussi et al. (2020) established a stochastic game in cloud net- 
+works and used attack graphs to simulate attacker-defender inter- 
+action. A comprehensive defense strategy based on virtual machine 
+migration and honeypots was proposed, which improved the sys- 
+tem’s anti-attack ability. Wang and Song (2021) proposed a de- 
+fense strategy against spam and phishing email under the condi- 
+tion of limited resources. The defense strategy was obtained based 
+on an evolutionary game, to effectively reduce the attack inten- 
+sity. For cyberattacks on SCADA systems, Liu and Wang (2021) de- 
+duced the time probability distribution of data and control system 
+attack, and designed a network defense timing algorithm based 
+on the FlipIt game to enhance the security of industrial control 
+systems. 
+A common problem of the above studies is the use of a dy- 
+namic game model, whose obtained defense strategy is discrete 
+and hysteretic. Hence the strategies cannot adjust in real time 
+according to the current state, and the defense is passive. In 
+reality, cyberattack and defense constitute a real-time, continu- 
+ous process, and their strategies undergo high-frequency dynamic 
+changes. Therefore, only continuous, real-time defense strategies 
+are applicable to the actual attack-defense interaction to im- 
+prove defense effectiveness. The differential game, as a theoretical 
+method to describe the continuous control process in confronta- 
+tion ( Friesz, 2010 ), meets the real-time requirements of defense 
+strategies. Rao et al. (2020) proposed an isolation defense strategy 
+based on a differential game against distributed denial of service 
+(DDoS) attacks, and veriﬁed its effectiveness through numerical 
+simulations. Gao et al. (2021) used a multi-attacker-defender in- 
+teraction model based on differential games to study the relation- 
+ship between attack-defense interactions and infection thresholds, 
+and proposed an optimal decision algorithm for multi-defenders. 
+Tan et al. (2021) integrated a differential game with a FlipIt game 
+to study the decision-making in moving target defense, which 
+improved the effectiveness of defense decision-making. Liu et al. 
+(2021) studied the spread of security threats in wireless sensor 
+networks based on a differential game, and proposed a method to 
+suppress the growth of infected nodes, which reduced the defense 
+cost. 
+The above studies modeled the target as a uniform net- 
+work model, assuming all nodes are homogeneous. But the in- 
+ternet, the World Wide Web, and telecommunication networks 
+have large scales and are complex, and their defense strate- 
+gies are often not applicable to small-world, scale-free, and 
+high-aggregation networks, and therefore are unsatisfactory. De- 
+fense strategies for complex networks based on game the- 
+ory are in the early stage of development, and only a few 
+studies are available. Zhang and Xu (2019) studied the de- 
+fense problem of heterogeneous device-to-device oﬄoading net- 
+works, and modeled attack-defense interaction as a zero-sum 
+differential security game. Ren and Zhang (2020) developed 
+a game model to study the defense against attacks in Hon- 
+eynet, and designed defense strategies for different network 
+nodes. 
+The decision-maker in the traditional game model is an in- 
+dividual; therefore, although the above methods can obtain the 
+optimal strategy for individual network nodes, they generally 
+do not lead to global optimal network defense ( Dubey, 1982 ). 
+The potential differential game combines the advantages of the 
+potential ( Monderer and Shapley, 1996 ) and differential games, 
+and has advantages in solving global optimal control problems 
+( Fonseca-Morales and Hernández-Lerma, 2018 ). The classical dif- 
+ferential game couples multiple optimal control problems, and 
+has huge complexity due to the large number of nodes, and 
+hence is infeasible. However, in the potential differential game, 
+the attack and defense decision-maker have global network con- 
+trol ability, and the problem is transformed to one of optimal 
+control to obtain the overall attack and defense strategy, greatly 
+reducing the computational complexity which gives it a huge 
+advantage. 
+In this study, according to the overall network defense objec- 
+tive, we construct a differential game model for cyber defense in 
+complex networks based on global optimal control. We conduct an 
+adversarial analysis of the overall attack-defense strategies, and de- 
+sign a defense decision algorithm based on the saddle point equi- 
+librium of the game. Simulations on small-world and scale-free 
+networks verify the effectiveness of the model and algorithm. The 
+contributions of this study are as follows: 
+(1) A cyberthreat propagation model is constructed to enable the 
+microscopic evolutionary analysis of network node security 
+states. A macroscopic attack and defense control strategy is pro- 
+posed, and the game payoffs of the attacker and defender are 
+calculated; 
+(2) Based on potential differential game theory, an attack-defense 
+potential differential game model with real-time analysis capa- 
+bility is constructed, the calculation method of the saddle point 
+equilibrium strategy is proposed, and a global optimal decision 
+algorithm is designed based on the overall network defense ob- 
+jective; 
+(3) Veriﬁcation experiments are performed on typical complex net- 
+works. A simulation environment with small-world and scale- 
+free network characteristics is created, and the proposed model 
+is compared with stochastic defense strategies, with results 
+showing that it effectively increases the defense effectiveness 
+of the networks. 
+The main architecture and schema of our method is shown in 
+Fig. 1 . We analyze the process of complex network attack-defense 
+and constructs the game model in Section 2 . The game equilib- 
+rium solution is solved and the optimal defense strategy selec- 
+tion algorithm is given in Section 3 . Section 4 analyzes the ef- 
+fectiveness and defense performance of our method with simu- 
+lation comparative experiments. Section 5 summarizes the full 
+text. 
+2 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+Fig. 1. Architecture and schema of our method. 
+2. Network attack-defense potential differential game 
+2.1. Evolutionary analysis of network node states 
+For a network with N nodes, the states of nodes will change 
+in real time due to attack-defense interaction. We use the SIRS 
+(Susceptible-Infected-Repaired-Susceptible) model to describe the 
+evolution of the network nodes. There are three node states in the 
+network: susceptible ( S ), infected ( I ), and repaired ( R ), and S i , I i , 
+and R i represent the probability that node i is in those respective 
+states. 
+A susceptible node can provide services normally. Due to the 
+lack of effective protection, it is easily attacked, at which time its 
+state changes to infected. The attacker can use an infected node 
+to attack other susceptible nodes and further spread the infection. 
+The defender can repair the node so that it recovers from the in- 
+fection. A repaired node has immunity and will not be reinfected 
+for a short time. The immunity gradually disappears, and the node 
+returns to the susceptible state. 
+According to the above deﬁnition, based on the mean-ﬁeld 
+model ( Pastor-Satorras and Vespignani, 2001 ), the differential 
+equation for the transition of the network states is 
+⎧ 
+⎪ 
+⎪ 
+⎪ 
+⎨ 
+⎪ 
+⎪ 
+⎪ 
+⎩ 
+dS i (t) 
+dt = −βi (t) S i (t ) 
+N 
+ 
+j=1 
+b ij I j (t ) + αi R i (t) 
+dI i (t) 
+dt = βi (t) S i (t ) 
+N 
+ 
+j=1 
+b ij I j (t ) −γi (t ) I i (t ) 
+dR i (t) 
+dt = γi (t) I i (t) −αi R i (t) 
+, 
+(1) 
+where b ij is the connectivity between nodes i and j , b ij = 1 when 
+the two nodes are directly connected, and otherwise b ij = 0 ; and 
+βi , γi , and αi are the infection rate, repair rate, and rate returning 
+from the immune to the susceptible state. 
+Based on the security state transition equation, a microscopic 
+evolutionary analysis of the security state of network nodes can 
+be performed based on the probabilities S i , I i , and R i . From the 
+macroscopic perspective of attack-defense interaction, the attacker 
+spreads the virus by infecting susceptible nodes to destroy normal 
+network operation. Therefore, the infection rate βi is taken as the 
+attack strategy. The defender repairs infected nodes and restores 
+their normal function, and hence the repair rate γi is used as the 
+defense strategy. 
+2.2. Quantiﬁcation of attack and defense payoffs 
+Based on the characteristics of attack-defense interaction, the 
+calculation method of attack and defense payoffs is presented. The 
+payoff has two parts: (1) payoff brought by current states of net- 
+work nodes; and (2) cost to the attacker and defender to imple- 
+ment the control strategy. 
+The payoff obtained by the attacker per unit time after node 
+i is infected is r i , and this may be user information or network 
+conﬁguration, for example. Therefore, the payoff obtained by the 
+attacker from node i can be expressed as M i 
+Q = 
+T 
+ 
+0 
+r i I i (t) dt . Similarly, 
+when node i is in the immune state, the attacker can no longer 
+infect it and the infection risk of the defender is reduced, bringing 
+indirect payoff s i per unit time to the defender, and the payoff from 
+node i is M i 
+E = 
+T 
+ 
+0 
+s i R i (t) dt . 
+Both the attacker and defender pay a price to implement their 
+strategies. σ (βi ) is the unit time cost of the attacker to infect 
+node i at rate βi , and the cost to the attacker from node i is 
+M i 
+C = 
+T 
+ 
+0 
+σ (βi ) S i (t ) 
+N 
+ 
+j=1 
+b ij I j (t ) dt. δ(γi ) is the unit time cost of the 
+defender to repair node i at rate γi , and the cost to the defender 
+from node i is M i 
+W = 
+T 
+ 
+0 
+δ(γi ) I i (t) dt . 
+In summary, the attacker’s total payoff and the defender’s total 
+payoff can, respectively be obtained as 
+J A = 
+N 
+ 
+i =1 
+T 
+	 
+0 
+[ r i I i (t) −σ (βi (t)) S i (t ) 
+N 
+ 
+j=1 
+b ij I j (t ) ] dt 
+(2) 
+J D = 
+N 
+ 
+i =1 
+T 
+	 
+0 
+[ s i R i (t) −r i I i (t) −δ(γi (t)) I i (t)] dt . 
+(3) 
+2.3. Deﬁnitions of potential differential game model 
+Deﬁnition 1. The network attack-defense potential differential 
+game (NAPDG) can be expressed as a six-tuple, NAPDG = 
+( N i , t, x i , E, f, J ) , where: 
+(1) N i represents the game participants; 
+(2) t ∈ [ t 0 , T ] is the time variable, where t 0 and T are the starting 
+and ending time, respectively, of the game; 
+(3) x i (t) = { S i (t) , I i (t) , R i (t) | S i (t) + I i (t) + R i (t) = 1 } is the state 
+variable of node i . S i (t) , I i (t) , R i (t) are the probabilities that 
+node i is in the susceptible, infected, or repaired state, respec- 
+tively, at time t ; 
+(4) E = (γ (t) , β(t)) is the set of strategies of the attacker and de- 
+fender. For the defender, γ (t) = (γ1 (t) , γ2 (t) , ..., γn (t)) is the 
+repair rate of each node at time t , and for the attacker, β(t) = 
+(β1 (t) , β2 (t) , ..., βn (t)) is the infection rate of each node at 
+time t ; 
+(5) f = { f i 
+S , f i 
+I , f i 
+R } is the set of state transition functions, where 
+f i 
+S = dS i (t) 
+dt = ˙ 
+S i (t) , f i 
+I = dI i (t) 
+dt = ˙ I i (t) , f i 
+R = dR i (t) 
+dt = ˙ 
+R i (t) , as de- 
+ﬁned in Eq. (1) ; 
+(6) J = (J D , J A ) is the set of payoff functions for the defender and 
+attacker. J D and J A are the global payoffs of the defender and at- 
+tacker, respectively, as deﬁned in Eqs. (2) and (3) . 
+3
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+3. Game equilibrium calculation and defense decision 
+algorithm 
+3.1. Saddle point equilibrium strategy 
+According to game theory, both sides seek to maximize their 
+payoffs, and the game equilibrium strategy (γ ∗
+i (t) , β∗
+i (t)) is the 
+optimal strategy for both the defender and attacker. 
+Deﬁnition 2. If the optimal strategy (γ ∗
+i (t) , β∗
+i (t)) is the saddle 
+point equilibrium strategy of the attack-defense potential differen- 
+tial game, then 
+
+∀ γ (t) , J D (γ ∗(t) , β∗(t)) ≥J D (γ (t) , β∗(t)) 
+∀ β(t) , J A (γ ∗(t) , β∗(t)) ≥J A (γ ∗(t) , β(t)) . 
+(4) 
+The saddle point strategy (γ ∗
+i (t) , β∗
+i (t)) is the optimal strategy 
+for both the offender and attacker, and neither side can obtain a 
+greater payoff by changing its strategy. 
+Theorem 1. The suﬃcient and necessary condition for the optimal 
+strategy (γ ∗
+i (t) , β∗
+i (t)) to be the saddle point equilibrium strategy 
+of the attack-defense potential differential game is that there exists 
+a co-morphic function (λi (t) , K i (t)) that satisﬁes 
+
+dx ∗
+i (t) 
+dt = f i 
+x (t, x ∗
+i (t) , γ ∗
+i (t) , β∗
+i (t)) 
+x ∗
+i (t 0 ) = x i (t 0 ) 
+(5) 
+⎧ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎨ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎩ 
+γ ∗
+i (t) = arg max 
+γi 
+p D (t , x ∗(t ) , γ (t ) , β∗(t )) 
++ 
+N 
+ 
+i =1 
+ 
+x ∈{ S,I,R } 
+λx 
+i (t) f i 
+x (t , x ∗
+i (t ) , γ ∗
+i (t ) , β∗
+i (t )) 
+β∗
+i (t) = arg max 
+βi 
+p A (t , x ∗(t ) , γ ∗(t ) , β(t )) 
++ 
+N 
+ 
+i =1 
+ 
+x ∈{ S,I,R } 
+K x 
+i (t) f i 
+x (t, x ∗
+i (t) , γ ∗
+i (t) , β∗
+i (t)) 
+(6) 
+⎧ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎨ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎩ 
+dλi (t) 
+dt = −∂ 
+∂x ∗
+i { p D (t, x ∗(t) , γ ∗(t) , β∗(t)) 
++ 
+N 
+ 
+i =1 
+ 
+x ∈{ S.I,R } 
+λx 
+i (t) f i 
+x (t , x ∗
+i (t ) , γ ∗
+i (t ) , β∗
+i (t )) } 
+dK i (t) 
+dt = −∂ 
+∂x ∗
+i { p A (t, x ∗(t) , γ ∗(t) , β∗(t)) 
++ 
+N 
+ 
+i =1 
+ 
+x ∈{ S.I,R } 
+K x 
+i (t) f i 
+x (t, x ∗
+i (t) , γ ∗
+i (t) , β∗
+i (t)) } 
+(7) 
+where 
+p A = 
+N 
+ 
+i =1 
+[ r i I i (t) −σ (βi (t)) S i (t ) 
+N 
+ 
+j=1 
+b ij I j (t ) ] 
+and 
+p D = 
+N 
+ 
+i =1 
+[ s i R i (t) −r i I i (t) −δ(γi (t)) I i (t)] are the global instanta- 
+neous payoffs of the defender and attacker, respectively, de- 
+termined by Eqs. (2) and (3) . The co-morphic functions of the 
+defender and attacker are λ = (λx 
+1 , λx 
+2 , ...λx 
+N ) and K = (K x 
+1 , K x 
+2 , ...K x 
+N ) , 
+which are continuously differentiable, and here, x ∈ { S, I, R } . 
+Proof. Based on the above deﬁnition and analysis, the state tran- 
+sition function of the network attack-defense potential differen- 
+tial game f = { f i 
+S , f i 
+I , f i 
+R } and the instantaneous payoffs of the at- 
+tacker and the defender (p D , p A ) are bounded and continuous, and 
+(p D , p A ) is a convex function. According to Gao et al. (2021) , the 
+NAPDG has a saddle point equilibrium. 
+We next present the general steps to solve the global optimal 
+saddle point strategy. First, the Hamiltonian function for the de- 
+fender is constructed as 
+H D (t, λ, x, γi , βi ) = p D (t, x (t) , γ (t) , β(t)) 
++ 
+N 
+ 
+i =1 
+ 
+x ∈{ S,I,R } 
+λx 
+i (t) ˙ x i (t) 
+= 
+N 
+ 
+i =1 
+[ s i R i (t) −r i I i (t) −δ(γi (t)) I i (t) + (λI 
+i (t) 
+−λS 
+i (t)) βi (t) S i (t) 
+N 
+ 
+j=1 
+b ij I j (t) 
++(λR 
+i (t) −λI 
+i (t)) γi (t) I i (t) + (λS 
+i (t) −λR 
+i (t)) αi R i (t)] 
+(8) 
+which couples the overall instantaneous payoffs of the defender 
+with the network state. This is different from the classical differ- 
+ential game, where only the instantaneous payoff of an individ- 
+ual node is coupled with the network state. Therefore, from the 
+perspective of global payoff, Eq. (8) calculates the optimal strategy 
+that maximizes the overall payoff of the defender. 
+Then the co-morphic function λx 
+i (t) in the potential differential 
+game is obtained: 
+⎧ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎨ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎩ 
+dλS 
+i (t) 
+dt 
+= −∂H D 
+∂S i (t) 
+= s i −r i −δ(γi (t)) + (λR 
+i (t) −λI 
+i (t)) γi (t) + (λS 
+i (t) −λR 
+i (t)) αi 
+−(λI 
+i (t) −λS 
+i (t)) βi (t) 
+N 
+ 
+j = 1 
+b ij I j (t) + 
+N 
+ 
+j = 1 
+(λI 
+j (t) −λS 
+j (t)) β j (t) S j (t) b ji 
+λS 
+i (T ) = 0 
+(9) 
+⎧ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎨ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎩ 
+dλI 
+i (t) 
+dt = −∂H D 
+∂I i (t) 
+= s i + r i + δ(γi (t)) −(λR 
+i (t) −λI 
+i (t)) γi (t) + (λS 
+i (t) −λR 
+i (t)) αi 
++ (λI 
+i (t) −λS 
+i (t)) βi (t) 
+N 
+ 
+j = 1 
+b ij I j (t) −
+N 
+ 
+j = 1 
+(λI 
+j (t) −λS 
+j (t)) β j (t) S j (t) b ji 
+λI 
+i (T ) = 0 
+(10) 
+⎧ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎨ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎪ 
+⎩ 
+dλR 
+i (t) 
+dt 
+= −∂H i 
+D 
+∂R i (t) 
+= −s i −r i −δ(γi (t)) + (λR 
+i (t) −λI 
+i (t)) γi (t) −(λS 
+i (t) −λR 
+i (t)) αi 
++(λI 
+i (t) −λS 
+i (t)) βi (t) 
+N 
+ 
+j=1 
+b ij I j (t) + 
+N 
+ 
+j=1 
+(λI 
+j (t) −λS 
+j (t)) β j (t) S j (t) b ji 
+λR 
+i (T ) = 0 
+(11) 
+The backward scanning algorithm ( Lenhart and Work- 
+man, 2007 ) is used to solve λi (t) = { λS 
+i (t ) , λI 
+i (t ) , λR 
+i (t ) } , and 
+the optimal defense strategy γ ∗
+i (t) is obtained. 
+Let ∂H D (t,λi ,x ∗
+i ,γi ,β∗
+i ) 
+∂γi (t) 
+= 0 . Then 
+γ ∗
+i (t) = 
+⎧ 
+⎨ 
+⎩ 
+γ i 
+( ¯λR 
+i (t) −¯λI 
+i (t)) < −δ( γ i ) ′ 
+¯γi 
+( ¯λR 
+i ( t) −¯λI 
+i ( t)) > −δ( γ i ) ′ 
+[ −δ( γi ( t)) ′ ] −1 ( ¯λR 
+i ( t) −¯λI 
+i ( t)) 
+otherwise 
+(12) 
+The Hamiltonian function of the attacker H A , co-morphic func- 
+tion K i (t) = { K S 
+i (t ) , K I 
+i (t ) , K R 
+i (t ) } , and optimal attack strategy β∗
+i (t) 
+can be similarly obtained. 
+3.2. Defense decision algorithm 
+Based on the above analysis, the optimal defense strategy 
+is calculated using the forward-backward scanning algorithm 
+( Lenhart and Workman, 2007 ), as shown in Algorithm 1 . The it- 
+erative algorithm ﬁrst uses Eq. (1) to perform forward calculation 
+4
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+Algorithm 1 
+Optimal defense decision algorithm. 
+Begin 
+Input: NAPDG = ( N i , t, x i , E, f, J ) , convergence error ε, maximum number of iterations L , current number of iterations k 
+Output: Optimal defense strategy γ ∗
+i (t) 
+Initialize NAPDG, initialize strategy γi (0) and βi (0) 
+Begin 
+Do: 
+k = k + 1; 
+γold ← γ ∗, βold ← β∗; // Update the old attack and defense strategies with the new strategies 
+For 0 ≤t ≤T Based on Eq. (1) , forward-calculate x i (t) ; End For 
+For T ≥t ≥0 Based on Eqs. (9) - (11) , back-calculate λx 
+i (t) and K x 
+i (t) ; End For 
+Based on Eq. (12) , calculate and update control strategies γ ∗
+i (t) and β∗
+i (t) ; 
+While 
+n 
+ 
+i =1 
+|| γ ∗
+i −γ i 
+old || + || β∗
+i −βi 
+old || ≥ε or k ≤L Based on Eqs. (2) and (3) , calculate attack and defense payoff J = (J D , J A ) ; 
+Return γ ∗
+i (t) 
+END 
+Table 1 
+Comparison of models and strategy selection methods. 
+Study 
+Adversarial analysis method 
+Defense model 
+Strategy selection basis 
+Timeliness Strategy selection result 
+( Rosenblatt et al., 2020 ) Fixed strategy analysis 
+Immunization strategy 
+Connectivity of network nodes None 
+Individual optimum 
+( Hu et al., 2018 ) 
+Unilateral optimal control analysis 
+Adaptive structure 
+Node connection weight 
+Real time 
+Global optimum 
+( Pawlick et al., 2018 ) 
+Dynamic game 
+Signaling game 
+Reﬁned Bayesian equilibrium 
+Poor 
+Individual optimum 
+( Ren and Zhang, 2020 ) 
+Node-based real-time game analysis 
+Differential game 
+Saddle point game equilibrium Real time 
+Individual optimum 
+This study 
+Network-based real-time game analysis Potential differential game Saddle point game equilibrium Real time 
+Global optimum 
+and update the network state. Then it back-calculates the co-state 
+function. The control strategies γi (t) and βi (t) 
+ 
+b 2 −4 ac are ob- 
+tained when the difference between the old and new strategy is 
+small enough or the number of iterations reaches a threshold, and 
+the algorithm ends. 
+3.3. Comparisons 
+The defense decision algorithm based on a potential differential 
+game in this study was compared with other algorithms, as shown 
+in Table 1 . 
+Adversarial analysis is to determine the angle of analysis of 
+the attack and defense interaction and select the defense strategy. 
+Rosenblatt et al. (2020) used ﬁxed attack and defense strategies, 
+and did not consider strategy variations. Hu et al. (2018) adopted 
+unilateral optimal control analysis, assuming that the attack strat- 
+egy remained unchanged, and the defender selected strategies ac- 
+cordingly. However, the attack-defense interaction is the core of 
+network security. In an actual situation, attack and defense behav- 
+iors are interdependent. Therefore, it is inappropriate to separate 
+the attack and defense when studying a defense decision algo- 
+rithm. The attack-defense game model was used by ( Pawlick et al., 
+2018 ; Ren and Zhang, 2020 ), and this study to study the attack- 
+defense interaction. The model selects a defense strategy based on 
+the analysis of the impact of attack and defense strategies, and is 
+suitable for actual network attack and defense scenarios. 
+The decision-making basis is the method by which the defense 
+strategy is obtained. Rosenblatt et al. (2020) used node connec- 
+tivity as a reference to immunize nodes with certain character- 
+istics. The strategy selection is simple, yet when the characteris- 
+tics in the network are no longer obvious or the network struc- 
+ture changes greatly, the effectiveness of the defense strategy may 
+be greatly reduced. Hu et al. (2018) used the individual weight as 
+a defense strategy, calculating the optimal weight by the optimal 
+control method, and changing the network topology by adjusting 
+the weight. On the basis of the payoff function, ( Pawlick et al., 
+2018 ; Ren and Zhang, 2020 ), and the present study obtained the 
+defense strategy by solving the game equilibrium. 
+Strategy timeliness refers to the time during which the at- 
+tack and defense strategies remain effective, which can repre- 
+sent the timeliness of defense decision-making. Rosenblatt et al. 
+(2020) used an immunization strategy, a ﬁxed defense strategy 
+that was diﬃcult to adjust according to the attack-defense inter- 
+action. Pawlick et al. (2018) adopted a stage game model, where 
+the defender made decisions based on the game stage. It can- 
+not respond in time when the network state changes, and hence 
+the timeliness of the method is poor. In contrast, real-time de- 
+fense decision-making was achieved by ( Hu et al., 2018 ; Ren and 
+Zhang, 2020 ), and the present study, i.e., the algorithms have good 
+timeliness. 
+Comparing the results of selected defense strategies can 
+achieve an individual-based or global optimum. Rosenblatt et al. 
+(2020) used individual-based acquaintance immunization, which 
+cannot achieve a global optimum. Pawlick et al. (2018) regarded 
+the defender as the decision-maker, yet the defenders were still 
+individuals, and the result was only an individual-based optimum. 
+In Ren and Zhang (2020) , the individual defender calculated the 
+defense strategy based on its own payoff, without considering the 
+global payoff, which again can only achieve an individual-based 
+optimum. In Hu et al. (2018) and this study, the defender selected 
+the individual defense strategy from the perspective of the global 
+payoff, which could maximize the overall defense payoff. 
+The main shortcomings of the proposed method are: (1) The 
+calculation cost of real-time attack and defense game analysis for 
+large-scale complex networks is high, and defender need to have 
+suﬃcient calculation ability and computing resources. (2) Network 
+security state evolution analysis is the basis of attack-defense game 
+modeling and strategy selection, which requires the high ability of 
+network situation rapid awareness and dynamic update. 
+4. Simulation tests and analysis 
+4.1. Test design 
+Veriﬁcation of the proposed model was carried out using 
+two types of typical complex networks: small-world and scale- 
+free. Using the classical small-world network generation method 
+( Watts and Strogatz, 1998 ), we ﬁrst construct a ring network which 
+each node is connected with K neighboring nodes, and then ran- 
+domly reconnect the edges of the network with a certain probabil- 
+ity; Based on this method, a small-world network with 10 0 0 nodes 
+5 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+Table 2 
+Test parameters. 
+Payoff function 
+Network evolution 
+Number of nodes 
+s 
+r
+a 
+b
+T 
+S i (0) 
+I i (0) 
+¯γ
+γ
+¯β
+β
+N 
+20 
+10 
+0.1 
+0.1 
+50 
+0.1 
+0.1 
+0.7 
+0 
+0.5 
+0 
+1000 
+Fig. 2. Node connectivity distributions of small-world and scale-free networks. 
+was generated using MATLAB software. According to the growth 
+and preferential connection method ( Albert and Barabási, 2022 ), 
+based on the fully-connected network with m 0 nodes, we add new 
+nodes one by one and connect to the existing m nodes ( m ≤m 0 ); 
+The connection probability between the new node and the exist- 
+ing node i is 
+i ; If the connection degree of node i is k i , 
+i = 
+k i /  
+j k j ; Based on this method, a scale-free network with 10 0 0 
+nodes was generated by MATLAB. The nodes in the two networks 
+were sorted in ascending order based on node connectivity. The 
+distributions of node connectivity in the two networks are shown 
+in Fig. 2 . The x -axis is the node connectivity, and the y- axis is the 
+proportion of nodes. 
+Assuming that the infection rate of network nodes was 10% in 
+the initial state, i.e., S i (0) = 0 . 9 , I i (0) = 0 . 1 , and R i (0) = 0 , the costs 
+of the attack and defense strategies in a unit time are proportional 
+to the infection and repair rate, respectively, i.e., δ(γi (t)) = aγi (t) 
+and σ (βi (t)) = bβi (t) . The parameters are shown in Table 2 . 
+4.2. Defense effectiveness analysis 
+To verify the effectiveness of the proposed method, 
+Algorithm 1 was used to calculate the defense payoffs in the 
+scale-free and small-world networks. Then 100 pairs of attack and 
+defense strategies were randomly generated, and their payoffs 
+calculated, which were compared with that of the method in this 
+study. The results are shown in Fig. 3 . 
+The x- axis is the number of the stochastic strategy, and the y- 
+axis represents the defense payoff. The blue dots are the defense 
+payoffs of the proposed method, which are 428.4 and 464.6. The 
+three red lines represent the maximum, average, and minimum de- 
+fense payoffs of the stochastic strategies, which were 212.3, 198.0, 
+and 184.6, respectively, in the small-world network, and 233.5, 
+215.2, and 198.4 in the scale-free network. It can be seen that in 
+both networks, the defense payoffs of the proposed method in this 
+study were signiﬁcantly higher than those of the stochastic strate- 
+gies. 
+4.3. Defense performance analysis 
+(1) Comparison with typical defense strategies 
+The defense payoffs of the proposed method were compared 
+with those of the classical differential game, node immunization 
+strategy ( Rosenblatt et al., 2020 ), and adaptive strategy ( Hu et al., 
+2018 ). We carried out simulations on 20 randomly selected attack 
+strategies. The results are shown in Figs. 4 and 5 . The x- axis is 
+the serial number of the attack strategies, the y- axis is the de- 
+fense payoff, and the horizontal lines represent the average payoff
+of each strategy. 
+Fig. 4 shows the defense payoffs of the above four algorithms in 
+the small-world network. The average payoffs were 428.94, 322.60, 
+282.85, and 394.68. The potential differential game in this study 
+had the highest payoff, followed by the adaptive algorithm, differ- 
+ential game, and immunization strategy. The defense effectiveness 
+of the proposed method was 32.96%, 51.65%, and 8.68% higher than 
+that of the other three methods. 
+Fig. 5 shows the defense payoffs of the four algorithms in the 
+scale-fee network. The average payoffs were 464.27, 299.87, 290.66, 
+and 440.13. The proposed method had the highest payoff. The de- 
+fense effectiveness of the proposed method was 54.82%, 59.73%, 
+and 5.48% higher than that of the other three methods. 
+Based on the results in the small-world and scale-free net- 
+works, it can be seen that the defense payoffs of the proposed 
+method and the adaptive strategy were signiﬁcantly higher than 
+those of the other two methods, because they determine the op- 
+timal defense strategies based on global payoffs. The immuniza- 
+tion strategy had the highest stability of defense payoffs. When the 
+immunization strategy is adopted, since the defender always im- 
+plements the strategy for speciﬁc nodes, the attacker can only in- 
+fect the remaining nodes. Hence the scope of infection is reduced, 
+resulting in good stability. The adaptive method had the lowest 
+payoff stability because the method is based on unilateral optimal 
+control, and the defense strategy does not respond dynamically to 
+the attack. When the attacker dynamically changes its strategy, it 
+is diﬃcult for the defender to make timely adjustments, resulting 
+in the largest ﬂuctuation of defense payoffs. The payoff stability of 
+our method was similar to that of the classical differential game. 
+6 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+Fig. 3. Comparison of defense payoffs between proposed method and stochastic strategies in small-world and scale-free network. 
+Fig. 4. Comparison of defense payoffs of different algorithms in small-world network. 
+Fig. 5. Comparison of defense payoffs of different algorithms in scale-free network. 
+7 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+Fig. 6. Attack-defense strategies in small-world network based on potential differential game. 
+Fig. 7. Attack-defense strategies in scale-free network based on potential differential game. 
+The proposed method and adaptive strategy had higher payoffs 
+in the scale-free network than the other two methods, whereas the 
+differential game had the highest payoff in the small-world net- 
+work. The immunization strategy had similar payoffs in both net- 
+works. Due to the large node heterogeneity in the scale-free net- 
+work, the differences between individual-based optimal strategies 
+and the global optimal strategy were large. For the method in this 
+study, the defender obtained the defense strategy from a global 
+perspective, and the payoff was signiﬁcantly higher than in the 
+small-world network. Moreover, since the node connectivity dis- 
+tribution was more uniform in the small-world network, the envi- 
+ronmental similarity for individuals was large in the classical dif- 
+ferential game, and thus the result of the individual-based strat- 
+egy was close to that of the global optimal strategy. Because the 
+cost of the individual-based strategy was lower than that of the 
+global optimal strategy, the payoff in the small-world network was 
+higher than that in the scale-free network. Similarly, for the adap- 
+tive strategy, when optimizing the node connection weights, the 
+number of nodes in the small-world network was larger than that 
+in the scale-free network, which cost more. Hence, the payoff was 
+lower in the small-world network. 
+(1) Comparison with classical differential game 
+In the small-world and scale-free networks, the defense deci- 
+sion algorithm of the method in this study was compared with 
+that of the classical differential game, with results as shown in 
+Figs. 6–9 . The x- axis represents the game time, and the y- axis rep- 
+resents the strategy value. The subscripts in the legends represent 
+the node serial number, and the node connectivity k is on the bot- 
+tom of each column. For example, the legend γ1 in the top row of 
+Fig. 7 represents the repair rate of the ﬁrst node in the network. 
+The legend β1 in the bottom row represents the infection rate of 
+8 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+Fig. 8. Attack-defense strategies in small-world network based on classical differential game. 
+Fig. 9. Attack-defense strategies in scale-free network based on classical differential game. 
+the ﬁrst node in the network. The title “k = 32” at the bottom of the 
+graph indicates that the connectivity of the ﬁrst node is 32. 
+Figs. 6–9 show the variation of the attack and defense strategies 
+over time. The potential differential game model and decision algo- 
+rithm in this study had the optimal attack and defense strategies. 
+The results in the small-world and scale-free networks are shown 
+in Figs. 6 and 7 , respectively. The corresponding results of the clas- 
+sical differential game are shown in Figs. 8 and 9 . 
+In Figs. 6 and 7 , the defense strategy of node 10 0 0 has the high- 
+est execution probability, because the node is the central node in 
+the network, which has the highest connectivity. If it is infected, 
+there will be huge losses. Hence the probability of defense is the 
+highest. In Fig. 8 , the attack frequency reaches the peak at node 
+970 because the probability and intensity of defense are the high- 
+est at node 10 0 0. To reduce the cost related to high-intensity at- 
+tacks, the attacker chooses the node with lower connectivity as the 
+priority target. From Figs. 6 and 7 , it can be seen that the execution 
+probabilities of the attack and defense strategies are close in both 
+networks, indicating that the proposed method has good adaptabil- 
+ity to different types of complex networks. 
+Figs. 8 and 9 show the results of the classical differential game. 
+As the node connectivity increases, the execution probability and 
+stability of the defense strategy increases, and the execution prob- 
+abilities of the attack and defense strategies in the two networks 
+are quite different. 
+By comparing Figs. 6 and 7 with Figs. 8 and 9 , it is found 
+that when the potential differential game model and decision al- 
+gorithm in this study are used, the difference between the attack 
+9 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+and defense strategies in the small-world and scale-free networks 
+is small, and the strategy selection frequency is high. Moreover, 
+there is no such case that the attacker and defender do not imple- 
+ment any strategy for a long time or stick to a certain strategy. This 
+is because in the potential differential game, the defense strategy 
+is determined by the defender, who controls the global informa- 
+tion. As long as there is attack-defense interaction, the global pay- 
+off will change, and the defender will dynamically adjust the con- 
+trol strategy to meet the current needs of cyber defenses. There- 
+fore, all nodes in the network are highly correlated in the poten- 
+tial differential game model, and there will be a high strategy up- 
+date frequency and high strategy correlation. However, in the clas- 
+sical differential game for defense decision-making, each node de- 
+termines its own defense strategy based on its characteristics and 
+those of network environment, without considering other nodes. 
+As a result, the defense strategy is greatly affected by the node 
+connectivity, and the strategies of different nodes are unrelated. 
+In addition, the difference in the attack and defense strategies be- 
+tween the two methods is greater in the scale-free network than 
+in the small-world network, because the node connectivity distri- 
+bution is relatively uniform in the small-world network, while the 
+nodes have strong heterogeneity in the scale-free network. Hence 
+there are large differences in the attack and defense strategies. 
+5. Conclusion 
+Most defense strategies in complex networks only focus on the 
+inﬂuence of the defense action on network states, and overlook the 
+impact of the attack action and attack-defense interaction. Defense 
+strategies based on attack-defense adversarial analysis are mostly 
+based on homogeneous mixing networks, which differ greatly from 
+actual large-scale networks. In view of the above problems, com- 
+plex networks and a potential differential game were integrated in 
+this study, and the attack-defense interaction was analyzed from a 
+global perspective to formulate the defense strategy. This method 
+improved the effectiveness and applicability of defense decision. 
+At the microscopic level, we constructed a cyberthreat propaga- 
+tion model, established the differential equation for the transition 
+of network states, and proposed a macro-level attack-defense po- 
+tential differential game model. By calculating the saddle point 
+equilibrium, the global optimal defense decision algorithm was ob- 
+tained, which improved defense payoffs. Simulations were carried 
+out in two classic complex networks, and the defense payoffs of 
+different algorithms were compared, which veriﬁed the effective- 
+ness of the proposed method. 
+To implement the potential differential game model and de- 
+fense decision algorithm in this study, a defender who masters the 
+global information is needed, which may not exist in a real net- 
+work. Thus, we will next introduce a penalty mechanism to the 
+potential differential game and optimize the defense decision algo- 
+rithm based on deep reinforcement learning, such that individual- 
+based decision can also maximize the overall payoff of the net- 
+work, thereby improving the applicability of the defense decision 
+algorithm. 
+Declaration of Competing Interest 
+The authors declare that they have no conﬂicts of interest re- 
+garding the publication of this paper. 
+CRediT authorship contribution statement 
+Hengwei Zhang: Writing – original draft. Yan Mi: Investiga- 
+tion. Yumeng Fu: Project administration. Xiaohu Liu: Resources. 
+Yuchen Zhang: Software. Jindong Wang: Supervision. Jinglei Tan: 
+Conceptualization. 
+Data availability 
+The data used to support the ﬁndings of this study are available 
+from the corresponding author upon request. 
+Acknowledgments 
+We thank all the reviewers for their valuable comments. This 
+work was supported by the National Key Research and Develop- 
+ment Program of China (Grant No. 2017YFB0801904 ). 
+References 
+Albert, R, Barabási, A.L, 2022. Statistical mechanics of complex networks[J]. Rev. 
+Mod. Phys. 74 (1), 47 . 
+Amaral, M.A, de Oliveira, M.M, Javarone, M.A., 2021. An epidemiological model with 
+voluntary quarantine strategies governed by evolutionary game dynamics[J]. 
+Chaos Solitons Fractals 143, 110616 . 
+Barabási, A.L, 2013. Network science[J]. Philosophical Transactions of the Royal So- 
+ciety A: Mathematical, Physical and Engineering Sciences 371 (1987), 20120375 . 
+Costa, G.S, Ferreira, S.C, 2020. Nonmassive immunization to contain spreading on 
+complex networks[J]. Phys. Rev. E 101 (2), 022311 . 
+Dubey, P., 1982. Nash equilibria of market games: ﬁniteness and ineﬃciency[M]. 
+In: Noncooperative Approaches to the Theory of Perfect Competition. Academic 
+Press, pp. 249–262 . 
+Farhadi, F, Tavafoghi, H, Teneketzis, D, et al., 2019. An eﬃcient dynamic allocation 
+mechanism for security in networks of interdependent strategic agents[J]. Dyn. 
+Games Appl. 9 (4), 914–941 . 
+Fonseca-Morales, A, Hernández-Lerma, O., 2018. Potential differential games[J]. Dyn. 
+Games Appl. 8 (2), 254–279 . 
+Friesz, T.L, 2010. Dynamic Optimization and Differential Games[M]. Springer, New 
+York . 
+Gao, Q, Wu, H, Zhang, Y, et al., 2021. Differential game-based analysis of multi-at- 
+tacker multi-defender interaction[J]. Sci. China Inf. Sci. 64 (12), 1–13 . 
+Gross, T, D’Lima, C.J.D, Blasius, B, 2006. Epidemic dynamics on an adaptive net- 
+work[J]. Phys. Rev. Lett. 96 (20), 208701 . 
+Hu, P, Ding, L, Hadzibeganovic, T., 2018. Individual-based optimal weight adaptation 
+for heterogeneous epidemic spreading networks[J]. Commun. Nonlinear Sci. Nu- 
+mer. Simul. 63, 339–355 . 
+Kandoussi, E.M, Hanini, M, El Mir, I, et al., 2020. Toward an integrated dynamic de- 
+fense system for strategic detecting attacks in cloud networks using stochastic 
+game[J]. Telecommun. Syst. 73 (3), 397–417 . 
+Lenhart, S, Workman, J.T, 2007. Optimal control applied to biological models[M]. 
+CRC press . 
+Liu, Z, Wang, L., 2021. Flipit game model-based defense strategy against cyberat- 
+tacks on SCADA systems considering insider assistance[J]. IEEE Trans. Inf. Foren- 
+sics Secur. 16, 2791–2804 . 
+Liu, X, Zhang, H, Dong, S, et al., 2021. Network defense decision-making based on a 
+stochastic game system and a deep recurrent Q-network[J]. Comput. Secur. 111, 
+102480 . 
+Liu, G, Peng, B, Zhong, X., 2021. A novel epidemic model for wireless rechargeable 
+sensor network security[J]. Sensors 21 (1), 123 . 
+Mahrouf, M, Lotﬁ, E.M, Hattaf, K, et al., 2020. Non-pharmaceutical interventions and 
+vaccination controls in a stochastic SIVR epidemic model[J]. Differ. Equ. Dyn. 
+Syst. 1–19 . 
+Maschler, M., Zamir, S., Solan, E., 2020. Game Theory[M]. Cambridge University 
+Press . 
+Miao, F, Zhu, Q, Pajic, M, et al., 2018. A hybrid stochastic game for secure control of 
+cyber-physical systems[J]. Automatica 93, 55–63 . 
+Monderer, D, Shapley, L.S., 1996. Potential games[J]. Games Econ. Behav. 14 (1), 
+124–143 . 
+Pastor-Satorras, R, Vespignani, A., 2001. Epidemic spreading in scale-free net- 
+works[J]. Phys. Rev. Lett. 86 (14), 3200 . 
+Pawlick, J, Colbert, E, Zhu, Q, 2018. Modeling and analysis of leaky deception us- 
+ing signaling games with evidence[J]. IEEE Trans. Inf. Forensics Secur. 14 (7), 
+1871–1886 . 
+Payne, B, Mienie, E., 2021. Multiple-extortion ransomware: the case for active cy- 
+ber threat intelligence[C]. In: ECCWS 2021 20th European Conference on Cyber 
+Warfare and Security. Academic Conferences Inter Ltd, p. 331 . 
+Rao, Y.S, Keshri, A.K, Mishra, B.K, et al., 2020. Distributed denial of service attack on 
+targeted resources in a computer network for critical infrastructure: a differen- 
+tial e-epidemic model[J]. Phys. A 540, 123240 . 
+Ren, J, Zhang, C., 2020. A game method against attacks in heterogeneous hon- 
+eynet[J]. Comput. Secur. 97, 101870 . 
+Rosenblatt, S.F, Smith, J.A, Gauthier, G R, et al., 2020. Immunization strategies in 
+networks with missing data[J]. PLoS Comput. Biol. 16 (7), e1007897 . 
+Sasahara, H, Sandberg, H., 2021. Epistemic signaling games for cyber deception with 
+asymmetric recognition[J]. IEEE Control Syst. Lett. 6, 854–859 . 
+Sengupta, S, Chowdhary, A, Huang, D, et al., 2018. Moving target defense for 
+the placement of intrusion detection systems in the cloud[C]. In: Interna- 
+tional Conference on Decision and Game Theory for Security. Springer, Cham, 
+pp. 326–345 . 
+10 
+
+H. Zhang, Y. Mi, Y. Fu et al. 
+Computers & Security 129 (2023) 103187 
+Song, B, Song, Y.R, Jiang, G.P, et al., 2019. Dynamical rewiring in adaptive weighted 
+heterogeneous networks[J]. Int. J. Mod. Phys. B 33 (09), 1950069 . 
+Tan, J, Zhang, H, Zhang, H, et al., 2021. Optimal temporospatial strategy selection 
+approach to moving target defense: a FlipIt differential game model[J]. Comput. 
+Secur. 108, 102342 . 
+Vaz, R., 2019. Venezuela’s power grid disabled by cyber attack[J]. Green Left Weekly 
+(1213) 15 . 
+Wang, M, Song, L., 2021. Eﬃcient defense strategy against spam and phishing email: 
+an evolutionary game model[J]. J. Inf. Secur. Appl. 61, 102947 . 
+Wang, C, Knight, J.C, Elder, M.C., 20 0 0. On computer viral infection and the effect of 
+immunization[C]. In: Proceedings 16th Annual Computer Security Applications 
+Conference (ACSAC’20 0 0). IEEE, pp. 246–256 . 
+Wang, Y, Chakrabarti, D, Wang, C, et al., 2003. Epidemic spreading in real networks: 
+an eigenvalue viewpoint[C]. In: Proceedings 22nd International Symposium on 
+Reliable Distributed Systems. IEEE, pp. 25–34 2003 . 
+Watts, D.J, Strogatz, S.H, 1998. Collective dynamics of ‘small-world’networks[J]. Na- 
+ture 393 (6684), 4 40–4 42 . 
+Xue, D, Hirche, S., 2018. Distributed topology manipulation to control epidemic 
+spreading over networks[J]. IEEE Trans. Signal Process. 67 (5), 1163–1174 . 
+Zhang, L, Xu, J., 2019. Differential security game in heterogeneous device-to-device 
+oﬄoading network under epidemic risks[J]. IEEE Trans. Netw. Sci. Eng. 7 (3), 
+1852–1861 . 
+Heng-wei Zhang was born in 1978. He received the Ph.D. degree from the 
+Zhengzhou Information Science and Technology Institute in 2015, where he has 
+been an Associate Professor with the State Key Laboratory of Mathematical Engi- 
+neering and Advanced Computing since 2017. His main research interests include 
+network security game analysis and intelligent system security assessment. 
+Yan Mi was born in Shanxi, P.R. China, in 1997. He received his M.S. degree in the 
+Zhengzhou Information Science and Technology in 2022. His research interests in- 
+clude attack-defense modeling and proactive defense. 
+Yumeng Fu was born in Xinjiang, China, in 1990. She has received the Master’s de- 
+gree from the Zhengzhou Information Science and Technology in 2018, where she 
+has been an Lecturer with the State Key Laboratory of Mathematical Engineering 
+and Advanced Computing. She is currently pursuing the Ph.D. degree and her re- 
+search interests include attack-defense modeling and network security game analy- 
+sis. 
+Xiaohu Liu was born in Henan, China, in 1989. He received the Ph.D. degree from 
+the Zhengzhou Information Science and Technology in 2021, where he has been an 
+Associate Professor with the State Key Laboratory of Mathematical Engineering and 
+Advanced Computing. His research interests include attack-defense modeling and 
+reinforcement learning based proactive defense. 
+Yuchen Zhang was born in Henan, P.R. China, in 1977. He received his Ph.D. degree 
+in the Zhengzhou Information Science and Technology. He has been a professor 
+with State Key Laboratory of Mathematical Engineering and Advanced Computing 
+since 2021. His research interests include network security assessment and defense 
+decision-making method. 
+Jindong Wang was born in Shanxi, P.R. China, in 1966. He has been a professor with 
+State Key Laboratory of Mathematical Engineering and Advanced Computing since 
+2005. His research interests include network security management and intelligent 
+system security. 
+Jinglei Tan was born in Shandong, China, in 1994. He received the Ph.D. degree 
+from the Zhengzhou Information Science and Technology in 2022, where he has 
+been a lecturer with the State Key Laboratory of Mathematical Engineering and Ad- 
+vanced Computing. His research interests include moving target defense and net- 
+work security and game theory. 
+11 

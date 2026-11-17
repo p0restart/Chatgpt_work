@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "check_count": 86,
+  "diagnostics": {
+    "scope": "D7 static three capacities, all recorded paths and static validation calls",
+    "audit_rows": 45,
+    "optimizer_calls": 285,
+    "all_optimizer_success": true,
+    "max_relative_improvement": 1.2417558085046781e-09,
+    "max_incumbent_residual": 9.442517299790289e-05,
+    "max_violation": 5.773159728050814e-15,
+    "max_response_distance": 5.366251439059555e-05,
+    "max_three_path_spread": 4.01151318299986e-05,
+    "fixed_control_replay_max_difference": 6.724976131522453e-11
+  },
+  "missing_table2_recovery": 0.0671627443661971,
+  "sources": {
+    "paper\\work_d7\\results\\static\\B0.6\\model.json": "431361317ccc0753a9fae71da921ee54eec6cb624e66325b42151af47a645e7b",
+    "paper\\work_d7\\results\\static\\B0.6\\G_controls.json": "f5e07ea801d65094e23ddc6c63aa56ce517121f789f7fb4d023ce3d8e0d90580",
+    "paper\\work_d7\\results\\static\\B0.6\\F_controls.json": "47fdfcb008b2bc7b4fc5d5d7d5d8aaef0f339059f6215625542cf104490b56ca",
+    "paper\\work_d7\\results\\static\\B0.6\\cross_attacks.json": "8b11917468136547b4fda37fc3c887ed1d69e8c7f3eb29f764ea2ed94c54f2d2",
+    "paper\\work_d7\\results\\static\\B1.2\\model.json": "28042f480562edd2fa5e9d697bdf313c9e4ea0ab4ea6d7b50ca4f116e122a21c",
+    "paper\\work_d7\\results\\static\\B1.2\\G_controls.json": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed",
+    "paper\\work_d7\\results\\static\\B1.2\\F_controls.json": "f27c61194fde3e64bae67e1d8ed53ebe329a6ab4f6013cb346d2260f33b4f780",
+    "paper\\work_d7\\results\\static\\B1.2\\cross_attacks.json": "d5b34ad5310c349436ad7deedd48569a9128deb406c67d4bd911d734cc272a30",
+    "paper\\work_d7\\results\\static\\B1.8\\model.json": "2df2d0aea2c74c26f036089d00aa82cd1267f11b9866b528596b450e0d5bd9c2",
+    "paper\\work_d7\\results\\static\\B1.8\\G_controls.json": "36f3ed1e10d9ab7a2e786b75778b24807e56ea59a017cb74a2300e6154777493",
+    "paper\\work_d7\\results\\static\\B1.8\\F_controls.json": "8df40a43a4a3bb22c96bc144b5c262a0cf8c4c1fbac1475bb73b91ec31988f09",
+    "paper\\work_d7\\results\\static\\B1.8\\cross_attacks.json": "13ae39e4133bcf6047920e34b0363fe69b8ef56c76a439f85e5c106075cc8753",
+    "paper\\audit_20261117\\input\\sensitivity_package\\item_05.json": "89a68e5dde211eddc86c5fd7a20d9a87ffc11bb9db558bb47c94966d69de6f01"
+  },
+  "scope": "Saved-control replay and arithmetic only, no best-response reoptimization or new experiment"
+}

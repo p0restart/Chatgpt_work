@@ -1,0 +1,322 @@
+[
+  {
+    "source": "paper/work_d2/figures/fig01_matched_network.png",
+    "destination": "figures/fig01_matched_network.png",
+    "sha256": "f15d9c2237c9dd81ec565c2bbfb8b4cfb77d6950984c80ced0ee1eee8502943b"
+  },
+  {
+    "source": "paper/work_d2/figures/fig01_matched_network.pdf",
+    "destination": "figures/fig01_matched_network.pdf",
+    "sha256": "d8812f383588d3afc831b5edd7ab1b82005a0b23386e7af7ca5765df016d814c"
+  },
+  {
+    "source": "paper/work_d2/figures/fig01_matched_network.svg",
+    "destination": "figures/fig01_matched_network.svg",
+    "sha256": "071c60a49245903e9538ab68b4a163d39a431dcee54154b1f86755d476bb9149"
+  },
+  {
+    "source": "paper/work_d2/figures/fig02_losses_interactions.png",
+    "destination": "figures/fig02_losses_interactions.png",
+    "sha256": "8e3dba7d13715ea779089e5b3563fa4856dc67f2f79ba3ce7d352e0147822c14"
+  },
+  {
+    "source": "paper/work_d2/figures/fig02_losses_interactions.pdf",
+    "destination": "figures/fig02_losses_interactions.pdf",
+    "sha256": "49dbf407b8158e993e2bed55ef20a1320500dc7b8f146927b6ef13fce1f84583"
+  },
+  {
+    "source": "paper/work_d2/figures/fig02_losses_interactions.svg",
+    "destination": "figures/fig02_losses_interactions.svg",
+    "sha256": "a1e17db9a0f4db723c6d4f7ffc83936305b29a5dd1b84f28f9d728581983d088"
+  },
+  {
+    "source": "paper/work_d2/figures/fig03_temporal_allocation.png",
+    "destination": "figures/fig03_temporal_allocation.png",
+    "sha256": "78118b34e00bfd7bab78233894b3ddcd2c2854ed8527d81e8095027d60eba12f"
+  },
+  {
+    "source": "paper/work_d2/figures/fig03_temporal_allocation.pdf",
+    "destination": "figures/fig03_temporal_allocation.pdf",
+    "sha256": "40e778159933e7b7e82d4fe756d59f7ead5e845e766154d657165fbe8f4c118f"
+  },
+  {
+    "source": "paper/work_d2/figures/fig03_temporal_allocation.svg",
+    "destination": "figures/fig03_temporal_allocation.svg",
+    "sha256": "fba6bfd41cafc4ad51f6466e9a87a3380762c45b122f57c6d584e220d4bc6340"
+  },
+  {
+    "source": "paper/work_d2/figures/figS01_seed33_state_allocation.png",
+    "destination": "figures/figS01_seed33_state_allocation.png",
+    "sha256": "464b1d90c1ad0e03128c09c6ec77e79d4eed1bfe34bb461eec5c3a5e1d124c8a"
+  },
+  {
+    "source": "paper/work_d2/figures/figS01_seed33_state_allocation.pdf",
+    "destination": "figures/figS01_seed33_state_allocation.pdf",
+    "sha256": "d5b83d1c6be2c05c7bc9a97770899b469e82f8d5e0ec9894dd90e470ceb53d55"
+  },
+  {
+    "source": "paper/work_d2/figures/figS01_seed33_state_allocation.svg",
+    "destination": "figures/figS01_seed33_state_allocation.svg",
+    "sha256": "dcd55e39dfc7e610fb21b17d2d6a61168717916938be50ddd0998b65fc108fff"
+  },
+  {
+    "source": "paper/work_d4/P0_01_fixed_attack/figure_interaction_comparison.png",
+    "destination": "figures/figure_interaction_comparison.png",
+    "sha256": "fef532ae8307e27a1be36d86dd5d5e865856505c04d246c984062c0079140282"
+  },
+  {
+    "source": "paper/work_d4/P0_01_fixed_attack/figure_interaction_comparison.pdf",
+    "destination": "figures/figure_interaction_comparison.pdf",
+    "sha256": "428c42bd120e790421cf8826a3a0e6b466f4fffd723db32c91f58a7c8f2c7b60"
+  },
+  {
+    "source": "paper/work_d4/P0_01_fixed_attack/figure_interaction_comparison.svg",
+    "destination": "figures/figure_interaction_comparison.svg",
+    "sha256": "db24e3fa6b3f6c174ea035f13823cb906cfdb921126bccf867d97402ead944f8"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/paired_comparisons.png",
+    "destination": "figures/paired_comparisons.png",
+    "sha256": "69a01905618e0af1bd9cf514402bae1a55570566c055fc230ab711fe3ecb8195"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/paired_comparisons.pdf",
+    "destination": "figures/paired_comparisons.pdf",
+    "sha256": "ef0cd191ad6b96067af6ab2446a17bbded81bb37dcbd08899ef6b913af390c6b"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/paired_comparisons.svg",
+    "destination": "figures/paired_comparisons.svg",
+    "sha256": "135edc87386fe9a884cef2ab46bc8aa66701d3a4a5817a01bf8f01a614d1ee72"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resources_E0.png",
+    "destination": "figures/resources_E0.png",
+    "sha256": "a775abbb65e7dff0013982178f5c1536800ce180f0b9148e9c9b733893ed7e2e"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resources_E0.pdf",
+    "destination": "figures/resources_E0.pdf",
+    "sha256": "69220b8b65d27d654ecfacf3da9ced39547afc7a892e79a3783994df904b106e"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resources_E0.svg",
+    "destination": "figures/resources_E0.svg",
+    "sha256": "31629d69be19714d550df53b070763f66d40410aed8e2da38b5a54bd29ddbf44"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resources_E1.png",
+    "destination": "figures/resources_E1.png",
+    "sha256": "67f657a7bb6e09c5f264d130a8228eeb1b3b5af65953f7a6bf828bf297d67b2b"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resources_E1.pdf",
+    "destination": "figures/resources_E1.pdf",
+    "sha256": "7c5e833dac1e2aad9f1e9a306cf7aa7597f03743bcda79a21c81dccb30e3ede9"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resources_E1.svg",
+    "destination": "figures/resources_E1.svg",
+    "sha256": "9863c4251fb36ce704565dbea92f94bdcc270f94fcced537d958bc5835b77f60"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/states_E0.png",
+    "destination": "figures/states_E0.png",
+    "sha256": "30d8978bd28f9d55533d69a5f05d1fe28fab14bcefa5149d286903650bffe0de"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/states_E0.pdf",
+    "destination": "figures/states_E0.pdf",
+    "sha256": "f0b390cbbfee633e19b5d334d1e0ba837e3a248d4b2acd07dc66593c20de682e"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/states_E0.svg",
+    "destination": "figures/states_E0.svg",
+    "sha256": "7f527fba99659e869457aeb430fec067211dca5ad9b53084fe9206ad36db1acf"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/states_E1.png",
+    "destination": "figures/states_E1.png",
+    "sha256": "f980cfe3cf50b056d3dd077b6d2a0f8cbcaefc75123440673e1a5de1f15ebdee"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/states_E1.pdf",
+    "destination": "figures/states_E1.pdf",
+    "sha256": "95e388544f80d45d569b5797dc2afae860c6f1a7ed66aeae4a47bc648ebdc53f"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/states_E1.svg",
+    "destination": "figures/states_E1.svg",
+    "sha256": "08d3c1afe1d52ebadd0b74a9635bc5a8c844ba7351449e45fd58c2388187d8d0"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resource_use.png",
+    "destination": "figures/resource_use.png",
+    "sha256": "6b9739dd6fa8854a7cd99dcea9c16c4062e030ec552a044e21cacdd84eebd803"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resource_use.pdf",
+    "destination": "figures/resource_use.pdf",
+    "sha256": "71fd95ca2fc9e988470c08add6f4c1c7b01ed78d34ce414d96967a00e85f0a5a"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/figures/resource_use.svg",
+    "destination": "figures/resource_use.svg",
+    "sha256": "912bd3235f1cfb8855d4cec1b5c9c42a802d486c98e42630825e9d2781950674"
+  },
+  {
+    "source": "paper/work_d2/tables/matched_edges.csv",
+    "destination": "figures/data/matched_edges.csv",
+    "sha256": "5cf280faba104ca1027e823e89b444c11ce46c0bc697becfa448da64e3b6c90d"
+  },
+  {
+    "source": "paper/work_d2/tables/matched_four_cells.csv",
+    "destination": "figures/data/matched_four_cells.csv",
+    "sha256": "be75bf03ac009be3ffe4ec29bedf9bdefc5c3cb3d1970337486c19da41853be9"
+  },
+  {
+    "source": "paper/work_d2/tables/matched_controls_all_nodes.csv",
+    "destination": "figures/data/matched_controls_all_nodes.csv",
+    "sha256": "ebb76f41566e7d0db87dddd464792bd002014f7f453e67163fef9cfbc9a44f15"
+  },
+  {
+    "source": "paper/work_d2/tables/matched_budgets.csv",
+    "destination": "figures/data/matched_budgets.csv",
+    "sha256": "3f37d23cf542f33400aaff4ea004b83111650c88db00b61ad22a28459ca5592b"
+  },
+  {
+    "source": "paper/work_d2/tables/baseline_all_objectives.csv",
+    "destination": "figures/data/baseline_all_objectives.csv",
+    "sha256": "c68d70a8328a18d9a9baa922c9e1275233295a7ae5e7f9202b73980c66cef449"
+  },
+  {
+    "source": "paper/work_d2/tables/baseline_pairs.csv",
+    "destination": "figures/data/baseline_pairs.csv",
+    "sha256": "84d3c6f4e72f1a4207be9e0205fe0b57f2ce479048d741e90edd2ce39a452423"
+  },
+  {
+    "source": "paper/work_d2/tables/counterexample_cross_evaluation.csv",
+    "destination": "figures/data/counterexample_cross_evaluation.csv",
+    "sha256": "6e67edf7bbe1bbeddff5276fce1178a35aef1e6889734b5b578e01cabe5f326d"
+  },
+  {
+    "source": "paper/work_d2/tables/robust_interactions.csv",
+    "destination": "figures/data/robust_interactions.csv",
+    "sha256": "b0ee34d0e05fbc919b9d8d005518d78665edcd55a13e131769f6df000fded501"
+  },
+  {
+    "source": "paper/work_d2/tables/robust_cross_class.csv",
+    "destination": "figures/data/robust_cross_class.csv",
+    "sha256": "fa68ee9c828327a7a0dcd7c1cf961fd12206c268abf18649719da8b5fb55b6dd"
+  },
+  {
+    "source": "paper/work_d2/tables/k_control_distances.csv",
+    "destination": "figures/data/k_control_distances.csv",
+    "sha256": "dc59e6b9000ff1e0b641d6cea9b1914a8fc6c28059a1eb73b3d585a7a71f67b7"
+  },
+  {
+    "source": "paper/work_d2/tables/environment_cross_environment_errors.csv",
+    "destination": "figures/data/environment_cross_environment_errors.csv",
+    "sha256": "a16c22090d31728750c12761a2b97f7ea0e7a69b6cc3919b7d6be4b8630cdb53"
+  },
+  {
+    "source": "paper/work_d4/decision_reorientation_20261112/evidence/saved_allocation_seed11_B1.2_D.csv",
+    "destination": "figures/data/original_allocation.csv",
+    "sha256": "3ed56930ede94928977382ca2639dc7fd361367d0d46e5a1f6a095f904ac36b2"
+  },
+  {
+    "source": "paper/work_d4/P0_01_fixed_attack/four_cell_comparison.csv",
+    "destination": "figures/data/d4_four_cell_comparison.csv",
+    "sha256": "6f1b8f03d325f82f868e319e60102822905937a2e803bb668a277ab1d6c27ec8"
+  },
+  {
+    "source": "reports/work_d5/p0/run02/case_summary.csv",
+    "destination": "figures/data/p0_case_summary.csv",
+    "sha256": "438d98f745150799f08e20a0e83397d9fa2cef2f1f505069ec0d86277ff5ff85"
+  },
+  {
+    "source": "reports/work_d5/p0/run02/payoff_matrix.csv",
+    "destination": "figures/data/p0_payoff_matrix.csv",
+    "sha256": "95db5edd2946d1b022d7d47612fcae4ed6453fb08353b334306a203cd61e8062"
+  },
+  {
+    "source": "reports/work_d5/p0/run02/defense_by_node_slot.csv",
+    "destination": "figures/data/p0_defense_by_node_slot.csv",
+    "sha256": "b491f7a6ece4833eae3b85332d2a9e478680d420a9f972f897038e2888b818b6"
+  },
+  {
+    "source": "reports/work_d5/p0/run02/attack_by_node_slot.csv",
+    "destination": "figures/data/p0_attack_by_node_slot.csv",
+    "sha256": "942b0ee09e1af9d1bce0604dad8529dc644c4be4a5b664d0d9b27e14e93c651c"
+  },
+  {
+    "source": "reports/work_d5/p0/run02/response_quality.csv",
+    "destination": "figures/data/p0_response_quality.csv",
+    "sha256": "75a66cf9d253ad1eb7b282c6154a53f578f0310932dd69b9475713dd53123a93"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/comparisons.csv",
+    "destination": "figures/data/replanning_comparisons.csv",
+    "sha256": "de7849fad319b7bc068ac84055bbbfc8b1454b71ab31f8361c72322f693c297c"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/objectives.csv",
+    "destination": "figures/data/replanning_objectives.csv",
+    "sha256": "47772e6d720a8f78e78ea3a4b71d84aab4bbcd6d6649d3ea7ee58251bb33ab9d"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/executed_controls.csv",
+    "destination": "figures/data/replanning_executed_controls.csv",
+    "sha256": "f7a41aa0dc91e79d05d5c68826f79903328f80ecac24b5cf7902865f250ef5fd"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/planned_controls.csv",
+    "destination": "figures/data/replanning_planned_controls.csv",
+    "sha256": "7d678bbfa306bc17a19908c09438bffda384c09e4be565b34bc527c8c25a6d96"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/resource_adjustments.csv",
+    "destination": "figures/data/replanning_resource_adjustments.csv",
+    "sha256": "138406a3126355c306bfd8d796723b315e5d0001ce33fa28b127b6cd190e0459"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/attack_prediction_comparison.csv",
+    "destination": "figures/data/replanning_attack_prediction_comparison.csv",
+    "sha256": "aa38d2d32986d613b31e72f0ce511f8a45ee64a7acf9d5e9257357abd504d843"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/timing_summary.csv",
+    "destination": "figures/data/replanning_timing_summary.csv",
+    "sha256": "155f4dad79c8e890bec3419b1ad767a88da2c4f62135293efb38334b8526ade7"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/timing.csv",
+    "destination": "figures/data/replanning_timing.csv",
+    "sha256": "b2830e0e653e2faafabd3a3fa73ceb53197229653e4b250be2f4a03ccfcca98f"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/quality_summary.csv",
+    "destination": "figures/data/replanning_quality_summary.csv",
+    "sha256": "197082475f21d21efc0398e1afe5b3e5ffcab41136a62eb5977e1a8333d8c28c"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/independent_checks.csv",
+    "destination": "figures/data/replanning_independent_checks.csv",
+    "sha256": "09022b4bd9c6cbcf9c31299dbd182c96d7fa31c52781447317980e831d67ea49"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/solver_audit.csv",
+    "destination": "figures/data/replanning_solver_audit.csv",
+    "sha256": "e55b85a7d50823ac458e10c207fff22accd8ad6c036c317c9190074d81140b87"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/trajectories.csv",
+    "destination": "figures/data/replanning_trajectories.csv",
+    "sha256": "6cc6bcfac2847f5921d79587493f1058b82d5463913dee4d76a7c81a686a1008"
+  },
+  {
+    "source": "results/work_d5/replanning/run03/loss_component_comparisons.csv",
+    "destination": "figures/data/replanning_loss_component_comparisons.csv",
+    "sha256": "1cc4abcde55a2d948973ba8b421f09b7ba53107d45f969a6d49e8c556ee7280d"
+  }
+]

@@ -1,0 +1,10 @@
+B,evaluation,method,update,phase,path,check,value,threshold,passed
+1.2,offline,G,-1,online_planning,warm_validation,three_path_control_spread,2.900993882837266e-05,0.001,True
+1.2,offline,F,-1,online_planning,multistart,three_start_control_spread,1.8782382003924329e-06,0.001,True
+1.2,cross,F_attack_response,-1,attack_generation,multistart,three_start_control_spread,3.495724454738447e-06,0.001,True
+0.6,offline,G,-1,online_planning,warm_validation,three_path_control_spread,4.01151318299986e-05,0.001,True
+0.6,offline,F,-1,online_planning,multistart,three_start_control_spread,1.5901895284442524e-06,0.001,True
+0.6,cross,F_attack_response,-1,attack_generation,multistart,three_start_control_spread,1.009611154617618e-05,0.001,True
+1.8,offline,G,-1,online_planning,warm_validation,three_path_control_spread,2.9860819534599518e-05,0.001,True
+1.8,offline,F,-1,online_planning,multistart,three_start_control_spread,2.187392434627178e-06,0.001,True
+1.8,cross,F_attack_response,-1,attack_generation,multistart,three_start_control_spread,3.431458576896862e-06,0.001,True

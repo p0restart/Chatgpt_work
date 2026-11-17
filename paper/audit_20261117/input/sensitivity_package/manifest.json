@@ -1,0 +1,86 @@
+[
+  {
+    "original_name": "论文修订包/data/扰动可行性.json",
+    "local": "input/sensitivity_package/item_01.json",
+    "size": 418,
+    "sha256": "ea33e9b32356363b4f5ff6624c3049a82821a17df5b8876b9739b946a4ededef"
+  },
+  {
+    "original_name": "论文修订包/data/攻击者逐槽响应.csv",
+    "local": "input/sensitivity_package/item_02.csv",
+    "size": 5441,
+    "sha256": "59cb7d3e2dd66e6061cbb181f8913f6aec965df128dc5f518270d2a336159b50"
+  },
+  {
+    "original_name": "论文修订包/data/数值审计.json",
+    "local": "input/sensitivity_package/item_03.json",
+    "size": 855,
+    "sha256": "e839f571ec5833fa31cbf19292a91631293c8d87dfa507466692e4489c39e2e9"
+  },
+  {
+    "original_name": "论文修订包/data/最佳响应敏感性_汇总.csv",
+    "local": "input/sensitivity_package/item_04.csv",
+    "size": 1277,
+    "sha256": "b9e86e30211c293a872ea2314be0c953bbe14d14aea2f6d4fd60e90d5b614e38"
+  },
+  {
+    "original_name": "论文修订包/data/正反响应对照.json",
+    "local": "input/sensitivity_package/item_05.json",
+    "size": 301,
+    "sha256": "89a68e5dde211eddc86c5fd7a20d9a87ffc11bb9db558bb47c94966d69de6f01"
+  },
+  {
+    "original_name": "论文修订包/data/防御者逐槽响应.csv",
+    "local": "input/sensitivity_package/item_06.csv",
+    "size": 9749,
+    "sha256": "26cd0a2bef91b2ea250a8c2e6585ef9e034c15133369928063fd4afa0ceda4a5"
+  },
+  {
+    "original_name": "论文修订包/figures/fig4_1.png",
+    "local": "input/sensitivity_package/item_07.png",
+    "size": 165233,
+    "sha256": "157eb428b7d826f8c608ba51f2ff8166fe8dabc894b874ec7a7ac625338ba29e"
+  },
+  {
+    "original_name": "论文修订包/figures/fig4_2.png",
+    "local": "input/sensitivity_package/item_08.png",
+    "size": 180003,
+    "sha256": "b0c211658770a895a53eca43b2c7d992bf1d71f4932afcaa390a913e3160d2ef"
+  },
+  {
+    "original_name": "论文修订包/figures/fig4_3.png",
+    "local": "input/sensitivity_package/item_09.png",
+    "size": 217626,
+    "sha256": "111c398b6d7c94d97b2df8baa3661f1480790f32b91fef79089ce519e34085df"
+  },
+  {
+    "original_name": "论文修订包/figures/fig4_4.png",
+    "local": "input/sensitivity_package/item_10.png",
+    "size": 199696,
+    "sha256": "ebfb36ff566c8c0c3f10b1928e932151afa6545fa5ab844276a86424611bba49"
+  },
+  {
+    "original_name": "论文修订包/实验审计与论文修改说明.md",
+    "local": "input/sensitivity_package/item_11.md",
+    "size": 5192,
+    "sha256": "24835e59b490ab0adc57fa0eca666fbfb23e7effff41c3f7a0bb1771e140ddc7"
+  },
+  {
+    "original_name": "论文修订包/论文五章_最佳响应敏感性实验整合修订稿.docx",
+    "local": "input/sensitivity_package/item_12.docx",
+    "size": 737168,
+    "sha256": "2d7a3ef73b7a0395cbbfc5fff757c7d6ad3d0a602a4982fcbc714fef1f8eba56"
+  },
+  {
+    "original_name": "论文修订包/论文五章_最佳响应敏感性实验整合修订稿.md",
+    "local": "input/sensitivity_package/item_13.md",
+    "size": 54269,
+    "sha256": "726e2416b287bff194d0fbb4cecdcb4ec3e9265993e4f9916fda72f7756a2dcc"
+  },
+  {
+    "original_name": "论文修订包/论文五章_最佳响应敏感性实验整合修订稿.pdf",
+    "local": "input/sensitivity_package/item_14.pdf",
+    "size": 1165033,
+    "sha256": "11143a73d4da3feffb5d360f4c2bce58f2b3bc89db529603e35f9504192247f1"
+  }
+]

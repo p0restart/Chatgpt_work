@@ -1,0 +1,13 @@
+{
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "argv": [
+    "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\work_d7\\analysis\\run_rolling.py",
+    "--budget",
+    "0.6"
+  ],
+  "event_alpha": 0.5,
+  "source_hash": "032be88b7c0583124588a0070b63fed7a86fbdb3671b64f94e041ac42f528c47"
+}

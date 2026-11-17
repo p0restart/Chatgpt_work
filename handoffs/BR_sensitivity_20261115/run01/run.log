@@ -1,0 +1,18 @@
+2026-11-16T00:10:49.348476+08:00 Preflight passed; delta=0.05; baseline JD=9.32664670419, JA=5.81971100894
+2026-11-16T00:10:49.348476+08:00 Start A_baseline: player=A, H48 three starts
+2026-11-16T00:10:54.760769+08:00 A_baseline H48 done; objective=-5.81971100894; start H96 precision audit
+2026-11-16T00:11:05.890517+08:00 A_baseline passed; residual=2.05e-07, error envelope=1.89e-06
+2026-11-16T00:11:05.890517+08:00 Start A_positive: player=A, H48 three starts
+2026-11-16T00:11:12.426278+08:00 A_positive H48 done; objective=-5.84130983516; start H96 precision audit
+2026-11-16T00:11:23.835171+08:00 A_positive passed; residual=3.25e-07, error envelope=4.74e-06
+2026-11-16T00:11:23.835171+08:00 Start A_negative: player=A, H48 three starts
+2026-11-16T00:11:30.196458+08:00 A_negative H48 done; objective=-5.80750913852; start H96 precision audit
+2026-11-16T00:11:39.920108+08:00 A_negative passed; residual=2.66e-06, error envelope=5.51e-06
+2026-11-16T00:11:39.920108+08:00 Start D_positive: player=D, H48 three starts
+2026-11-16T00:11:48.018289+08:00 D_positive H48 done; objective=9.32766925357; start H96 precision audit
+2026-11-16T00:12:02.164004+08:00 D_positive passed; residual=1.81e-06, error envelope=2.31e-06
+2026-11-16T00:12:02.164004+08:00 Start D_negative: player=D, H48 three starts
+2026-11-16T00:12:10.163882+08:00 D_negative H48 done; objective=9.32266366067; start H96 precision audit
+2026-11-16T00:12:23.623416+08:00 D_negative passed; residual=1.98e-06, error envelope=2.1e-06
+2026-11-16T00:12:23.639415+08:00 All five response tasks complete; auditing 8 fixed control pairs
+2026-11-16T00:12:29.336445+08:00 Completed: SUCCESS; elapsed=100.1s

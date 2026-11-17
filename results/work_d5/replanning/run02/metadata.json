@@ -1,5 +1,5 @@
 {
-  "status": "RUNNING",
+  "status": "FAILED",
   "started_utc": "2026-11-12T16:11:30.041989+00:00",
   "command": [
     "paper/work_d5/analysis/run_replanning.py",
@@ -68,5 +68,8 @@
   "historical_offline_seconds": null,
   "historical_offline_note": "Saved original plan reused; elapsed offline wall time not reconstructed",
   "strict_global_nash_certificate": false,
-  "physical_time_calibration": false
+  "physical_time_calibration": false,
+  "error": "OSError(22, 'Invalid argument')",
+  "ended_utc": "2026-11-12T16:16:54.858543+00:00",
+  "seconds": 327.73159419999865
 }

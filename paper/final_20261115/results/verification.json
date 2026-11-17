@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": 530,
+  "max_error": 6.119821316374896e-11,
+  "static_cross_pairs": 18,
+  "rolling_pairs": 24,
+  "main_points_per_plan": 1153,
+  "solver": "DOP853 rtol=1e-12 atol=1e-14; RK4 H=48/96/192",
+  "environment": {
+    "python": "3.11.7",
+    "numpy": "1.26.4",
+    "scipy": "1.11.4",
+    "pandas": "2.1.4",
+    "matplotlib": "3.8.0"
+  },
+  "scope": "Frozen-control replay only. No independent reoptimization or external review."
+}

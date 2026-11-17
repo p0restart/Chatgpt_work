@@ -1,0 +1,77 @@
+[
+  {
+    "script": "validate_figure.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\source_validation.json"
+  },
+  {
+    "figure": "fig1_G_defense_controls",
+    "pdf_sha256": "053dd7bff647bb2c34068acb06dcc4e55b3cdcf056057cf0367be9463b45905a",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig1_G_defense_controls.text.json"
+  },
+  {
+    "figure": "fig1_G_defense_controls",
+    "pdf_sha256": "053dd7bff647bb2c34068acb06dcc4e55b3cdcf056057cf0367be9463b45905a",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig1_G_defense_controls.collisions.log"
+  },
+  {
+    "figure": "fig2_G_attack_controls",
+    "pdf_sha256": "1f2f6b6f7da257ef6c94213ca55c3d8f010995f92c51d90b82a2443ebc17ef7b",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig2_G_attack_controls.text.json"
+  },
+  {
+    "figure": "fig2_G_attack_controls",
+    "pdf_sha256": "1f2f6b6f7da257ef6c94213ca55c3d8f010995f92c51d90b82a2443ebc17ef7b",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig2_G_attack_controls.collisions.log"
+  },
+  {
+    "figure": "fig3_asset_mean_resource",
+    "pdf_sha256": "761f4bd6e28b49fac0582e2ca2b0f8469f74105923cc10d92a49ff161952fdfa",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig3_asset_mean_resource.text.json"
+  },
+  {
+    "figure": "fig3_asset_mean_resource",
+    "pdf_sha256": "761f4bd6e28b49fac0582e2ca2b0f8469f74105923cc10d92a49ff161952fdfa",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig3_asset_mean_resource.collisions.log"
+  },
+  {
+    "figure": "fig4_R_LAG_loss_decomposition",
+    "pdf_sha256": "93f9e48ae68e2c462f0be23be183383f0a774ec1be0330070a093edd414e564e",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig4_R_LAG_loss_decomposition.text.json"
+  },
+  {
+    "figure": "fig4_R_LAG_loss_decomposition",
+    "pdf_sha256": "93f9e48ae68e2c462f0be23be183383f0a774ec1be0330070a093edd414e564e",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig4_R_LAG_loss_decomposition.collisions.log"
+  },
+  {
+    "figure": "fig5_prediction_errors",
+    "pdf_sha256": "588ab5f97ea83f28bed213613ffdeecb6e7cf734ec9dcfe9c941e6d40f956d67",
+    "script": "audit_pdf_text.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig5_prediction_errors.text.json"
+  },
+  {
+    "figure": "fig5_prediction_errors",
+    "pdf_sha256": "588ab5f97ea83f28bed213613ffdeecb6e7cf734ec9dcfe9c941e6d40f956d67",
+    "script": "audit_figure_collisions.py",
+    "exit_code": 0,
+    "log": "figures\\qa\\attempt03\\fig5_prediction_errors.collisions.log"
+  }
+]

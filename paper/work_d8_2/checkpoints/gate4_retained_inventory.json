@@ -1,0 +1,287 @@
+{
+  "inventory_finalized_at": "2026-11-15T00:46:38.053881+08:00",
+  "gate": 4,
+  "note": "Final hashes of retained gate outputs; original completion timestamp is in gate JSON, not this inventory",
+  "files": [
+    {
+      "path": "R_LAG_E0_controls.csv",
+      "sha256": "c942a814e258405749decfa8563c215ef9549f88793ad530bb027954edd44335",
+      "bytes": 3891
+    },
+    {
+      "path": "R_LAG_E0_objectives.csv",
+      "sha256": "0f74d79bdb75cc7a340abf43619dd1140928d6d4384fa706e2c9c1f7379d6577",
+      "bytes": 1771
+    },
+    {
+      "path": "R_LAG_E1_controls.csv",
+      "sha256": "942a41a83c278397442a2e08aff28320c61b9790b3d3030b3d247e85e621aaa2",
+      "bytes": 3948
+    },
+    {
+      "path": "R_LAG_E1_objectives.csv",
+      "sha256": "533685f2d8f12f276c18582a8c510473e04e9f5f988cb1288a0d879970dd5c8d",
+      "bytes": 1777
+    },
+    {
+      "path": "R_LAG_numerical_quality.csv",
+      "sha256": "306816e7a3a09c6f3d780aa38c253e8bcb395328f00e70166601fdf5a8738fbf",
+      "bytes": 21294
+    },
+    {
+      "path": "R_LAG_prediction_errors.csv",
+      "sha256": "271621a4f8c16b378a4f398ba34cb487344e2652c8e354b0ee4f4445a225f365",
+      "bytes": 1813
+    },
+    {
+      "path": "results/R_LAG/action_change_maxima.csv",
+      "sha256": "1a4d3697220b10018824578335ef0d7f3d86c1a77c8ab812e7b10a0a3e519022",
+      "bytes": 854
+    },
+    {
+      "path": "results/R_LAG/action_changes.csv",
+      "sha256": "c62547956a879e2958b5afa8556f6d79711486629bdc82a7d5446f6c73d089a1",
+      "bytes": 13361
+    },
+    {
+      "path": "results/R_LAG/all_method_prediction_errors.csv",
+      "sha256": "a01e1877e6d898feba2ae8021fb4cf3f270a295653e607eb8b54030db28c822f",
+      "bytes": 3176
+    },
+    {
+      "path": "results/R_LAG/E0/update0/decision.json",
+      "sha256": "cee2a3f227ac2fe10fb46d8df013f24115b7d555a20ddb5a8290717690d71607",
+      "bytes": 3573
+    },
+    {
+      "path": "results/R_LAG/E0/update0/executed_first_interval.json",
+      "sha256": "ea10b33f00da19903165963a5639debead81f804eabe922731a74af8ad6f03ec",
+      "bytes": 564
+    },
+    {
+      "path": "results/R_LAG/E0/update0/input_provenance.json",
+      "sha256": "644ff9ebab8bcd7b06e728cfc3dbf8e747846b26a13e72ee40a79efc04fca71d",
+      "bytes": 2014
+    },
+    {
+      "path": "results/R_LAG/E0/update0/model_restart.json",
+      "sha256": "6c9527c17170b16b7d622fd2e4dba6ae13e08706483f8b05b84dab4353921278",
+      "bytes": 1998
+    },
+    {
+      "path": "results/R_LAG/E0/update0/selected_controls.json",
+      "sha256": "c1c6b1db9eb13b182793fe6cc2b3de2c16fa4297ffe080f01ab95d97bf686698",
+      "bytes": 1425
+    },
+    {
+      "path": "results/R_LAG/E0/update1/decision.json",
+      "sha256": "efcf49e33ae08f3e3f58b2e0f7fbc9dfa2389ae6159856d75146f1cb86b84316",
+      "bytes": 2594
+    },
+    {
+      "path": "results/R_LAG/E0/update1/executed_first_interval.json",
+      "sha256": "92e4feb33947acc00b6444d35e9c6a76ff2c3b1b151105625a5a716862a5d224",
+      "bytes": 576
+    },
+    {
+      "path": "results/R_LAG/E0/update1/input_provenance.json",
+      "sha256": "e1b86cb022937f3c65df867fd5f4a14f78351761a79bea44007952e7a69a33c7",
+      "bytes": 1572
+    },
+    {
+      "path": "results/R_LAG/E0/update1/model_restart.json",
+      "sha256": "f7ee064c026fce93e2ecc50128c561236ed9a0d257c26e92cda8d108ac7695c5",
+      "bytes": 1996
+    },
+    {
+      "path": "results/R_LAG/E0/update1/selected_controls.json",
+      "sha256": "50596a5319cc2f5bb075219f991497635a9cf1952181b18a7af24223fe7590a8",
+      "bytes": 977
+    },
+    {
+      "path": "results/R_LAG/E0/update2/decision.json",
+      "sha256": "b609bbfd49a356638bea1f0a1c5ed742b4eb90b8764bec3a813337b5f6b8f0a0",
+      "bytes": 1594
+    },
+    {
+      "path": "results/R_LAG/E0/update2/executed_first_interval.json",
+      "sha256": "d897823b9d55ef9014769e2b4264f641abc31a008af947a339c5892cdcc9519d",
+      "bytes": 602
+    },
+    {
+      "path": "results/R_LAG/E0/update2/input_provenance.json",
+      "sha256": "e1741e1a138a2c45f107c60001f0afa22033ab22faf464fa00cad9b0ab11d455",
+      "bytes": 1071
+    },
+    {
+      "path": "results/R_LAG/E0/update2/model_restart.json",
+      "sha256": "01820f5b3e1b2f8d86bee49ba8418eddebbde1598ec605232f0deaa4b4e1574a",
+      "bytes": 1993
+    },
+    {
+      "path": "results/R_LAG/E0/update2/selected_controls.json",
+      "sha256": "8c8fdd37ac66dbaa5b7a5617f9f145aa74b428b643d16e6e858d1bb2d284c573",
+      "bytes": 526
+    },
+    {
+      "path": "results/R_LAG/E0_executed.json",
+      "sha256": "3ef54385b29b8d471e6d43f1c7d18c90a1c9e8672703c2bcf1c140fd963c5a32",
+      "bytes": 2723
+    },
+    {
+      "path": "results/R_LAG/E0_states.csv",
+      "sha256": "cf9ab8b7e019e0aa63cb401d509fa3515cf38607bf498c6b1e5606e1bfe81e30",
+      "bytes": 293793
+    },
+    {
+      "path": "results/R_LAG/E1/update0/decision.json",
+      "sha256": "f9e3a5becd6292e7a33ada386031c3601577b27a1ad9a75b36d5621aa4f0e200",
+      "bytes": 3650
+    },
+    {
+      "path": "results/R_LAG/E1/update0/executed_first_interval.json",
+      "sha256": "49268766c84cf0f25a84cb1354755cd94d5d496f8e16af87f3196ed78d0f8302",
+      "bytes": 613
+    },
+    {
+      "path": "results/R_LAG/E1/update0/input_provenance.json",
+      "sha256": "644ff9ebab8bcd7b06e728cfc3dbf8e747846b26a13e72ee40a79efc04fca71d",
+      "bytes": 2014
+    },
+    {
+      "path": "results/R_LAG/E1/update0/model_restart.json",
+      "sha256": "6c9527c17170b16b7d622fd2e4dba6ae13e08706483f8b05b84dab4353921278",
+      "bytes": 1998
+    },
+    {
+      "path": "results/R_LAG/E1/update0/selected_controls.json",
+      "sha256": "88e9740314dbbd3f91d08455ed428a16c424be912c42ba35fcbd50518acbc366",
+      "bytes": 1463
+    },
+    {
+      "path": "results/R_LAG/E1/update1/decision.json",
+      "sha256": "613e5b047037da29125bdc260f2b4ef97a19ef96546edfa6043c506e786f6292",
+      "bytes": 2524
+    },
+    {
+      "path": "results/R_LAG/E1/update1/executed_first_interval.json",
+      "sha256": "82fd91fbd1612313fe97b01f1e0b3697965fe9e48975eda0e69a19753e7cdcef",
+      "bytes": 591
+    },
+    {
+      "path": "results/R_LAG/E1/update1/input_provenance.json",
+      "sha256": "8cbcfb751bf2976d269e32431e6771856ff5f4970e084ef5be26a373affd7e8c",
+      "bytes": 1590
+    },
+    {
+      "path": "results/R_LAG/E1/update1/model_restart.json",
+      "sha256": "1cf1117a52dc36bb27d4d33365bd2903984ab092c5baaf49180b0c7378ebc943",
+      "bytes": 1995
+    },
+    {
+      "path": "results/R_LAG/E1/update1/selected_controls.json",
+      "sha256": "5e19194c7a21ca912d6ade25e10ff386c9763946e9d37a505cbc5c519cc9374d",
+      "bytes": 942
+    },
+    {
+      "path": "results/R_LAG/E1/update2/decision.json",
+      "sha256": "893c1ae1d698a154f8eec9b603ba81a0636b41031e3706712971f3169a4f82f2",
+      "bytes": 1522
+    },
+    {
+      "path": "results/R_LAG/E1/update2/executed_first_interval.json",
+      "sha256": "17edda0487a5bac3be7efc987616236fb31923fedfb9993b9f98751c7230f3c7",
+      "bytes": 598
+    },
+    {
+      "path": "results/R_LAG/E1/update2/input_provenance.json",
+      "sha256": "7e0e3cc97a491f87e3d6664f7174bdf940b8e4d484a96576c929429a16c8a00c",
+      "bytes": 1055
+    },
+    {
+      "path": "results/R_LAG/E1/update2/model_restart.json",
+      "sha256": "19cb73189476f20ae200a096109edc4340c307725d21658934119111f1d6cd62",
+      "bytes": 1995
+    },
+    {
+      "path": "results/R_LAG/E1/update2/selected_controls.json",
+      "sha256": "f32b4dc91f9e135cdf61b72c40fd02bad882b72c47b7186f2fd2d9e91d09f207",
+      "bytes": 489
+    },
+    {
+      "path": "results/R_LAG/E1_executed.json",
+      "sha256": "e19801a70ab34fd53be137ab736692c59c1b868f019d41cd74fd60729f280bd7",
+      "bytes": 2780
+    },
+    {
+      "path": "results/R_LAG/E1_states.csv",
+      "sha256": "d1782f2b0a98253e166e6864f11c72374b1e058e129f4383fd6642f0b887b896",
+      "bytes": 293874
+    },
+    {
+      "path": "results/R_LAG/four_method_objectives.csv",
+      "sha256": "7701e152869be8468482c7e70736826cfd1712111102cfe12fcc8f53a9fdf75e",
+      "bytes": 4359
+    },
+    {
+      "path": "results/R_LAG/optimizer_attempts.csv",
+      "sha256": "20edf6fc65c0419c044d94cc7732325bbb84378a40a6680858df9e627e8d4327",
+      "bytes": 11224
+    },
+    {
+      "path": "results/R_LAG/optimizer_calls.jsonl",
+      "sha256": "19bfa04e5331c1a4fd68e8274c04d319e1606a54cc0a2f8182e78e8c577001b8",
+      "bytes": 68903
+    },
+    {
+      "path": "results/R_LAG/paired_comparisons.csv",
+      "sha256": "66f870043c7cfb8e08b6a62a18435fe7a3ceefeb85d27e4c263bda375c12a4f0",
+      "bytes": 1201
+    },
+    {
+      "path": "results/R_LAG/planned_controls.csv",
+      "sha256": "84a850dba75f6af5d60e41ab6bad3451e5badae22b1d64291a06c3dbac010359",
+      "bytes": 31855
+    },
+    {
+      "path": "results/R_LAG/predicted_plans.csv",
+      "sha256": "7dd9e85545315b93c4c0a24ae7a83eec2addd844a3ccfe20906a643d826ea078",
+      "bytes": 4159
+    },
+    {
+      "path": "results/R_LAG/prediction_error_time_means.csv",
+      "sha256": "02f1fb29504986412125e0b95edbbd62e980bc8396c80e61aaa1b15992bbfe53",
+      "bytes": 312
+    },
+    {
+      "path": "results/R_LAG/provenance_checks.csv",
+      "sha256": "4610e5c2f87de8a6617fe2de447bd3b1ff6f8b1ab64a5a09163b79da1844d753",
+      "bytes": 244
+    },
+    {
+      "path": "results/R_LAG/quality.csv",
+      "sha256": "f5cbdc0fd7b857072a41da08dc5887feb09c44244b7ce4ec0e764f5fbb15a1de",
+      "bytes": 1278
+    },
+    {
+      "path": "results/R_LAG/replanning_time_comparison.csv",
+      "sha256": "6461be2da8792711d9c4966e793a47b6cc31a24c9013ec3ad0fc42585843dc08",
+      "bytes": 2447
+    },
+    {
+      "path": "results/R_LAG/solver_audit.csv",
+      "sha256": "89b27a041615c58270bfbb608a44ea7572f0abe51f9019624996d469703f3ca6",
+      "bytes": 2038
+    },
+    {
+      "path": "results/R_LAG/tasks.csv",
+      "sha256": "f146132ce8fb2fde02a2958a23f83a16b24f801eba59903b53abb3b55fad18af",
+      "bytes": 220
+    },
+    {
+      "path": "results/R_LAG/timing.csv",
+      "sha256": "84466c669430f612c7aa19da735ff113a0b8e218da256fb9cbb5d24102b0c8a9",
+      "bytes": 3562
+    }
+  ]
+}

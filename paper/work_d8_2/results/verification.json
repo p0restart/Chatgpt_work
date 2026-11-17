@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "quality_rows": 478,
+  "all_quality_passed": true,
+  "independent_trajectories": 8,
+  "independent_max_error": 5.7904347983139814e-11,
+  "source_files_checked": 182,
+  "all_D7_D8_1_sources_unchanged": true,
+  "lag_provenance_checks": 6,
+  "no_K6_or_PGR_reoptimization": true,
+  "external_independent_review": false
+}

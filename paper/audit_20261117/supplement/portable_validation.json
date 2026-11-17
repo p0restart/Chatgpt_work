@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "check_count": 86,
+  "exit_code": 0,
+  "isolated_package_used": true,
+  "original_project_fallback_absent": true,
+  "saved_static_files": 18,
+  "checks": {
+    "static_feasibility": 12,
+    "static_fixed_control_replay": 54,
+    "sensitivity_saved_control_replay": 20
+  },
+  "diagnostics": {
+    "scope": "D7 static three capacities, all recorded paths and static validation calls",
+    "audit_rows": 45,
+    "optimizer_calls": 285,
+    "all_optimizer_success": true,
+    "max_relative_improvement": 1.2417558085046781e-09,
+    "max_incumbent_residual": 9.442517299790289e-05,
+    "max_violation": 5.773159728050814e-15,
+    "max_response_distance": 5.366251439059555e-05,
+    "max_three_path_spread": 4.01151318299986e-05,
+    "fixed_control_replay_max_difference": 6.724953927061961e-11
+  },
+  "unchanged_csv_comparison": {
+    "audit_checks.csv": false,
+    "capacity_by_slot.csv": false,
+    "common_attack_comparison.csv": false,
+    "complete_controls.csv": true,
+    "fixed_control_replay.csv": false,
+    "own_response_comparison.csv": false,
+    "sensitivity_replay.csv": false
+  },
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "numpy": "1.26.4",
+  "pandas": "2.1.4",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "script_sha256": "2c46a4e3d795fabc2d853e32d218d72695bbe1abfe828f00642235f45b8c6954",
+  "scope": "Saved controls only; no optimization. Temporary copied package used raw_static with original fallback absent."
+}

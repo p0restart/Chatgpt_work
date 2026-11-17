@@ -1,0 +1,42 @@
+[
+  {
+    "figure": "fig4_1_topology.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  },
+  {
+    "figure": "fig4_2_common_attack_difference.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  },
+  {
+    "figure": "fig4_3_GF_state_common_aG.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  },
+  {
+    "figure": "fig4_4_rolling_gain.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  },
+  {
+    "figure": "figA1_GF_state_common_a0.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  },
+  {
+    "figure": "figA2_GF_state_difference_a0.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  },
+  {
+    "figure": "figA2_GF_state_difference_aG.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  },
+  {
+    "figure": "figA4_GF_defense_actions.pdf",
+    "collision_exit": 0,
+    "text_exit": 0
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "sha256": "e6fbb9f5433b79de50d206087479f7ba6fa744140974b08b3e12842b589a66c2",
+  "date": "2026-11-15",
+  "criteria": "Unspecified EI conference; methodological rigor, contribution distinctness, evidence boundaries, clarity and reproducibility. No venue-specific acceptance claim.",
+  "evidence": [
+    "../raw_d7/results",
+    "../results",
+    "../figures",
+    "../chapter3_mechanical_changes.json",
+    "../source_handoff"
+  ],
+  "review_emphases": [
+    "mathematical validity and algorithm fidelity",
+    "experiment arithmetic and provenance",
+    "novelty and argument clarity"
+  ]
+}

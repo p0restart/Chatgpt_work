@@ -1,0 +1,93 @@
+{
+  "pdf": "paper\\final_20261115\\figures\\fig4_3_GF_state_common_aG.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 38,
+  "text_trace_count": 38,
+  "stroke_path_count": 66,
+  "filled_region_count": 30,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 3,
+    "warn": 0,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-stroke",
+      "page": 1,
+      "message": "Text is crossed by 2 stroked path(s)",
+      "text": "(b) Core database",
+      "text_bbox": [
+        238.15562438964844,
+        24.37412452697754,
+        319.1862487792969,
+        38.567989349365234
+      ],
+      "other_text": null,
+      "other_bbox": [
+        223.3937530517578,
+        27.97412109375,
+        283.99688720703125,
+        27.97412109375
+      ],
+      "object_count": 2,
+      "object_indexes": [
+        68,
+        69
+      ]
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-text",
+      "page": 1,
+      "message": "Text boxes overlap by 88.9% of the smaller box",
+      "text": "(b) Core database",
+      "text_bbox": [
+        238.15562438964844,
+        24.37412452697754,
+        319.1862487792969,
+        38.567989349365234
+      ],
+      "other_text": "G",
+      "other_bbox": [
+        245.7937469482422,
+        23.342124938964844,
+        251.99374389648438,
+        32.66212463378906
+      ],
+      "object_count": 1,
+      "object_indexes": []
+    },
+    {
+      "severity": "FAIL",
+      "kind": "text-text",
+      "page": 1,
+      "message": "Text boxes overlap by 88.9% of the smaller box",
+      "text": "(b) Core database",
+      "text_bbox": [
+        238.15562438964844,
+        24.37412452697754,
+        319.1862487792969,
+        38.567989349365234
+      ],
+      "other_text": "F",
+      "other_bbox": [
+        290.3968811035156,
+        23.342124938964844,
+        294.99688720703125,
+        32.66212463378906
+      ],
+      "object_count": 1,
+      "object_indexes": []
+    }
+  ]
+}

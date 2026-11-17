@@ -1,0 +1,13 @@
+{
+  "original_files_checked": 1102,
+  "original_changes": [],
+  "required_files_present": true,
+  "points": 5,
+  "fresh_paths": 3,
+  "optimizer_attempts": 90,
+  "all_optimizer_status_zero": true,
+  "sample_negative_eigenvalue_count": 0,
+  "max_path_distance": 2.965746833011318e-05,
+  "strict_global_certificate": false,
+  "state": "WAITING_USER_E_REVIEW"
+}

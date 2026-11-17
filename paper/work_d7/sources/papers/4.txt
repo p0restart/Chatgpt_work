@@ -1,0 +1,2517 @@
+1
+MASAR: Multi-stage Attack Surface Analysis
+and Reasoning Framework for Telecom
+Networks
+Heba Osama1
+Wessam DeifAllah1
+Ahmed Saafan1
+Haitham Ghalwash2
+1Cyshield Company, Cairo, Egypt
+2Ethical Hacking and Cybersecurity, Coventry University – Egypt Branch,
+hosted at The Knowledge Hub Universities, New Cairo, Egypt
+heba.osama@cyshield.com
+wessam.deifallah@cyshield.com
+ahmed.saafan@cyshield.com
+haitham.ghalwash@tkh.edu.eg
+Abstract—The increasing complexity of modern telecommunications
+networks introduces security challenges that require systematic threat
+analysis. However, a gap remains between architectural threat modeling
+frameworks, such as Spoofing, Tampering, Repudiation, Information
+Disclosure, Denial of Service, and Elevation of Privilege (STRIDE), and
+operational knowledge bases, such as the MITRE Five-G Hierarchy
+of Threats (FiGHT). This gap limits the ability to connect architectural
+weaknesses with specific protocol behaviors and attack sequences.
+This paper presents Multi-stage Attack Surface Analysis and Rea-
+soning (MASAR), a formal framework that bridges this gap through
+three layers: strategic threat mapping, logical attack path decomposition
+using directed acyclic graphs (DAGs), and operational synthesis of
+tactics, techniques, and procedures (TTPs). MASAR is evaluated using
+a 5G-ready IP Multimedia Subsystem (IMS) architecture, examining two
+signaling attack scenarios: early media billing bypass through Session
+Initiation Protocol (SIP) signaling and subscriber information disclosure
+and topology discovery through the Diameter Cx interface. MiniZinc
+constraint models are used to analyze the reachability of unsafe protocol
+states. The analysis demonstrates how MASAR connects architectural
+threats with specific protocol behaviors and supports security controls
+that account for network states in telecommunications systems.
+Index Terms—Threat Modeling Methodology, Telecom Cybersecurity,
+Cross-Layer Synthesis, MITRE FiGHT, STRIDE, TTP Formalization.
+1
+INTRODUCTION
+The evolution of telecommunications networks toward cloud-
+native architectures has introduced new security challenges. Fifth
+Generation (5G) networks rely on a Service-Based Architecture
+(SBA), where network functions communicate through standard-
+ized interfaces and Application Programming Interfaces (APIs),
+as defined by the Third Generation Partnership Project (3GPP)
+in TS 23.501 [1]. Although these technologies improve network
+flexibility and service deployment, they also introduce additional
+interfaces, dependencies, and potential attack paths. Recent studies
+have highlighted security threats affecting different 5G network
+domains and the challenges associated with their increasingly
+complex architectures [2], [3].
+The security architecture defined in 3GPP TS 33.501 provides
+mechanisms for protecting network functions and their commu-
+nication interfaces [4]. However, assessing individual security
+mechanisms does not necessarily reveal how weaknesses across
+multiple interfaces can be combined into a complete attack
+sequence. Recent research has emphasized the importance of
+analyzing interconnected vulnerabilities and multistage attacks in
+5G environments [5]. This creates a need for threat analysis meth-
+ods that consider both architectural weaknesses and the protocol
+behaviors through which attacks may occur.
+Existing security approaches address these challenges from
+different perspectives. Architectural threat modeling methods,
+such as Spoofing, Tampering, Repudiation, Information Disclo-
+sure, Denial of Service, and Elevation of Privilege (STRIDE)
+[6], and the Process for Attack Simulation and Threat Analysis
+(PASTA) [7], help identify potential threats and weaknesses in
+system design. However, translating these findings into specific
+protocol actions and state transitions often requires additional tech-
+nical analysis. In contrast, operational knowledge bases, including
+the MITRE Five-G Hierarchy of Threats (FiGHT) [8], organize
+known adversarial behaviors into tactics and techniques. Although
+both approaches are valuable, they serve different purposes and
+do not independently provide a complete process for tracing
+architectural threats to executable protocol sequences.
+This distinction motivates the development of Multi-stage
+Attack Surface Analysis and Reasoning (MASAR), a formal threat
+modeling framework that connects architectural threat identifi-
+cation with detailed protocol analysis. MASAR follows three
+layers: strategic threat mapping, logical attack path decomposition,
+and operational synthesis of tactics, techniques, and procedures
+(TTPs). Directed acyclic graphs (DAGs) are used to represent
+attack dependencies, while constraint-based models examine the
+reachability of unsafe protocol states.
+Traditional threat modeling approaches provide useful meth-
+ods for identifying security concerns, but their application to com-
+plex telecommunications systems often requires substantial analyst
+interpretation. A single communication session may involve sev-
+eral network functions, signaling protocols, and state transitions.
+arXiv:2610.29343v1  [cs.CR]  21 Oct 2026
+
+2
+Consequently, an architectural threat may remain insufficiently
+understood unless the conditions and sequence of actions required
+for exploitation are also examined.
+Formal modeling provides a structured way to represent these
+relationships. Graph-based approaches support the analysis of
+attack dependencies and potential paths through interconnected
+system components [9]. In MASAR, formal threat analysis pro-
+vides three main benefits:
+•
+Structured Threat Decomposition: Architectural threats
+are represented through logical attack paths, allowing their
+underlying conditions and technical actions to be examined
+systematically.
+•
+Analysis of Protocol States and Dependencies: Formal
+models represent relationships between protocol actions
+and system states, supporting the identification of potential
+attack sequences that may not be apparent from isolated
+security checks.
+•
+Support for Security Verification: Constraint-based
+analysis enables the examination of security properties and
+the identification of reachable unsafe states under explicitly
+defined assumptions.
+The MASAR framework applies these principles to a 5G-ready
+Internet Protocol (IP) Multimedia Subsystem (IMS) architecture.
+The evaluation examines two signaling attack scenarios: early-
+media billing bypass involving the Session Initiation Protocol
+(SIP), and unauthorized subscriber and routing information disclo-
+sure through the Diameter Cx interface. These scenarios illustrate
+how architectural trust assumptions and protocol interactions can
+be analyzed to identify potential security weaknesses.
+The primary contributions of this paper are summarized as
+follows:
+•
+MASAR Threat Modeling Framework: A three-layer
+methodology connecting architectural threat identification,
+logical attack path decomposition, and operational threat
+analysis.
+•
+Formal Attack Path Analysis: A graph-based represen-
+tation of attack dependencies, combined with constraint
+models for examining protocol states and potential viola-
+tions of security properties.
+•
+IMS Security Evaluation: An application of MASAR to
+two signaling attack scenarios, illustrating the relationship
+between architectural weaknesses, protocol behaviors, and
+potential security controls.
+The remainder of this paper is organized as follows. Section 2
+reviews existing research on architectural threat modeling, telecom
+security knowledge bases, attack graph analysis, and protocol
+security. Section 3 presents the MASAR methodology, including
+strategic threat mapping, logical attack path decomposition, and
+operational TTP synthesis.
+Section 4 evaluates MASAR using two IMS signaling attack
+scenarios: early-media billing bypass through SIP and unautho-
+rized information disclosure through Diameter Cx.
+Section 5 presents the constraint-based models, security prop-
+erties, and verification results demonstrating unsafe-state reacha-
+bility under the specified model assumptions.
+Section 6 discusses the findings, limitations, and proposed
+architectural countermeasures. Finally, Section 7 concludes the
+paper and outlines directions for future research.
+2
+RELATED WORK
+Research relevant to MASAR spans architectural threat modeling,
+telecommunications security knowledge bases, graph-based attack
+analysis, and empirical protocol security research. These areas
+provide complementary perspectives, ranging from identifying
+architectural weaknesses and classifying adversarial behavior to
+analyzing attack dependencies and protocol-level vulnerabilities.
+Table 1 categorizes the relevant methodologies, knowledge
+bases, security guidance, and modeling techniques according to
+their primary purposes and relationships to MASAR.
+Building on these complementary approaches, MASAR inte-
+grates architectural threat identification, logical attack path decom-
+position, and operational TTP synthesis within a structured three-
+layer methodology. Constraint- based modeling further supports
+the examination of protocol states and unsafe-state reachability
+under explicitly defined assumptions.
+2.1
+Architectural Threat Modeling Frameworks
+Architectural threat modeling supports the systematic identifica-
+tion of security weaknesses in system components, interfaces, and
+trust boundaries. Farooqui et al. [15] present a layered threat model
+for 5G systems that maps threats to architectural layers, affected
+technologies, and potential entry points. STRIDE [6] provides
+a structured classification of security threats, while PASTA [7]
+incorporates business objectives, technical risks, and attack sce-
+narios. Although these methods provide valuable foundations for
+security assessment, translating architectural findings into specific
+signaling procedures and protocol state transitions requires further
+analysis.
+Recent research has examined security threats across increas-
+ingly complex telecommunications architectures. Tariq et al. [3]
+investigate security threats in private 5G and beyond 5G networks
+through layered analysis. Breeden et al. [5] examine security
+vulnerabilities in 5G network slicing and the relationships between
+potential attack scenarios. These studies highlight the importance
+of considering dependencies across network components rather
+than treating security threats as isolated events.
+Graph-based approaches provide structured representations of
+attack dependencies. Kordy et al. [16] examine foundations for
+attack and defense modeling, while Wide l et al. [17] survey
+formal methods for analyzing and generating attack trees. Konsta
+et al. [18] review approaches for automatically generating attack
+trees and attack graphs. More recently, Palma et al. [12] propose
+a scalable approach to attack graph generation that supports
+progressive analysis of potential attack paths. Zhang et al. [19]
+investigate automated attack graph generation using graph neural
+networks and Bayesian models for industrial networks. Similarly,
+Saint-Hilaire et al. [13] present an approach for generating attack
+and defense graphs to support the analysis of security events and
+potential countermeasures.
+2.2
+Telecom Knowledge Bases and Matrices
+Telecommunications security knowledge bases provide structured
+representations of adversarial behavior and support threat identifi-
+cation, classification, and security operations. MITRE FiGHT [8]
+organizes tactics and techniques relevant to 5G networks. Simi-
+larly, the Bhadra framework [10] provides a taxonomy of threats
+affecting mobile communication systems. The GSM Association
+(GSMA) FS.31 document [11] complements these resources by
+providing baseline security controls for mobile network operators.
+
+3
+TABLE 1
+Relevant Security Approaches and Their Relationship to MASAR
+Approach / Resource
+Category
+Primary Purpose
+Relationship to MASAR
+STRIDE [6]
+Threat modeling methodology
+Architectural threat identification
+and classification
+Used in Layer 1 to identify and classify archi-
+tectural threats.
+MITRE FiGHT [8]
+Telecom threat knowledge base
+Classification of adversarial tactics
+and techniques
+Used in Layer 3 to map protocol actions to
+existing or candidate techniques.
+Bhadra [10]
+Telecom threat taxonomy
+Classification of threats affecting
+mobile networks
+Provides related background for telecom-
+specific threat categorization.
+GSMA FS.31 [11]
+Telecom security guidance
+Baseline security controls for mo-
+bile network operators
+Provides general security control guidance
+relevant to telecom network infrastructure.
+Attack Graph
+Approaches [12], [13]
+Graph-based security analysis
+Representation of attack dependen-
+cies and relationships
+Provide related foundations for the DAG-
+based decomposition used in Layer 2.
+MiniZinc [14]
+Constraint modeling language
+Formal representation and analysis
+of security constraints
+Used to model protocol states and examine
+unsafe-state reachability.
+Recent research has extended telecommunications security
+analysis beyond threat classification. Gong et al. [2] systematically
+examine attacks affecting standalone 5G networks, including user
+equipment, radio access networks, and core network components.
+Jelba and Sajan [20] propose a security framework for detecting
+threats across the control and user planes of cloud-native 5G
+networks. Their approach illustrates how relationships between
+signaling events and network behavior can support security moni-
+toring.
+These contributions provide valuable foundations for under-
+standing telecommunications threats and identifying adversarial
+behavior. However, threat classification, operational detection,
+and architectural threat decomposition address different stages of
+security analysis. MASAR focuses on connecting these stages by
+mapping architectural weaknesses to logical attack paths and de-
+riving protocol actions that can support operational threat analysis.
+2.3
+Empirical Protocol Security Research
+Empirical telecommunications security research has identified
+vulnerabilities affecting mobile communication protocols and ser-
+vices. Rupprecht et al. [21] demonstrate the ReVoLTE attack,
+which exploits keystream reuse in Voice over Long-Term Evolu-
+tion (VoLTE) communications. Lee et al. [22] introduce VWAna-
+lyzer to systematically examine security weaknesses in Voice over
+Wi-Fi (VoWiFi) protocols. While initial IMS research focused on
+VoLTE, modern 5G Standalone (SA) deployments rely on Voice
+over New Radio (VoNR), where the IMS core remains the central
+control plane for media session establishment over 5G Core (5GC)
+SBI and N5/Rx interfaces.
+Research involving IMS has also demonstrated weaknesses
+associated with signaling procedures and session management.
+Li et al. [23] investigate vulnerabilities in operational VoLTE
+networks, including signaling and billing related attacks. Lu et
+al. [24] examine ghost calls and demonstrate how IMS signaling
+behavior can be exploited to disrupt communication services.
+These findings highlight the importance of analyzing protocol in-
+teractions and session states when evaluating telecommunications
+security.
+Recent research provides additional perspectives on complex
+attack behavior. Gong et al. [2] review attacks across standalone
+5G architectures, while Saint-Hilaire et al. [13] present an auto-
+mated approach for generating attack and defense graphs. Their
+framework connects attack relationships with potential counter-
+measures, demonstrating the value of linking security analysis with
+operational response.
+Although existing studies provide substantial evidence of pro-
+tocol vulnerabilities and advanced attack modeling techniques,
+their objectives differ from the architectural transformation process
+proposed in MASAR. The framework combines strategic threat
+mapping, logical path decomposition, and operational TTP synthe-
+sis. Constraint-based analysis is then applied to examine whether
+selected protocol scenarios can reach unsafe states under specified
+assumptions.
+Together, the reviewed studies establish foundations for archi-
+tectural threat analysis, graph-based security modeling, telecom
+threat intelligence, and empirical protocol evaluation. MASAR
+integrates these perspectives into a methodology focused on the
+relationships between architectural threats, protocol behavior, and
+security properties.
+3
+METHODOLOGY: CROSS-LAYER SYNTHESIS
+The MASAR framework provides a structured methodology for
+connecting architectural security threats with specific protocol be-
+haviors and operational threat information. As illustrated in Fig. 1,
+the methodology consists of three layers: (1) Strategic Threat
+Mapping, (2) Logical Path Decomposition, and (3) Operational
+TTP Synthesis. Each layer builds on the output of the previous
+layer to establish a traceable relationship between architectural
+weaknesses, potential attack paths, and adversarial techniques.
+3.1
+Layer 1: Strategic Threat Mapping
+The first layer identifies potential security threats by examining the
+functional architecture, network components, interfaces, and trust
+boundaries. STRIDE [6] is used to classify threats associated with
+each component and its interactions with other network functions.
+Let N = {n1, n2, . . . , nk} represent the set of network
+components, and let S denote the set of STRIDE threat categories.
+The strategic mapping function is defined as (Eq.1):
+τ : N →P(S),
+(1)
+where P(S) represents the power set of the STRIDE cate-
+gories. For each component ni ∈N, the function τ(ni) identifies
+the set of potential threats associated with that component.
+This mapping provides a structured basis for examining archi-
+tectural weaknesses, such as insufficient validation of signaling
+messages, implicit trust between network functions, or inadequate
+protection of communication interfaces. Identified threats are
+
+4
+Layer 1: Strategic Threat Mapping (τ)
+Input: Architectural models, network
+components, and STRIDE categories
+Identifies architectural threats and trust boundaries
+Layer 2: Logical Path Decomposition (Gs = (V, E))
+Processing: DAG representation and AND/OR dependency analysis
+Represents attack dependencies and atomic protocol actions
+Layer 3: Operational TTP Synthesis (Tcandidate)
+Output: Known and candidate telecom adversarial techniques
+Connects protocol actions with operational security information
+Mapping Function τ(n)
+N →P(S)
+Leaf-Node Extraction ϕ(Gs)
+Gs →Vleaf
+Fig. 1. The MASAR workflow from architectural threat mapping (τ) to
+attack path decomposition (ϕ) and TTP synthesis (gTTP).
+associated with the relevant components and trust boundaries to
+maintain traceability throughout the subsequent analysis.
+However, identifying a threat category does not establish how
+the threat can be exploited. For example, classifying a compo-
+nent under information disclosure does not reveal the signaling
+sequence or protocol conditions that could expose sensitive infor-
+mation. Therefore, the threats identified in Layer 1 are examined
+further through logical attack path decomposition.
+3.2
+Layer 2: Logical Path Decomposition
+The second layer translates architectural threats into structured
+attack paths by examining the conditions and protocol actions
+required to reach an attacker objective. DAGs are used to represent
+dependencies between attack steps, while AND and OR gates
+describe their logical relationships. This representation builds on
+established approaches to attack and defense modeling [16], [18].
+MASAR represents attack dependencies using directed acyclic
+graphs (DAGs), with attack trees treated as a restricted hierarchical
+form of this representation. While attack trees organize prereq-
+uisites into distinct branches, the general DAG representation
+also supports shared dependencies across multiple attack paths.
+Consequently, the logical evaluation rules adopted by MASAR
+apply to both representations.
+Recent research has further demonstrated the value of formal
+and logical attack graph analysis. Catta et al. [25] present a formal
+approach for examining attack paths that may lead to prohibited
+system states. Their work uses game theoretic modeling and
+automata based verification to reason about system vulnerability.
+Similarly, Tayouri et al. [26] introduce CORAL, a framework that
+uses logical attack graphs to assess security risks in dynamic
+container environments. These studies illustrate how graph repre-
+sentations can support structured security analysis across complex
+system components.
+For each identified threat s ∈τ(ni), the relevant architectural
+conditions and protocol interactions are examined to construct
+an attack graph. The attacker objective is represented by the
+root node, while prerequisite conditions and protocol actions are
+represented by the remaining nodes. Dependencies are established
+according to the conditions required to satisfy each attack objec-
+tive.
+The resulting attack graph is represented as (Eq. 2):
+Gs = (V, E),
+(2)
+where V is the finite set of nodes representing attack actions
+or logical conditions, and E ⊆V × V is the set of directed
+dependency edges.
+Each directed edge (u, v) ∈E indicates that node u con-
+tributes to satisfying the condition represented by node v. The
+prerequisite nodes of v are therefore defined as (Eq. 3):
+ch(v) = {u ∈V | (u, v) ∈E}.
+(3)
+Each node is assigned a Boolean state x(v) ∈{0, 1}, where
+x(v) = 1 indicates that its corresponding attack condition is sat-
+isfied. Leaf nodes represent atomic protocol actions or conditions,
+while internal nodes combine their dependencies through AND or
+OR logic.
+The activation state of each node is evaluated as follows (Eq.
+4):
+x(v) =
+
+
+
+
+
+
+
+
+
+
+
+a(v),
+v ∈Vleaf,
+Y
+u∈ch(v)
+x(u),
+type(v) = AND,
+max
+u∈ch(v) x(u),
+type(v) = OR,
+(4)
+where a(v) ∈{0, 1} indicates whether the atomic action or
+condition represented by a leaf node is satisfied. Each internal
+node is assigned a logical type from {AND, OR}.
+Under AND logic, all prerequisite conditions must be satisfied.
+Under OR logic, satisfying at least one prerequisite condition is
+sufficient to activate the corresponding node.
+The set of leaf nodes is defined as shown (Eq.5):
+Vleaf = {v ∈V | ch(v) = ∅}.
+(5)
+The leaf-node extraction function is expressed as shown in Eq.
+6:
+ϕ(Gs) = Vleaf.
+(6)
+This function identifies the atomic actions and conditions
+represented within the attack graph. Their logical dependencies
+determine whether the root attack objective can be satisfied.
+For a particular assignment of atomic conditions, the attack
+objective is satisfied when (7) holds:
+x(root(Gs)) = 1.
+(7)
+The logical representation supports the systematic examina-
+tion of attack dependencies and identifies conditions relevant to
+successful exploitation. It also provides a basis for determining
+where security controls may interrupt an attack sequence.
+Although the DAG represents logical dependencies, the tem-
+poral ordering of signaling messages requires additional protocol
+constraints. Such constraints are examined through the formal
+verification models presented in Section 5.
+
+5
+3.3
+Layer 3: Operational TTP Synthesis
+The third layer translates the atomic protocol actions identified
+during logical decomposition into operational threat information.
+Its objective is to connect technical behavior represented in the
+attack graph with relevant adversarial tactics and techniques.
+Each identified action is examined in relation to existing
+telecom threat knowledge bases, particularly MITRE FiGHT [8].
+This analysis considers the associated protocol, attacker objective,
+required conditions, and relationship to existing techniques.
+The operational mapping function is represented in (Eq. 8)
+gTTP : Vleaf →TFiGHT ∪Tcandidate,
+(8)
+where TFiGHT represents existing techniques in MITRE
+FiGHT, and Tcandidate represents candidate techniques that re-
+quire further assessment.
+STRIDE Category
+s ∈τ(ni)
+(e.g., Info Disclosure)
+DAG Attack Graph
+Gs = (V, E)
+Analyst-guided
+protocol decomposition
+MiniZinc CSP Model
+¬Psafe
+(Violation Query)
+Attack conditions
+→CSP constraints
+Decompose
+Formalize
+Fig. 2. MASAR pipeline: from STRIDE category to MiniZinc CSP model
+The transformation pipeline shown in Fig. 2 connects archi-
+tectural threat identification with logical attack decomposition and
+constraint-based verification. First, a STRIDE threat s ∈τ(ni)
+is associated with an attacker objective represented by the root
+node of an attack DAG Gs. The objective is decomposed into
+prerequisite conditions and protocol actions through analysis of
+the relevant network architecture, trust boundaries, and applicable
+protocol specifications. Mandatory prerequisites are represented
+through AND dependencies, whereas alternative conditions are
+represented through OR dependencies.
+Second, the attack graph provides a structured basis for identi-
+fying the protocol states, conditions, and events relevant to formal
+verification. These elements are represented using finite-domain
+variables and constraints in MiniZinc. Logical dependencies are
+modeled through Boolean constraints, while temporal ordering
+and state transitions are specified separately according to the
+relevant protocol behavior. The resulting constraint satisfaction
+problem is evaluated against a defined safety property Psafe.
+To identify a potential unsafe execution, the solver searches for
+a satisfying assignment to ¬Psafe under the specified model
+assumptions and execution bounds.
+In the current implementation, the transformation from
+STRIDE threat categories to attack DAGs and the corresponding
+MiniZinc constraint models is performed manually by security
+researchers. The process follows a structured, analyst-guided
+methodology based on architectural analysis, protocol specifica-
+tions, and identified attack dependencies. Automated generation of
+attack DAGs and executable constraint models is outside the scope
+of the present implementation and is identified as a direction for
+future work.
+When an identified protocol action corresponds to an existing
+technique, it is associated with the relevant knowledge base entry.
+Otherwise, the action may be documented as a candidate tech-
+nique, together with its protocol context, required conditions, and
+potential security implications.
+This distinction separates the identification of potentially
+unclassified behavior from the confirmation of a novel attack
+technique. Establishing novelty requires further comparison with
+existing research, documented vulnerabilities, and relevant threat
+knowledge bases.
+The synthesis process establishes a traceable relationship be-
+tween architectural threats and operational security information.
+Its outputs can support the development of detection requirements,
+security analysis procedures, and architectural countermeasures.
+Table 2 summarizes the mathematical notation and its role in
+the MASAR methodology.
+TABLE 2
+Mathematical Notation Used in MASAR
+Symbol
+Definition
+Role
+N
+Set of network components
+Architectural elements
+S
+Set of STRIDE categories
+Threat classification
+τ
+N →P(S)
+Strategic threat mapping
+Gs = (V, E)
+Attack graph for threat s
+Logical attack representation
+ch(v)
+Prerequisite nodes of v
+Attack dependencies
+x(v)
+Boolean node state
+Condition satisfaction
+a(v)
+Atomic condition state
+Leaf-node evaluation
+Vleaf
+Nodes without prerequisites
+Atomic actions and conditions
+ϕ(Gs)
+Leaf-node extraction
+Logical decomposition
+gTTP
+Operational technique map-
+ping
+TTP synthesis
+Tcandidate
+Candidate techniques
+Further security assessment
+3.4
+Algorithmic Representation of the Transformation
+Process
+The MASAR transformation process combines logical attack
+graph analysis with operational technique mapping. Algorithm 1
+provides a procedural representation of the methodology, includ-
+ing the extraction of atomic actions, evaluation of attack depen-
+dencies, and identification of candidate operational techniques.
+The algorithm describes the analytical steps followed by se-
+curity researchers rather than an implemented automated trans-
+formation system. In the current evaluation, STRIDE threat map-
+ping, attack DAG construction, and MiniZinc constraint model
+development are performed manually. Automating these stages is
+identified as a direction for future work.
+For each attack graph, the algorithm first identifies the leaf
+nodes representing atomic protocol actions or conditions. It then
+evaluates the remaining nodes according to their logical depen-
+dencies using a topological ordering of the DAG. This ensures
+that prerequisite conditions are evaluated before the nodes that
+depend on them, following established graph traversal principles
+[27].
+The resulting atomic actions are examined against existing
+technique definitions to determine whether they correspond to
+known adversarial behavior or require further assessment.
+The algorithm provides a structured representation of the
+relationship between logical attack dependencies and operational
+threat information. It does not independently establish protocol
+exploitability or the novelty of identified techniques. These proper-
+ties require further validation through protocol constraints, formal
+verification, and comparison with existing security research.
+4
+METHODOLOGY EVALUATION: THE IMS CORE
+USE CASE
+The MASAR methodology is evaluated using a 5G-ready IP Multi-
+media Subsystem (IMS) architecture to examine how architectural
+
+6
+Algorithm 1 MASAR Transformation Pipeline
+Require: Attack DAG Gs = (V, E), leaf condition values a(v),
+existing technique set TFiGHT
+Ensure: Root condition state, atomic actions, candidate tech-
+niques
+1: Identify Vleaf using Eq. (5)
+2: Initialize Tcandidate ←∅
+3: Obtain a topological ordering (v1, . . . , v|V |) of Gs
+4: for all v ∈Vleaf do
+5:
+x(v) ←a(v)
+6: end for
+7: Evaluate logical attack dependencies
+8: for i = 1 to |V | do
+9:
+v ←vi
+10:
+if v /∈Vleaf then
+11:
+if type(v) = AND then
+12:
+x(v) ←Q
+u∈ch(v) x(u)
+13:
+else
+14:
+x(v) ←maxu∈ch(v) x(u)
+15:
+end if
+16:
+end if
+17: end for
+18: Map atomic actions to techniques
+19: for all v ∈Vleaf do
+20:
+Determine technique mapping gTTP(v)
+21:
+if gTTP(v) /∈TFiGHT then
+22:
+Tcandidate ←Tcandidate ∪{gTTP(v)}
+23:
+end if
+24: end for
+25: return x(root(Gs)), Vleaf, Tcandidate
+threats can be translated into protocol-level attack conditions and
+operational threat information. IMS provides a suitable evaluation
+context because session establishment, subscriber authorization,
+media handling, and charging involve interactions among multiple
+network functions and signaling protocols.
+The evaluation considers two scenarios: Early Media Free Ride
+and Unauthorized Diameter Cx Information Disclosure. Although
+these scenarios target different security objectives, both illustrate
+how weaknesses in trust enforcement and interactions between
+protocol procedures may create opportunities for abuse.
+For each scenario, the evaluation follows the MASAR analyti-
+cal layers. Layer 1 identifies the relevant architectural threats and
+network components. Layer 2 decomposes the attack objective into
+prerequisite conditions and protocol actions. Layer 3 interprets the
+resulting behavior in relation to operational threat information and
+candidate TTPs. The corresponding protocol-state constraints are
+examined through the formal models presented in Section 5.
+4.1
+IMS Architecture, Trust Boundaries, and End-to-
+End Threat Traceability
+The end-to-end application of MASAR is demonstrated through
+a conceptual IMS data flow diagram (DFD), which identifies
+the signaling entities, information flows, and trust boundaries
+associated with the two evaluated scenarios.
+Fig. 3 illustrates the two signaling paths considered in the
+evaluation. The first concerns SIP provisional signaling, early-
+media authorization, and charging enforcement. The second con-
+cerns Diameter Cx authorization requests and subscriber-related
+responses exchanged through the IMS signaling infrastructure.
+Responding
+SIP Endpoint
+IMS SIP
+Control Functions
+Media Authorization
+and Charging
+Controls
+SIP provisional
+signaling
+Session state
+and policy
+TB1
+Unauthorized
+Diameter Peer
+Diameter
+Edge / DRA
+HSS
+Subscriber Data
+UAR / UAA
+Cx signaling
+TB2
+Scenario 1: Early Media Free Ride
+Scenario 2: Diameter Cx Information Disclosure
+Fig. 3. Conceptual IMS DFD showing the evaluated signaling paths and
+trust boundaries.
+The DFD provides the architectural input to MASAR Layer 1.
+STRIDE categories are assigned by examining the relevant com-
+ponents, data flows,trust boundaries, and possible consequences of
+insufficient security enforcement. For the Early Media Free Ride
+scenario, the relevant concern is classified under Tampering, as
+manipulation of provisional signaling behavior may exploit inade-
+quate coordination between session state, media authorization, and
+charging controls.
+For the Diameter Cx scenario, the primary STRIDE category
+is Information Disclosure, as insufficient peer authorization may
+allow protected subscriber or routing information to be returned
+to an unauthorized requester. These architectural findings are
+then transformed into logical attack dependencies in Layer 2 and
+candidate operational technique descriptions in Layer 3.
+Table 3 summarizes the resulting end-to-end traceability for
+both scenarios.
+The traceability table demonstrates how the two scenarios
+progress from architectural threat identification to logical attack
+conditions and operational TTP synthesis. The detailed logical
+decomposition and protocol-level interpretation of each scenario
+are presented in the following subsections. The corresponding
+constraint models are provided in Section 5. The diagram and
+mappings represent the architectural assumptions used for this
+evaluation. They do not constitute validation of a specific deployed
+IMS topology.
+4.2
+Attack Vector 1: Early Media Free Ride (Zero An-
+swer Fraud)
+This scenario examines how interactions between SIP session es-
+tablishment, early-media authorization, and charging enforcement
+can create a potential opportunity for unauthorized media con-
+sumption. The analysis first establishes the technical assumptions
+and attacker capabilities, then decomposes the attack into logical
+conditions, and finally interprets the resulting behavior from an
+operational threat perspective.
+4.2.1
+Technical Scenario and Attack Preconditions
+The first stage establishes the protocol context and configuration
+assumptions required to analyze the attack. In particular, the
+scenario considers whether media can remain authorized during
+a provisional SIP session without triggering the charging control
+expected under the modeled deployment configuration.
+This scenario examines a potential inconsistency between
+early-media handling and charging enforcement in an IMS en-
+vironment [28]. SIP supports media exchange before final session
+
+7
+TABLE 3
+End-to-End MASAR Traceability for the Evaluated IMS Attack Scenarios
+Scenario
+DFD
+Element
+and
+Trust Boundary
+Layer 1: STRIDE
+Layer 2: Logical Attack Path
+Layer 3: Candidate TTP
+Early Media Free Ride
+SIP endpoint, IMS sig-
+naling control, and me-
+dia/charging
+authoriza-
+tion across TB1
+Tampering
+Establish
+provisional
+media
+and exploit insufficient charg-
+ing or duration enforcement
+through continued provisional
+signaling
+Provisional-State
+Early-
+Media Exploitation
+Unauthorized Diameter
+Cx Information Disclo-
+sure
+Diameter peer, signaling
+edge, and HSS access
+across TB2
+Information
+Disclosure
+Obtain signaling access, sub-
+mit a UAR, bypass insufficient
+peer authorization, and receive
+a UAA containing protected
+information
+Unauthorized Diameter Cx
+Subscriber and Topology In-
+formation Disclosure
+establishment, including during provisional signaling associated
+with 183 Session Progress responses.
+IMS charging behavior depends on the applicable charging
+architecture, network functions, and operator-configured trigger
+conditions. Consequently, a final 200 OK response is not uni-
+versally the first or only charging trigger. In the vulnerable
+configuration considered by MASAR, early media is authorized
+during the provisional session state, while the charging control
+under examination does not adequately account for this media
+usage before final session confirmation.
+An adversary may exploit this configuration by prolonging
+provisional signaling and maintaining RTP/SRTP media transmis-
+sion without triggering the expected charging control. The poten-
+tial bypass depends on insufficient early-media duration restric-
+tions, inadequate coordination between session-state and charging
+policies, or ineffective enforcement of early-media authorization
+mechanisms [29].
+The scenario begins when a SIP INVITE request initiates a
+communication session, following the signaling procedures de-
+fined in RFC 3261 [30]. A responding endpoint or an intermediary
+may return a 183 Session Progress response containing a
+Session Description Protocol (SDP) body. Depending on signal-
+ing exchange and applicable session policies, this response can
+contribute to the establishment of an early media path.
+The Real-time Transport Protocol (RTP) may then carry media
+before the session receives a final 200 OK response. In the
+modeled vulnerable configuration, media authorization is allowed
+during the provisional state, while the charging mechanism is
+assumed to depend on final session confirmation. An adversary
+controlling the responding endpoint may attempt to delay or
+withhold the final 200 OK response while maintaining the condi-
+tions necessary for early-media transmission. If the network lacks
+effective media-duration limits, charging controls, or session-state
+enforcement, media may continue to flow without being accounted
+for as intended.
+This scenario therefore illustrates a potential weakness in the
+coordination of SIP session-state management, media authoriza-
+tion, and charging enforcement. Its feasibility must be established
+against the specific IMS configuration and charging mechanisms
+under evaluation; it should not be assumed to arise from the use
+of early media alone.
+4.2.2
+Attack Path and Logical Decomposition
+Following the technical scenario definition, the potential attack is
+decomposed into a logical structure representing the conditions
+required to achieve the adversary’s objective. Consistent with
+MASAR Layer 2, the decomposition distinguishes mandatory
+prerequisites from alternative actions that may contribute to the
+same attack outcome.
+Fig. 4 illustrates the logical decomposition of the modeled
+attack.
+Subgoal G2 represents avoiding the charging control expected
+under the assumed deployment configuration. Node 2.1 represents
+withholding final SIP session confirmation, while Node 2.2 repre-
+sents delayed session rejection following provisional media trans-
+mission. Under insufficient charging and early-media enforcement,
+either behavior may contribute to unauthorized media consump-
+tion. A subsequent 4xx response terminates the attempted session
+but does not necessarily eliminate the accounting obligations
+associated with media already transmitted.
+Goal: Execute
+Zero Answer
+Fraud
+(AND)
+G1: Establish
+Early Media
+(AND)
+1.1 Receive
+SIP 183 Response
+1.2 Negotiate
+Early SDP
+G2: Avoid
+Charging Trigger
+(OR)
+2.1 Suppress
+Final 200 OK
+2.2 Delayed 4xx
+Rejection After
+Media Stream
+Fig. 4. DAG-based attack decomposition for the Early Media Free Ride
+scenario, represented in attack-tree form.
+The resulting logical path connects provisional session es-
+tablishment with continued media authorization and the absence
+of the expected charging event. Its success depends on the
+configuration assumptions identified in the preceding subsection,
+particularly the lack of effective controls limiting uncharged early
+media.
+4.2.3
+Operational Interpretation and TTP Mapping
+The final stage interprets the identified protocol actions in relation
+to operational threat behavior, consistent with MASAR Layer 3.
+This step connects the logical attack conditions with candidate
+technique descriptions without assuming that the behavior consti-
+tutes a previously unrecognized or independently validated attack
+technique.
+The early-media scenario involves manipulation of provisional
+SIP session behavior to maintain media transmission without the
+expected charging event. The relevant actions include maintaining
+provisional signaling, delaying final session confirmation, and
+
+8
+exploiting insufficient coordination between media authorization
+and charging controls.
+These behaviors are examined in relation to telecommuni-
+cations threat knowledge bases, including MITRE FiGHT [8].
+The resulting behavior is documented as a candidate technique,
+Provisional-State Early-Media Exploitation, for further assessment
+and classification.
+The analysis also identifies potential security control require-
+ments, including early-media duration restrictions, session-state-
+aware media authorization, and coordination between signaling
+and charging enforcement. The corresponding protocol-state as-
+sumptions and unsafe-state reachability condition are formalized
+in Section 5.
+4.3
+Attack Vector 2: Unauthorized Diameter Cx Infor-
+mation Disclosure
+The second scenario examines potential disclosure of subscriber
+authorization or internal IMS routing information through the
+Diameter Cx interface. As in the first scenario, the analysis begins
+with the technical preconditions, then identifies the logical attack
+path, and finally connects the observed protocol behavior with
+operational threat information.
+4.3.1
+Technical Scenario and Attack Preconditions
+This stage identifies the network functions, signaling procedures,
+and authorization assumptions relevant to the modeled information
+disclosure scenario. The primary concern is whether a Diameter
+peer lacking the required authorization can submit subscriber-
+related requests and receive information intended for trusted IMS
+signaling entities.
+The Cx interface supports communication between IMS con-
+trol functions and subscriber information systems. The User-
+Authorization-Request (UAR) and User-Authorization-Answer
+(UAA) procedures are defined in 3GPP TS 29.229 [31].
+The modeled security concern arises when an unauthorized
+Diameter peer can issue subscriber authorization requests that
+are accepted by the network and obtain response information that
+reveals subscriber status or internal routing details.
+Under normal operation, the Interrogating Call Session Con-
+trol Function (I-CSCF) exchanges Diameter messages with the
+Home Subscriber Server (HSS) through the Cx interface. The
+underlying Diameter protocol specifies peer relationships and
+message exchange procedures [32].
+A UAR carries information required for the subscriber autho-
+rization procedure, and the corresponding UAA returns the result
+and associated information defined by the applicable protocol
+procedure.
+The scenario assumes that an adversary has obtained access
+to a signaling path capable of reaching the relevant Diameter
+service and can cause requests to be accepted as originating
+from an authorized peer. This access and acceptance condition
+is an explicit prerequisite of the modeled attack, not an inherent
+property of the Cx interface.
+The adversary generates a UAR containing a target subscriber
+identity. If the Diameter edge infrastructure accepts and forwards
+the request, the HSS processes it according to the applicable
+authorization procedure.
+The response may provide information that helps distinguish
+subscriber authorization outcomes. Depending on the procedure
+and response content, additional routing information may also be
+exposed.
+Repeated queries could therefore support subscriber presence
+enumeration or reveal information about the internal IMS topology
+when peer authorization and information disclosure controls are
+insufficient.
+This scenario highlights the distinction between Diameter
+peer authorization and SIP-level subscriber authentication. These
+mechanisms operate at different stages of IMS signaling and
+provide different security functions; the presence of one does not
+automatically establish the effectiveness of the other.
+Two information-disclosure opportunities are considered:
+•
+Subscriber Authorization Enumeration: Differences be-
+tween successful authorization outcomes and subscriber-
+related error responses may reveal whether a queried
+identity is recognized or satisfies particular authorization
+conditions.
+Relevant
+3GPP
+experimental
+result
+codes
+include
+DIAMETER_ERROR_USER_UNKNOWN
+(5001)
+and
+DIAMETER_ERROR_IDENTITIES_DONT_MATCH
+(5002).
+These responses do not independently establish that the
+subscriber is currently registered or active.
+•
+Internal
+IMS
+Routing
+Information:
+Depending
+on
+the
+authorization
+procedure
+and
+applicable
+response
+conditions,
+the
+UAA
+may
+include
+a
+Server-Name
+AVP
+identifying
+an
+assigned
+S-
+CSCF or a Server-Capabilities AVP containing
+information relevant to S-CSCF selection.
+Disclosure of these attributes to an unauthorized peer
+may expose internal routing characteristics or network
+topology.
+4.3.2
+Attack Path and Logical Decomposition
+Following the identification of the required preconditions, the
+scenario is decomposed into a sequence of dependent signaling
+actions. This corresponds to MASAR Layer 2, in which an ar-
+chitectural information-disclosure threat is translated into explicit
+conditions and protocol-level actions.
+Layer 1 identifies the relevant information disclosure threat
+and the trust boundary between Diameter signaling peers and
+subscriber information services.
+Layer 2 represents the scenario through the following sequence
+of required conditions:
+1)
+The adversary obtains access to a Diameter signaling path
+capable of reaching the relevant authorization service.
+2)
+The adversary sends a UAR using a selected subscriber
+identity.
+3)
+The signaling infrastructure accepts and forwards the
+request.
+4)
+The HSS processes the request and generates a UAA.
+5)
+The returned information allows the adversary to infer
+subscriber authorization status or, under additional con-
+ditions, internal routing information.
+These actions depend on the successful satisfaction of the
+preceding conditions. The modeled attack therefore requires both
+signaling access and insufficient enforcement of the relevant au-
+thorization boundaries.
+Figure 5 illustrates the message exchange considered in this
+scenario.
+
+9
+Rogue Diameter
+Peer
+Diameter
+Edge / DRA
+HSS
+1. UAR
+2. Forward UAR
+3. UAA
+4. Response Information
+Fig. 5. UAR-based presence enumeration via the HSS.
+The sequence illustrates the causal relationships between unau-
+thorized signaling access, request acceptance, subscriber autho-
+rization processing, and response delivery. These dependencies
+provide the basis for the protocol ordering constraints used in the
+corresponding formal model.
+4.3.3
+Operational Interpretation and TTP Mapping
+The final stage examines how the modeled Diameter signaling
+behavior relates to operational threat information. Consistent with
+MASAR Layer 3, the objective is to interpret the protocol actions
+and identify potential technique descriptions rather than assume
+that every modeled behavior represents a novel or confirmed
+attack.
+The use of unauthorized Diameter queries to infer subscriber
+information or routing characteristics may be documented as a
+candidate reconnaissance technique.
+More specifically, the behavior is characterized in this study as
+the candidate technique Unauthorized Diameter Cx Subscriber and
+Topology Information Disclosure, subject to further assessment
+against existing telecom threat knowledge bases, including MITRE
+FiGHT [8].
+The scenario also identifies potential control requirements,
+including Diameter peer authentication, signaling access restric-
+tions, request authorization, and validation of information returned
+across trust boundaries.
+The corresponding protocol ordering assumptions and security
+properties are examined through the constraint model presented in
+Section 5.
+5
+FORMAL VERIFICATION VIA CONSTRAINT SAT-
+ISFACTION
+To examine the feasibility of the attack scenarios identified by
+MASAR, constraint satisfaction is used to analyze protocol states
+and their relationships. The verification process represents relevant
+signaling procedures as finite sets of variables and constraints, al-
+lowing the reachability of potentially unsafe states to be examined.
+The analysis focuses on two scenarios introduced in Section 4:
+Early Media Free Ride and unauthorized Diameter Cx information
+disclosure. The first examines the relationship between SIP session
+states, media authorization, and charging. The second examines
+whether insufficient Diameter peer authorization enforcement can
+permit protected subscriber or routing information to be disclosed
+to an unauthorized requester.
+Each scenario is represented as a constraint satisfaction prob-
+lem (CSP). A security property is defined to describe the expected
+safe behavior, and its negation is used to search for a violating
+execution trace. A satisfiable result indicates that a violating state
+is reachable under the modeled constraints. An unsatisfiable result
+indicates that no such state exists within the specified model and
+search bounds.
+The models are implemented using MiniZinc [14], a constraint
+modeling language that supports finite-domain variables and log-
+ical constraints. The corresponding executable specifications are
+provided in Appendix A.
+For consistency, both models are presented using four analyt-
+ical stages: model representation and assumptions, protocol con-
+straints, security properties and reachability analysis, and witness
+trace and result interpretation. Although the models address dif-
+ferent signaling protocols, this structure provides a common basis
+for describing their formulation and interpreting their outcomes.
+5.1
+Model 1: Early Media Billing Bypass
+The first model examines a potential inconsistency between SIP
+session progression, media authorization, and charging enforce-
+ment. It considers a network configuration in which media trans-
+mission is permitted during a provisional session state, while the
+charging event under investigation is associated with final session
+confirmation.
+The objective is to determine whether the modeled session can
+remain in a provisional state with media transmission authorized
+beyond a specified duration without the expected charging event.
+This analysis evaluates the reachability of the defined unsafe
+condition under the model’s assumptions; it does not, by itself,
+establish that the same behavior occurs in every IMS implementa-
+tion.
+5.1.1
+Model Representation and Assumptions
+The model represents the session as a sequence of T discrete steps.
+Each step corresponds to a state transition or an observation of the
+signaling process.
+At each step t ∈{1, . . . , T}, the system state is defined by
+four variables:
+•
+s[t]: The SIP session state, selected from the set ( 9)
+SSIP =
+(
+Idle, Trying, Provisional,
+Confirmed, Terminated
+)
+.
+(9)
+•
+m[t] ∈{0, 1}: The media authorization state, where 1
+indicates that the media gate is open.
+•
+c[t] ∈{0, 1}: The charging record state, where 1 indicates
+that the modeled charging event has occurred.
+•
+e[t] ∈[0, Tmax]: The elapsed duration associated with
+media authorization, bounded by Tmax.
+The complete system state at step t is represented as (Eq. 10)
+x[t] = ⟨s[t], m[t], c[t], e[t]⟩.
+(10)
+These variables describe the relationship between signaling
+progression, media availability, and charging behavior within the
+modeled network configuration.
+5.1.2
+Protocol Constraints
+The model defines transition constraints between consecutive
+session states.
+For all t ∈{1, . . . , T −1}, the following rules describe the
+relevant system behavior.
+
+10
+5.1.2.1
+Media Authorization: Entering the provisional
+state permits media transmission and initializes the elapsed du-
+ration (11):
+ s[t + 1] = Provisional ∧
+s[t]̸ = Provisional
+ ⇒
+ m[t + 1] = 1 ∧e[t + 1] = 0
+.
+(11)
+5.1.2.2
+Early Media Persistence: If the session remains
+provisional, the media gate remains open and the elapsed duration
+increases as(12):
+ s[t] = Provisional ∧
+s[t + 1] = Provisional
+ ⇒
+ m[t + 1] = 1 ∧e[t + 1] = e[t] + ∆t
+.
+(12)
+Here, ∆t represents the elapsed time between consecutive
+modeled states, measured in seconds. For the Early Media
+Billing Bypass scenario, ∆t = 15 seconds, consistent with
+the step_seconds parameter in the MiniZinc specification
+provided in Appendix A.
+5.1.2.3
+Session Confirmation and Charging: The mod-
+eled charging event is associated with a transition to the confirmed
+state as seen in Eq. 13:
+s[t + 1] = Confirmed ⇒c[t + 1] = 1.
+(13)
+This constraint represents the charging assumption used in the
+evaluated scenario. It does not imply that every IMS implementa-
+tion initiates charging exclusively after session confirmation.
+5.1.2.4
+Session Termination: When the session reaches
+the terminated state, the media gate closes as shown in Eq. 14:
+s[t + 1] = Terminated ⇒m[t + 1] = 0.
+(14)
+Together, these constraints define the relevant state relation-
+ships for the billing bypass scenario. The model examines whether
+the absence of a suitable duration restriction can permit media
+authorization to continue without the expected charging event.
+5.1.3
+Security Properties and Reachability Analysis
+The security objective is to prevent media transmission from
+remaining authorized beyond a specified duration without the
+expected charging event.
+Let Tguard denote the maximum permitted duration of un-
+charged early media. The unsafe condition is defined as (15)
+Φ(t) ≜s[t] = Provisional ∧
+m[t] = 1 ∧
+c[t] = 0 ∧
+e[t] > Tguard.
+(15)
+The safety property requires that this condition must not occur
+within the modeled execution (16):
+Psafe :
+∀t ∈{1, . . . , T},
+¬Φ(t).
+(16)
+To search for a potential violation, the safety property is
+negated as seen in Eq. 17:
+∃t ∈{1, . . . , T} :
+Φ(t).
+(17)
+A satisfying assignment for Eq. (17) represents a bounded
+execution in which media remains authorized beyond the guard
+duration without the modeled charging event.
+Conversely, an unsatisfiable result indicates that the specified
+violation is unreachable within the selected bounds and con-
+straints. Such a result does not establish security for implemen-
+tations or execution conditions outside the model.
+5.1.4
+Witness Trace and Result Interpretation
+A satisfying assignment, when obtained, can be represented as a
+state sequence (Eq. 18)
+σ = ⟨x[1], x[2], . . . , x[T]⟩.
+(18)
+Listing 1 presents the satisfying assignment obtained from
+executing the MiniZinc model. The solver identified an unsafe
+state at step 7, where the session remains provisional, media
+authorization is enabled, and the elapsed duration reaches 75
+seconds without the modeled charging event, exceeding the 60-
+second guard threshold.
+1 EARLY MEDIA REACHABILITY QUERY
+2 Violation step: 7
+3 Guard duration: 60 seconds
+4 Step duration: 15 seconds
+5
+6 STATE TRACE:
+7 t=1 state=Trying media=false charged=false elapsed=0
+8 t=2 state=Provisional media=true charged=false elapsed=0
+9 t=3 state=Provisional media=true charged=false elapsed=15
+10 t=4 state=Provisional media=true charged=false elapsed=30
+11 t=5 state=Provisional media=true charged=false elapsed=45
+12 t=6 state=Provisional media=true charged=false elapsed=60
+13 t=7 state=Provisional media=true charged=false elapsed=75
+Listing 1. MiniZinc execution output for the Early Media Billing Bypass
+reachability query.
+The relevant sequence consists of three stages:
+1)
+Session Initiation: A SIP INVITE initiates the session,
+while the media gate remains closed and no charging
+event has occurred.
+2)
+Early Media Establishment: The session enters the
+provisional state. Under the modeled media authorization
+policy, the media gate opens and the elapsed duration is
+initialized.
+3)
+Provisional State Persistence: The session remains pro-
+visional while media transmission is permitted. If the
+elapsed duration exceeds Tguard without the expected
+charging event, the unsafe condition is reached.
+The obtained witness trace confirms that the defined unsafe
+state is reachable within the modeled configuration and execution
+bounds. Its applicability to operational IMS deployments depends
+on the underlying media authorization, session timeout, and charg-
+ing assumptions.
+5.2
+Model 2: Unauthorized Diameter Cx Information
+Disclosure
+The second model examines a potential information disclosure
+scenario involving an unauthorized Diameter peer and the IMS
+Cx interface. The objective is to determine whether insufficient
+peer authorization enforcement permits a UAR to be accepted and
+a UAA containing protected subscriber or routing information to
+reach an unauthorized requester.
+The model represents peer authorization, request acceptance,
+and response disclosure as explicit conditions. It also models the
+
+11
+ordering of Diameter signaling events to ensure that the request is
+processed before the corresponding response is received.
+The security analysis focuses on the Diameter signaling trust
+boundary rather than the timing of SIP Digest authentication. The
+resulting reachability query examines whether unauthorized in-
+formation disclosure is possible under the specified configuration
+assumptions.
+5.2.1
+Model Representation and Assumptions
+The model represents the interaction between an unauthorized
+Diameter peer, the Diameter signaling infrastructure, and the
+Home Subscriber Server (HSS).
+The execution consists of five events as seen in Eq. 19:
+E =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+UAR_sent,
+UAR_forwarded,
+HSS_lookup,
+UAA_returned,
+Response_received
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+(19)
+Each
+event
+is
+assigned
+a
+discrete
+timestamp τ[e]
+∈
+{1, . . . , N}, where N = |E|.
+Distinct timestamps are required for the represented events
+(20):
+allDifferent ({τ[e] | e ∈E}) .
+(20)
+The model additionally defines three Boolean conditions:
+peer authorization, request acceptance, and protected response
+disclosure. These conditions are used to evaluate the Diameter
+Cx security property.
+5.2.2
+Protocol Constraints
+The modeled Diameter Cx exchange follows a sequence of depen-
+dent events. A UAR is sent and forwarded toward the HSS, which
+processes the authorization request before returning a UAA.
+The required event ordering is defined in Eq. 21:
+τUAR sent < τUAR forwarded
+< τHSS lookup
+< τUAA returned
+< τResponse received.
+(21)
+This ordering captures the causal relationships between request
+generation, forwarding, processing, and response delivery.
+The model also represents the authorization decision at the
+Diameter signaling boundary. Let A denote peer authorization,
+E denote peer authorization enforcement, and S denote the
+availability of protected response information.
+Request acceptance R is modeled as shown in Eq. 22:
+R = A ∨¬E.
+(22)
+Protected response disclosure D is modeled as shown in Eq.
+23:
+D = R ∧S.
+(23)
+These relationships describe the assumed vulnerable configu-
+ration. They are abstractions of the authorization and information-
+disclosure decisions, rather than a complete implementation of
+Diameter Cx processing.
+5.2.3
+Security Properties and Reachability Analysis
+The security objective of this scenario is to prevent unauthorized
+Diameter peers from obtaining protected subscriber authorization
+or internal IMS routing information through the Cx interface.
+Let A indicate that the requesting Diameter peer is authorized,
+R indicate that its UAR is accepted and processed, and D indicate
+that protected response information is disclosed to the requester.
+The security property is defined in Eq. 24:
+PCx :
+¬(¬A ∧R ∧D).
+(24)
+This property requires that an unauthorized peer must not both
+obtain acceptance of its authorization request and receive protected
+response information.
+To examine a potential violation, the corresponding reachabil-
+ity query is defined in Eq. 25:
+∃σ :
+¬A ∧R ∧D.
+(25)
+The modeled attack assumes that the adversary can reach
+the Diameter signaling infrastructure. Successful exploitation ad-
+ditionally requires insufficient peer authorization or signaling
+boundary enforcement and a UAA containing information useful
+to the adversary.
+The temporal ordering of UAR processing and UAA delivery
+remains relevant to constructing a valid protocol execution. How-
+ever, the ordering of Diameter authorization relative to SIP Digest
+authentication is not itself treated as a security violation.
+A satisfying assignment to the reachability query demonstrates
+that unauthorized information disclosure is consistent with the
+modeled assumptions. It does not independently establish that a
+deployed IMS network permits such access.
+5.2.4
+Witness Trace and Result Interpretation
+Listing 2 presents the satisfying assignment obtained from exe-
+cuting the MiniZinc model. The solver confirmed that the unau-
+thorized disclosure condition is reachable under the specified
+assumptions: peer authorization enforcement is disabled, the unau-
+thorized request is accepted, and protected response information
+is disclosed. The witness trace also satisfies the required ordering
+of Diameter Cx signaling events.
+1
+2 DIAMETER Cx DISCLOSURE QUERY
+3 Peer authorized: false
+4 Peer authorization enforced: false
+5 Request accepted: true
+6 Sensitive response available: true
+7 Response disclosed: true
+8
+9 EVENT TIMESTAMPS:
+10 UAR_sent : 1
+11 UAR_forwarded : 2
+12 HSS_lookup : 3
+13 UAA_returned : 4
+14 Response_received : 5
+Listing 2. MiniZinc execution output for unauthorized Diameter Cx
+information disclosure.
+The MiniZinc witness trace in Listing 2 confirms that the
+unauthorized disclosure condition is reachable under the modeled
+assumptions. With peer authorization enforcement disabled, the
+unauthorized UAR is accepted, allowing the modeled response
+disclosure to occur in accordance with Eq. (25). This result does
+not establish exploitability in a deployed IMS network or imply
+that every UAA contains protected information.
+
+12
+When peer authorization enforcement is enabled, the modeled
+unauthorized request is rejected, preventing the disclosure condi-
+tion from being satisfied. This illustrates the role of Diameter peer
+authorization in protecting subscriber and routing information.
+5.3
+Solver Configuration and Reproducibility
+Both verification scenarios are represented using MiniZinc con-
+straint models. The first examines bounded SIP session states, me-
+dia authorization, and charging conditions. The second examines
+Diameter Cx peer authorization, request acceptance, and potential
+disclosure of protected response information.
+The models are intended to support reproducibility by express-
+ing the relevant variables, transition rules, and security properties
+in an executable form.
+The executable specifications are provided in Appendix A.
+Reproduction of the analysis requires recording the MiniZinc
+version, solver backend, model parameters, and resulting solver
+status.
+The interpretation of each result depends on the following
+outcomes:
+•
+Satisfiable: A violating assignment exists within the spec-
+ified constraints and bounds.
+•
+Unsatisfiable: No violating assignment exists within the
+specified model and bounds.
+•
+Unknown or Incomplete: The solver has not established
+either result within the available execution conditions.
+A satisfying assignment should be accompanied by the corre-
+sponding witness trace, including the values of the relevant state
+variables or event timestamps.
+An unsatisfiable result should be reported with the corre-
+sponding model bounds and assumptions. Table 4 summarizes the
+configurations of both MiniZinc models.
+TABLE 4
+MiniZinc Model Configurations
+Parameter
+Model 1
+Model 2
+Target protocol
+SIP early media
+Diameter Cx
+Verification objective
+Uncharged
+media
+beyond
+guard duration
+Unauthorized response dis-
+closure
+Execution model
+Bounded session states
+Ordered Diameter events
+Primary assumptions
+Provisional media enabled;
+charging on confirmation
+Peer authorization enforce-
+ment configurable
+Default horizon
+7 state steps
+5 signaling events
+Verification method
+Constraint satisfaction
+Constraint satisfaction
+Both MiniZinc models produced satisfying assignments for
+their respective security-property violation queries. Model 1 iden-
+tified an unsafe provisional media state at step 7, while Model 2
+identified an unauthorized disclosure condition under the specified
+assumptions.
+The experiments were executed using MiniZinc IDE version
+2.10.1 with the Gecode solver (version 6.4). The Early Media
+Billing Bypass model used a seven-step execution horizon, a 60-
+second guard duration, and a 15-second time increment. The
+Unauthorized Diameter Cx Information Disclosure model used
+five ordered signaling events, with peer authorization enforcement
+disabled and sensitive response information assumed available.
+The MiniZinc environment reported total execution times of
+539 ms and 341 ms for Models 1 and 2, respectively. These
+durations include execution overhead and should not be interpreted
+as isolated solver computation times or scalability measurements.
+5.4
+Extending STRIDE Through MASAR
+MASAR is designed to complement and extend STRIDE rather
+than replace it. STRIDE provides the foundation for identifying
+and classifying architectural security threats in Layer 1 of the
+proposed methodology. MASAR builds upon these findings by
+introducing additional analytical stages that connect identified
+threats to logical attack dependencies, protocol-level security
+conditions, and operational threat information.
+Table 5 illustrates how STRIDE-based threat identification is
+extended through the MASAR methodology.
+TABLE 5
+Extension of STRIDE-Based Threat Analysis Through MASAR
+Analytical Stage
+Purpose
+Role in MASAR
+STRIDE-Based Threat
+Identification
+Identify architectural
+threats and security con-
+cerns
+Provides the initial threat classi-
+fication in Layer 1.
+Logical Attack Decom-
+position
+Represent attack prerequi-
+sites and dependencies
+Extends
+identified
+STRIDE
+threats into DAG-based attack
+representations in Layer 2.
+Protocol-Level
+Constraint Analysis
+Examine
+protocol
+states
+and unsafe-state conditions
+Formalizes selected attack con-
+ditions
+using
+MiniZinc
+con-
+straints.
+Operational TTP Syn-
+thesis
+Relate protocol behavior to
+adversarial techniques
+Connects identified actions to
+existing or candidate telecom
+TTPs in Layer 3.
+Security Control Identi-
+fication
+Identify controls associated
+with attack conditions
+Supports the derivation of poten-
+tial architectural and protocol-
+level countermeasures.
+The integration of these stages enables MASAR to connect
+STRIDE-based architectural threat identification with logical at-
+tack decomposition, protocol-state analysis, and operational TTP
+synthesis. Accordingly, MASAR should be understood as an ex-
+tension of architectural threat modeling rather than an alternative
+to STRIDE.
+The table describes methodological capabilities rather than
+experimentally established performance improvements. Quanti-
+tative conclusions regarding effectiveness, scalability, or analyst
+consistency require further evaluation.
+6
+DISCUSSION: GAP ANALYSIS AND ARCHITEC-
+TURAL COUNTERMEASURES
+The MASAR methodology aims to connect architectural security
+threats with specific protocol behaviors and operational security
+requirements. The IMS evaluation illustrates how interactions
+between signaling procedures, network states, and trust boundaries
+can create security risks that are not fully described by architec-
+tural threat classification alone.
+The two examined scenarios highlight different security con-
+cerns. Early Media Free Ride involves the relationship between
+session establishment, media authorization, and charging, while
+Unauthorized Diameter Cx Information Disclosure concerns the
+authorization of Diameter signaling requests and the potential
+exposure of subscriber or internal IMS routing information. Both
+scenarios demonstrate the importance of examining protocol con-
+ditions alongside architectural security controls.
+6.1
+The Signaling Plane Security Gap
+Telecommunications security frameworks provide valuable meth-
+ods for identifying and classifying threats across network compo-
+nents. However, classifying a threat does not necessarily explain
+the signaling sequence or system conditions required for its occur-
+rence.
+
+13
+The IMS scenarios illustrate this distinction. In the Early
+Media Free Ride scenario, the potential weakness arises from
+the relationship between provisional SIP signaling, media au-
+thorization, and charging policies. The security risk depends on
+whether media transmission can continue without the expected
+charging event or an appropriate duration restriction. Such risks
+are also recognized in the SIP early media security considerations
+described in RFC 3960 [28].
+Similarly, the Unauthorized Diameter Cx Information Disclo-
+sure scenario concerns the relationship between Diameter peer au-
+thorization and subscriber information access. Potential disclosure
+occurs when an unauthorized requesting entity receives Diameter
+authorization responses without sufficient enforcement of the rele-
+vant trust boundaries. Depending on the returned information, this
+may enable subscriber enumeration or reveal internal IMS routing
+characteristics.
+These scenarios demonstrate why threat classification and pro-
+tocol analysis should be considered together. MASAR addresses
+this requirement by connecting architectural threat categories
+with logical attack dependencies and the corresponding protocol
+conditions.
+6.2
+The Role of Constraint Solving in Protocol Security
+Analysis
+Constraint solving provides a structured approach for examin-
+ing relationships between protocol states, signaling events, and
+security properties. It allows potential attack conditions to be
+represented as logical constraints and evaluated within a defined
+model.
+In MASAR, constraint satisfaction is used to examine whether
+selected signaling scenarios can reach states that violate specified
+security requirements. The resulting assignments provide infor-
+mation about the conditions and event sequences associated with
+those states.
+This approach offers three main benefits:
+•
+Structured Representation of Protocol Behavior: Proto-
+col states, events, and security conditions can be expressed
+as variables and logical constraints. This provides a con-
+sistent representation of the interactions examined in each
+attack scenario.
+•
+Connection to Logical Attack Decomposition: The
+atomic actions and dependencies identified in the MASAR
+attack graphs provide a basis for defining relevant protocol
+conditions. Constraint models can then examine the reach-
+ability of selected unsafe states under these conditions.
+•
+Support for Reproducible Security Analysis: Explicit
+variables, constraints, and solver configurations allow the
+same model to be evaluated independently. This supports
+the examination of security properties under clearly de-
+fined assumptions.
+However, the conclusions obtained through constraint solving
+depend on the completeness and accuracy of the model. A satis-
+fying assignment establishes the reachability of a state under the
+specified constraints, but it does not independently demonstrate
+that the same behavior occurs in every implementation.
+Similarly, bounded verification does not establish the absence
+of vulnerabilities outside the modeled execution limits. The results
+should therefore be interpreted in relation to the selected protocol
+assumptions, state variables, and verification bounds.
+Future extensions could incorporate additional protocol con-
+straints, automated model generation, and optimization methods
+for identifying attack paths that require fewer actions or expose
+more significant security risks.
+6.3
+Architectural Countermeasures
+The MASAR analysis provides a basis for identifying security
+controls associated with the conditions represented in each attack
+scenario. Rather than relying only on broad threat categories, the
+proposed countermeasures focus on the signaling procedures and
+trust boundaries relevant to the modeled weaknesses.
+6.3.1
+Mitigating Early Media Exploitation
+The Early Media Free Ride scenario highlights the need to coor-
+dinate SIP signaling states with media authorization and charging
+policies.
+Three security measures are relevant to this scenario:
+•
+Media Duration Controls: Network operators should
+enforce configurable limits on early media sessions. When
+the permitted duration is exceeded, the network should
+apply the appropriate charging policy or terminate unau-
+thorized media transmission.
+•
+State Dependent Media Authorization: Media gateways
+and session border functions should enforce media autho-
+rization policies according to session state and service
+requirements. Early media transmission should remain
+subject to the configured restrictions even when final SIP
+session confirmation has not occurred.
+•
+Charging and Signaling Coordination: Charging mech-
+anisms should account for media usage according to the
+applicable service policy. This includes ensuring that pro-
+longed provisional sessions do not bypass the charging
+controls intended for the service.
+These measures are consistent with the early media risks and
+possible remedies described in RFC 3960 [28]. The SIP P-Early-
+Media mechanism also provides a means to communicate early
+media authorization policies within applicable trust domains [29].
+The appropriate configuration depends on the operator’s ser-
+vice model, charging architecture, and permitted early media
+behavior. Consequently, restrictions should be selected according
+to the deployment requirements rather than applying a universal
+prohibition on bidirectional early media.
+6.3.2
+Securing the Diameter Cx Interface
+The Unauthorized Diameter Cx Information Disclosure scenario
+highlights the importance of controlling access to subscriber
+authorization procedures and protecting sensitive information re-
+turned through Diameter signaling.
+The following measures address the relevant trust boundaries:
+•
+Diameter Peer Authentication and Authorization: Di-
+ameter signaling infrastructure should accept authorization
+requests only from authenticated and authorized peers. The
+requesting entity’s identity and permitted signaling func-
+tions should be validated before requests are forwarded
+toward subscriber information services.
+•
+Signaling Boundary Enforcement: Diameter routing and
+edge security functions should restrict access to internal
+
+14
+authorization services. Network segmentation, access con-
+trol policies, and appropriate signaling protection mech-
+anisms can reduce the ability of unauthorized entities to
+submit subscriber queries.
+•
+Response Information Control: Authorization responses
+should be handled according to the requesting peer’s
+permissions and the applicable protocol requirements. Ac-
+cess to subscriber status and internal routing information
+should be restricted to entities authorized to receive it.
+•
+Monitoring of Authorization Requests: Security mon-
+itoring can identify unusual patterns of subscriber au-
+thorization queries, including repeated requests involv-
+ing multiple subscriber identities or unexpected Diameter
+peers.
+These measures address the potential disclosure of subscriber
+and routing information through insufficient signaling authoriza-
+tion. Their implementation should follow the relevant Diameter
+and IMS security requirements, including the procedures defined
+in 3GPP TS 29.229 [31].
+The proposed controls focus on the Diameter signaling trust
+boundary rather than assuming that SIP subscriber authentication
+must precede every legitimate Cx authorization procedure.
+6.4
+Operational Contribution to MITRE FiGHT
+The final MASAR layer connects the protocol actions identified
+through logical decomposition with operational threat information.
+This process supports the classification of attack behavior and
+the identification of candidate technique descriptions for telecom
+security knowledge bases.
+Table 6 summarizes the two evaluated scenarios, their associ-
+ated STRIDE categories, and the candidate operational techniques
+derived from the analysis.
+TABLE 6
+Candidate Operational Techniques Derived from MASAR
+Attack Scenario
+STRIDE Category
+Candidate Technique Description
+Early
+Media
+Free
+Ride
+Tampering
+Manipulation of provisional SIP ses-
+sion behavior to maintain media
+transmission without the expected
+charging event.
+Unauthorized Diam-
+eter Cx Information
+Disclosure
+Information
+Disclo-
+sure
+Use of unauthorized Diameter au-
+thorization queries to infer sub-
+scriber information or internal IMS
+routing characteristics.
+To characterize the two candidate techniques identified through
+MASAR, three technical dimensions are considered: (1) Protocol
+Layer and Interface, (2) Prerequisite State Context, and (3) Action
+Granularity. Table 7 summarizes these characteristics and high-
+lights the technical distinctions of the proposed techniques. The
+candidate identifiers are provisional suggestions and have not been
+assigned or approved by MITRE. Their relationship to existing
+MITRE FiGHT techniques remains subject to independent review
+and classification.
+These candidate descriptions identify the protocol behavior
+and security objectives relevant to each scenario. Their relation-
+ship to existing MITRE FiGHT techniques should be established
+through comparison with the current knowledge base and related
+security research.
+The operational value of the MASAR synthesis process lies
+in linking architectural threats with identifiable protocol actions
+and potential detection requirements. This relationship can support
+security monitoring, incident investigation, and the development of
+controls targeting specific attack conditions.
+The proposed technique descriptions should therefore be
+treated as candidates for further assessment rather than confirmed
+additions to MITRE FiGHT.
+6.5
+Limitations and Future Research Directions
+The MASAR evaluation focuses on two IMS signaling scenarios
+and uses constraint-based models to examine selected security
+properties. While these scenarios illustrate the proposed method-
+ology, several limitations affect the interpretation and generaliz-
+ability of the findings.
+First, the current implementation follows an analyst-guided
+process. STRIDE threat mapping, attack DAG construction, opera-
+tional TTP mapping, and MiniZinc constraint model development
+are performed manually. Although this approach supports trace-
+able security analysis, it requires domain expertise and may in-
+troduce analyst-dependent variations. Future work will investigate
+automating these transformations and assessing their consistency
+across different analysts and network configurations.
+Second, the constraint models represent selected protocol
+behaviors rather than complete IMS implementations. Their con-
+clusions are limited by the defined states, transitions, assumptions,
+and execution bounds. Validation in a representative IMS emu-
+lation environment is therefore needed to determine whether the
+modeled attack conditions correspond to observable behavior in
+practical deployments.
+Third, empirical scalability and performance measurements
+are not yet available. Although the number of primary state
+variables in the Early Media Billing Bypass model increases
+linearly with the execution horizon, this does not imply linear
+solver runtime or memory consumption. Future experiments will
+evaluate the finalized MiniZinc models across different execution
+bounds and configurations, recording solver runtime, memory
+usage, and search statistics.
+Fourth, operational TTP mapping requires further validation
+against existing telecom threat knowledge bases and documented
+attack behavior. Establishing consistent criteria for technique clas-
+sification and novelty assessment remains an important direction
+for future research.
+To contextualize the formal verification approach, Table 8
+summarizes the different analytical purposes and representations
+of established formal methods and the constraint-based modeling
+approach adopted by MASAR.
+Unlike the general-purpose verification approaches summa-
+rized in Table 8, MASAR uses MiniZinc constraint modeling to
+represent selected protocol states and security properties derived
+from architectural threat analysis and logical attack decomposition.
+This supports bounded reasoning about potential unsafe states,
+although comparative performance and verification effectiveness
+have not yet been experimentally established.
+Finally, extending the evaluation to additional telecom archi-
+tectures, protocol implementations, and attack scenarios will help
+assess the generalizability, reproducibility, and practical applica-
+bility of MASAR.
+7
+CONCLUSION AND FUTURE WORK
+This paper presented MASAR, a structured threat model-
+ing
+methodology
+that
+connects
+architectural
+security
+risks
+with protocol-level adversarial behavior in telecommunications
+
+15
+TABLE 7
+Technical Characterization of Proposed MITRE FiGHT Candidate Techniques
+Provisional
+ID
+Candidate Technique
+Target Protocol
+Technical Characteristics
+FGT-C-1001
+Provisional-State
+Early-
+Media Exploitation
+SIP and RTP/SRTP
+Exploitation of provisional SIP session states and early-media
+authorization where session duration or charging controls are
+insufficient.
+FGT-C-1002
+Unauthorized Diameter Cx
+Subscriber and Topology
+Information Disclosure
+Diameter Cx
+Unauthorized UAR signaling accepted across an insuffi-
+ciently enforced Diameter trust boundary, potentially dis-
+closing subscriber authorization outcomes or internal IMS
+routing information.
+TABLE 8
+Qualitative Comparison of Formal Verification Approaches in Telecom
+Security
+Approach
+Primary Focus
+State
+Representa-
+tion
+Analysis Output
+SPIN / LTL
+Software
+protocol
+model checking
+Automata / Promela
+State-space
+exploration
+and
+counterexamples
+UPPAAL
+Real-time system ver-
+ification
+Timed automata
+Timed-state
+reachability analysis
+TAMARIN
+Cryptographic proto-
+col verification
+Multiset rewriting
+Security proofs and
+counterexample
+traces
+MASAR (MiniZ-
+inc)
+Telecom cross-layer
+security analysis
+Finite-domain
+CSP
+constraints
+Bounded
+unsafe-
+state
+reachability
+queries
+networks. MASAR integrates strategic threat mapping using
+STRIDE, logical attack path decomposition using directed acyclic
+graphs, and operational TTP synthesis informed by telecom secu-
+rity knowledge bases, including MITRE FiGHT.
+The methodology was applied to a 5G-ready IMS architecture
+through two signaling attack scenarios: Provisional-State Early-
+Media Exploitation using SIP, and Unauthorized Diameter Cx
+Subscriber and Topology Information Disclosure.
+The analysis illustrates how architectural weaknesses can be
+translated into explicit attack conditions and protocol-level se-
+curity properties. MiniZinc constraint models support bounded
+reachability analysis under defined assumptions. The resulting
+candidate technique descriptions provide potential contributions
+to telecom threat knowledge bases, subject to independent review
+and classification.
+The current transformation process is analyst-guided and
+manually performed. The verification results are conditional on
+the modeled architecture, protocol behavior, and configuration
+assumptions; they do not independently establish exploitability in
+operational IMS networks.
+Future work will focus on automating the transformation of
+architectural threat models into attack graphs and executable
+constraint models, reducing the need for manual analysis. Further
+evaluation across different telecom architectures and representa-
+tive network implementations will also be considered to assess
+the framework’s scalability, reproducibility, and effectiveness. In
+addition, integrating MASAR into continuous security assessment
+processes could support the identification of emerging risks as
+network configurations and services evolve.
+APPENDIX
+This appendix provides the MiniZinc specifications for the two
+constraint-based analyses described in Section 5.
+The models represent the selected protocol states, autho-
+rization conditions, event ordering constraints, and reachability
+queries used to examine the Early Media Free Ride and Unautho-
+rized Diameter Cx Information Disclosure scenarios.
+The specifications were executed using MiniZinc IDE version
+2.10.1 with the Gecode solver (version 6.4). Both models use
+finite domains and bounded execution traces. Their results must
+therefore be interpreted according to the stated assumptions,
+parameters, and execution bounds.
+.1
+Model 1: Early Media Billing Bypass
+The first model examines whether an IMS session can remain in a
+provisional state with an open media gate and no charging record
+beyond a specified duration.
+1 include "globals.mzn";
+2
+3 % Model parameters
+4 int: T = 7;
+5 int: T_guard = 60;
+6 int: T_max = 120;
+7 int: step_seconds = 15;
+8
+9 % SIP states
+10 enum SipState = {
+11
+Idle, Trying, Provisional, Confirmed, Terminated
+12 };
+13
+14 % State variables
+15 array[1..T] of var SipState: sip_state;
+16 array[1..T] of var bool: media_open;
+17 array[1..T] of var bool: charge_record;
+18 array[1..T] of var 0..T_max: elapsed;
+19
+20 % Initial conditions
+21 constraint sip_state[1] = Trying;
+22 constraint media_open[1] = false;
+23 constraint charge_record[1] = false;
+24 constraint elapsed[1] = 0;
+25
+26 % Valid session transitions
+27 constraint forall(t in 1..T-1)(
+28
+(sip_state[t] = Trying ->
+29
+(sip_state[t+1] = Trying \/
+30
+sip_state[t+1] = Provisional \/
+31
+sip_state[t+1] = Terminated))
+32
+/\
+33
+(sip_state[t] = Provisional ->
+34
+(sip_state[t+1] = Provisional \/
+35
+sip_state[t+1] = Confirmed \/
+36
+sip_state[t+1] = Terminated))
+37
+/\
+38
+(sip_state[t] = Confirmed ->
+39
+(sip_state[t+1] = Confirmed \/
+40
+sip_state[t+1] = Terminated))
+41
+/\
+42
+(sip_state[t] = Terminated ->
+43
+sip_state[t+1] = Terminated)
+44 );
+45
+46 % Media gate policy for modeled configuration
+47 constraint forall(t in 1..T)(
+48
+media_open[t] =
+49
+(sip_state[t] = Provisional \/
+50
+sip_state[t] = Confirmed)
+51 );
+52
+53 % Charging event persists after confirmation
+54 constraint forall(t in 1..T-1)(
+55
+charge_record[t+1] =
+56
+(charge_record[t] \/
+57
+sip_state[t+1] = Confirmed)
+58 );
+59
+60 % Elapsed time rules
+61 constraint forall(t in 1..T-1)(
+62
+if sip_state[t+1] = Provisional then
+63
+if sip_state[t] = Provisional then
+64
+elapsed[t+1] = elapsed[t] + step_seconds
+
+16
+65
+else
+66
+elapsed[t+1] = 0
+67
+endif
+68
+else
+69
+elapsed[t+1] = 0
+70
+endif
+71 );
+72
+73 % Negated safety property
+74 var 1..T: viol_t;
+75
+76 constraint
+77
+sip_state[viol_t] = Provisional
+78
+/\ media_open[viol_t] = true
+79
+/\ charge_record[viol_t] = false
+80
+/\ elapsed[viol_t] > T_guard;
+81
+82
+83 solve satisfy;
+84
+85 output
+86
+["EARLY MEDIA REACHABILITY QUERY\n",
+87
+"Violation step: ", show(viol_t), "\n",
+88
+"Guard duration: ", show(T_guard), " seconds\n",
+89
+"Step duration: ", show(step_seconds), " seconds\n\n",
+90
+"STATE TRACE:\n"]
+91
+++
+92
+[
+93
+"t=" ++ show(t)
+94
+++ " state=" ++ show(sip_state[t])
+95
+++ " media=" ++ show(media_open[t])
+96
+++ " charged=" ++ show(charge_record[t])
+97
+++ " elapsed=" ++ show(elapsed[t])
+98
+++ "\n"
+99
+| t in 1..T
+100
+];
+Listing 3. MiniZinc model for early media persistence and the billing
+bypass reachability query.
+.2
+Model 2: Unauthorized Diameter Cx Information Dis-
+closure
+The second model examines whether insufficient Diameter Cx
+peer authorization enforcement allows an unauthorized requester
+to obtain protected subscriber or IMS routing information. The
+analysis represents authorization decisions, response disclosure
+conditions, and the ordering of UAR/UAA signaling events.
+1 include "globals.mzn";
+2
+3 % Configuration assumptions
+4 bool: peer_authorized = false;
+5 bool: enforce_peer_authorization = false;
+6 bool: sensitive_response_available = true;
+7
+8 % Authorization and disclosure decisions
+9 var bool: request_accepted;
+10 var bool: response_disclosed;
+11
+12 % Model the authorization boundary
+13 constraint
+14
+request_accepted =
+15
+(peer_authorized \/
+16
+not enforce_peer_authorization);
+17
+18 % A sensitive response is disclosed only when
+19 % the request is accepted and relevant data exists
+20 constraint
+21
+response_disclosed =
+22
+(request_accepted /\
+23
+sensitive_response_available);
+24
+25 % Successful UAR/UAA event ordering
+26 enum Ev = {
+27
+UAR_sent,
+28
+UAR_forwarded,
+29
+HSS_lookup,
+30
+UAA_returned,
+31
+Response_received
+32 };
+33
+34 int: N = card(Ev);
+35 array[Ev] of var 1..N: event_time;
+36
+37 constraint
+38
+all_different([event_time[e] | e in Ev]);
+39
+40 constraint
+41
+event_time[UAR_sent] <
+42
+event_time[UAR_forwarded];
+43
+44 constraint
+45
+event_time[UAR_forwarded] <
+46
+event_time[HSS_lookup];
+47
+48 constraint
+49
+event_time[HSS_lookup] <
+50
+event_time[UAA_returned];
+51
+52 constraint
+53
+event_time[UAA_returned] <
+54
+event_time[Response_received];
+55
+56 % Negated security property:
+57 % unauthorized peer receives protected data
+58 constraint
+59
+not peer_authorized /\
+60
+request_accepted /\
+61
+response_disclosed;
+62
+63 solve satisfy;
+64
+65 output
+66
+["DIAMETER Cx DISCLOSURE QUERY\n",
+67
+"Peer authorized: ",
+68
+show(peer_authorized), "\n",
+69
+"Peer authorization enforced: ",
+70
+show(enforce_peer_authorization), "\n",
+71
+"Request accepted: ",
+72
+show(request_accepted), "\n",
+73
+"Sensitive response available: ",
+74
+show(sensitive_response_available), "\n",
+75
+"Response disclosed: ",
+76
+show(response_disclosed), "\n\n",
+77
+"EVENT TIMESTAMPS:\n"]
+78
+++
+79
+[
+80
+show(e) ++ " : " ++
+81
+show(event_time[e]) ++ "\n"
+82
+| e in Ev
+83
+];
+Listing 4. MiniZinc model for unauthorized Diameter Cx information
+disclosure.
+REFERENCES
+[1]
+3GPP, “System architecture for the 5G system (5GS),” 3rd Generation
+Partnership Project (3GPP), Tech. Rep. TS 23.501, 2024, version 18.5.0,
+Release 18.
+[2]
+M. Gong, Z. Wei, S. Chen, W. Yu, and F. Wang, “A survey of existing
+attacks on 5G SA,” Computer Networks, vol. 270, p. 111545, 2025.
+[3]
+S. Tariq, E. Rodriguez Luna, X. Masip Bruin, R. Diaz, J. Martrat,
+and P. Trakadas, “A survey on 5G private and B5G network threats
+and safeguarding AI-based security mechanisms through the layered
+analysis,” Computer Networks, vol. 271, p. 111594, 2025.
+[4]
+3GPP, “Security architecture and procedures for 5G system (5GS),” 3rd
+Generation Partnership Project (3GPP), Tech. Rep. TS 33.501, 2025,
+version 18.8.0, Release 18.
+[5]
+J. Breeden, M. S. Khan, S. Silvestri, B. Bajracharya, and C. Scott,
+“Mitigating slice vulnerabilities in 5G core networks: A comprehensive
+survey,” Ad Hoc Networks, vol. 183, p. 104118, 2026.
+[6]
+A. Shostack, Threat Modeling: Designing for Security.
+John Wiley &
+Sons, 2014.
+[7]
+M. M. UcedaVelez and M. M. Morana, Risk Centric Threat Modeling:
+Process for Attack Simulation and Threat Analysis (PASTA). John Wiley
+& Sons, 2015.
+[8]
+A. J. Radle, E. I. Arnoth, A. Stephenson, M. Vanderveen, M. S.
+Ahmed, S. Dey, and A. Garcia Gonzalez, “MITRE FiGHT: High-Level
+Overview (Five-G Hierarchy of Threats),” The MITRE Corporation,
+Tech. Rep. MP230545, August 2023. [Online]. Available: https:
+//fight.mitre.org/FiGHT High-Level Overview PRS-23-2698.pdf
+[9]
+S. Unger, E. Arzoglou, M. Heinrich, D. Scheuermann, and S. Katzen-
+beisser, “Cybersecurity risk assessment in OT systems using attack
+graphs,” International Journal of Information Security, vol. 25, p. 34,
+2026.
+[10] S. P. Rao, H. Y. Chen, and T. Aura, “Threat modeling framework for
+mobile communication systems,” Computers & Security, vol. 125, p.
+103047, 2023.
+[11] GSMA,
+“FS.31
+Baseline
+Security
+Controls,”
+GSM
+Association,
+Permanent Reference Document, 2023, version 3.0. [Online]. Available:
+https://www.gsma.com/solutions-and-impact/technologies/security/
+wp-content/uploads/2024/06/FS.31-Baseline-Security-Controls-v3.0.
+pdf
+[12] A. Palma, C. Cicimurri, and M. Angelini, “Progressive attack graph: a
+technique for scalable and adaptive attack graph generation,” Interna-
+tional Journal of Information Security, vol. 24, p. 212, 2025.
+[13] K. Saint-Hilaire, C. Neal, F. Cuppens, N. Boulahia Cuppens, F. Bassi,
+and M. Hadji, “A real-time automated attack-defense graph generation
+approach,” Journal of Information Security and Applications, vol. 94, p.
+104266, 2025.
+[14] MiniZinc Project, “The MiniZinc Handbook, version 2.9,” 2025,
+accessed: October 2026. [Online]. Available: https://docs.minizinc.org/
+en/2.9.4/
+[15] M. N. I. Farooqui, J. Arshad, and M. M. Khan, “A layered approach to
+threat modeling for 5G-based systems,” Electronics, vol. 11, no. 12, p.
+1819, 2022.
+[16] B. Kordy, L. Pi`etre-Cambac´ed`es, and P. Schweitzer, “DAG-based attack
+and defense modeling: Don’t miss the forest for the attack trees,”
+Computer Science Review, vol. 13–14, pp. 1–38, 2014.
+
+17
+[17] W. Wide l, M. Audinot, B. Fila, and S. Pinchinat, “Beyond 2014: Formal
+methods for attack tree-based security modeling,” ACM Computing
+Surveys, vol. 52, no. 4, pp. 75:1–75:36, 2019.
+[18] A. M. Konsta, A. Lluch-Lafuente, B. Spiga, and N. Dragoni, “Survey:
+Automatic generation of attack trees and attack graphs,” Computers &
+Security, vol. 137, p. 103602, 2024.
+[19] L. Zhang, G. Tang, X. He, K. Qi, G. Su, and H. Zhang, “Automatic
+generation of industrial internet attack graphs with graph neural networks
+and bayesian models,” Computer Networks, vol. 272, p. 111736, 2025.
+[20] J. Jelba and R. I. Sajan, “Zero-trust oriented threat detection and
+orchestration across data and control planes in 5G cloud networks,”
+International Journal of Communication Systems, vol. 39, no. 12, p.
+e70541, 2026.
+[21] D. Rupprecht, K. Kohls, C. P¨opper, and T. Holz, “Call me maybe:
+Eavesdropping encrypted LTE calls with ReVoLTE,” in 29th USENIX
+Security Symposium.
+USENIX Association, 2020, pp. 73–88.
+[22] H. Lee, J. Jeong, J. Kim, M. Kim, H. Kim, and B. B. Kang, “VWAna-
+lyzer: A systematic security analysis framework for the voice over WiFi
+protocol,” in Proceedings of the 2022 ACM Asia Conference on Computer
+and Communications Security, 2022, pp. 999–1013.
+[23] C.-Y. Li, G.-H. Tu, C. Peng, Z. Yuan, Y. Li, S. Lu, and X. Wang,
+“Insecurity of voice solution VoLTE in LTE mobile networks,” in Proc.
+22nd ACM CCS, 2015, pp. 316–327.
+[24] Y.-H. Lu, C.-Y. Li, Y.-Y. Li, S. H.-Y. Hsiao, T. Xie, G.-H. Tu, and W.-X.
+Chen, “Ghost calls from operational 4G call systems: IMS vulnerability,
+call DoS attack, and countermeasure,” in Proc. 26th MobiCom, 2020, pp.
+96–109.
+[25] D. Catta, J. Leneutre, V. Malvone, and A. Murano, “A formal approach to
+attack graphs,” Annals of Mathematics and Artificial Intelligence, vol. 93,
+no. 4, pp. 589–610, 2025.
+[26] D. Tayouri, O. Sgan Cohen, I. Maimon, D. Mimran, Y. Elovici, and
+A. Shabtai, “CORAL: Container online risk assessment with logical
+attack graphs,” Computers & Security, vol. 150, p. 104296, 2025.
+[27] T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, Introduction
+to Algorithms, 4th ed.
+MIT Press, 2022.
+[28] G.
+Camarillo
+and
+H.
+Schulzrinne,
+“Early
+media
+and
+ringing
+tone
+generation
+in
+the
+session
+initiation
+protocol
+(SIP),”
+RFC
+Editor,
+RFC
+3960,
+December
+2004.
+[Online].
+Available:
+https:
+//www.rfc-editor.org/rfc/rfc3960
+[29] R. P. Ejzak, “Private header (P-Header) extension to the session
+initiation protocol (SIP) for authorization of early media,” RFC
+Editor,
+RFC
+5009,
+September
+2007.
+[Online].
+Available:
+https:
+//www.rfc-editor.org/rfc/rfc5009
+[30] J. Rosenberg, H. Schulzrinne, G. Camarillo, A. Johnston, J. Peterson,
+R. Sparks, M. Handley, and E. Schooler, “SIP: Session Initiation Proto-
+col,” RFC Editor, RFC 3261, 2002.
+[31] 3GPP,
+“Cx
+and
+dx
+interfaces
+based
+on
+the
+diameter
+protocol;
+protocol
+details,”
+3rd
+Generation
+Partnership
+Project,
+Technical
+Specification
+TS
+29.229,
+2026,
+version
+19.1.0,
+Release 19. [Online]. Available: https://portal.3gpp.org/desktopmodules/
+Specifications/SpecificationDetails.aspx?specificationId=1682
+[32] V. Fajardo, J. Arkko, J. Loughney, and G. Zorn, “Diameter Base Proto-
+col,” RFC Editor, RFC 6733, 2012.

@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "recalculation_checks": 530,
+  "manuscript_checks": 64,
+  "static_budget_rows": 108,
+  "figure_count": 8,
+  "pdf_pages": 16,
+  "native_OMML_objects": 231,
+  "package_replay_passed": true,
+  "manuscript_sha256": "d07f71d28e924ddbeb9e926926e8d38d56b7dd9e669e2baf0907a716c73e2755",
+  "current_user_scope": "Finalization authorized; no new G2 approval or submission claimed."
+}

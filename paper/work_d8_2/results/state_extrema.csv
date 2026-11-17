@@ -1,0 +1,7 @@
+﻿source,bound,value,node,method,attack,H,t,evaluation
+results/K12/cross_states.csv,min,0.0,1,G,a0,24,0.0,
+results/K12/cross_states.csv,max,0.3713261923139909,1,G,a0,96,10.0,
+results/R_LAG/E0_states.csv,min,0.0,1,,,48,0.0,E0
+results/R_LAG/E0_states.csv,max,0.5189922985420656,0,,,192,10.0,E0
+results/R_LAG/E1_states.csv,min,0.0,1,,,48,0.0,E1
+results/R_LAG/E1_states.csv,max,0.5033084533227254,0,,,192,8.333333333333334,E1

@@ -1,0 +1,5 @@
+{
+  "max_difference_original_gradient": 8.881784197001252e-16,
+  "scope": "floating consistency check, not interval containment assertion",
+  "passed": true
+}

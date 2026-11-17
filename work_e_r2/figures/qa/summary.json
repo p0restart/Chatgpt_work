@@ -1,0 +1,36 @@
+[
+  {
+    "check": "source",
+    "returncode": 0
+  },
+  {
+    "figure": "fig1_defender_global_bounds.pdf",
+    "check": "text",
+    "returncode": 0
+  },
+  {
+    "figure": "fig1_defender_global_bounds.pdf",
+    "check": "collisions",
+    "returncode": 0
+  },
+  {
+    "figure": "fig2_attacker_response_certificate.pdf",
+    "check": "text",
+    "returncode": 0
+  },
+  {
+    "figure": "fig2_attacker_response_certificate.pdf",
+    "check": "collisions",
+    "returncode": 0
+  },
+  {
+    "figure": "fig3_nash_gap_targets.pdf",
+    "check": "text",
+    "returncode": 0
+  },
+  {
+    "figure": "fig3_nash_gap_targets.pdf",
+    "check": "collisions",
+    "returncode": 0
+  }
+]

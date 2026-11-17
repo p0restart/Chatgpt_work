@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "identities": [
+    {
+      "node": 0,
+      "formula": "fx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 0,
+      "formula": "fu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 0,
+      "formula": "fxx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 0,
+      "formula": "fxu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 1,
+      "formula": "fx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 1,
+      "formula": "fu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 1,
+      "formula": "fxx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 1,
+      "formula": "fxu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 2,
+      "formula": "fx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 2,
+      "formula": "fu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 2,
+      "formula": "fxx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 2,
+      "formula": "fxu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 3,
+      "formula": "fx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 3,
+      "formula": "fu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 3,
+      "formula": "fxx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 3,
+      "formula": "fxu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 4,
+      "formula": "fx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 4,
+      "formula": "fu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 4,
+      "formula": "fxx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 4,
+      "formula": "fxu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 5,
+      "formula": "fx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 5,
+      "formula": "fu",
+      "symbolic_identity": true
+    },
+    {
+      "node": 5,
+      "formula": "fxx",
+      "symbolic_identity": true
+    },
+    {
+      "node": 5,
+      "formula": "fxu",
+      "symbolic_identity": true
+    }
+  ],
+  "count": 24,
+  "random_points": 0,
+  "scope": "algebraic derivative identities with symbolic coefficients on the actual edge support; not Hessian convexity proof"
+}

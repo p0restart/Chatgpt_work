@@ -1,0 +1,48 @@
+{
+  "pdf": "results\\work_d5\\replanning\\run02\\figures\\paired_comparisons.pdf",
+  "auditable": true,
+  "verdict": "FIX BEFORE DELIVERY",
+  "page_count": 1,
+  "visible_text_box_count": 15,
+  "text_trace_count": 15,
+  "stroke_path_count": 12,
+  "filled_region_count": 17,
+  "image_region_count": 0,
+  "summary": {
+    "fail": 1,
+    "warn": 0,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "thresholds": {
+    "text_inset_pt": 0.6,
+    "min_overlap_ratio": 0.05,
+    "clipping_tolerance_pt": 0.5
+  },
+  "findings": [
+    {
+      "severity": "FAIL",
+      "kind": "text-page-clipping",
+      "page": 1,
+      "message": "Text extends beyond the final PDF page boundary",
+      "text": "Paired loss differences: positive values favor G",
+      "text_bbox": [
+        194.27450561523438,
+        -0.927996814250946,
+        381.19073486328125,
+        8.072003364562988
+      ],
+      "other_text": null,
+      "other_bbox": [
+        0.0,
+        0.0,
+        518.4000244140625,
+        244.8000030517578
+      ],
+      "object_count": 1,
+      "object_indexes": [
+        12
+      ]
+    }
+  ]
+}

@@ -239,3 +239,128 @@ B,evaluation,method,update,phase,path,item,player,H,seconds,note
 1.2,E1,R,0,online_planning,multistart,replanning_total,,,6.504393199997139,nested responses included
 1.2,E1,R,0,extra_audit,multistart,response_optimization,D,96.0,5.467280600001686,nested within task time; do not add twice
 1.2,E1,R,0,extra_audit,multistart,precision_audit_total,,,6.0221418000000995,
+1.2,E1,R,1,online_planning,multistart,response_optimization,D,48.0,2.0940400999970734,nested within task time; do not add twice
+1.2,E1,R,1,online_planning,multistart,response_optimization,D,48.0,1.7041776000041864,nested within task time; do not add twice
+1.2,E1,R,1,online_planning,multistart,replanning_total,,,3.989407300003222,nested responses included
+1.2,E1,R,1,extra_audit,multistart,response_optimization,D,96.0,3.5739396999997552,nested within task time; do not add twice
+1.2,E1,R,1,extra_audit,multistart,precision_audit_total,,,4.030503199996019,
+1.2,E1,R,2,online_planning,multistart,response_optimization,D,48.0,0.8421118000042043,nested within task time; do not add twice
+1.2,E1,R,2,online_planning,multistart,response_optimization,D,48.0,0.7288661999991746,nested within task time; do not add twice
+1.2,E1,R,2,online_planning,multistart,replanning_total,,,1.6790078999983962,nested responses included
+1.2,E1,R,2,extra_audit,multistart,response_optimization,D,96.0,1.4202757999955793,nested within task time; do not add twice
+1.2,E1,R,2,extra_audit,multistart,precision_audit_total,,,1.6359232000031625,
+1.2,E1,R,-1,execution_evaluation,,fixed_execution_reintegration_total,,,0.5850200999993831,
+0.6,E1,E1_generator,0,attack_generation,multistart,response_optimization,A,48.0,3.203336100006709,nested within task time; do not add twice
+0.6,E1,E1_generator,0,attack_generation,multistart,response_optimization,A,48.0,10.695609199996397,nested within task time; do not add twice
+0.6,E1,E1_generator,0,attack_generation,multistart,response_optimization,A,48.0,0.9137349000011454,nested within task time; do not add twice
+0.6,E1,E1_generator,0,attack_generation,multistart,response_optimization,A,48.0,1.0286741999952937,nested within task time; do not add twice
+0.6,E1,E1_generator,0,attack_generation,multistart,response_optimization,A,48.0,1.7830805000048713,nested within task time; do not add twice
+0.6,E1,E1_generator,0,attack_generation,multistart,attack_generation_total,,,18.190515599999344,nested responses included
+0.6,E1,E1_generator,0,extra_audit,multistart,response_optimization,A,96.0,3.761893000002601,nested within task time; do not add twice
+0.6,E1,E1_generator,0,extra_audit,multistart,precision_audit_total,,,4.16763859999628,
+0.6,E0,P,-1,execution_evaluation,,fixed_execution_reintegration_total,,,0.42279229999985546,
+0.6,E0,G,0,online_planning,warm,response_optimization,D,48.0,1.1444076999978279,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,A,48.0,0.8580531000043266,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,A,48.0,0.7017422999997507,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,D,48.0,1.123124600002484,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,A,48.0,0.30883560000074795,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,A,48.0,0.678605900000548,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,D,48.0,0.7369833999982802,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,A,48.0,0.29030889999557985,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,A,48.0,0.549452500003099,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,D,48.0,0.6780575000011595,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm,response_optimization,A,48.0,0.264242799996282,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,D,48.0,1.3245123000015155,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,A,48.0,0.9401103999989573,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,A,48.0,0.9047497999999905,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,D,48.0,1.2802924999996321,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,A,48.0,0.37960979999479605,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,A,48.0,0.6982579000032274,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,D,48.0,0.9365716000029352,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,A,48.0,0.28022530000453116,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,A,48.0,0.7342422000001534,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,D,48.0,0.6573854000016581,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,zero,response_optimization,A,48.0,0.31217730000207666,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,D,48.0,1.2833140000002459,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,A,48.0,1.177746199995454,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,A,48.0,1.0734020000018063,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,D,48.0,1.1044208000021172,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,A,48.0,0.3139911999969627,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,A,48.0,0.712557700004254,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,D,48.0,0.9169350000011036,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,A,48.0,0.2888706000012462,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,A,48.0,0.5687631000037072,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,D,48.0,0.6405024000050616,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,random,response_optimization,A,48.0,0.32590320000599604,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm_validation,response_optimization,D,48.0,3.180667100001301,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm_validation,response_optimization,A,48.0,1.9815148000052432,nested within task time; do not add twice
+0.6,E0,G,0,online_planning,warm_validation,replanning_total,,,34.98192579999886,includes 3 full paths and H48 final validation; nested responses included
+0.6,E0,G,0,extra_audit,warm,response_optimization,D,96.0,6.08502579999913,nested within task time; do not add twice
+0.6,E0,G,0,extra_audit,warm,response_optimization,A,96.0,4.97334189999674,nested within task time; do not add twice
+0.6,E0,G,0,extra_audit,warm,precision_audit_total,,,11.856931499998609,
+0.6,E0,G,1,online_planning,warm,response_optimization,D,48.0,0.6311432000002242,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm,response_optimization,A,48.0,0.5256928000017069,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm,response_optimization,A,48.0,0.5199301999964518,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm,response_optimization,D,48.0,0.5599277999936021,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm,response_optimization,A,48.0,0.23809179999807384,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm,response_optimization,A,48.0,0.4443413999979384,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm,response_optimization,D,48.0,0.37163259999942966,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm,response_optimization,A,48.0,0.1895195999968564,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,D,48.0,0.8003289999978733,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,A,48.0,0.8105471999951988,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,A,48.0,0.7370635999977821,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,D,48.0,0.6296538000024157,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,A,48.0,0.19261600000027101,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,A,48.0,0.5083418000067468,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,D,48.0,0.4440108999988297,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,A,48.0,0.2142022999978508,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,A,48.0,0.2573313999964739,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,D,48.0,0.36959310000383994,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,zero,response_optimization,A,48.0,0.19113410000136355,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,D,48.0,0.6687387999991188,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,A,48.0,0.6191163999974378,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,A,48.0,0.4910559000054491,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,D,48.0,0.6233653999952367,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,A,48.0,0.2234156000049552,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,A,48.0,0.3645172000033199,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,D,48.0,0.4937897999989218,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,A,48.0,0.1897668000019621,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,A,48.0,0.29629430000204593,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,D,48.0,0.2587262999950326,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,random,response_optimization,A,48.0,0.1895245999985491,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm_validation,response_optimization,D,48.0,1.740856199998234,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm_validation,response_optimization,A,48.0,1.112959600002796,nested within task time; do not add twice
+0.6,E0,G,1,online_planning,warm_validation,replanning_total,,,19.540941600003862,includes 3 full paths and H48 final validation; nested responses included
+0.6,E0,G,1,extra_audit,warm,response_optimization,D,96.0,3.2998248000003514,nested within task time; do not add twice
+0.6,E0,G,1,extra_audit,warm,response_optimization,A,96.0,2.381259699999646,nested within task time; do not add twice
+0.6,E0,G,1,extra_audit,warm,precision_audit_total,,,6.1778055999966455,
+0.6,E0,G,2,online_planning,warm,response_optimization,D,48.0,0.24378450000222074,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm,response_optimization,A,48.0,0.2318005000051926,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm,response_optimization,A,48.0,0.2197684000057052,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm,response_optimization,D,48.0,0.17990899999858811,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm,response_optimization,A,48.0,0.07460339999670396,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm,response_optimization,A,48.0,0.0938421999962884,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm,response_optimization,D,48.0,0.08424349999404512,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm,response_optimization,A,48.0,0.07927969999582274,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,D,48.0,0.31099579999863636,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,A,48.0,0.14672710000013467,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,A,48.0,0.16204969999671448,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,D,48.0,0.25406870000006165,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,A,48.0,0.06913540000095963,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,A,48.0,0.16434649999428075,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,D,48.0,0.09490749999531545,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,zero,response_optimization,A,48.0,0.08284740000090096,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,D,48.0,0.25037499999598367,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,A,48.0,0.18002720000367844,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,A,48.0,0.23709979999694042,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,D,48.0,0.2097446999978274,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,A,48.0,0.07894890000170562,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,A,48.0,0.12391689999640221,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,D,48.0,0.08422710000013467,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,random,response_optimization,A,48.0,0.13580709999951068,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm_validation,response_optimization,D,48.0,0.7978602000002866,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm_validation,response_optimization,A,48.0,0.5948295999987749,nested within task time; do not add twice
+0.6,E0,G,2,online_planning,warm_validation,replanning_total,,,6.590680000001157,includes 3 full paths and H48 final validation; nested responses included
+0.6,E0,G,2,extra_audit,warm,response_optimization,D,96.0,1.649392600003921,nested within task time; do not add twice
+0.6,E0,G,2,extra_audit,warm,response_optimization,A,96.0,0.8987921999942046,nested within task time; do not add twice
+0.6,E0,G,2,extra_audit,warm,precision_audit_total,,,2.875849500000186,

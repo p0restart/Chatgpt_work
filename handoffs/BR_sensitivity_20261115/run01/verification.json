@@ -1,0 +1,24 @@
+{
+  "status": "SUCCESS",
+  "completed": "2026-11-16T00:12:29.334236+08:00",
+  "seconds": 100.14661120000528,
+  "delta": 0.05,
+  "response_tasks": 5,
+  "optimizer_calls": 30,
+  "all_slsqp_success": true,
+  "max_projected_residual": 8.310528781918514e-06,
+  "max_control_error_envelope": 5.514324391803216e-06,
+  "max_integration_error": 1.3646861418692424e-11,
+  "state_min": 0.0,
+  "state_max": 0.3403521265042237,
+  "max_constraint_violation": 3.219646771412954e-15,
+  "baseline_reproduction_error": 0.0,
+  "comparison": {
+    "positive_negative_attack_distance": 0.03428742520791073,
+    "attack_error_sum": 1.0250103932740728e-05,
+    "positive_negative_defense_distance": 0.020395413598279566,
+    "defense_error_sum": 4.4113726625633065e-06,
+    "attack_difference_resolved": true,
+    "defense_difference_resolved": true
+  }
+}

@@ -160,3 +160,27 @@
 
 ## 2026-11-13 / Work D5：APPROVED_SCOPE / IMPLEMENTATION_PREFLIGHT
 - 开始限定实验实现与接口检查；先B1.2，数值通过才扩展。新输出 results/work_d5/replanning/run01，不覆盖旧数据；D3和旧待审事项不前进。
+
+## 2026-11-13 / Work D5：COMPLETED / WAITING_USER_D5_REVIEW
+- 三预算、两条公共攻击、P/G/R，共18条完整轨迹已完成，G/R各18次重规划；登记数值门槛和3909项作者侧复核通过。
+- 三预算E0下G略劣于R，E1下略优；不宣称普遍优势、全局Nash或真实云实时性。全部分项、控制、候选、失败及wall-clock已保存。
+- run01为预检JSON记录失败，run02为CSV保存中断；原件保留，run03承接通过的B1.2并同参数完成两预算，重复候选核对一致。未修改D3/原冻结模型/历史数据。
+- 最终入口results/work_d5/replanning/run03/D5_execution_report.md；人工审阅reviews/G_D5_experiment_submission.md。D5结果未获人工批准；其他待审事项不代批。
+
+## 2026-11-14 / Work D8-1：第一阶段修订完成，WAITING_USER_D8_1_REVIEW
+- 本轮用户任务原文保存于 paper/work_d8_1/data/instruction_source.txt；授权为以D7第二版及已有数据完成第一阶段逻辑重构与学术润色，不是D7结果或历史D4/D5事项的人工批准。
+- 已完成 paper/work_d8_1/paper_v3_zh.md 与 revision_log.md、claim_evidence_audit.md、algorithm_audit.md、figure_table_plan.md、remaining_issues.md 六项交付。主线为防御行动求解和滚动执行；完整三预算交叉/成本分解、事件后G/P/R及预测—实际攻击差异已进入正文。
+- 173项保存数据核查和341项交付检查通过；53个输入文件SHA保持一致。冻结公式(1)–(8)与参考文献逐项保持，新增式(9)只定义既有事件后指标；四张沿用图逐一目视检查。D8仅筛选/算术/文本重排，无新增优化、状态积分或大规模实验。
+- 保留公共固定攻击下G综合损失略高于F、E0下G略劣R等负结果。预算分析据核对修正为低预算数据库平均资源高于认证、其他预算相反；预测偏差仅作描述性解释，不作预测能力/检测准确率证明。
+- 已停止在本阶段，等待用户审阅；未运行K=12、动作消融或第二阶段，未修改DECISIONS.md及reviews/APPROVAL_LOG.md，不代填G1/G2或D7结果验收。
+
+## 2026-11-15 Work D8-2
+- RUNNING；Gate0完成，已记录原始输入清单与SHA256。当前源码与D7实际快照一致。
+- 执行边界：只做本轮授权K12与R-LAG，不改第三版，不把执行授权登记为结果批准。Gate1适配/梯度检查开始。
+
+
+## 2026-11-15 Work D8-2 收尾
+- K12三路径G、固定a0的F、强攻击响应和交叉评价已完成；K6/K12比较完成。E0/E1六次R-LAG更新及完整执行完成。
+- 149次正式优化尝试及6次小规模检查正常退出；478条展开数值诊断、8条DOP853独立固定控制复算通过。D7/D8-1登记来源和冻结核心未改。
+- 已生成五图、实验报告、主张映射、剩余事项、独立数值审计和复现说明；Gate5交付核验后状态WAITING_USER_D8_2_REVIEW。不修改论文第三版，不代填新结果人工批准。
+

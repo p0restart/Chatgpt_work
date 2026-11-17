@@ -1,0 +1,8 @@
+{
+  "stage": "uniform_completed_after_both_precision_audits_CSV_export",
+  "error": "TypeError: dict() got multiple values for keyword argument 'start'",
+  "cause": "Exporter added start index while raw optimizer trace already had start key",
+  "fix": "Exporter uses attempt_index; continue from saved uniform controls, audits and summary",
+  "optimization_rerun": false,
+  "results_discarded": false
+}

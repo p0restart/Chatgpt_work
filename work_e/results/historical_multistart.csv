@@ -1,0 +1,4 @@
+path,source,iteration,J_D,J_A,gap_D,gap_A,passed,distance_saved,evidence
+warm,paper\work_d7\results\static\B1.2\G\warm,5,9.326646704190619,5.819711008935265,1.1389147402951494e-09,0.0,True,0.0,historical_reanalysis
+zero,paper\work_d7\results\static\B1.2\G\zero,5,9.326648220671686,5.819731014388521,1.2823175410403564e-08,7.105427357601002e-15,True,2.900993882837266e-05,historical_reanalysis
+random,paper\work_d7\results\static\B1.2\G\random,5,9.32664756279374,5.819721727398766,6.445530331689042e-09,0.0,True,1.6570546585825685e-05,historical_reanalysis

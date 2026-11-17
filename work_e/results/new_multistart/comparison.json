@@ -1,0 +1,21 @@
+{
+  "distances": [
+    {
+      "left": "zero",
+      "right": "uniform",
+      "distance": 2.900993882837266e-05
+    },
+    {
+      "left": "random",
+      "right": "uniform",
+      "distance": 7.05563625413852e-07
+    },
+    {
+      "left": "random",
+      "right": "zero",
+      "distance": 2.965746833011318e-05
+    }
+  ],
+  "completed": true,
+  "unique_equilibrium_proven": false
+}

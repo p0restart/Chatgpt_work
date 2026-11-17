@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "checks": 28,
+  "scope": "Fresh directory imports and Gate1 only; no second full optimization"
+}

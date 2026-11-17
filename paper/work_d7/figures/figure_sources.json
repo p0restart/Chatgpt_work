@@ -1,0 +1,62 @@
+{
+  "fig1_topology": [
+    {
+      "path": "topology_edges.csv",
+      "sha256": "923be975fc8a2ff82b7b3aebb5b79212d0cff13b2922f21d4039d881ff0987b9"
+    },
+    {
+      "path": "topology_assets.csv",
+      "sha256": "db8b57bf6c6ce6f698383e3845f2a0d5a9c628552186fdeaa1484eb44d8f2172"
+    }
+  ],
+  "fig2_execution_flow": [
+    {
+      "path": "analysis\\model_method.md",
+      "sha256": "50f5abae798d51d2d370e5fe1912fe7b28cdcd290cc04967d2bf89a521c2ca98"
+    },
+    {
+      "path": "analysis\\run_rolling.py",
+      "sha256": "032be88b7c0583124588a0070b63fed7a86fbdb3671b64f94e041ac42f528c47"
+    }
+  ],
+  "fig3_defense_actions": [
+    {
+      "path": "results\\static\\B1.2\\G_decisions.csv",
+      "sha256": "443f1b13459c07e0a5edde4a551774b7b5a27eac6d116ef5d54fbc909ff7b9e7"
+    }
+  ],
+  "fig4_cross_evaluation": [
+    {
+      "path": "results\\static\\B0.6\\cross_evaluation.csv",
+      "sha256": "fdd56ceb2b4edf807c606e36ed1a370e9c6fb6e06b7dd92531810be78fa21616"
+    },
+    {
+      "path": "results\\static\\B1.2\\cross_evaluation.csv",
+      "sha256": "923371dc94a713b84b38c27d0d42d1676c07cd4aea94e938f69f7995d162d9ea"
+    },
+    {
+      "path": "results\\static\\B1.8\\cross_evaluation.csv",
+      "sha256": "6f0956ac325855ed2f1563add7c0837b910cc2ff2cbbf4c4644dbade9488f69b"
+    }
+  ],
+  "fig5_rolling_execution": [
+    {
+      "path": "results\\rolling_event_B1.2\\trajectories.csv",
+      "sha256": "204d7c30e42e3bd20906f07c1001c48f6166567d46ea5997df95aa8fc68fa8cc"
+    },
+    {
+      "path": "results\\rolling_event_B1.2\\executed_controls.csv",
+      "sha256": "ddac6e99baced5f11a6cc1b32ad54f59ab53f48ee2490990f285047ccfdd432c"
+    }
+  ],
+  "figS1_states_resources": [
+    {
+      "path": "results\\static\\B1.2\\G_states.csv",
+      "sha256": "c029b9f3c05d6945a6880e0718ced00fd63503bb73f522b46879b54332714fef"
+    },
+    {
+      "path": "results\\static\\B1.2\\G_decisions.csv",
+      "sha256": "443f1b13459c07e0a5edde4a551774b7b5a27eac6d116ef5d54fbc909ff7b9e7"
+    }
+  ]
+}

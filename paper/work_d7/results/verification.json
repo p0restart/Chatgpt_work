@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "checks": 114,
+  "max_replay_error": 6.109679429044945e-11,
+  "scope": "Independent DOP853 fixed-control replay, feasibility and saved audit checks; not independent optimization or external review"
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "protected_files": 1185,
+  "changed_protected_files": [],
+  "work_e_files_preserved": 83,
+  "required_deliverables": 9,
+  "symbolic_identities": 24,
+  "exact_rational_cases": 2,
+  "full_strategy_grid": false,
+  "new_optimizations": 0,
+  "new_random_samples": 0,
+  "defense_convexity_proven": false,
+  "pure_Nash_existence_proven": false,
+  "pure_Nash_uniqueness_proven": false,
+  "C0_VI_gap_upper": 6.965869942896965e-05,
+  "uniform_B_C0_objective_bound_certified": true,
+  "machine_roundoff_global_certificate": false,
+  "status": "WAITING_USER_E_R1_REVIEW"
+}

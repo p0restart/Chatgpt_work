@@ -1,0 +1,10 @@
+{
+  "stage": "A",
+  "status": "INFRASTRUCTURE_FAILURE_BEFORE_OPTIMIZATION",
+  "date": "2026-11-15 Asia/Shanghai",
+  "error": "FileNotFoundError: results/K12 parent directory absent in restore_run",
+  "optimizer_calls_started": 0,
+  "fix": "mkdir(parents=True, exist_ok=True) in independent D8-2 adapter",
+  "scientific_parameters_changed": false,
+  "continuation": "Disclosed in commentary; repeat launch with unchanged preregistered settings. No numerical result discarded."
+}

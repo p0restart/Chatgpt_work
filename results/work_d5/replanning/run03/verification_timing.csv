@@ -1,0 +1,73 @@
+B,evaluation,method,update,phase,item,H,seconds,note
+0.6,E0,G,-1,independent_validation,saved_execution_replay_H48,48.0,0.04815180000150576,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,G,-1,independent_validation,saved_execution_replay_H96,96.0,0.0914383000053931,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,G,-1,independent_validation,saved_execution_replay_H192,192.0,0.18082509999658214,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,G,-1,independent_validation,DOP853_audit,,0.07668269999703625,independent integration and related saved-file checks
+0.6,E0,P,-1,independent_validation,saved_execution_replay_H48,48.0,0.04747900000074878,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,P,-1,independent_validation,saved_execution_replay_H96,96.0,0.09244360000593588,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,P,-1,independent_validation,saved_execution_replay_H192,192.0,0.17961189999914495,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,P,-1,independent_validation,DOP853_audit,,0.02220579999993788,independent integration and related saved-file checks
+0.6,E0,R,-1,independent_validation,saved_execution_replay_H48,48.0,0.04709359999833396,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,R,-1,independent_validation,saved_execution_replay_H96,96.0,0.09218279999913648,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,R,-1,independent_validation,saved_execution_replay_H192,192.0,0.18224659999395953,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E0,R,-1,independent_validation,DOP853_audit,,0.07680660000187345,independent integration and related saved-file checks
+0.6,E1,G,-1,independent_validation,saved_execution_replay_H48,48.0,0.047299300000304356,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,G,-1,independent_validation,saved_execution_replay_H96,96.0,0.09269810000114376,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,G,-1,independent_validation,saved_execution_replay_H192,192.0,0.17970810000406345,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,G,-1,independent_validation,DOP853_audit,,0.0685996999964118,independent integration and related saved-file checks
+0.6,E1,P,-1,independent_validation,saved_execution_replay_H48,48.0,0.047070000000530854,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,P,-1,independent_validation,saved_execution_replay_H96,96.0,0.09224640000320505,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,P,-1,independent_validation,saved_execution_replay_H192,192.0,0.19689089999883436,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,P,-1,independent_validation,DOP853_audit,,0.028357900002447423,independent integration and related saved-file checks
+0.6,E1,R,-1,independent_validation,saved_execution_replay_H48,48.0,0.05701689999841619,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,R,-1,independent_validation,saved_execution_replay_H96,96.0,0.09490399999776855,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,R,-1,independent_validation,saved_execution_replay_H192,192.0,0.182890199997928,additional timed fixed-control replay; H96/192 are numerical audits
+0.6,E1,R,-1,independent_validation,DOP853_audit,,0.07707059999665944,independent integration and related saved-file checks
+1.2,E0,G,-1,independent_validation,saved_execution_replay_H48,48.0,0.04794209999818122,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,G,-1,independent_validation,saved_execution_replay_H96,96.0,0.09143880000192439,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,G,-1,independent_validation,saved_execution_replay_H192,192.0,0.18036209999991115,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,G,-1,independent_validation,DOP853_audit,,0.04941479999979492,independent integration and related saved-file checks
+1.2,E0,P,-1,independent_validation,saved_execution_replay_H48,48.0,0.04712650000146823,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,P,-1,independent_validation,saved_execution_replay_H96,96.0,0.09303139999974519,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,P,-1,independent_validation,saved_execution_replay_H192,192.0,0.1825142000016058,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,P,-1,independent_validation,DOP853_audit,,0.02243789999920409,independent integration and related saved-file checks
+1.2,E0,R,-1,independent_validation,saved_execution_replay_H48,48.0,0.04796219999843743,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,R,-1,independent_validation,saved_execution_replay_H96,96.0,0.09185709999292158,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,R,-1,independent_validation,saved_execution_replay_H192,192.0,0.18105389999982435,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E0,R,-1,independent_validation,DOP853_audit,,0.050418300001183525,independent integration and related saved-file checks
+1.2,E1,G,-1,independent_validation,saved_execution_replay_H48,48.0,0.046827999998640735,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,G,-1,independent_validation,saved_execution_replay_H96,96.0,0.09222550000413321,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,G,-1,independent_validation,saved_execution_replay_H192,192.0,0.18224080000072718,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,G,-1,independent_validation,DOP853_audit,,0.048030500001914334,independent integration and related saved-file checks
+1.2,E1,P,-1,independent_validation,saved_execution_replay_H48,48.0,0.047094100002141204,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,P,-1,independent_validation,saved_execution_replay_H96,96.0,0.09199410000292119,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,P,-1,independent_validation,saved_execution_replay_H192,192.0,0.21198430000367807,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,P,-1,independent_validation,DOP853_audit,,0.0285234999973909,independent integration and related saved-file checks
+1.2,E1,R,-1,independent_validation,saved_execution_replay_H48,48.0,0.0817174999974668,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,R,-1,independent_validation,saved_execution_replay_H96,96.0,0.09237589999975171,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,R,-1,independent_validation,saved_execution_replay_H192,192.0,0.18189430000347784,additional timed fixed-control replay; H96/192 are numerical audits
+1.2,E1,R,-1,independent_validation,DOP853_audit,,0.04932320000079926,independent integration and related saved-file checks
+1.8,E0,G,-1,independent_validation,saved_execution_replay_H48,48.0,0.046914999998989515,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,G,-1,independent_validation,saved_execution_replay_H96,96.0,0.09143919999769423,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,G,-1,independent_validation,saved_execution_replay_H192,192.0,0.20416110000223853,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,G,-1,independent_validation,DOP853_audit,,0.07030289999966044,independent integration and related saved-file checks
+1.8,E0,P,-1,independent_validation,saved_execution_replay_H48,48.0,0.046774700000241864,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,P,-1,independent_validation,saved_execution_replay_H96,96.0,0.09257629999774508,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,P,-1,independent_validation,saved_execution_replay_H192,192.0,0.1805023000051733,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,P,-1,independent_validation,DOP853_audit,,0.021935600001597777,independent integration and related saved-file checks
+1.8,E0,R,-1,independent_validation,saved_execution_replay_H48,48.0,0.04679240000405116,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,R,-1,independent_validation,saved_execution_replay_H96,96.0,0.09193080000113696,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,R,-1,independent_validation,saved_execution_replay_H192,192.0,0.18020879999676254,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E0,R,-1,independent_validation,DOP853_audit,,0.06562580000172602,independent integration and related saved-file checks
+1.8,E1,G,-1,independent_validation,saved_execution_replay_H48,48.0,0.04704950000450481,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,G,-1,independent_validation,saved_execution_replay_H96,96.0,0.09198750000359723,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,G,-1,independent_validation,saved_execution_replay_H192,192.0,0.18128969999816036,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,G,-1,independent_validation,DOP853_audit,,0.06811620000371477,independent integration and related saved-file checks
+1.8,E1,P,-1,independent_validation,saved_execution_replay_H48,48.0,0.04843119999713963,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,P,-1,independent_validation,saved_execution_replay_H96,96.0,0.09571049999794923,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,P,-1,independent_validation,saved_execution_replay_H192,192.0,0.19050330000027316,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,P,-1,independent_validation,DOP853_audit,,0.02355290000559762,independent integration and related saved-file checks
+1.8,E1,R,-1,independent_validation,saved_execution_replay_H48,48.0,0.04907159999856958,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,R,-1,independent_validation,saved_execution_replay_H96,96.0,0.09717289999389322,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,R,-1,independent_validation,saved_execution_replay_H192,192.0,0.18878260000201408,additional timed fixed-control replay; H96/192 are numerical audits
+1.8,E1,R,-1,independent_validation,DOP853_audit,,0.07308080000075279,independent integration and related saved-file checks

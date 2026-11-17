@@ -1,0 +1,11 @@
+{
+  "Gate0": "completed_scope_authorized",
+  "Gate1": "passed",
+  "Gate2": "passed_main_budget_before_expansion",
+  "Gate3": "completed_all_three_budgets",
+  "Gate4": "completed_three_event_budgets_and_main_noevent",
+  "Gate5": "passed_minimum_integration_and_initialization_checks",
+  "human_result_approval": "PENDING",
+  "historical_D4_D5_approval": "UNCHANGED_PENDING",
+  "new_K_refinement": "NOT_RUN_NOT_CLAIMED"
+}

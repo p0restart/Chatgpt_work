@@ -1,0 +1,9 @@
+{
+  "stage": "binary64-as-exact-rationals certificate serialization",
+  "error": "Python integer string conversion exceeds default 4300 digit limit",
+  "cause": "Exact rational exponential-series bounds generate large denominator integers",
+  "repair": "Raise the local serialization digit limit to 100000; retain decimal certificate and complete binary interpretation certificate",
+  "optimizer_runs": 0,
+  "model_changes": false,
+  "discarded_negative_results": false
+}

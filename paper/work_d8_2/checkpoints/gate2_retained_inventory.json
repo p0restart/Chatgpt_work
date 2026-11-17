@@ -1,0 +1,187 @@
+{
+  "inventory_finalized_at": "2026-11-15T00:46:38.004709+08:00",
+  "gate": 2,
+  "note": "Final hashes of retained gate outputs; original completion timestamp is in gate JSON, not this inventory",
+  "files": [
+    {
+      "path": "K12_cross_evaluation.csv",
+      "sha256": "d36fd4cbad300e5247c2d13ff285c48efc880dc6fc506ce4f77d7b8f5da4d400",
+      "bytes": 3196
+    },
+    {
+      "path": "K12_F_controls.json",
+      "sha256": "f022bc5cf19faa2da1892371d65cb8e92cf073dabc1bda058623e8775b42bafd",
+      "bytes": 5151
+    },
+    {
+      "path": "K12_F_decisions.csv",
+      "sha256": "4be606c894e97147644621aeb7f1c1be74c05a990b690baf24b52c3badbb04a3",
+      "bytes": 15337
+    },
+    {
+      "path": "K12_G_controls.json",
+      "sha256": "89da7dbde14c359669b356384edd1831b7dfdcc2349611321589d9302cb2387b",
+      "bytes": 5569
+    },
+    {
+      "path": "K12_G_decisions.csv",
+      "sha256": "18a1a211380a223bcfb006dd1bcb531bd9895b5266ec87dedba57ad2aa6b9360",
+      "bytes": 16684
+    },
+    {
+      "path": "results/K12/asset_means.csv",
+      "sha256": "3c32977545625d52747ee027e81bb94625be418c7b0712f710f99fa04aed5341",
+      "bytes": 2179
+    },
+    {
+      "path": "results/K12/asset_rankings.csv",
+      "sha256": "a13f10835b039950556a17ab8458daf2ab5161f3bd9217c38a080affac69ce10",
+      "bytes": 3744
+    },
+    {
+      "path": "results/K12/cross_attacks.json",
+      "sha256": "599b9e1f1c489948f83dd304f1a91d42c8b42672aaf683385786f62846d73b28",
+      "bytes": 3888
+    },
+    {
+      "path": "results/K12/cross_resource.csv",
+      "sha256": "1dc3a52321afc8cb5d4d95da0e6569eb725d72cec6c8f73d4ea0ace2b3d0a884",
+      "bytes": 4395
+    },
+    {
+      "path": "results/K12/cross_states.csv",
+      "sha256": "63e02bb1aa028e81d2769e87351788a491a655c2a5d6588932bf9b000246c475",
+      "bytes": 1792691
+    },
+    {
+      "path": "results/K12/F/decision.json",
+      "sha256": "b2353fc24a3c1b046232f2cc1370c590cecb4bad076dc942e8dedc6f31b76e7f",
+      "bytes": 11807
+    },
+    {
+      "path": "results/K12/F_attack_response/decision.json",
+      "sha256": "06ca11d9117e806071499c91b1a40fbb9e74586f7fa5d38ea23bbf2413c9ec84",
+      "bytes": 12550
+    },
+    {
+      "path": "results/K12/F_attack_response/strong_00.json",
+      "sha256": "f309080f22c23a21ccd74d12a69a7895b18e4e7431c73a8cb0986f9bcd8e6e29",
+      "bytes": 34864
+    },
+    {
+      "path": "results/K12/G/decision.json",
+      "sha256": "f0d55940b7468b20d9eb057f3451b9501cc78712ab98b3138b2b84fd2a7c1669",
+      "bytes": 305
+    },
+    {
+      "path": "results/K12/G/initial_random.json",
+      "sha256": "e906a286e1b2767f22c4b531de7fbb3684821f5a698775df512a9717273c0685",
+      "bytes": 6417
+    },
+    {
+      "path": "results/K12/G/initial_uniform.json",
+      "sha256": "a299bfdee9f29e2491bbd0b377cdf980da2f85c31f7a6bbe640c3bd2d227380d",
+      "bytes": 6064
+    },
+    {
+      "path": "results/K12/G/initial_zero.json",
+      "sha256": "232e1ca2a4f328c2d83a16100eb8d096b1008022dacd6cea5e4038afb6f7b29a",
+      "bytes": 3760
+    },
+    {
+      "path": "results/K12/G/random/controls.json",
+      "sha256": "f41a6f9d5c11ac624dddbfb3c5bae6f402429aeee6cf0ae78062f809c88b6094",
+      "bytes": 5553
+    },
+    {
+      "path": "results/K12/G/random/last.json",
+      "sha256": "cae66df4103db5ba97ca7f068d822399440b4e2fe215536a6677ef29a93262d8",
+      "bytes": 18455
+    },
+    {
+      "path": "results/K12/G/random/trace.jsonl",
+      "sha256": "d9d78216a4096f3d38434a2eb1931a063c1ca32aacc9515c1bf930c03d80cddd",
+      "bytes": 91478
+    },
+    {
+      "path": "results/K12/G/uniform/controls.json",
+      "sha256": "89da7dbde14c359669b356384edd1831b7dfdcc2349611321589d9302cb2387b",
+      "bytes": 5569
+    },
+    {
+      "path": "results/K12/G/uniform/last.json",
+      "sha256": "86dcbc57b8f45592be4591e118e54730957899c7dcd45282834b2bfd0738bdbd",
+      "bytes": 18391
+    },
+    {
+      "path": "results/K12/G/uniform/trace.jsonl",
+      "sha256": "032810586d279c38e18873f2385aeb1b1fbe3f71f2f077b3084e9a8505435ba1",
+      "bytes": 63853
+    },
+    {
+      "path": "results/K12/G/zero/controls.json",
+      "sha256": "4627176e46a834e79769d35edd5a1425fef1185b923e2fcad0d0aba70b22048d",
+      "bytes": 5531
+    },
+    {
+      "path": "results/K12/G/zero/last.json",
+      "sha256": "8b9c65e68c832122bb3a34ab5a5561245412fcc87521314b1e57abf3934f598f",
+      "bytes": 18384
+    },
+    {
+      "path": "results/K12/G/zero/trace.jsonl",
+      "sha256": "f35cd20ddd8476955cf999f0970dd02a98a9758135efec5c81c387b974cd4557",
+      "bytes": 72333
+    },
+    {
+      "path": "results/K12/G_F_same_attack_differences.csv",
+      "sha256": "a0316db6295e61354cd6567149dea47ef293c1f83d690a93769692eded5f7dfe",
+      "bytes": 560
+    },
+    {
+      "path": "results/K12/model.json",
+      "sha256": "28042f480562edd2fa5e9d697bdf313c9e4ea0ab4ea6d7b50ca4f116e122a21c",
+      "bytes": 1902
+    },
+    {
+      "path": "results/K12/objective_changes.csv",
+      "sha256": "58f4e73c1c4d25dc3d621f7633ed1222bd262050b77fa1324ced45ccb3756809",
+      "bytes": 4933
+    },
+    {
+      "path": "results/K12/optimizer_attempts.csv",
+      "sha256": "79d288a7145677539d632455bab70beadbf5d6364fea42e497187a94d7468c45",
+      "bytes": 21383
+    },
+    {
+      "path": "results/K12/optimizer_calls.jsonl",
+      "sha256": "790d013b8dbf65f7a9835bc92f0c6cd1f666c6aaef3468cc142304bbb2a7e518",
+      "bytes": 280266
+    },
+    {
+      "path": "results/K12/planned_controls.csv",
+      "sha256": "3103d706f6c3a34d607ba970711c68badce4f8392832296f7891f7314e2d69df",
+      "bytes": 101305
+    },
+    {
+      "path": "results/K12/quality.csv",
+      "sha256": "255802f6933795ab37022c2fddd808b0b63a51063d86fe2ee274be7aa5782ef8",
+      "bytes": 1499
+    },
+    {
+      "path": "results/K12/solver_audit.csv",
+      "sha256": "1c1c94cc090f439fd2a16a72cd93b81493840ab7f3c4d2b869aa16220016091f",
+      "bytes": 3403
+    },
+    {
+      "path": "results/K12/subinterval_changes.csv",
+      "sha256": "6cec5dd5b506fc1a1b16522044e87b2533a9d39e662337d0806c25d1714b9dad",
+      "bytes": 21790
+    },
+    {
+      "path": "results/K12/timing.csv",
+      "sha256": "9186c00760adae9184b7d838456ec6ae5661620fadee53da6f0363646a223f00",
+      "bytes": 9247
+    }
+  ]
+}

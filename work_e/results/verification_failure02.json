@@ -1,0 +1,8 @@
+{
+  "stage": "source_hash_verification_after_all_precision_computations",
+  "error": "UnicodeDecodeError: gbk cannot decode UTF-8 source_manifest.json",
+  "cause": "read_text omitted explicit UTF-8 on Windows; manifest includes Chinese filenames",
+  "fix": "Read manifest explicitly as UTF-8; resume only final verification using all saved precision outputs",
+  "numerical_experiments_rerun": false,
+  "results_discarded": false
+}

@@ -1,0 +1,8 @@
+{
+  "positive_negative_attack_distance": 0.03428742520791073,
+  "attack_error_sum": 1.0250103932740728e-05,
+  "positive_negative_defense_distance": 0.020395413598279566,
+  "defense_error_sum": 4.4113726625633065e-06,
+  "attack_difference_resolved": true,
+  "defense_difference_resolved": true
+}

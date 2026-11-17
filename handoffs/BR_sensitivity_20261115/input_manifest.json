@@ -1,0 +1,65 @@
+{
+  "created": "2026-11-16T00:10:35.487811+08:00",
+  "sources": {
+    "paper/work_d7/results/static/B1.2/model.json": {
+      "sha256": "28042f480562edd2fa5e9d697bdf313c9e4ea0ab4ea6d7b50ca4f116e122a21c",
+      "bytes": 1902
+    },
+    "paper/work_d7/results/static/B1.2/G_controls.json": {
+      "sha256": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed",
+      "bytes": 2785
+    },
+    "paper/work_d7/results/static/B1.2/G_evaluation.json": {
+      "sha256": "e78f806dd8afca2ceb3671bdfbee3b026ce19c97853143d9dc182d34f8efb1e0",
+      "bytes": 564
+    },
+    "paper/work_d7/results/static/B1.2/G/decision.json": {
+      "sha256": "e7d7b92b3bba5112b0ab66a07849bdee18c42bbffff36ba0a5a21b85e71c5a3e",
+      "bytes": 287
+    },
+    "paper/work_d7/results/static/B1.2/G/warm/last.json": {
+      "sha256": "b69cdedf7ed3a5ec6fc0bd7a8fd1f56fa3bf66ef2c487e6dc39c7225dfc21ca8",
+      "bytes": 10215
+    },
+    "paper/work_d7/results/static/environment_static_1.2.json": {
+      "sha256": "c8fa24efc74cdd29a6cf2db9a304b07cf61916a2aedad92dd4c4d034256fa957",
+      "bytes": 306
+    },
+    "paper/work_d7/config_new_topology.yaml": {
+      "sha256": "f4d8099cb9a190c0151bfce468f2d1fbd9147fd89ee804fe1c69bef17556dea3",
+      "bytes": 1387
+    },
+    "paper/work_d7/03_experiment_protocol.md": {
+      "sha256": "846c94199f8f14ede17827900c53a59a92744ff0da0501c22757b69b6e5228e4",
+      "bytes": 4890
+    },
+    "paper/work_d7/analysis/run_d7.py": {
+      "sha256": "4ab2a15bcbc74d5a769e26decb585c064c01364d84fe6135c54710eb0b5fab78",
+      "bytes": 13173
+    },
+    "paper/work_d5/analysis/run_replanning.py": {
+      "sha256": "dbdb43ab42644ec0e5321c05cff5a691ff2795d15122d2180129982393b9df2d",
+      "bytes": 28149
+    },
+    "paper/work_d7/sources/source_manifest.json": {
+      "sha256": "d40665befb8ca3f77c229505f54f7b2b966157c70ba62157a73ebdbfb5f5fceb",
+      "bytes": 5722
+    },
+    "02_MODEL_SPEC.md": {
+      "sha256": "9e85d14105d6f0a40b197ce1fe5f3b8621554e6936c604031f697e8f94190df4",
+      "bytes": 5044
+    },
+    "src/core.py": {
+      "sha256": "ef2c675252d5fc8e00bc7103dd542a40bbf9c7714412207dd4e0b20966859419",
+      "bytes": 10232
+    },
+    "src/game_solver.py": {
+      "sha256": "8a5469467d5028077f6b83f7c9bb2dde5be6e0ff46790c07d252f0d70dbd1d87",
+      "bytes": 11411
+    },
+    "src/__init__.py": {
+      "sha256": "446de6ef409056492eb2e7c7ca01d0498b7ea795d05dbca383e9ba1fef1e4407",
+      "bytes": 91
+    }
+  }
+}

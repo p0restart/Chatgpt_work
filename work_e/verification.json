@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "original_files_checked": 1102,
+  "original_files_changed": 0,
+  "model_config_exact_match": true,
+  "matrix_eigenpair_max_residual": 3.9968028886505635e-15,
+  "new_paths": 3,
+  "optimizer_attempts_checked": 90,
+  "all_optimizer_status_zero": true,
+  "fixed_control_serialization_replay_error": 9.974659986866641e-17,
+  "strict_global_certificate": false
+}

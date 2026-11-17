@@ -1,0 +1,7 @@
+B,evaluation,method,update,passed,seed
+1.2,E0,R-LAG,0,True,20262115
+1.2,E0,R-LAG,1,True,20262125
+1.2,E0,R-LAG,2,True,20262135
+1.2,E1,R-LAG,0,True,20262215
+1.2,E1,R-LAG,1,True,20262225
+1.2,E1,R-LAG,2,True,20262235

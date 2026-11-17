@@ -1,0 +1,217 @@
+{
+  "date": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "object_priority": [
+    "B_exact_ODE_Kslot",
+    "C_exact_arithmetic_RK4_then_implementation"
+  ],
+  "N": 6,
+  "K": 6,
+  "T": 10,
+  "B": 1.2,
+  "A": 0.8,
+  "H": 48,
+  "defense_dimension": 72,
+  "attack_dimension": 12,
+  "model": {
+    "beta": [
+      [
+        0.0,
+        0.0,
+        0.08,
+        0.09,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.11,
+        0.0,
+        0.07,
+        0.12
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.05,
+        0.0
+      ]
+    ],
+    "alpha": [
+      0.25,
+      0.25,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "epsilon": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "delta": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "gamma": [
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3
+    ],
+    "q": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      4.0,
+      1.0
+    ],
+    "h": [
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05,
+      0.05
+    ],
+    "c_s": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "c_r": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "g": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "c_a": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "omega": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "nu": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "b_s": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "b_r": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "d_a": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "entry": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "x0": [
+      0.1,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "B": 1.2,
+    "A": 0.8
+  },
+  "new_stochastic_sampling": false,
+  "new_optimizations": 0,
+  "certificate_arithmetic": "Python Fraction exact rationals; Taylor exp remainder enclosures",
+  "parameter_interpretations": [
+    "declared_decimal",
+    "binary64_as_exact_reals"
+  ],
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "scope_authorization": "User Work E-R1 instruction; not approval of conclusions",
+  "protected_files": 1185
+}

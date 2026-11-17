@@ -1,0 +1,9 @@
+﻿source,target,paper_source,paper_target,beta,security_assumption,empirically_verified
+0,2,v1,v3,0.08,网关服务凭证被滥用且订单接口存在可利用弱点,False
+0,3,v1,v4,0.09,网关持有认证访问路径且认证接口存在可利用弱点,False
+1,2,v2,v3,0.1,Web应用可访问订单服务且内部接口存在可利用弱点,False
+3,2,v4,v3,0.11,认证服务凭证可用于订单接口越权,False
+3,4,v4,v5,0.07,认证服务持有受限数据库访问凭证且授权边界失效,False
+3,5,v4,v6,0.12,认证服务令牌可被滥用于后台管理授权路径,False
+2,4,v3,v5,0.1,订单服务数据库凭证被窃取并被用于利用数据库弱点,False
+5,4,v6,v5,0.05,后台管理服务持有数据库管理授权且凭证可被滥用,False

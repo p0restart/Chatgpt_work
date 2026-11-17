@@ -1,0 +1,11 @@
+{
+  "object": "B",
+  "matrix_measure_infty_bound": 0.18999999999999997,
+  "f_u_row_2_bound": 0.3442382895611701,
+  "f_xu_bound": 0.6376388603226826,
+  "defense_direct_modulus": 1.6666666666666667,
+  "state_hessian_norm_bound": 4669.418998427631,
+  "defense_lower_bound": -4667.752331760964,
+  "certifies_convexity": false,
+  "reason": "bound is too conservative; not a negative-curvature example"
+}

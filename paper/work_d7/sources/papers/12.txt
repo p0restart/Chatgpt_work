@@ -1,0 +1,2686 @@
+Lou et al. Cybersecurity           (2026) 9:143  
+https://doi.org/10.1186/s42400-026-00577-4
+RESEARCH
+Open Access
+© The Author(s) 2026. Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which 
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the 
+original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or 
+other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line 
+to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory 
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this 
+licence, visit http://​creat​iveco​mmons.​org/​licen​ses/​by/4.​0/.
+Cybersecurity
+Collaborative defense model 
+for crowdsensing networks based 
+on incomplete Information differential games
+Kaiwen Lou1, Guosheng Zhao1*   , Jian Wang2, Xiaodan Huang1 and Zixuan Wan1 
+Abstract 
+Crowdsensing networks face complex security threats due to their open architecture and distributed collaboration 
+model. However, existing defense methods neglect the heterogeneity of sensing nodes and information asymmetry 
+between attackers and defenders, resulting in traditional static defense strategies that struggle to adapt to dynamic 
+adversarial environments. To address this challenge, this paper proposes a dynamic collaborative defense model 
+driven by incomplete information differential games. Firstly, a dynamic differential equation system with random 
+perturbation factors is established to characterize the security state evolution process of sensing nodes. Subse-
+quently, an incomplete information differential game model is constructed to analyze attack and defense behaviors, 
+with a Bayesian strategy inference method designed to infer potential strategy preferences of attackers through real-
+time attack-defense interaction results and node states. This approach overcomes the limitations of static belief 
+updates in traditional incomplete information games. Finally, a defense decision-making algorithm is designed based 
+on optimal control theory. Simulation results demonstrate that the proposed model accurately characterizes strategic 
+interactions between attackers and defenders while providing real-time defensive strategies based on the inference 
+method, improving defense success rates by 24.2%. Additionally, the model exhibits strong adaptability in dynamic 
+network environments, enhancing network availability by 22.3%.
+Keywords  Incomplete information differential games, Collaborative defense, Crowdsensing networks, Bayesian 
+inference, Attack and defense strategy selection
+Introduction
+With the rapid development and widespread application 
+of information and communication technologies, crowd-
+sensing networks, as an emerging perception paradigm, 
+have become integral components of modern network 
+systems (He et al. 2022). Characterized by widely distrib-
+uted nodes, dynamic adaptability, and reliance on shared 
+information, this network paradigm plays crucial roles in 
+various domains, including smart transportation (Li 
+et al. 2023), environmental monitoring (Shi et al. 2025), 
+and smart agriculture (Sun et al 2022), thereby facilitat-
+ing the advancement of the Internet of Things and intel-
+ligent systems. Mobile crowdsensing networks (MCNs) 
+leverage diverse sensing nodes that collectively par-
+ticipate in data acquisition and transmission, forming 
+complex collaborative network ecosystems. However, 
+the growing interactions with external systems expose 
+crowdsensing networks to sophisticated security threats 
+and attack challenges, potentially resulting in severe 
+consequences such as compromised network function-
+ality, degraded quality of service, and complete system 
+failure. Consequently, developing effective collaborative 
+*Correspondence:
+Guosheng Zhao
+zgswj@163.com
+1 School of Computer Science and Information Engineering, Harbin 
+Normal University, Harbin 150025, Heilongjiang, China
+2 School of Computer Science and Technology, Harbin University 
+of Science and Technology, Harbin 150080, Heilongjiang, China
+
+Page 2 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+defense mechanisms to secure crowdsensing networks 
+has emerged as a critical research challenge.
+Attacks against crowdsensing networks are charac-
+terized by their diversity, complexity, and persistence. 
+Attackers typically target vulnerable nodes in the net-
+work through various attack vectors, including data theft, 
+denial of service attacks, node occupation, data tam-
+pering, identity disguise, and malicious code injection 
+(Xiong et al. 2021; Zhao et al. 2025; Liang et al. 2020). In 
+response to these security threats, the academic commu-
+nity has conducted extensive research on attack defense 
+in crowdsensing networks. Simsek et  al. (Simsek et  al. 
+2020) employed sequence feature selection and knowl-
+edge-based methods to enhance deep neural network 
+performance in detecting false tasks within crowdsens-
+ing networks. Huang et al. (Huang et al. 2024) designed a 
+novel consensus protocol called Proof-of-Data (PoD) and 
+a homomorphic data perturbation scheme to construct 
+a decentralized mobile crowdsensing platform ensuring 
+system security, data privacy protection, and incentive 
+fairness. Zhao et al. (Zhao et al. 2023) proposed a crowd-
+intelligence collaborative defense model based on a 
+multi-objective discrete Harris Hawk optimization algo-
+rithm to address DDoS attacks in MCNs by establishing 
+a distributed collaborative mechanism with overlapping 
+perception alliances and a Pareto-optimal defense solu-
+tion screening strategy. However, existing network secu-
+rity defenses primarily focus on single-point defense 
+strategies targeting specific attack types, potentially 
+resulting in fragmented and inconsistent defense mecha-
+nisms that fail to address persistent attacks in dynamic 
+environments. Consequently, there is an urgent need to 
+develop collaborative decision-making frameworks capa-
+ble of coordinating heterogeneous node capabilities and 
+dynamically optimizing defense strategy allocation to 
+counter complex persistent attack threats in crowdsens-
+ing networks.
+Game theory, as a structured theoretical framework for 
+analyzing strategic interactions, provides a powerful tool 
+for addressing cybersecurity defense decision-making 
+problems (Yao et  al. 2024). By modeling the behavioral 
+characteristics and patterns of attackers throughout the 
+cyber-attack lifecycle, game-theoretic approaches can 
+facilitate the development of optimal mitigation strate-
+gies that minimize attack-induced damage while consid-
+ering associated costs and achieving balanced trade-offs. 
+In this context, differential games, as mathematical tools 
+for describing continuous-time decision-making pro-
+cesses, are particularly well-suited for modeling strategy 
+evolution processes in dynamic cybersecurity scenarios. 
+Zhang et al. (Zhang et al. 2018) first applied differential 
+games to network security defense decisions, while sub-
+sequent studies (Zhang et al. 2023a; Zhang et al. 2023b; 
+Wu et al. 2022) have constructed differential game mod-
+els for various network attack and defense scenarios and 
+designed corresponding defense strategy selection algo-
+rithms. However, most existing differential game studies 
+assume that attackers and defenders possess complete 
+information—that is, both parties have a comprehensive 
+understanding of each other’s payoff functions, strategy 
+sets, and system states. This assumption is inconsistent 
+with real-world network environments where attackers’ 
+behaviors are concealed and defenders cannot fully com-
+prehend attackers’ intentions and strategic information.
+Aiming at the above problems, this paper proposes 
+an incomplete information differential game model 
+that integrates Bayesian inference with differential 
+game theory to achieve collaborative optimization of 
+attack behavior prediction and defense decision-making 
+through dynamic interaction mechanisms. In this model, 
+defenders infer potential strategy distributions of attack-
+ers in real-time based on Bayesian inference and employ 
+dynamic differential equations from differential game 
+theory to characterize the real-time evolution of sens-
+ing node states. Through this mechanism, defenders 
+can gradually reduce uncertainty about attackers’ strate-
+gies under information asymmetry conditions, thereby 
+transforming traditional passive response approaches 
+into proactive defense methods. This approach not only 
+dynamically adapts to complex multi-stage attack sce-
+narios but also establishes a real-time and continuously 
+adaptive defense decision system for crowdsensing 
+networks. The main contributions of this paper are as 
+follows:
+(1)	 A differential game framework for crowdsens-
+ing networks with incomplete information is con-
+structed. By establishing a dynamic differential 
+equation system with a random interference inten-
+sity factor, the state evolution process of sensing 
+nodes in complex attack and defense environments 
+is accurately portrayed. The limitations of exist-
+ing models in real networks are overcome, and the 
+adaptability of the models to real network environ-
+ments is significantly improved.
+(2)	 A dynamic Bayesian strategy inference method 
+is designed to realize real-time strategy inference 
+based on continuous interaction information. The 
+method dynamically infers the attacker’s poten-
+tial attack strategies using real-time network state 
+and attack-defense utility difference and enables 
+the defender to capture the subtle evolution of the 
+attacker’s strategy.
+(3)	 The Hamiltonian optimal control method is used to 
+solve for maximizing attack and defense gains, and 
+equilibrium existence is analyzed and proved. An 
+
+Page 3 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+adaptive defense decision-making algorithm for an 
+uncertain network environment is developed. The 
+algorithm can realize self-correction in the dynamic 
+environment and provide theoretical decision sup-
+port for the defender to implement defensive coun-
+termeasures.
+The rest of this paper is organized as follows. 
+Sect. “Related work” introduces related research works. 
+Sect.  “Incomplete information differential game model” 
+introduces the formal description and definition of the 
+model. Sect. “Optimal defense strategy selection” derives 
+the saddle point strategy solution method and designs 
+the defense strategy selection algorithm based on it. 
+Sect.  “Simulation experiment and analysis” conducts 
+experimental setup and analysis. Sect. “Conclusion” gives 
+the conclusions and future work.
+Related work
+In recent years, the research and application of game 
+theory in crowdsensing networks have become increas-
+ingly in-depth. Studies have shown that it can charac-
+terize the dynamic game relationship between network 
+participants (such as service providers, requesters, and 
+malicious attackers) and provide theoretical support for 
+key issues in crowdsensing networks, including sensing 
+cost, data quality, service pricing equilibrium decision, 
+and node incentives (Dasari et al. 2020). Yang et al. (Yang 
+et  al. 2017) proposed a mobile crowd intelligence data 
+assurance method that integrates unsupervised quality 
+evaluation and Shapley value-based cooperative game 
+incentives. It improves data reliability by filtering low-
+quality data through anomaly detection and designing 
+a game-driven surplus allocation strategy. Cheung et al. 
+(Cheung et al. 2018) constructed a two-stage Stackelberg 
+game framework between service providers and users, 
+combined with dynamic programming algorithms and 
+closed-form decision criteria, and achieved a coordinated 
+equilibrium of service provider profit maximization and 
+user participation strategy optimization under network 
+heterogeneity constraints. Jin et al. (Jin et al. 2017) pro-
+posed the Theseus payment mechanism. Constructing 
+a Bayesian Nash equilibrium under a non-cooperative 
+game, it encourages workers in MCS to maximize their 
+perception efforts to improve data quality, thereby opti-
+mizing the aggregation accuracy of the truth discov-
+ery algorithm while ensuring individual rationality and 
+budget feasibility. However, the above studies mainly 
+focus on aspects such as data quality, policy scheduling 
+and incentive mechanisms in crowdsensing networks, 
+and pay less attention to the security and defense issues 
+of crowdsensing networks.
+In reality, network attack and defense are character-
+ized by real-time, continuous processes, and the attack 
+and defense strategies are dynamic and change at high 
+frequency. Therefore, only continuous, real-time defense 
+strategies are applicable to actual attack-defense inter-
+actions and can improve the defense effect. Differential 
+games provide an effective framework for describing 
+the dynamic evolution of network security status and 
+the real-time decision-making process in attack-defense 
+interactions. Gan et  al. (Gan et  al. 2024) proposed a 
+device classification-driven differential game collabo-
+rative defense framework for APT attack and defense 
+scenarios in the Industrial Internet of Things (IIoT): 
+hierarchical modeling based on differences in device 
+protection capabilities, a differential game model for het-
+erogeneous node attack and defense cost–benefit opti-
+mization, and a dynamic defense plan generated through 
+a saddle point equilibrium strategy. Rao et al. (Rao et al. 
+2020) proposed an epidemiological defense model based 
+on the quarantine mechanism for DDoS attack protec-
+tion of critical infrastructure networks. The local and 
+global stability conditions of the infection-free/endemic 
+equilibrium point were analyzed by constructing a differ-
+ential equation system, and its effectiveness was verified 
+through numerical simulation. Wang et  al. (Shengling 
+Wang et  al. 2021) proposed a differential game-driven 
+attack and defense dynamic analysis framework, con-
+structed a black-box and white-box dual model to 
+describe the evolution law of network confrontation, and 
+solved the equilibrium solution through the Nash equi-
+librium existence proof and iterative algorithm, providing 
+theoretical support for the design of network attack and 
+defense dynamic strategies. Zhu et al. (Zhu et al. 2023) 
+proposed a dynamic attack and defense game frame-
+work driven by multi-agent deep reinforcement learning 
+(MADRL), constructed a multi-defender-multi-attacker 
+collaborative confrontation model, broke through the 
+traditional single attack and defense subject assump-
+tion, and realized the real-time generation and optimi-
+zation of defense strategies through equilibrium analysis 
+and experience sharing mechanism. Zhang et al. (Zhang 
+et  al. 2020) constructed a multi-stage real-time attack 
+and defense game model and designed a total discounted 
+benefit equilibrium strategy selection algorithm by inte-
+grating differential games and Markov decisions. Table 1 
+analyzes and summarizes the main research on differen-
+tial games in network security defense.
+Although differential games can more accurately 
+describe the attack and defense process in continuous 
+time, most existing studies assume that the attacker and 
+defender have complete information, that is, both par-
+ties have a complete understanding of each other’s payoff 
+functions, strategy sets, and system states. However, in 
+
+Page 4 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+actual networks, the attacker’s behavior is often hidden, 
+and the defender cannot fully grasp his intentions and 
+strategy information. This information asymmetry limits 
+the applicability of differential game models.
+Incomplete information games provide a theoreti-
+cal framework for solving the information asymmetry 
+problem. In an incomplete information game, partici-
+pants estimate the opponent’s strategy through a priori 
+beliefs and continuously update the beliefs through the 
+feedback data during the game. Patra et al. (Patra et al. 
+2024) proposed a Bayesian reasoning-driven repeated 
+game evolution strategy. By dynamically accumulating 
+evidence of opponent behavior and updating strategy 
+beliefs, they revealed the evolutionary stability condi-
+tions of Bayesian learning strategies against exploi-
+tation in repeated prisoner’s dilemmas. Zhang et  al. 
+(Liu et  al. 2021) proposed a defense decisions model 
+that integrates partially observable Markov deci-
+sion and cyclic deep Q networks. It breaks through 
+the traditional MDP complete rationality assumption 
+and dynamically approximates the game equilibrium 
+strategy under incomplete information conditions 
+through online learning. Fang et al. (Fang and Yi 2024) 
+proposed a Bayesian learning-driven adaptive path 
+planning strategy. For the limited rational attack and 
+defense game scenario, they dynamically inferred the 
+attacker’s reasoning level by integrating the level-
+k decision model and the multi-model strategy. The 
+defensive adaptability under unknown attack strate-
+gies was experimentally verified. Ren et al. (Ren et al. 
+2023) proposed a multi-UAV cooperative air combat 
+decision-making method driven by incomplete infor-
+mation dynamic games. They inferred the enemy’s tac-
+tical intentions through a dynamic Bayesian network 
+and solved the Bayesian Nash equilibrium strategy 
+based on a multi-agent deep reinforcement learning 
+framework. The simulation verified the effectiveness of 
+the cooperative tactical generation and execution in a 
+complex confrontation environment. Hu et al. (Hu et al. 
+2018) proposed a bounded rational Bayesian attack 
+and defense evolutionary game model. By introducing 
+a selection intensity factor to improve the replication 
+dynamic equation, expanding the multi-type strategy 
+set, and integrating incomplete information scenarios, 
+they constructed the evolution trajectory of the defense 
+strategy under the dynamic confrontation network and 
+realized the generation of the optimal defense algo-
+rithm based on evolutionary stable equilibrium.
+Among the above works, the current work lacks 
+research on the incomplete information differen-
+tial game model. This paper proposes a collaborative 
+defense method for crowdsensing networks based 
+on incomplete information differential games. This 
+method overcomes the information asymmetry prob-
+lem by integrating the dynamic modeling capabilities 
+of differential games with the Bayesian strategy infer-
+ence method of incomplete information games and 
+introduces a collaborative mechanism to optimize the 
+overall strategy selection of multiple defenders, thereby 
+providing a new solution for the security protection of 
+complex dynamic networks.
+Table 1  Application of differential games in network security defense
+Paper
+Research focus
+Method
+Main contributions
+Zhang et al. (2018)
+Cybersecurity defense decision making
+Differential game
+The first application of differential game theory 
+in security defense
+Zhang et al. (2023a)
+Scale-free network defense
+Differential game
+Scale-free network defense strategy selection 
+algorithm
+Zhang et al. (2023b)
+Complex network defense
+Potential differential game
+Construction of defense decision-making method 
+based on potential differential game
+Wu et al. (2022)
+Internet of things attack and defense analysis
+Differential game
+Differential game model of attack and defense 
+in the Internet of Things
+Gan et al. (2024)
+Industrial IoT APT defense
+Hierarchical differential game
+Heterogeneous node attack and defense optimi-
+zation model
+Rao et al. (2020)
+DDoS attack protection
+Epidemiological model
+Isolation zone defense mechanism and stability 
+analysis
+Wang et al. (2021)
+Network confrontation analysis
+Differential game
+Evolution law of black-and-white box dual model
+Zhu et al. (2023)
+Advanced threat defense
+Multi-agent deep reinforce-
+ment learning and game 
+theory
+Multi-defender and multi-attacker Collaborative 
+model
+Zhang et al. (2020)
+Moving target defense
+Combining differential 
+games with markov decision 
+making
+Multi-stage attack and defense balance strategy
+
+Page 5 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+Incomplete information differential game model
+This section is dedicated to introducing the evolutionary 
+dynamics model of attack and defense in crowdsensing 
+networks. First, we describe the reality of crowdsensing 
+networks under attack. Then, we abstract this description 
+into a mathematical framework for better analysis.
+Model overview and game theory model definition
+In a crowdsensing network, attackers will launch vari-
+ous attacks against sensing nodes. In particular, attacks 
+against key nodes may cause damage or paralysis of the 
+entire network. Defenders need to monitor the network 
+status in real-time, identify possible attack behaviors, and 
+deploy corresponding defense measures. It is worth not-
+ing that there is information asymmetry between attack-
+ers and defenders, and neither party can fully understand 
+the other’s strategy and capabilities. The attack and 
+defense process in a crowdsensing network is essentially 
+a dynamic competitive game process for the control of 
+sensing nodes under incomplete information conditions. 
+This complex interaction can be mathematically modeled 
+and analyzed through the incomplete information differ-
+ential game theory, thus providing a theoretical basis for 
+network collaborative defense.
+Figure 1 illustrates the overall framework of the pro-
+posed incomplete information differential game col-
+laborative defense model. This framework consists of 
+three core steps: First, a state-aware module monitors 
+the state of sensing nodes and the results of attack-
+defense interactions in real time; second, Bayesian pol-
+icy inference dynamically updates the belief estimate 
+of the opponent’s policy, and solves for the equilibrium 
+policies of both sides based on optimal control theory; 
+finally, the attacking and defending sides execute their 
+policies to form an adversarial process, the results of 
+which drive the evolution of node states according to 
+differential equations, thus constituting a closed-loop 
+feedback control mechanism.
+There are two players in the incomplete informa-
+tion differential game, an attacker and a defender. The 
+attacker’s goal is to maximize the system loss by assign-
+ing appropriate attack competition intensity to each 
+sensing node to paralyze the sensing node. The defend-
+er’s goal is to protect each sensing node from attack by 
+assigning appropriate defense competition intensity to 
+each sensing node, thereby minimizing the system loss.
+Definition 1  The incomplete information differential 
+game 
+model 
+can 
+be 
+expressed 
+as 
+an 
+octet 
+IIDG =
+
+N, S, P, P, x(t), ˙θ, t, U
+
+ , where:
+Fig. 1  Overall framework of the collaborative defense model for incomplete information differential game
+
+Page 6 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+(1)	 N = {ND, NA} is the set of participants in the 
+attack-defense game. ND represents the defender 
+and NA represents the attacker.
+(2)	 S = {DS, AS} 
+is 
+the 
+action 
+space. 
+DS = (d1, d2, · · · , dm) is the defense action, and its 
+corresponding defense strength is 
+
+e1
+D, e2
+D, · · · , em
+D
+
+;AS = (a1, a2, · · · , an) is the defense action, and its 
+corresponding defense strength is 
+
+e1
+A, e2
+A, · · · , en
+A
+
+ , 
+m, n ≥1.
+(3)	 P = {PD(t), PA(t)} represents the control strategy at 
+time t . PD(t) = (p1(t), p2(t), · · · pm(t)) represents 
+the mixed strategy selected by the defender at time 
+t , m
+i=1 pi(t) = 1 . PA(t) = (q1(t), q2(t), · · · qn(t)) 
+represents the mixed strategy selected by the 
+attacker at time t , n
+j=1 qj(t) = 1.
+(4)	 P =
+
+
+PD(t), 
+PA(t)
+ represents the posterior probability 
+of both parties adopting the mixed strategy at time 
+t . 
+PD(t) =
+
+belief new
+D (d1), belief new
+D (d2), · · · , belief new
+D (dm)
+ rep-
+resents the attacker’s prediction of the defender’s 
+control 
+strategy, 
+m
+i=1 belief new
+D (dm) = 1 . 
+
+PA(t) =
+
+belief new
+A
+(a1), belief new
+A
+(a2), · · · , belief new
+A
+(an)
+ repre-
+sents the defender’s prediction of the attacker’s con-
+trol strategy, n
+j=1 belief new
+A
+(an) = 1.
+(5)	 x(t) = {xN(t), xI(t), xS(t), xC(t)} is the sensing 
+node state variable.
+(6)	 ˙θ =
+ ˙N(t), ˙I(t), ˙S(t), ˙C(t)
+
+ is the state evolution 
+function, and the state evolution function is shown 
+in Eq. (10).
+(7)	 t ∈[t0, T] represents the time in the network attack 
+and defense process and is a continuous variable.
+(8)	 U = {UD, UA} is the set of payoff functions of 
+the attacker and the defender. UD =
+ T
+t0uD(t)dt 
+represents the payoff function of the defender; 
+UA =
+ T
+t0uA(t)dt represents the payoff function of 
+the attacker. Both are integral functions that change 
+dynamically over time.
+Network model and sensing node status
+Combined with the CICIoMT2024 dataset (Dadkhah 
+et  al. 2024) scenario, this dataset constructs a medical 
+Internet of Things (IoMT) containing 40 devices. These 
+devices are connected via Wi-Fi, MQTT, and Bluetooth, 
+and continuously collect and transmit patient physiologi-
+cal data. In this environment, attackers launch various 
+attacks such as DDoS, DoS, and reconnaissance against 
+these IoMT devices. Therefore, an example of the attack 
+and defense model is shown in Fig.  2. The Q sensing 
+nodes are considered to be node resources that the two 
+parties in the game compete for. The goal of the attacker 
+and the defender is to gain control of the sensing nodes 
+by assigning appropriate competition intensity. ED(t) and 
+EA(t) are defined as the competition intensity assigned 
+by the defender and the attacker to the crowdsensing 
+networks sensing nodes at time t, respectively. The game 
+participants with higher competition intensity can con-
+trol the sensing nodes. Each sensing node is categorized 
+into four states, which are normal state ( N ), impaired 
+state ( I ), secure state ( S ), and crisis state ( C ). The total 
+duration of crowdsensing network attacks is represented 
+by T . At the moment t , the number of sensing nodes in 
+N , I , S , and C states are xN(t) , xI(t) , xS(t) , xC(t),where 
+∀t ∈[t0, T] , xN(t) , xI(t) , xS(t) , xC(t) ≥0 . And it satisfies 
+Eq. (1).
+(1)	 N is a normal state: it means that the sensing 
+nodes function normally and can provide services 
+to the network. These nodes are controlled by the 
+defender by default. However, these nodes have 
+inherent security vulnerabilities, and attackers can 
+compete for control by assigning higher competi-
+tion intensity.
+(2)	 I is an impaired state: it means that the sensing 
+node has been controlled by the attacker, but it 
+can still provide normal services to the network on 
+the surface, making it difficult for the defender to 
+immediately detect its controlled state. The attacker 
+can utilize this node to attack neighboring nodes 
+or collect sensitive information for subsequent 
+attacks. The node in this state requires the defender 
+to invest more competition intensity to restore con-
+trol.
+(3)	 S is a secure state: it means that the sensing node 
+has been effectively protected by the defender 
+through higher competition intensity. A node in 
+a secure state has high immunity to the attacker’s 
+attempts and cannot be breached by the attacker.
+(4)	 C is a crisis state: is a crisis state: it means that the 
+sensing node has been completely controlled by 
+the attacker, the service quality has been severely 
+degraded or has been maliciously tampered with, 
+and it can no longer provide reliable services to the 
+network. Meanwhile, the defender’s defense meas-
+ures are ineffective against it.
+Analysis of network security state transition
+The state of the sensing nodes in the crowdsensing net-
+work changes between four states according to the 
+competition intensity adopted by the attacker and the 
+(1)
+xN(t) + xI(t) + xS(t) + xC(t) = Q
+
+Page 7 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+defender. The state transition of the sensing node is 
+shown in Fig. 3.
+The success of an attack is indicated by the attack-
+defense utility difference ω(t) , denoted as Eq.  (2), and 
+|ω(t)| ∈[0,1].
+For the sensing node, ED(t) and EA(t) are defined as 
+the competition intensity injected by the defender and 
+attacker in the network respectively.
+ED(t) is:
+EA(t) is:
+(2)
+ω (t) = EA(t) −ED(t)
+(3)
+ED(t) = m
+i=1 ei
+Dpi(t) =
+e1
+Dp1(t) + e2
+Dp2(t) + · · · + em
+D pm(t)
+(4)
+EA(t) =
+n
+j=1
+ej
+Aqj(t) = e1
+Aq1(t) + e2
+Aq2(t) + · · · + en
+Aqn(t)
+Fig. 2  A system model of attack and defense competition of sensing nodes
+Fig. 3  Sensing node state transition
+
+Page 8 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+(1)	 N →I : The competition intensity adopted by the 
+attacker is greater than that of the defender, and 
+the attack-defense utility difference ω(t) > 0 , the 
+attacker will gain control of the normal state node, 
+and the sensing node state will be transformed to I . 
+The probability of this transition at time t , denoted 
+as ωNI , can be expressed as:
+(2)	 I →S : When the competition intensity adopted by 
+the defender on the impaired state node is greater 
+than that of the attacker, and the attack-defense 
+utility difference ω(t) ≤0 , the defender gains con-
+trol of the impaired state node, and the state of 
+the sensing node is converted to S . The probability 
+of this transition at time t , denoted as ωIS , can be 
+expressed as:
+(3)	 I →C : When the competition intensity adopted 
+by the attacker on the impaired state node contin-
+ues to be greater than that of the defender, and the 
+attack-defense utility difference ω(t) > 0 , the state 
+of the sensing node is converted to C . The probabil-
+ity of this transition at time t , denoted as ωIC , can 
+be expressed as follows:
+(4)	 N →S : When the defender adopts a higher com-
+petition intensity on the normal state node, and 
+the attack-defense utility difference ω(t) ≤−ε , ε is 
+the attack-defense utility threshold (it is more diffi-
+cult to directly convert to a secure state). The sens-
+ing node state is converted to S . The probability 
+of this transition at time t , denoted as ωNS , can be 
+expressed as follows:
+(5)	 N →C : When the attacker adopts a higher com-
+petition intensity on the normal state node and the 
+attack-defense utility difference ω(t) ≥ε , the state 
+of the sensing node is converted to C . The probabil-
+ity of this transition at time t , denoted as ωNC , can 
+be expressed as follows:
+(5)
+ωNI(t) =
+
+ω(t), ω(t) > 0
+0, ω(t) ≤0
+(6)
+ωIS(t) =
+
+|ω(t)|, ω(t) ≤0
+0, ω(t) > 0
+(7)
+ωIC(t) =
+
+ω(t), ω(t) > 0
+0, ω(t) ≤0
+(8)
+ωNS(t) =
+
+|ω(t)|, ω(t) ≤−ε
+0, ω(t) > −ε
+(9)
+ωNC(t) =
+
+ω(t), ω(t) ≥ε
+0, ω(t) < ε
+(6)	 C/S →N : The sensing nodes in the secure state and 
+crisis state are no longer affected by the actions 
+taken by the attacker and the defender. Over time, 
+they slowly recover to the normal state. A fixed 
+parameter η is defined as the sensing node recovery 
+rate.
+The sensing node in state I is controlled by the attacker 
+and can attack the sensing nodes adjacent to it. There-
+fore, the more sensing nodes connected to the state I , the 
+faster the damaged nodes grow. Assuming that the dis-
+tribution density of nodes in the crowd sensing network 
+is ρ , the number of nodes connected to each sensing 
+node is πρr2 , where r is the network distance between 
+two nodes. When r = 1 , it means that the two sensing 
+nodes are directly connected. Therefore, the number of 
+normal state nodes adjacent to the impaired state node 
+is πρxI(t)xN(t)/Q . At time t , the proportion of nodes 
+controlled by the defender and the attacker in the crowd-
+sensing network can be expressed as [xN(t) + xS(t)]/Q 
+and [xI(t) + xC(t)]/Q respectively. The sensing nodes 
+collaborate through a cooperative mechanism to form 
+a collective defense strategy. This collaborative method 
+makes the success rate of attack and defense closely 
+related to the proportion of nodes controlled by both 
+parties, which are represented by the attack risk rate VA 
+and the defense risk rate VD respectively. In real-world 
+crowdsensing networks, sensing nodes exhibit significant 
+differences in hardware configuration, security capabili-
+ties, network location, and communication quality. This 
+node heterogeneity leads to varying attack vulnerabilities 
+and defense response capabilities among different nodes. 
+Furthermore, information errors exist in the observations 
+of the network state by both attackers and defenders. To 
+characterize the aggregation effect of node heterogene-
+ity and information uncertainty at a macroscopic level, 
+we introduce random perturbation terms ǫa(t) and ǫd(t) 
+into VA and VD . Here, ǫa(t) reflects the overall volatility 
+of the attacker’s attack effectiveness against heterogene-
+ous nodes, and ǫd(t) reflects the overall volatility of the 
+defender’s defensive effectiveness when protecting heter-
+ogeneous nodes. This modeling approach effectively cap-
+tures the comprehensive impact of node heterogeneity 
+on the overall attack and defense posture while ensuring 
+computational efficiency. These perturbation terms fol-
+low a normal distribution with a mean of 0 and a stand-
+ard deviation of σ, expressed as:
+(10)
+VA(t) = va · [xI(t) + xC(t)]/Q + ǫa(t)
+(11)
+VD(t) = vd · [xN(t) + xS(t)]/Q + ǫd(t)
+
+Page 9 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+where ǫa(t), ǫd(t) ∼N
+
+0, σ 2
+ represent time-varying 
+stochastic perturbation terms, and va and vd are bench-
+mark parameter values.
+The set of state evolution differential equations 
+describes the changes in the number of nodes in four 
+states over time. To aid understanding, let’s take the nor-
+mal state node xN(t) as an example: its change is deter-
+mined by both outflow and inflow terms. Outflow terms 
+include N to I (normal node is attacked and becomes 
+damaged), N to S (normal node is reinforced and 
+becomes secure), and N to C (normal node is compro-
+mised and becomes critical). Inflow terms include S to N 
+and C to N (secure and critical nodes naturally recover 
+to normal). The evolution equations for the other three 
+states follow similar logic. Based on the above analysis, 
+the evolution of the security status of the sensing nodes 
+in the crowdsensing network can be described by a dif-
+ferential equation:
+(12)
+
+
+
+
+
+
+
+
+
+
+
+˙N(t) = −ωNI(t)VAπρxI(t)xN(t)/Q −ωNS(t)VDxN(t)
+−ωNC(t)VAxN(t) + ηxS(t) + ηxC(t)
+˙I(t) = ωNI(t)VAπρxI(t)xN(t)/Q −ωIS(t)VDxI(t) −ωIC(t)VAxI(t)
+˙S(t) = ωIS(t)VDxI(t) + ωNS(t)VDxN(t) −ηxS(t)
+˙C(t) = ωIC(t)VAxI(t) + ωNC(t)VAxN(t) −ηxC(t)
+Bayesian inference
+In actual network attack and defense confrontation, the 
+attacker and defender can-not fully observe the strategy 
+adopted by the opponent, which constitutes an incom-
+plete information game environment. In order to solve 
+the problem of incomplete information, this study 
+adopts Bayesian inference to estimate the opponent’s 
+poten-tial strategy choices. Game participants observe 
+the state changes of sensing nodes in the network and 
+the attack-defense utility difference as known infor-
+mation to infer the strategy that the other party may 
+adopt in the next round of the game, thereby provid-
+ing a decision-making basis for choosing the optimal 
+counter-strategy. Figure 4 shows how game participants 
+update their beliefs about the opponent’s strategy based 
+on observational evidence. In this process, both parties 
+must continue to ob-tain evidence through changes in 
+network status and continuously update their be-liefs 
+Fig. 4  Updating beliefs about the opponent’s strategy based on observational evidence
+
+Page 10 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+about the probability distribution of the opponent’s 
+strategy. This belief update strictly follows the Bayes-
+ian theorem, that is, at the end of each game round, the 
+game participants update their belief evaluation of the 
+opponent’s strategy based on the estimated posterior 
+probability distribution.
+Let belief A(ai) denote the prior probability that the 
+defender takes action ai against the attacker, and let 
+LA(ai|ω(t), x(t)) represent the likelihood function for 
+the attack action ai . According to Bayes’ theorem, the 
+posterior probability belief new
+A
+(ai) that the defender 
+takes action ai against the attacker can be expressed as:
+n 
+represents 
+the 
+total 
+number 
+of 
+possi-
+ble action types that the attacker may take, and 
+n
+k=1belief A(ak) · LA(ak|ω(t), x(t)) is the marginal like-
+lihood, which is used to normalize the posterior prob-
+ability distribution. Similarly, the posterior probability 
+belief new
+D (di) that the attacker takes action di against the 
+defender can be expressed as:
+m represents the total number of possible action types 
+that the defender can take. By iterating the above for-
+mula, game participants can continuously optimize their 
+speculation about the opponent’s strategy in the continu-
+ous interaction process, thereby formulating more effec-
+tive response strategies.
+The likelihood functions of the two parties are 
+expressed as:
+ei
+A is the attack strength of attack action ai , and ej
+D is the 
+defense strength of defense action dj . F(ω(t), x(t)) is 
+expressed as:
+Game payoff function
+The rewards of both the attacker and the defender are 
+directly related to the number of sensing nodes they 
+(13)
+belief new
+A
+(ai) =
+belief A(ai)·LA(ai|ω(t),x(t))
+n
+k=1belief A(ak)·LA(ak|ω(t),x(t))
+(14)
+belief new
+D
+
+dj
+
+=
+belief D(dj)·LD(dj|ω(t),x(t))
+m
+k=1belief D(dk)·LD(dk|ω(t),x(t))
+(15)
+LA(ai|ω(t), x(t)) = ei
+A · F(ω(t), x(t))/n
+k=1belief A(ak) · ek
+A
+(16)
+LD
+
+dj|ω(t), x(t)
+
+= ej
+D · F(ω(t), x(t))/m
+k=1belief D(dk) · ek
+D
+(17)
+F(ω(t), x(t)) =
+
+
+
+
+
+
+
+
+
+ωNI(t)VAπρxI(t)xN(t)/Q
++ωIC(t)VAxI(t) + ωNC(t)VAxN(t), ω(t) ≥ε
+ωNI(t)VAπρxI(t)xN(t)/Q + ωIC(t)VAxI(t), 0 < ω(t) < ε
+ωIS(t)VDxI(t), −ε < ω(t) ≤0
+ωIS(t)VDxI(t) + ωNS(t)VDxN(t), ω(t) ≤−ε
+control. When the sensing node is converted to the 
+impaired state, the reward coefficient is set to r1 ; when the 
+sensing node is converted to the secure state, the reward 
+coefficient is set to r2 ; when the sensing node is converted 
+to the crisis state, the reward coefficient is set to r3 ; when 
+the sensing node recovers from a crisis state to a normal 
+state, the reward coefficient is set to r4 . Under incomplete 
+information conditions, both parties use Bayesian reason-
+ing to estimate the other party’s strategy and calculate the 
+state transition probability based on this. The transition 
+probabilities obtained by the defender based on the 
+inferred 
+attacker 
+strategy 
+
+PA(t) 
+are: 
+ωNI(t) = ωNI
+
+
+PA(t), PD(t)
+
+ , ωIS(t) = ωIS
+
+
+PA(t), PD(t)
+
+ , 
+ωIC(t) = ωIC
+
+
+PA(t), PD(t)
+
+ 
+, 
+ωNS(t) = ωNS
+
+
+PA(t), PD(t)
+
+ 
+, 
+ωNC(t) = ωNC
+
+
+PA(t), PD(t)
+
+ ; Similarly, the transition 
+probabilities obtained by the attacker based on the inferred 
+defender strategy 
+PD(t) are: ωNI(t) = ωNI
+
+PA(t), 
+PD(t)
+
+ , 
+ωIS(t) = ωIS
+
+PA(t), 
+PD(t)
+
+ , ωIC(t) = ωIC
+
+PA(t), 
+PD(t)
+
+ , 
+ωNS(t) = ωNS
+
+PA(t), 
+PD(t)
+
+ 
+, 
+ωNC(t) = ωNC
+
+PA(t), 
+PD(t)
+
+ . Based on the above analy-
+sis, we can obtain the defense reward RD(t) and attack 
+reward RA(t) at time t.
+When both the attacker and defender execute their 
+strategies, they will consume corresponding strategy 
+costs, which are generally proportional to the intensity 
+(18)
+RD(t) = r2[xI(t)VDωIS(t)
++xN(t)VDωNS(t) + r4xC(t)η
+−r1[ωNI(t)VAπρxI(t)xN(t)/Q]
+−r3[ωIC(t)VAxI(t) + ωNC(t)VAxN(t)]
+(19)
+RA(t) = r1[ωNI(t)VAπρxI(t)xN (t)/Q]
++r3[ωIC(t)VAxI(t) + ωNC(t)VAxN (t)]
+−r2[xI(t)VD ωIC(t) + xN (t)VD ωNS(t)] −r4xC(t)η
+
+Page 11 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+of the attack and defense actions. Suppose the strategy 
+execution cost at time t is:
+cj
+D and ci
+A are the cost coefficients of defense and attack 
+actions respectively. Taking into account the return and 
+execution cost of the strategy, we get the profit function 
+of both the attacker and the defender.
+The defender’s goal is to maximize UD by optimizing 
+the defense strategy PD(t) , and the attacker’s goal is to 
+maximize UA by optimizing the attack strategy PA(t).
+Optimal defense strategy selection
+Saddle point strategy solution
+Definition 2  Saddle point strategy under incomplete 
+information. In an incomplete information differential 
+game, 
+if 
+there 
+exists 
+a 
+strategy 
+combination 
+
+PD(t)∗, PA(t)∗
+ and the corresponding strategy conjec-
+ture 
+
+
+PD(t), 
+PA(t)
+
+ , satisfying:
+Then 
+
+PD(t)∗, PA(t)∗
+ becomes the saddle point strategy 
+of the incomplete information differential game.
+Under this condition, the attacker and the defender 
+each make optimal responses based on speculations 
+about the opponent’s strategies, while these speculations 
+remain close enough to the actual strategies in equilib-
+rium. As the Bayesian inference process proceeds, the 
+strategy speculations gradually converge to an accurate 
+estimate of the actual strategy, resulting in a combination 
+(20)
+CD = m
+i=1
+1
+2
+
+pi(t) · ei
+D
+2 · ci
+D · (xN(t) + xI(t) + xS(t) + xC(t))
+(21)
+CA = n
+j=1
+1
+2
+
+qj(t) · ej
+A
+2
+· cj
+A · (xN(t) + xI(t) + xS(t) + xC(t))
+(22)
+UD
+
+
+PA(t), PD(t)
+
+=
+ T
+t0uD(t)dt
+=
+ T
+t0(RD(t) −CD)dt
+(23)
+UA
+
+PA(t), 
+PD(t)
+
+=
+ T
+t0uA(t)dt
+=
+ T
+t0(RA(t) −CA)dt
+(24)
+
+
+
+∀PD(t), UD
+
+
+PA(t), PD(t)∗
+≥UD
+
+
+PA(t), PD(t)
+
+∀PA(t), UA
+
+PA(t)∗, 
+PD(t)
+
+≥UA
+
+PA(t), 
+PD(t)
+
+of equilibrium strategies that gradually converge to a sad-
+dle point strategy under complete information.
+Theorem  1  There exists a saddle point strategy 
+
+PD(t)∗, PA(t)∗
+ satisfying:
+Proof  The dynamic evolution equations in Eq. (12) and 
+the immediate gains uD(t) and uA(t) in Eqs. (22) and (23) 
+are continuously bounded. The equilibrium point exists if 
+and only if uD(t) is a convex function with respect to the 
+defense strategy pi(t) and uA(t) is a convex function with 
+respect to the attack strategy qj(t) . Since.
+uD(t) is a convex function with respect to pi(t) , and 
+uA(t) is a convex function with respect to qj(t) . There-
+fore, we can prove that there exists a saddle point strategy 
+
+PD(t)∗, PA(t)∗
+.
+In order to find the optimal saddle point strategy, this 
+paper uses the Pontryagin maximum theorem in opti-
+mal control theory (Zhang et al. 2018). The Hamiltonian 
+function is a core tool in optimal control theory, com-
+prehensively considering both immediate gains and the 
+impact of future states. Its form is H = u(t) + K(t) · x(t) , 
+where u(t) represents the immediate gain, and K(t) is the 
+common-state function, which can be understood as the 
+marginal contribution of each state variable to the total 
+gain. By maximizing the Hamiltonian function, the opti-
+mal strategy that balances current gains and long-term 
+effects can be found. For the defender, we first need to 
+introduce the common state function KD(t) to construct 
+the Hamilton function. Then, through the differential 
+equation of the evolution of the security state and the 
+common state function, we can get the optimal control 
+(25)
+
+PD(t)∗
+= argmax
+{PD(t)}
+UD
+(26)
+
+PA(t)∗
+= argmax
+{PA(t)}
+UA
+(27)
+∂2uD
+∂pi2 = −
+
+ei
+D
+2ci
+DQ < 0
+(28)
+∂2uA
+∂qj2 = −
+
+ej
+A
+2
+cj
+AQ < 0
+
+Page 12 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+strategy. Based on the above ideas, the following Hamil-
+ton function is constructed.
+The expanded Hamilton function Eq. (29) contains the 
+product of the complete defender’s payoff function and 
+the state evolution equation. This function comprehen-
+sively considers the impact of the current decision on the 
+immediate payoff and future state evolution.
+According to the characteristics of the Hamilton 
+f
+u
+n
+c
+t
+i
+o
+n 
+x∗(t) =
+
+∂HD
+
+t, x(t)∗, KD(t), PD(t)∗, 
+PA(t)
+
+/∂K x
+D(t)
+
+  , 
+x ∈{N, I, S, C} , we solve the partial derivatives of 
+HD
+
+t, x(t)∗, KD(t), PD(t)∗, 
+PA(t)
+
+ with respect to K N
+D (t) , 
+K I
+D(t) , K S
+D(t) and K C
+D (t) , respectively, and obtain:
+Fig. 5  Topology of MCNs
+(29)
+HD
+
+t, x(t), KD(t), PD(t), 
+PA(t)
+
+= uD(t) + 
+x∈{N,I,S,C} K x
+D(t)x(t)
+= uD(t) + K N
+D (t)N(t) + K I
+D(t)I(t) + K S
+D(t)S(t) + K C
+D (t)C(t)
+= r2[xI(t)VDωIS(t) + xN(t)VDωNS(t)]
++r4xC(t)η −r3[ωIC(t)VAxI(t) + ωNC(t)VAxN(t)]
+−r1[ωNI(t)VAπρxI(t)xN(t)/Q] −m
+i=1
+1
+2
+
+pi(t) · ei
+D
+2 · ci
+D · Q
++K N
+D (t)[−ωNI(t)VAπρxI(t)xN(t)/Q −ωNS(t)VDxN(t)]
+−K N
+D (t)[ωNC(t)VAxN(t) + ηxS(t) + ηxC(t)]
++K I
+D(t)[ωNI(t)VAπρxI(t)xN(t)/Q −ωIS(t)VDxI(t) −ωIC(t)VAxI(t)]
++K S
+D(t)[ωIS(t)VDxI(t) + ωNS(t)VDxN(t) −ηxS(t)]
++K C
+D (t)[ωIC(t)VAxI(t) + ωNC(t)VAxN(t) −ηxC(t)]
+(30)
+
+
+
+
+
+
+
+
+
+
+
+
+N ∗(t) = −ωNI(t)VAπρxI(t)xN(t)/Q −ωNS(t)VDxN(t)
+−ωNC(t)VAxN(t) + ηxS(t) + ηxC(t)
+I∗(t) = ωNI(t)VAπρxI(t)xN(t)/Q −ωIS(t)VDxI(t) −ωIC(t)VAxI(t)
+S∗(t) = ωIS(t)VDxI(t) + ωNS(t)VDxN(t) −ηxS(t)
+
+C∗(t) = ωIC(t)VAxI(t) + ωNC(t)VAxN(t) −ηxC(t)
+
+Page 13 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+For 
+x ∈{N, I, S, C} , 
+we 
+can 
+obtain 
+KD(t) =
+
+K x
+D(t)
+
+=
+
+K N
+D (t), K I
+D(t), K S
+D(t), K C
+D (t)
+
+ 
+. 
+According to the characteristic of the Hamilton function 
+˙
+K x
+D(t) = −
+
+∂HD
+
+t, x(t)∗, KD(t), PD(t)∗, 
+PA(t)
+
+/∂x(t)∗
+ , 
+we 
+solve 
+the 
+partial 
+derivatives 
+of 
+HD
+
+t, x(t)∗, KD(t), PD(t)∗, 
+PA(t)
+
+ with respect to xN(t)∗ , 
+xI(t)∗ , xS(t)∗ and xC(t)∗ respectively, and obtain Eq. (31):
+(31)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+˙
+K N
+D (t) = r3ωNC(t)VA + r1ωNI(t)VAπρxI(t)/Q −r2VDωNS(t)
++ m
+i=1
+1
+2
+
+pi(t) · ei
+D
+2 · ci
+D#
++K N
+D (t)[ωNI(t)VAπρxI(t)/Q + ωNS(t)VD + ωNC(t)VA]
+−K I
+D(t)ωNI(t)VAπρxI(t)/Q −K S
+D(t)ωNS(t)VD −K C
+D (t)ωNC(t)VA
+˙
+K I
+D(t) = r3ωIC(t)VA + r1ωNI(t)VAπρxN(t)/Q −r2VDωIS(t)
++ m
+i=1
+1
+2
+
+pi(t) · ei
+D
+2 · ci
+D
+−K I
+D(t)[ωNI(t)VAπρxN(t)/Q −ωIS(t)VD −ωIC(t)VA]
++K N
+D (t)ωNI(t)VAπρxN(t)/Q −K S
+D(t)ωIS(t)VD −K C
+D (t)ωIC(t)VA
+˙
+K S
+D(t) = m
+i=1
+1
+2
+
+pi(t) · ei
+D
+2 · ci
+D −K N
+D (t)η + K S
+D(t)η
+˙
+K C
+D (t) = m
+i=1
+1
+2
+
+pi(t) · ei
+D
+2 · ci
+D −r4η −K N
+D (t)η + K N
+D (t)η
+The co-state Eq. (31) describes the dynamic evolution 
+of the common state function KD(t) , which represents 
+the marginal value of the corresponding state variables. 
+For example, K N
+D (t) represents the marginal contribu-
+tion of a normal state node to the total benefit of the 
+defender, and ˙
+K N
+D (t) represents the rate of change of the 
+marginal value of the normal node.
+Similarly, the attacker can introduce the common 
+state function KA(t) to construct the Hamiltonian func-
+tion HA
+
+t, x(t), KA(t), 
+PD(t), PA(t)
+
+ . According to the 
+above steps, we can obtain the partial derivatives of 
+HA
+
+t, x(t)∗, KA(t), 
+PD(t), PA(t)∗
+ with respect to K N
+A (t) , 
+K I
+A(t) , K S
+A(t) and K C
+A (t) and the partial derivatives of 
+HA
+
+t, x(t)∗, KA(t), 
+PD(t), PA(t)∗
+ with respect to xN(t)∗ , 
+xI(t)∗ , xS(t)∗ and xC(t)∗.
+Then, solve the partial derivative of the Hamilton func-
+tion HD
+
+t, x(t)∗, KD(t), PD(t)∗, 
+PA(t)
+
+ with respect to the 
+defense 
+strategy 
+pi(t) , 
+and 
+let 
+∂HD
+
+t, x(t)∗, KD(t), PD(t)∗, 
+PA(t)
+
+/∂pi(t) = 0(1 ≤i ≤m) , then we 
+can calculate PD(t)∗=
+
+p1(t)∗, p2(t)∗, · · · , pm(t)∗
+.
+when ω(t) ≤−ε:
+Fig. 6  Resource consumption of DDoS attacks
+
+Page 14 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+when −ε < ω(t) ≤0:
+when 0 < ω(t) < ε:
+when ω(t) ≥ε:
+Similarly, solve the partial derivative of the Hamilton 
+function HA
+
+t, x(t)∗, KA(t), 
+PD(t), PA(t)∗
+ with respect to 
+the 
+attack 
+strategy 
+qj(t) , 
+and 
+let 
+∂HA
+
+t, x(t)∗, KA(t), 
+PD(t), PA(t)∗
+/∂qj(t) = 0
+
+1 ≤j ≤n
+
+ , 
+then 
+we 
+can 
+calculate 
+PA(t)∗=
+
+q1(t)∗, q2(t)∗, · · · , qn(t)∗
+.
+when ω(t) ≤−ε:
+when −ε < ω(t) ≤0:
+(32)
+pi(t)∗=
+
+xN (t)VD
+
+r2−K N
+D (t)+K S
+D(t)
+
++xI (t)VD
+
+r2−K I
+D(t)+K S
+D(t)
+
+
+ei
+D·ci
+D·Q
+
+(33)
+pi(t)∗=
+
+xI(t)VD
+
+r2−K I
+D(t)+K S
+D(t)
+
+
+ei
+D·ci
+D·Q
+
+(34)
+pi(t)∗=
+
+r1+K N
+D (t)−K I
+D(t)
+
+VAπρxI (t)xN (t)/Q+xI (t)VA
+
+r3+K I
+D(t)−K C
+D (t)
+
+
+ei
+D·ci
+D·Q
+
+(35)
+pi(t)∗=
+
+xN (t)V A
+
+r3 + KN
+D (t) + KC
+D (t)
+
++ xI (t)VA
+
+r3 + KI
+D(t) −KC
+D (t)
+
++
+
+r1 + KN
+D (t) −KI
+D(t)
+
+VAπρxI (t)xN (t)/Q
+
+/
+
+ei
+D · ci
+D · Q
+
+(36)
+qj(t)∗=
+
+xI (t)VD
+
+r2+K I
+A(t)−K S
+A(t)
+
++xN (t)VD
+
+r2+K N
+A (t)−K S
+A(t)
+
+
+ej
+A·cj
+A·Q
+
+(37)
+qj(t)∗=
+
+xI(t)VD
+
+r2+K I
+A(t)−K S
+A(t)
+
+
+ej
+A·cj
+A·Q
+
+Fig. 7  The impact of poisoning attacks on the performance of the perception network
+when 0 < ω(t) < ε:
+when ω(t) ≥ε:
+Optimal defense strategy selection algorithm
+Throughout the process, the algorithm uses the incom-
+plete information differential game model IIDG to analyze 
+network defense decisions. Optimize the defense strate-gy 
+based on Bayesian inference, and finally make the optimal 
+defense strategy. The algorithm steps 1–4 initialize the 
+model, including IIDG model parameters, the probability 
+of mixed strategies of the attackers and defenders, and the 
+prior belief probability; steps 5–13 are iterative processes, 
+in which steps 6–7 update the state evolution and belief 
+probability, steps 8–11 calculate the benefit functions of 
+both parties and steps 12–13 obtain the optimal strategy by 
+solving the optimal condi-tions of the Hamilton function; 
+step 14 completes the iterative cycle; step 15 outputs the 
+optimal strategy set of the defender. The specific algorithm 
+is as follows:
+(38)
+qj(t)∗=
+
+r1−K N
+A (t)+K I
+A(t)
+
+VAπρxI (t)xN (t)/Q+xI (t)VA
+
+r3−K I
+A(t)+K C
+A (t)
+
+
+ej
+A·cj
+A·Q
+
+(39)
+qj(t)∗=
+
+xI(t)VA
+
+r3 −K I
+A(t) + K C
+A (t)
+
++ xN (t)VA
+
+r3 −K N
+A (t) + K C
+A (t)
+
++
+
+r1 −K N
+A (t) + K I
+A(t)
+
+VAπρxI(t)xN (t)/Q
+
+/
+
+ej
+A · cj
+A · Q
+
+
+Page 15 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+The computational complexity of the above algo-
+rithm mainly consists of two parts: Bayesian inference 
+and iterative solution of Hamiltonian equations. For 
+a network containing Q sensing nodes, step 7 of the 
+algorithm performs Bayesian inference, with a time 
+complexity of O(m + n), where m and n are the num-
+ber of defense and attack strategies, respectively. Steps 
+8–13 of the algorithm perform common-state func-
+tion calculation and strategy optimization. According 
+to Eqs.  (31, 32 and 35), the common-state functions 
+of the four state variables and the optimal solutions of 
+m defense strategies are calculated, with a complexity 
+of O(m). The entire iterative loop is executed T 
+times, so the total time complexity of the algorithm 
+is O(T·(m + n)). Compared with the defense methods 
+based on deep neural networks, which usually require 
+a training cost of O(Q2·E) (E is the number of training 
+rounds), this algorithm avoids the computational over-
+head of forward and backward propagation of neural 
+networks, and the complexity is decoupled from the 
+number of nodes Q , and is only affected by the size of 
+the policy space and the number of time slices. In terms 
+of space complexity, the algorithm mainly stores the 
+node state vectors and policy belief distributions, with 
+a memory usage of O(Q + m + n), which is far lower 
+
+Page 16 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+than the parameter storage requirements of deep learn-
+ing models.
+From the perspective of practical deployment, this 
+algorithm has the potential to run in real time in mobile 
+crowd sensing scenarios. First, the Bayesian poste-
+rior probability update (13)–(14) of the algorithm only 
+involves probability multiplication and normalization 
+operations. The optimal strategy solution formulas (32)–
+(35) are in analytical form and can be directly substituted 
+into the calculation without iterative search, resulting 
+in low computational cost per decision. Second, com-
+pared with defense methods based on deep neural net-
+works, this algorithm does not require an offline training 
+stage and can directly perform online reasoning and 
+decision-making based on the real-time observed differ-
+ence in attack and defense utility ω(t) and node state x(t) , 
+making it suitable for dynamically changing crowd sens-
+ing environments.
+Simulation experiment and analysis
+In this section, we first describe the environment setup 
+and parameter selection for the simulation experi-
+ments, then verify the effectiveness of the model, and 
+finally conduct a comprehensive analysis of the model’s 
+performance.
+Table 2  Test parameter settings
+parameter
+Value
+Parameter description
+Q
+1000
+Total number of sensing nodes
+xN(t)
+800
+Number of sensing nodes in normal state
+xI(t)
+100
+Number of sensing nodes in impaired state
+xS(t)
+50
+Number of sensing nodes in secure state
+xC(t)
+50
+Number of sensing nodes in crisis state
+ρ
+10
+Sensing nodes density
+va
+0.7
+Sensing nodes attack risk rate factor
+vd
+0.7
+Sensing nodes defense success rate factor
+η
+0.1
+Sensing node recovery rate
+ε
+0.008
+Attack defense success threshold
+r1
+2
+The reward coefficient of anormal state node turning into an impaired state node
+r2
+5
+The reward coefficient of an impaired state node turning into a secure state node
+The reward coefficient of a normal state node turning into a secure state node
+r3
+9
+The reward coefficient of an impaired state node turning into a crisis state node
+The reward coefficient of a normal state node turning into a crisis state node
+r4
+3
+The reward coefficient of an impaired node returning to a normal state node
+σ
+0
+Random disturbance standard deviation
+Table 3  Description of attacker’s attack action
+Attack action
+Typical attack types
+Attack strength
+Attack cost 
+coefficient
+a1
+High-intensity DDoS attack
+0.82
+5.5
+a2
+Poison attack/Medium DoS
+0.55
+3.5
+a3
+Reconnaissance/Low-intensity attack
+0.30
+1.5
+Table 4  Description of the defender’s defense action
+Defense action
+Typical defensive measures
+Defense strength
+Defense 
+cost 
+coefficient
+d1
+Flow cleaning/DDoS protection system
+0.80
+6.0
+d2
+Intrusion detection/communication encryption
+0.50
+3.0
+d3
+Basic monitoring/log auditing
+0.20
+2.0
+
+Page 17 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+Simulation test environment
+To validate the effectiveness of the proposed model in 
+real network environments and provide reliable param-
+eterization for the core model of this study, we con-
+struct-ed a hybrid experimental verification framework 
+combining virtual and real compo-nents. This section 
+first simulates real DDoS attack scenarios using the 
+Mininet plat-form to quantify the actual impact of vary-
+ing attack intensities on network infra-structure. Subse-
+quently, these measured data are mapped and calibrated 
+as key pa-rameters for the game model in subsequent 
+MATLAB simulations, ensuring con-sistency between 
+theoretical analysis and actual network behavior. In 
+order to im-prove the authenticity of the simulation 
+experiment, reference (Zhao et al. 2023) builds a network 
+experimental environment, using Mininet 2.3.1 as a per-
+ceptual network simulator in the Ubuntu 20.04 system, 
+and creates the MCNs topology as shown in Fig. 5.
+In order to simulate the real DDoS attack environ-
+ment, the attacker uses the edited script to launch the 
+attack with different attack speeds, and the entire sensing 
+network crashes by continuously injecting DDoS attack 
+traffic into the sensing platform. We run sFlow-rt3.0 on 
+Ubuntu 20.04 to monitor the resource utilization of the 
+sensing platform under the DDoS attack. Figure 6 shows 
+the resource utilization of the sensing platform under 
+normal conditions and under the DDoS attack. Figure 6a 
+shows the CPU resource usage under DDoS attack and 
+Fig. 6b shows the memory resource usage under DDoS 
+attack.
+To simulate a real poisoning attack, an attack was 
+launched using ettercap. By tampering with the com-
+munication address, the attacker gained the user’s trust, 
+eavesdropped on the victim’s data, and affected the net-
+work performance of the perception platform. Wireshark 
+was run on Ubuntu 20.04 to monitor the impact of the 
+poisoning attack on the perception platform’s network 
+performance. Figure  7 shows the network communica-
+tion performance under normal conditions and under 
+poisoning attack conditions. Figure 7a shows the network 
+latency under attack conditions, and Fig.  7b shows the 
+packet loss rate under attack conditions.
+Figures 6 and 7 clearly record the dynamic changes in 
+the performance of the sensing platform under simu-
+lated DDoS and poisoning attacks. Figure  6 shows the 
+impact of DDoS attacks on the resource consumption 
+(CPU and memory) of the sensing platform, while Fig. 7 
+shows the impact of poisoning attacks on network com-
+munication performance (latency and packet loss rate). 
+These experimental results provide a crucial physical 
+world mapping for our constructed attack-defense dif-
+ferential game model: in the DDoS attack scenario, dif-
+ferent levels of CPU and memory utilization correspond 
+to low, medium, and high attack intensities, respectively; 
+Fig. 10  Optimal strategy trajectory for both attackers and defenders
+Fig. 8  Evolution of the number of nodes with different initial 
+probabilities in different states
+Fig. 9  Variation in the number of nodes in different states
+
+Page 18 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+similarly, in the poisoning attack scenario, the increase in 
+network latency and packet loss rate can be mapped to 
+different attack intensity levels. The values of the attack 
+intensity parameters 
+
+e1
+A, e2
+A, e3
+A
+
+ in the theoretical model 
+are determined based on a combination of resource con-
+sumption data measured during Mininet’s simulated 
+DDoS attack and network performance data measured 
+during the poisoning attack. The cost of the attack action 
+is determined based on the size and complexity of the 
+injected attack traffic, as shown in Table 3.
+Model validity analysis
+The model is simulated using MATLAB 2018. The spe-
+cific configuration and param-eter settings of the net-
+work structure are shown in Table 2.
+The above key parameters are set according to the 
+following: (1) The number of state-sensing nodes and 
+the node density are set with reference to the typical 
+configuration of the swarm intelligence sensing net-
+work in references (Zhang et  al. 2018, 2023b, Zhang 
+et al. 2023a); (2) The va and vd are set based on empiri-
+cal values in the field of network security. The attack 
+and defense game model in reference (Yan et al. 2021) 
+adopts a risk coefficient in the range of 0.6–0.8; (3) 
+The reward coefficients r1 , r2 , r3 , and r4 are set accord-
+ing to the principle of “the greater the difficulty of state 
+transition, the higher the reward”. This setting is con-
+sistent with the design idea of the reward function in 
+references (Zhang et al. 2018; Gan et al. 2024; Yan et al. 
+2021). (4) The attack and defense success threshold is 
+set with reference to reference (Wu et al. 2022).
+The adverse effects of the simulated DDos attack in 
+Sect. “Simulation test environment” are quantified into 
+different types of attack actions of the attacker. The 
+greater the attack intensity, the better the attack effect, 
+and the higher the cost of the attack action. Table  3 
+shows the attack intensity and required cost of differ-
+ent attack actions that the attacker can take. Based on 
+Table 3, the defense intensity and required cost of dif-
+ferent defense actions of the defender are set as shown 
+in Table 4.
+The prior probability distributions {p1(0), p2(0), p3(0)} 
+and {q1(0), q2(0), q3(0)} of the initial dynamic strategy 
+Fig. 11  Trend of gain function change
+Fig.12  The optimal dynamic strategy trajectories of both parties under random perturbations of different intensities
+
+Page 19 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+have almost no effect on the evolution of the security 
+state in the crowdsensing network. As shown in Fig. 8, 
+four prior probability combinations of initial dynamic 
+strategies are simulated. The first group is set to PD = 
+{0.3, 0.4, 0.3}, PA = {0.3, 0.4, 0.3}; the second group is set 
+to PD = {0.8, 0.1, 0.1}, PA = {0.8, 0.1, 0.1}; the third group 
+is set to PD = {0.1, 0.1, 0.8}, PA = {0.1, 0.1, 0.8}; the fourth 
+group is set to PD = {0.1, 0.7, 0.2}, PA = {0.6, 0.1, 0.3}. In 
+these four initial situations, the number of nodes in the 
+four states inside the network is ultimately the same. This 
+is because the model is a dynamically adaptive closed-
+loop control system, and the initial strategy cannot deter-
+mine the overall game outcome. Therefore, the prior 
+probability of the first set of initial dynamic strategies is 
+used in the simulation.
+Using the defense strategy selection method proposed 
+in Sect. “Optimal defense strategy selection”, Figs. 9 and 
+10 show the changes in the number of nodes under dif-
+ferent states and the optimal strategy trajectories of the 
+attacker and defender, respectively. We have the follow-
+ing observations. In the continuous- time slices of 0–20, 
+the number of nodes in the normal state xN(t) remains 
+at a high level, indicating that the overall security state of 
+the network is good at this time. At the same time, the 
+number of nodes in the impaired state xI(t) shows a slow 
+growth trend, which shows that in order to avoid alert-
+ing the defender at this stage, the attacker mainly adopts 
+medium-intensity strategies and maintains a low pro-
+portion of high-intensity strategies. The defender adopts 
+a more conservative strategy combination at this time. 
+Because the nodes in the safe state and the nodes in 
+the crisis state slowly return to the normal state nodes, 
+the number of these two states remains at a low level 
+at this time. The attack-defense utility difference ω(t) 
+fluctuates close to zero at this stage, indicating that the 
+defense is temporarily effective. In the continuous-time 
+slices of 20–32, the number of normal nodes perceived 
+by the defender decreases, and the number of nodes in 
+the damaged state increases, which greatly increases the 
+proportion of medium-intensity strategies. At the same 
+time, the attacker increases the proportion of medium-
+intensity strategies again, but ω(t) is negative during 
+this period, indicating that the defender’s defense is suc-
+cessful. At this time, the number of nodes in the secure 
+state xS(t) increases slightly. In the continuous-time 
+slices of 32–45, the network state changes dramatically. 
+The number of normal nodes xN(t) drops sharply from 
+694 to 47, while the number of impaired nodes xI(t) 
+rises sharply from 240 to 842.At this time, the defender’s 
+defense strategy p1(t) also attempts to increase from 0.3 
+to 0.7, but because the network as a whole is in a state 
+of incomplete information, the defender’s changes are 
+lagging, and the difference in attack and defense util-
+ity changes from negative to positive at this stage. In the 
+continuous-time slices of 45–100, the network quickly 
+tends to a stable state, indicating that the game equi-
+librium has been reached at this time. The convergence 
+strategies of the defender and attacker are expressed as: 
+PD∗={0.54,0.45,0.01}, PA∗={0.53,0.46,0.01}.
+Figure 11 shows the trend of the gain function of the 
+attacker and defender during the game. In the continu-
+ous-time slices of 0–30, the profits of the attacker and 
+defender show a slow downward trend. In this stage, 
+corresponding to the slow growth stage of the number 
+of impaired nodes xI(t) in Fig.  9, the defender adopts 
+a low-intensity strategy and the attacker maintains a 
+medium-intensity attack, forming a relatively balanced 
+confrontation. The slow decline in profit reflects that 
+both sides have to pay costs in the continuous attack and 
+defense process. In the continuous-time slices of 30–40, 
+the curves of both sides are in a downward trend. At t 
+=40, the profits of both sides reach the minimum value. 
+Fig. 13  The impact of the recovery rate η on the defender’s gain 
+function
+Fig. 14  Comparison of solutions
+
+Page 20 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+In this stage, the number of normal state nodes xN(t) 
+decreases sharply. The defender quickly adjusts the strat-
+egy at this time, resulting in higher defense costs, which 
+causes a sharp drop in defense profit. In the continuous-
+time slices of 50–100, the profits of both defenders and 
+attackers rebound and reach a balanced state. The partial 
+recovery of profits reflects that after the system reaches a 
+new balance, both sides no longer invest a lot of resources 
+in fierce confrontation, and the strategy cost is reduced.
+Performance analysis
+This section analyzes the performance of the model. Due 
+to the dynamic nature of the crowdsensing network envi-
+ronment, there will be potential periodic changes in the 
+relevant parameters in the game. In order to make active 
+and adaptive decisions, the algorithm needs to be able to 
+adapt to the changing network environment. Figure  12 
+shows the dynamic strategy trajectories of the attacker 
+and the defender under different intensities of random 
+perturbations. Figure  12a shows the optimal dynamic 
+strategy trajectories of both parties under σ = 0.02, and 
+Fig.  12b shows the optimal dynamic strategy trajecto-
+ries of both parties under σ =0.06. After introducing the 
+perturbation of σ =0.02, the model exhibits limited oscil-
+lation characteristics. Although it reaches a relatively sta-
+ble state after t =40, the strategy distribution fluctuates 
+slightly around the equilibrium point; when the perturba-
+tion of σ =0.06 is introduced, the model exhibits continu-
+ous and significant oscillations throughout the process, 
+and it is difficult to determine the exact equilibrium 
+point, especially the dynamic adjustment between q1(t) 
+and q2(t) is more drastic. However, in all cases, the differ-
+ence between the attack and defense utilities can remain 
+relatively stable, indicating that the system can maintain 
+the balance of attack and defense forces even under ran-
+dom perturbations, indicating that the model has a cer-
+tain robustness.
+The effect of the recovery rate η on the defender’s profit 
+function is shown in Fig.  13. The results show that the 
+defense profit decreases with the increase in the recovery 
+Table 5  Comparative analysis of defensive equilibrium benefits across methods
+Comparative 
+method
+Method of this 
+paper
+a1 versus d1 
+method
+a2 versus d2 
+method
+a3 versus d3 
+method
+Random method
+Attack versus no 
+defense
+Defense benefits
+−786.18
+−2010.77
+−565.61
+−339.44
+−414.44
+−518.1906
+Fig. 15  Comparison of attack and defense interaction difference ω
+Table 6  Comparison of the proposed method with advanced defense methods
+Comparison dimensions This article’s method
+MADRL (Zhu et al. 2023)
+DRQN (Liu et al. 2021)
+BL-Level-k (Fang and Yi 
+2024)
+Information assumptions
+Incomplete information
+Complete information
+Incomplete information
+Incomplete information
+Game theory framework
+Continuous-time differential 
+game
+Discrete-time repeated 
+games
+Discrete-time stochastic 
+games
+Level-k nonequilibrium games
+Offline training
+No
+Yes
+Yes
+Yes
+Strategy solving
+Analytical solution (Ham-
+ilton)
+Neural network approxima-
+tion
+Neural network approxima-
+tion
+Scrolling time domain opti-
+mization
+Theoretical guarantee
+Proof of the existence of sad-
+dle point equilibrium
+Convergence empirical 
+verification
+Convergence empirical 
+verification
+Bounded rational optimal 
+response
+Defense success rate
+51.1%
+39%
+34.8%
+47.5%
+Network availability
+80.2%
+69.7%
+–
+74%
+
+Page 21 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+rate η . From Fig. 13, we can see that as η increases from 
+0.08 to 0.12, the defender’s profit decreases significantly. 
+Especially between time points 30–60, the difference in 
+profits under different recovery rates is most obvious. 
+After t > 60, all curves tend to stabilize, but the curve 
+with a higher recovery rate stabilizes at a lower profit 
+level. At the same time, the lowest point of the defense 
+profit curve shows two significant characteristics: one 
+is that the lowest point appears earlier, and the other is 
+that the lowest value is further reduced. The reason for 
+this phenomenon is that the increase in η changes the 
+dynamic balance of the attack and defense game, allow-
+ing the nodes in the crisis state to return to normal faster 
+and re-participate in network activities. The attacker will 
+therefore adjust the attack strategy and take more fre-
+quent or more concentrated attacks, which may cause the 
+defender to pay a higher defense cost.
+To verify the effectiveness of the model, we conducted 
+a comparative experiment on the proposed incomplete 
+information differential game defense strategy selec-
+tion algorithm and other control strategies, as shown in 
+Fig. 14. Figure 14 shows the performance comparison of 
+six different control strategies: “Method of this paper” is 
+the defense strategy selection algorithm based on incom-
+plete information differential game proposed by us; “ a1 
+versus d1 method”, “ a2 versus d2 method” and “ a3 versus 
+d3 method” respectively represent that the attacker and 
+defender maintain long-term stable attack and defense 
+strategies, and do not make any adjustments or changes 
+to the strategies during the game; “Attack vs no defense 
+method” means that the defender does not adopt any 
+defense strategy when the network is attacked; “Ran-
+dom method” means that both the attacker and defender 
+choose their strategies in an arbitrary and non-deter-
+ministic way. The experimental results show that in a 
+network containing 1000 sensor nodes, after the system 
+reaches equilibrium through the method proposed in this 
+paper, a total of 802 sensor nodes can maintain a normal 
+working state, and the network availability reaches 80.2%. 
+Compared with the network without this method, the 
+network availability is improved by 22.3% on average by 
+this method. The defensive equilibrium payoffs for each 
+strategy are shown in Table 5. Although the number of 
+nodes in the normal operation of the network is higher 
+than that of the method in this paper under the “ a1 ver-
+sus d1 method”, the defense benefit of the “ a1 versus d1 
+method” is much smaller than that of the method in this 
+paper. From this, we can analyze that attackers are more 
+inclined to defeat the opposite nodes and increase the 
+risk rate of the network. Defenders tend to control the 
+network loss to the minimum range to maintain the nor-
+mal operation of the network.
+Figure 15 shows the attack-defense interaction results 
+of the proposed method and the random method. As 
+shown in the figure, in the attack-defense confrontation 
+experiment of 100 consecutive time slices, the difference 
+in attack-defense utility of the random method is mostly 
+maintained in the positive range of 0–0.3, indicating 
+Table 7  Experimental parameter settings based on the CICIoT2023 dataset
+Attacker’s action parameters
+Attack action
+Typical attack types
+Attack strength
+Attack cost 
+coefficient
+a1
+DDoS attacks (various types of Flood attacks)
+0.92
+4.8
+a2
+DoS attacks (SYN/UDP Flood, etc.)
+0.58
+2.5
+a3
+Recon, Spoofing, etc
+0.26
+1.2
+Defender’s action parameters
+Defense action
+Typical defensive measures
+Defense strength
+Defense 
+cost 
+coefficient
+d1
+DDoS protection system
+0.89
+5.1
+d2
+Standard intrusion detection and basic firewall
+0.55
+2.4
+d3
+Basic monitoring
+0.25
+1.5
+parameter
+Value
+Parameter description
+Q
+105
+Total number of sensing nodes
+xN(t)
+85
+Number of sensing nodes in normal state
+xI(t)
+10
+Number of sensing nodes in impaired state
+xS(t)
+5
+Number of sensing nodes in secure state
+xC(t)
+5
+Number of sensing nodes in crisis state
+Other parameter
+Table 2
+Consistent with simulation experiments
+
+Page 22 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+that the attacker continues to have an advantage and 
+the defense effect is not good. In contrast, the proposed 
+method enables the defender to achieve effective defense 
+within 9–32 time slices (23 time slices). After t =45, the 
+attacker and the defender reached a relatively stable equi-
+librium state after a fierce game. At this time, the defense 
+strategy can effectively resist the attack while achieving 
+maximum benefits. Compared with the random method, 
+the proposed method has an improvement of 24.2% in 
+the defense success rate, where the defense success rate is 
+defined as the ratio of the number of time slices with util-
+ity difference ω ≤0 to the number of time slices before 
+the game equilibrium is reached.
+To further verify the advantages of the proposed 
+method, a comprehensive comparative analysis was con-
+ducted between the proposed method and the advanced 
+defense methods in references (Zhu et al. 2023; Liu et al. 
+2021; Fang and Yi 2024).
+As can be seen from Table  6, the proposed method 
+demonstrates significant advantages in both qualitative 
+features and quantitative performance. In terms of quan-
+titative indicators, the defense success rate of the pro-
+posed method is 51.1%, which is about 12.1%, 16.3%, and 
+3.6% higher than MADRL (Zhu et al. 2023), DRQN (Liu 
+et al. 2021), and BL-Level-k (Fang and Yi 2024), respec-
+tively. In terms of network availability, the proposed 
+method reaches 80.2%, which is significantly better than 
+MADRL (Zhu et al. 2023) and BL-Level-k (Fang and Yi 
+2024). It is worth noting that no effective value was given 
+for the network availability of DRQN(Liu et  al. 2021), 
+because the method failed to reach a stable equilibrium 
+state within the experimental period of 100 time slices, 
+and the number of nodes showed continuous and vio-
+lent fluctuations. This phenomenon is mainly due to the 
+policy jump caused by the discrete action space adopted 
+by DRQN, which makes the defense have periodic vac-
+uum windows, and the exponential rate of infection 
+spread is much faster than the linear recovery rate, which 
+ultimately leads to the network state failing to converge 
+to a stable equilibrium point. In terms of qualitative fea-
+tures, compared with the MADRL (Zhu et al. 2023) and 
+DRQN (Liu et  al. 2021) methods based on deep rein-
+forcement learning, the method in this paper adopts 
+continuous-time differential game modeling, avoids the 
+information loss of discrete-time models, and obtains 
+analytical solutions based on Hamilton’s optimal control 
+theory. It has strong interpretability and strict proof of 
+the existence of saddle point equilibrium. In contrast, the 
+deep reinforcement learning method relies on the black-
+box characteristics of neural network approximation and 
+requires a lot of offline training. Compared with the BL-
+Level-k (Fang and Yi 2024) method, although both use 
+Bayesian inference to handle incomplete information, 
+the BSI mechanism in this paper infers the attack strat-
+egy rather than the rational level, which is more in line 
+with the actual characteristics of the attacker’s strategy in 
+MCS network.
+Validation experiments based on datasets
+In order to verify the applicability and effectiveness of 
+the proposed model in the real network environment, 
+this section conducts a verification experiment based on 
+the CICIoT2023 public dataset. The CICIoT2023 dataset 
+(Neto et al. 2023) was released by the Canadian Institute 
+for Cybersecurity and is one of the largest real IoT attack 
+datasets to date. The dataset was collected in a network 
+topology consisting of 105 real IoT devices and contains 
+46,686,579 network traffic records, covering 33 attack 
+types, divided into 7 main categories: DDoS, DoS, Recon, 
+Web-based, Brute Force, Spoofing and Mirai. The core 
+feature of the dataset is that all attacks are initiated by 
+malicious IoT devices and target other IoT devices, which 
+truly reflects the attack patterns in the Internet of Things 
+environment.
+We extract the following key information from the 
+dataset for model parameter calibration:
+Fig. 16  Optimal strategy trajectories of both attackers and defenders 
+based on parameters from the CICIoT2023 dataset
+Table 8  Experimental results based on the CICIoT2023 dataset
+Evaluation indicators
+This article’s method
+Random 
+methods
+Increase
+Defense success rate
+60.9%
+41.2%
+19.7%
+Network availability
+81.9%
+67.6%
+14.3%
+Equilibrium conver-
+gence time (slice)
+49
+–
+–
+Equilibrium Strategy
+PA={0.57,0.42,0.01};
+PD={0.57, 0.43,0}
+–
+–
+
+Page 23 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+(1)	 Attack Intensity Quantification: This study defines 
+attack intensity based on traffic characteristic sta-
+tistics in the CICIoT2023 dataset. By analyzing the 
+key traffic characteristics of different attack types 
+in the dataset, including packet rate, header length, 
+and flow duration, the attack intensity is mapped to 
+three levels. The specific attack action parameter 
+settings are shown in Table 7.
+(2)	 Attack type distribution: According to the dataset 
+statistics, DDoS attacks accounted for 73%, DoS 
+attacks accounted for 17%, and other attack types 
+(Recon, Web-based, Brute Force, Spoofing, Mirai) 
+accounted for 10%. Based on this distribution, the 
+prior probability of the attack strategy was set to 
+
+belief A(a1), belief A(a2), belief A(a3)
+
+= {0.73,0.17,0.1}
+  , 
+which correspond to the initial beliefs of high-
+intensity attacks, medium-intensity attacks, and 
+low-intensity attacks, respectively.
+(3)	 Defense strength setting: The defense strength set-
+ting is based on the quantitative results of attack 
+strength and combined with network defense prac-
+tices. The defense cost coefficient is set according to 
+the principle that “the higher the defense strength, 
+the greater the resource consumption”. The specific 
+defense action parameter settings are shown in 
+Table 7b.
+(4)	 Network size setting: Referring to the network size of 
+105 real devices in the dataset, the total number of 
+sensing nodes Q in the simulation network was set to 
+105. Table 7c shows the experimental parameters after 
+calibration based on the CICIoT2023 dataset.
+Figure  16 illustrates the optimal strategy trajectories 
+of both attackers and defenders based on the parameters 
+of the CICIoT2023 dataset. Experimental results show 
+that the strategy evolution process based on real dataset 
+parameters exhibits similar phased characteristics to the 
+simulation results in Sect. “Model validity analysis”. In the 
+initial stage, due to the high proportion of DDoS attacks 
+(73%) in the CICIoT2023 dataset, the attacker’s strategy 
+rapidly converges towards high-intensity attacks; cor-
+respondingly, the defender quickly identifies attack pat-
+terns and adjusts its defense strategy through Bayesian 
+inference. Within a continuous time slice of 30–50, the 
+strategies of both attackers and defenders undergo dras-
+tic game-theoretic adjustments, which is consistent with 
+the sudden nature of attack behavior in the real IoT envi-
+ronment. After t > 50, the system reaches an equilibrium 
+state.
+Table  8 shows the experimental results on the 
+CICIoT2023 dataset, comparing them with the random 
+method. The experimental results demonstrate that 
+the proposed method achieves a defense success rate 
+of 60.9% on the real dataset, a 19.7% improvement over 
+the random method. Regarding network availability, 
+the proposed method achieves 81.9%, a 14.3% improve-
+ment over the random method. Furthermore, the system 
+reaches game equilibrium at the 49th time slice, indicat-
+ing that both attackers and defenders tend to employ 
+high-intensity strategies. Although the improvement in 
+defense success rate is slightly lower than the 24.2% in 
+the simulation experiment, considering the more com-
+plex and varied attack patterns in the real dataset, these 
+results validate the effectiveness and applicability of the 
+proposed method in real-world IoT attack environments.
+It should be noted that the CICIoT2023 dataset con-
+tains only 105 IoT devices, and its network size is not 
+large enough to fully represent a large-scale swarm intel-
+ligence sensing network. However, the attack and defense 
+risk rates VA and VD (Eqs. 10–11) are driven by the ratio 
+of the control nodes of both sides, so that the state transi-
+tion rate in the state evolution equation Eq. (12) is adap-
+tively adjusted with the network size. The qualitative 
+characteristics of the game behavior do not depend on 
+the absolute size of the network. Therefore, in the simu-
+lation, the behavior of networks of different sizes can be 
+simulated by adjusting the total number of nodes Q . The 
+experimental results in Sect.  “Model validity analysis” 
+( Q =1000) and this section ( Q =105) both show consist-
+ent phased convergence characteristics, which verifies 
+this property. In addition, the time complexity of the 
+algorithm is O(T·(m + n)), which is decoupled from the 
+number of nodes Q and will not significantly increase the 
+computational overhead due to the increase in network 
+size.
+Conclusion
+In response to the security challenge of information 
+asymmetry between attackers and defenders in crowd-
+sensing networks, this paper proposes a collaborative 
+defense decision-making framework based on incom-
+plete information differential games. To adapt to the 
+characteristics of incomplete information between 
+attackers and de-fenders, a dynamic defense mechanism 
+integrating Bayesian inference is constructed, enabling 
+defenders to make optimal decisions under informa-
+tion uncertainty. On this basis, the evolution process 
+of crowdsensing network security state is modeled as a 
+differential equation system, and the model’s adaptabil-
+ity to environmental uncer-tainty is enhanced by intro-
+ducing random perturbation parameters. At the same 
+time, a saddle point equilibrium solution method based 
+on Bayesian strategy inference is designed to ensure that 
+the defender can generate the optimal defense strategy 
+based on limited observation information. Simulation 
+
+Page 24 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+experimental results show that the proposed method 
+can effectively maintain network security under different 
+attack scenarios and random perturbation conditions. 
+Compared to traditional defense schemes, the approach 
+has obvious advantages in network availability and can 
+achieve strategy-adaptive adjustment when key param-
+eters, such as node recovery rates change. Algorithm 
+complexity analysis shows that the proposed method has 
+a time complexity of O(T·(m + n)) and a space complex-
+ity of O(Q + m + n), and each step of the algorithm can be 
+executed independently to support distributed deploy-
+ment. Simulation experiments at different scales demon-
+strate that the model’s policy evolution mechanism has 
+cross-scale consistency, preliminarily verifying its feasi-
+bility for scaling to larger-scale networks. This research 
+offers a new technical approach for crowdsensing net-
+works security protection, breaking through the limita-
+tions of traditional static defense strategies and providing 
+theoretical support for collaborative defense decisions in 
+practical applications.
+Future work will be carried out in the following aspects: 
+(1) Further improve the random perturbation model and 
+study the evolution law of defense strategies in more 
+complex and uncertain environments; (2) Although this 
+paper has verified the computational efficiency of the 
+model in the experimental environment, the Bayesian 
+inference and differential equation solving mechanism 
+of the model still face the challenge of increased com-
+putational overhead when deployed in ultra-large-scale 
+networks. In the future, we will explore the lightweight 
+design of the model by combining deep reinforcement 
+learning and other methods to further improve the mod-
+el’s adaptability to large-scale heterogeneous networks; 
+(3) Study the collaborative decision-making mechanism 
+of multiple defenders and build a more efficient distrib-
+uted defense framework; (4) Expand the model to deal 
+with more types of complex attack scenarios and improve 
+the versatility and robustness of the defense strategy;(5) 
+Conduct deployment verification of the algorithm in 
+real-world mobile crowd sensing scenarios and evaluate 
+its real-time decision-making performance on typical 
+edge computing platforms; (6) The current dataset vali-
+dation experiments are limited by the network size of the 
+public dataset. In the future, the scalability and applica-
+bility of the model will be further validated on a larger 
+real dataset.
+Acknowledgements
+All the authors listed have approved the manuscript that is enclosed. This pre-
+sent research work was supported by Heilongjiang Provincial Natural Science 
+Foundation of China(no.PL2024F008).
+Author contributions
+Kaiwen Lou: Developed the swarm intelligence-aware network cooperative 
+defense model based on incomplete information micro-differential games, 
+and designed and conducted the model verification algorithms and experi-
+ments. Guosheng Zhao: Constructed the dynamic micro-differential equations 
+with random perturbation factors, designed the Bayesian strategy inference 
+method, and addressed the limitations of static belief updating. Additionally, 
+led the writing and revision of the manuscript. Jian Wang: Verified the overall 
+reproducibility of the experimental results and algorithms, assisted in optimiz-
+ing the parameter settings of the simulation experiments, and ensured the 
+robustness and effectiveness of the model underdifferent scenarios. Xiaodan 
+Huang: Responsible for the visualization of experimental results, created rel-
+evant charts to intuitively demonstrate the model performance and algorithm 
+effectiveness. Zixuan Wan: Responsible for the collection and organization of 
+experimental data, providing data support for model verification and experi-
+mental analysis.
+Funding
+This present research work was supported by Heilongjiang Provincial Natural 
+Science Foundation of China(no.PL2024F008).
+Declarations
+Competing interests
+The authors declare no competing interests.
+Received: 24 November 2025   Accepted: 11 March 2026
+References
+Cheung MH, Hou F, Huang J (2018) Delay-sensitive mobile crowdsens-
+ing: algorithm design and economics. IEEE Trans Mobile Comput 
+17(12):2761–2774
+Dadkhah S, Neto ECP, Ferreira R, Molokwu RC, Sadeghi S, Ghorbani AA (2024) 
+CICIoMT2024: a benchmark dataset for multi-protocol security assess-
+ment in IoMT. Int Things 28(2024):101351
+Dasari VS, Kantarci B, Pouryazdan M, Foschini L, Girolami M (2020) Game 
+theory in mobile crowdsensing: a comprehensive survey. Sensors Basel 
+20(7):2055
+Fang H, Yi P (2024) Adaptive decision-making in attack-defense games 
+with bayesian inference of rationality level. IEEE Trans Indus Electron 
+71(12):16558–16567
+Gan C, Lin J, Huang D-W, Zhu Q, Tian L, Jain DK (2024) Equipment classifica-
+tion based differential game method for advanced persistent threats in 
+Industrial Internet of Things. Expert Syst Appl 236(2024):121255
+He S, Shi K, Liu C, Guo B, Chen J, Shi Z (2022) Collaborative sensing in internet 
+of things: a comprehensive survey. IEEE Commun Surveys Tutorials. 
+24(3):1435–1474
+Hu H, Liu Y, Zhang H, Pan R (2018) Optimal network defense strategy selec-
+tion based on incomplete information evolutionary game. IEEE Access 
+6:29806–29821
+Huang J, Kong L, Cheng L, Dai H-N, Qiu M, Chen G (2024) BlockSense: towards 
+trustworthy mobile crowdsensing via Proof-of-Data blockchain. IEEE 
+Trans Mobile Comput 23(2):1016–1033
+Jin, Haiming, Lu Su, Klara Nahrstedt (2017) Theseus: Incentivizing truth discov-
+ery in mobile crowd sensing systems. In: Proceedings of the 18th ACM 
+International Symposium on Mobile Ad Hoc Networking and Computing. 
+pp 1–10.
+Li M, Ma M, Wang L, Yang B, Wang T, Sun J (2023) Multitask-oriented collabora-
+tive crowdsensing based on reinforcement learning and blockchain for 
+intelligent transportation system. IEEE Trans Indus Inf 19(9):9503–9514
+Liang Y, An J, Xianzhi H, Yang Q, Si H (2020) Research on privacy-preserving 
+incentive mechanisms in mobile crowdsensing (in Chinese). Chinese J 
+Comput 43(12):2414–2432
+Liu X, Zhang H, Dong S, Zhang Y (2021) Network defense decision-making 
+based on a stochastic game system and a deep recurrent Q-network. 
+Comput Secur. https://​doi.​org/​10.​1016/j.​cose.​2021.​102480
+Neto ECP, Dadkhah S, Ferreira R, Zohourian A, Lu R, Ghorbani AA (2023) 
+CICIOT2023: a real-time dataset and benchmark for large-scale attacks in 
+IoT environment. Sensors Basel 23:5941
+
+Page 25 of 25
+Lou et al. Cybersecurity           (2026) 9:143 
+	
+Patra A, Sengupta S, Paul A, Chakraborty S (2024) Inferring to cooperate: evolu-
+tionary games with Bayesian inferential strategies. New J Phys 26:063003
+Rao YS, Keshri AK, Mishra BK, Panda TC (2020) Distributed denial of service 
+attack on targeted resources in a computer network for critical infrastruc-
+ture: aA differential e-epidemic model. Physica A 540(2020):123240
+Ren Z, Zhang D, Tang S, Xiong W, Yang S-H (2023) Cooperative maneuver deci-
+sion making for multi-UAV air combat based on incomplete information 
+dynamic game. Defence Technol 27(2023):308–317
+Shengling Wang YuPu, Shi H, Huang J, Xiao Y (2021) A differential game view 
+of antagonistic dynamics for cybersecurity. Comput Net 200:108494
+Shi R, Luo J, Zhou N, Liu Y, Hong C, Zhang X-P, Chen X (2025) Phy-APMR: 
+A physics-informed air pollution map reconstruction approach with 
+mobile crowd-sensing for fine-grained measurement. Build Environ 
+272(112634):0360–1323
+Simsek M, Kantarci B, Boukerche A (2020) Knowledge-based machine learning 
+boosting for adversarial task detection in mobile crowdsensing. 2020 IEEE 
+Symposium on Computers and Communications (ISCC). IEEE 2020:1–7
+Sun Y, Ding W, Shu L, Li K, Zhang YU, Zhou Z (2022) On enabling mobile 
+crowd sensing for data collection in smart agriculture: a vision. IEEE Syst 
+J 16(1):132–143
+Wu H, Gao Q, Tao X, Zhang N, Chen D, Han Z (2022) Differential game 
+approach for attack-defense strategy analysis in internet of things net-
+works. IEEE Int Things J 9(12):10340–10353. https://​doi.​org/​10.​1109/​JIOT.​
+2021.​31221​15
+Xiong J, Wan B, Tian Y, Liu X (2021) Security and privacy in mobile crowd-
+sensing:models, progresses, and trend (in Chinese). Chinese Journal of 
+Computers. 44(09):1949–1966
+Yan M, Hengwei Z, Hao H, Jinglei T, Jindong W (2021) Optimal network 
+defense strategy selection method: a stochastic differential game model. 
+Security Commun Net 1:5594697
+Yang S, Wu F, Tang S, Gao X, Yang B, Chen G (2017) On designing data quality-
+aware truth estimation and surplus sharing method for mobile crowd-
+sensing. IEEE J Selected Areas Commun 35(4):832–847
+Yao P, Jiang Z, Yan B, Yang Q, Wang W (2024) Bayesian and stochastic game 
+joint approach for Cross-Layer optimal defensive Decision-Making in 
+industrial Cyber-Physical systems. Inf Sci 662(2024):120216
+Zhang W, Li T, Huang S (2018) Network defense decision-making method 
+based on attack-defense differential game (in Chinese). Acta Electron Sin 
+46(06):1428–1435
+Zhang H, Mi Y, Liu X, Zhang Y, Wang J, Tan J (2023a) A differential game 
+approach for real-time security defense decision in scale-free networks. 
+Comput Net 224(2023):109635
+Zhang H, Mi Y, Yumeng F, Liu X, Zhang Y, Wang J, Tan J (2023b) Security 
+defense decision method based on potential differential game for com-
+plex networks. Comput Secur 129(2023):103187
+Hengwei Zhang, Jinglei Tan, Xiaohu Liu, Jindong Wang (2020) Moving target 
+defense decision-making method: a dynamic markov differential game 
+model. In Proceedings of the 7th ACM Workshop on Moving Target 
+Defense (MTD’20). Association for Computing Machinery, New York, NY, 
+USA. Pp. 21–29.
+Zhao G, Gao M, Wang J (2023) A crowd cooperative defense model for mitigat-
+ing DDoS attacks in mobile crowdsensing networks. Comput Commun 
+207:150–163
+Zhao G, Li Z, Wang J (2025) Hybrid attacks collaborative defense model 
+using an ensemble honey badger algorithm. Comput Netw 
+261(111149):1389–1286
+Zhu T, Ye D, Cheng Z, Zhou W, Yu PS (2023) Learning games for defending 
+advanced persistent threats in cyber systems. IEEE Trans Syst, Man, and 
+Cybernetics: Syst 53(4):2410–2422. https://​doi.​org/​10.​1109/​TSMC.​2022.​
+32118​66
+Publisher’s Note
+Springer Nature remains neutral with regard to jurisdictional claims in pub-
+lished maps and institutional affiliations.

@@ -1,0 +1,21 @@
+{
+  "started": "2026-11-16T00:10:49.303296+08:00",
+  "python": "3.11.7 | packaged by Anaconda, Inc. | (main, Dec 15 2023, 18:05:47) [MSC v.1916 64 bit (AMD64)]",
+  "executable": "C:\\ProgramData\\anaconda3\\python.exe",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "numpy": "1.26.4",
+  "scipy": "1.11.4",
+  "pandas": "2.1.4",
+  "argv": [
+    "handoffs/BR_sensitivity_20261115/run_experiment.py"
+  ],
+  "solver": "original D7 SLSQP; maxiter=300; ftol=1e-10; starts=3 (incumbent, zero, random)",
+  "T": 10.0,
+  "K": 6,
+  "H": 48,
+  "seed": 20261115,
+  "source_hashes_match_D7": {
+    "src/core.py": true,
+    "src/game_solver.py": true
+  }
+}

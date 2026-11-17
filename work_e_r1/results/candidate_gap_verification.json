@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "exact_feasibility": true,
+  "LP_full_binary_model_domain": true,
+  "linear_gap_upper": "2403833371530365828216671414704399913122663612208778128063531659791/34508731733952818937173779311385127262255544860851932775812621118996480",
+  "numerical_upper": 6.965869942896965e-05,
+  "gradient_enclosure_width_max": 3.5537169055867133e-32,
+  "interval_integration_proof": "integer outward arithmetic + differentiated exact RK4; not a formal proof assistant",
+  "certifies_Nash": false,
+  "certifies_ODE_VI": false
+}

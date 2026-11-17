@@ -1,0 +1,20 @@
+{
+  "time": "2026-11-16T00:13:57.361873+08:00",
+  "paper_files_checked": 4740,
+  "paper_files_changed": [],
+  "paper_files_added": [],
+  "original_sources_unchanged": true,
+  "csv_rows": {
+    "defense_original_and_perturbed.csv": 108,
+    "attacker_best_responses.csv": 108,
+    "defender_best_responses.csv": 72,
+    "payoff_and_control_summary.csv": 3,
+    "constraints_by_slot.csv": 48,
+    "optimizer_attempts.csv": 30,
+    "integration_audit.csv": 24,
+    "convergence.csv": 5,
+    "objectives_all_integrators.csv": 32
+  },
+  "max_csv_roundtrip_control_error": 0.0,
+  "scope": "Package consistency and paper preservation; no extra optimization"
+}
