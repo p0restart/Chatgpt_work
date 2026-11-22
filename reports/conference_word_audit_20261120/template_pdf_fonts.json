@@ -1,0 +1,59 @@
+[
+  {
+    "page": 1,
+    "fonts": {
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 230,
+      "('BCDEEE+TimesNewRomanPSMT', 24.0)": 27,
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 24.0)": 11,
+      "('BCDEEE+TimesNewRomanPSMT', 9.0)": 605,
+      "('BCDEEE+TimesNewRomanPSMT', 6.0)": 12,
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 9.0)": 503,
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 2719,
+      "('BCDGEE+TimesNewRomanPS-BoldItalicMT', 9.0)": 163,
+      "('BCDHEE+TimesNewRomanPS-BoldMT', 9.0)": 51,
+      "('BCDIEE+TimesNewRomanPS-BoldMT', 9.0)": 98,
+      "('BCDJEE+TimesNewRomanPS-BoldItalicMT', 9.0)": 1,
+      "('BCDKEE+ArialMT', 10.02)": 4,
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 10.02)": 124,
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 7.98)": 7,
+      "('BCDLEE+TimesNewRomanPSMT', 10.02)": 47,
+      "('BCDMEE+Arial-ItalicMT', 10.02)": 4,
+      "('BCDNEE+SymbolMT', 10.02)": 1
+    }
+  },
+  {
+    "page": 2,
+    "fonts": {
+      "('BCDLEE+TimesNewRomanPSMT', 10.02)": 1175,
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 3454,
+      "('BCDNEE+SymbolMT', 10.02)": 29,
+      "('BCDKEE+ArialMT', 10.02)": 15,
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 10.02)": 215,
+      "('BCDMEE+Arial-ItalicMT', 10.02)": 8,
+      "('BCDEEE+TimesNewRomanPSMT', 6.48)": 1,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 16,
+      "('BCDIEE+TimesNewRomanPS-BoldMT', 10.02)": 62
+    }
+  },
+  {
+    "page": 3,
+    "fonts": {
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 10.02)": 92,
+      "('BCDMEE+Arial-ItalicMT', 10.02)": 3,
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 2626,
+      "('BCDLEE+TimesNewRomanPSMT', 10.02)": 1096,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 690,
+      "('BCDKEE+ArialMT', 7.98)": 10,
+      "('BCDEEE+TimesNewRomanPSMT', 6.48)": 14,
+      "('BCDIEE+TimesNewRomanPS-BoldMT', 7.98)": 29,
+      "('BCDGEE+TimesNewRomanPS-BoldItalicMT', 7.5)": 37,
+      "('BCDEEE+TimesNewRomanPSMT', 4.02)": 1,
+      "('BCDEEE+TimesNewRomanPSMT', 4.98)": 3,
+      "('BCDEEE+TimesNewRomanPSMT', 6.0)": 31,
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 6.0)": 14,
+      "('BCDFEE+TimesNewRomanPS-ItalicMT', 7.98)": 14,
+      "('BCDLEE+TimesNewRomanPSMT', 7.98)": 537,
+      "('BCDIEE+TimesNewRomanPS-BoldMT', 10.02)": 303
+    }
+  }
+]

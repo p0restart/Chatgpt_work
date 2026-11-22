@@ -1,0 +1,18 @@
+{
+  "fig1_network_en": {
+    "text_size_passed": true,
+    "collision_passed": true
+  },
+  "fig2_capacity_en": {
+    "text_size_passed": true,
+    "collision_passed": true
+  },
+  "fig3_actions_en": {
+    "text_size_passed": true,
+    "collision_passed": true
+  },
+  "fig4_states_en": {
+    "text_size_passed": true,
+    "collision_passed": true
+  }
+}

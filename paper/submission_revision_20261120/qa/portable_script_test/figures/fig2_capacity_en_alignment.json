@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "quantity": "width",
+      "spread_pt": 2.7018387527277808e-14
+    },
+    {
+      "quantity": "height",
+      "spread_pt": 0.0
+    },
+    {
+      "quantity": "y0",
+      "spread_pt": 0.0
+    }
+  ]
+}

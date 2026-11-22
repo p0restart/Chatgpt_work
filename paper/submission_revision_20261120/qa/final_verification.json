@@ -1,0 +1,21 @@
+{
+  "latex_pages": 8,
+  "word_pages": 7,
+  "numbered_equations_unchanged": 18,
+  "references": 22,
+  "native_word_math_objects": 205,
+  "four_figure_audits_passed": true,
+  "original_control_hashes": {
+    "0.6": "f5e07ea801d65094e23ddc6c63aa56ce517121f789f7fb4d023ce3d8e0d90580",
+    "1.2": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed",
+    "1.8": "36f3ed1e10d9ab7a2e786b75778b24807e56ea59a017cb74a2300e6154777493"
+  },
+  "remaining": [
+    "Author information will be completed manually",
+    "Word native math font compatibility",
+    "Reference 13 full official metadata not recovered"
+  ],
+  "all_figures_and_tables_cited": true,
+  "latex_missing_font_shapes": false,
+  "latex_overfull_boxes": false
+}

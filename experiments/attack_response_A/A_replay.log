@@ -1,0 +1,29 @@
+2026-11-18 21:17:27,862 CST Work A starts; frozen revision 1409b7e71451564613c1ded61762a2724d0d0b98
+2026-11-18 21:17:28,684 CST Feasibility: requested=[0.2, 0.2, 0.2, 0.2, 0.5, 0.5, 0.5, 0.5, 0.2, 0.2, 0.2, 0.2] applied=[0.2, 0.2, 0.2, 0.2, 0.4, 0.4, 0.4, 0.4, 0.2, 0.2, 0.2, 0.2]
+2026-11-18 21:17:28,684 CST D0 start_slot=1 count=12 observed_api=0.20 seed=20261114 x0=[0.1, 0.0, 0.0, 0.0, 0.0, 0.0]
+2026-11-18 21:17:39,462 CST D0 start=0 status=0 nit=7 J0=8.41555384415 J=7.74521109708 residual=1.8722e-06 seconds=3.703 Optimization terminated successfully
+2026-11-18 21:17:39,462 CST D0 start=1 status=0 nit=7 J0=8.88594890167 J=7.7452110971 residual=2.3623e-06 seconds=3.229 Optimization terminated successfully
+2026-11-18 21:17:39,473 CST D0 start=2 status=0 nit=7 J0=8.67304417419 J=7.7452110971 residual=2.09065e-06 seconds=3.306 Optimization terminated successfully
+2026-11-18 21:17:43,698 CST D0 accepted; optimization 10.525s, replay J_D 7.74521109708
+2026-11-18 21:17:43,730 CST D1 start_slot=5 count=8 observed_api=0.40 seed=20261115 x0=[0.1595444910479839, 0.2197447714158105, 0.05779945765499918, 0.02528169428766222, 0.009940448215657748, 0.0043905914960842025]
+2026-11-18 21:17:50,677 CST D1 start=0 status=0 nit=6 J0=7.11306944274 J=7.10144087084 residual=7.33032e-07 seconds=2.034 Optimization terminated successfully
+2026-11-18 21:17:50,677 CST D1 start=1 status=0 nit=6 J0=7.80070427738 J=7.10144087084 residual=3.95673e-07 seconds=2.367 Optimization terminated successfully
+2026-11-18 21:17:50,677 CST D1 start=2 status=0 nit=6 J0=7.60541831151 J=7.10144087087 residual=2.37373e-06 seconds=2.071 Optimization terminated successfully
+2026-11-18 21:17:53,517 CST D1 accepted; optimization 6.740s, replay J_D 7.10144087084
+2026-11-18 21:17:53,549 CST D2 start_slot=9 count=4 observed_api=0.20 seed=20261116 x0=[0.27964760118992443, 0.3039883282238093, 0.14232095686544388, 0.06165952937357851, 0.04070771477142073, 0.01724015036727912]
+2026-11-18 21:17:56,752 CST D2 start=0 status=0 nit=5 J0=4.00835290628 J=4.00794940033 residual=6.18699e-07 seconds=0.910 Optimization terminated successfully
+2026-11-18 21:17:56,752 CST D2 start=1 status=0 nit=5 J0=4.15369202135 J=4.00794940035 residual=1.97439e-06 seconds=0.992 Optimization terminated successfully
+2026-11-18 21:17:56,752 CST D2 start=2 status=0 nit=6 J0=4.26248561555 J=4.00794940034 residual=9.7442e-07 seconds=0.994 Optimization terminated successfully
+2026-11-18 21:17:58,402 CST D2 accepted; optimization 3.039s, replay J_D 4.00794940033
+2026-11-18 21:17:58,402 CST M5_old start_slot=5 count=8 observed_api=0.20 seed=20261115 x0=[0.1595444910479839, 0.2197447714158105, 0.05779945765499918, 0.02528169428766222, 0.009940448215657748, 0.0043905914960842025]
+2026-11-18 21:18:03,357 CST M5_old start=0 status=0 nit=1 J0=6.30841444106 J=6.30841444106 residual=8.63748e-07 seconds=0.676 Optimization terminated successfully
+2026-11-18 21:18:03,357 CST M5_old start=1 status=0 nit=6 J0=6.90858389913 J=6.3084144411 residual=2.13777e-06 seconds=1.964 Optimization terminated successfully
+2026-11-18 21:18:03,357 CST M5_old start=2 status=0 nit=6 J0=6.79077072221 J=6.30841444107 residual=1.22244e-06 seconds=1.823 Optimization terminated successfully
+2026-11-18 21:18:05,652 CST M5_old accepted; optimization 4.780s, replay J_D 6.30841444106
+2026-11-18 21:18:05,652 CST M9_old start_slot=9 count=4 observed_api=0.40 seed=20261116 x0=[0.27964760118992443, 0.3039883282238093, 0.14232095686544388, 0.06165952937357851, 0.04070771477142073, 0.01724015036727912]
+2026-11-18 21:18:07,307 CST M9_old start=0 status=0 nit=1 J0=4.19609764578 J=4.19609764578 residual=3.95673e-07 seconds=0.280 Optimization terminated successfully
+2026-11-18 21:18:07,307 CST M9_old start=1 status=0 nit=5 J0=4.34693434624 J=4.19609764581 residual=2.30849e-06 seconds=0.564 Optimization terminated successfully
+2026-11-18 21:18:07,307 CST M9_old start=2 status=0 nit=6 J0=4.45188667431 J=4.19609764579 residual=9.05307e-07 seconds=0.640 Optimization terminated successfully
+2026-11-18 21:18:08,317 CST M9_old accepted; optimization 1.576s, replay J_D 4.19609764578
+2026-11-18 21:18:10,315 CST Full replays J_D: {'C0': 7.745211097078516, 'C1': 8.361145411852108, 'C2': 8.35008928140635}
+2026-11-18 21:18:10,315 CST PASS 253 numerical checks

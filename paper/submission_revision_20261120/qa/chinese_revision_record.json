@@ -1,0 +1,104 @@
+{
+  "source": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\reports\\conference_word_audit_20261120\\input\\1119-final-基于非零和微分博弈的有限资源网络防御决策方法.docx",
+  "output": "C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\submission_revision_20261120\\基于非零和微分博弈的有限资源网络防御决策方法_中文同步修订版.docx",
+  "translated_insertions": [
+    "为定义停止诊断指标，在固定对手控制计划的条件下，记$F_D=J_D$、$F_A=-J_A$。设$\\widetilde z_p$为数值求得的单方响应，且$\\mathcal C_D=U_K$、$\\mathcal C_A=A_K$。已发现单方改善量定义为$gap_p=\\max\\{0,F_p(z_p)-F_p(\\widetilde z_p)\\}$。采用单位步长的投影梯度残差$stat_p=\\|z_p-\\Pi_{\\mathcal C_p}(z_p-\\nabla F_p(z_p))\\|_\\infty$和响应距离$dist_p=\\|\\widetilde z_p-z_p\\|_\\infty$，其中$\\Pi$表示向同时满足控制边界和容量约束的可行集作欧氏投影。仅当候选响应的控制边界违反量和容量违反量均不超过$10^{-10}$时，才接受该候选响应。用于停止判断的单起点检验与迭代终止后开展的三起点搜索是两项独立检验。",
+    "存档优化计算在Windows系统上完成，使用Python 3.11.7、NumPy 1.26.4和SciPy 1.11.4。防御容量为0.6、1.2和1.8时，基础随机种子分别为20262114、20261114和20263114；完整交替求解中的随机初始化使用对应基础种子加2。本文选取均匀初始化所得的计划作为报告结果。保存的控制计划、状态轨迹、诊断记录及绘图输入随论文源码一并提供。",
+    "三种容量下的均匀初始化路径均在第5次交替更新后首次满足停止条件。在三种容量和攻防双方中，归一化已发现单方改善量、当前计划的投影梯度残差和响应距离分别不超过$2.90\\times10^{-10}$、$6.48\\times10^{-5}$和$3.35\\times10^{-5}$；最终单起点SLSQP检验的退出码均为0。不同完整求解初始化所得控制计划之间的最大差异小于$4.02\\times10^{-5}$。对最终报告计划另行开展的三起点复核也满足上述局部检验标准。对于主容量下的三个对照计划，将每个控制区间的RK4子步数由48增加至192后，共同时刻的状态差异最大为$8.71\\times10^{-12}$。这些结果属于给定策略类中的数值诊断。"
+  ],
+  "changes": [
+    {
+      "original": "以资产受损比例描述网络状态，来刻画防御者面对该问题时如何动态部署防御资源。",
+      "revised": "以资产受损比例描述网络状态演化，以隔离与恢复控制刻画防御者随时间部署资源的行动。"
+    },
+    {
+      "original": "设计动态防御行动求解算法（ABR-DAD）",
+      "revised": "设计基于交替最佳响应的动态防御行动求解算法（Alternating Best Response for Dynamic Defense Action Decision，ABR-DAD）"
+    },
+    {
+      "original": "动态防御的累计加权受损损失和累计综合防御损失均低于对照方案，验证了该方法在有限资源条件下求解动态防御行动的有效性。",
+      "revised": "在主容量及与动态防御联合求得的共同攻击计划下，动态防御的累计加权受损损失和累计综合防御损失均低于对照方案，支持该方法用于有限资源条件下的防御行动求解。"
+    },
+    {
+      "original": "恢复投入效率",
+      "revised": "恢复效果系数"
+    },
+    {
+      "original": "并用序列最小二乘规划（SLSQP）求解具有控制边界与线性容量约束的单方优化问题",
+      "revised": "并用序列最小二乘规划（SLSQP）计算控制边界与线性容量约束下的单方局部数值响应"
+    },
+    {
+      "original": "随后交替更新双方控制计划",
+      "revised": "这些局部数值响应近似求解式（13）—（14）所定义的理论最佳响应问题。随后交替更新双方控制计划"
+    },
+    {
+      "inserted": "为定义停止诊断指标，在固定对手控制计划的条件下，记$F_D=J_D$、$F_A=-J_A$。设$\\widetilde z_p$为数值求得的单方响应，且$\\mathcal C_D=U_K$、$\\mathcal C_A=A_K$。已发现单方改善量定义为$gap_p=\\max\\{0,F_p(z_p)-F_p(\\widetilde z_p)\\}$。采用单位步长的投影梯度残差$stat_p=\\|z_p-\\Pi_{\\mathcal C_p}(z_p-\\nabla F_p(z_p))\\|_\\infty$和响应距离$dist_p=\\|\\widetilde z_p-z_p\\|_\\infty$，其中$\\Pi$表示向同时满足控制边界和容量约束的可行集作欧氏投影。仅当候选响应的控制边界违反量和容量违反量均不超过$10^{-10}$时，才接受该候选响应。用于停止判断的单起点检验与迭代终止后开展的三起点搜索是两项独立检验。"
+    },
+    {
+      "inserted": "求解完成后，防御者获得逐资产、逐控制区间的隔离与恢复行动计划。对资产$i$、区间$k$，算法给出的防御行动与资源占用为："
+    },
+    {
+      "original": "为API网关",
+      "revised": "为应用程序编程接口（API）网关"
+    },
+    {
+      "original": "仿真采用预设的有向传播参数，模型强度和成本均为归一化量。",
+      "revised": "本实验采用包含六类资产的合成网络，传播参数为预设值，时间、控制强度和成本均采用归一化量。表1汇总主要仿真参数。"
+    },
+    {
+      "original": "在同一攻击控制轨迹中比较动态防御（G）、固定均值防御（M）和无防御（N）。",
+      "revised": "比较动态防御（G）、固定均值防御（M）和无防御（N）。三方案采用与G联合求得、随后固定用于全部对照方案的同一攻击控制轨迹。"
+    },
+    {
+      "inserted": "存档优化计算在Windows系统上完成，使用Python 3.11.7、NumPy 1.26.4和SciPy 1.11.4。防御容量为0.6、1.2和1.8时，基础随机种子分别为20262114、20261114和20263114；完整交替求解中的随机初始化使用对应基础种子加2。本文选取均匀初始化所得的计划作为报告结果。保存的控制计划、状态轨迹、诊断记录及绘图输入随论文源码一并提供。"
+    },
+    {
+      "inserted": "三种容量下的均匀初始化路径均在第5次交替更新后首次满足停止条件。在三种容量和攻防双方中，归一化已发现单方改善量、当前计划的投影梯度残差和响应距离分别不超过$2.90\\times10^{-10}$、$6.48\\times10^{-5}$和$3.35\\times10^{-5}$；最终单起点SLSQP检验的退出码均为0。不同完整求解初始化所得控制计划之间的最大差异小于$4.02\\times10^{-5}$。对最终报告计划另行开展的三起点复核也满足上述局部检验标准。对于主容量下的三个对照计划，将每个控制区间的RK4子步数由48增加至192后，共同时刻的状态差异最大为$8.71\\times10^{-12}$。这些结果属于给定策略类中的数值诊断。"
+    },
+    {
+      "original": "检验防御配置的时空可计算性和容量可行性",
+      "revised": "检验算法能否生成跨资产、跨时段且满足容量约束的防御计划"
+    },
+    {
+      "original": "权衡这一结果体现了",
+      "revised": "权衡。这一结果体现了"
+    },
+    {
+      "original": "容量激活和投入收缩",
+      "revised": "容量约束激活和规划末期投入下降"
+    },
+    {
+      "original": "合计（全网平均）",
+      "revised": "合计（时间平均）"
+    },
+    {
+      "original": "在相同攻击时序下，动态方案",
+      "revised": "在主防御容量下，采用与G联合求得的共同攻击计划时，动态方案"
+    },
+    {
+      "original": "PRECIADO V M, ZARGHAM M, ENYIOHA C, et al.",
+      "revised": "PRECIADO V M, ZARGHAM M, ENYIOHA C, JADBABAIE A, PAPPAS G J."
+    },
+    {
+      "original": "LOU K, ZHAO G, WANG J, et al.",
+      "revised": "LOU K, ZHAO G, WANG J, HUANG X, WAN Z."
+    },
+    {
+      "original": "MI Y, ZHANG H, HU H, et al.",
+      "revised": "MI Y, ZHANG H, HU H, TAN J, WANG J."
+    },
+    {
+      "original": "TIAN L, GAN C, LIN J, et al.",
+      "revised": "TIAN L, GAN C, LIN J, SHANG F, ZHU Q."
+    },
+    {
+      "original": "QIN Y, YANG X, YANG L X, et al.",
+      "revised": "QIN Y, YANG X, YANG L X, HUANG K."
+    }
+  ],
+  "checks": {
+    "original_figures_unchanged": true,
+    "18_numbered_equations_unchanged": true,
+    "numerical_tables_unchanged": true
+  }
+}

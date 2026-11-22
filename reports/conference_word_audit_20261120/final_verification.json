@@ -1,0 +1,12 @@
+{
+  "en": {
+    "snapshot_hash_matches": true,
+    "original_matches_snapshot": true
+  },
+  "zh": {
+    "snapshot_hash_matches": true,
+    "original_matches_snapshot": true
+  },
+  "report_pages": 11,
+  "review_scope": "Read-only manuscript audit; no manuscript edits or optimization reruns."
+}

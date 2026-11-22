@@ -1,0 +1,140 @@
+{
+  "inputs_sha256": {
+    "paper/work_d7/results/static/B0.6/model.json": "431361317ccc0753a9fae71da921ee54eec6cb624e66325b42151af47a645e7b",
+    "paper/work_d7/results/static/B0.6/G_controls.json": "f5e07ea801d65094e23ddc6c63aa56ce517121f789f7fb4d023ce3d8e0d90580",
+    "paper/work_d7/results/static/B1.2/model.json": "28042f480562edd2fa5e9d697bdf313c9e4ea0ab4ea6d7b50ca4f116e122a21c",
+    "paper/work_d7/results/static/B1.2/G_controls.json": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed",
+    "paper/work_d7/results/static/B1.8/model.json": "2df2d0aea2c74c26f036089d00aa82cd1267f11b9866b528596b450e0d5bd9c2",
+    "paper/work_d7/results/static/B1.8/G_controls.json": "36f3ed1e10d9ab7a2e786b75778b24807e56ea59a017cb74a2300e6154777493",
+    "paper/work_d7/results/static/B1.2/G_states.csv": "c029b9f3c05d6945a6880e0718ced00fd63503bb73f522b46879b54332714fef",
+    "src/core.py": "ef2c675252d5fc8e00bc7103dd542a40bbf9c7714412207dd4e0b20966859419"
+  },
+  "RK4_substeps_per_slot": 48,
+  "points_per_plan": 289,
+  "published_table_3_columns": [
+    "security",
+    "business_and_action",
+    "J_D",
+    "X_q(T)"
+  ],
+  "plans": {
+    "G": {
+      "state_source": "archive",
+      "table_3_metrics": [
+        8.176989568979188,
+        1.1496571352114304,
+        9.326646704190619,
+        0.15716323672239307
+      ],
+      "terminal_state_v1_to_v6": [
+        0.30641250584146,
+        0.2971093279568314,
+        0.2436513479966698,
+        0.119074297292765,
+        0.10044841801153757,
+        0.046427979367660986
+      ],
+      "terminal_plot_values": [
+        0.30641250584146,
+        0.119074297292765,
+        0.10044841801153757,
+        0.15716323672239307
+      ],
+      "H48_vs_H192_max_abs_state_error": 8.705092202632159e-12,
+      "peak_gateway_time": 8.333333333333334
+    },
+    "M": {
+      "state_source": "fixed-control RK4 replay",
+      "table_3_metrics": [
+        8.580318666575984,
+        0.9765150600136516,
+        9.556833726589636,
+        0.1568683864878423
+      ],
+      "terminal_state_v1_to_v6": [
+        0.28411172942156365,
+        0.28870750813534607,
+        0.2402050427619703,
+        0.1118416882915352,
+        0.10932396814782543,
+        0.04965363718886375
+      ],
+      "terminal_plot_values": [
+        0.28411172942156365,
+        0.1118416882915352,
+        0.10932396814782543,
+        0.1568683864878423
+      ],
+      "H48_vs_H192_max_abs_state_error": 8.334985479585555e-12,
+      "peak_gateway_time": 8.333333333333334
+    },
+    "N": {
+      "state_source": "fixed-control RK4 replay",
+      "table_3_metrics": [
+        10.94570141563369,
+        0.0,
+        10.94570141563369,
+        0.22127094933697242
+      ],
+      "terminal_state_v1_to_v6": [
+        0.3943815414748563,
+        0.3630333132667387,
+        0.3396086674922727,
+        0.17676339282796286,
+        0.16069587587036946,
+        0.07486812548944317
+      ],
+      "terminal_plot_values": [
+        0.3943815414748563,
+        0.17676339282796286,
+        0.16069587587036946,
+        0.22127094933697242
+      ],
+      "H48_vs_H192_max_abs_state_error": 6.055461687637376e-12,
+      "peak_gateway_time": 8.333333333333334
+    }
+  },
+  "G_archive_replay_max_abs_error": 0.0,
+  "G_M_sign_changes": {
+    "API网关": [
+      {
+        "bracket": [
+          8.472222222222223,
+          8.506944444444445
+        ],
+        "G_minus_M": [
+          -0.0003542284128116857,
+          0.0002711624642238175
+        ],
+        "linear_estimate": 8.491889278648397
+      }
+    ],
+    "身份认证": [
+      {
+        "bracket": [
+          8.88888888888889,
+          8.92361111111111
+        ],
+        "G_minus_M": [
+          -7.662133198725607e-05,
+          0.0001555305766294257
+        ],
+        "linear_estimate": 8.900348897691217
+      }
+    ],
+    "核心数据库": [],
+    "全网价值加权": [
+      {
+        "bracket": [
+          9.930555555555555,
+          9.965277777777779
+        ],
+        "G_minus_M": [
+          -6.926808334167811e-05,
+          0.00011289344489925912
+        ],
+        "linear_estimate": 9.943758902090483
+      }
+    ]
+  }
+}

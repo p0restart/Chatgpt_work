@@ -1,0 +1,1019 @@
+PAGE 1
+A Resource-Constrained Network Defense Decision
+Method Based on a Nonzero-Sum Differential Game
+[First Name Last Name]∗
+[First Name Last Name]
+[Department / School], [University or Organization]
+[City], [Postal Code], [Country]
+[corresponding.author@example.edu]∗
+[coauthor@example.edu]
+Abstract—To address cross-asset attack propagation and lim-
+ited defense capacity in multi-asset networks, this paper estab-
+lishes a complete-information, nonzero-sum, open-loop differen-
+tial game. Asset-level compromised fractions describe network-
+state evolution, while isolation and recovery controls specify
+the defender’s resource allocation over time. Continuous-time
+strategies are parameterized using piecewise-constant controls.
+By combining fourth-order Runge–Kutta integration, sequential
+least-squares programming, and alternating best responses, Alter-
+nating Best Response for Dynamic Defense Action Decision (ABR-
+DAD) is developed to calculate isolation and recovery intensities
+for each asset and time interval. A directed multi-asset prop-
+agation network is constructed to examine the spatiotemporal
+allocation of resources under different defense capacities. Dy-
+namic defense, fixed-mean defense, and no defense are compared
+in terms of compromised states and cumulative losses under
+the same time-varying attack sequence. Simulations show that
+the computed plans satisfy instantaneous capacity constraints
+and yield differentiated resource allocation. In the main-capacity
+comparison under the shared attack plan generated with dy-
+namic defense, the dynamic plan reduces cumulative weighted
+compromise loss and total cumulative defender loss relative to
+both reference schemes. These results support the method for
+computing defense schedules under finite resources.
+Keywords—network defense decision-making, nonzero-sum dif-
+ferential game, alternating best response, attack propagation,
+resource allocation
+I. INTRODUCTION
+A multi-asset network comprises interrelated logical assets,
+including entry services, business processing, identity authen-
+tication, and core data. Attacks can propagate from entry
+points to downstream assets along directed paths, causing
+compromise across multiple assets and business losses. A
+defender can suppress outgoing propagation through source-
+side isolation or reduce local compromise through recovery.
+These actions differ in security effects, business impacts, and
+resource consumption. Under limited capacity, the defender
+must account for the attacker’s strategy when determining the
+type, intensity, and timing of defensive actions.
+Regarding network propagation control and resource allo-
+cation, Preciado et al.[1] studied the allocation of protection
+resources to inhibit spreading processes in directed networks.
+Al-Eiadeh and Abdallah[2] allocated defense resources to
+interdependent systems using attack graphs and PageRank.
+Paarporn and Xu[3] examined resource tradeoffs between pre-
+ventive and reactive defenses, while Chen et al.[4] investigated
+the effects of protection and recovery investments and node
+priorities on network robustness. These studies provide a basis
+for characterizing propagation structure, asset importance, and
+defense costs.
+In network attack–defense games, Shao and Li[5] used a mul-
+tistage attack–defense graph to examine resource allocation
+during sequential attacks. Hu et al.[6] optimized moving-target
+defense through a Markov differential game, and Lou et al.[7]
+studied dynamic collaborative defense in crowdsensing net-
+works under incomplete information. Huang and Zhu[8] used a
+susceptible–infected–susceptible (SIS) propagation model and
+a differential-game framework to study virus suppression and
+adaptive adjustment of connection weights in complex net-
+works. Mi et al.[9] introduced stochastic disturbances into net-
+work attack–defense state evolution and developed a stochastic
+differential-game model for defense strategy selection. Tian
+et al.[10] studied a nonzero-sum attack–defense game for
+malware propagation in cloud environments. Zhang et al.
+investigated real-time defense in scale-free networks[11] and
+potential differential-game decisions in complex networks[12].
+Sun et al.[13] incorporated action and timing choices into a time
+differential game. These works provide methodological foun-
+dations for analyzing strategic interactions alongside network-
+state evolution.
+For post-attack repair, Yang et al.[14] employed a differential
+game to study host repair under advanced persistent threats
+(APTs). Wang et al.[15] examined APT lateral movement,
+repair delays, and resource constraints in time-varying net-
+works. Qin et al.[16] studied defense outsourcing under lim-
+ited budgets through an impulsive differential game. Existing
+work thus covers propagation control, strategic interaction,
+and dynamic repair. This study further addresses the joint
+spatiotemporal allocation of source-side isolation and local
+recovery in a directed propagation network under attacker
+strategy responses and finite capacity constraints.
+This paper undertakes three tasks: constructing a nonzero-
+sum, open-loop differential-game model involving directed
+propagation, source-side isolation, and local recovery; design-
+ing ABR-DAD using piecewise-constant controls and alternat-
+ing best responses to compute defensive actions by asset and
+interval; and analyzing allocations across defense capacities
+while comparing dynamic, fixed-mean, and no-defense plans
+under a common attack sequence in terms of compromised
+states and cumulative losses.
+
+
+PAGE 2
+II. MULTI-ASSET NETWORK ATTACK–DEFENSE
+DIFFERENTIAL-GAME MODEL
+A. Network State
+Represent the multi-asset network as a directed weighted
+graph G = (𝑉, 𝐸), where 𝑉= {𝑣1, . . . , 𝑣𝑛} is the set of
+logical assets and 𝐸contains attack-propagation edges for
+which exploitation is feasible. Let 𝛽𝑗𝑖≥0 be the effective
+propagation rate from source asset 𝑗to target asset 𝑖, with
+𝛽𝑗𝑖= 0 when no edge exists and 𝛽𝑖𝑖= 0. Let 𝑥𝑖(𝑡) ∈[0, 1] de-
+note the compromised fraction of the workload-instance group
+corresponding to asset 𝑖at time 𝑡. It is an aggregate measure
+of compromise among instances of the same workload type
+and describes the network state.
+The attacker allocates entry attack intensity 𝑎𝑖(𝑡) only to the
+entry-index set 𝐼𝐴⊆{1, . . . , 𝑛}; for non-entry assets 𝑎𝑖(𝑡) =
+0. The defender chooses source-side isolation 𝑠𝑖(𝑡) and local
+recovery 𝑟𝑖(𝑡). All three controls have normalized intensities
+in [0, 1]. Define the total compromise pressure on asset 𝑖at
+time 𝑡as
+𝜆𝑖= 𝛼𝑖𝑎𝑖+
+Õ
+𝑗≠𝑖
+𝛽𝑗𝑖(1 −𝜀𝑗𝑠𝑗)𝑥𝑗.
+(1)
+The compromised-state dynamics are
+¤𝑥𝑖= (1 −𝑥𝑖)𝜆𝑖−(𝛿𝑖+ 𝛾𝑖𝑟𝑖)𝑥𝑖.
+(2)
+Here 𝛼𝑖is direct attack efficiency (0 for non-entry assets),
+𝜀𝑗is source-isolation efficiency, 𝛿𝑖is the baseline recovery
+rate, 𝛾𝑖is recovery effectiveness coefficient, and 𝑥𝑖(0) = 𝑥𝑖0.
+In (1), 𝑠𝑗only reduces outgoing propagation from source 𝑗.
+In (2), 𝑟𝑖directly reduces the compromised fraction of asset 𝑖
+and indirectly suppresses subsequent propagation through state
+evolution. For finite nonnegative model parameters, bounded
+controls, and 0 ≤𝜀𝑗𝑠𝑗≤1, the state set [0, 1]𝑛is positively
+invariant. Given an initial state and control plans, the state sys-
+tem has a unique trajectory over the finite horizon, providing
+a deterministic state mapping for numerical evaluation of both
+objectives.
+Isolation acts on outgoing propagation from a source asset,
+whereas recovery reduces local compromise. Their effective-
+ness depends on propagation links, compromised states, and
+the remaining planning horizon.
+B. Game Model
+A
+complete-information,
+two-player,
+noncooperative,
+nonzero-sum, open-loop differential game is defined on
+the continuous-time state system. At the planning origin,
+both players know the network topology, initial state, model
+parameters, objective functions, and constraints, and separately
+choose open-loop control plans over the horizon.
+Definition 1 (Multi-asset network attack–defense differential
+game). The game comprises players, a planning horizon, strat-
+egy sets, network state, state-transition function, and objective
+functions, written as the six-tuple Γ = (N, T, P, 𝑥, 𝑓, J):
+1) Players: N = {𝑁𝐷, 𝑁𝐴}. The defender selects isolation
+and recovery, while the attacker selects entry attack intensities;
+each evaluates strategies according to its own objective.
+2) Horizon: T = [0,𝑇], where 𝑇> 0 is the terminal time
+and horizon length. At 𝑡= 0, the players specify open-loop
+plans over T. Controls may vary in time while the network
+state evolves continuously.
+3) Strategy sets: P = (U, A), where U and A are the
+feasible defender and attacker open-loop strategy sets satisfy-
+ing control bounds, entry restrictions, and capacity constraints.
+The defender’s plan comprises time-varying isolation and
+recovery controls.
+4) State: 𝑥(𝑡) ∈[0, 1]𝑛is the vector of compromised
+fractions for all assets, jointly determined by attack inputs,
+defensive actions, and propagation.
+5) State transition: ¤𝑥(𝑡) = 𝑓(𝑡, 𝑥(𝑡), 𝑢(𝑡), 𝑎(𝑡)) is specified
+by (1)–(2) and describes continuous compromise evolution and
+cross-asset dependencies.
+6) Objectives: J = (𝐽𝐷, 𝐽𝐴) comprises the defender’s total
+cumulative loss and the attacker’s cumulative net payoff, with
+distinct state weights and action costs.
+The defender minimizes asset-compromise loss, business
+impact from isolation, and control costs. Its instantaneous total
+loss is decomposed as
+ℓ𝐷=
+𝑛
+Õ
+𝑖=1
+(𝑞𝑖𝑥𝑖+ ℎ𝑖𝑠𝑖) + 𝐶𝐷,
+(3)
+𝐶𝐷= 1
+2
+𝑛
+Õ
+𝑖=1
+(𝑐𝑠
+𝑖𝑠2
+𝑖+ 𝑐𝑟
+𝑖𝑟2
+𝑖).
+(4)
+The attacker maximizes the net payoff obtained by subtracting
+attack costs from compromise gains:
+ℓ𝐴=
+𝑛
+Õ
+𝑖=1
+𝑔𝑖𝑥𝑖−𝐶𝐴,
+(5)
+𝐶𝐴= 1
+2
+𝑛
+Õ
+𝑖=1
+𝑐𝑎
+𝑖𝑎2
+𝑖.
+(6)
+Over the finite horizon [0,𝑇], the two objectives are
+𝐽𝐷(𝑢, 𝑎) =
+∫𝑇
+0
+ℓ𝐷𝑑𝑡+ 𝜔T𝑥(𝑇),
+(7)
+𝐽𝐴(𝑢, 𝑎) =
+∫𝑇
+0
+ℓ𝐴𝑑𝑡+ 𝜈T𝑥(𝑇).
+(8)
+Here 𝑢= (𝑠, 𝑟); 𝑞𝑖and 𝑔𝑖are the defender’s compromise-loss
+and the attacker’s compromise-payoff weights, respectively;
+ℎ𝑖represents isolation-induced business impact; 𝑐𝑠
+𝑖, 𝑐𝑟
+𝑖, 𝑐𝑎
+𝑖are
+positive quadratic cost coefficients; and 𝜔, 𝜈are terminal-
+state weights. The defender solves min 𝐽𝐷and the attacker
+solves max 𝐽𝐴. Their distinct state weights and action costs
+produce a nonzero-sum structure, 𝐽𝐴≠−𝐽𝐷. Isolation inhibits
+propagation but incurs business impact; recovery reduces
+local compromise while incurring control cost. The attacker
+balances compromise payoff against attack cost. The two
+objectives are not negatives of each other.
+Let 𝐵𝐷and 𝐵𝐴denote the defender’s and attacker’s instan-
+taneous resource capacities, respectively. At each time,
+Õ
+𝑖
+(𝑏𝑠
+𝑖𝑠𝑖+ 𝑏𝑟
+𝑖𝑟𝑖) ≤𝐵𝐷,
+(9)
+
+
+PAGE 3
+Õ
+𝑖∈𝐼𝐴
+𝑑𝑎
+𝑖𝑎𝑖≤𝐵𝐴.
+(10)
+The bounds are 0 ≤𝑎𝑖, 𝑠𝑖, 𝑟𝑖≤1 with 𝑎𝑖= 0 for non-entry
+assets. The coefficients 𝑏𝑠
+𝑖, 𝑏𝑟
+𝑖, 𝑑𝑎
+𝑖give capacity consumption
+per unit control intensity. Equations (9)–(10) constrain simul-
+taneous resource inputs, whereas (4) and (6) describe time-
+accumulated control costs. The model uses normalized rela-
+tive units; experimental control intensities represent resource
+allocation at the model level.
+Instantaneous capacity limits simultaneous inputs, while
+business impact and quadratic control costs accumulate over
+time. Consequently, the defender need not exhaust capacity
+in every interval. Under Definition 1, the players optimize
+entire-horizon plans over their known information and feasible
+strategies. Dynamic noncooperative game theory[17] supplies
+a criterion for their rational strategic relationship.
+Definition 2 (Open-loop Nash equilibrium). A feasible pair
+(𝑢★, 𝑎★) ∈U × A is an open-loop Nash equilibrium when
+each plan is a best response to the other:
+𝐽𝐷(𝑢★, 𝑎★) ≤𝐽𝐷(𝑣, 𝑎★),
+∀𝑣∈U,
+(11)
+𝐽𝐴(𝑢★, 𝑎★) ≥𝐽𝐴(𝑢★, 𝑏),
+∀𝑏∈A.
+(12)
+Equations (11)–(12) define the open-loop Nash equilibrium
+through mutual best responses. This paper computes numerical
+responses within a piecewise-constant strategy class to obtain
+defensive actions for each asset and interval under capacity
+constraints.
+III. DYNAMIC DEFENSE ACTION COMPUTATION
+A. Piecewise-Constant Controls and Numerical Best Re-
+sponses
+Using control parameterization[18], divide [0,𝑇] uniformly
+into 𝐾intervals with length Δ𝑡= 𝑇/𝐾. For 𝑘= 1, . . . , 𝐾,
+let 𝑎𝑖,𝑘, 𝑠𝑖,𝑘, and 𝑟𝑖,𝑘remain constant over interval 𝑘, while
+𝑥(𝑡) evolves continuously according to (2). Denote the finite-
+dimensional decision variables by 𝑧𝐷= {𝑠𝑖,𝑘, 𝑟𝑖,𝑘} and 𝑧𝐴=
+{𝑎𝑖,𝑘| 𝑖∈𝐼𝐴}, with feasible sets 𝑈𝐾and 𝐴𝐾.
+Holding the opponent’s plan fixed, the theoretical best
+responses within these restricted strategy classes are
+𝐵𝑅𝐷(𝑧𝐴) = arg min
+𝑣∈𝑈𝐾
+𝐽𝐷(𝑣, 𝑧𝐴),
+(13)
+𝐵𝑅𝐴(𝑧𝐷) = arg max
+𝑏∈𝐴𝐾
+𝐽𝐴(𝑧𝐷, 𝑏).
+(14)
+Here 𝑣and 𝑏are candidate defender and attacker plans, and
+𝐽𝐷and 𝐽𝐴are the cumulative loss and net payoff defined
+in Section II. Equations (13)–(14) describe each player’s best
+response to a fixed opponent plan and form the basis of alter-
+nating optimization. Fourth-order Runge–Kutta (RK4) integra-
+tion[19] evaluates candidate plans; sequential least-squares pro-
+gramming (SLSQP) computes local numerical responses under
+control bounds and linear capacity constraints[20], [21]. These
+local responses approximate the theoretical best-response prob-
+lems in (13)–(14). The plans are then updated alternately. The
+final strategies undergo deviation searches from multiple ini-
+tializations, constraint checks, and integration-refinement tests.
+Algorithm 1. Alternating Best Response for Dynamic Defense Action Deci-
+sion (ABR-DAD)
+Input: G, 𝑥0, 𝑇, 𝐾, 𝐵𝐷, 𝐵𝐴, model parameters 𝜃, stopping tolerances 𝜖,
+iteration bound 𝑀.
+Output: actions 𝐷, resource use 𝑅, final player plans, 𝐽𝐷, diagnostics.
+1. Initialize capacity-feasible 𝑧(0)
+𝐷, 𝑧(0)
+𝐴.
+2. for 𝑚= 0, 1, . . . , 𝑀−1 do
+3.
+Fix 𝑧(𝑚)
+𝐴
+; obtain local defender response 𝑧(𝑚+1)
+𝐷
+with RK4 and SLSQP.
+4.
+Fix 𝑧(𝑚+1)
+𝐷
+; obtain local attacker response 𝑧(𝑚+1)
+𝐴
+with RK4 and SLSQP.
+5.
+Check single-start unilateral deviations and compute 𝑔𝑎𝑝𝐷, 𝑔𝑎𝑝𝐴.
+6.
+Compute stationarity residual 𝑠𝑡𝑎𝑡, response distance 𝑑𝑖𝑠𝑡, and capacity
+violation 𝑣𝑖𝑜𝑙.
+7.
+if both SLSQP runs exit normally and all three stopping metrics pass
+then break.
+8. end for
+9. Run three-start deviation checks, refine integration, recompute trajectories,
+and form 𝐷𝑖,𝑘, 𝑅𝑖,𝑘.
+10. return 𝐷, 𝑅, final plans, 𝐽𝐷, and diagnostics.
+The state equation evaluates compromise evolution under a
+control plan, while the finite-dimensional controls correspond
+directly to the defense locations, intervals, and intensities that
+the defender must determine.
+B. ABR-DAD Defense Action Computation
+Based on the best-response principle for dynamic nonco-
+operative games[17] and related iterative work[22], we design
+Alternating Best Response for Dynamic Defense Action Deci-
+sion (ABR-DAD). Its purpose is to produce a defense action
+plan: holding the attack plan fixed, optimize isolation and
+recovery; then, holding the defense plan fixed, compute the
+attack response; and alternate until the numerical stopping
+conditions are met. The procedure is shown in Algorithm 1.
+The maximum number of alternating iterations is 𝑀= 40;
+each SLSQP solve allows at most 300 iterations with a
+tolerance of 10−10. Complete alternating runs start from uni-
+form feasible, zero-control, and random feasible plans, while
+each individual player optimization uses the current plan as
+its sole starting point. The stopping metrics are normalized
+discovered unilateral improvement 𝜂𝑝, projected-gradient sta-
+tionarity residual 𝑠𝑡𝑎𝑡𝑝, and response distance 𝑑𝑖𝑠𝑡𝑝, where
+𝜂𝑝= 𝑔𝑎𝑝𝑝/(1 + |𝐽𝑝|) for 𝑝∈{𝐷, 𝐴}. Once both SLSQP
+solvers exit normally, stopping is declared if the maxima of
+the three metrics across both players do not exceed 10−7, 10−4,
+and 10−3, respectively.
+For the stopping diagnostics, write 𝐹𝐷= 𝐽𝐷and 𝐹𝐴= −𝐽𝐴,
+with the opponent’s plan fixed. Let e𝑧𝑝be the numerical unilat-
+eral response and let C𝐷= 𝑈𝐾and C𝐴= 𝐴𝐾. The discovered
+improvement is 𝑔𝑎𝑝𝑝= max{0, 𝐹𝑝(𝑧𝑝)−𝐹𝑝(e𝑧𝑝)}. We use the
+unit-step projected-gradient residual 𝑠𝑡𝑎𝑡𝑝= ∥𝑧𝑝−ΠC𝑝(𝑧𝑝−
+∇𝐹𝑝(𝑧𝑝))∥∞and the response distance 𝑑𝑖𝑠𝑡𝑝= ∥e𝑧𝑝−𝑧𝑝∥∞,
+where Π is Euclidean projection onto the bounded, capacity-
+constrained feasible set. Response candidates are accepted
+only if their bound and capacity violations are at most 10−10.
+The single-start checks used for stopping are distinct from the
+three-start searches performed after termination.
+
+
+PAGE 4
+The defender then obtains an isolation and recovery plan
+by asset and interval. For asset 𝑖and interval 𝑘,
+𝐷𝑖,𝑘= (𝑠𝑖,𝑘, 𝑟𝑖,𝑘),
+(15)
+𝑅𝑖,𝑘= 𝑏𝑠
+𝑖𝑠𝑖,𝑘+ 𝑏𝑟
+𝑖𝑟𝑖,𝑘.
+(16)
+Equations (15)–(16) specify where, when, and at what inten-
+sities isolation and recovery are applied, while guaranteeing
+Í
+𝑖𝑅𝑖,𝑘
+≤
+𝐵𝐷. After iteration, each final player plan is
+held fixed in multiple-start deviation searches. Capacity, local
+stationarity, and integration consistency are checked, and the
+actions, state trajectories, and cumulative losses of all assets
+and intervals are saved for reproducibility.
+After alternating best-response iterations, the numerical
+response consistency of the final strategies is examined. With
+one final plan held fixed, the other player is allowed to search
+again over feasible strategies to determine whether a unilateral
+adjustment can improve its own objective. Construct finite
+candidate sets C𝐷⊆𝑈𝐾and C𝐴⊆𝐴𝐾through multiple-
+start deviation searches and calculate discovered unilateral
+improvements:
+bΔ𝐷= 𝐽𝐷(𝑧𝐷, 𝑧𝐴) −min
+𝑣∈C𝐷𝐽𝐷(𝑣, 𝑧𝐴),
+(17)
+bΔ𝐴= max
+𝑏∈C𝐴𝐽𝐴(𝑧𝐷, 𝑏) −𝐽𝐴(𝑧𝐷, 𝑧𝐴).
+(18)
+Here 𝑧𝐷, 𝑧𝐴are the final plans and 𝑣, 𝑏are candidate devia-
+tions. Equations (17)–(18) test whether, with the opponent’s
+final plan fixed, the defender can further reduce compre-
+hensive loss or the attacker can increase net payoff. Since
+each candidate set includes the current plan, both discovered
+unilateral improvements are nonnegative. A zero improvement
+means that no better unilateral plan was found within the finite
+candidate search range.
+IV. SIMULATION EXPERIMENTS AND RESULTS
+A. Experimental Setup
+A directed multi-asset attack-propagation network is con-
+structed as shown in Figure 1. The nodes are 𝑣1: application
+programming interface (API) gateway, 𝑣2: Web application,
+𝑣3: order processing, 𝑣4: identity authentication, 𝑣5: core
+database, and 𝑣6: back-end management. Nodes 𝑣1 and 𝑣2
+are direct attack entry points; 𝑣4 has multiple outgoing prop-
+agation edges, and 𝑣5 has a high loss weight but no outgoing
+propagation. The effective edges and rates are 1 →3: 0.08,
+1→4: 0.09, 2→3: 0.10, 4→3: 0.11, 4→5: 0.07, 4→6: 0.12,
+3 →5: 0.10, and 6 →5: 0.05. This is a synthetic six-asset
+network with preset propagation parameters and normalized
+time, control intensities, and costs.
+For main capacity 𝐵𝐷= 1.2, dynamic defense (G), fixed-
+mean defense (M), and no defense (N) are compared under
+the attack-control trajectory computed jointly with G and then
+held fixed for all three schemes. G is the six-interval isolation
+and recovery plan computed by ABR-DAD. M keeps each of
+the two controls for each asset constant at its arithmetic mean
+over the six intervals, while N sets isolation and recovery to
+zero. G and M have equal cumulative input for each asset
+0.08
+0.09
+0.10
+0.11
+0.07
+0.12
+0.10
+0.05
+v1
+API
+gateway
+v4
+Identity
+auth.
+v6
+Back-end
+mgmt.
+v2
+Web
+application
+v3
+Order
+processing
+v5
+Core
+database
+Figure 1. Directed attack-propagation network with multiple assets.
+Table 1.
+MAIN SIMULATION PARAMETERS.
+Category
+Parameter values
+Network and horizon
+𝑛= 6, 𝑇= 10, 𝐾= 6, Δ𝑡= 5/3
+Initial state and attack
+capacity
+𝑥(0) = (0.1, 0, 0, 0, 0, 0); 𝐵𝐴= 0.8
+Defense capacity
+𝐵𝐷∈{0.6, 1.2, 1.8}; main case 𝐵𝐷= 1.2
+Direct attack and isola-
+tion
+𝛼1 = 𝛼2 = 0.25, other 𝛼𝑖= 0; 𝜀𝑖= 1
+Recovery and weights
+𝛿𝑖= 0.1, 𝛾𝑖= 0.3; 𝑞= (1, 1, 1, 1, 4, 1), 𝑔𝑖= 1
+Costs, capacity, termi-
+nal weights
+ℎ𝑖= 0.05, 𝑐𝑠
+𝑖= 𝑐𝑟
+𝑖= 𝑐𝑎
+𝑖= 1; 𝑏𝑠
+𝑖= 𝑏𝑟
+𝑖= 𝑑𝑎
+𝑖= 1;
+𝜔= 𝜈= 0
+and action type and both satisfy the instantaneous capacity
+constraint. Network topology, initial state, attack sequence,
+and model parameters are identical; only the defense plans
+change, allowing comparison of executed defense outcomes
+under a shared attack input. State trajectories and cumulative
+losses are computed from the model in Section II, using 48
+RK4 substeps per control interval. Capacities 𝐵𝐷= 0.6 and
+1.8 are used to illustrate resource allocation under varying
+capacity.
+The archived optimization used Python 3.11.7, NumPy
+1.26.4, and SciPy 1.11.4 on Windows. The base random seeds
+were 20262114, 20261114, and 20263114 for capacities 0.6,
+1.2, and 1.8, respectively; the random full-run initialization
+used the corresponding base seed plus two. The uniform-start
+plan was selected for reporting, with zero and random starts
+serving as consistency checks. Saved controls, trajectories,
+diagnostic records, and figure-generation inputs accompany
+the manuscript source.
+All three uniform-start paths first met the stopping criteria
+after five alternating updates. Across the three capacities and
+both players, the normalized discovered improvement, current-
+plan projected residual, and response distance did not exceed
+2.90×10−10, 6.48×10−5, and 3.35×10−5, respectively; all final
+single-start SLSQP exit codes were zero. The largest control
+difference between full-run initializations was below 4.02 ×
+
+
+PAGE 5
+Table 2.
+MEAN DEFENSIVE RESOURCE USE PER ASSET UNDER THREE CAPACITIES.
+Asset
+𝐵𝐷= 0.6
+𝐵𝐷= 1.2
+𝐵𝐷= 1.8
+𝑣1 API gateway
+0.339102
+0.463738
+0.480837
+𝑣2 Web application
+0.116986
+0.225360
+0.249486
+𝑣3 Order processing
+0.056986
+0.140469
+0.162958
+𝑣4 Identity auth.
+0.012188
+0.076786
+0.101903
+𝑣5 Core database
+0.037143
+0.062960
+0.073916
+𝑣6 Back-end mgmt.
+0.001960
+0.005190
+0.011925
+Total (time mean)
+0.564365
+0.974504
+1.081025
+Totals are computed before rounding.
+10−5. Separate three-start checks of the final reported plans
+also passed the stated local criteria. For the three main-capacity
+comparison plans, increasing RK4 substeps per control interval
+from 48 to 192 changed shared-time states by at most 8.71 ×
+10−12. These are numerical diagnostics within the specified
+strategy class.
+B. Defense Resource Allocation
+The experiment first reports the defender’s resource in-
+puts and concrete actions across control intervals to assess
+whether the method produces capacity-feasible defense sched-
+ules across assets and time intervals. Under 𝐵𝐷= 1.2, G uses
+capacities 0.843705, 1.200000, 1.200000, 1.200000, 1.065570,
+and 0.337751 in the six intervals. The capacity bound is active
+in intervals 2–4 and slack in the others. With 𝐵𝐷= 0.6,
+capacity is fully used in the first five intervals; with 𝐵𝐷= 1.8,
+all intervals retain slack, as shown in Figure 2. Input decreases
+in the last interval under all three capacities, reflecting the
+tradeoff between finite-horizon protection benefits and action
+costs. Accordingly, the defender allocates capacity in view of
+state evolution and action costs rather than applying fixed-
+proportion static allocation; the plan exhibits both binding
+capacity constraints and reduced late-horizon control effort.
+Table 2 presents mean allocations by asset under different
+capacities. As defense capacity increases, the absolute input
+to the API gateway grows but its share of total network
+resources declines; both the input and share of identity au-
+thentication increase. Thus, defense resources expand from
+a relative concentration on entry assets to other assets with
+propagation influence, indicating dynamic adjustment across
+assets under finite resources. Figure 2 captures interval-level
+capacity use, whereas Table 2 reports asset-level allocation.
+Figure 3 shows isolation and recovery intensities for six assets
+over six intervals at 𝐵𝐷= 1.2, totaling 72 defense-control
+components, and explicitly identifies action locations, types,
+and intensities.
+The API gateway serves as an attack entry point and
+connects to order processing and identity authentication, so
+isolation and recovery are applied together in early intervals.
+Identity authentication has considerable outgoing propagation
+influence; its isolation intensity rises in intervals 3–5 and
+declines in the final interval. The core database has a high
+loss weight but no outgoing edges and primarily receives local
+recovery. These allocations accord with the assets’ propagation
+positions and the defensive mechanisms.
+C. Evaluation of Defense Effectiveness
+Under the common attack input defined in Section IV-A,
+three complementary metrics assess the execution outcomes
+of dynamic, fixed-mean, and no-defense schemes.
+1)
+Cumulative
+weighted
+compromise
+loss:
+𝐿sec
+=
+∫𝑇
+0
+Í6
+𝑖=1 𝑞𝑖𝑥𝑖(𝑡) 𝑑𝑡, where 𝑞𝑖is the asset-value weight and
+𝑥𝑖(𝑡) is its compromised fraction. The integral reflects both
+compromise severity and duration.
+2) Total cumulative defender loss: 𝐽𝐷= 𝐿sec + 𝐶𝑏𝑎, where
+𝐶𝑏𝑎is the time integral of the isolation-induced business-
+impact term in (3) and the quadratic action costs in (4). Since
+the terminal-state weight is zero in this experiment, the metric
+equals the defender’s objective in Section II and accounts for
+both security losses and defense costs.
+3) Terminal network value-weighted compromised fraction:
+𝑋𝑞(𝑇) =
+Í6
+𝑖=1 𝑞𝑖𝑥𝑖(𝑇)
+Í6
+𝑖=1 𝑞𝑖
+. This metric captures the terminal net-
+work condition, distinct from the two cumulative-loss metrics.
+Together with key-asset trajectories, it characterizes asset
+protection.
+Figure 4 shows the API gateway, identity authentication,
+core database, and network value-weighted compromised frac-
+tions under the same attack sequence; Table 3 summarizes the
+metrics. At the beginning of interval 6 (𝑡≈8.33), gateway
+entry attack intensity declines from 0.384142 to 0.139831
+and Web entry intensity from 0.365943 to 0.137174. Under
+all three schemes, the compromise inflow (1 −𝑥1)𝜆1 falls
+below the recovery outflow (𝛿1 + 𝛾1𝑟1)𝑥1, so the gateway
+compromised fraction changes from increasing to decreasing.
+Identity authentication and the core database remain affected
+by upstream propagation and continue to accumulate compro-
+mise, illustrating propagation lag.
+Dynamic defense allocates more isolation and recovery
+to the gateway during early and middle intervals, reducing
+accumulated compromise earlier. In the final interval, its
+gateway recovery intensity is 0.080739, below approximately
+0.262580 for fixed-mean defense. Consequently, the gateway
+compromised fraction decreases faster under the fixed scheme
+and becomes lower than under the dynamic scheme after 𝑡≈
+8.49. A late crossover also occurs for identity authentication,
+whereas the core database maintains a lower compromised
+fraction under dynamic defense. The network value-weighted
+compromised fraction is lower under dynamic defense during
+most of the horizon, but slightly lower under fixed defense
+at the terminal time. Cumulative loss and terminal state must
+therefore be distinguished.
+Table
+3
+reports
+total
+cumulative
+defender
+losses
+of
+10.945701, 9.556834, and 9.326647 for no defense, fixed-
+mean defense, and dynamic defense, respectively. The dy-
+namic scheme reduces this loss by approximately 14.79%
+and 2.41% relative to the two alternatives. Under the same
+attack sequence and equal per-asset cumulative control in-
+puts, adjusting the timing of isolation and recovery reduces
+cumulative weighted compromise loss by 0.403329 relative
+
+
+PAGE 6
+1
+2
+3
+4
+5
+6
+0.0
+0.6
+1.2
+1.8
+Normalized resource use
+(a) BD =0.6
+1
+2
+3
+4
+5
+6
+(b) BD =1.2
+1
+2
+3
+4
+5
+6
+(c) BD =1.8
+Control interval
+Capacity limit
+Source-side isolation
+Local recovery
+Figure 2. Resource use by control interval under three defense capacities.
+1
+2
+3
+4
+5
+6
+Control interval
+API gateway
+Web application
+Order processing
+Identity auth.
+Core database
+Back-end mgmt.
+0.32
+0.03
+0.00
+0.00
+0.00
+0.00
+0.35
+0.08
+0.01
+0.00
+0.00
+0.00
+0.26
+0.06
+0.04
+0.01
+0.00
+0.00
+0.18
+0.04
+0.08
+0.03
+0.00
+0.00
+0.10
+0.02
+0.09
+0.04
+0.00
+0.00
+0.00
+0.00
+0.01
+0.00
+0.00
+0.00
+(a) Source-side isolation
+1
+2
+3
+4
+5
+6
+Control interval
+API gateway
+Web application
+Order processing
+Identity auth.
+Core database
+Back-end mgmt.
+0.29
+0.12
+0.03
+0.03
+0.00
+0.00
+0.35
+0.24
+0.09
+0.07
+0.01
+0.00
+0.33
+0.25
+0.13
+0.07
+0.04
+0.00
+0.29
+0.24
+0.16
+0.09
+0.10
+0.00
+0.23
+0.20
+0.15
+0.08
+0.14
+0.02
+0.08
+0.08
+0.06
+0.03
+0.07
+0.01
+(b) Local recovery
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+Control intensity
+Figure 3. Isolation and recovery actions by asset and interval at the main defense capacity 𝐵𝐷= 1.2.
+Table 3.
+THREE EFFECTIVENESS METRICS AND BUSINESS/ACTION COSTS UNDER THE MAIN
+DEFENSE CAPACITY (𝐵𝐷= 1.2).
+Metric
+N
+M
+G
+Cumulative weighted compromise loss
+10.945701 8.580319 8.176990
+Business and action cost
+0.000000 0.976515 1.149657
+Total cumulative defender loss
+10.945701 9.556834 9.326647
+Terminal weighted compromised fraction
+0.221271 0.156868 0.157163
+to fixed-mean defense. Although the dynamic scheme incurs
+greater business and action costs and a slightly higher terminal
+network weighted compromised fraction than fixed-mean de-
+fense, its reduction of early accumulated compromise produces
+a lower total cumulative loss. Hence, the timing of defense
+actions substantially influences network-state evolution and
+cumulative protection effectiveness.
+At the terminal time, the fixed scheme has a slightly
+lower network weighted compromised fraction than the dy-
+namic scheme, and both improve on no defense. Figure 4
+also shows that dynamic defense better protects the core
+database at the terminal time, whereas fixed defense yields
+lower terminal compromised fractions at the API gateway
+and identity authentication. Thus, terminal compromise and
+cumulative loss reflect distinct evaluation dimensions. Overall,
+the computed dynamic plan reduces cumulative compromise
+and total defender losses by appropriately timing its actions,
+without implying minimum compromise for every asset at
+every instant.
+V. CONCLUSION
+This
+paper
+establishes
+a
+nonzero-sum,
+open-loop
+differential-game model that incorporates rational attack
+choices and cross-asset propagation, and proposes ABR-DAD
+for dynamic defense action decision-making. Simulations
+show that the algorithm produces differentiated allocations
+across time intervals and assets under all three defense
+capacities. At the main defense capacity, under the shared
+
+
+PAGE 7
+0.0
+0.1
+0.2
+0.3
+0.4
+(a) API gateway
+0.00
+0.05
+0.10
+0.15
+(b) Identity authentication
+0
+2
+4
+6
+8
+10
+0.00
+0.05
+0.10
+0.15
+(c) Core database
+0
+2
+4
+6
+8
+10
+0.00
+0.05
+0.10
+0.15
+0.20
+(d) Network value-weighted
+Compromised fraction
+Normalized time t
+G: Dynamic
+M: Fixed mean
+N: No defense
+Figure 4. Compromised states of key assets and the network under three defense schemes with a common attack sequence (𝐵𝐷= 1.2).
+attack plan generated with G, dynamic defense reduces total
+cumulative defender loss relative to both no defense and
+fixed-mean defense, and mitigates compromise accumulation
+at entry and key internal assets during most intervals. Late
+crossovers in certain asset states further indicate the need
+to evaluate defense plans using a comprehensive objective
+encompassing time-accumulated compromise and action costs.
+Future work will calibrate propagation rates and defense costs
+using measured security-operation data and extend network
+scale and execution feedback to assess defense-plan updates
+under real operational conditions.
+REFERENCES
+[1] V. M. Preciado, M. Zargham, C. Enyioha, A. Jadbabaie, and G. J. Pappas,
+“Optimal resource allocation for network protection against spreading
+processes,” IEEE Trans. Control Netw. Syst., vol. 1, no. 1, pp. 99–108,
+2014, doi: 10.1109/TCNS.2014.2310911.
+[2] M. R. Al-Eiadeh and M. Abdallah, “PR-DRA: PageRank-based defense
+resource allocation methods for securing interdependent systems mod-
+eled by attack graphs,” Int. J. Inf. Secur., vol. 24, art. 50, 2025, doi:
+10.1007/s10207-024-00964-3.
+[3] K. Paarporn and S. Xu, “Preventive-reactive defense tradeoffs in re-
+source allocation contests,” IEEE Control Syst. Lett., vol. 8, pp. 2421–
+2426, 2024, doi: 10.1109/LCSYS.2024.3486629.
+[4] W. Chen, J. Wang, Y. Xia, and Z. Wang, “To protect, or to recover? The
+effect of defense resource allocation on network robustness,” Chaos, vol.
+35, no. 12, art. 123136, 2025, doi: 10.1063/5.0267934.
+[5] C. Shao and Y. F. Li, “Multistage attack–defense graph game analysis
+for protection resources allocation optimization against cyber attacks
+considering rationality evolution,” Risk Anal., vol. 42, no. 5, pp. 1086–
+1105, 2022, doi: 10.1111/risa.13837.
+[6] C. Hu, Y. Chen, and G. Wang, “Research on defense decision optimiza-
+tion of mobile targets based on Markov differential game,” Application
+Research of Computers, vol. 40, no. 9, pp. 2832–2837, 2023 (in Chinese),
+doi: 10.19734/j.issn.1001-3695.2023.01.0011.
+[7] K. Lou, G. Zhao, J. Wang, X. Huang, and Z. Wan, “Collaborative
+defense model for crowdsensing networks based on incomplete infor-
+mation differential games,” Cybersecurity, vol. 9, art. 143, 2026, doi:
+10.1186/s42400-026-00577-4.
+[8] Y. Huang and Q. Zhu, “A differential game approach to decentralized
+virus-resistant weight adaptation policy over complex networks,” IEEE
+Trans. Control Netw. Syst., vol. 7, no. 2, pp. 944–955, 2020, doi:
+10.1109/TCNS.2019.2931862.
+[9] Y. Mi, H. Zhang, H. Hu, J. Tan, and J. Wang, “Optimal network de-
+fense strategy selection method: A stochastic differential game model,”
+Security and Communication Networks, vol. 2021, art. 5594697, 2021,
+doi: 10.1155/2021/5594697.
+[10] L. Tian, C. Gan, J. Lin, F. Shang, and Q. Zhu, “Analysis of
+attack-defense game for advanced malware propagation control in
+cloud,” Computer Communications, vol. 237, art. 108148, 2025, doi:
+10.1016/j.comcom.2025.108148.
+[11] H. Zhang, Y. Mi, X. Liu, et al., “A differential game approach for real-
+time security defense decision in scale-free networks,” Computer Net-
+works, vol. 224, art. 109635, 2023, doi: 10.1016/j.comnet.2023.109635.
+[12] H. Zhang, Y. Mi, Y. Fu, et al., “Security defense decision method based
+on potential differential game for complex networks,” Computers &
+Security, vol. 129, art. 103187, 2023, doi: 10.1016/j.cose.2023.103187.
+[13] P. Sun, J. Tan, C. Li, et al., “Network security defense decision method
+based on time differential game,” Netinfo Security, vol. 22, no. 5, pp.
+64–74, 2022 (in Chinese), doi: 10.3969/j.issn.1671-1122.2022.05.008.
+[14] L. X. Yang, P. Li, Y. Zhang, et al., “Effective repair strategy against
+advanced persistent threat: A differential game approach,” IEEE Trans.
+Inf. Forensics Secur., vol. 14, no. 7, pp. 1713–1728, 2019, doi:
+10.1109/TIFS.2018.2885251.
+[15] Z. Wang, J. Li, Y. Wang, et al., “Optimal repair strategy against
+advanced
+persistent
+threats
+under
+time-varying
+networks,”
+IEEE
+
+
+PAGE 8
+Trans. Inf. Forensics Secur., vol. 18, pp. 5964–5979, 2023, doi:
+10.1109/TIFS.2023.3318954.
+[16] Y. Qin, X. Yang, L. X. Yang, and K. Huang, “Modeling and study of
+defense outsourcing against advanced persistent threat through impul-
+sive differential game approach,” Computers & Security, vol. 145, art.
+104003, 2024, doi: 10.1016/j.cose.2024.104003.
+[17] T. Başar and G. J. Olsder, Dynamic Noncooperative Game Theory, 2nd
+ed. Philadelphia: SIAM, 1999, doi: 10.1137/1.9781611971132.
+[18] J. T. Betts, Practical Methods for Optimal Control and Estimation
+Using Nonlinear Programming, 2nd ed. Philadelphia: SIAM, 2010, doi:
+10.1137/1.9780898718577.
+[19] E. Hairer, S. P. Nørsett, and G. Wanner, Solving Ordinary Differential
+Equations I: Nonstiff Problems, 2nd ed. Berlin: Springer, 1993, doi:
+10.1007/978-3-540-78862-1.
+[20] J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed. New York:
+Springer, 2006, doi: 10.1007/978-0-387-40065-5.
+[21] D. Kraft, “A software package for sequential quadratic programming,”
+DFVLR-FB 88-28, Deutsche Forschungs- und Versuchsanstalt für Luft-
+und Raumfahrt, 1988. [Online]. Available: https://degenerateconic.com/
+slsqp.html.
+[22] F. Caruso, M. C. Ceparano, and J. Morgan, “An inverse-adjusted best
+response algorithm for Nash equilibria,” SIAM J. Optim., vol. 30, no. 2,
+pp. 1638–1663, 2020, doi: 10.1137/18M1213701.

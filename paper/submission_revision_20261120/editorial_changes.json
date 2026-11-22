@@ -1,0 +1,166 @@
+[
+  [
+    "A Finite-Resource Network Defense Decision Method",
+    "A Resource-Constrained Network Defense Decision Method"
+  ],
+  [
+    "The network state is described by the compromised fraction of each asset to characterize how a defender dynamically deploys defensive resources.",
+    "Asset-level compromised fractions describe network-state evolution, while isolation and recovery controls specify the defender's resource allocation over time."
+  ],
+  [
+    "a dynamic defense action decision algorithm (ABR-DAD) is developed",
+    "Alternating Best Response for Dynamic Defense Action Decision (ABR-DAD) is developed"
+  ],
+  [
+    "per-time capacity constraint",
+    "instantaneous capacity constraint"
+  ],
+  [
+    "Dynamic defense achieves lower cumulative weighted compromise loss and cumulative comprehensive defense loss than both reference schemes, demonstrating the effectiveness of the method for calculating dynamic defensive actions under finite resources.",
+    "In the main-capacity comparison under the shared attack plan generated with dynamic defense, the dynamic plan reduces cumulative weighted compromise loss and total cumulative defender loss relative to both reference schemes. These results support the method for computing defense schedules under finite resources."
+  ],
+  [
+    "recovery-input efficiency",
+    "recovery effectiveness coefficient"
+  ],
+  [
+    "cumulative comprehensive defense loss",
+    "total cumulative defender loss"
+  ],
+  [
+    "Cumulative comprehensive defense loss",
+    "Total cumulative defender loss"
+  ],
+  [
+    "cumulative comprehensive loss",
+    "total cumulative loss"
+  ],
+  [
+    "instantaneous comprehensive loss",
+    "instantaneous total loss"
+  ],
+  [
+    "overall comprehensive loss",
+    "total cumulative loss"
+  ],
+  [
+    "comprehensive defense losses",
+    "total defender losses"
+  ],
+  [
+    "assess spatiotemporal computability and capacity feasibility",
+    "assess whether the method produces capacity-feasible defense schedules across assets and time intervals"
+  ],
+  [
+    "both capacity saturation and investment contraction",
+    "both binding capacity constraints and reduced late-horizon control effort"
+  ],
+  [
+    "Total (network mean)",
+    "Total (time mean)"
+  ],
+  [
+    "The simulation employs preset directed propagation parameters, with normalized model intensities and costs.",
+    "This is a synthetic six-asset network with preset propagation parameters and normalized time, control intensities, and costs. Table~\\ref{tab:params} summarizes the simulation parameters."
+  ],
+  [
+    "The nodes are $v_1$: API gateway,",
+    "The nodes are $v_1$: application programming interface (API) gateway,"
+  ],
+  [
+    "are compared under the same attack-control trajectory. G is",
+    "are compared under the attack-control trajectory computed jointly with G and then held fixed for all three schemes. G is"
+  ],
+  [
+    "Under all three schemes, newly induced compromise pressure on the gateway falls below the corresponding recovery effect, changing its compromised fraction from increasing to decreasing.",
+    "Under all three schemes, the compromise inflow $(1-x_1)\\lambda_1$ falls below the recovery outflow $(\\delta_1+\\gamma_1r_1)x_1$, so the gateway compromised fraction changes from increasing to decreasing."
+  ],
+  [
+    "Under the same attack sequence, dynamic defense reduces",
+    "At the main defense capacity, under the shared attack plan generated with G, dynamic defense reduces"
+  ],
+  [
+    "sequential least-squares programming (SLSQP) solves the single-player optimization with control bounds and linear capacity constraints",
+    "sequential least-squares programming (SLSQP) computes local numerical responses under control bounds and linear capacity constraints"
+  ],
+  [
+    "The plans are then updated alternately.",
+    "These local responses approximate the theoretical best-response problems in \\eqref{eq:BRD}--\\eqref{eq:BRA}. The plans are then updated alternately."
+  ],
+  [
+    "V. M. Preciado, M. Zargham, C. Enyioha, \\emph{et al.},",
+    "V. M. Preciado, M. Zargham, C. Enyioha, A. Jadbabaie, and G. J. Pappas,"
+  ],
+  [
+    "K. Lou, G. Zhao, J. Wang, \\emph{et al.},",
+    "K. Lou, G. Zhao, J. Wang, X. Huang, and Z. Wan,"
+  ],
+  [
+    "Y. Mi, H. Zhang, H. Hu, \\emph{et al.},",
+    "Y. Mi, H. Zhang, H. Hu, J. Tan, and J. Wang,"
+  ],
+  [
+    "L. Tian, C. Gan, J. Lin, \\emph{et al.},",
+    "L. Tian, C. Gan, J. Lin, F. Shang, and Q. Zhu,"
+  ],
+  [
+    "Y. Qin, X. Yang, L. X. Yang, \\emph{et al.},",
+    "Y. Qin, X. Yang, L. X. Yang, and K. Huang,"
+  ],
+  [
+    "Moving-target defense decision optimization based on Markov differential games",
+    "Research on defense decision optimization of mobile targets based on Markov differential game"
+  ],
+  [
+    "Information Network Security",
+    "Netinfo Security"
+  ],
+  [
+    "Versuchsanstalt f\\\"ur Luft- und Raumfahrt, 1988.",
+    "Versuchsanstalt f\\\"ur Luft- und Raumfahrt, 1988. [Online]. Available: \\url{https://degenerateconic.com/slsqp.html}."
+  ],
+  [
+    "The defender then obtains an isolation and recovery plan by asset and interval.",
+    "\n\nFor the stopping diagnostics, write $F_D=J_D$ and $F_A=-J_A$, with the opponent's plan fixed. Let $\\widetilde z_p$ be the numerical unilateral response and let $\\mathcal C_D=U_K$ and $\\mathcal C_A=A_K$. The discovered improvement is $gap_p=\\max\\{0,F_p(z_p)-F_p(\\widetilde z_p)\\}$. We use the unit-step projected-gradient residual $stat_p=\\|z_p-\\Pi_{\\mathcal C_p}(z_p-\\nabla F_p(z_p))\\|_\\infty$ and the response distance $dist_p=\\|\\widetilde z_p-z_p\\|_\\infty$, where $\\Pi$ is Euclidean projection onto the bounded, capacity-constrained feasible set. Response candidates are accepted only if their bound and capacity violations are at most $10^{-10}$. The single-start checks used for stopping are distinct from the three-start searches performed after termination.\n\nThe defender then obtains an isolation and recovery plan by asset and interval."
+  ],
+  [
+    "Capacities $B_D=0.6$ and $1.8$ are used to illustrate resource allocation under varying capacity.",
+    "Capacities $B_D=0.6$ and $1.8$ are used to illustrate resource allocation under varying capacity.\n\nThe archived optimization used Python 3.11.7, NumPy 1.26.4, and SciPy 1.11.4 on Windows. The base random seeds were 20262114, 20261114, and 20263114 for capacities 0.6, 1.2, and 1.8, respectively; the random full-run initialization used the corresponding base seed plus two. The uniform-start plan was selected for reporting. Saved controls, trajectories, diagnostic records, and figure-generation inputs accompany the manuscript source.\n\nAll three uniform-start paths first met the stopping criteria after five alternating updates. Across the three capacities and both players, the normalized discovered improvement, current-plan projected residual, and response distance did not exceed $2.90\\times10^{-10}$, $6.48\\times10^{-5}$, and $3.35\\times10^{-5}$, respectively; all final single-start SLSQP exit codes were zero. The largest control difference between full-run initializations was below $4.02\\times10^{-5}$. Separate three-start checks of the final reported plans also passed the stated local criteria. For the three main-capacity comparison plans, increasing RK4 substeps per control interval from 48 to 192 changed shared-time states by at most $8.71\\times10^{-12}$. These are numerical diagnostics within the specified strategy class."
+  ],
+  [
+    "\\documentclass[conference,letterpaper]{IEEEtran}",
+    "\\RequirePackage[T1]{fontenc}\n\\documentclass[conference,letterpaper]{IEEEtran}"
+  ],
+  [
+    "\\usepackage[T1]{fontenc}\n\\usepackage{newtxtext,newtxmath}",
+    "\\usepackage{iftex}\n\\ifPDFTeX\n  \\usepackage[T1]{fontenc}\n  \\usepackage{newtxtext,newtxmath}\n\\else\n  \\usepackage{newtxtext,newtxmath}\n  \\AtBeginDocument{\\defaultfontfeatures{}\\setmainfont{Times New Roman}}\n\\fi"
+  ],
+  [
+    "\\usepackage[super]{cite}",
+    "\\usepackage[super,nomove]{cite}"
+  ],
+  [
+    "\\def\\fnum@figure{Figure~\\thefigure.}",
+    "\\def\\fnum@figure{Figure~\\thefigure}\n\\def\\@citess#1{\\mbox{\\textsuperscript{\\OverciteFont{[#1]}}}}\n\\renewcommand{\\IEEEkeywordsname}{Keywords}"
+  ],
+  [
+    "\\begin{thebibliography}{22}",
+    "\\IEEEtriggeratref{19}\n\\begin{thebibliography}{22}\n\\interlinepenalty=10000"
+  ],
+  [
+    "{\\scriptsize\n\\textbf{Input:}",
+    "{\\footnotesize\n\\textbf{Input:}"
+  ],
+  [
+    "\\centering\\scriptsize\\renewcommand",
+    "\\centering\\footnotesize\\renewcommand"
+  ],
+  [
+    "\\includegraphics[width=.98\\columnwidth]{fig1_network_en.png}",
+    "\\includegraphics[width=3.18in]{fig1_network_en.pdf}"
+  ],
+  [
+    "\\begin{tabular}{@{}p{1.55in}rrr@{}}",
+    "\\setlength{\\tabcolsep}{3pt}\n\\begin{tabularx}{\\columnwidth}{@{}Xrrr@{}}"
+  ]
+]

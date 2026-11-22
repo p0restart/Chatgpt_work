@@ -8,6 +8,7 @@ import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
 sys.path.insert(0,r'C:\Users\Jin\.codex\plugins\cache\nature-skills\nature-skills\0.1.0\skills\nature-figure\scripts')
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 from audit_panel_alignment import require_matplotlib_panel_alignment
 
 BASE=Path(__file__).resolve().parents[1]; OUT=BASE/'figures'
@@ -20,8 +21,9 @@ mpl.rcParams.update({'font.family':'sans-serif','font.sans-serif':['Microsoft Ya
 def save(fig,name):
     fig.canvas.draw()
     require_matplotlib_panel_alignment(fig,json_out=BASE/'qa'/f'{name}_alignment.json',strict=True)
-    for suffix in ('png','pdf','svg'):
-        fig.savefig(OUT/f'{name}.{suffix}',dpi=450)
+    fig.savefig(OUT/f'{name}.png',dpi=600)
+    fig.savefig(OUT/f'{name}.pdf')
+    fig.savefig(OUT/f'{name}.svg')
     plt.close(fig)
 
 df=pd.read_csv(BASE/'data/capacity_by_slot.csv')

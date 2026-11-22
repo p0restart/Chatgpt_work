@@ -1,0 +1,42 @@
+[
+  {
+    "sha256": "0aa42e751b81857b104d301ab109b5ec981a45c979cf5f62df57cb5d93d14015",
+    "byte_identical": true,
+    "file": "B_results.csv"
+  },
+  {
+    "sha256": "f4cab9a8fbdb2fc88f7d18dd744a91eaa5688d8bf77dc0bf0bdfdf477db728ad",
+    "byte_identical": true,
+    "file": "B_plans.csv"
+  },
+  {
+    "sha256": "97737fe1d8cc7e6e1387b16a573bf3a81b219f8423951fcb4716f85de0903274",
+    "byte_identical": true,
+    "file": "B_spatial_response.csv"
+  },
+  {
+    "sha256": "875f0e4cd1963d5e73e8f6eaf7adef6535ac3edbfa38f976aa823a99688da320",
+    "byte_identical": true,
+    "file": "B_metrics.csv"
+  },
+  {
+    "sha256": "968a345823ee26958a789984ba9da26f4ca55e39cb80db849585e7f61f8ea0f8",
+    "byte_identical": true,
+    "file": "B_state_trajectories.csv"
+  },
+  {
+    "sha256": "235cfadaa9d4773a4ea776d3ea5bc0c2b2fc76d8e11a3002ae881778c597376b",
+    "byte_identical": true,
+    "file": "B_validation_checks.csv"
+  },
+  {
+    "sha256": "fd476cebb56617b5a520b4cf46f9f46e65b0e41b7e00af88d739e82b07fed3d0",
+    "byte_identical": true,
+    "file": "B_run_config.json"
+  },
+  {
+    "sha256": "9ddc12c58d3867e1bb707460caae9cf27b6ceb472d68b46a41adefa5743a0889",
+    "byte_identical": true,
+    "file": "B_figure_data_checks.json"
+  }
+]

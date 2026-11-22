@@ -1,0 +1,208 @@
+﻿check,measured,limit,passed
+S1 per-slot attack use,1.1102230246251565e-16,1e-12,True
+S1 event indices,0.0,0.0,True
+S1 normal prefix,0.0,0.0,True
+S2 per-slot attack use,1.1102230246251565e-16,1e-12,True
+S2 event indices,0.0,0.0,True
+S2 normal prefix,0.0,0.0,True
+archived C1 uses exact S2 attack,0.0,0.0,True
+archived C1 x0,0.0,0.0,True
+archived C2 uses exact S2 attack,0.0,0.0,True
+archived C2 x0,0.0,0.0,True
+archived S2 C1 holds D0,0.0,0.0,True
+shared x4 matches archived event state,0.0,1e-12,True
+slot5_a020 failed exits,0.0,0.0,True
+slot5_a020 worst start residual,2.1377749297689375e-06,0.0001,True
+slot5_a020 worst start violation,2.220446049250313e-16,1e-10,True
+slot5_a020 selected violation,2.220446049250313e-16,1e-10,True
+slot5_a020 selected residual H48,8.637478979695024e-07,0.0001,True
+slot5_a020 spread of start objectives normalized,4.5833143687585554e-12,1e-07,True
+slot5_a020 spread of start controls,3.080505403501091e-06,0.001,True
+slot5_a020 immutable attack forecast,0.0,0.0,True
+slot5_a020 selected residual H96,8.637477787454273e-07,0.0001,True
+slot5_a020 gradient 0,1.4797962577528523e-09,1e-06,True
+slot5_a020 gradient 48,1.5598104509406685e-09,1e-06,True
+slot5_a020 gradient 95,2.285510052046913e-09,1e-06,True
+slot5_a020 H96 time grid,0.0,1e-12,True
+slot5_a020 H96 state,2.291500322826323e-13,1e-06,True
+slot5_a020 H96 J_D,3.9968028886505635e-14,1e-06,True
+slot5_a020 H96 security,4.618527782440651e-14,1e-06,True
+slot5_a020 H96 business,1.5543122344752192e-15,1e-06,True
+slot5_a020 H96 isolation,3.191891195797325e-16,1e-06,True
+slot5_a020 H96 recovery,6.938893903907228e-15,1e-06,True
+slot5_a020 H96 terminal_defense,0.0,1e-06,True
+slot5_a020 H192 time grid,0.0,1e-12,True
+slot5_a020 H192 state,2.4319435354414054e-13,1e-06,True
+slot5_a020 H192 J_D,3.9968028886505635e-14,1e-06,True
+slot5_a020 H192 security,4.440892098500626e-14,1e-06,True
+slot5_a020 H192 business,1.942890293094024e-16,1e-06,True
+slot5_a020 H192 isolation,1.0685896612017132e-15,1e-06,True
+slot5_a020 H192 recovery,3.7192471324942744e-15,1e-06,True
+slot5_a020 H192 terminal_defense,0.0,1e-06,True
+slot5_a020 defense capacity,2.220446049250313e-16,1e-10,True
+slot5_a020 attack capacity,0.0,1e-10,True
+slot5_a020 control box,0.0,1e-10,True
+slot5_a020 state bounds,0.0,1e-10,True
+slot5_a020 solver-vs-replay,7.105427357601002e-15,1e-10,True
+slot5_a020 fine solver-vs-replay,1.7763568394002505e-15,1e-10,True
+slot5_a020 reproduces A actions,0.0,1e-08,True
+slot5_a030 failed exits,0.0,0.0,True
+slot5_a030 worst start residual,1.9314455130814423e-06,0.0001,True
+slot5_a030 worst start violation,2.220446049250313e-16,1e-10,True
+slot5_a030 selected violation,2.220446049250313e-16,1e-10,True
+slot5_a030 selected residual H48,3.5678209013567663e-07,0.0001,True
+slot5_a030 spread of start objectives normalized,1.978061612821585e-12,1e-07,True
+slot5_a030 spread of start controls,2.713640960855246e-06,0.001,True
+slot5_a030 immutable attack forecast,0.0,0.0,True
+slot5_a030 selected residual H96,3.5678207689626706e-07,0.0001,True
+slot5_a030 gradient 0,3.587818819816846e-09,1e-06,True
+slot5_a030 gradient 48,1.5669997660561208e-09,1e-06,True
+slot5_a030 gradient 95,9.526725242015033e-11,1e-06,True
+slot5_a030 H96 time grid,0.0,1e-12,True
+slot5_a030 H96 state,2.2831736501416344e-13,1e-06,True
+slot5_a030 H96 J_D,1.6342482922482304e-13,1e-06,True
+slot5_a030 H96 security,1.616484723854228e-13,1e-06,True
+slot5_a030 H96 business,3.7470027081099033e-16,1e-06,True
+slot5_a030 H96 isolation,3.191891195797325e-16,1e-06,True
+slot5_a030 H96 recovery,1.887379141862766e-15,1e-06,True
+slot5_a030 H96 terminal_defense,0.0,1e-06,True
+slot5_a030 H192 time grid,0.0,1e-12,True
+slot5_a030 H192 state,2.421951528219779e-13,1e-06,True
+slot5_a030 H192 J_D,1.6697754290362354e-13,1e-06,True
+slot5_a030 H192 security,1.6431300764452317e-13,1e-06,True
+slot5_a030 H192 business,9.71445146547012e-17,1e-06,True
+slot5_a030 H192 isolation,9.71445146547012e-16,1e-06,True
+slot5_a030 H192 recovery,1.7763568394002505e-15,1e-06,True
+slot5_a030 H192 terminal_defense,0.0,1e-06,True
+slot5_a030 defense capacity,4.440892098500626e-16,1e-10,True
+slot5_a030 attack capacity,0.0,1e-10,True
+slot5_a030 control box,0.0,1e-10,True
+slot5_a030 state bounds,0.0,1e-10,True
+slot5_a030 solver-vs-replay,7.105427357601002e-15,1e-10,True
+slot5_a030 fine solver-vs-replay,6.217248937900877e-15,1e-10,True
+slot5_a040 failed exits,0.0,0.0,True
+slot5_a040 worst start residual,2.3737334212819983e-06,0.0001,True
+slot5_a040 worst start violation,2.220446049250313e-16,1e-10,True
+slot5_a040 selected violation,0.0,1e-10,True
+slot5_a040 selected residual H48,3.9567336931282254e-07,0.0001,True
+slot5_a040 spread of start objectives normalized,4.179616269807111e-12,1e-07,True
+slot5_a040 spread of start controls,2.9570507407705726e-06,0.001,True
+slot5_a040 immutable attack forecast,0.0,0.0,True
+slot5_a040 selected residual H96,3.9567330360019623e-07,0.0001,True
+slot5_a040 gradient 0,3.269158443952591e-09,1e-06,True
+slot5_a040 gradient 48,4.627517535826797e-10,1e-06,True
+slot5_a040 gradient 95,9.935692199536383e-10,1e-06,True
+slot5_a040 H96 time grid,0.0,1e-12,True
+slot5_a040 H96 state,3.2046587605805144e-13,1e-06,True
+slot5_a040 H96 J_D,4.0945025148175773e-13,1e-06,True
+slot5_a040 H96 security,4.1744385725905886e-13,1e-06,True
+slot5_a040 H96 business,4.163336342344337e-16,1e-06,True
+slot5_a040 H96 isolation,1.3877787807814457e-16,1e-06,True
+slot5_a040 H96 recovery,6.994405055138486e-15,1e-06,True
+slot5_a040 H96 terminal_defense,0.0,1e-06,True
+slot5_a040 H192 time grid,0.0,1e-12,True
+slot5_a040 H192 state,3.410605131648481e-13,1e-06,True
+slot5_a040 H192 J_D,4.3076653355456074e-13,1e-06,True
+slot5_a040 H192 security,4.4231285301066237e-13,1e-06,True
+slot5_a040 H192 business,6.800116025829084e-16,1e-06,True
+slot5_a040 H192 isolation,9.71445146547012e-17,1e-06,True
+slot5_a040 H192 recovery,1.049160758270773e-14,1e-06,True
+slot5_a040 H192 terminal_defense,0.0,1e-06,True
+slot5_a040 defense capacity,2.220446049250313e-16,1e-10,True
+slot5_a040 attack capacity,0.0,1e-10,True
+slot5_a040 control box,0.0,1e-10,True
+slot5_a040 state bounds,0.0,1e-10,True
+slot5_a040 solver-vs-replay,2.6645352591003757e-15,1e-10,True
+slot5_a040 fine solver-vs-replay,8.881784197001252e-15,1e-10,True
+slot5_a040 reproduces A actions,0.0,1e-08,True
+slot5_a030 matching x4,0.0,0.0,True
+slot5_a030 matched start 0,0.0,0.0,True
+slot5_a030 matched start 1,0.0,0.0,True
+slot5_a030 matched start 2,0.0,0.0,True
+slot5_a040 matching x4,0.0,0.0,True
+slot5_a040 matched start 0,0.0,0.0,True
+slot5_a040 matched start 1,0.0,0.0,True
+slot5_a040 matched start 2,0.0,0.0,True
+S1 observed middle actually executed,0.0,0.0,True
+S1_slot9 failed exits,0.0,0.0,True
+S1_slot9 worst start residual,1.7718547047074207e-06,0.0001,True
+S1_slot9 worst start violation,0.0,1e-10,True
+S1_slot9 selected violation,0.0,1e-10,True
+S1_slot9 selected residual H48,2.5460229509388643e-07,0.0001,True
+S1_slot9 spread of start objectives normalized,2.4621096893612567e-12,1e-07,True
+S1_slot9 spread of start controls,2.168339328986659e-06,0.001,True
+S1_slot9 immutable attack forecast,0.0,0.0,True
+S1_slot9 selected residual H96,2.5460217088768555e-07,0.0001,True
+S1_slot9 gradient 0,4.0597415013055027e-10,1e-06,True
+S1_slot9 gradient 24,1.2741656826853465e-09,1e-06,True
+S1_slot9 gradient 47,7.574936511378638e-11,1e-06,True
+S1_slot9 H96 time grid,0.0,1e-12,True
+S1_slot9 H96 state,1.0547118733938987e-13,1e-06,True
+S1_slot9 H96 J_D,1.7497114868092467e-13,1e-06,True
+S1_slot9 H96 security,1.7497114868092467e-13,1e-06,True
+S1_slot9 H96 business,1.5265566588595902e-16,1e-06,True
+S1_slot9 H96 isolation,1.734723475976807e-17,1e-06,True
+S1_slot9 H96 recovery,5.689893001203927e-16,1e-06,True
+S1_slot9 H96 terminal_defense,0.0,1e-06,True
+S1_slot9 H192 time grid,0.0,1e-12,True
+S1_slot9 H192 state,1.1179945857975326e-13,1e-06,True
+S1_slot9 H192 J_D,1.865174681370263e-13,1e-06,True
+S1_slot9 H192 security,1.8740564655672642e-13,1e-06,True
+S1_slot9 H192 business,1.5265566588595902e-16,1e-06,True
+S1_slot9 H192 isolation,6.938893903907228e-18,1e-06,True
+S1_slot9 H192 recovery,5.967448757360216e-16,1e-06,True
+S1_slot9 H192 terminal_defense,0.0,1e-06,True
+S1_slot9 defense capacity,0.0,1e-10,True
+S1_slot9 attack capacity,0.0,1e-10,True
+S1_slot9 control box,0.0,1e-10,True
+S1_slot9 state bounds,0.0,1e-10,True
+S1_slot9 solver-vs-replay,8.881784197001252e-16,1e-10,True
+S1_slot9 fine solver-vs-replay,1.3322676295501878e-15,1e-10,True
+S1 plans only see present levels,0.0,0.0,True
+S1 C1/C2 actual attacks equal,0.0,0.0,True
+S1_C1 H96 time grid,0.0,1e-12,True
+S1_C1 H96 state,4.528044605933701e-13,1e-06,True
+S1_C1 H96 J_D,5.666578317686799e-13,1e-06,True
+S1_C1 H96 security,5.684341886080801e-13,1e-06,True
+S1_C1 H96 business,1.0130785099704553e-15,1e-06,True
+S1_C1 H96 isolation,2.7755575615628914e-16,1e-06,True
+S1_C1 H96 recovery,3.552713678800501e-15,1e-06,True
+S1_C1 H96 terminal_defense,0.0,1e-06,True
+S1_C1 H192 time grid,0.0,1e-12,True
+S1_C1 H192 state,4.811706588725428e-13,1e-06,True
+S1_C1 H192 J_D,5.968558980384842e-13,1e-06,True
+S1_C1 H192 security,5.968558980384842e-13,1e-06,True
+S1_C1 H192 business,1.9984014443252818e-15,1e-06,True
+S1_C1 H192 isolation,4.3021142204224816e-15,1e-06,True
+S1_C1 H192 recovery,6.328271240363392e-15,1e-06,True
+S1_C1 H192 terminal_defense,0.0,1e-06,True
+S1_C1 defense capacity,2.220446049250313e-16,1e-10,True
+S1_C1 attack capacity,0.0,1e-10,True
+S1_C1 control box,0.0,1e-10,True
+S1_C1 state bounds,0.0,1e-10,True
+S1 C1 initial state,0.0,0.0,True
+S1 C1 first four slots terminal state,0.0,1e-12,True
+S1_C2 H96 time grid,0.0,1e-12,True
+S1_C2 H96 state,4.526934382909076e-13,1e-06,True
+S1_C2 H96 J_D,5.702105454474804e-13,1e-06,True
+S1_C2 H96 security,5.835332217429823e-13,1e-06,True
+S1_C2 H96 business,1.3600232051658168e-15,1e-06,True
+S1_C2 H96 isolation,3.885780586188048e-16,1e-06,True
+S1_C2 H96 recovery,1.2434497875801753e-14,1e-06,True
+S1_C2 H96 terminal_defense,0.0,1e-06,True
+S1_C2 H192 time grid,0.0,1e-12,True
+S1_C2 H192 state,4.810596365700803e-13,1e-06,True
+S1_C2 H192 J_D,6.092903959142859e-13,1e-06,True
+S1_C2 H192 security,6.199485369506874e-13,1e-06,True
+S1_C2 H192 business,1.915134717478395e-15,1e-06,True
+S1_C2 H192 isolation,2.942091015256665e-15,1e-06,True
+S1_C2 H192 recovery,4.884981308350689e-15,1e-06,True
+S1_C2 H192 terminal_defense,0.0,1e-06,True
+S1_C2 defense capacity,4.440892098500626e-16,1e-10,True
+S1_C2 attack capacity,0.0,1e-10,True
+S1_C2 control box,0.0,1e-10,True
+S1_C2 state bounds,0.0,1e-10,True
+S1 C2 initial state,0.0,0.0,True
+S1 C2 first four slots terminal state,0.0,1e-12,True
+S1 C2 carries actual x8,0.0,1e-12,True
+S1 C1/C2 have identical pre-event state history,0.0,1e-12,True

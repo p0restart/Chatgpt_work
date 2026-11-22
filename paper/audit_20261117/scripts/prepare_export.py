@@ -1,10 +1,14 @@
 from pathlib import Path
 import re,json
+import sys
 BASE=Path(__file__).resolve().parents[1];ROOT=BASE.parents[1]
 DEPS=Path(r'C:\Users\Jin\AppData\Local\Temp\codex_audit_20261117_deps')
+sys.path.append(str(DEPS))
+import md_to_word
 keys=['Preciado2014','AlEiadeh2025','Paarporn2024','Chen2025','Li2023Cloud','Tian2025','Zhang2023ScaleFree','Zhang2023Potential','Sun2022','Hu2023','Lou2026','Basar1999','Betts2010','Hairer1993','Nocedal2006','Kraft1988','Caruso2020']
-bib=(ROOT/'paper/work_d7/references.bib').read_text(encoding='utf-8')
-bib+=r'''
+original_bib=ROOT/'paper/work_d7/references.bib'
+bib=(original_bib if original_bib.exists() else BASE/'references.bib').read_text(encoding='utf-8')
+additional_bib=r'''
 @article{AlEiadeh2025,
  author={Mohammad Ryiad Al-Eiadeh and Mustafa Abdallah},
  title={{PR-DRA}: {PageRank}-based defense resource allocation methods for securing interdependent systems modeled by attack graphs},
@@ -21,6 +25,7 @@ bib+=r'''
  title={An Inverse-Adjusted Best Response Algorithm for Nash Equilibria},
  journal={SIAM Journal on Optimization},year={2020},volume={30},number={2},pages={1638--1663},doi={10.1137/18M1213701}}
 '''
+if original_bib.exists():bib+=additional_bib
 (BASE/'references.bib').write_text(bib,encoding='utf-8')
 text=(BASE/'多资产网络防御决策论文_审计修订稿.md').read_text(encoding='utf-8')
 text=text.split('# 参考文献')[0]
@@ -28,6 +33,8 @@ text=re.sub(r'!\[[^\]]*\]', '![]', text)
 text=text.replace(r'\mathop{\arg\min}',r'\operatorname{argmin}').replace(r'\mathop{\arg\max}',r'\operatorname{argmax}')
 # Avoid a reader edge case when an inline formula ends in an escaped brace.
 text=text.replace(r'\{',r'\lbrace ').replace(r'\}',r'\rbrace')
+script_letters=dict(zip('ACGJNPTU','𝒜𝒞𝒢𝒥𝒩𝒫𝒯𝒰'))
+text=re.sub(r'\\mathcal\s*\{?([ACGJNPTU])\}?',lambda m:script_letters[m[1]],text)
 # Keep a readable Markdown deliverable; the following source is the engine contract.
 text=re.sub(r'^\# (.+)',r'%% 文档标题 \1',text,count=1)
 text=text.replace('**摘要：**','%% 摘要 **摘要：**',1).replace('**关键词：**','%% 关键词 **关键词：**',1)
@@ -55,7 +62,7 @@ for line in text.splitlines():
     lines.append(line)
 header='---\nbibliography: ../references.bib\ncsl: chinese-gb7714-2015-numeric.csl\n---\n\n'
 (BASE/'qa/paper_export.md').write_text(header+'\n'.join(lines)+'\n\n%% 参考文献标题 参考文献\n',encoding='utf-8')
-fmt=(DEPS/'md_to_word/presets/zh-academic.txt').read_text(encoding='utf-8')
+fmt=(Path(md_to_word.__file__).parent/'presets/zh-academic.txt').read_text(encoding='utf-8')
 fmt=fmt.replace('上2.54cm 下2.54cm 左3.18cm 右3.18cm','上2cm 下2cm 左2cm 右2cm')
 fmt=fmt.replace('行距1.5倍','行距1.15倍').replace('行距1.25倍','行距1.1倍')
 fmt=fmt.replace('小四','10.5pt').replace('五号','9pt').replace('小9pt','8.5pt')

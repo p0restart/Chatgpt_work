@@ -1,0 +1,485 @@
+[
+  {
+    "text": "NETWORK SECURITY / NONZERO-SUM DIFFERENTIAL GAMES",
+    "x": 85,
+    "y": 68,
+    "width": 818.9912109375,
+    "size": 27
+  },
+  {
+    "text": "A Resource-Constrained Network Defense",
+    "x": 85,
+    "y": 135,
+    "width": 1750.1103515625002,
+    "size": 87
+  },
+  {
+    "text": "Decision Method Based on a Nonzero-Sum",
+    "x": 85,
+    "y": 232,
+    "width": 1774.0268554687502,
+    "size": 87
+  },
+  {
+    "text": "Differential Game",
+    "x": 85,
+    "y": 329,
+    "width": 720.3837890625001,
+    "size": 87
+  },
+  {
+    "text": "[Author names in manuscript order]",
+    "x": 85,
+    "y": 446,
+    "width": 579.958984375,
+    "size": 34
+  },
+  {
+    "text": "[Department, University / Organization, City, Country]     [Corresponding email]",
+    "x": 85,
+    "y": 497,
+    "width": 972.603515625,
+    "size": 28
+  },
+  {
+    "text": "Scheduling isolation and recovery reduces cumulative loss",
+    "x": 116,
+    "y": 620,
+    "width": 1211.55859375,
+    "size": 43
+  },
+  {
+    "text": "Main capacity B = 1.2. The attack plan is computed jointly with dynamic defense and then fixed for all comparisons.",
+    "x": 116,
+    "y": 680,
+    "width": 1577.5185546875,
+    "size": 31
+  },
+  {
+    "text": "01",
+    "x": 85,
+    "y": 842,
+    "width": 34.4814453125,
+    "size": 31
+  },
+  {
+    "text": "Model and decision problem",
+    "x": 150,
+    "y": 840,
+    "width": 553.56005859375,
+    "size": 41
+  },
+  {
+    "text": "Choose source isolation and local recovery for each asset and time interval",
+    "x": 85,
+    "y": 929,
+    "width": 1030.43212890625,
+    "size": 31
+  },
+  {
+    "text": "while attacks propagate across a directed network.",
+    "x": 85,
+    "y": 973,
+    "width": 696.1376953125,
+    "size": 31
+  },
+  {
+    "text": "Six logical assets. Direct attacks enter at the API gateway and Web application.",
+    "x": 85,
+    "y": 1570,
+    "width": 1018.73828125,
+    "size": 29
+  },
+  {
+    "text": "Recovery lowers local compromise; isolation suppresses outgoing propagation.",
+    "x": 85,
+    "y": 1611,
+    "width": 1015.52392578125,
+    "size": 29
+  },
+  {
+    "text": "02",
+    "x": 85,
+    "y": 1778,
+    "width": 34.4814453125,
+    "size": 31
+  },
+  {
+    "text": "Compute a defense schedule",
+    "x": 150,
+    "y": 1776,
+    "width": 567.3134765625,
+    "size": 41
+  },
+  {
+    "text": "ABR-DAD: Alternating Best Response for Dynamic Defense Action",
+    "x": 85,
+    "y": 1864,
+    "width": 950.1416015625,
+    "size": 30
+  },
+  {
+    "text": "Decision.",
+    "x": 85,
+    "y": 1906,
+    "width": 133.3740234375,
+    "size": 30
+  },
+  {
+    "text": "1 Parameterize controls over six time intervals.",
+    "x": 85,
+    "y": 1972,
+    "width": 601.1552734375,
+    "size": 29
+  },
+  {
+    "text": "2 Fix the attack plan and optimize defense locally.",
+    "x": 85,
+    "y": 2026,
+    "width": 639.96826171875,
+    "size": 29
+  },
+  {
+    "text": "3 Fix defense and optimize the attack locally.",
+    "x": 85,
+    "y": 2080,
+    "width": 577.0830078125,
+    "size": 29
+  },
+  {
+    "text": "4 Repeat, then check unilateral deviations and feasibility.",
+    "x": 85,
+    "y": 2134,
+    "width": 730.28173828125,
+    "size": 29
+  },
+  {
+    "text": "RK4 evaluates state trajectories; SLSQP computes local numerical responses",
+    "x": 85,
+    "y": 2215,
+    "width": 999.3671875,
+    "size": 29
+  },
+  {
+    "text": "under control bounds and instantaneous capacity constraints.",
+    "x": 85,
+    "y": 2256,
+    "width": 788.33837890625,
+    "size": 29
+  },
+  {
+    "text": "03",
+    "x": 85,
+    "y": 2393,
+    "width": 34.4814453125,
+    "size": 31
+  },
+  {
+    "text": "Allocate resources across assets and time",
+    "x": 150,
+    "y": 2391,
+    "width": 829.529296875,
+    "size": 41
+  },
+  {
+    "text": "At B = 1.2, capacity binds in intervals 2–4. All three capacities show reduced effort",
+    "x": 85,
+    "y": 2935,
+    "width": 1053.4306640625,
+    "size": 29
+  },
+  {
+    "text": "in the final interval.",
+    "x": 85,
+    "y": 2976,
+    "width": 241.798828125,
+    "size": 29
+  },
+  {
+    "text": "04",
+    "x": 1230.9685039370079,
+    "y": 842,
+    "width": 34.4814453125,
+    "size": 31
+  },
+  {
+    "text": "Compare cumulative defense losses",
+    "x": 1295.9685039370079,
+    "y": 840,
+    "width": 708.67138671875,
+    "size": 41
+  },
+  {
+    "text": "2.41%",
+    "x": 1230.9685039370079,
+    "y": 933,
+    "width": 283.544921875,
+    "size": 100
+  },
+  {
+    "text": "14.79%",
+    "x": 1775.6324409448819,
+    "y": 933,
+    "width": 339.16015625,
+    "size": 100
+  },
+  {
+    "text": "Lower total loss than fixed-mean",
+    "x": 1230.9685039370079,
+    "y": 1049,
+    "width": 417.498046875,
+    "size": 29
+  },
+  {
+    "text": "defense",
+    "x": 1230.9685039370079,
+    "y": 1088,
+    "width": 103.19921875,
+    "size": 29
+  },
+  {
+    "text": "Lower total loss than no defense",
+    "x": 1775.6324409448819,
+    "y": 1049,
+    "width": 417.5546875,
+    "size": 29
+  },
+  {
+    "text": "The dynamic and fixed-mean plans have equal cumulative isolation and",
+    "x": 1230.9685039370079,
+    "y": 1175,
+    "width": 950.56640625,
+    "size": 30
+  },
+  {
+    "text": "recovery inputs for each asset. Their timing differs.",
+    "x": 1230.9685039370079,
+    "y": 1218,
+    "width": 671.9384765625,
+    "size": 30
+  },
+  {
+    "text": "Compromised fractions under the shared attack plan. Dynamic defense protects the",
+    "x": 1230.9685039370079,
+    "y": 2010,
+    "width": 1036.533203125,
+    "size": 28
+  },
+  {
+    "text": "core database more strongly; some late-horizon state curves cross.",
+    "x": 1230.9685039370079,
+    "y": 2049,
+    "width": 834.1484375,
+    "size": 28
+  },
+  {
+    "text": "Defense plan",
+    "x": 1238.9685039370079,
+    "y": 2187,
+    "width": 168.05126953125,
+    "size": 27
+  },
+  {
+    "text": "Security loss",
+    "x": 1593.9685039370079,
+    "y": 2187,
+    "width": 168.07763671875,
+    "size": 27
+  },
+  {
+    "text": "Total loss",
+    "x": 1841.9685039370079,
+    "y": 2187,
+    "width": 126.02197265625,
+    "size": 27
+  },
+  {
+    "text": "Final state",
+    "x": 2089.968503937008,
+    "y": 2187,
+    "width": 133.53662109375,
+    "size": 27
+  },
+  {
+    "text": "No defense",
+    "x": 1238.9685039370079,
+    "y": 2262,
+    "width": 138.09814453125,
+    "size": 27
+  },
+  {
+    "text": "10.945701",
+    "x": 1593.9685039370079,
+    "y": 2262,
+    "width": 127.63037109375,
+    "size": 27
+  },
+  {
+    "text": "10.945701",
+    "x": 1841.9685039370079,
+    "y": 2262,
+    "width": 127.63037109375,
+    "size": 27
+  },
+  {
+    "text": "0.221271",
+    "x": 2089.968503937008,
+    "y": 2262,
+    "width": 112.6142578125,
+    "size": 27
+  },
+  {
+    "text": "Fixed mean (M)",
+    "x": 1238.9685039370079,
+    "y": 2329,
+    "width": 189.03955078125,
+    "size": 27
+  },
+  {
+    "text": "8.580319",
+    "x": 1593.9685039370079,
+    "y": 2329,
+    "width": 112.6142578125,
+    "size": 27
+  },
+  {
+    "text": "9.556834",
+    "x": 1841.9685039370079,
+    "y": 2329,
+    "width": 112.6142578125,
+    "size": 27
+  },
+  {
+    "text": "0.156868",
+    "x": 2089.968503937008,
+    "y": 2329,
+    "width": 112.6142578125,
+    "size": 27
+  },
+  {
+    "text": "Dynamic (G)",
+    "x": 1238.9685039370079,
+    "y": 2396,
+    "width": 159.03369140625,
+    "size": 27
+  },
+  {
+    "text": "8.176990",
+    "x": 1593.9685039370079,
+    "y": 2396,
+    "width": 112.6142578125,
+    "size": 27
+  },
+  {
+    "text": "9.326647",
+    "x": 1841.9685039370079,
+    "y": 2396,
+    "width": 112.6142578125,
+    "size": 27
+  },
+  {
+    "text": "0.157163",
+    "x": 2089.968503937008,
+    "y": 2396,
+    "width": 112.6142578125,
+    "size": 27
+  },
+  {
+    "text": "Total loss includes security loss plus business and action costs. Final state is the",
+    "x": 1230.9685039370079,
+    "y": 2491,
+    "width": 927.7734375000001,
+    "size": 26
+  },
+  {
+    "text": "value-weighted compromised fraction at T = 10.",
+    "x": 1230.9685039370079,
+    "y": 2527,
+    "width": 548.4375,
+    "size": 26
+  },
+  {
+    "text": "05",
+    "x": 1230.9685039370079,
+    "y": 2649,
+    "width": 34.4814453125,
+    "size": 31
+  },
+  {
+    "text": "Timing shapes the loss–state tradeoff",
+    "x": 1295.9685039370079,
+    "y": 2647,
+    "width": 735.89794921875,
+    "size": 41
+  },
+  {
+    "text": "The dynamic plan reduces accumulated compromise and total defender loss.",
+    "x": 1230.9685039370079,
+    "y": 2737,
+    "width": 1022.2119140625,
+    "size": 30
+  },
+  {
+    "text": "The fixed-mean plan has a slightly lower final weighted compromised fraction",
+    "x": 1230.9685039370079,
+    "y": 2780,
+    "width": 1022.16796875,
+    "size": 30
+  },
+  {
+    "text": "(0.156868 versus 0.157163).",
+    "x": 1230.9685039370079,
+    "y": 2823,
+    "width": 383.5986328125,
+    "size": 30
+  },
+  {
+    "text": "The computed controls are capacity-feasible at B = 0.6, 1.2 and 1.8. Uniform-start",
+    "x": 1230.9685039370079,
+    "y": 2935,
+    "width": 1046.9453125,
+    "size": 29
+  },
+  {
+    "text": "paths meet the numerical stopping criteria after five alternating updates.",
+    "x": 1230.9685039370079,
+    "y": 2976,
+    "width": 920.45263671875,
+    "size": 29
+  },
+  {
+    "text": "MODEL & EVIDENCE",
+    "x": 85,
+    "y": 3137,
+    "width": 240.0234375,
+    "size": 24
+  },
+  {
+    "text": "Synthetic six-asset network. Complete-information, nonzero-sum open-loop game. Local numerical responses in a piecewise-constant strategy class.",
+    "x": 85,
+    "y": 3180,
+    "width": 1779.837890625,
+    "size": 27
+  },
+  {
+    "text": "Selected background",
+    "x": 85,
+    "y": 3228,
+    "width": 212.38916015625,
+    "size": 21
+  },
+  {
+    "text": "[1] Başar & Olsder. Dynamic Noncooperative Game Theory. SIAM, 1999. doi:10.1137/1.9781611971132.",
+    "x": 85,
+    "y": 3260,
+    "width": 975.9052734375001,
+    "size": 21
+  },
+  {
+    "text": "[2] Preciado et al. Optimal Resource Allocation for Network Protection Against Spreading Processes. IEEE TCNS, 2014. doi:10.1109/TCNS.2014.2310911.",
+    "x": 85,
+    "y": 3292,
+    "width": 1440.43798828125,
+    "size": 21
+  }
+]

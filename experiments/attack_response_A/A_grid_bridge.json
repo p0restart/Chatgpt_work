@@ -1,0 +1,18 @@
+{
+  "K6_H48_vs_K12_H48": {
+    "state_error": 7.257527911974648e-12,
+    "time_error": 0.0,
+    "loss_error": 1.092281820547214e-11,
+    "part_error": 1.092281820547214e-11,
+    "limit": 1e-06,
+    "passed": true
+  },
+  "K6_H96_vs_K12_H48": {
+    "state_error": 0.0,
+    "time_error": 0.0,
+    "loss_error": 0.0,
+    "part_error": 0.0,
+    "limit": 1e-12,
+    "passed": true
+  }
+}

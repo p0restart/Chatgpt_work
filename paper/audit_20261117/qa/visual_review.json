@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-17",
+  "renderer": "Native Microsoft Word COM, read-only PDF export",
+  "paper_pages": 9,
+  "report_pages": 4,
+  "every_final_page_inspected": true,
+  "paper_checks": [
+    "native equations and script set glyphs",
+    "15-line indented algorithm on one page",
+    "3 figures readable",
+    "all 5 data tables intact",
+    "17 references in order",
+    "no text outside page"
+  ],
+  "report_checks": [
+    "scientific notation not spanning body text",
+    "tables and links readable",
+    "no text outside page"
+  ],
+  "figure_preflight_notes": [
+    "Static width warning misreads 17/2.54 as inches; PDF width verified as 170 mm.",
+    "No TIFF provided: PNG at 600 dpi plus PDF/SVG are supplied; no venue requested TIFF."
+  ],
+  "fixed_model_unchanged": true,
+  "new_optimization": false,
+  "documents": {
+    "多资产网络防御决策论文_审计修订稿.docx": "0bb8ed172dfd97d3b6a3edf164b7a433dea91790791a47df5ec4d4644cf34020",
+    "审稿与修订审计报告.docx": "aa3c48d5a496256396025e613aceb12158bef5bf187c99fef897036203199861"
+  }
+}

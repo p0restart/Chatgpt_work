@@ -1,0 +1,24 @@
+2026-11-18 22:18:32,690 Note: NumExpr detected 32 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-11-18 22:18:34,524 Frozen Work A verified; S1 uses .20/.30/.20; S2 execution uses archived .20/.40/.20
+2026-11-18 22:18:34,589 slot5_a020 start_slot=5 count=8 observed_api=0.20 seed=20261115 x0=[0.1595444910479839, 0.2197447714158105, 0.05779945765499918, 0.02528169428766222, 0.009940448215657748, 0.0043905914960842025]
+2026-11-18 22:18:40,543 slot5_a020 start=0 status=0 nit=1 J0=6.30841444106 J=6.30841444106 residual=8.63748e-07 seconds=0.881 Optimization terminated successfully
+2026-11-18 22:18:40,544 slot5_a020 start=1 status=0 nit=6 J0=6.90858389913 J=6.3084144411 residual=2.13777e-06 seconds=2.299 Optimization terminated successfully
+2026-11-18 22:18:40,544 slot5_a020 start=2 status=0 nit=6 J0=6.79077072221 J=6.30841444107 residual=1.22244e-06 seconds=2.176 Optimization terminated successfully
+2026-11-18 22:18:43,899 slot5_a020 accepted; optimization 5.667s, replay J_D 6.30841444106
+2026-11-18 22:18:43,899 slot5_a030 start_slot=5 count=8 observed_api=0.30 seed=20261115 x0=[0.1595444910479839, 0.2197447714158105, 0.05779945765499918, 0.02528169428766222, 0.009940448215657748, 0.0043905914960842025]
+2026-11-18 22:18:51,607 slot5_a030 start=0 status=0 nit=6 J0=6.72776486781 J=6.72439708403 residual=3.56782e-07 seconds=2.205 Optimization terminated successfully
+2026-11-18 22:18:51,608 slot5_a030 start=1 status=0 nit=6 J0=7.37460840304 J=6.72439708403 residual=4.83084e-07 seconds=2.523 Optimization terminated successfully
+2026-11-18 22:18:51,608 slot5_a030 start=2 status=0 nit=6 J0=7.2156203683 J=6.72439708404 residual=1.93145e-06 seconds=2.365 Optimization terminated successfully
+2026-11-18 22:18:55,249 slot5_a030 accepted; optimization 7.416s, replay J_D 6.72439708403
+2026-11-18 22:18:55,249 slot5_a040 start_slot=5 count=8 observed_api=0.40 seed=20261115 x0=[0.1595444910479839, 0.2197447714158105, 0.05779945765499918, 0.02528169428766222, 0.009940448215657748, 0.0043905914960842025]
+2026-11-18 22:19:02,864 slot5_a040 start=0 status=0 nit=6 J0=7.11306944274 J=7.10144087084 residual=7.33032e-07 seconds=2.278 Optimization terminated successfully
+2026-11-18 22:19:02,864 slot5_a040 start=1 status=0 nit=6 J0=7.80070427738 J=7.10144087084 residual=3.95673e-07 seconds=2.485 Optimization terminated successfully
+2026-11-18 22:19:02,864 slot5_a040 start=2 status=0 nit=6 J0=7.60541831151 J=7.10144087087 residual=2.37373e-06 seconds=2.221 Optimization terminated successfully
+2026-11-18 22:19:06,331 slot5_a040 accepted; optimization 7.291s, replay J_D 7.10144087084
+2026-11-18 22:19:06,382 S1_slot9 start_slot=9 count=4 observed_api=0.20 seed=20261116 x0=[0.23828167023694588, 0.3031438200685957, 0.1380142853462162, 0.0574717329899189, 0.03980519729130666, 0.016642892247241255]
+2026-11-18 22:19:09,515 S1_slot9 start=0 status=0 nit=4 J0=3.82536717088 J=3.82524178076 residual=2.54602e-07 seconds=1.006 Optimization terminated successfully
+2026-11-18 22:19:09,515 S1_slot9 start=1 status=0 nit=5 J0=3.95522726742 J=3.82524178077 residual=1.77185e-06 seconds=0.892 Optimization terminated successfully
+2026-11-18 22:19:09,515 S1_slot9 start=2 status=0 nit=6 J0=4.08064525587 J=3.82524178076 residual=1.02411e-06 seconds=0.948 Optimization terminated successfully
+2026-11-18 22:19:10,781 S1_slot9 accepted; optimization 3.001s, replay J_D 3.82524178076
+2026-11-18 22:19:12,632 S1 J_D: {'C1': 8.062974294850832, 'C2': 8.059841118157276}; S2 execution data reused from archived Work A
+2026-11-18 22:19:12,632 PASS 207 numerical checks

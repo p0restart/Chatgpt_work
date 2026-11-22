@@ -1,0 +1,20 @@
+{
+  "B0.6/a0/attack_capacity": true,
+  "B0.6/a0/attack_bounds": true,
+  "B0.6/aG/attack_capacity": true,
+  "B0.6/aG/attack_bounds": true,
+  "B0.6/aBR_F/attack_capacity": true,
+  "B0.6/aBR_F/attack_bounds": true,
+  "B1.2/a0/attack_capacity": true,
+  "B1.2/a0/attack_bounds": true,
+  "B1.2/aG/attack_capacity": true,
+  "B1.2/aG/attack_bounds": true,
+  "B1.2/aBR_F/attack_capacity": true,
+  "B1.2/aBR_F/attack_bounds": true,
+  "B1.8/a0/attack_capacity": true,
+  "B1.8/a0/attack_bounds": true,
+  "B1.8/aG/attack_capacity": true,
+  "B1.8/aG/attack_bounds": true,
+  "B1.8/aBR_F/attack_capacity": true,
+  "B1.8/aBR_F/attack_bounds": true
+}

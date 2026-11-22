@@ -1,0 +1,95 @@
+{
+  "0.6": {
+    "decision": {
+      "passed": true,
+      "online_seconds": 74.14519469998777,
+      "spread": 4.0115131829998596e-05,
+      "all_optimizer_calls_success": true,
+      "selected_path": "warm",
+      "x0": [
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "K": 6,
+      "T": 10.0,
+      "seed": 20262114
+    },
+    "uniform_start": {
+      "iteration": 5,
+      "relative_D": 2.8948615684262886e-10,
+      "relative_A": 0.0,
+      "incumbent_residual": {
+        "D": 6.479622734290036e-05,
+        "A": 7.915892760168575e-07
+      },
+      "response_distance": 3.3443282674142094e-05,
+      "passed": true
+    }
+  },
+  "1.2": {
+    "decision": {
+      "passed": true,
+      "online_seconds": 99.3589129000029,
+      "spread": 2.900993882837266e-05,
+      "all_optimizer_calls_success": true,
+      "selected_path": "warm",
+      "x0": [
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "K": 6,
+      "T": 10.0,
+      "seed": 20261114
+    },
+    "uniform_start": {
+      "iteration": 5,
+      "relative_D": 1.1028892271805624e-10,
+      "relative_A": 0.0,
+      "incumbent_residual": {
+        "D": 2.7440022968117095e-05,
+        "A": 3.4871754739373984e-07
+      },
+      "response_distance": 1.868207949445866e-05,
+      "passed": true
+    }
+  },
+  "1.8": {
+    "decision": {
+      "passed": true,
+      "online_seconds": 76.81146550000994,
+      "spread": 2.9860819534599514e-05,
+      "all_optimizer_calls_success": true,
+      "selected_path": "warm",
+      "x0": [
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "K": 6,
+      "T": 10.0,
+      "seed": 20263114
+    },
+    "uniform_start": {
+      "iteration": 5,
+      "relative_D": 6.600404698403142e-11,
+      "relative_A": 0.0,
+      "incumbent_residual": {
+        "D": 2.5069801075860987e-05,
+        "A": 2.5026044014886395e-07
+      },
+      "response_distance": 1.1826947804327581e-05,
+      "passed": true
+    }
+  }
+}

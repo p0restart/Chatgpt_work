@@ -1,0 +1,106 @@
+[
+  {
+    "page": 1,
+    "fonts": {
+      "('BCDEEE+TimesNewRomanPSMT', 24.0)": 91,
+      "('BCDEEE+TimesNewRomanPSMT', 10.5)": 61,
+      "('BCDEEE+TimesNewRomanPSMT', 10.98)": 10,
+      "('BCDEEE+TimesNewRomanPSMT', 8.52)": 194,
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 3407,
+      "('BCDFEE+TimesNewRomanPS-BoldItalicMT', 9.0)": 148,
+      "('BCDGEE+TimesNewRomanPS-BoldItalicMT', 9.0)": 2,
+      "('BCDHEE+TimesNewRomanPS-BoldMT', 9.0)": 1365,
+      "('BCDIEE+TimesNewRomanPS-BoldMT', 9.0)": 1,
+      "('BCDJEE+ArialMT', 10.02)": 1,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 11,
+      "('BCDKEE+TimesNewRomanPSMT', 10.02)": 68,
+      "('BCDLEE+TimesNewRomanPS-ItalicMT', 10.02)": 66,
+      "('BCDEEE+TimesNewRomanPSMT', 6.48)": 55
+    }
+  },
+  {
+    "page": 2,
+    "fonts": {
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 3915,
+      "('BCDJEE+ArialMT', 10.02)": 1,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 47,
+      "('BCDKEE+TimesNewRomanPSMT', 10.02)": 234,
+      "('BCDLEE+TimesNewRomanPS-ItalicMT', 10.02)": 178,
+      "('BCDMEE+Arial-ItalicMT', 10.02)": 2,
+      "('BCDNEE+CambriaMath', 10.02)": 250,
+      "('BCDNEE+CambriaMath', 7.02)": 46,
+      "('BCDNEE+CambriaMath', 9.0)": 87,
+      "('BCDNEE+CambriaMath', 6.48)": 68,
+      "('BCDEEE+TimesNewRomanPSMT', 7.5)": 24,
+      "('BCDOEE+TimesNewRomanPS-ItalicMT', 10.02)": 1
+    }
+  },
+  {
+    "page": 3,
+    "fonts": {
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 4311,
+      "('BCDNEE+CambriaMath', 10.02)": 142,
+      "('BCDNEE+CambriaMath', 9.0)": 95,
+      "('BCDNEE+CambriaMath', 6.48)": 61,
+      "('BCDEEE+TimesNewRomanPSMT', 7.5)": 31,
+      "('BCDNEE+CambriaMath', 4.98)": 3,
+      "('BCDNEE+CambriaMath', 7.02)": 61,
+      "('BCDKEE+TimesNewRomanPSMT', 10.02)": 94,
+      "('BCDEEE+TimesNewRomanPSMT', 6.48)": 27,
+      "('BCDLEE+TimesNewRomanPS-ItalicMT', 10.02)": 138,
+      "('BCDJEE+ArialMT', 10.02)": 1,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 30,
+      "('BCDMEE+Arial-ItalicMT', 10.02)": 2,
+      "('BCDPEE+CambriaMath', 9.0)": 2,
+      "('BCDHEE+TimesNewRomanPS-BoldMT', 7.02)": 84,
+      "('BCDEEE+TimesNewRomanPSMT', 7.02)": 804
+    }
+  },
+  {
+    "page": 4,
+    "fonts": {
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 3470,
+      "('BCDNEE+CambriaMath', 9.0)": 30,
+      "('BCDNEE+CambriaMath', 10.02)": 83,
+      "('BCDNEE+CambriaMath', 6.48)": 18,
+      "('BCDNEE+CambriaMath', 4.98)": 2,
+      "('BCDEEE+TimesNewRomanPSMT', 7.5)": 8,
+      "('BCDNEE+CambriaMath', 7.02)": 19,
+      "('BCDKEE+TimesNewRomanPSMT', 10.02)": 123,
+      "('BCDJEE+ArialMT', 10.02)": 1,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 289,
+      "('BCDLEE+TimesNewRomanPS-ItalicMT', 10.02)": 51,
+      "('BCDMEE+Arial-ItalicMT', 10.02)": 2,
+      "('BCDEEE+TimesNewRomanPSMT', 6.48)": 96,
+      "('BCDHEE+TimesNewRomanPS-BoldMT', 7.02)": 50,
+      "('BCDEEE+TimesNewRomanPSMT', 7.02)": 526,
+      "('BCDKEE+TimesNewRomanPSMT', 7.02)": 168
+    }
+  },
+  {
+    "page": 5,
+    "fonts": {
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 4598,
+      "('BCDKEE+TimesNewRomanPSMT', 10.02)": 122,
+      "('BCDLEE+TimesNewRomanPS-ItalicMT', 10.02)": 174,
+      "('BCDMEE+Arial-ItalicMT', 10.02)": 1,
+      "('BCDNEE+CambriaMath', 10.02)": 40,
+      "('BCDNEE+CambriaMath', 7.02)": 30,
+      "('BCDNEE+CambriaMath', 6.0)": 11,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 155,
+      "('BCDEEE+TimesNewRomanPSMT', 6.48)": 60,
+      "('BCDHEE+TimesNewRomanPS-BoldMT', 7.02)": 9,
+      "('BCDEEE+TimesNewRomanPSMT', 7.02)": 220,
+      "('BCDJEE+ArialMT', 10.02)": 1
+    }
+  },
+  {
+    "page": 6,
+    "fonts": {
+      "('BCDEEE+TimesNewRomanPSMT', 10.02)": 529,
+      "('BCDEEE+TimesNewRomanPSMT', 7.98)": 2456,
+      "('BCDLEE+TimesNewRomanPS-ItalicMT', 7.98)": 645,
+      "('BCDKEE+TimesNewRomanPSMT', 7.98)": 1482
+    }
+  }
+]

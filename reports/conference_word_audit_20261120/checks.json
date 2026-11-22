@@ -1,0 +1,169 @@
+{
+  "citations": [
+    {
+      "p": 9,
+      "citation": "[1]",
+      "superscript": true
+    },
+    {
+      "p": 9,
+      "citation": "[2]",
+      "superscript": true
+    },
+    {
+      "p": 9,
+      "citation": "[3]",
+      "superscript": true
+    },
+    {
+      "p": 9,
+      "citation": "[4]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[5]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[6]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[7]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[8]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[9]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[10]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[11]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[12]",
+      "superscript": true
+    },
+    {
+      "p": 10,
+      "citation": "[13]",
+      "superscript": true
+    },
+    {
+      "p": 11,
+      "citation": "[14]",
+      "superscript": true
+    },
+    {
+      "p": 11,
+      "citation": "[15]",
+      "superscript": true
+    },
+    {
+      "p": 11,
+      "citation": "[16]",
+      "superscript": true
+    },
+    {
+      "p": 35,
+      "citation": "[17]",
+      "superscript": true
+    },
+    {
+      "p": 40,
+      "citation": "[18]",
+      "superscript": true
+    },
+    {
+      "p": 42,
+      "citation": "[19]",
+      "superscript": true
+    },
+    {
+      "p": 42,
+      "citation": "[20,21]",
+      "superscript": true
+    },
+    {
+      "p": 44,
+      "citation": "[17]",
+      "superscript": true
+    },
+    {
+      "p": 44,
+      "citation": "[22]",
+      "superscript": true
+    }
+  ],
+  "cited_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "references": 22,
+  "missing_cites": [],
+  "non_superscript": [],
+  "numerical_checks": {
+    "table2_sums": [
+      0.564365,
+      0.974503,
+      1.081025
+    ],
+    "mean_main_intervals": 0.9745043333333333,
+    "JD_improvement_vs_N": 14.791688535983216,
+    "JD_improvement_vs_M": 2.408611471121093,
+    "Lsec_difference": 0.4033289999999994,
+    "cost_difference": 0.1731419999999999,
+    "terminal_difference": 0.0002949999999999897,
+    "sum_L_cost": [
+      10.945701,
+      9.556833999999998,
+      9.326647
+    ],
+    "api_resource_shares": [
+      0.600855829117681,
+      0.4758708019669493,
+      0.4447972988598784
+    ],
+    "identity_resource_shares": [
+      0.021595952973696098,
+      0.07879495620336088,
+      0.09426516500543466
+    ]
+  }
+}

@@ -13,17 +13,28 @@ for t in doc.tables:
         for i,row in enumerate(t.rows):
             trpr=row._tr.get_or_add_trPr()
             node=OxmlElement('w:cantSplit');trpr.append(node)
-            for c in row.cells:
+            for ci,c in enumerate(row.cells):
                 for p in c.paragraphs:
                     p.paragraph_format.keep_with_next=(i<len(t.rows)-1)
                     p.paragraph_format.space_after=Pt(2)
                     p.paragraph_format.space_before=Pt(2)
+                    level=1 if i in (3,4,10) else (2 if i in (5,6,7,8,9) else 0)
+                    if ci==1:
+                        p.paragraph_format.left_indent=Pt(level*9)
         prev=t._tbl.getprevious()
         for _ in range(3):
             if prev is not None and prev.tag==qn('w:p'):
                 pr=prev.get_or_add_pPr()
                 node=OxmlElement('w:keepNext');pr.append(node)
                 prev=prev.getprevious()
+    elif len(t.rows)<=12:
+        for i,row in enumerate(t.rows):
+            for c in row.cells:
+                for p in c.paragraphs:
+                    p.paragraph_format.keep_with_next=(i<len(t.rows)-1)
+        prev=t._tbl.getprevious()
+        if prev is not None and prev.tag==qn('w:p'):
+            node=OxmlElement('w:keepNext');prev.get_or_add_pPr().append(node)
 regular=''.join(doc.element.xpath('//w:t/text()'))
 bad=[p.text for p in doc.paragraphs if '$' in p.text or '\\' in p.text]
 if bad:raise ValueError('Unconverted math in regular text: '+repr(bad[:3]))

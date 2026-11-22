@@ -1,0 +1,40 @@
+{
+  "font": "times.ttf",
+  "source_hashes": {
+    "B0.6_G_controls.json": "f5e07ea801d65094e23ddc6c63aa56ce517121f789f7fb4d023ce3d8e0d90580",
+    "B0.6_model.json": "431361317ccc0753a9fae71da921ee54eec6cb624e66325b42151af47a645e7b",
+    "B1.2_G_controls.json": "571449d419d4564743cc1c1bfdb4bf2b67db7f56a2add5cd84aae8d239ad90ed",
+    "B1.2_model.json": "28042f480562edd2fa5e9d697bdf313c9e4ea0ab4ea6d7b50ca4f116e122a21c",
+    "B1.8_G_controls.json": "36f3ed1e10d9ab7a2e786b75778b24807e56ea59a017cb74a2300e6154777493",
+    "B1.8_model.json": "2df2d0aea2c74c26f036089d00aa82cd1267f11b9866b528596b450e0d5bd9c2",
+    "diagnostics_summary.json": "21270bf24e2fa4360d111f1a4db2de2cfbc8fd15370a6f5315f1b9bfde89dfcc",
+    "experiment_environment.json": "c8fa24efc74cdd29a6cf2db9a304b07cf61916a2aedad92dd4c4d034256fa957",
+    "fig2_capacity.csv": "8ce54a63b3432397da03fb20a96a9dcd0a5370d7bb62256f2bfdc76ec19ab552",
+    "fig4_controls.csv": "d33ebede3418c4b9f1eb6759e20c842e13bed2ebb5b51fb79fd8d6f407dc248d",
+    "fig4_states.csv": "0a10453a40991d2fb2c50ba122355a0a0946dba118f82cce4fc4bc87de7dcec9",
+    "numerical_diagnostics.csv": "43bc3d7c5814dedd7aa3adfe2d4101af08550909a3971777205e74cda77aed88",
+    "verification.json": "778c257fadfca279a163892bfd793b0ffa5842b1672f34e06d59689ef7d5a0d7"
+  },
+  "figures": {
+    "fig1_network_en": {
+      "width_in": 3.18,
+      "height_in": 2.4,
+      "base_font_pt": 8
+    },
+    "fig2_capacity_en": {
+      "width_in": 6.76,
+      "height_in": 2.25,
+      "base_font_pt": 8
+    },
+    "fig3_actions_en": {
+      "width_in": 6.76,
+      "height_in": 2.75,
+      "base_font_pt": 8
+    },
+    "fig4_states_en": {
+      "width_in": 6.76,
+      "height_in": 4.1,
+      "base_font_pt": 8
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "passed": [
+    "0.2: shared initial states",
+    "0.2: matching slot and asset keys",
+    "0.2: computed difference relative to 020",
+    "0.2: computed difference relative to 030",
+    "0.3: shared initial states",
+    "0.3: matching slot and asset keys",
+    "0.3: computed difference relative to 020",
+    "0.3: computed difference relative to 030",
+    "0.4: shared initial states",
+    "0.4: matching slot and asset keys",
+    "0.4: computed difference relative to 020",
+    "0.4: computed difference relative to 030",
+    "S1: matched plan agrees with execution before slot 9",
+    "S1: absolute improvement",
+    "S1: relative improvement",
+    "S2: matched plan agrees with execution before slot 9",
+    "S2: absolute improvement",
+    "S2: relative improvement"
+  ]
+}

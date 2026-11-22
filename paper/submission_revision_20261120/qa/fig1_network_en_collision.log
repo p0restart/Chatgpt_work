@@ -1,0 +1,10 @@
+Nature Figure Rendered Collision Audit
+pdf: C:\Users\Jin\Documents\00Graduate_student\ChatGPT_Work__v2\paper\submission_revision_20261120\latex\figures\fig1_network_en.pdf
+pages: 1
+visible text boxes: 26
+stroke paths: 22
+
+
+summary: 0 fail, 0 warn, 18 contained fill overlays, 0 contained image overlays
+verdict: PASS
+note: contained overlays can be intentional; WARN findings need final-size visual review

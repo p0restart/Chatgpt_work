@@ -1,0 +1,22 @@
+{
+  "fig1_network_en": {
+    "text_code": 0,
+    "collision_code": 0,
+    "collision_summary": "Nature Figure Rendered Collision Audit\npdf: C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\submission_revision_20261120\\latex\\figures\\fig1_network_en.pdf\npages: 1\nvisible text boxes: 26\nstroke paths: 22\n\n\nsummary: 0 fail, 0 warn, 18 contained fill overlays, 0 contained image overlays\nverdict: PASS\nnote: contained overlays can be intentional; WARN findings need final-size visual review\n"
+  },
+  "fig2_capacity_en": {
+    "text_code": 0,
+    "collision_code": 0,
+    "collision_summary": "Nature Figure Rendered Collision Audit\npdf: C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\submission_revision_20261120\\latex\\figures\\fig2_capacity_en.pdf\npages: 1\nvisible text boxes: 30\nstroke paths: 52\n\n\nsummary: 0 fail, 0 warn, 0 contained fill overlays, 0 contained image overlays\nverdict: PASS\nnote: contained overlays can be intentional; WARN findings need final-size visual review\n"
+  },
+  "fig3_actions_en": {
+    "text_code": 0,
+    "collision_code": 0,
+    "collision_summary": "Nature Figure Rendered Collision Audit\npdf: C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\submission_revision_20261120\\latex\\figures\\fig3_actions_en.pdf\npages: 1\nvisible text boxes: 109\nstroke paths: 41\n\n\nsummary: 0 fail, 0 warn, 72 contained fill overlays, 72 contained image overlays\nverdict: PASS\nnote: contained overlays can be intentional; WARN findings need final-size visual review\n"
+  },
+  "fig4_states_en": {
+    "text_code": 0,
+    "collision_code": 0,
+    "collision_summary": "Nature Figure Rendered Collision Audit\npdf: C:\\Users\\Jin\\Documents\\00Graduate_student\\ChatGPT_Work__v2\\paper\\submission_revision_20261120\\latex\\figures\\fig4_states_en.pdf\npages: 1\nvisible text boxes: 39\nstroke paths: 87\n\n\nsummary: 0 fail, 0 warn, 0 contained fill overlays, 0 contained image overlays\nverdict: PASS\nnote: contained overlays can be intentional; WARN findings need final-size visual review\n"
+  }
+}
